@@ -8,4 +8,137 @@
 
 <http://www.semanticweb.org/matteobianchetti/ontologies/2021/8/untitled-ontology-13> rdf:type owl:Ontology .
 
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.foom.com/euclid/anglesAddition
+<http://www.foom.com/euclid/anglesAddition> rdf:type owl:ObjectProperty .
+
+
+###  http://www.foom.com/euclid/isAngleOf
+<http://www.foom.com/euclid/isAngleOf> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                       rdf:type owl:FunctionalProperty ,
+                                                owl:AsymmetricProperty ,
+                                                owl:IrreflexiveProperty ;
+                                       rdfs:domain <http://www.foom.com/euclid/angle> ;
+                                       rdfs:range <http://www.foom.com/euclid/triangle> .
+
+
+###  http://www.foom.com/euclid/isOn_field:pointXsegment
+<http://www.foom.com/euclid/isOn_field:pointXsegment> rdf:type owl:ObjectProperty ,
+                                                               owl:AsymmetricProperty ,
+                                                               owl:IrreflexiveProperty .
+
+
+###  http://www.foom.com/euclid/strictlyTotalLessThan_field:angleXangle
+<http://www.foom.com/euclid/strictlyTotalLessThan_field:angleXangle> rdf:type owl:ObjectProperty ,
+                                                                              owl:AsymmetricProperty ,
+                                                                              owl:TransitiveProperty ,
+                                                                              owl:IrreflexiveProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.foom.com/euclid/angle
+<http://www.foom.com/euclid/angle> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.foom.com/euclid/object> .
+
+
+###  http://www.foom.com/euclid/claim
+<http://www.foom.com/euclid/claim> rdf:type owl:Class .
+
+
+###  http://www.foom.com/euclid/object
+<http://www.foom.com/euclid/object> rdf:type owl:Class .
+
+
+###  http://www.foom.com/euclid/point
+<http://www.foom.com/euclid/point> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.foom.com/euclid/object> .
+
+
+###  http://www.foom.com/euclid/procedure
+<http://www.foom.com/euclid/procedure> rdf:type owl:Class .
+
+
+###  http://www.foom.com/euclid/proofDevelopment
+<http://www.foom.com/euclid/proofDevelopment> rdf:type owl:Class .
+
+
+###  http://www.foom.com/euclid/segment
+<http://www.foom.com/euclid/segment> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.foom.com/euclid/object> .
+
+
+###  http://www.foom.com/euclid/triangle
+<http://www.foom.com/euclid/triangle> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://www.foom.com/euclid/object> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.foom.com/euclid/Euclid.I.17
+<http://www.foom.com/euclid/Euclid.I.17> rdf:type owl:NamedIndividual ,
+                                                  <http://www.foom.com/euclid/claim> .
+
+
+###  http://www.foom.com/euclid/angleABC
+<http://www.foom.com/euclid/angleABC> rdf:type owl:NamedIndividual ,
+                                               <http://www.foom.com/euclid/angle> ;
+                                      <http://www.foom.com/euclid/isAngleOf> <http://www.foom.com/euclid/triangleABC> .
+
+
+###  http://www.foom.com/euclid/angleBAC
+<http://www.foom.com/euclid/angleBAC> rdf:type owl:NamedIndividual ,
+                                               <http://www.foom.com/euclid/angle> ;
+                                      <http://www.foom.com/euclid/isAngleOf> <http://www.foom.com/euclid/triangleABC> .
+
+
+###  http://www.foom.com/euclid/angleBCA
+<http://www.foom.com/euclid/angleBCA> rdf:type owl:NamedIndividual ,
+                                               <http://www.foom.com/euclid/angle> ;
+                                      <http://www.foom.com/euclid/isAngleOf> <http://www.foom.com/euclid/triangleABC> .
+
+
+###  http://www.foom.com/euclid/triangleABC
+<http://www.foom.com/euclid/triangleABC> rdf:type owl:NamedIndividual ,
+                                                  <http://www.foom.com/euclid/triangle> .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.foom.com/euclid/angle>
+                <http://www.foom.com/euclid/point>
+                <http://www.foom.com/euclid/segment>
+                <http://www.foom.com/euclid/triangle>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.foom.com/euclid/claim>
+                <http://www.foom.com/euclid/object>
+                <http://www.foom.com/euclid/procedure>
+                <http://www.foom.com/euclid/proofDevelopment>
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.foom.com/euclid/angleABC>
+                        <http://www.foom.com/euclid/angleBAC>
+                        <http://www.foom.com/euclid/angleBCA>
+                      )
+] .
+
+
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
