@@ -12,12 +12,18 @@
 #    Object Properties
 #################################################################
 
+###  http://www.foom.com/euclid/anglesAddition
+<http://www.foom.com/euclid/anglesAddition> rdf:type owl:ObjectProperty .
+
+
 ###  http://www.foom.com/euclid/isAngleOf
 <http://www.foom.com/euclid/isAngleOf> rdf:type owl:ObjectProperty ;
                                        rdfs:subPropertyOf owl:topObjectProperty ;
                                        rdf:type owl:FunctionalProperty ,
                                                 owl:AsymmetricProperty ,
-                                                owl:IrreflexiveProperty .
+                                                owl:IrreflexiveProperty ;
+                                       rdfs:domain <http://www.foom.com/euclid/angle> ;
+                                       rdfs:range <http://www.foom.com/euclid/triangle> .
 
 
 ###  http://www.foom.com/euclid/isOn_field:pointXsegment
