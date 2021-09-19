@@ -13,7 +13,10 @@
 #################################################################
 
 ###  http://www.foom.com/euclid/anglesAddition
-<http://www.foom.com/euclid/anglesAddition> rdf:type owl:ObjectProperty .
+<http://www.foom.com/euclid/anglesAddition> rdf:type owl:ObjectProperty ,
+                                                     owl:FunctionalProperty ;
+                                            rdfs:domain <http://www.foom.com/euclid/orderedPair_angle_angle> ;
+                                            rdfs:range <http://www.foom.com/euclid/angle> .
 
 
 ###  http://www.foom.com/euclid/isAngleOf
@@ -24,6 +27,35 @@
                                                 owl:IrreflexiveProperty ;
                                        rdfs:domain <http://www.foom.com/euclid/angle> ;
                                        rdfs:range <http://www.foom.com/euclid/triangle> .
+
+
+###  http://www.foom.com/euclid/pr_ordPair_angle_angle
+<http://www.foom.com/euclid/pr_ordPair_angle_angle> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <http://www.foom.com/euclid/projectionRelations> .
+
+
+###  http://www.foom.com/euclid/pr_ordPair_angle_angle_member0
+<http://www.foom.com/euclid/pr_ordPair_angle_angle_member0> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <http://www.foom.com/euclid/pr_ordPair_angle_angle> ;
+                                                            rdf:type owl:FunctionalProperty ,
+                                                                     owl:AsymmetricProperty ,
+                                                                     owl:IrreflexiveProperty ;
+                                                            rdfs:domain <http://www.foom.com/euclid/orderedPair_angle_angle> ;
+                                                            rdfs:range <http://www.foom.com/euclid/angle> .
+
+
+###  http://www.foom.com/euclid/pr_ordPair_angle_angle_member1
+<http://www.foom.com/euclid/pr_ordPair_angle_angle_member1> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <http://www.foom.com/euclid/pr_ordPair_angle_angle> ;
+                                                            rdf:type owl:FunctionalProperty ,
+                                                                     owl:AsymmetricProperty ,
+                                                                     owl:IrreflexiveProperty ;
+                                                            rdfs:domain <http://www.foom.com/euclid/orderedPair_angle_angle> ;
+                                                            rdfs:range <http://www.foom.com/euclid/angle> .
+
+
+###  http://www.foom.com/euclid/projectionRelations
+<http://www.foom.com/euclid/projectionRelations> rdf:type owl:ObjectProperty .
 
 
 ###  http://www.foom.com/euclid/isOn_field:pointXsegment
@@ -54,6 +86,10 @@
 
 ###  http://www.foom.com/euclid/object
 <http://www.foom.com/euclid/object> rdf:type owl:Class .
+
+
+###  http://www.foom.com/euclid/orderedPair_angle_angle
+<http://www.foom.com/euclid/orderedPair_angle_angle> rdf:type owl:Class .
 
 
 ###  http://www.foom.com/euclid/point
