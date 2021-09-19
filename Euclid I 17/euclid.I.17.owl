@@ -75,6 +75,11 @@
 #    Classes
 #################################################################
 
+###  http://www.foom.com/euclid/Euclid.I.17
+<http://www.foom.com/euclid/Euclid.I.17> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.foom.com/euclid/claim> .
+
+
 ###  http://www.foom.com/euclid/angle
 <http://www.foom.com/euclid/angle> rdf:type owl:Class ;
                                    rdfs:subClassOf <http://www.foom.com/euclid/object> .
@@ -89,7 +94,18 @@
 
 
 ###  http://www.foom.com/euclid/orderedPair_angle_angle
-<http://www.foom.com/euclid/orderedPair_angle_angle> rdf:type owl:Class .
+<http://www.foom.com/euclid/orderedPair_angle_angle> rdf:type owl:Class ;
+                                                     owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <http://www.foom.com/euclid/pr_ordPair_angle_angle_member0> ;
+                                                                                                  owl:someValuesFrom <http://www.foom.com/euclid/angle>
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <http://www.foom.com/euclid/pr_ordPair_angle_angle_member1> ;
+                                                                                                  owl:someValuesFrom <http://www.foom.com/euclid/angle>
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] .
 
 
 ###  http://www.foom.com/euclid/point
