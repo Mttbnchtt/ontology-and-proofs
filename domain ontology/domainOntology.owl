@@ -9,16 +9,6 @@
 <http://www.semanticweb.org/matteobianchetti/ontologies/2021/9/untitled-ontology-30> rdf:type owl:Ontology .
 
 #################################################################
-#    MB: rdfs and owl extension
-#################################################################
-
-### rdfs:subPropertyOf
-rdfs:subPropertyOf rdf:type owl:TransitiveProperty .
-
-### owl:inverseOf
-owl:inverseOf rdf:type owl:SymmetricProperty .
-
-#################################################################
 #    Object Properties
 #################################################################
 
@@ -29,14 +19,28 @@ owl:inverseOf rdf:type owl:SymmetricProperty .
 
 ###  http://www.foom.com/hasAntecendent
 <http://www.foom.com/hasAntecendent> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <http://www.foom.com/hasAntencedent_transitive> ;
-                                     owl:inverseOf <http://www.foom.com/isAntencedentOf> .
+                                     rdfs:subPropertyOf <http://www.foom.com/inSameProof> ;
+                                     owl:inverseOf <http://www.foom.com/isAntencedentOf> ;
+                                     rdf:type owl:TransitiveProperty .
 
 
-###  http://www.foom.com/hasAntencedent_transitive
-<http://www.foom.com/hasAntencedent_transitive> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/inSameProof> ;
-                                                rdf:type owl:TransitiveProperty .
+###  http://www.foom.com/hasDirectAntecedent
+<http://www.foom.com/hasDirectAntecedent> rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf <http://www.foom.com/hasAntecendent> .
+
+
+###  http://www.foom.com/inProof
+<http://www.foom.com/inProof> rdf:type owl:ObjectProperty ,
+                                       owl:AsymmetricProperty ,
+                                       owl:IrreflexiveProperty ;
+                              rdfs:domain <http://www.foom.com/proof_step> ;
+                              rdfs:range <http://www.foom.com/proof> .
+
+
+###  http://www.foom.com/inProofStep
+<http://www.foom.com/inProofStep> rdf:type owl:ObjectProperty ;
+                                  rdfs:domain <http://www.foom.com/object> ;
+                                  rdfs:range <http://www.foom.com/proof_step> .
 
 
 ###  http://www.foom.com/inSameProof
@@ -46,15 +50,25 @@ owl:inverseOf rdf:type owl:SymmetricProperty .
                                   rdfs:range <http://www.foom.com/proof_step> .
 
 
-###  http://www.foom.com/isAntecedentOf_transitive
-<http://www.foom.com/isAntecedentOf_transitive> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/inSameProof> ;
-                                                rdf:type owl:TransitiveProperty .
-
-
 ###  http://www.foom.com/isAntencedentOf
 <http://www.foom.com/isAntencedentOf> rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf <http://www.foom.com/isAntecedentOf_transitive> .
+                                      rdfs:subPropertyOf <http://www.foom.com/inSameProof> ;
+                                      rdf:type owl:TransitiveProperty .
+
+
+###  http://www.foom.com/isDirectAntecedentOf
+<http://www.foom.com/isDirectAntecedentOf> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf <http://www.foom.com/isAntencedentOf> .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#subPropertyOf
+rdfs:subPropertyOf rdf:type owl:ObjectProperty ,
+                            owl:TransitiveProperty .
+
+
+###  http://www.w3.org/2002/07/owl#inverseOf
+owl:inverseOf rdf:type owl:ObjectProperty ,
+                       owl:SymmetricProperty .
 
 
 #################################################################
