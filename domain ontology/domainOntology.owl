@@ -9,6 +9,16 @@
 <http://www.semanticweb.org/matteobianchetti/ontologies/2021/9/untitled-ontology-30> rdf:type owl:Ontology .
 
 #################################################################
+#    MB: rdfs and owl extension
+#################################################################
+
+### rdfs:subPropertyOf
+rdfs:subPropertyOf rdf:type owl:TransitiveProperty .
+
+### owl:inverseOf
+owl:inverseOf rdf:type owl:SymmetricProperty .
+
+#################################################################
 #    Object Properties
 #################################################################
 
