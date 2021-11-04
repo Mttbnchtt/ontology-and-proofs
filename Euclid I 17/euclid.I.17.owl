@@ -31,7 +31,12 @@
 
 ###  http://www.foom.com/euclid/pr_ordPair_angle_angle
 <http://www.foom.com/euclid/pr_ordPair_angle_angle> rdf:type owl:ObjectProperty ;
-                                                    rdfs:subPropertyOf <http://www.foom.com/euclid/projectionRelations> .
+                                                    rdfs:subPropertyOf <http://www.foom.com/euclid/projectionRelations> ;
+                                                    rdf:type owl:FunctionalProperty ,
+                                                             owl:AsymmetricProperty ,
+                                                             owl:IrreflexiveProperty ;
+                                                    rdfs:domain <http://www.foom.com/euclid/orderedPair_angle_angle> ;
+                                                    rdfs:range <http://www.foom.com/euclid/angle> .
 
 
 ###  http://www.foom.com/euclid/pr_ordPair_angle_angle_member0
@@ -55,7 +60,11 @@
 
 
 ###  http://www.foom.com/euclid/projectionRelations
-<http://www.foom.com/euclid/projectionRelations> rdf:type owl:ObjectProperty .
+<http://www.foom.com/euclid/projectionRelations> rdf:type owl:ObjectProperty ,
+                                                          owl:FunctionalProperty ,
+                                                          owl:AsymmetricProperty ,
+                                                          owl:IrreflexiveProperty ;
+                                                 rdfs:comment "Relations linking a tuple to a specific member of that tuple, e.g. P_0(12, 20)=12 and P_1(12, 20)=20. The domain of each relation is a class of tuples. Each relation is function, asymmetric, and irreflexive." .
 
 
 ###  http://www.foom.com/euclid/isOn_field:pointXsegment
@@ -68,7 +77,9 @@
 <http://www.foom.com/euclid/strictlyTotalLessThan_field:angleXangle> rdf:type owl:ObjectProperty ,
                                                                               owl:AsymmetricProperty ,
                                                                               owl:TransitiveProperty ,
-                                                                              owl:IrreflexiveProperty .
+                                                                              owl:IrreflexiveProperty ;
+                                                                     rdfs:domain <http://www.foom.com/euclid/angle> ;
+                                                                     rdfs:range <http://www.foom.com/euclid/angle> .
 
 
 #################################################################
@@ -89,7 +100,19 @@
 
 
 ###  http://www.foom.com/euclid/orderedPair_angle_angle
-<http://www.foom.com/euclid/orderedPair_angle_angle> rdf:type owl:Class .
+<http://www.foom.com/euclid/orderedPair_angle_angle> rdf:type owl:Class ;
+                                                     owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <http://www.foom.com/euclid/pr_ordPair_angle_angle_member0> ;
+                                                                                                  owl:allValuesFrom <http://www.foom.com/euclid/angle>
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <http://www.foom.com/euclid/pr_ordPair_angle_angle_member1> ;
+                                                                                                  owl:allValuesFrom <http://www.foom.com/euclid/angle>
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ;
+                                                     rdfs:subClassOf <http://www.foom.com/euclid/object> .
 
 
 ###  http://www.foom.com/euclid/point
@@ -105,6 +128,11 @@
 <http://www.foom.com/euclid/proofDevelopment> rdf:type owl:Class .
 
 
+###  http://www.foom.com/euclid/rightAngle
+<http://www.foom.com/euclid/rightAngle> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.foom.com/euclid/angle> .
+
+
 ###  http://www.foom.com/euclid/segment
 <http://www.foom.com/euclid/segment> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.foom.com/euclid/object> .
@@ -113,6 +141,56 @@
 ###  http://www.foom.com/euclid/triangle
 <http://www.foom.com/euclid/triangle> rdf:type owl:Class ;
                                       rdfs:subClassOf <http://www.foom.com/euclid/object> .
+
+
+###  http://www.govaris.com/sumOfTwoAnglesOfTriangle
+<http://www.govaris.com/sumOfTwoAnglesOfTriangle> rdf:type owl:Class ;
+                                                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://www.foom.com/euclid/anglesAddition> ;
+                                                                        owl:allValuesFrom [ owl:intersectionOf ( <http://www.foom.com/euclid/orderedPair_angle_angle>
+                                                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://www.foom.com/euclid/pr_ordPair_angle_angle_member0> ;
+                                                                                                                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                                                                              owl:onProperty <http://www.foom.com/euclid/isAngleOf> ;
+                                                                                                                                                              owl:allValuesFrom <http://www.foom.com/euclid/triangle>
+                                                                                                                                                            ]
+                                                                                                                                        ]
+                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                          owl:onProperty <http://www.foom.com/euclid/pr_ordPair_angle_angle_member1> ;
+                                                                                                                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                                                                              owl:onProperty <http://www.foom.com/euclid/isAngleOf> ;
+                                                                                                                                                              owl:allValuesFrom <http://www.foom.com/euclid/triangle>
+                                                                                                                                                            ]
+                                                                                                                                        ]
+                                                                                                                                      ) ;
+                                                                                                                   rdf:type owl:Class
+                                                                                                                 ]
+                                                                                                               ) ;
+                                                                                            rdf:type owl:Class
+                                                                                          ]
+                                                                      ] ;
+                                                  rdfs:subClassOf <http://www.foom.com/euclid/object> ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://www.foom.com/euclid/strictlyTotalLessThan_field:angleXangle> ;
+                                                                    owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.foom.com/euclid/anglesAddition> ;
+                                                                                        owl:allValuesFrom [ owl:intersectionOf ( <http://www.foom.com/euclid/orderedPair_angle_angle>
+                                                                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                                                          owl:onProperty <http://www.foom.com/euclid/pr_ordPair_angle_angle_member0> ;
+                                                                                                                                                          owl:allValuesFrom <http://www.foom.com/euclid/rightAngle>
+                                                                                                                                                        ]
+                                                                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                                                                          owl:onProperty <http://www.foom.com/euclid/pr_ordPair_angle_angle_member1> ;
+                                                                                                                                                          owl:allValuesFrom <http://www.foom.com/euclid/rightAngle>
+                                                                                                                                                        ]
+                                                                                                                                                      ) ;
+                                                                                                                                   rdf:type owl:Class
+                                                                                                                                 ]
+                                                                                                                               ) ;
+                                                                                                            rdf:type owl:Class
+                                                                                                          ]
+                                                                                      ]
+                                                                  ] .
 
 
 #################################################################
@@ -153,9 +231,20 @@
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( <http://www.foom.com/euclid/angle>
+                <http://www.foom.com/euclid/claim>
+                <http://www.foom.com/euclid/procedure>
+                <http://www.foom.com/euclid/proofDevelopment>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.foom.com/euclid/angle>
+                <http://www.foom.com/euclid/orderedPair_angle_angle>
                 <http://www.foom.com/euclid/point>
                 <http://www.foom.com/euclid/segment>
                 <http://www.foom.com/euclid/triangle>
+                <http://www.govaris.com/sumOfTwoAnglesOfTriangle>
               )
 ] .
 
