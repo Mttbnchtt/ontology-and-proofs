@@ -4,9 +4,9 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/matteobianchetti/ontologies/2021/9/untitled-ontology-30> .
+@base <http://www.semanticweb.org/matteobianchetti/ontologies/2021/9/foom> .
 
-<http://www.semanticweb.org/matteobianchetti/ontologies/2021/9/untitled-ontology-30> rdf:type owl:Ontology .
+<http://www.semanticweb.org/matteobianchetti/ontologies/2021/9/foom> rdf:type owl:Ontology .
 
 #################################################################
 #    Object Properties
@@ -17,28 +17,36 @@
                                    rdfs:subPropertyOf <http://www.foom.com/inSameProof> .
 
 
+###  http://www.foom.com/coreRelations
+<http://www.foom.com/coreRelations> rdf:type owl:ObjectProperty .
+
+
+###  http://www.foom.com/domainSpecificRelations
+<http://www.foom.com/domainSpecificRelations> rdf:type owl:ObjectProperty .
+
+
 ###  http://www.foom.com/hasAntecendent
 <http://www.foom.com/hasAntecendent> rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf <http://www.foom.com/inSameProof> .
 
 
 ###  http://www.foom.com/inProof
-<http://www.foom.com/inProof> rdf:type owl:ObjectProperty ,
-                                       owl:AsymmetricProperty ,
-                                       owl:IrreflexiveProperty ;
+<http://www.foom.com/inProof> rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf <http://www.foom.com/coreRelations> ;
                               rdfs:domain <http://www.foom.com/proof_step> ;
                               rdfs:range <http://www.foom.com/proof> .
 
 
 ###  http://www.foom.com/inProofStep
 <http://www.foom.com/inProofStep> rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf <http://www.foom.com/coreRelations> ;
                                   rdfs:domain <http://www.foom.com/object> ;
                                   rdfs:range <http://www.foom.com/proof_step> .
 
 
 ###  http://www.foom.com/inSameProof
-<http://www.foom.com/inSameProof> rdf:type owl:ObjectProperty ,
-                                           owl:TransitiveProperty ;
+<http://www.foom.com/inSameProof> rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf <http://www.foom.com/coreRelations> ;
                                   rdfs:domain <http://www.foom.com/proof_step> ;
                                   rdfs:range <http://www.foom.com/proof_step> .
 
@@ -48,19 +56,29 @@
 #################################################################
 
 ###  http://www.foom.com/claim
-<http://www.foom.com/claim> rdf:type owl:Class .
+<http://www.foom.com/claim> rdf:type owl:Class ;
+                            owl:disjointWith <http://www.foom.com/object> ,
+                                             <http://www.foom.com/procedure> ,
+                                             <http://www.foom.com/proof> ,
+                                             <http://www.foom.com/proof_step> .
 
 
 ###  http://www.foom.com/object
-<http://www.foom.com/object> rdf:type owl:Class .
+<http://www.foom.com/object> rdf:type owl:Class ;
+                             owl:disjointWith <http://www.foom.com/procedure> ,
+                                              <http://www.foom.com/proof> ,
+                                              <http://www.foom.com/proof_step> .
 
 
 ###  http://www.foom.com/procedure
-<http://www.foom.com/procedure> rdf:type owl:Class .
+<http://www.foom.com/procedure> rdf:type owl:Class ;
+                                owl:disjointWith <http://www.foom.com/proof> ,
+                                                 <http://www.foom.com/proof_step> .
 
 
 ###  http://www.foom.com/proof
-<http://www.foom.com/proof> rdf:type owl:Class .
+<http://www.foom.com/proof> rdf:type owl:Class ;
+                            owl:disjointWith <http://www.foom.com/proof_step> .
 
 
 ###  http://www.foom.com/proof_step
