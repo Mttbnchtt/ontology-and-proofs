@@ -1,13 +1,13 @@
-@prefix : <http://www.semanticweb.org/matteobianchetti/ontologies/2021/10/geometry#> .
+@prefix : <http://www.semanticweb.org/matteobianchetti/ontologies/2021/10/untitled-ontology-35/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/matteobianchetti/ontologies/2021/10/geometry> .
+@base <http://www.semanticweb.org/matteobianchetti/ontologies/2021/10/foom/geometry_v0> .
 
-<http://www.semanticweb.org/matteobianchetti/ontologies/2021/10/geometry> rdf:type owl:Ontology ;
-                                                                           owl:imports <http://www.foom.com/core> .
+<http://www.semanticweb.org/matteobianchetti/ontologies/2021/10/foom/geometry_v0> rdf:type owl:Ontology ;
+                                                                                   owl:imports <http://www.semanticweb.org/matteobianchetti/ontologies/2021/9/untitled-ontology-30> .
 
 #################################################################
 #    Object Properties
@@ -25,8 +25,7 @@
 
 ###  http://www.foom.com/geometry/isAngleOf
 <http://www.foom.com/geometry/isAngleOf> rdf:type owl:ObjectProperty ;
-                                         rdfs:subPropertyOf <http://www.foom.com/geometry/geometryRelations> ;
-                                         rdfs:domain <http://www.foom.com/geometry/angle> .
+                                         rdfs:subPropertyOf <http://www.foom.com/geometry/geometryRelations> .
 
 
 #################################################################
