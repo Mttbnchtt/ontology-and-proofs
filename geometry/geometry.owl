@@ -33,10 +33,6 @@
 #    Classes
 #################################################################
 
-###  http://www.foom.com/object
-<http://www.foom.com/object> rdf:type owl:Class .
-
-
 ###  http://www.foom.com/geometry/angle
 <http://www.foom.com/geometry/angle> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.foom.com/geometry/geometry_object> ;
@@ -47,7 +43,7 @@
 
 ###  http://www.foom.com/geometry/geometry_object
 <http://www.foom.com/geometry/geometry_object> rdf:type owl:Class ;
-                                               rdfs:subClassOf <http://www.foom.com/object> .
+                                               rdfs:subClassOf <http://www.foom.com/core/Object> .
 
 
 ###  http://www.foom.com/geometry/point
