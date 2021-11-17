@@ -4,6 +4,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix core: <http://www.foom.com/core/> .
 @prefix euclid: <http://www.foom.com/euclid.I.17/> .
 @base <http://www.foom.com/euclid.I.17> .
 
@@ -14,6 +15,27 @@
 #    Object Properties
 #################################################################
 
+###  http://www.foom.com/euclid.I.17/LyingOn
+<http://www.foom.com/euclid.I.17/LyingOn> rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                          rdfs:domain <http://www.foom.com/core/Object> ;
+                                          rdfs:range <http://www.foom.com/core/Object> .
+
+
+###  http://www.foom.com/euclid.I.17/doesNotLieOn
+<http://www.foom.com/euclid.I.17/doesNotLieOn> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/LyingOn> ;
+                                               owl:propertyDisjointWith <http://www.foom.com/euclid.I.17/liesOn> .
+
+
+###  http://www.foom.com/euclid.I.17/fullyDoesNotLieOn
+<http://www.foom.com/euclid.I.17/fullyDoesNotLieOn> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/doesNotLieOn> ;
+                                                    owl:propertyChainAxiom ( <http://www.foom.com/euclid.I.17/liesOn>
+                                                                             <http://www.foom.com/euclid.I.17/fullyDoesNotLieOn>
+                                                                           ) .
+
+
 ###  http://www.foom.com/euclid.I.17/isAngleOf
 <http://www.foom.com/euclid.I.17/isAngleOf> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
@@ -21,17 +43,68 @@
                                             rdfs:range <http://www.foom.com/euclid.I.17/Triangle> .
 
 
+###  http://www.foom.com/euclid.I.17/isExternalAngleOf
+<http://www.foom.com/euclid.I.17/isExternalAngleOf> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/isAngleOf> ;
+                                                    owl:propertyDisjointWith <http://www.foom.com/euclid.I.17/isInternalAngleOf> .
+
+
+###  http://www.foom.com/euclid.I.17/isInternalAngleOf
+<http://www.foom.com/euclid.I.17/isInternalAngleOf> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/isAngleOf> .
+
+
+###  http://www.foom.com/euclid.I.17/isOpposite
+<http://www.foom.com/euclid.I.17/isOpposite> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> .
+
+
+###  http://www.foom.com/euclid.I.17/isSideOf
+<http://www.foom.com/euclid.I.17/isSideOf> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/liesOn> ;
+                                           rdfs:domain <http://www.foom.com/euclid.I.17/Segment> .
+
+
+###  http://www.foom.com/euclid.I.17/liesOn
+<http://www.foom.com/euclid.I.17/liesOn> rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/LyingOn> ;
+                                         rdfs:domain <http://www.foom.com/core/Object> ;
+                                         rdfs:range <http://www.foom.com/core/Object> .
+
+
+###  http://www.foom.com/euclid.I.17/producedTo
+<http://www.foom.com/euclid.I.17/producedTo> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/liesOn> ;
+                                             rdfs:domain <http://www.foom.com/euclid.I.17/Segment> ;
+                                             rdfs:range <http://www.foom.com/euclid.I.17/Segment> .
+
+
+###  http://www.foom.com/euclid.I.17/smallerThan_angles
+<http://www.foom.com/euclid.I.17/smallerThan_angles> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> .
+
+
 #################################################################
 #    Classes
 #################################################################
+
+###  http://www.foom.com/core/Proof
+<http://www.foom.com/core/Proof> owl:disjointWith [ rdf:type owl:Class ;
+                                                    owl:unionOf ( <http://www.foom.com/core/Claim>
+                                                                  <http://www.foom.com/core/Object>
+                                                                  <http://www.foom.com/core/Procedure>
+                                                                  <http://www.foom.com/core/Proof_step>
+                                                                )
+                                                  ] .
+
 
 ###  http://www.foom.com/euclid.I.17/Angle
 <http://www.foom.com/euclid.I.17/Angle> rdf:type owl:Class ;
                                         rdfs:subClassOf <http://www.foom.com/core/Object> ;
                                         owl:disjointWith [ rdf:type owl:Class ;
-                                                           owl:unionOf ( euclid:Point
-                                                                         euclid:Segment
-                                                                         euclid:Triangle
+                                                           owl:unionOf ( <http://www.foom.com/euclid.I.17/Point>
+                                                                         <http://www.foom.com/euclid.I.17/Segment>
+                                                                         <http://www.foom.com/euclid.I.17/Triangle>
                                                                        )
                                                          ] .
 
@@ -39,10 +112,10 @@
 ###  http://www.foom.com/euclid.I.17/Point
 <http://www.foom.com/euclid.I.17/Point> rdf:type owl:Class ;
                                         rdfs:subClassOf <http://www.foom.com/core/Object> ;
-                                        owl:disjointWith [ a owl:Class ;
-                                                           owl:unionOf ( euclid:Angle
-                                                                         euclid:Segment
-                                                                         euclid:Triangle
+                                        owl:disjointWith [ rdf:type owl:Class ;
+                                                           owl:unionOf ( <http://www.foom.com/euclid.I.17/Angle>
+                                                                         <http://www.foom.com/euclid.I.17/Segment>
+                                                                         <http://www.foom.com/euclid.I.17/Triangle>
                                                                        )
                                                          ] .
 
@@ -50,10 +123,10 @@
 ###  http://www.foom.com/euclid.I.17/Segment
 <http://www.foom.com/euclid.I.17/Segment> rdf:type owl:Class ;
                                           rdfs:subClassOf <http://www.foom.com/core/Object> ;
-                                          owl:disjointWith [ a owl:Class ;
-                                                             owl:unionOf ( euclid:Angle
-                                                                           euclid:Point
-                                                                           euclid:Triangle
+                                          owl:disjointWith [ rdf:type owl:Class ;
+                                                             owl:unionOf ( <http://www.foom.com/euclid.I.17/Angle>
+                                                                           <http://www.foom.com/euclid.I.17/Point>
+                                                                           <http://www.foom.com/euclid.I.17/Triangle>
                                                                          )
                                                            ] .
 
@@ -61,6 +134,94 @@
 ###  http://www.foom.com/euclid.I.17/Triangle
 <http://www.foom.com/euclid.I.17/Triangle> rdf:type owl:Class ;
                                            rdfs:subClassOf <http://www.foom.com/core/Object> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.foom.com/euclid.I.17/angle_ABC
+<http://www.foom.com/euclid.I.17/angle_ABC> rdf:type owl:NamedIndividual ,
+                                                     <http://www.foom.com/euclid.I.17/Angle> ;
+                                            <http://www.foom.com/euclid.I.17/isInternalAngleOf> <http://www.foom.com/euclid.I.17/triangle_ABC> ;
+                                            <http://www.foom.com/euclid.I.17/isOpposite> <http://www.foom.com/euclid.I.17/angle_ACD> .
+
+
+###  http://www.foom.com/euclid.I.17/angle_ACD
+<http://www.foom.com/euclid.I.17/angle_ACD> rdf:type owl:NamedIndividual ,
+                                                     <http://www.foom.com/euclid.I.17/Angle> ;
+                                            <http://www.foom.com/euclid.I.17/isExternalAngleOf> <http://www.foom.com/euclid.I.17/triangle_ABC> .
+
+
+###  http://www.foom.com/euclid.I.17/pEucl_s1
+<http://www.foom.com/euclid.I.17/pEucl_s1> rdf:type owl:NamedIndividual ,
+                                                    <http://www.foom.com/core/Proof_step> ;
+                                           core:proofStepStates [ a rdf:Statement ;
+                                                                  rdf:subject euclid:triangle_ABC ;
+                                                                  rdf:predicate rdf:type ;
+                                                                  rdf:object core:Triangle ] .
+
+                                                                  
+###  http://www.foom.com/euclid.I.17/pEucl_s2
+<http://www.foom.com/euclid.I.17/pEucl_s2> rdf:type owl:NamedIndividual ,
+                                                    <http://www.foom.com/core/Proof_step> ;
+                                           <http://www.foom.com/core/hasAntencedent> <http://www.foom.com/euclid.I.17/pEucl_s1> .
+
+
+###  http://www.foom.com/euclid.I.17/point_D
+<http://www.foom.com/euclid.I.17/point_D> rdf:type owl:NamedIndividual ,
+                                                   <http://www.foom.com/euclid.I.17/Point> ;
+                                          <http://www.foom.com/euclid.I.17/fullyDoesNotLieOn> <http://www.foom.com/euclid.I.17/triangle_ABC> .
+
+
+###  http://www.foom.com/euclid.I.17/proof_Euclid
+<http://www.foom.com/euclid.I.17/proof_Euclid> rdf:type owl:NamedIndividual ,
+                                                        <http://www.foom.com/core/Proof> .
+
+
+###  http://www.foom.com/euclid.I.17/proof_Proclus
+<http://www.foom.com/euclid.I.17/proof_Proclus> rdf:type owl:NamedIndividual ,
+                                                         <http://www.foom.com/core/Proof> .
+
+
+###  http://www.foom.com/euclid.I.17/segment_BC
+<http://www.foom.com/euclid.I.17/segment_BC> rdf:type owl:NamedIndividual ,
+                                                      <http://www.foom.com/euclid.I.17/Segment> ;
+                                             <http://www.foom.com/euclid.I.17/isSideOf> <http://www.foom.com/euclid.I.17/triangle_ABC> ;
+                                             <http://www.foom.com/euclid.I.17/producedTo> <http://www.foom.com/euclid.I.17/segment_BD> .
+
+
+###  http://www.foom.com/euclid.I.17/segment_BD
+<http://www.foom.com/euclid.I.17/segment_BD> rdf:type owl:NamedIndividual ,
+                                                      <http://www.foom.com/euclid.I.17/Segment> .
+
+
+###  http://www.foom.com/euclid.I.17/triangle_ABC
+<http://www.foom.com/euclid.I.17/triangle_ABC> rdf:type owl:NamedIndividual ,
+                                                        <http://www.foom.com/euclid.I.17/Triangle> .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.foom.com/euclid.I.17/pEucl_s1>
+                        <http://www.foom.com/euclid.I.17/pEucl_s2>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.foom.com/euclid.I.17/proof_Euclid>
+                        <http://www.foom.com/euclid.I.17/proof_Proclus>
+                      )
+] .
+
+#################################################################
+#    Reification
+#################################################################
+
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
