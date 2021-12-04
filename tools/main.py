@@ -16,7 +16,9 @@ def parse(args_lst:list=[]):
         description=textwrap.dedent("""\
             --------------
             Execute some of the following:
-            - import proof steps (import, --type <step>, --input, --output, --verbose <True, False>)
+            - import proof steps (import, --type step, --input, --output, --verbose <True, False>)
+            - import allDifferent steps (import, --type allDifferent, --input, --output, --verbose <True, False>)
+            - import link steps to proof (import, --type forProof, --input, --output, --verbose <True, False>)
             --------------
             """),
         formatter_class=argparse.RawDescriptionHelpFormatter,
