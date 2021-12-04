@@ -60,7 +60,7 @@ The script interprets the line above as saying the following:
 ```
 
 ---
-#### Link steps to proofs
+### Link steps to proofs
 1. Put the input file in the input folder. The input file should be a .txt file. It should contain exactly two resources in each line. For example, the following is an acceptable line:
 ```
     euclid:step1 euclid:proof_Euclid

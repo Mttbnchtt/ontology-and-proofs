@@ -47,13 +47,8 @@ def dependency(input:str="",
     verbose:bool=False):
     message:str = """
 # added UTC date and time {datetime.datetime.utcnow()}
-# input: {row.strip()}
-{lst[0]} a owl:NamedIndividual , 
-         core:Proof_step ;
-         core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject {lst[1]} ;
-                                rdf:predicate {lst[2]} ;
-                                rdf:object {lst[3]} ] .
+# input: dependency {row.strip()}
+{lst[0]} core:hasAntecedent {lst[1]} .
         """
     read_write(input=input, 
         output=output, 
@@ -71,7 +66,7 @@ def different(input:str="",
             s:str = " ".join(rows)
     message:str = f""" 
 # added UTC date and time {datetime.datetime.utcnow()}
-# input: <list all different steps>
+# input: list all different individuals {row.strip()}
 [ a owl:AllDifferent ;
   owl:distinctMembers ( {s} )
  ] .
@@ -86,7 +81,7 @@ def for_proof(input:str="",
     verbose:bool=False):
     message:str = """ 
 # added UTC date and time {datetime.datetime.utcnow()}
-# input: <links steps to proof>
+# input: link step to proof {row.strip()}
 {lst[0]} core:inProof {lst[1]} .
             """
     read_write(input=input, 
@@ -116,10 +111,12 @@ def step(input:str="",
 def main(args:argparse.Namespace, 
     verbose:bool=False):
     verbose = True if args.verbose in {True, ""} else False
-    if args.type == "step":
-        step(input=args.input, output=args.output, verbose=verbose)
-    elif args.type == "allDifferent":
+    if args.type == "allDifferent":
         different(input=args.input, output=args.output, verbose=verbose)
+    elif args.type == "step":
+        step(input=args.input, output=args.output, verbose=verbose)
+    elif args.type == "dependencies":
+        dependency(input=args.input, output=args.output, verbose=verbose)
     elif args.type == "forProof":
         for_proof(input=args.input, output=args.output, verbose=verbose)
 

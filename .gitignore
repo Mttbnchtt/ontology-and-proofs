@@ -7,8 +7,9 @@
 # **/README.md
 
 # input and output folders
-**/input/**
-**/output/**
+**/input/*
+**/output/*
 
 # pycache folders
 **/__pycache__
+**/bin/*

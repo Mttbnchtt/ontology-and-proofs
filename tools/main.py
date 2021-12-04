@@ -18,7 +18,8 @@ def parse(args_lst:list=[]):
             Execute some of the following:
             - import proof steps (import, --type step, --input, --output, --verbose <True, False>)
             - import allDifferent steps (import, --type allDifferent, --input, --output, --verbose <True, False>)
-            - import link steps to proof (import, --type forProof, --input, --output, --verbose <True, False>)
+            - import links of steps to proofs (import, --type forProof, --input, --output, --verbose <True, False>)
+            - import dependencies of steps (import, --type dependencies, --input, --output, --verbose <True, False>)
             --------------
             """),
         formatter_class=argparse.RawDescriptionHelpFormatter,

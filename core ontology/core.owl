@@ -21,11 +21,9 @@
 <http://www.foom.com/core/domainRelations> rdf:type owl:ObjectProperty .
 
 
-###  http://www.foom.com/core/hasAntencedent
-<http://www.foom.com/core/hasAntencedent> rdf:type owl:ObjectProperty ;
-                                          rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
-                                          rdfs:domain <http://www.foom.com/core/Proof_step> ;
-                                          rdfs:range <http://www.foom.com/core/Proof_step> .
+###  http://www.foom.com/core/hasAntecedent
+<http://www.foom.com/core/hasAntecedent> rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> .
 
 
 ###  http://www.foom.com/core/inProof
