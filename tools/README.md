@@ -6,13 +6,16 @@ This folder contains scripts to facilitate the management of the ontology. Run t
 
 
 For help running the script type 
+```
     $ python main.py -h
+```
 in the terminal. The terminal will display the following message:
+```
     Execute some of the following:
                 - import proof steps (import, --type step, --input, --output, --verbose <True, False>)
                 - import allDifferent steps (import, --type allDifferent, --input, --output, --verbose <True, False>)
                 - import link steps to proof (import, --type forProof, --input, --output, --verbose <True, False>)
-
+```
 
 ##### Import proof steps
 1. Put the input file in the input folder. The input file should be a .txt file. It should contain exactly four resources in each line. For example, the following is an acceptable line:
