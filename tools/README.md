@@ -17,6 +17,7 @@ in the terminal. The terminal will display the following message:
                 - import link steps to proof (import, --type forProof, --input, --output, --verbose <True, False>)
 ```
 
+---
 ### Import proof steps
 1. Put the input file in the input folder. The input file should be a .txt file. It should contain exactly four resources in each line. For example, the following is an acceptable line:
 ```
@@ -36,7 +37,8 @@ The script interprets the line above as saying the following:
 ```
     $ python main.py import --type step --input <filename> --output <filename>
 ```
-   
+
+---
 ### Declare given individuals all different
 1. Put the input file in the input folder. The input file should be a .txt file. It should contain exactly one resources in each line. For example, the following is an acceptable line:
 ```
@@ -57,6 +59,7 @@ The script interprets the line above as saying the following:
     $ python main.py import --type step --input <filename> --output <filename>
 ```
 
+---
 #### Link steps to proofs
 1. Put the input file in the input folder. The input file should be a .txt file. It should contain exactly two resources in each line. For example, the following is an acceptable line:
 ```
