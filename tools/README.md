@@ -1,4 +1,4 @@
-### Summary
+## Summary
 This folder contains scripts to facilitate the management of the ontology. Run the main.py file to execute one of the following operations:
 - import proof steps;
 - declare that given individiduals are all pairwise different;
@@ -17,7 +17,7 @@ in the terminal. The terminal will display the following message:
                 - import link steps to proof (import, --type forProof, --input, --output, --verbose <True, False>)
 ```
 
-##### Import proof steps
+#### Import proof steps
 1. Put the input file in the input folder. The input file should be a .txt file. It should contain exactly four resources in each line. For example, the following is an acceptable line:
 ```
     euclid:step1 euclid:triangle_ABC rdf:type euclid:Triangle
@@ -37,7 +37,7 @@ The script interprets the line above as saying the following:
     $ python main.py import --type step --input <filename> --output <filename>
 ```
    
-#### Declare given individuals all different
+### Declare given individuals all different
 1. Put the input file in the input folder. The input file should be a .txt file. It should contain exactly one resources in each line. For example, the following is an acceptable line:
 ```
     euclid:step1
@@ -57,7 +57,7 @@ The script interprets the line above as saying the following:
     $ python main.py import --type step --input <filename> --output <filename>
 ```
 
-##### Link steps to proofs
+#### Link steps to proofs
 1. Put the input file in the input folder. The input file should be a .txt file. It should contain exactly two resources in each line. For example, the following is an acceptable line:
 ```
     euclid:step1 euclid:proof_Euclid
