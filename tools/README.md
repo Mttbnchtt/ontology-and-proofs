@@ -17,7 +17,7 @@ in the terminal. The terminal will display the following message:
                 - import link steps to proof (import, --type forProof, --input, --output, --verbose <True, False>)
 ```
 
-#### Import proof steps
+### Import proof steps
 1. Put the input file in the input folder. The input file should be a .txt file. It should contain exactly four resources in each line. For example, the following is an acceptable line:
 ```
     euclid:step1 euclid:triangle_ABC rdf:type euclid:Triangle
