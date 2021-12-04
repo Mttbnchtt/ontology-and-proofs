@@ -41,11 +41,13 @@ The script interprets the line above as saying the following:
 1. Put the input file in the input folder. The input file should be a .txt file. It should contain exactly one resources in each line. For example, the following is an acceptable line:
 ```
     euclid:step1
+    euclid:step2
 ```
 The script interprets the line above as saying the following:
 ```
     [ a owl:AllDifferent ;
         owl:distinctMembers ( euclid:step1
+        euclid:step2
         )
         ] .
 ```
