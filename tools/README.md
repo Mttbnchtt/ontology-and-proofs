@@ -12,9 +12,10 @@ For help running the script type
 in the terminal. The terminal will display the following message:
 ```
     Execute some of the following:
-                - import proof steps (import, --type step, --input, --output, --verbose <True, False>)
-                - import allDifferent steps (import, --type allDifferent, --input, --output, --verbose <True, False>)
-                - import link steps to proof (import, --type forProof, --input, --output, --verbose <True, False>)
+            - import proof steps (import, --type step, --input, --output, --verbose <True, False>)
+            - import allDifferent steps (import, --type allDifferent, --input, --output, --verbose <True, False>)
+            - import links of steps to proofs (import, --type forProof, --input, --output, --verbose <True, False>)
+            - import dependencies of steps (import, --type dependencies, --input, --output, --verbose <True, False>)
 ```
 
 ---
@@ -74,3 +75,20 @@ The script interprets the line above as saying the following:
 ```
     $ python main.py import --type forProof --input <filename> --output <filename>
 ```
+
+---
+### Import dependencies of steps
+1. Put the input file in the input folder. The input file should be a .txt file. It should contain exactly two resources in each line. For example, the following is an acceptable line:
+```
+    euclid:step2 euclid:step1
+```
+The script interprets the line above as saying the following:
+```
+    euclid:step2 core:hasAntecedent euclid:step1 .
+```
+2. Put the output file in the output folder. The output file ought to be an .rdf or .owl file. The script will open the file and append the above triples at the bottom of the file.
+3. Run 
+```
+    $ python main.py import --type dependencies --input <filename> --output <filename>
+```
+
