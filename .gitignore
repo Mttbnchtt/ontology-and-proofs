@@ -6,8 +6,12 @@
 # **README.md
 # **/README.md
 
+# notes
+** notes.txt
+** /notes.txt
+
 # input and output folders
-**/input/*
+# **/input/*
 **/output/*
 
 # pycache folders

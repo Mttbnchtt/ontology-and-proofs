@@ -76,6 +76,20 @@ def different(input:str="",
     with open(output, "a") as ontology:
         ontology.write(message)
 
+def individual(input:str="",
+    output:str="",
+    verbose:bool=False):
+    message:str = """ 
+# added UTC date and time {datetime.datetime.utcnow()}
+# input: link step to proof {row.strip()}
+{lst[0]} rdf:type owl:NamedIndividual, {lst[1]} .
+            """
+    read_write(input=input, 
+        output=output, 
+        message=message, 
+        verbose=verbose)
+
+
 def for_proof(input:str="",
     output:str="",
     verbose:bool=False):
@@ -113,6 +127,8 @@ def main(args:argparse.Namespace,
     verbose = True if args.verbose in {True, ""} else False
     if args.type == "allDifferent":
         different(input=args.input, output=args.output, verbose=verbose)
+    if args.type == "individual":
+        individual(input=args.input, output=args.output, verbose=verbose)
     elif args.type == "step":
         step(input=args.input, output=args.output, verbose=verbose)
     elif args.type == "dependencies":
