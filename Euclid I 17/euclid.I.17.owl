@@ -3,8 +3,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix core: <http://www.foom.com/core/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix core: <http://www.foom.com/core/> .
 @prefix euclid: <http://www.foom.com/euclid.I.17/> .
 @base <http://www.foom.com/euclid.I.17> .
 
@@ -15,362 +15,1041 @@
 #    Object Properties
 #################################################################
 
-###  http://www.foom.com/euclid.I.17/LyingOn
-euclid:LyingOn rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf core:domainRelations ;
-               rdfs:domain core:Object ;
-               rdfs:range core:Object .
-
-
 ###  http://www.foom.com/euclid.I.17/additionRelations
-euclid:additionRelations rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf core:domainRelations .
+<http://www.foom.com/euclid.I.17/additionRelations> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> .
 
 
 ###  http://www.foom.com/euclid.I.17/doesNotLieOn
-euclid:doesNotLieOn rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf euclid:LyingOn ;
-                    owl:propertyDisjointWith euclid:liesOn .
+<http://www.foom.com/euclid.I.17/doesNotLieOn> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/lyingOn> .
 
 
 ###  http://www.foom.com/euclid.I.17/equalMagnitude
-euclid:equalMagnitude rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf euclid:orderRelations .
+<http://www.foom.com/euclid.I.17/equalMagnitude> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/orderRelations> .
 
 
 ###  http://www.foom.com/euclid.I.17/fullyDoesNotLieOn
-euclid:fullyDoesNotLieOn rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf euclid:doesNotLieOn ;
-                         owl:propertyChainAxiom ( euclid:liesOn
-                                                  euclid:fullyDoesNotLieOn
-                                                ) .
+<http://www.foom.com/euclid.I.17/fullyDoesNotLieOn> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/doesNotLieOn> .
 
 
 ###  http://www.foom.com/euclid.I.17/isAdjacentTo
-euclid:isAdjacentTo rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf euclid:positionRelations .
+<http://www.foom.com/euclid.I.17/isAdjacentTo> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/positionRelations> .
 
 
 ###  http://www.foom.com/euclid.I.17/isAngleOf
-euclid:isAngleOf rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf core:domainRelations ;
-                 rdfs:domain euclid:Angle ;
-                 rdfs:range euclid:Triangle .
+<http://www.foom.com/euclid.I.17/isAngleOf> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                            rdfs:domain <http://www.foom.com/euclid.I.17/Angle> ;
+                                            rdfs:range <http://www.foom.com/core/Object> .
 
 
 ###  http://www.foom.com/euclid.I.17/isExternalAngleOf
-euclid:isExternalAngleOf rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf euclid:isAngleOf ;
-                         owl:propertyDisjointWith euclid:isInternalAngleOf .
+<http://www.foom.com/euclid.I.17/isExternalAngleOf> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/isAngleOf> .
 
 
 ###  http://www.foom.com/euclid.I.17/isInternalAngleOf
-euclid:isInternalAngleOf rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf euclid:isAngleOf .
+<http://www.foom.com/euclid.I.17/isInternalAngleOf> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/isAngleOf> .
 
 
 ###  http://www.foom.com/euclid.I.17/isOppositeTo
-euclid:isOppositeTo rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf euclid:positionRelations .
+<http://www.foom.com/euclid.I.17/isOppositeTo> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/positionRelations> .
 
 
 ###  http://www.foom.com/euclid.I.17/isSideOf
-euclid:isSideOf rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf euclid:liesOn ;
-                rdfs:domain euclid:Segment .
+<http://www.foom.com/euclid.I.17/isSideOf> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/liesOn> .
 
 
 ###  http://www.foom.com/euclid.I.17/liesOn
-euclid:liesOn rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf euclid:LyingOn ;
-              rdfs:range core:Object .
+<http://www.foom.com/euclid.I.17/liesOn> rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/lyingOn> .
+
+
+###  http://www.foom.com/euclid.I.17/lyingOn
+<http://www.foom.com/euclid.I.17/lyingOn> rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                          rdfs:domain <http://www.foom.com/core/Object> ;
+                                          rdfs:range <http://www.foom.com/core/Object> .
 
 
 ###  http://www.foom.com/euclid.I.17/orderRelations
-euclid:orderRelations rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf core:domainRelations .
+<http://www.foom.com/euclid.I.17/orderRelations> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> .
 
 
 ###  http://www.foom.com/euclid.I.17/positionRelations
-euclid:positionRelations rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf core:domainRelations ;
-                         rdfs:domain core:Object ;
-                         rdfs:range core:Object .
+<http://www.foom.com/euclid.I.17/positionRelations> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                                    rdfs:domain <http://www.foom.com/core/Object> ;
+                                                    rdfs:range <http://www.foom.com/core/Object> .
 
 
 ###  http://www.foom.com/euclid.I.17/producedTo
-euclid:producedTo rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf euclid:liesOn ;
-                  rdfs:domain euclid:Segment ;
-                  rdfs:range euclid:Segment .
+<http://www.foom.com/euclid.I.17/producedTo> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/liesOn> ;
+                                             rdfs:domain <http://www.foom.com/euclid.I.17/Segment> ;
+                                             rdfs:range <http://www.foom.com/euclid.I.17/Segment> .
 
 
 ###  http://www.foom.com/euclid.I.17/smallerMagnitude
-euclid:smallerMagnitude rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf euclid:orderRelations .
+<http://www.foom.com/euclid.I.17/smallerMagnitude> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/orderRelations> .
 
 
 ###  http://www.foom.com/euclid.I.17/sumOf
-euclid:sumOf rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf euclid:additionRelations ;
-             rdfs:domain core:Object ;
-             rdfs:range core:Object .
+<http://www.foom.com/euclid.I.17/sumOf> rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/additionRelations> ;
+                                        rdfs:domain <http://www.foom.com/core/Object> ;
+                                        rdfs:range <http://www.foom.com/core/Object> .
 
 
 ###  http://www.foom.com/euclid.I.17/summand1
-euclid:summand1 rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf euclid:additionRelations .
+<http://www.foom.com/euclid.I.17/summand1> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/additionRelations> .
 
 
 ###  http://www.foom.com/euclid.I.17/summand2
-euclid:summand2 rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf euclid:additionRelations .
+<http://www.foom.com/euclid.I.17/summand2> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf <http://www.foom.com/euclid.I.17/additionRelations> .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://www.foom.com/core/Proof
-core:Proof owl:disjointWith [ rdf:type owl:Class ;
-                              owl:unionOf ( core:Claim
-                                            core:Object
-                                            core:Procedure
-                                            core:Proof_step
-                                          )
-                            ] .
-
-
 ###  http://www.foom.com/euclid.I.17/Angle
-euclid:Angle rdf:type owl:Class ;
-             rdfs:subClassOf core:Object ;
-             owl:disjointWith [ rdf:type owl:Class ;
-                                owl:unionOf ( euclid:Point
-                                              euclid:Segment
-                                              euclid:Triangle
-                                            )
-                              ] .
+<http://www.foom.com/euclid.I.17/Angle> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.foom.com/core/Object> .
 
 
 ###  http://www.foom.com/euclid.I.17/Point
-euclid:Point rdf:type owl:Class ;
-             rdfs:subClassOf core:Object ;
-             owl:disjointWith [ rdf:type owl:Class ;
-                                owl:unionOf ( euclid:Angle
-                                              euclid:Segment
-                                              euclid:Triangle
-                                            )
-                              ] .
+<http://www.foom.com/euclid.I.17/Point> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.foom.com/core/Object> .
 
 
 ###  http://www.foom.com/euclid.I.17/Segment
-euclid:Segment rdf:type owl:Class ;
-               rdfs:subClassOf core:Object ;
-               owl:disjointWith [ rdf:type owl:Class ;
-                                  owl:unionOf ( euclid:Angle
-                                                euclid:Point
-                                                euclid:Triangle
-                                              )
-                                ] .
+<http://www.foom.com/euclid.I.17/Segment> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://www.foom.com/core/Object> .
 
 
 ###  http://www.foom.com/euclid.I.17/Triangle
-euclid:Triangle rdf:type owl:Class ;
-                rdfs:subClassOf core:Object .
+<http://www.foom.com/euclid.I.17/Triangle> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://www.foom.com/core/Object> .
 
 
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://www.foom.com/euclid.I.17/angle_ABC
-euclid:angle_ABC rdf:type owl:NamedIndividual ,
-                          euclid:Angle .
+###  http://www.foom.com/euclid.I.17/angle_ABC.e
+<http://www.foom.com/euclid.I.17/angle_ABC.e> rdf:type owl:NamedIndividual ,
+                                                       <http://www.foom.com/euclid.I.17/Angle> .
 
 
-###  http://www.foom.com/euclid.I.17/angle_ACB
-euclid:angle_ACB rdf:type owl:NamedIndividual ,
-                          euclid:Angle .
+###  http://www.foom.com/euclid.I.17/angle_ACB.e
+<http://www.foom.com/euclid.I.17/angle_ACB.e> rdf:type owl:NamedIndividual ,
+                                                       <http://www.foom.com/euclid.I.17/Angle> .
 
 
-###  http://www.foom.com/euclid.I.17/angle_ACD
-euclid:angle_ACD rdf:type owl:NamedIndividual ,
-                          euclid:Angle .
+###  http://www.foom.com/euclid.I.17/angle_ACD.e
+<http://www.foom.com/euclid.I.17/angle_ACD.e> rdf:type owl:NamedIndividual ,
+                                                       <http://www.foom.com/euclid.I.17/Angle> .
 
 
-###  http://www.foom.com/euclid.I.17/point_D
-euclid:point_D rdf:type owl:NamedIndividual ,
-                        euclid:Point .
+###  http://www.foom.com/euclid.I.17/euclid.I.13
+<http://www.foom.com/euclid.I.17/euclid.I.13> rdf:type owl:NamedIndividual ,
+                                                       <http://www.foom.com/core/Claim> .
+
+
+###  http://www.foom.com/euclid.I.17/euclid.I.16
+<http://www.foom.com/euclid.I.17/euclid.I.16> rdf:type owl:NamedIndividual ,
+                                                       <http://www.foom.com/core/Claim> .
+
+
+###  http://www.foom.com/euclid.I.17/point_D.e
+<http://www.foom.com/euclid.I.17/point_D.e> rdf:type owl:NamedIndividual ,
+                                                     <http://www.foom.com/euclid.I.17/Point> .
+
+
+###  http://www.foom.com/euclid.I.17/postulate4
+<http://www.foom.com/euclid.I.17/postulate4> rdf:type owl:NamedIndividual ,
+                                                      <http://www.foom.com/core/Claim> .
 
 
 ###  http://www.foom.com/euclid.I.17/proof_Euclid
-euclid:proof_Euclid rdf:type owl:NamedIndividual ,
-                             core:Proof .
+<http://www.foom.com/euclid.I.17/proof_Euclid> rdf:type owl:NamedIndividual ,
+                                                        <http://www.foom.com/core/Proof> .
 
 
 ###  http://www.foom.com/euclid.I.17/proof_Proclus
-euclid:proof_Proclus rdf:type owl:NamedIndividual ,
-                              core:Proof .
+<http://www.foom.com/euclid.I.17/proof_Proclus> rdf:type owl:NamedIndividual ,
+                                                         <http://www.foom.com/core/Proof> .
 
 
 ###  http://www.foom.com/euclid.I.17/rightAngle
-euclid:rightAngle rdf:type owl:NamedIndividual ,
-                           euclid:Angle .
+<http://www.foom.com/euclid.I.17/rightAngle> rdf:type owl:NamedIndividual ,
+                                                      <http://www.foom.com/euclid.I.17/Angle> .
 
 
-###  http://www.foom.com/euclid.I.17/segment_BC
-euclid:segment_BC rdf:type owl:NamedIndividual ,
-                           euclid:Segment ;
-                  euclid:isSideOf euclid:triangle_ABC ;
-                  euclid:producedTo euclid:segment_BD .
+###  http://www.foom.com/euclid.I.17/segment_BC.e
+<http://www.foom.com/euclid.I.17/segment_BC.e> rdf:type owl:NamedIndividual ,
+                                                        <http://www.foom.com/euclid.I.17/Segment> .
 
 
-###  http://www.foom.com/euclid.I.17/segment_BD
-euclid:segment_BD rdf:type owl:NamedIndividual ,
-                           euclid:Segment .
+###  http://www.foom.com/euclid.I.17/segment_BD.e
+<http://www.foom.com/euclid.I.17/segment_BD.e> rdf:type owl:NamedIndividual ,
+                                                        <http://www.foom.com/euclid.I.17/Segment> .
 
 
-###  http://www.foom.com/euclid.I.17/sum_aACB_aABC
-euclid:sum_aACB_aABC rdf:type owl:NamedIndividual ,
-                              euclid:Angle ;
-                     euclid:sumOf _:genid20 .
-
-_:genid20 euclid:summand1 euclid:angle_ACB ;
-           euclid:summand2 euclid:angle_ABC .
+###  http://www.foom.com/euclid.I.17/sum_aACB.e_aABC.e
+<http://www.foom.com/euclid.I.17/sum_aACB.e_aABC.e> rdf:type owl:NamedIndividual ,
+                                                             <http://www.foom.com/euclid.I.17/Angle> .
 
 
-###  http://www.foom.com/euclid.I.17/sum_aACB_aACD
-euclid:sum_aACB_aACD rdf:type owl:NamedIndividual ,
-                              euclid:Angle ;
-                     euclid:sumOf _:genid21 .
-
-_:genid21 euclid:summand1 euclid:angle_ACB ;
-           euclid:summand2 euclid:angle_ACD .
+###  http://www.foom.com/euclid.I.17/sum_aACB.e_aACD.e
+<http://www.foom.com/euclid.I.17/sum_aACB.e_aACD.e> rdf:type owl:NamedIndividual ,
+                                                             <http://www.foom.com/euclid.I.17/Angle> .
 
 
 ###  http://www.foom.com/euclid.I.17/sum_rightAngle_rightAngle
-euclid:sum_rightAngle_rightAngle rdf:type owl:NamedIndividual ,
-                                          euclid:Angle ;
-                                 euclid:sumOf _:genid22 .
-
-_:genid22 euclid:summand1 euclid:rightAngle ;
-           euclid:summand2 euclid:rightAngle .
+<http://www.foom.com/euclid.I.17/sum_rightAngle_rightAngle> rdf:type owl:NamedIndividual ,
+                                                                     <http://www.foom.com/euclid.I.17/Angle> .
 
 
-###  http://www.foom.com/euclid.I.17/triangle_ABC
-euclid:triangle_ABC rdf:type owl:NamedIndividual ,
-                             euclid:Triangle .
+###  http://www.foom.com/euclid.I.17/triangle_ABC.e
+<http://www.foom.com/euclid.I.17/triangle_ABC.e> rdf:type owl:NamedIndividual ,
+                                                          <http://www.foom.com/euclid.I.17/Triangle> .
 
 
 #################################################################
 #    General axioms
 #################################################################
 
-[ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( euclid:proof_Euclid
-                        euclid:proof_Proclus
-                      )
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.foom.com/euclid.I.17/Angle>
+                <http://www.foom.com/euclid.I.17/Point>
+                <http://www.foom.com/euclid.I.17/Segment>
+                <http://www.foom.com/euclid.I.17/Triangle>
+              )
 ] .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
-  
-# added UTC date and time 2021-11-25 21:45:08.692476
-# input: euclid:pEucl_s1 euclid:triangle_ABC rdf:type euclid:Triangle
-euclid:pEucl_s1 a owl:NamedIndividual , 
+ 
+
+#################################################################
+#    Steps Euclid: reification of statements
+#################################################################
+
+# added UTC date and time 2021-12-09 19:39:58.516252
+# input: euclid:step1.e euclid:triangle_ABC.e rdf:type euclid:Triangle
+euclid:step1.e a owl:NamedIndividual , 
          core:Proof_step ;
          core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject euclid:triangle_ABC ;
+                                rdf:subject euclid:triangle_ABC.e ;
+                                rdf:predicate rdf:type ;
+                                rdf:object euclid:Triangle ] . 
+# added UTC date and time 2021-12-09 19:42:39.445397
+# input: euclid:step1.e euclid:triangle_ABC.e rdf:type euclid:Triangle
+euclid:step1.e a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:triangle_ABC.e ;
                                 rdf:predicate rdf:type ;
                                 rdf:object euclid:Triangle ] .
          
-# added UTC date and time 2021-11-25 21:45:08.693915
-# input: euclid:pEucl_s2 euclid:segment_BC euclid:producedTo euclid:segment_BD
-euclid:pEucl_s2 a owl:NamedIndividual , 
+# added UTC date and time 2021-12-09 19:42:39.445875
+# input: euclid:step2.e euclid:segment_BC.e euclid:producedTo euclid:segment_BD.e
+euclid:step2.e a owl:NamedIndividual , 
          core:Proof_step ;
          core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject euclid:segment_BC ;
+                                rdf:subject euclid:segment_BC.e ;
                                 rdf:predicate euclid:producedTo ;
-                                rdf:object euclid:segment_BD ] .
+                                rdf:object euclid:segment_BD.e ] .
          
-# added UTC date and time 2021-11-25 21:45:08.693987
-# input: euclid:pEucl_s3 euclid:angle_ACD euclid:isExternalAngleOf euclid:triangle_ABC
-euclid:pEucl_s3 a owl:NamedIndividual , 
+# added UTC date and time 2021-12-09 19:42:39.445914
+# input: euclid:step3.e euclid:angle_ACD.e euclid:isExternalAngleOf euclid:triangle_ABC.e
+euclid:step3.e a owl:NamedIndividual , 
          core:Proof_step ;
          core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject euclid:angle_ACD ;
+                                rdf:subject euclid:angle_ACD.e ;
                                 rdf:predicate euclid:isExternalAngleOf ;
-                                rdf:object euclid:triangle_ABC ] .
+                                rdf:object euclid:triangle_ABC.e ] .
          
-# added UTC date and time 2021-11-25 21:45:08.694054
-# input: euclid:pEucl_s4 euclid:angle_ABC euclid:isInternalAngleOf euclid:triangle_ABC
-euclid:pEucl_s4 a owl:NamedIndividual , 
+# added UTC date and time 2021-12-09 19:42:39.445950
+# input: euclid:step4.e euclid:angle_ABC.e euclid:isInternalAngleOf euclid:triangle_ABC.e
+euclid:step4.e a owl:NamedIndividual , 
          core:Proof_step ;
          core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject euclid:angle_ABC ;
+                                rdf:subject euclid:angle_ABC.e ;
                                 rdf:predicate euclid:isInternalAngleOf ;
-                                rdf:object euclid:triangle_ABC ] .
+                                rdf:object euclid:triangle_ABC.e ] .
          
-# added UTC date and time 2021-11-25 21:45:08.694118
-# input: euclid:pEucl_s5 euclid:angle_ABC euclid:isOppositeTo euclid:angle_ACD
-euclid:pEucl_s5 a owl:NamedIndividual , 
+# added UTC date and time 2021-12-09 19:42:39.445985
+# input: euclid:step5.e euclid:angle_ABC.e euclid:isOppositeTo euclid:angle_ACD.e
+euclid:step5.e a owl:NamedIndividual , 
          core:Proof_step ;
          core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject euclid:angle_ABC ;
+                                rdf:subject euclid:angle_ABC.e ;
                                 rdf:predicate euclid:isOppositeTo ;
-                                rdf:object euclid:angle_ACD ] .
+                                rdf:object euclid:angle_ACD.e ] .
          
-# added UTC date and time 2021-11-25 21:45:08.694182
-# input: euclid:pEucl_s6 euclid:angle_ABC euclid:smallerMagnitude euclid:angle_ACD
-euclid:pEucl_s6 a owl:NamedIndividual , 
+# added UTC date and time 2021-12-09 19:42:39.446020
+# input: euclid:step6.e euclid:angle_ABC.e euclid:smallerMagnitude euclid:angle_ACD.e
+euclid:step6.e a owl:NamedIndividual , 
          core:Proof_step ;
          core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject euclid:angle_ABC ;
+                                rdf:subject euclid:angle_ABC.e ;
                                 rdf:predicate euclid:smallerMagnitude ;
-                                rdf:object euclid:angle_ACD ] .
+                                rdf:object euclid:angle_ACD.e ] .
          
-# added UTC date and time 2021-11-25 21:45:08.694245
-# input: euclid:pEucl_s7 euclid:angle_ACB euclid:isInternalAngleOf euclid:triangle_ABC
-euclid:pEucl_s7 a owl:NamedIndividual , 
+# added UTC date and time 2021-12-09 19:42:39.446055
+# input: euclid:step7.e euclid:angle_ACB.e euclid:isInternalAngleOf euclid:triangle_ABC.e
+euclid:step7.e a owl:NamedIndividual , 
          core:Proof_step ;
          core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject euclid:angle_ACB ;
+                                rdf:subject euclid:angle_ACB.e ;
                                 rdf:predicate euclid:isInternalAngleOf ;
-                                rdf:object euclid:triangle_ABC ] .
+                                rdf:object euclid:triangle_ABC.e ] .
          
-# added UTC date and time 2021-11-25 21:45:08.694311
-# input: euclid:pEucl_s8 euclid:angle_ACB euclid:isAdjacentTo euclid:angle_ACD
-euclid:pEucl_s8 a owl:NamedIndividual , 
+# added UTC date and time 2021-12-09 19:42:39.446089
+# input: euclid:step8.e euclid:angle_ACB.e euclid:isAdjacentTo euclid:angle_ACD.e
+euclid:step8.e a owl:NamedIndividual , 
          core:Proof_step ;
          core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject euclid:angle_ACB ;
+                                rdf:subject euclid:angle_ACB.e ;
                                 rdf:predicate euclid:isAdjacentTo ;
-                                rdf:object euclid:angle_ACD ] .
+                                rdf:object euclid:angle_ACD.e ] .
          
-# added UTC date and time 2021-11-25 21:45:08.694373
-# input: euclid:pEucl_s9 euclid:sum_aACB_aABC euclid:smallerMagnitude euclid:sum_aACB_aACD
-euclid:pEucl_s9 a owl:NamedIndividual , 
+# added UTC date and time 2021-12-09 19:42:39.446123
+# input: euclid:step9.e euclid:sum_aACB_aABC.e euclid:smallerMagnitude euclid:sum_aACB_aACD.e
+euclid:step9.e a owl:NamedIndividual , 
          core:Proof_step ;
          core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject euclid:sum_aACB_aABC ;
+                                rdf:subject euclid:sum_aACB_aABC.e ;
                                 rdf:predicate euclid:smallerMagnitude ;
-                                rdf:object euclid:sum_aACB_aACD ] .
+                                rdf:object euclid:sum_aACB_aACD.e ] .
          
-# added UTC date and time 2021-11-25 21:45:08.694464
-# input: euclid:pEucl_s10 euclid:sum_aACB_aACD euclid:equalMagnitude euclid:sum_rightAngle_rightAngle
-euclid:pEucl_s10 a owl:NamedIndividual , 
+# added UTC date and time 2021-12-09 19:42:39.446158
+# input: euclid:step10.e euclid:sum_aACB_aACD.e euclid:equalMagnitude euclid:sum_rightAngle_rightAngle
+euclid:step10.e a owl:NamedIndividual , 
          core:Proof_step ;
          core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject euclid:sum_aACB_aACD ;
+                                rdf:subject euclid:sum_aACB_aACD.e ;
                                 rdf:predicate euclid:equalMagnitude ;
                                 rdf:object euclid:sum_rightAngle_rightAngle ] .
          
-# added UTC date and time 2021-11-25 21:45:08.694528
-# input: euclid:pEucl_s11 euclid:sum_aACB_aACB euclid:smallerMagnitude euclid:sum_rightAngle_rightAngle
-euclid:pEucl_s11 a owl:NamedIndividual , 
+# added UTC date and time 2021-12-09 19:42:39.446192
+# input: euclid:step11.e euclid:sum_aACB_aACB.e euclid:smallerMagnitude euclid:sum_rightAngle_rightAngle
+euclid:step11.e a owl:NamedIndividual , 
          core:Proof_step ;
          core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject euclid:sum_aACB_aACB ;
+                                rdf:subject euclid:sum_aACB_aACB.e ;
                                 rdf:predicate euclid:smallerMagnitude ;
                                 rdf:object euclid:sum_rightAngle_rightAngle ] .
+
+                              
+#################################################################
+#    Individuals: all different
+#################################################################
+
+# added UTC date and time 2021-12-09 19:43:54.196874
+# input: list all different individuals euclid:postulate4
+[ a owl:AllDifferent ;
+  owl:distinctMembers ( euclid:step1.e
+  euclid:step2.e
+  euclid:step3.e
+  euclid:step4.e
+  euclid:step5.e
+  euclid:step6.e
+  euclid:step7.e
+  euclid:step8.e
+  euclid:step9.e
+  euclid:step10.e
+  euclid:step11.e
+  euclid:euclid.I.16
+  euclid:euclid.I.13
+  euclid:postulate4 
+  euclid:triangle_ABC.p 
+  euclid:point_D.p 
+  euclid:segment_BC.p 
+  euclid:point_B.p 
+  euclid:point_C.p 
+  euclid:point_A.p 
+  euclid:triangle_ABD.p 
+  euclid:triangle_ADC.p 
+  euclid:segment_BD.p 
+  euclid:angle_ADC.p 
+  euclid:angle_ABD.p 
+  euclid:segment_DC.p 
+  euclid:angle_ACD.p 
+  euclid:angle_ADB.p 
+  euclid:sum_aADB.p_aADC.p 
+  euclid:sum_aABC.p_aACB.p 
+ )
+ ] .
+
+
+ #################################################################
+ #    Steps Euclid: dependencies
+ #################################################################
+
+# added UTC date and time 2021-12-09 19:44:23.939922
+# input: dependency euclid:step2.e euclid:step1.e
+euclid:step2.e core:hasAntecedent euclid:step1.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940382
+# input: dependency euclid:step3.e euclid:step1.e
+euclid:step3.e core:hasAntecedent euclid:step1.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940424
+# input: dependency euclid:step3.e euclid:step2.e
+euclid:step3.e core:hasAntecedent euclid:step2.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940462
+# input: dependency euclid:step4.e euclid:step1.e
+euclid:step4.e core:hasAntecedent euclid:step1.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940499
+# input: dependency euclid:step5.e euclid:step1.e
+euclid:step5.e core:hasAntecedent euclid:step1.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940536
+# input: dependency euclid:step5.e euclid:step2.e
+euclid:step5.e core:hasAntecedent euclid:step2.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940571
+# input: dependency euclid:step6.e euclid:step3.e
+euclid:step6.e core:hasAntecedent euclid:step3.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940607
+# input: dependency euclid:step6.e euclid:step4.e
+euclid:step6.e core:hasAntecedent euclid:step4.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940643
+# input: dependency euclid:step6.e euclid:step5.e
+euclid:step6.e core:hasAntecedent euclid:step5.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940678
+# input: dependency euclid:step6.e euclid:euclid.I.16
+euclid:step6.e core:hasAntecedent euclid:euclid.I.16 .
+        
+# added UTC date and time 2021-12-09 19:44:23.940714
+# input: dependency euclid:step8.e euclid:step1.e
+euclid:step8.e core:hasAntecedent euclid:step1.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940750
+# input: dependency euclid:step8.e euclid:step2.e
+euclid:step8.e core:hasAntecedent euclid:step2.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940786
+# input: dependency euclid:step7.e euclid:step1.e
+euclid:step7.e core:hasAntecedent euclid:step1.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940821
+# input: dependency euclid:step9.e euclid:step6.e
+euclid:step9.e core:hasAntecedent euclid:step6.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940856
+# input: dependency euclid:step9.e euclid:step8.e
+euclid:step9.e core:hasAntecedent euclid:step8.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940891
+# input: dependency euclid:step9.e euclid:step7.e
+euclid:step9.e core:hasAntecedent euclid:step7.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940927
+# input: dependency euclid:step9.e euclid:postulate4
+euclid:step9.e core:hasAntecedent euclid:postulate4 .
+        
+# added UTC date and time 2021-12-09 19:44:23.940962
+# input: dependency euclid:step10.e euclid:step1.e
+euclid:step10.e core:hasAntecedent euclid:step1.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.940998
+# input: dependency euclid:step10.e euclid:euclid.I.13
+euclid:step10.e core:hasAntecedent euclid:euclid.I.13 .
+        
+# added UTC date and time 2021-12-09 19:44:23.941033
+# input: dependency euclid:step11.e euclid:step9.e
+euclid:step11.e core:hasAntecedent euclid:step9.e .
+        
+# added UTC date and time 2021-12-09 19:44:23.941069
+# input: dependency euclid:step11.e euclid:step10.e
+euclid:step11.e core:hasAntecedent euclid:step10.e .
+         
+
+#################################################################
+#    Steps Euclid: in proof relation
+#################################################################
+
+# added UTC date and time 2021-12-09 19:44:45.958795
+# input: link step to proof euclid:step1.e euclid:proof_Euclid
+euclid:step1.e core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959329
+# input: link step to proof euclid:step2.e euclid:proof_Euclid
+euclid:step2.e core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959371
+# input: link step to proof euclid:step3.e euclid:proof_Euclid
+euclid:step3.e core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959410
+# input: link step to proof euclid:step4.e euclid:proof_Euclid
+euclid:step4.e core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959447
+# input: link step to proof euclid:step5.e euclid:proof_Euclid
+euclid:step5.e core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959483
+# input: link step to proof euclid:step6.e euclid:proof_Euclid
+euclid:step6.e core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959520
+# input: link step to proof euclid:step7.e euclid:proof_Euclid
+euclid:step7.e core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959556
+# input: link step to proof euclid:step8.e euclid:proof_Euclid
+euclid:step8.e core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959591
+# input: link step to proof euclid:step9.e euclid:proof_Euclid
+euclid:step9.e core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959627
+# input: link step to proof euclid:step10.e euclid:proof_Euclid
+euclid:step10.e core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959662
+# input: link step to proof euclid:step11.e euclid:proof_Euclid
+euclid:step11.e core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959698
+# input: link step to proof euclid:euclid.I.16 euclid:proof_Euclid
+euclid:euclid.I.16 core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959734
+# input: link step to proof euclid:euclid.I.13 euclid:proof_Euclid
+euclid:euclid.I.13 core:inProof euclid:proof_Euclid .
+             
+# added UTC date and time 2021-12-09 19:44:45.959769
+# input: link step to proof euclid:postulate4 euclid:proof_Euclid
+euclid:postulate4 core:inProof euclid:proof_Euclid .
+             
+
+#################################################################
+#    Individuals Proclus (added by script)
+#################################################################
+
+# added UTC date and time 2021-12-10 14:41:17.005222
+# input: link step to proof euclid:triangle_ABC.p euclid:Triangle
+euclid:triangle_ABC.p rdf:type owl:NamedIndividual, euclid:Triangle .
+             
+# added UTC date and time 2021-12-10 14:41:17.005661
+# input: link step to proof euclid:point_D.p euclid:Point
+euclid:point_D.p rdf:type owl:NamedIndividual, euclid:Point .
+             
+# added UTC date and time 2021-12-10 14:41:17.005692
+# input: link step to proof euclid:segment_BC.p euclid:Segment
+euclid:segment_BC.p rdf:type owl:NamedIndividual, euclid:Segment .
+             
+# added UTC date and time 2021-12-10 14:41:17.005717
+# input: link step to proof euclid:point_B.p euclid:Point
+euclid:point_B.p rdf:type owl:NamedIndividual, euclid:Point .
+             
+# added UTC date and time 2021-12-10 14:41:17.005741
+# input: link step to proof euclid:point_C.p euclid:Point
+euclid:point_C.p rdf:type owl:NamedIndividual, euclid:Point .
+             
+# added UTC date and time 2021-12-10 14:41:17.005763
+# input: link step to proof euclid:point_A.p euclid:Point
+euclid:point_A.p rdf:type owl:NamedIndividual, euclid:Point .
+             
+# added UTC date and time 2021-12-10 14:41:17.005786
+# input: link step to proof euclid:triangle_ABD.p euclid:Triangle
+euclid:triangle_ABD.p rdf:type owl:NamedIndividual, euclid:Triangle .
+             
+# added UTC date and time 2021-12-10 14:41:17.005809
+# input: link step to proof euclid:triangle_ADC.p euclid:Triangle
+euclid:triangle_ADC.p rdf:type owl:NamedIndividual, euclid:Triangle .
+             
+# added UTC date and time 2021-12-10 14:41:17.005831
+# input: link step to proof euclid:segment_BD.p euclid:Segment
+euclid:segment_BD.p rdf:type owl:NamedIndividual, euclid:Segment .
+             
+# added UTC date and time 2021-12-10 14:41:17.005853
+# input: link step to proof euclid:angle_ADC.p euclid:Angle
+euclid:angle_ADC.p rdf:type owl:NamedIndividual, euclid:Angle .
+             
+# added UTC date and time 2021-12-10 14:41:17.005875
+# input: link step to proof euclid:angle_ABD.p euclid:Angle
+euclid:angle_ABD.p rdf:type owl:NamedIndividual, euclid:Angle .
+             
+# added UTC date and time 2021-12-10 14:41:17.005897
+# input: link step to proof euclid:segment_DC.p euclid:Segment
+euclid:segment_DC.p rdf:type owl:NamedIndividual, euclid:Segment .
+             
+# added UTC date and time 2021-12-10 14:41:17.005919
+# input: link step to proof euclid:angle_ACD.p euclid:Angle
+euclid:angle_ACD.p rdf:type owl:NamedIndividual, euclid:Angle .
+             
+# added UTC date and time 2021-12-10 14:41:17.005941
+# input: link step to proof euclid:angle_ADB.p euclid:Angle
+euclid:angle_ADB.p rdf:type owl:NamedIndividual, euclid:Angle .
+             
+# added UTC date and time 2021-12-10 14:41:17.005963
+# input: link step to proof euclid:sum_aADB.p_aADC.p euclid:Angle
+euclid:sum_aADB.p_aADC.p rdf:type owl:NamedIndividual, euclid:Angle .
+             
+# added UTC date and time 2021-12-10 14:41:17.005985
+# input: link step to proof euclid:sum_aABC.p_aACB.p euclid:Angle
+euclid:sum_aABC.p_aACB.p rdf:type owl:NamedIndividual, euclid:Angle .
+             
+
+#################################################################
+#    Steps Proclus: reification of statements
+#################################################################
+
+# added UTC date and time 2021-12-10 15:32:54.684334
+# input: euclid:step1.p euclid:triangle_ABC.p rdf:type euclid:Triangle
+euclid:step1.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:triangle_ABC.p ;
+                                rdf:predicate rdf:type ;
+                                rdf:object euclid:Triangle ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685049
+# input: euclid:step2.p euclid:point_D.p euclid:liesOn euclid:segment_BC.p
+euclid:step2.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:point_D.p ;
+                                rdf:predicate euclid:liesOn ;
+                                rdf:object euclid:segment_BC.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685111
+# input: euclid:step3.p euclid:point_D.p owl:differentFrom euclid:point_B.p
+euclid:step3.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:point_D.p ;
+                                rdf:predicate owl:differentFrom ;
+                                rdf:object euclid:point_B.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685169
+# input: euclid:step4.p euclid:point_D.p owl:differentFrom euclid:point_C.p
+euclid:step4.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:point_D.p ;
+                                rdf:predicate owl:differentFrom ;
+                                rdf:object euclid:point_C.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685224
+# input: euclid:step5.p euclid:point_A.p euclid:joinedTo euclid:point_D.p
+euclid:step5.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:point_A.p ;
+                                rdf:predicate euclid:joinedTo ;
+                                rdf:object euclid:point_D.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685281
+# input: euclid:step6.p euclid:triangle_ABD.p rdf:type euclid:Triangle
+euclid:step6.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:triangle_ABD.p ;
+                                rdf:predicate rdf:type ;
+                                rdf:object euclid:Triangle ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685337
+# input: euclid:step7.p euclid:triangle_ADC.p rdf:type euclid:Triangle
+euclid:step7.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:triangle_ADC.p ;
+                                rdf:predicate rdf:type ;
+                                rdf:object euclid:Triangle ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685392
+# input: euclid:step8.p euclid:segment_BD.p euclid:extendedTo euclid:segment_BC.p
+euclid:step8.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:segment_BD.p ;
+                                rdf:predicate euclid:extendedTo ;
+                                rdf:object euclid:segment_BC.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685446
+# input: euclid:step9.p euclid:angle_ADC.p euclid:isExternalAngleOf euclid:triangle_ABD.p
+euclid:step9.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:angle_ADC.p ;
+                                rdf:predicate euclid:isExternalAngleOf ;
+                                rdf:object euclid:triangle_ABD.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685502
+# input: euclid:step10.p euclid:angle_ABD.p euclid:isInternalAngleOf euclid:triangle_ABD.p
+euclid:step10.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:angle_ABD.p ;
+                                rdf:predicate euclid:isInternalAngleOf ;
+                                rdf:object euclid:triangle_ABD.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685556
+# input: euclid:step11.p euclid:angle_ABD.p euclid:isOppositeTo euclid:angle_ADC.p
+euclid:step11.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:angle_ABD.p ;
+                                rdf:predicate euclid:isOppositeTo ;
+                                rdf:object euclid:angle_ADC.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685611
+# input: euclid:step12.p euclid:angle_ABD.p euclid:smallerMagnitude euclid:angle_ADC.p
+euclid:step12.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:angle_ABD.p ;
+                                rdf:predicate euclid:smallerMagnitude ;
+                                rdf:object euclid:angle_ADC.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685665
+# input: euclid:step13.p euclid:segment_DC.p euclid:extendedTo euclid:segment_BC.p
+euclid:step13.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:segment_DC.p ;
+                                rdf:predicate euclid:extendedTo ;
+                                rdf:object euclid:segment_BC.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685719
+# input: euclid:step14.p euclid:angle_ACD.p euclid:isInternalAngleOf euclid:triangle_ADC.p
+euclid:step14.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:angle_ACD.p ;
+                                rdf:predicate euclid:isInternalAngleOf ;
+                                rdf:object euclid:triangle_ADC.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685773
+# input: euclid:step15.p euclid:angle_ADB.p euclid:isExternalAngleOf euclid:triangle_ADC.p
+euclid:step15.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:angle_ADB.p ;
+                                rdf:predicate euclid:isExternalAngleOf ;
+                                rdf:object euclid:triangle_ADC.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685827
+# input: euclid:step16.p euclid:angle_ACD.p euclid:isOppositeTo euclid:angle_ADB.p
+euclid:step16.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:angle_ACD.p ;
+                                rdf:predicate euclid:isOppositeTo ;
+                                rdf:object euclid:angle_ADB.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685881
+# input: euclid:step17.p euclid:angle_ACD.p euclid:smallerMagnitude euclid:angle_ADC.p
+euclid:step17.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:angle_ACD.p ;
+                                rdf:predicate euclid:smallerMagnitude ;
+                                rdf:object euclid:angle_ADB.p ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685936
+# input: euclid:step18.p euclid:sum_aADB.p_aADC.p euclid:equalMagnitude euclid:sum_rightAngle_rightAngle
+euclid:step18.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:sum_aADB.p_aADC.p ;
+                                rdf:predicate euclid:equalMagnitude ;
+                                rdf:object euclid:sum_rightAngle_rightAngle ] .
+         
+# added UTC date and time 2021-12-10 15:32:54.685990
+# input: euclid:step19.p euclid:sum_aABC.p_aACB.p euclid:smallerMagnitude euclid:sum_rightAngle_rightAngle
+euclid:step19.p a owl:NamedIndividual , 
+         core:Proof_step ;
+         core:proofStepStates [ a rdf:Statement ;
+                                rdf:subject euclid:sum_aABC.p_aACB.p ;
+                                rdf:predicate euclid:smallerMagnitude ;
+                                rdf:object euclid:sum_rightAngle_rightAngle ] .
+
+
+#################################################################
+#    Steps for proof Proclus
+#################################################################                                
+
+# added UTC date and time 2021-12-10 15:46:38.047266
+# input: link step to proof euclid:step1.p euclid:proof_Proclus
+euclid:step1.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047687
+# input: link step to proof euclid:step2.p euclid:proof_Proclus
+euclid:step2.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047712
+# input: link step to proof euclid:step3.p euclid:proof_Proclus
+euclid:step3.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047735
+# input: link step to proof euclid:step4.p euclid:proof_Proclus
+euclid:step4.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047756
+# input: link step to proof euclid:step5.p euclid:proof_Proclus
+euclid:step5.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047778
+# input: link step to proof euclid:step6.p euclid:proof_Proclus
+euclid:step6.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047799
+# input: link step to proof euclid:step7.p euclid:proof_Proclus
+euclid:step7.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047820
+# input: link step to proof euclid:step8.p euclid:proof_Proclus
+euclid:step8.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047841
+# input: link step to proof euclid:step9.p euclid:proof_Proclus
+euclid:step9.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047862
+# input: link step to proof euclid:step10.p euclid:proof_Proclus
+euclid:step10.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047883
+# input: link step to proof euclid:step11.p euclid:proof_Proclus
+euclid:step11.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047904
+# input: link step to proof euclid:step12.p euclid:proof_Proclus
+euclid:step12.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047924
+# input: link step to proof euclid:step13.p euclid:proof_Proclus
+euclid:step13.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047945
+# input: link step to proof euclid:step14.p euclid:proof_Proclus
+euclid:step14.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047966
+# input: link step to proof euclid:step15.p euclid:proof_Proclus
+euclid:step15.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.047986
+# input: link step to proof euclid:step16.p euclid:proof_Proclus
+euclid:step16.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.048007
+# input: link step to proof euclid:step17.p euclid:proof_Proclus
+euclid:step17.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.048027
+# input: link step to proof euclid:step18.p euclid:proof_Proclus
+euclid:step18.p core:inProof euclid:proof_Proclus .
+             
+# added UTC date and time 2021-12-10 15:46:38.048048
+# input: link step to proof euclid:step19.p euclid:proof_Proclus
+euclid:step19.p core:inProof euclid:proof_Proclus .
+            
+
+#################################################################
+#    Steps for proof Proclus
+#################################################################                                
+
+# added UTC date and time 2021-12-10 16:32:27.951908
+# input: dependency euclid:step2.p euclid:step1.p
+euclid:step2.p core:hasAntecedent euclid:step1.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952148
+# input: dependency euclid:step3.p euclid:step1.p
+euclid:step3.p core:hasAntecedent euclid:step1.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952173
+# input: dependency euclid:step4.p euclid:step1.p
+euclid:step4.p core:hasAntecedent euclid:step1.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952195
+# input: dependency euclid:step5.p euclid:step2.p
+euclid:step5.p core:hasAntecedent euclid:step2.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952216
+# input: dependency euclid:step5.p euclid:step3.p
+euclid:step5.p core:hasAntecedent euclid:step3.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952237
+# input: dependency euclid:step5.p euclid:step4.p
+euclid:step5.p core:hasAntecedent euclid:step4.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952258
+# input: dependency euclid:step6.p euclid:step5.p
+euclid:step6.p core:hasAntecedent euclid:step5.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952278
+# input: dependency euclid:step7.p euclid:step5.p
+euclid:step7.p core:hasAntecedent euclid:step5.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952299
+# input: dependency euclid:step8.p euclid:step1.p
+euclid:step8.p core:hasAntecedent euclid:step1.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952319
+# input: dependency euclid:step8.p euclid:step5.p
+euclid:step8.p core:hasAntecedent euclid:step5.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952339
+# input: dependency euclid:step9.p euclid:step6.p
+euclid:step9.p core:hasAntecedent euclid:step6.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952360
+# input: dependency euclid:step9.p euclid:step8.p
+euclid:step9.p core:hasAntecedent euclid:step8.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952380
+# input: dependency euclid:step10.p euclid:step6.p
+euclid:step10.p core:hasAntecedent euclid:step6.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952400
+# input: dependency euclid:step10.p euclid:step8.p
+euclid:step10.p core:hasAntecedent euclid:step8.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952421
+# input: dependency euclid:step11.p euclid:step9.p
+euclid:step11.p core:hasAntecedent euclid:step9.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952441
+# input: dependency euclid:step11.p euclid:step10.p
+euclid:step11.p core:hasAntecedent euclid:step10.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952462
+# input: dependency euclid:step11.p euclid:step6.p
+euclid:step11.p core:hasAntecedent euclid:step6.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952482
+# input: dependency euclid:step11.p euclid:step8.p
+euclid:step11.p core:hasAntecedent euclid:step8.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952502
+# input: dependency euclid:step12.p euclid:step9.p
+euclid:step12.p core:hasAntecedent euclid:step9.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952522
+# input: dependency euclid:step12.p euclid:step10.p
+euclid:step12.p core:hasAntecedent euclid:step10.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952543
+# input: dependency euclid:step12.p euclid:step11.p
+euclid:step12.p core:hasAntecedent euclid:step11.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952563
+# input: dependency euclid:step12.p euclid:step6.p
+euclid:step12.p core:hasAntecedent euclid:step6.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952584
+# input: dependency euclid:step12.p euclid:step8.p
+euclid:step12.p core:hasAntecedent euclid:step8.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952604
+# input: dependency euclid:step13.p euclid:step1.p
+euclid:step13.p core:hasAntecedent euclid:step1.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952624
+# input: dependency euclid:step13.p euclid:step7.p
+euclid:step13.p core:hasAntecedent euclid:step7.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952644
+# input: dependency euclid:step14.p euclid:step7.p
+euclid:step14.p core:hasAntecedent euclid:step7.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952665
+# input: dependency euclid:step14.p euclid:step13.p
+euclid:step14.p core:hasAntecedent euclid:step13.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952685
+# input: dependency euclid:step15.p euclid:step7.p
+euclid:step15.p core:hasAntecedent euclid:step7.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952706
+# input: dependency euclid:step15.p euclid:step13.p
+euclid:step15.p core:hasAntecedent euclid:step13.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952726
+# input: dependency euclid:step16.p euclid:step14.p
+euclid:step16.p core:hasAntecedent euclid:step14.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952746
+# input: dependency euclid:step16.p euclid:step15.p
+euclid:step16.p core:hasAntecedent euclid:step15.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952766
+# input: dependency euclid:step16.p euclid:step7.p
+euclid:step16.p core:hasAntecedent euclid:step7.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952786
+# input: dependency euclid:step16.p euclid:step13.p
+euclid:step16.p core:hasAntecedent euclid:step13.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952807
+# input: dependency euclid:step17.p euclid:step16.p
+euclid:step17.p core:hasAntecedent euclid:step16.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952827
+# input: dependency euclid:step17.p euclid:step14.p
+euclid:step17.p core:hasAntecedent euclid:step14.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952848
+# input: dependency euclid:step17.p euclid:step15.p
+euclid:step17.p core:hasAntecedent euclid:step15.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952868
+# input: dependency euclid:step17.p euclid:step7.p
+euclid:step17.p core:hasAntecedent euclid:step7.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952888
+# input: dependency euclid:step18.p euclid:step1.p
+euclid:step18.p core:hasAntecedent euclid:step1.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952908
+# input: dependency euclid:step18.p euclid:step5.p
+euclid:step18.p core:hasAntecedent euclid:step5.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952929
+# input: dependency euclid:step18.p euclid:euclid.I.13
+euclid:step18.p core:hasAntecedent euclid:euclid.I.13 .
+        
+# added UTC date and time 2021-12-10 16:32:27.952949
+# input: dependency euclid:step18.p euclid:postulate4
+euclid:step18.p core:hasAntecedent euclid:postulate4 .
+        
+# added UTC date and time 2021-12-10 16:32:27.952969
+# input: dependency euclid:step19.p euclid:step18.p
+euclid:step19.p core:hasAntecedent euclid:step18.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.952990
+# input: dependency euclid:step19.p euclid:step12.p
+euclid:step19.p core:hasAntecedent euclid:step12.p .
+        
+# added UTC date and time 2021-12-10 16:32:27.953010
+# input: dependency euclid:step19.p euclid:step17.p
+euclid:step19.p core:hasAntecedent euclid:step17.p .
         

@@ -1,0 +1,16 @@
+euclid:triangle_ABC.p euclid:Triangle
+euclid:point_D.p euclid:Point
+euclid:segment_BC.p euclid:Segment
+euclid:point_B.p euclid:Point
+euclid:point_C.p euclid:Point
+euclid:point_A.p euclid:Point
+euclid:triangle_ABD.p euclid:Triangle
+euclid:triangle_ADC.p euclid:Triangle
+euclid:segment_BD.p euclid:Segment
+euclid:angle_ADC.p euclid:Angle
+euclid:angle_ABD.p euclid:Angle
+euclid:segment_DC.p euclid:Segment
+euclid:angle_ACD.p euclid:Angle
+euclid:angle_ADB.p euclid:Angle
+euclid:sum_aADB.p_aADC.p euclid:Angle
+euclid:sum_aABC.p_aACB.p euclid:Angle
