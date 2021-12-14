@@ -74,7 +74,7 @@
 
 ###  http://www.foom.com/euclid.I.17/lyingOn
 <http://www.foom.com/euclid.I.17/lyingOn> rdf:type owl:ObjectProperty ;
-                                          rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                          rdfs:subPropertyOf euclid:positionRelations ;
                                           rdfs:domain <http://www.foom.com/core/Object> ;
                                           rdfs:range <http://www.foom.com/core/Object> .
 
