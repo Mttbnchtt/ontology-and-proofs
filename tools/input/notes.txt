@@ -1,6 +1,4 @@
-euclid:step2 euclid:hasAntencedent euclid:s1
-euclid:step3 euclid:hasAntencedent euclid:s1
-euclid:step3 euclid:hasAntencedent euclid:s2
+
 
 1
 --
@@ -33,3 +31,6 @@ Things to study or infer:
 
 Article:
 1. We state that a segment is side of a triangle but not list this as a step in a proof.
+
+ISSUES:
+1. redo dependency graphs to have 2 in Euclid as a leave.
