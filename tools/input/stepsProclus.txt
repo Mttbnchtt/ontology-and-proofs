@@ -14,6 +14,6 @@ euclid:step13.p euclid:segment_DC.p euclid:extendedTo euclid:segment_BC.p
 euclid:step14.p euclid:angle_ACD.p euclid:isInternalAngleOf euclid:triangle_ADC.p
 euclid:step15.p euclid:angle_ADB.p euclid:isExternalAngleOf euclid:triangle_ADC.p
 euclid:step16.p euclid:angle_ACD.p euclid:isOppositeTo euclid:angle_ADB.p
-euclid:step17.p euclid:angle_ACD.p euclid:smallerMagnitude euclid:angle_ADC.p
+euclid:step17.p euclid:angle_ACD.p euclid:smallerMagnitude euclid:angle_ADB.p
 euclid:step18.p euclid:sum_aADB.p_aADC.p euclid:equalMagnitude euclid:sum_rightAngle_rightAngle
 euclid:step19.p euclid:sum_aABC.p_aACB.p euclid:smallerMagnitude euclid:sum_rightAngle_rightAngle

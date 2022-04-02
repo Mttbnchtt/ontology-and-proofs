@@ -31,16 +31,16 @@ def read_write(input:str="",
         if len(rows) == 0:
             print("Empty ingestion file.")
             sys.exit()
-        add:list = []
+        triples:list = []
         for row in rows:
             lst:list = [i.strip().replace(" ", "") for i in row.split()]
             if len(lst) > 0:
                 s:str = eval("f"+repr(message))
                 if verbose:
                     print(s)
-                add.append(s)
+                triples.append(s)
     with open(output, "a") as ontology:
-        ontology.writelines(add)
+        ontology.writelines(triples)
 
 def dependency(input:str="",
     output:str="",
