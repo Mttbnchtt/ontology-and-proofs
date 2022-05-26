@@ -1,0 +1,160 @@
+@prefix : <http://www.foom.com/primes#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.foom.com/primes> .
+
+<http://www.foom.com/primes> rdf:type owl:Ontology ;
+                              owl:imports <http://www.foom.com/core> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.foom.com/primes/additionRelations
+<http://www.foom.com/primes/additionRelations> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                               rdfs:domain <http://www.foom.com/primes/Positive_integer> ;
+                                               rdfs:range <http://www.foom.com/primes/Positive_integer> ;
+                                               <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/areMore
+<http://www.foom.com/primes/areMore> rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf <http://www.foom.com/primes/orderRelations> ;
+                                     <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/measures
+<http://www.foom.com/primes/measures> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                      rdfs:domain <http://www.foom.com/primes/Positive_integer> ;
+                                      rdfs:range <http://www.foom.com/primes/Positive_integer> ;
+                                      <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/minuendo
+<http://www.foom.com/primes/minuendo> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf <http://www.foom.com/primes/subtractionRelations> ;
+                                      <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/minuens
+<http://www.foom.com/primes/minuens> rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf <http://www.foom.com/primes/subtractionRelations> ;
+                                     <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/orderRelations
+<http://www.foom.com/primes/orderRelations> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/smallerMagnitude
+<http://www.foom.com/primes/smallerMagnitude> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf <http://www.foom.com/primes/orderRelations> ;
+                                              rdfs:domain <http://www.foom.com/primes/Positive_integer> ;
+                                              rdfs:range <http://www.foom.com/primes/Positive_integer> ;
+                                              <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/subtractionOf
+<http://www.foom.com/primes/subtractionOf> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf <http://www.foom.com/primes/subtractionRelations> ;
+                                           <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/subtractionRelations
+<http://www.foom.com/primes/subtractionRelations> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                                  rdfs:domain <http://www.foom.com/primes/Positive_integer> ;
+                                                  rdfs:range <http://www.foom.com/primes/Positive_integer> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/sumOf
+<http://www.foom.com/primes/sumOf> rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf <http://www.foom.com/primes/additionRelations> ;
+                                   <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/summand1
+<http://www.foom.com/primes/summand1> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf <http://www.foom.com/primes/additionRelations> ;
+                                      <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/summand2
+<http://www.foom.com/primes/summand2> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf <http://www.foom.com/primes/additionRelations> ;
+                                      <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.foom.com/primes/Positive_integer
+<http://www.foom.com/primes/Positive_integer> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.foom.com/core/Object> ;
+                                              <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/Prime_number
+<http://www.foom.com/primes/Prime_number> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://www.foom.com/primes/Positive_integer> ;
+                                          <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.foom.com/primes/number_ED
+<http://www.foom.com/primes/number_ED> rdf:type owl:NamedIndividual ,
+                                                <http://www.foom.com/primes/Positive_integer> ;
+                                       <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/prime_number_A
+<http://www.foom.com/primes/prime_number_A> rdf:type owl:NamedIndividual ,
+                                                     <http://www.foom.com/primes/Prime_number> ;
+                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/prime_number_B
+<http://www.foom.com/primes/prime_number_B> rdf:type owl:NamedIndividual ,
+                                                     <http://www.foom.com/primes/Prime_number> ;
+                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/prime_number_C
+<http://www.foom.com/primes/prime_number_C> rdf:type owl:NamedIndividual ,
+                                                     <http://www.foom.com/primes/Prime_number> ;
+                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/sum_ED_unit
+<http://www.foom.com/primes/sum_ED_unit> rdf:type owl:NamedIndividual ,
+                                                  <http://www.foom.com/primes/Positive_integer> ;
+                                         <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.foom.com/primes/unit
+<http://www.foom.com/primes/unit> rdf:type owl:NamedIndividual ,
+                                           <http://www.foom.com/primes/Positive_integer> ;
+                                  <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
