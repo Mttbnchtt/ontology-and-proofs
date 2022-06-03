@@ -111,10 +111,10 @@ def step(input:str="",
 # input: {row.strip()}
 {lst[0]} a owl:NamedIndividual , 
          core:Proof_step ;
-         core:proofStepStates [ a rdf:Statement ;
-                                rdf:subject {lst[1]} ;
-                                rdf:predicate {lst[2]} ;
-                                rdf:object {lst[3]} ] .
+         a rdf:Statement ;
+        rdf:subject {lst[1]} ;
+        rdf:predicate {lst[2]} ;
+        rdf:object {lst[3]}  .
         """
     read_write(input=input, 
         output=output, 
@@ -136,4 +136,8 @@ def main(args:argparse.Namespace,
     elif args.type == "forProof":
         for_proof(input=args.input, output=args.output, verbose=verbose)
 
-    
+
+#  core:proofStepStates [ a rdf:Statement ;
+#                         rdf:subject {lst[1]} ;
+#                         rdf:predicate {lst[2]} ;
+#                         rdf:object {lst[3]} ] .

@@ -40,7 +40,7 @@ def parse(args_lst:list=[]):
         "--type",
         type=str,
         required=True,
-        help="name of the input file"
+        help="function to implement"
     )
     import_script.add_argument(
         "-i",
