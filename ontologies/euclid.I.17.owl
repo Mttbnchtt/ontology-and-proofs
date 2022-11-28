@@ -108,10 +108,23 @@ euclid:positionRelations rdf:type owl:ObjectProperty ;
 ###  http://www.foom.com/euclid.I.17/producedTo
 euclid:producedTo rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf euclid:liesOn ;
+                  rdfs:subPropertyOf euclid:constructionRelations ;
                   rdf:type owl:IrreflexiveProperty ;
                   rdfs:domain euclid:Segment ;
                   rdfs:range euclid:Segment .
 
+
+
+euclid:constructionRelations    a owl:ObjectProperty ;
+                                rdfs:subPropertyOf core:domainRelations ;
+                                rdfs:domain core:Object ;
+                                rdfs:range core:object .
+
+euclid:joinedTo a owl:ObjectProperty ;
+                rdfs:subPropertyOf euclid:constructionRelations ;
+                a owl:SymmetricProperty ;
+                rdfs:domain euclid:Point ;
+                rdfs:range euclid:Point .
 
 ###  http://www.foom.com/euclid.I.17/smallerMagnitude
 euclid:smallerMagnitude rdf:type owl:ObjectProperty ;
@@ -788,12 +801,12 @@ euclid:step11.e a owl:NamedIndividual ,
                 rdf:object euclid:Triangle  .
                  
         # added UTC date and time 2022-06-03 10:43:40.696853
-        # input: euclid:step8.p euclid:segment_BD.p euclid:extendedTo euclid:segment_BC.p
+        # input: euclid:step8.p euclid:segment_BD.p euclid:liesOn euclid:segment_BC.p
         euclid:step8.p a owl:NamedIndividual , 
                  core:Proof_step ;
                  a rdf:Statement ;
                 rdf:subject euclid:segment_BD.p ;
-                rdf:predicate euclid:extendedTo ;
+                rdf:predicate euclid:liesOn ;
                 rdf:object euclid:segment_BC.p  .
                  
         # added UTC date and time 2022-06-03 10:43:40.696897
@@ -833,7 +846,7 @@ euclid:step11.e a owl:NamedIndividual ,
                 rdf:object euclid:angle_ADC.p  .
                  
         # added UTC date and time 2022-06-03 10:43:40.697074
-        # input: euclid:step13.p euclid:segment_DC.p euclid:extendedTo euclid:segment_BC.p
+        # input: euclid:step13.p euclid:segment_DC.p euclid:liesOn euclid:segment_BC.p
         euclid:step13.p a owl:NamedIndividual , 
                  core:Proof_step ;
                  a rdf:Statement ;

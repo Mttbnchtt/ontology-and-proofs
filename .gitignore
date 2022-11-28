@@ -17,3 +17,6 @@
 # pycache folders
 **/__pycache__
 **/bin/*
+
+# to-do folder
+**/to-do_tasks
