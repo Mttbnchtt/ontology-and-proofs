@@ -20,3 +20,6 @@
 
 # to-do folder
 **/to-do_tasks
+
+# content of test folders
+**/test/*

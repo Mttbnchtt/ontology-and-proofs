@@ -1,0 +1,245 @@
+@prefix : <http://www.semanticweb.org/matteobianchetti/ontologies/2023/2/untitled-ontology-164/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/matteobianchetti/ontologies/2023/2/untitled-ontology-164/> .
+
+<http://www.foom.com/mathematical_concepts> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.foom.com/core/domainRelations
+<http://www.foom.com/core/domainRelations> rdf:type owl:ObjectProperty .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000018
+<http://www.foom.com/mathematical_concepts#00000000000000000018> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "has addition relation"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000019
+<http://www.foom.com/mathematical_concepts#00000000000000000019> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "has construction relation"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000020
+<http://www.foom.com/mathematical_concepts#00000000000000000020> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000022> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "is angle of"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000021
+<http://www.foom.com/mathematical_concepts#00000000000000000021> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000079> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "has order relation"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000022
+<http://www.foom.com/mathematical_concepts#00000000000000000022> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "has position relation"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000033
+<http://www.foom.com/mathematical_concepts#00000000000000000033> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000022> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "is base of"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000042
+<http://www.foom.com/mathematical_concepts#00000000000000000042> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000019> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "is joined to"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000053
+<http://www.foom.com/mathematical_concepts#00000000000000000053> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000018> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "summand 0"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000054
+<http://www.foom.com/mathematical_concepts#00000000000000000054> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000018> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "summand 1"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000055
+<http://www.foom.com/mathematical_concepts#00000000000000000055> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000018> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "sum"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000056
+<http://www.foom.com/mathematical_concepts#00000000000000000056> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000022> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "is vertex of"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000057
+<http://www.foom.com/mathematical_concepts#00000000000000000057> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000022> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "lies on"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000074
+<http://www.foom.com/mathematical_concepts#00000000000000000074> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000022> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "is side of"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000079
+<http://www.foom.com/mathematical_concepts#00000000000000000079> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/core/domainRelations> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "has comparison relation"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000080
+<http://www.foom.com/mathematical_concepts#00000000000000000080> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000079> ;
+                                                                 rdfs:domain [ owl:intersectionOf ( <http://www.foom.com/core/Object>
+                                                                                                    [ rdf:type owl:Class ;
+                                                                                                      owl:complementOf [ rdf:type owl:Class ;
+                                                                                                                         owl:unionOf ( <http://www.foom.com/mathematical_concepts#00000000000000000012>
+                                                                                                                                       <http://www.foom.com/mathematical_concepts#00000000000000000016>
+                                                                                                                                       <http://www.foom.com/mathematical_concepts#00000000000000000024>
+                                                                                                                                     )
+                                                                                                                       ]
+                                                                                                    ]
+                                                                                                  ) ;
+                                                                               rdf:type owl:Class
+                                                                             ] ;
+                                                                 rdfs:range [ owl:intersectionOf ( <http://www.foom.com/core/Object>
+                                                                                                   [ rdf:type owl:Class ;
+                                                                                                     owl:complementOf [ rdf:type owl:Class ;
+                                                                                                                        owl:unionOf ( <http://www.foom.com/mathematical_concepts#00000000000000000012>
+                                                                                                                                      <http://www.foom.com/mathematical_concepts#00000000000000000016>
+                                                                                                                                      <http://www.foom.com/mathematical_concepts#00000000000000000024>
+                                                                                                                                    )
+                                                                                                                      ]
+                                                                                                   ]
+                                                                                                 ) ;
+                                                                              rdf:type owl:Class
+                                                                            ] ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "has same length as"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000083
+<http://www.foom.com/mathematical_concepts#00000000000000000083> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000022> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "is center of"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000031
+<http://www.foom.com/mathematical_concepts#00000000000000000031> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:domain <http://www.foom.com/mathematical_concepts#00000000000000000016> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "is isosceles"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000065
+<http://www.foom.com/mathematical_concepts#00000000000000000065> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:range xsd:boolean ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "are collinear"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.foom.com/core/Object
+<http://www.foom.com/core/Object> rdf:type owl:Class .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000012
+<http://www.foom.com/mathematical_concepts#00000000000000000012> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.foom.com/core/Object> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Angle"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000013
+<http://www.foom.com/mathematical_concepts#00000000000000000013> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.foom.com/mathematical_concepts#00000000000000000012> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Mixed angle"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000014
+<http://www.foom.com/mathematical_concepts#00000000000000000014> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.foom.com/mathematical_concepts#00000000000000000012> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Rectilinear angle"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000015
+<http://www.foom.com/mathematical_concepts#00000000000000000015> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.foom.com/core/Object> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Segment"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000016
+<http://www.foom.com/mathematical_concepts#00000000000000000016> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.foom.com/core/Object> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Triangle"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000017
+<http://www.foom.com/mathematical_concepts#00000000000000000017> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.foom.com/core/Object> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Circle"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000024
+<http://www.foom.com/mathematical_concepts#00000000000000000024> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.foom.com/core/Object> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Point"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000090
+<http://www.foom.com/mathematical_concepts#00000000000000000090> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.foom.com/core/Object> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Arc"@en .
+
+
+###  Generated by the OWL API (version 4.5.24.2023-01-14T21:28:32Z) https://github.com/owlcs/owlapi

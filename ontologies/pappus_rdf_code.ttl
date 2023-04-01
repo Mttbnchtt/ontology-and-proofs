@@ -1,0 +1,298 @@
+prefix : <http://www.foom.com/pappus#> 
+prefix owl: <http://www.w3.org/2002/07/owl#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix xml: <http://www.w3.org/XML/1998/namespace> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+
+### ARISTOTLE'S PROOF
+
+# 0. OAB is a triangle (given)
+<http://www.foom.com/pappus#00000000000000000052>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000046> ;
+    rdf:predicate rdf:type ;
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000016> .
+
+# 1. A is a vertex of OAB (by 0)
+<http://www.foom.com/pappus#00000000000000000058>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000036> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000056> ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000046> .
+
+# 2. B is a vertex of OAB (by 0)
+<http://www.foom.com/pappus#00000000000000000059>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000037> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000056> ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000046> .
+
+# 3. O is a vertex of OAB (by 0)
+<http://www.foom.com/pappus#00000000000000000060>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000038> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000056> ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000046> .
+
+# 4. A is a point (by 0, 1)
+<http://www.foom.com/pappus#00000000000000000039>   
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000036> ;
+    rdf:predicate rdf:type ;
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000024> .
+
+# 5. B is a point (by 0, 2)
+<http://www.foom.com/pappus#00000000000000000040>   
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000037> ;
+    rdf:predicate rdf:type ;
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000024> .
+
+# 6. O is a point (by 0, 3)
+<http://www.foom.com/pappus#00000000000000000041>   
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000038> ;
+    rdf:predicate rdf:type ;
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000024> .
+
+
+# 7. points O and B are distinct (by 0)
+<http://www.foom.com/pappus#00000000000000000061>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000038> ;
+    rdf:predicate  owl:differentFrom ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000037> .
+
+
+# 8. points O and A are distinct (by 0)
+<http://www.foom.com/pappus#00000000000000000062>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000038> ;
+    rdf:predicate  owl:differentFrom ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000036> .
+
+
+# 9. points A and B are distinct (by 0)
+<http://www.foom.com/pappus#00000000000000000063>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000036> ;
+    rdf:predicate  owl:differentFrom ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000037> .
+
+
+# 10. points O, A, and B are not collinear (by 0, 1, 2, 3)
+<http://www.foom.com/pappus#00000000000000000066>
+    a rdf:Statement ;
+    rdf:subject (<http://www.foom.com/pappus#00000000000000000036> 
+        <http://www.foom.com/pappus#00000000000000000037> 
+        <http://www.foom.com/pappus#00000000000000000038>) ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000065> ;
+    rdf:object "true"^^xsd:boolean .
+
+# 11. OA is a segment (by 4, 6, 7) 
+# [add: given two distinct points one can construct a segment?]
+<http://www.foom.com/pappus#00000000000000000067>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000068> ;
+    rdf:predicate  ;
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000015> .
+
+# 12. OB is a segment (by 5, 6, 7)
+# [add: given two distinct points one can construct a segment?]
+<http://www.foom.com/pappus#00000000000000000070>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000069> ;
+    rdf:predicate  rdf:type ;
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000015> .
+
+# 13. AB is a segment (by 4, 5, 7)
+# [add: given two distinct points one can construct a segment?]
+<http://www.foom.com/pappus#00000000000000000072>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000071> ;
+    rdf:predicate rdf:type ;
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000015> .
+
+# 14. segment OA is a side of OAB (by 1, 3, 9)
+<http://www.foom.com/pappus#00000000000000000073>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000068> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000074> ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000046> .
+
+# 15. segment OB is a side of OAB (by 2, 3, 10)
+<http://www.foom.com/pappus#00000000000000000075>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000069> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000074> ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000046> .
+
+# 16. segment AB is a side of OAB (by 1, 2, 11)
+<http://www.foom.com/pappus#00000000000000000077>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000071> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000074> ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000046> . .
+
+# 17. segment OA has same length as segment OB  (given)
+<http://www.foom.com/pappus#00000000000000000076>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000068> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000080> ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000069> .
+
+# 18. OAB is isosceles (by 1, 14, 15, 16, 17)
+<http://www.foom.com/pappus#00000000000000000078>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000046> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000031> ;
+    rdf:object "true"^^xsd:boolean .
+
+# 19. AB is a circle (construction based on 17)
+<http://www.foom.com/pappus#00000000000000000034>   
+    a rdf:Statement ;
+    rdf:subject: <http://www.foom.com/pappus#00000000000000000035> ;
+    rdf:predicate rdf:type ;    
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000017> .
+
+# 20. point O is the center of circle AB
+<http://www.foom.com/pappus#00000000000000000082>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000038> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000083> ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000035> .
+
+# 21. point A is on circle AB (construction based on 16)
+<http://www.foom.com/pappus#00000000000000000084>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000036> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000057> ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000035> .
+
+# 22. point B is on circle AB (construction based on 16)
+<http://www.foom.com/pappus#00000000000000000085>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000037> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000057> ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000035> .
+
+# 23. OAB is an angle of triangle OAB (by 0)
+<http://www.foom.com/pappus#00000000000000000086>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000047> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000020> ;
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000020> .
+
+# 24. OAB is a rectilinear angle (by 0)
+<http://www.foom.com/pappus#00000000000000000087>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000048> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000020> ;
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000020> .
+
+# 25. AB is a arc (by 9, 19, 21, 22)
+<http://www.foom.com/pappus#00000000000000000088>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000089> ;
+    rdf:predicate rdf:type ;
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000090> .
+
+# 26. arc AB lies on circle AB (by 19, 21, 22, 25)
+<http://www.foom.com/pappus#00000000000000000091>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus#00000000000000000089> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000057> ;
+    rdf:object <http://www.foom.com/pappus#00000000000000000035> .
+
+# 27. AB is a mixed angle
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate  ;
+    rdf:object <> .
+
+# 28. OBA is an angle of triangle OAB
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate  ;
+    rdf:object <> .
+
+# 29. OBA is a rectilinear angle
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate  ;
+    rdf:object <> .
+
+# 30. BA is an arc
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate  ;
+    rdf:object <> .
+
+# 31. BA lies on circle OAB
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate  ;
+    rdf:object <> .
+
+# 32. BA is a mixed angle
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate  ;
+    rdf:object <> .
+
+# 33. OAB is the sum of the rectilinear angle OAB and the mixed angle AB
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate  ;
+    rdf:object <> .
+
+# 34. OBA is the sum of the rectilinear angle OBA and the mixed angle BA
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate  ;
+    rdf:object <> .
+
+# 35. angle OAB is equal to angle OBA
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate  ;
+    rdf:object <> .
+
+# 36. angle AB is equal to angle BA
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate  ;
+    rdf:object <> .
+
+# 37. if a+x = b+y and x = y, then a = b (axiom or lemma)
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate  ;
+    rdf:object <> .
+
+# 38. angle OAB is equal to angle OBA
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate  ;
+    rdf:object <> .
+
+
+### EUCLID'S PROOF
+
+
+
+
+### PAPPUS' PROOF

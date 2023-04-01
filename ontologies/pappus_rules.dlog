@@ -1,0 +1,51 @@
+prefix : <http://www.foom.com/pappus#> 
+prefix owl: <http://www.w3.org/2002/07/owl#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix xml: <http://www.w3.org/XML/1998/namespace> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+
+
+# LOGIC
+
+# is x is a proof step and has antecedent proof step y 
+# and y is a step of proof z,
+# then x is a step of proof z
+
+
+# is x is a proof step and has antecedent proof step y 
+# and x is a step of proof z,
+# then y is a step of proof z
+
+
+# GEOMETRY
+
+# if x is a triangle and y is a vertex of y and 
+# z is a vertex of z and not (y = z),
+# then yz is a side of x
+
+
+# if x is a side of y and y is a triangle, then x is a segment
+
+
+# if x is isosceles, then x is a triangle
+
+
+# if x is a vertex of y and y is a triangle, then x is a point
+
+
+# if x is a vertex of y, then x lies on y
+
+
+# if segment x is base of triangle y, then x is a side of y.
+
+# is x and y are two vertices of a triangle and x != y, 
+# then xy is a segment
+
+
+# is x and y are two vertices of a triangle z and x != y, 
+# then xy is a side of z
+
+
+
+
