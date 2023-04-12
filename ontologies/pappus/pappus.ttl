@@ -1,0 +1,111 @@
+@prefix : <http://www.semanticweb.org/matteobianchetti/ontologies/2023/3/untitled-ontology-167/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/matteobianchetti/ontologies/2023/3/untitled-ontology-167/> .
+
+<https://www.foom.com/pappus> rdf:type owl:Ontology ;
+                               owl:imports <http://www.foom.com/conceptual_space> ,
+                                           <http://www.foom.com/core> ,
+                                           <http://www.foom.com/mathematical_concepts> ,
+                                           <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology> ,
+                                           <https://www.foom.com/pappus_proofAristotle_step2_relatedOntology> ,
+                                           <https://www.foom.com/pappus_proofAristotle_step3_relatedOntology> ,
+                                           <https://www.foom.com/pappus_proofAristotle_step4_relatedOntology> ;
+                               rdfs:comment "Analysis of Pappus' proof that the angles near the base of an isosceles triangle are equal and analysis of the conceptual context in which Pappus discovered the proof. It imports core,  conceptual space, mathematical concepts, and all the ontologies related to specific proof steps."@en .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://www.foom.com/pappus#00000000000000000038
+<https://www.foom.com/pappus#00000000000000000038> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "proof Aristotle"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000039
+<https://www.foom.com/pappus#00000000000000000039> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000038> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 0 proof Aristotle"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000040
+<https://www.foom.com/pappus#00000000000000000040> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000038> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 1 proof Aristotle"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000041
+<https://www.foom.com/pappus#00000000000000000041> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus#00000000000000000039> ,
+                                                                                            <https://www.foom.com/pappus#00000000000000000040> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000038> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 2 proof Aristotle"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000042
+<https://www.foom.com/pappus#00000000000000000042> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus#00000000000000000039> ,
+                                                                                            <https://www.foom.com/pappus#00000000000000000041> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000038> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 3 proof Aristotle"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000043
+<https://www.foom.com/pappus#00000000000000000043> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus#00000000000000000039> ,
+                                                                                            <https://www.foom.com/pappus#00000000000000000040> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000038> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 4 proof Aristotle"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000044
+<https://www.foom.com/pappus#00000000000000000044> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core#00000000000000000003> ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core#00000000000000000012> <https://www.foom.com/pappus#00000000000000000079> ;
+                                                   <http://www.foom.com/core#00000000000000000080> <https://www.foom.com/pappus#00000000000000000078> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 5 proof Aristotle"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000045
+<https://www.foom.com/pappus#00000000000000000045> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus#00000000000000000042> ,
+                                                                                            <https://www.foom.com/pappus#00000000000000000043> ,
+                                                                                            <https://www.foom.com/pappus#00000000000000000044> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000038> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 6 proof Aristotle"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000078
+<https://www.foom.com/pappus#00000000000000000078> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core#00000000000000000005> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 5 antecendent proof Aristotle"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000079
+<https://www.foom.com/pappus#00000000000000000079> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core#00000000000000000006> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 5 consequent proof Aristotle"@en .
+
+
+###  Generated by the OWL API (version 4.5.24.2023-01-14T21:28:32Z) https://github.com/owlcs/owlapi

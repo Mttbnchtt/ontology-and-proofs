@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.foom.com/core" uri="core.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.foom.com/mathematical_concepts" uri="mathematical_concepts.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.foom.com/core" uri="core.owl"/>
     <uri id="Imports Wizard Entry" name="http://www.foom.com/mathematical_concepts" uri="mathematical_concepts.ttl"/>
     <uri id="Imports Wizard Entry" name="http://www.foom.com/conceptual_space" uri="conceptual_space.owl"/>
     <uri id="Imports Wizard Entry" name="http://www.foom.com/conceptual_space" uri="conceptual_space.owl"/>

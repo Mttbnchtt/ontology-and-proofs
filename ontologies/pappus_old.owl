@@ -30,9 +30,42 @@
 #    Individuals
 #################################################################
 
+###  http://www.foom.com/pappus#00000000000000000000
+<http://www.foom.com/pappus#00000000000000000000> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/mathematical_concepts#00000000000000000013> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Mixed angle OBA proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000002
+<http://www.foom.com/pappus#00000000000000000002> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core#00000000000000000007> ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 40 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000008
+<http://www.foom.com/pappus#00000000000000000008> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core#00000000000000000006> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 39 antecedent proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000009
+<http://www.foom.com/pappus#00000000000000000009> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core#00000000000000000005> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 39 consequent proof Aristotle"@en .
+
+
 ###  http://www.foom.com/pappus#00000000000000000028
 <http://www.foom.com/pappus#00000000000000000028> rdf:type owl:NamedIndividual ,
                                                            <http://www.foom.com/core/Proof> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                   rdfs:label "Proof Aristotle"@en .
 
@@ -136,28 +169,28 @@
 <http://www.foom.com/pappus#00000000000000000047> rdf:type owl:NamedIndividual ,
                                                            <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                  rdfs:label "Angle OAB proof Aristotle"@en .
+                                                  rdfs:label "Rectilinear angle OAB proof Aristotle"@en .
 
 
 ###  http://www.foom.com/pappus#00000000000000000048
 <http://www.foom.com/pappus#00000000000000000048> rdf:type owl:NamedIndividual ,
                                                            <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                  rdfs:label "Angle OBA proof Aristotle"@en .
+                                                  rdfs:label "Rectilinear angle OBA proof Aristotle"@en .
 
 
 ###  http://www.foom.com/pappus#00000000000000000049
 <http://www.foom.com/pappus#00000000000000000049> rdf:type owl:NamedIndividual ,
                                                            <http://www.foom.com/mathematical_concepts#00000000000000000012> ;
                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                  rdfs:label "Angle AB proof Aristotle"@en .
+                                                  rdfs:label "Mixed angle AB proof Aristotle"@en .
 
 
 ###  http://www.foom.com/pappus#00000000000000000050
 <http://www.foom.com/pappus#00000000000000000050> rdf:type owl:NamedIndividual ,
                                                            <http://www.foom.com/mathematical_concepts#00000000000000000012> ;
                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                  rdfs:label "Angle BA proof Aristotle"@en .
+                                                  rdfs:label "Mixed angle BA proof Aristotle"@en .
 
 
 ###  http://www.foom.com/pappus#00000000000000000052
@@ -381,14 +414,20 @@
 ###  http://www.foom.com/pappus#00000000000000000087
 <http://www.foom.com/pappus#00000000000000000087> rdf:type owl:NamedIndividual ,
                                                            <http://www.foom.com/core/Proof_step> ;
-                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000052> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000086> ;
                                                   <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                   rdfs:label "Step 24 proof Aristotle"@en .
 
 
 ###  http://www.foom.com/pappus#00000000000000000088
-<http://www.foom.com/pappus#00000000000000000088> rdf:type owl:NamedIndividual ;
+<http://www.foom.com/pappus#00000000000000000088> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000034> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000063> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000084> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000085> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                   rdfs:label "Step 25 proof Aristotle"@en .
 
@@ -398,6 +437,167 @@
                                                            <http://www.foom.com/mathematical_concepts#00000000000000000090> ;
                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                   rdfs:label "Arc AB proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000091
+<http://www.foom.com/pappus#00000000000000000091> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000034> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000084> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000085> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000088> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 26 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000093
+<http://www.foom.com/pappus#00000000000000000093> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000088> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 27 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000094
+<http://www.foom.com/pappus#00000000000000000094> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000052> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 28 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000095
+<http://www.foom.com/pappus#00000000000000000095> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000094> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 29 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000096
+<http://www.foom.com/pappus#00000000000000000096> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/mathematical_concepts#00000000000000000090> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Arc BA proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000097
+<http://www.foom.com/pappus#00000000000000000097> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000034> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000063> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000084> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000085> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 30 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000098
+<http://www.foom.com/pappus#00000000000000000098> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000034> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000084> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000085> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 31 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000099
+<http://www.foom.com/pappus#00000000000000000099> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000097> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 32 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000100
+<http://www.foom.com/pappus#00000000000000000100> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000086> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000093> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 33 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000101
+<http://www.foom.com/pappus#00000000000000000101> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000086> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000093> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 34 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000102
+<http://www.foom.com/pappus#00000000000000000102> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000095> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000099> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 35 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000103
+<http://www.foom.com/pappus#00000000000000000103> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000095> ,
+                                                                                           <http://www.foom.com/pappus#00000000000000000099> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 36 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000104
+<http://www.foom.com/pappus#00000000000000000104> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 37 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000105
+<http://www.foom.com/pappus#00000000000000000105> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/mathematical_concepts#00000000000000000013> ;
+                                                  <http://www.foom.com/mathematical_concepts#00000000000000000055> <http://www.foom.com/pappus#00000000000000000047> ,
+                                                                                                                   <http://www.foom.com/pappus#00000000000000000049> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "sum of angle OAB and angle AB proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000106
+<http://www.foom.com/pappus#00000000000000000106> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core#00000000000000000012> <http://www.foom.com/pappus#00000000000000000009> ;
+                                                  <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus#00000000000000000008> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 38 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000107
+<http://www.foom.com/pappus#00000000000000000107> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/core#00000000000000000003> ,
+                                                           <http://www.foom.com/core/Proof_step> ;
+                                                  <http://www.foom.com/core/inProof> <http://www.foom.com/pappus#00000000000000000028> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Step 39 proof Aristotle"@en .
+
+
+###  http://www.foom.com/pappus#00000000000000000108
+<http://www.foom.com/pappus#00000000000000000108> rdf:type owl:NamedIndividual ,
+                                                           <http://www.foom.com/mathematical_concepts#00000000000000000013> ;
+                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                  rdfs:label "Mixed angle OAB proof Aristotle"@en .
 
 
 ###  Generated by the OWL API (version 4.5.24.2023-01-14T21:28:32Z) https://github.com/owlcs/owlapi

@@ -10,12 +10,12 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # is x is a proof step and has antecedent proof step y 
 # and y is a step of proof z,
-# then x is a step of proof z
+# then x is a proof step  and it is a step of proof z
 
 
 # is x is a proof step and has antecedent proof step y 
 # and x is a step of proof z,
-# then y is a step of proof z
+# then y is a proof step and it is a step of proof z
 
 
 # GEOMETRY

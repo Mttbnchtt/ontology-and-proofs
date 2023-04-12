@@ -21,6 +21,24 @@
 #    Object Properties
 #################################################################
 
+###  http://www.foom.com/core#00000000000000000012
+<http://www.foom.com/core#00000000000000000012> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
+                                                rdfs:domain <http://www.foom.com/core/Claim> ;
+                                                rdfs:range <http://www.foom.com/core#00000000000000000006> ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "has consequent of conditional claim"@en .
+
+
+###  http://www.foom.com/core#00000000000000000080
+<http://www.foom.com/core#00000000000000000080> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
+                                                rdfs:domain <http://www.foom.com/core/Claim> ;
+                                                rdfs:range <http://www.foom.com/core#00000000000000000005> ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "has antencendent of conditional claim"@en .
+
+
 ###  http://www.foom.com/core/coreRelations
 <http://www.foom.com/core/coreRelations> rdf:type owl:ObjectProperty ;
                                          rdfs:label "has core relation"@en .
@@ -34,6 +52,8 @@
 ###  http://www.foom.com/core/hasAntecedent
 <http://www.foom.com/core/hasAntecedent> rdf:type owl:ObjectProperty ;
                                          rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
+                                         rdfs:domain <http://www.foom.com/core/Proof_step> ;
+                                         rdfs:range <http://www.foom.com/core/Proof_step> ;
                                          rdfs:label "has antecedent"@en .
 
 
@@ -73,9 +93,43 @@
                                                 rdfs:label "has core property"@en .
 
 
+###  http://www.foom.com/core#00000000000000000067
+<http://www.foom.com/core#00000000000000000067> rdf:type owl:DatatypeProperty ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "has domain relation"@en .
+
+
 #################################################################
 #    Classes
 #################################################################
+
+###  http://www.foom.com/core#00000000000000000003
+<http://www.foom.com/core#00000000000000000003> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.foom.com/core/Claim> ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "Conditional claim"@en .
+
+
+###  http://www.foom.com/core#00000000000000000005
+<http://www.foom.com/core#00000000000000000005> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.foom.com/core/Claim> ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "Antecendet of conditional claim"@en .
+
+
+###  http://www.foom.com/core#00000000000000000006
+<http://www.foom.com/core#00000000000000000006> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.foom.com/core/Claim> ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "Consequent of conditional claim"@en .
+
+
+###  http://www.foom.com/core#00000000000000000007
+<http://www.foom.com/core#00000000000000000007> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.foom.com/core/Claim> ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "Theorem"@en .
+
 
 ###  http://www.foom.com/core/Claim
 <http://www.foom.com/core/Claim> rdf:type owl:Class .
@@ -94,7 +148,8 @@
 
 
 ###  http://www.foom.com/core/Proof_step
-<http://www.foom.com/core/Proof_step> rdf:type owl:Class .
+<http://www.foom.com/core/Proof_step> rdf:type owl:Class ;
+                                      rdfs:label "Proof step" .
 
 
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
