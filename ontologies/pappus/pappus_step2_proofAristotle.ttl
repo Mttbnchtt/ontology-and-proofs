@@ -65,18 +65,18 @@
 #    Individuals
 #################################################################
 
-###  https://www.foom.com/pappus_proofAristotle_step0_presuppositions#00000000000000000046
-<https://www.foom.com/pappus_proofAristotle_step0_presuppositions#00000000000000000046> rdf:type owl:NamedIndividual ;
+###  https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000046
+<https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000046> rdf:type owl:NamedIndividual ;
                                                                                         <http://www.foom.com/mathematical_concepts#00000000000000000056> <https://www.foom.com/pappus_proofAristotle_step2_relatedOntology#00000000000000000050> .
 
 
-###  https://www.foom.com/pappus_proofAristotle_step0_presuppositions#00000000000000000047
-<https://www.foom.com/pappus_proofAristotle_step0_presuppositions#00000000000000000047> rdf:type owl:NamedIndividual ;
+###  https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000047
+<https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000047> rdf:type owl:NamedIndividual ;
                                                                                         <http://www.foom.com/mathematical_concepts#00000000000000000056> <https://www.foom.com/pappus_proofAristotle_step2_relatedOntology#00000000000000000050> .
 
 
-###  https://www.foom.com/pappus_proofAristotle_step0_presuppositions#00000000000000000049
-<https://www.foom.com/pappus_proofAristotle_step0_presuppositions#00000000000000000049> rdf:type owl:NamedIndividual ;
+###  https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000049
+<https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000049> rdf:type owl:NamedIndividual ;
                                                                                         <http://www.foom.com/mathematical_concepts#00000000000000000056> <https://www.foom.com/pappus_proofAristotle_step2_relatedOntology#00000000000000000050> .
 
 
@@ -84,7 +84,6 @@
 <https://www.foom.com/pappus_proofAristotle_step2_relatedOntology#00000000000000000050> rdf:type owl:NamedIndividual ,
                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000058> ;
                                                                                         <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000031> "true"^^xsd:boolean ;
                                                                                         rdfs:label "Triangle OAB proof Aristotle"@en .
 
 

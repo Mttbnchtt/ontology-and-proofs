@@ -49,6 +49,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000021
 <http://www.foom.com/mathematical_concepts#00000000000000000021> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000079> ;
+                                                                 rdf:type owl:TransitiveProperty ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "has order relation"@en .
 
@@ -143,6 +144,9 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000076
 <http://www.foom.com/mathematical_concepts#00000000000000000076> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000021> ;
+                                                                 rdf:type owl:SymmetricProperty ,
+                                                                          owl:TransitiveProperty ,
+                                                                          owl:ReflexiveProperty ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "is equivalent amount as"@en .
 

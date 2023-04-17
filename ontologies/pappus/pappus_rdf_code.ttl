@@ -10,9 +10,9 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # 0. join point A to point O (stated; construction)
 <https://www.foom.com/pappus#00000000000000000039>
     a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofAristotle_step0_presuppositions#00000000000000000046> ;
+    rdf:subject <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000046> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000042> ;
-    rdf:object <https://www.foom.com/pappus_proofAristotle_step0_presuppositions#00000000000000000047> .
+    rdf:object <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000047> .
 # related ontology:
 # (i) A is a point
 # (ii) O is a point
@@ -23,32 +23,28 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (vii) A lies on circle AB
 # (viii) B lies on circle AB
 # (ix) O is the center of circle AB
+# (x) mixed angle AB is a mixed angle
+# (xi) mixed angle BA is a mixed angle
+# (xii) rectilinear angle OAB has amount of rotation OAB
+# (xiii) mixed angle AB has amount of rotation AB
+# (xiv) mixed angle BA has amount of rotation BA
 
 
 # 1. join point B to point O (stated; construction)
 <https://www.foom.com/pappus#00000000000000000040>
     a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofAristotle_step0_presuppositions#00000000000000000049> ;
+    rdf:subject <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000049> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000042> ;
-    rdf:object <https://www.foom.com/pappus_proofAristotle_step0_presuppositions#00000000000000000047> .
-# related ontology (imported from step 0):
-# (i) B is a point
-# (ii) O is a point
-# (iii) point B and point O are distinct
-# (iv) B lies on circle AB
-# (v) O is the center of circle AB
-# (vi) mixed angle AB is a mixed abgle
-# (vii) mixed angle BA is a mixed angle
-# (viii) rectilinear angle OAB has amount of rotation OAB
-# (ix) rectilinear angle OBA has amount of rotation OBA
-# (x) mixed angle AB has amount of rotation AB
-# (xi) mixed angle BA has amount of rotation BA
+    rdf:object <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000047> .
+# related ontology:
+# (i) imports from step 0
+# (ii) rectilinear angle OBA has amount of rotation OBA
 
 
 # 2. OAB is an isosceles triangle (stated; by 0, 1)
 <https://www.foom.com/pappus#00000000000000000041>
   a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofAristotle_step2_presuppositions#00000000000000000050> ;
+    rdf:subject <https://www.foom.com/pappus_proofAristotle_step2_relatedOntology#00000000000000000050> ;
     rdf:predicate rdf:type ;
     rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000058> .
 # related ontology:
@@ -65,9 +61,9 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # and mixed angle BA (stated; by 0, 2)
 <https://www.foom.com/pappus#00000000000000000042>
     a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofAristotle_step3_presuppositions#00000000000000000074> ;
+    rdf:subject <https://www.foom.com/pappus_proofAristotle_step3_relatedOntology#00000000000000000073> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
-    rdf:object <https://www.foom.com/pappus_proofAristotle_step3_presuppositions#00000000000000000077> .
+    rdf:object <https://www.foom.com/pappus_proofAristotle_step3_relatedOntology#00000000000000000075> .
 # related ontology:
 # (i) rectilinear angle OAB is a rectilinear angle
 # (ii) rectilinear angle OBA is a rectilinear angle
@@ -83,9 +79,9 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # as mixed angle BA (stated; by 0, 1)
 <https://www.foom.com/pappus#00000000000000000043>
     a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofAristotle_step3_relatedOntology#00000000000000000071> ;
+    rdf:subject <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000002> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
-    rdf:object <https://www.foom.com/pappus_proofAristotle_step3_relatedOntology#00000000000000000072> .
+    rdf:object <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000003> .
 # related ontology (imported from step 0)
  
 
@@ -103,11 +99,166 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # as rectilinear angle OBA (stated; by 3, 4, 5)
 <https://www.foom.com/pappus#00000000000000000045>
     a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofAristotle_step3_relatedOntology#00000000000000000062> ;
+    rdf:subject <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000005> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
-    rdf:object <https://www.foom.com/pappus_proofAristotle_step3_relatedOntology#00000000000000000063> .
+    rdf:object <https://www.foom.com/pappus_proofAristotle_step1_relatedOntology#00000000000000000007> .
 # related ontology: 
 # it imports ontologies of step 0, 1, 2, 3, 4, 5
+
+
+
+### EUCLID'S PROOF
+
+# 0. Let ABC be an isosceles triangle where
+# side AB has the same lenght as side AC and
+# BC is the base of triangle ABC
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 1. Extend AB to F
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 2. Extend AC to E
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 3. Select point F on BD such that F lies stricly between point B and point F
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 4. On AE, cut segment AG such that the lenght of segment AF is the same as the lenght of segment AG
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 5. Join point F and point C
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 6. Join point G and point B
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 7. The length of segment FC is equivalent to the lenght of segment BG
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 8. Triangle AFC is perfectly overlappable with triangle AGB
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 9. The amount of rotation of angle ABG is equivalent to the amount of rotation of angle ACF
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 10. Segment BF has the same length as segment CG
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 11. Triangle FBC is perfectly overlappable to triangle BCG
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 12. Angle FCB has the equivalent amount of rotation as angle CBG
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 13. Angle ABG is the sum of angle ABC and angle CBG
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 14. Angle ACF is the sum of angle ACB and angle BCF
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+# 15. Angle ABC has the same amount of rotation as angle ACB
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+
+
+
+### PAPPUS' PROOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ############################
@@ -153,11 +304,11 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 #  (v) AB is the base of triangle OAB;
 #  (vi) side OA and side OB are not a basis of triangle OAB;
 #  (vii) OAB and OBA are rectilinear angles that are internal to triangle OAB]
-<http://www.foom.com/pappus#00000000000000000052>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000046> ;
-    rdf:predicate rdf:type ;
-    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000016> .
+# <http://www.foom.com/pappus#00000000000000000052>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000046> ;
+#     rdf:predicate rdf:type ;
+#     rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000016> .
 
 
 # 1. circle AB is a circle
@@ -187,79 +338,79 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # 3. OA is a side of triangle OAB (by 0)
 # [it follows that A is a point, O is a point, A and O are distinct, A is a vertex, O is a vertex,
 #    OA is a segment]
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate  ;
-    rdf:object <> .
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate  ;
+#     rdf:object <> .
 
-# 4. OB is a side of triangle OAB (by 0)
-# [it follows that B is a point, O is a point, B and O are distinct, B is a vertex, O is a vertex,
-#   OB is a segment]
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate  ;
-    rdf:object <> .
+# # 4. OB is a side of triangle OAB (by 0)
+# # [it follows that B is a point, O is a point, B and O are distinct, B is a vertex, O is a vertex,
+# #   OB is a segment]
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate  ;
+#     rdf:object <> .
 
-# 5. side OA is not a base of triangle OAB (by 0)
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate  ;
-    rdf:object <> .
+# # 5. side OA is not a base of triangle OAB (by 0)
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate  ;
+#     rdf:object <> .
 
-# 5. side OB is not a base of triangle OAB (by 0)
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate  ;
-    rdf:object <> .
+# # 5. side OB is not a base of triangle OAB (by 0)
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate  ;
+#     rdf:object <> .
 
-# 6. AB is the base of triangle OAB (by 0) 
-# [it follows that A is a point, B is a point, A and B are distinct, A is a vertex, B is a vertex]
-# [it also follows that points O, A, and B are not collinear]
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate  ;
-    rdf:object <> .
+# # 6. AB is the base of triangle OAB (by 0) 
+# # [it follows that A is a point, B is a point, A and B are distinct, A is a vertex, B is a vertex]
+# # [it also follows that points O, A, and B are not collinear]
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate  ;
+#     rdf:object <> .
 
-# 7.  segment OA has length |OA| (given)
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
+# # 7.  segment OA has length |OA| (given)
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate <> ;
+#     rdf:object <> .
 
-# 8. segment OB has length |OB| (given)
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
+# # 8. segment OB has length |OB| (given)
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate <> ;
+#     rdf:object <> .
 
-# 9. the length of segment OA is equal to the lenght of semgnet OB (given)
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
+# # 9. the length of segment OA is equal to the lenght of semgnet OB (given)
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate <> ;
+#     rdf:object <> .
 
-# 10. triangle OAB is isosceles (by 1, 14, 15, 16, 17)
-<http://www.foom.com/pappus#00000000000000000078>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000046> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000031> ;
-    rdf:object "true"^^xsd:boolean .
+# # 10. triangle OAB is isosceles (by 1, 14, 15, 16, 17)
+# <http://www.foom.com/pappus#00000000000000000078>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000046> ;
+#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000031> ;
+#     rdf:object "true"^^xsd:boolean .
 
-# 11. AB is a circle (construction based on 17)
-# [it follows that O is the center of circle AB, point A is on circle AB,
-#    point B is on circle AB]
-<http://www.foom.com/pappus#00000000000000000034>   
-    a rdf:Statement ;
-    rdf:subject: <http://www.foom.com/pappus#00000000000000000035> ;
-    rdf:predicate rdf:type ;    
+# # 11. AB is a circle (construction based on 17)
+# # [it follows that O is the center of circle AB, point A is on circle AB,
+# #    point B is on circle AB]
+# <http://www.foom.com/pappus#00000000000000000034>   
+#     a rdf:Statement ;
+#     rdf:subject: <http://www.foom.com/pappus#00000000000000000035> ;
+#     rdf:predicate rdf:type ;    
     
 
 
@@ -422,209 +573,201 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 #     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000057> ;
 #     rdf:object <http://www.foom.com/pappus#00000000000000000035> .
 
-# 23. OAB is an angle of triangle OAB (by 0)
-<http://www.foom.com/pappus#00000000000000000086>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000047> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000020> ;
-    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000020> .
-
-# 24. OAB is a rectilinear angle (by 23)
-<http://www.foom.com/pappus#00000000000000000087>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000048> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000020> ;
-    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000020> .
-
-#  |OAB| is the amount of rotation of rectilinear angle OAB
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-
-# 25. AB is a arc (by 9, 19, 21, 22)
-<http://www.foom.com/pappus#00000000000000000088>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000089> ;
-    rdf:predicate rdf:type ;
-    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000090> .
-
-# 26. arc AB lies on circle AB (by 19, 21, 22, 25)
-<http://www.foom.com/pappus#00000000000000000091>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000089> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000057> ;
-    rdf:object <http://www.foom.com/pappus#00000000000000000035> .
-
-# 27. angle AB is a mixed angle (by 25)
-<http://www.foom.com/pappus#00000000000000000093>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000049> ;
-    rdf:predicate rdf:type ;
-    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000013> .
-
-#  |AB| is the amount of rotation of mixed angle AB
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-
-# 28. OBA is an angle of triangle OAB (by 0)
-<http://www.foom.com/pappus#00000000000000000094>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000048> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000020> ;
-    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000020> .
-
-# 29. OBA is a rectilinear angle (by 28)
-<http://www.foom.com/pappus#00000000000000000095>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000048> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000020> ;
-    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000020> .
-
-#  |OBA| is the amount of rotation of rectilinear angle OBA
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-
-
-# 30. BA is an arc (by 9, 19, 21, 22)
-<http://www.foom.com/pappus#00000000000000000097>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000096> ;
-    rdf:predicate rdf:type ;
-    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000090> .
-
-# 31. arc BA lies on circle AB (by 19, 21, 22)
-<http://www.foom.com/pappus#00000000000000000098>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000096> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000057> ;
-    rdf:object <http://www.foom.com/pappus#00000000000000000035> .
-
-# 32. angle BA is a mixed angle (by 30)
-<http://www.foom.com/pappus#00000000000000000099>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000050> ;
-    rdf:predicate rdf:type ;
-    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000013> .
-
-#  |BA| is the amount of rotation of mixed angle BA
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-
-# 33. mixed angle OAB is the sum of the rectilinear angle OAB and the mixed angle AB, part 1 (by 23, 27)
-<http://www.foom.com/pappus#00000000000000000100>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000105> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000055> ;
-    rdf:object <http://www.foom.com/pappus#00000000000000000047> .
-
-# 34. mixed angle OAB is the sum of the rectilinear angle OAB and the mixed angle AB, part 2 (by 23, 27)
-<http://www.foom.com/pappus#00000000000000000101>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000105> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000055> ;
-    rdf:object <http://www.foom.com/pappus#00000000000000000049> .
-
-# 35. mixed angle OBA is the sum of the rectilinear angle OBA and the mixed angle BA, part 1 (by 29, 32)
-<http://www.foom.com/pappus#00000000000000000102>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000000> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000055> ;
-    rdf:object <http://www.foom.com/pappus#00000000000000000048> .
-
-# 36. mixed angle OBA is the sum of the rectilinear angle OBA and the mixed angle BA, part 2 (by 29, 32)
-<http://www.foom.com/pappus#00000000000000000103>
-    a rdf:Statement ;
-    rdf:subject <http://www.foom.com/pappus#00000000000000000000> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000055> ;
-    rdf:object <http://www.foom.com/pappus#00000000000000000050> .
-
-# |OAB| is the amount of rotation of mixed angle OAB (by 33, 34)
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-
-# |OBA| is the amount of rotation of mixed angle OBA (by 35, 36)
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-
-# the amount of rotation |OAB| is the same as the amount of rotation |OBA| (by 33, 34, 35, 36, ...)
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-
-# 37. mixed angle OAB has the same amount of rotation as angle OBA (given?)
-# <http://www.foom.com/pappus#00000000000000000104>
-#     a rdf:Statement ;
-#     rdf:subject <http://www.foom.com/pappus#00000000000000000108> ;
-#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000001> ;
-#     rdf:object <http://www.foom.com/pappus#00000000000000000000> .
-
-# 38. mixed angle AB has the same amount of rotation as mixed angle BA (given?)
-# <http://www.foom.com/pappus#00000000000000000106>
-#     a rdf:Statement ;
-#     rdf:subject <http://www.foom.com/pappus#00000000000000000049> ;
-#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000001> ;
-#     rdf:object <http://www.foom.com/pappus#00000000000000000050> .
-
-# the amount of rotation |AB| of mixed angle AB is the same as 
-# the amount of rotation |BA| of mixed angle BA
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-
-# 39. if a+x = b+y and x = y, then a = b (axiom or lemma)
-# <http://www.foom.com/pappus#00000000000000000107>
-
-
-# 39 antecedent
-<http://www.foom.com/pappus#00000000000000000008>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate  ;
-    rdf:object <> .
-
-# 39 consequent
-<http://www.foom.com/pappus#00000000000000000009>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate  ;
-    rdf:object <> .
-
-
-# 40. rectilinear angle OAB has the same amount of rotation as rectilinear angle OBA
-# <http://www.foom.com/pappus#00000000000000000002>
+# # 23. OAB is an angle of triangle OAB (by 0)
+# <http://www.foom.com/pappus#00000000000000000086>
 #     a rdf:Statement ;
 #     rdf:subject <http://www.foom.com/pappus#00000000000000000047> ;
-#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000001> ;
+#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000020> ;
+#     rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000020> .
+
+# # 24. OAB is a rectilinear angle (by 23)
+# <http://www.foom.com/pappus#00000000000000000087>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000048> ;
+#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000020> ;
+#     rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000020> .
+
+# #  |OAB| is the amount of rotation of rectilinear angle OAB
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate <> ;
+#     rdf:object <> .
+
+# # 25. AB is a arc (by 9, 19, 21, 22)
+# <http://www.foom.com/pappus#00000000000000000088>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000089> ;
+#     rdf:predicate rdf:type ;
+#     rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000090> .
+
+# # 26. arc AB lies on circle AB (by 19, 21, 22, 25)
+# <http://www.foom.com/pappus#00000000000000000091>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000089> ;
+#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000057> ;
+#     rdf:object <http://www.foom.com/pappus#00000000000000000035> .
+
+# # 27. angle AB is a mixed angle (by 25)
+# <http://www.foom.com/pappus#00000000000000000093>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000049> ;
+#     rdf:predicate rdf:type ;
+#     rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000013> .
+
+# #  |AB| is the amount of rotation of mixed angle AB
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate <> ;
+#     rdf:object <> .
+
+# # 28. OBA is an angle of triangle OAB (by 0)
+# <http://www.foom.com/pappus#00000000000000000094>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000048> ;
+#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000020> ;
+#     rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000020> .
+
+# # 29. OBA is a rectilinear angle (by 28)
+# <http://www.foom.com/pappus#00000000000000000095>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000048> ;
+#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000020> ;
+#     rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000020> .
+
+# #  |OBA| is the amount of rotation of rectilinear angle OBA
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate <> ;
+#     rdf:object <> .
+
+
+# # 30. BA is an arc (by 9, 19, 21, 22)
+# <http://www.foom.com/pappus#00000000000000000097>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000096> ;
+#     rdf:predicate rdf:type ;
+#     rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000090> .
+
+# # 31. arc BA lies on circle AB (by 19, 21, 22)
+# <http://www.foom.com/pappus#00000000000000000098>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000096> ;
+#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000057> ;
+#     rdf:object <http://www.foom.com/pappus#00000000000000000035> .
+
+# # 32. angle BA is a mixed angle (by 30)
+# <http://www.foom.com/pappus#00000000000000000099>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000050> ;
+#     rdf:predicate rdf:type ;
+#     rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000013> .
+
+# #  |BA| is the amount of rotation of mixed angle BA
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate <> ;
+#     rdf:object <> .
+
+# # 33. mixed angle OAB is the sum of the rectilinear angle OAB and the mixed angle AB, part 1 (by 23, 27)
+# <http://www.foom.com/pappus#00000000000000000100>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000105> ;
+#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000055> ;
+#     rdf:object <http://www.foom.com/pappus#00000000000000000047> .
+
+# # 34. mixed angle OAB is the sum of the rectilinear angle OAB and the mixed angle AB, part 2 (by 23, 27)
+# <http://www.foom.com/pappus#00000000000000000101>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000105> ;
+#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000055> ;
+#     rdf:object <http://www.foom.com/pappus#00000000000000000049> .
+
+# # 35. mixed angle OBA is the sum of the rectilinear angle OBA and the mixed angle BA, part 1 (by 29, 32)
+# <http://www.foom.com/pappus#00000000000000000102>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000000> ;
+#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000055> ;
 #     rdf:object <http://www.foom.com/pappus#00000000000000000048> .
 
-# the amount of rotation |OAB| of rectilinear angle OAB is the same as
-# the amount of rotation |OBA| of rectilinear angle OBA
+# # 36. mixed angle OBA is the sum of the rectilinear angle OBA and the mixed angle BA, part 2 (by 29, 32)
+# <http://www.foom.com/pappus#00000000000000000103>
+#     a rdf:Statement ;
+#     rdf:subject <http://www.foom.com/pappus#00000000000000000000> ;
+#     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000055> ;
+#     rdf:object <http://www.foom.com/pappus#00000000000000000050> .
+
+# # |OAB| is the amount of rotation of mixed angle OAB (by 33, 34)
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate <> ;
+#     rdf:object <> .
+
+# # |OBA| is the amount of rotation of mixed angle OBA (by 35, 36)
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate <> ;
+#     rdf:object <> .
+
+# # the amount of rotation |OAB| is the same as the amount of rotation |OBA| (by 33, 34, 35, 36, ...)
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate <> ;
+#     rdf:object <> .
+
+# # 37. mixed angle OAB has the same amount of rotation as angle OBA (given?)
+# # <http://www.foom.com/pappus#00000000000000000104>
+# #     a rdf:Statement ;
+# #     rdf:subject <http://www.foom.com/pappus#00000000000000000108> ;
+# #     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000001> ;
+# #     rdf:object <http://www.foom.com/pappus#00000000000000000000> .
+
+# # 38. mixed angle AB has the same amount of rotation as mixed angle BA (given?)
+# # <http://www.foom.com/pappus#00000000000000000106>
+# #     a rdf:Statement ;
+# #     rdf:subject <http://www.foom.com/pappus#00000000000000000049> ;
+# #     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000001> ;
+# #     rdf:object <http://www.foom.com/pappus#00000000000000000050> .
+
+# # the amount of rotation |AB| of mixed angle AB is the same as 
+# # the amount of rotation |BA| of mixed angle BA
+# <>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate <> ;
+#     rdf:object <> .
+
+# # 39. if a+x = b+y and x = y, then a = b (axiom or lemma)
+# # <http://www.foom.com/pappus#00000000000000000107>
 
 
-### EUCLID'S PROOF
+# # 39 antecedent
+# <http://www.foom.com/pappus#00000000000000000008>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate  ;
+#     rdf:object <> .
+
+# # 39 consequent
+# <http://www.foom.com/pappus#00000000000000000009>
+#     a rdf:Statement ;
+#     rdf:subject <> ;
+#     rdf:predicate  ;
+#     rdf:object <> .
 
 
+# # 40. rectilinear angle OAB has the same amount of rotation as rectilinear angle OBA
+# # <http://www.foom.com/pappus#00000000000000000002>
+# #     a rdf:Statement ;
+# #     rdf:subject <http://www.foom.com/pappus#00000000000000000047> ;
+# #     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000001> ;
+# #     rdf:object <http://www.foom.com/pappus#00000000000000000048> .
 
-
-### PAPPUS' PROOF
+# # the amount of rotation |OAB| of rectilinear angle OAB is the same as
+# # the amount of rotation |OBA| of rectilinear angle OBA

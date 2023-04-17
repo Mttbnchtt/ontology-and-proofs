@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofAristotle_step0_relatedOntology" uri="pappus_step0_proofAristotle.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofAristotle_step0_relatedOntology" uri="pappus_step0_proofAristotle.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.foom.com/core" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/core.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.foom.com/core" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/core.owl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofAristotle_step0_relatedOntology" uri="pappus_step0_proofAristotle.ttl"/>
     <uri id="Imports Wizard Entry" name="http://www.foom.com/mathematical_concepts" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/mathematical_concepts.ttl"/>
     <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofAristotle_step1_relatedOntology" uri="pappus_step1_proofAristotle.ttl"/>
     <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofAristotle_step0_relatedOntology" uri="pappus_step0_proofAristotle.ttl"/>

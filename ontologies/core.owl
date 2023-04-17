@@ -114,7 +114,7 @@
 <http://www.foom.com/core#00000000000000000005> rdf:type owl:Class ;
                                                 rdfs:subClassOf <http://www.foom.com/core/Claim> ;
                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Antecendet of conditional claim"@en .
+                                                rdfs:label "Antecedent of conditional claim"@en .
 
 
 ###  http://www.foom.com/core#00000000000000000006

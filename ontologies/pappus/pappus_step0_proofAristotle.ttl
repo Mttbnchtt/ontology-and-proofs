@@ -41,6 +41,10 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000013> rdf:type owl:Class .
 
 
+###  http://www.foom.com/mathematical_concepts#00000000000000000014
+<http://www.foom.com/mathematical_concepts#00000000000000000014> rdf:type owl:Class .
+
+
 ###  http://www.foom.com/mathematical_concepts#00000000000000000017
 <http://www.foom.com/mathematical_concepts#00000000000000000017> rdf:type owl:Class .
 
@@ -85,6 +89,21 @@
                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
                                                                                         <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                                         rdfs:label "Amount of rotation of mixed angle BA proof Aristotle"@en .
+
+
+###  https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000004
+<https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000004> rdf:type owl:NamedIndividual ,
+                                                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
+                                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000005> ;
+                                                                                        <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                        rdfs:label "Rectilinear angle OAB proof Aristotle"@en .
+
+
+###  https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000005
+<https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000005> rdf:type owl:NamedIndividual ,
+                                                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
+                                                                                        <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                        rdfs:label "Amount of rotation of rectilinear angle OAB proof Aristotle"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000046
