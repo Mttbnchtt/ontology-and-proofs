@@ -111,54 +111,88 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # 0. Let ABC be an isosceles triangle where
 # side AB has the same lenght as side AC and
-# BC is the base of triangle ABC
+# BC is the base of triangle ABC (stated, given)
+<https://www.foom.com/pappus#00000000000000000039>
+    a rdf:Statement ;
+    rdf:subject <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000025> ;
+    rdf:predicate rdf:type ;
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000058> .
+# related ontology:
+# (i) A is a point
+# (ii) O is a point
+# (iii) point A and point O are distinct
+# (iv) B is a point
+# (v) point B and point O are distinct
+# (vi) point A and point B are distinct
+# (vii) AB is a segment
+# (viii) A is extremity of segment AB
+# (viii) B is extremity of segment AB
+# (ix) AC is a segment
+# (x) A is extremity of segment AC
+# (xi) C is extremity of segment AC
+# (xii) BC is a segment
+# (xiii) B is extremity of segment BC
+# (xiv) C is is extremity of segment BC
+# (xv) segment AB is side of triangle ABC
+# (xvi) segment BC is side of triangle ABC
+# (xvii) side AB has lenght |AB|
+# (xviii) side AC has lenght |AC|
+# (xix)the lenght of side AB is equivalent to the lenght of side AC
+# (xx) segment BC is a basis of triangle ABC
+
+# 1. Extend AB to F (stated, construction; by 0)
 <>
     a rdf:Statement ;
     rdf:subject <> ;
     rdf:predicate <> ;
+    rdf:object <> .
+# related ontology:
+# (i)
+
+# 2. Extend AC to E (stated, construction: by 0)
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+# related ontology:
+# (i)
+
+# 3. Select point F on BD such that F lies stricly between point B and point F (stated, construction; by 1)
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+# related ontology:
+# (i)
+
+# 4. On AE, cut segment AG such that the lenght of segment AF is the same as the lenght of segment AG (stated, construction; by 2)
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+    rdf:object <> .
+# related ontology:
+# (i)
+
+# 5. Join point F and point C (stated, construction; by 0, 3)
+<>
+    a rdf:Statement ;
+    rdf:subject <> ;
+    rdf:predicate <> ;
+# related ontology:
+# (i)
     rdf:object <> .
 
-# 1. Extend AB to F
+# 6. Join point G and point B (stated, construction; by 0, 4)
 <>
     a rdf:Statement ;
     rdf:subject <> ;
     rdf:predicate <> ;
     rdf:object <> .
-
-# 2. Extend AC to E
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-
-# 3. Select point F on BD such that F lies stricly between point B and point F
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-
-# 4. On AE, cut segment AG such that the lenght of segment AF is the same as the lenght of segment AG
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-
-# 5. Join point F and point C
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-
-# 6. Join point G and point B
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
+# related ontology:
+# (i)
 
 # 7. The length of segment FC is equivalent to the lenght of segment BG
 <>
@@ -166,6 +200,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     rdf:subject <> ;
     rdf:predicate <> ;
     rdf:object <> .
+# related ontology:
+# (i)
 
 # 8. Triangle AFC is perfectly overlappable with triangle AGB
 <>
@@ -173,6 +209,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     rdf:subject <> ;
     rdf:predicate <> ;
     rdf:object <> .
+# related ontology:
+# (i)
 
 # 9. The amount of rotation of angle ABG is equivalent to the amount of rotation of angle ACF
 <>
@@ -180,6 +218,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     rdf:subject <> ;
     rdf:predicate <> ;
     rdf:object <> .
+# related ontology:
+# (i)
 
 # 10. Segment BF has the same length as segment CG
 <>
@@ -187,6 +227,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     rdf:subject <> ;
     rdf:predicate <> ;
     rdf:object <> .
+# related ontology:
+# (i)
 
 # 11. Triangle FBC is perfectly overlappable to triangle BCG
 <>
@@ -194,6 +236,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     rdf:subject <> ;
     rdf:predicate <> ;
     rdf:object <> .
+# related ontology:
+# (i)
 
 # 12. Angle FCB has the equivalent amount of rotation as angle CBG
 <>
@@ -201,6 +245,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     rdf:subject <> ;
     rdf:predicate <> ;
     rdf:object <> .
+# related ontology:
+# (i)
 
 # 13. Angle ABG is the sum of angle ABC and angle CBG
 <>
@@ -208,6 +254,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     rdf:subject <> ;
     rdf:predicate <> ;
     rdf:object <> .
+# related ontology:
+# (i)
 
 # 14. Angle ACF is the sum of angle ACB and angle BCF
 <>
@@ -215,6 +263,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     rdf:subject <> ;
     rdf:predicate <> ;
     rdf:object <> .
+# related ontology:
+# (i)
 
 # 15. Angle ABC has the same amount of rotation as angle ACB
 <>
@@ -222,6 +272,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     rdf:subject <> ;
     rdf:predicate <> ;
     rdf:object <> .
+# related ontology:
+# (i)
 
 
 

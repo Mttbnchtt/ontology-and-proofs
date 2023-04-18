@@ -1,0 +1,111 @@
+@prefix : <http://www.semanticweb.org/matteobianchetti/ontologies/2023/3/untitled-ontology-180/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/matteobianchetti/ontologies/2023/3/untitled-ontology-180/> .
+
+<https://www.foom.com/pappus_proofEuclid_step0_relatedOntology> rdf:type owl:Ontology ;
+                                                                 owl:imports <http://www.foom.com/core> ,
+                                                                             <http://www.foom.com/mathematical_concepts> ;
+                                                                 rdfs:comment "Ontology that describes the ontological commitments of step 0 in Euclid's prpof of the proposition \"in every isosceles triangle, the angles near the base are equal\". It imports core and mathematical concepts."@en .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000025
+<https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000025> rdf:type owl:NamedIndividual ,
+                                                                                              <http://www.foom.com/mathematical_concepts#00000000000000000058> ;
+                                                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                     rdfs:label "Triangle ABC proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000026
+<https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000026> rdf:type owl:NamedIndividual ,
+                                                                                              <http://www.foom.com/mathematical_concepts#00000000000000000024> ;
+                                                                                     <http://www.foom.com/mathematical_concepts#00000000000000000030> <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000029> ,
+                                                                                                                                                      <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000031> ;
+                                                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                     rdfs:label "Point A proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000027
+<https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000027> rdf:type owl:NamedIndividual ,
+                                                                                              <http://www.foom.com/mathematical_concepts#00000000000000000024> ;
+                                                                                     <http://www.foom.com/mathematical_concepts#00000000000000000030> <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000029> ,
+                                                                                                                                                      <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000032> ;
+                                                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                     rdfs:label "Point B proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000028
+<https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000028> rdf:type owl:NamedIndividual ,
+                                                                                              <http://www.foom.com/mathematical_concepts#00000000000000000024> ;
+                                                                                     <http://www.foom.com/mathematical_concepts#00000000000000000030> <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000031> ,
+                                                                                                                                                      <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000032> ;
+                                                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                     rdfs:label "Point C proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000029
+<https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000029> rdf:type owl:NamedIndividual ,
+                                                                                              <http://www.foom.com/mathematical_concepts#00000000000000000015> ;
+                                                                                     <http://www.foom.com/mathematical_concepts#00000000000000000074> <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000025> ;
+                                                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                     rdfs:label "Segment AB proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000031
+<https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000031> rdf:type owl:NamedIndividual ,
+                                                                                              <http://www.foom.com/mathematical_concepts#00000000000000000015> ;
+                                                                                     <http://www.foom.com/mathematical_concepts#00000000000000000074> <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000025> ;
+                                                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                     rdfs:label "Segment AC proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000032
+<https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000032> rdf:type owl:NamedIndividual ,
+                                                                                              <http://www.foom.com/mathematical_concepts#00000000000000000015> ;
+                                                                                     <http://www.foom.com/mathematical_concepts#00000000000000000033> <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000025> ;
+                                                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                     rdfs:label "Segment BC proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000033
+<https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000033> rdf:type owl:NamedIndividual ,
+                                                                                              <http://www.foom.com/mathematical_concepts#00000000000000000027> ;
+                                                                                     <http://www.foom.com/mathematical_concepts#00000000000000000076> <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000034> ;
+                                                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                     rdfs:label "Length of segment AB proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000034
+<https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000034> rdf:type owl:NamedIndividual ,
+                                                                                              <http://www.foom.com/mathematical_concepts#00000000000000000027> ;
+                                                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                     rdfs:label "Length of segment AC proof Euclid"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000026>
+                        <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000027>
+                        <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000028>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000029>
+                        <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000031>
+                        <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000032>
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.24.2023-01-14T21:28:32Z) https://github.com/owlcs/owlapi

@@ -36,6 +36,126 @@
                                                    rdfs:label "Step 0 proof Euclid"@en .
 
 
+###  https://www.foom.com/pappus#00000000000000000010
+<https://www.foom.com/pappus#00000000000000000010> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 1 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000011
+<https://www.foom.com/pappus#00000000000000000011> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 2 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000012
+<https://www.foom.com/pappus#00000000000000000012> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 3 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000013
+<https://www.foom.com/pappus#00000000000000000013> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 4 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000014
+<https://www.foom.com/pappus#00000000000000000014> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 5 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000015
+<https://www.foom.com/pappus#00000000000000000015> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 6 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000016
+<https://www.foom.com/pappus#00000000000000000016> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 7 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000017
+<https://www.foom.com/pappus#00000000000000000017> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 8 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000018
+<https://www.foom.com/pappus#00000000000000000018> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 9 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000019
+<https://www.foom.com/pappus#00000000000000000019> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 10 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000020
+<https://www.foom.com/pappus#00000000000000000020> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 11 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000021
+<https://www.foom.com/pappus#00000000000000000021> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 12 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000022
+<https://www.foom.com/pappus#00000000000000000022> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 13 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000023
+<https://www.foom.com/pappus#00000000000000000023> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 14 proof Euclid"@en .
+
+
+###  https://www.foom.com/pappus#00000000000000000024
+<https://www.foom.com/pappus#00000000000000000024> rdf:type owl:NamedIndividual ,
+                                                            <http://www.foom.com/core/Proof_step> ;
+                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus#00000000000000000008> ;
+                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                   rdfs:label "Step 15 proof Euclid"@en .
+
+
 ###  https://www.foom.com/pappus#00000000000000000038
 <https://www.foom.com/pappus#00000000000000000038> rdf:type owl:NamedIndividual ,
                                                             <http://www.foom.com/core/Proof> ;
