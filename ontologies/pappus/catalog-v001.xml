@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.foom.com/mathematical_concepts" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/mathematical_concepts.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofEuclid_step0_relatedOntology" uri="pappus_step0_proofEuclid.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofEuclid_step1_relatedOntology" uri="pappus_step1_proofEuclid.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofEuclid_step0_relatedOntology" uri="pappus_step0_proofEuclid.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.foom.com/mathematical_concepts" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/mathematical_concepts.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofEuclid_step7_relatedOntology" uri="pappus_step7_proofEuclid.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofEuclid_step4_relatedOntology" uri="pappus_step4_proofEuclid.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.foom.com/mathematical_concepts" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/mathematical_concepts.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://www.foom.com/pappus_proofEuclid_step5_relatedOntology" uri="pappus_step5_proofEuclid.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.foom.com/mathematical_concepts" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/mathematical_concepts.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://www.foom.com/pappus_proofEuclid_step4_relatedOntology" uri="pappus_step4_proofEuclid.ttl"/>
+    <uri id="User Entered Import Resolution" name="https://www.foom.com/pappus_proofEuclid_step3_relatedOntology" uri="pappus_step3_proofEuclid.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofEuclid_step2_relatedOntology" uri="pappus_step2_proofEuclid.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.foom.com/mathematical_concepts" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/mathematical_concepts.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofEuclid_step2_relatedOntology" uri="pappus_step2_proofEuclid.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofEuclid_step2_relatedOntology" uri="pappus_step2_proofEuclid.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofEuclid_step1_relatedOntology" uri="pappus_step1_proofEuclid.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofEuclid_step0_relatedOntology" uri="pappus_step0_proofEuclid.ttl"/>
     <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofAristotle_step0_relatedOntology" uri="pappus_step0_proofAristotle.ttl"/>
     <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofAristotle_step0_relatedOntology" uri="pappus_step0_proofAristotle.ttl"/>
     <uri id="Imports Wizard Entry" name="http://www.foom.com/core" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/core.owl"/>

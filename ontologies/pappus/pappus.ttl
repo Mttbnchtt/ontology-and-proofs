@@ -9,12 +9,7 @@
 <https://www.foom.com/pappus> rdf:type owl:Ontology ;
                                owl:imports <http://www.foom.com/conceptual_space> ,
                                            <http://www.foom.com/core> ,
-                                           <http://www.foom.com/mathematical_concepts> ,
-                                           <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology> ,
-                                           <https://www.foom.com/pappus_proofAristotle_step1_relatedOntology> ,
-                                           <https://www.foom.com/pappus_proofAristotle_step2_relatedOntology> ,
-                                           <https://www.foom.com/pappus_proofAristotle_step3_relatedOntology> ,
-                                           <https://www.foom.com/pappus_proofAristotle_step4_relatedOntology> ;
+                                           <http://www.foom.com/mathematical_concepts> ;
                                rdfs:comment "Analysis of Pappus' proof that the angles near the base of an isosceles triangle are equal and analysis of the conceptual context in which Pappus discovered the proof. It imports core,  conceptual space, mathematical concepts, and all the ontologies related to specific proof steps."@en .
 
 #################################################################

@@ -47,5 +47,10 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # then xy is a side of z
 
 
+# if x is an extremity of segment y, then
+# x is a point
 
+
+# if x is an extremity of segment y, then
+# x is lies on y
 

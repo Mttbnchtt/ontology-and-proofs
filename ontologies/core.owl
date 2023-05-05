@@ -30,6 +30,14 @@
                                                 rdfs:label "has consequent of conditional claim"@en .
 
 
+###  http://www.foom.com/core#00000000000000000035
+<http://www.foom.com/core#00000000000000000035> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
+                                                rdfs:range <http://www.foom.com/core/Proof_step> ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "is in proof step"@en .
+
+
 ###  http://www.foom.com/core#00000000000000000080
 <http://www.foom.com/core#00000000000000000080> rdf:type owl:ObjectProperty ;
                                                 rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
@@ -68,6 +76,14 @@
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://www.foom.com/core#00000000000000000004
+<http://www.foom.com/core#00000000000000000004> rdf:type owl:DatatypeProperty ;
+                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000045> ;
+                                                rdfs:range xsd:boolean ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "is referred to explicitly"@en .
+
 
 ###  http://www.foom.com/core#00000000000000000043
 <http://www.foom.com/core#00000000000000000043> rdf:type owl:DatatypeProperty ;
@@ -129,6 +145,19 @@
                                                 rdfs:subClassOf <http://www.foom.com/core/Claim> ;
                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                 rdfs:label "Theorem"@en .
+
+
+###  http://www.foom.com/core#00000000000000000039
+<http://www.foom.com/core#00000000000000000039> rdf:type owl:Class ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "Enumeration"@en .
+
+
+###  http://www.foom.com/core#00000000000000000040
+<http://www.foom.com/core#00000000000000000040> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.foom.com/core#00000000000000000039> ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "Mode of construction"@en .
 
 
 ###  http://www.foom.com/core/Claim
