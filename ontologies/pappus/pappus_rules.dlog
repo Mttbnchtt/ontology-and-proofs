@@ -54,3 +54,12 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # if x is an extremity of segment y, then
 # x is lies on y
 
+
+# ONTOLOGY
+
+# (NOT SURE) if P is a property, xPy, and x is in proof step z, 
+# then y is in proof step z
+
+
+# (NOT SURE) if P is a property, yPx, and x is in proof step z, 
+# then y is in proof step z

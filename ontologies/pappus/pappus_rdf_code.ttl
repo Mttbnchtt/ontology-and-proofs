@@ -34,22 +34,22 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 
 # 1. join point B to point O (stated; construction)
-<https://www.foom.com/pappus#00000000000000000040>
+<https://www.foom.com/pappus_proofAristotle#00000000000000000014>
     a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000049> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000042> ;
-    rdf:object <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000047> .
+    rdf:subject <https://www.foom.com/pappus_proofAristotle#00000000000000000043> ; # Point B
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000042> ; # is joined to
+    rdf:object <https://www.foom.com/pappus_proofAristotle#00000000000000000044> . # Point 0
 # related ontology:
 # (i) imports from step 0
 # (ii) rectilinear angle OBA has amount of rotation OBA
 
 
 # 2. OAB is an isosceles triangle (stated; by 0, 1)
-<https://www.foom.com/pappus#00000000000000000041>
-  a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofAristotle_step2_relatedOntology#00000000000000000050> ;
-    rdf:predicate rdf:type ;
-    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000058> .
+# <https://www.foom.com/pappus#00000000000000000041>
+#   a rdf:Statement ;
+#     rdf:subject <https://www.foom.com/pappus_proofAristotle#00000000000000000045> ; # Triangle AOB
+#     rdf:predicate rdf:type ;
+#     rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000058> .
 # related ontology:
 # (i) point A and point B are distinct (imported from step 0)
 # (ii) segment OA and segment OB are distinct
@@ -57,16 +57,17 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (iv) segment OB is a side of triangle AOB
 # (v) segment AB is a base of triangle AOB
 # (vi) the lenght of OA is the same as the same of OB
+# Move the above related ontology to step 1.
 
 
-# 3. the sum of rectilinear angle OAB and mixed angle AB 
+# 2. the sum of rectilinear angle OAB and mixed angle AB 
 # has the same amount of rotation as the sum of rectilinear angle OBA
 # and mixed angle BA (stated; by 0, 2)
-<https://www.foom.com/pappus#00000000000000000042>
+<https://www.foom.com/pappus_proofAristotle#00000000000000000017>
     a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofAristotle_step3_relatedOntology#00000000000000000073> ;
+    rdf:subject <https://www.foom.com/pappus_proofAristotle#00000000000000000004> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
-    rdf:object <https://www.foom.com/pappus_proofAristotle_step3_relatedOntology#00000000000000000075> .
+    rdf:object <https://www.foom.com/pappus_proofAristotle#00000000000000000020> .
 # related ontology:
 # (i) rectilinear angle OAB is a rectilinear angle
 # (ii) rectilinear angle OBA is a rectilinear angle
@@ -78,19 +79,19 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (vii) rectilinear angle OAB has amount of rotation OAB
 # (viii) rectilinear angle OBA has amount of rotation OBA
 
-# 4. mixed angle AB has the same amount of rotation 
+# 3. mixed angle AB has the same amount of rotation 
 # as mixed angle BA (stated; by 0, 1)
-<https://www.foom.com/pappus#00000000000000000043>
+<https://www.foom.com/pappus_proofAristotle#00000000000000000040>
     a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000002> ;
+    rdf:subject <https://www.foom.com/pappus_proofAristotle#00000000000000000011> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
-    rdf:object <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000003> .
+    rdf:object <https://www.foom.com/pappus_proofAristotle#00000000000000000012> .
 # related ontology (imported from step 0)
  
 
-# 5. for every angle x, y, w, z (if |x|=|y| and |w|=|z|,
+# 4. for every angle x, y, w, z (if |x|=|y| and |w|=|z|,
 # then |x-w|=|y-z|) (stated; axiom)
-<https://www.foom.com/pappus#00000000000000000044>
+<https://www.foom.com/pappus_proofAristotle#00000000000000000041>
     a rdf:Statement ;
     rdf:subject <> ;
     rdf:predicate  ;
@@ -98,13 +99,13 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # related ontology: it imports the ontology of step 0
 
 
-# 6. rectilinear angle OAB has the same amount of rotation
+# 5. rectilinear angle OAB has the same amount of rotation
 # as rectilinear angle OBA (stated; by 3, 4, 5)
-<https://www.foom.com/pappus#00000000000000000045>
+<https://www.foom.com/pappus_proofAristotle#00000000000000000046>
     a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofAristotle_step0_relatedOntology#00000000000000000005> ;
+    rdf:subject <https://www.foom.com/pappus_proofAristotle#00000000000000000013> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
-    rdf:object <https://www.foom.com/pappus_proofAristotle_step1_relatedOntology#00000000000000000007> .
+    rdf:object <https://www.foom.com/pappus_proofAristotle#00000000000000000016> .
 # related ontology: 
 # it imports ontologies of step 0, 1, 2, 3, 4, 5
 
@@ -115,11 +116,11 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # 0. Let ABC be an isosceles triangle where
 # side AB has the same lenght as side AC and
 # BC is the base of triangle ABC (stated, given)
-<https://www.foom.com/pappus#00000000000000000039>
+<http://www.foom.com/pappus_proofEuclid#00000000000000000048>
     a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000025> ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000056> ; # Triangle ABC
     rdf:predicate rdf:type ;
-    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000058> .
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000058> . # Isosceles triangle
 # related ontology:
 # (i) A is a point
 # (ii) O is a point
@@ -144,15 +145,16 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (xx) segment BC is a basis of triangle ABC
 
 # 1. Extend a segment (not stated, axiom 2)
+# <http://www.foom.com/pappus_proofEuclid#00000000000000000049>
 # related ontology:
 # (i) class Segment is a subject of things that can be extended continously in a straight line
 
 # 2. Extend AB to D (stated, construction; by 0, 1)
-<https://www.foom.com/pappus#00000000000000000011>
+<http://www.foom.com/pappus_proofEuclid#00000000000000000050>
     a rdf:Statement ;
-    rdf:subject <> ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000060> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000031> # is produced to
-    rdf:object <https://www.foom.com/pappus_proofEuclid_step1_relatedOntology#00000000000000000036> .
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000070> .
 # related ontology:
 # (i) import ontology of steps 0 and 1
 # (ii) AD is a segment
@@ -161,13 +163,15 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (v) A and F are distinct points
 # (vi) B lies on segment AD
 # (vii) B is distinct from D
+# (viii) BD is a segment, distinct from every other segment mentioned so far
+# and whose extremities are the points B and D
 
 # 3. Extend AC to E (stated, construction: by 0, 1)
-<https://www.foom.com/pappus#00000000000000000012>
+<http://www.foom.com/pappus_proofEuclid#00000000000000000051>
     a rdf:Statement ;
-    rdf:subject <> ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000062> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000031> ; # is produced to 
-    rdf:object <https://www.foom.com/pappus_proofEuclid_step3_relatedOntology#00000000000000000000> .
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000073> .
 # related ontology:
 # (i) import ontology of steps 0, 1, 2
 # (ii) AE is a segment
@@ -176,13 +180,15 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (v) C lies on AE
 # (vi) A is distinct from E
 # (vii) C is distinct from E
+# (viii) CE is a segment, distinct from every other segment mentioned so far
+# and whose extremities are the points C and E
 
-# 4. Select point F on BD such that F lies stricly between point B and point F (stated, construction; by 1)
-<https://www.foom.com/pappus#00000000000000000013>
+# 4. Select point F on BD such that F lies stricly between point B and point F (stated, construction; by 2)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000052>
     a rdf:Statement ;
-    rdf:subject <> ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000076> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000029> ; # is selected from
-    rdf:object <> .
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000072> .
 # related ontology:
 # (i) import ontology of steps 0, 1, 2
 # (ii) F is a point
@@ -195,12 +201,12 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # 5. proposition I.3
 
-# 6. On AE, cut segment AG such that the lenght of segment AF is the same as the lenght of segment AG (stated, construction; by 2, 5)
-<https://www.foom.com/pappus#00000000000000000014>
+# 6. On AE, cut segment AG such that the lenght of segment AF is the same as the lenght of segment AG (stated, construction; by 2, 3, 5)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000054>
     a rdf:Statement ;
-    rdf:subject <> ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000086> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000009> ; # is cut from
-    rdf:object <> .
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000073> .
 # related ontology:
 # (i) import steps 0, 1, 2, 3, 4
 # (ii) AE is a segment and it is different from all the segments mentioned before
@@ -208,52 +214,74 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (iv) the lenght of AF is equivalent to the lenght of AE
 
 # 7. axiom 1
-# <https://www.foom.com/pappus#00000000000000000015>
+# <http://www.foom.com/pappus_proofEuclid#00000000000000000077>
 
-# 8. Join point F and point C (stated, construction; by 0, 3, 7)
-<https://www.foom.com/pappus#00000000000000000017>
+# 8. Join point F and point C (stated, construction; by 0, 6, 7)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000078>
     a rdf:Statement ;
-    rdf:subject <> ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000076> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000042> ; # is joined to
-    rdf:object <> .
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000059> .
 # related ontology:
 # (i) import previous steps
 # (ii) FC is a segment with extremities F and C
 # (iii) points F and C are distinct
 # (iv) FC is distinct from all the segments mentioned before
 
-# 9. Join point G and point B (stated, construction; by 0, 4, 5)
-<https://www.foom.com/pappus#00000000000000000018>
+# 9. Join point G and point B (stated, construction; by 0, 5, 6)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000079>
     a rdf:Statement ;
-    rdf:subject <https://www.foom.com/pappus_proofEuclid_step5_relatedOntology#00000000000000000004> ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000087> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000042> ; # is joined to
-    rdf:object <https://www.foom.com/pappus_proofEuclid_step0_relatedOntology#00000000000000000027> .
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000058> .
 # related ontology:
 # (i) it imports the ontology of previous steps
 # (ii) BG is a segment distinct from the segments mentioned previously
 # (ii) B and G are the extremities of BG
 
-
-
-
-
-# 10. The length of segment FC is equivalent to the lenght of segment BG
-<>
+# 10. Angle FAG is internal angle of triagle AFC (stated; by 0, 4, 8)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000098>
     a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000099> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000020> ; # is internal angle of
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000095> .
 # related ontology:
-# (i)
+# (i) Triangles AFC and AGB with relative sides
+# (ii) Angle FAG internal to triangle AFC
+# (iii) Angle FAG has sides segments AF and AC
 
-# 11. proposition 1.4
-
-# 12. Triangle AFC is perfectly overlappable with triangle AGB
-<>
+# 11. Angle FAG is internal angle of triangle AGB (stated; by 0, 6, 9)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000100>
     a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000099> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000020> ; # is internal angle of
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000096> .
+# related ontology:
+# (i) Triangles AFC and AGB with relative sides
+# (ii) Angle FAG internal to triangle AFC
+# (iii) Angle FAG has sides segments AG and AB
+
+# 12. proposition 1.4
+# <http://www.foom.com/pappus_proofEuclid#00000000000000000082>
+
+# 13. The length of segment FC is equivalent to the lenght of segment BG (stated; by 6, 8, 9, 10, 11, 12)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000080>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000093> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ; # is equivalent amount as
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000094> .
+# related ontology:
+# (i) Triangles AFC and AGB with relative sides
+# (ii) Angle FAC and angle GAB (which are the same angle)
+# (iii) Segment FC is the basis of triangle AFC
+# (iv) Segment BG is the basis of triangle AGB
+
+# 14. Triangle AFC is perfectly overlappable with triangle AGB
+<http://www.foom.com/pappus_proofEuclid#00000000000000000101>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000095> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000097> ;
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000096> .
 # related ontology:
 # (i)
 
