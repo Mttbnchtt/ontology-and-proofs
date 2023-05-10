@@ -60,7 +60,9 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # Move the above related ontology to step 1.
 
 
-# 2. the sum of rectilinear angle OAB and mixed angle AB 
+# 2. Given a circle and a cord in it, the resulting mixed angles are equal to each other.
+
+# 3. the sum of rectilinear angle OAB and mixed angle AB 
 # has the same amount of rotation as the sum of rectilinear angle OBA
 # and mixed angle BA (stated; by 0, 2)
 <https://www.foom.com/pappus_proofAristotle#00000000000000000017>
@@ -79,8 +81,14 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (vii) rectilinear angle OAB has amount of rotation OAB
 # (viii) rectilinear angle OBA has amount of rotation OBA
 
-# 3. mixed angle AB has the same amount of rotation 
-# as mixed angle BA (stated; by 0, 1)
+# 4. Join point A to B (not stated; by 0)
+# <https://www.foom.com/pappus_proofAristotle#00000000000000000130>
+# related ontology:
+# (i) segment AB
+
+
+# 5. mixed angle AB has the same amount of rotation 
+# as mixed angle BA (stated; by 2, 5)
 <https://www.foom.com/pappus_proofAristotle#00000000000000000040>
     a rdf:Statement ;
     rdf:subject <https://www.foom.com/pappus_proofAristotle#00000000000000000011> ;
@@ -89,17 +97,17 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # related ontology (imported from step 0)
  
 
-# 4. for every angle x, y, w, z (if |x|=|y| and |w|=|z|,
+# 6. for every angle x, y, w, z (if |x|=|y| and |w|=|z|,
 # then |x-w|=|y-z|) (stated; axiom)
-<https://www.foom.com/pappus_proofAristotle#00000000000000000041>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate  ;
-    rdf:object <> .
+# <https://www.foom.com/pappus_proofAristotle#00000000000000000041>
+    # a rdf:Statement ;
+    # rdf:subject <> ;
+    # rdf:predicate  ;
+    # rdf:object <> .
 # related ontology: it imports the ontology of step 0
 
 
-# 5. rectilinear angle OAB has the same amount of rotation
+# 7. rectilinear angle OAB has the same amount of rotation
 # as rectilinear angle OBA (stated; by 3, 4, 5)
 <https://www.foom.com/pappus_proofAristotle#00000000000000000046>
     a rdf:Statement ;
@@ -276,7 +284,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (iii) Segment FC is the basis of triangle AFC
 # (iv) Segment BG is the basis of triangle AGB
 
-# 14. Triangle AFC is perfectly overlappable with triangle AGB by a rigid movement (stated; by 12, 13)
+# 14. Triangle AFC is perfectly overlappable with triangle AGB by a rigid movement (stated; by 0, 6, 12, 13)
 <http://www.foom.com/pappus_proofEuclid#00000000000000000101>
     a rdf:Statement ;
     rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000095> ;
@@ -312,7 +320,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # related ontology:
 # (i)
 
-# 18. Triangle FBC is perfectly overlappable to triangle BCG (stated, by 12)
+# 18. Triangle FBC is perfectly overlappable to triangle BCG (stated, by 12, 13, 17)
 <http://www.foom.com/pappus_proofEuclid#00000000000000000112>
     a rdf:Statement ;
     rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000117> ;
@@ -321,41 +329,57 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # related ontology:
 # (i) triangles FBC and BCG (distinct) with their sides
 
-
-
-# 16. Angle FCB has the equivalent amount of rotation as angle CBG
-<>
+# 19. Angle FCB has the equivalent amount of rotation as angle CBG (stated; by 18)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000120>
     a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000121> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ; # is equivalent amount as
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000123> .
+# related ontology:
+# (i) Angle FCB and CBG (distinct) and their amounts of rotation
+
+# 20. Angle ABG is the sum of angle ABC and angle CBG (stated; by 0, 18 ) [part 1]
+<http://www.foom.com/pappus_proofEuclid#00000000000000000124>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000110> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000055> ; # is sum of
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000066> . # rectilinear angle CBG
 # related ontology:
 # (i)
 
-# 17. Angle ABG is the sum of angle ABC and angle CBG
-<>
+# 21. Angle ABG is the sum of angle ABC and angle CBG (stated; by 0, 18) [part 2]
+<http://www.foom.com/pappus_proofEuclid#00000000000000000125>
     a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000110> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000055> ; # is sum of
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000122> . # rectilinear angle CBG
 # related ontology:
 # (i)
 
-# 18. Angle ACF is the sum of angle ACB and angle BCF
-<>
+# 22. Angle ACF is the sum of angle ACB and angle BCF (stated; by 0, 18) [part 1]
+<http://www.foom.com/pappus_proofEuclid#00000000000000000126>
     a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000102> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000055> ; # is sum of
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000067> . # rectilinear angle ACB
 # related ontology:
 # (i)
 
-# 19. Angle ABC has the same amount of rotation as angle ACB
-<>
+# 23. Angle ACF is the sum of angle ACB and angle FCB (stated; by 0, 18) [part 1]
+<http://www.foom.com/pappus_proofEuclid#00000000000000000127>
     a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000102> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000055> ; # is sum of
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000119> . # rectilinear angle FCB
+# related ontology:
+# (i)
+
+# 24. Angle ABC has the same amount of rotation as angle ACB (goal; stated; by 19, 20, 21, 22, 23)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000128>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000068> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000069> .
 # related ontology:
 # (i)
 

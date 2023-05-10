@@ -8,7 +8,8 @@
 
 <http://www.foom.com/pappus_proofEuclid> rdf:type owl:Ontology ;
                                           owl:imports <http://www.foom.com/core> ,
-                                                      <http://www.foom.com/mathematical_concepts> .
+                                                      <http://www.foom.com/mathematical_concepts> ;
+                                          rdfs:isDefinedBy "Ontological analysis of Euclid's proof of theorem 5 of Book 1 of the Elements"@en .
 
 #################################################################
 #    Individuals
@@ -17,6 +18,7 @@
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000047
 <http://www.foom.com/pappus_proofEuclid#00000000000000000047> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/core/Proof> ;
+                                                              <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Proof Euclid"@en .
 
@@ -162,8 +164,12 @@
                                                               <http://www.foom.com/core#00000000000000000035> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000033> <http://www.foom.com/pappus_proofEuclid#00000000000000000056> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000074> <http://www.foom.com/pappus_proofEuclid#00000000000000000056> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000066> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000067> ,
                                                                                                                                <http://www.foom.com/pappus_proofEuclid#00000000000000000117> ,
-                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000118> ;
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000118> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000119> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000122> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Segment BC (proof Euclid)"@en .
 
@@ -176,7 +182,8 @@
                                                               <http://www.foom.com/core#00000000000000000035> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <http://www.foom.com/pappus_proofEuclid#00000000000000000064> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000074> <http://www.foom.com/pappus_proofEuclid#00000000000000000056> ,
-                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000099> ;
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000067> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000102> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Segment AC (proof Euclid)"@en .
 
@@ -202,6 +209,8 @@
 <http://www.foom.com/pappus_proofEuclid#00000000000000000066> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
                                                               owl:differentFrom <http://www.foom.com/pappus_proofEuclid#00000000000000000067> ;
+                                                              <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000124> ,
+                                                                                                              <http://www.foom.com/pappus_proofEuclid#00000000000000000128> ;
                                                               <http://www.foom.com/core#00000000000000000035> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000038> <http://www.foom.com/pappus_proofEuclid#00000000000000000056> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000068> <http://www.foom.com/pappus_proofEuclid#00000000000000000056> ;
@@ -212,6 +221,8 @@
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000067
 <http://www.foom.com/pappus_proofEuclid#00000000000000000067> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
+                                                              <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000126> ,
+                                                                                                              <http://www.foom.com/pappus_proofEuclid#00000000000000000128> ;
                                                               <http://www.foom.com/core#00000000000000000035> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000038> <http://www.foom.com/pappus_proofEuclid#00000000000000000056> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000068> <http://www.foom.com/pappus_proofEuclid#00000000000000000056> ;
@@ -222,7 +233,9 @@
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000068
 <http://www.foom.com/pappus_proofEuclid#00000000000000000068> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
+                                                              <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000128> ;
                                                               <http://www.foom.com/core#00000000000000000035> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000076> <http://www.foom.com/pappus_proofEuclid#00000000000000000069> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Amount of rotation of rectilinear angle ABC (proof Euclid)"@en .
 
@@ -230,6 +243,7 @@
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000069
 <http://www.foom.com/pappus_proofEuclid#00000000000000000069> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
+                                                              <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000128> ;
                                                               <http://www.foom.com/core#00000000000000000035> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Amount of rotation of rectilinear angle ACB (proof Euclid)"@en .
@@ -375,7 +389,8 @@
                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000015> ;
                                                               <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000054> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <http://www.foom.com/pappus_proofEuclid#00000000000000000090> ;
-                                                              <http://www.foom.com/mathematical_concepts#00000000000000000074> <http://www.foom.com/pappus_proofEuclid#00000000000000000099> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000074> <http://www.foom.com/pappus_proofEuclid#00000000000000000099> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000110> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Segment AG (proof Euclid)"@en .
 
@@ -424,7 +439,10 @@
                                                               <http://www.foom.com/core#00000000000000000035> <http://www.foom.com/pappus_proofEuclid#00000000000000000078> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <http://www.foom.com/pappus_proofEuclid#00000000000000000093> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000033> <http://www.foom.com/pappus_proofEuclid#00000000000000000095> ;
-                                                              <http://www.foom.com/mathematical_concepts#00000000000000000074> <http://www.foom.com/pappus_proofEuclid#00000000000000000117> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000074> <http://www.foom.com/pappus_proofEuclid#00000000000000000102> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000106> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000117> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000119> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Segment FC (proof Euclid)"@en .
 
@@ -436,7 +454,9 @@
                                                               <http://www.foom.com/core#00000000000000000035> <http://www.foom.com/pappus_proofEuclid#00000000000000000079> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <http://www.foom.com/pappus_proofEuclid#00000000000000000094> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000033> <http://www.foom.com/pappus_proofEuclid#00000000000000000096> ;
-                                                              <http://www.foom.com/mathematical_concepts#00000000000000000074> <http://www.foom.com/pappus_proofEuclid#00000000000000000118> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000074> <http://www.foom.com/pappus_proofEuclid#00000000000000000110> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000118> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000122> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Segment BG (proof Euclid)"@en .
 
@@ -513,7 +533,9 @@
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000101
 <http://www.foom.com/pappus_proofEuclid#00000000000000000101> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/core/Proof_step> ;
-                                                              <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus_proofEuclid#00000000000000000080> ,
+                                                              <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ,
+                                                                                                       <http://www.foom.com/pappus_proofEuclid#00000000000000000054> ,
+                                                                                                       <http://www.foom.com/pappus_proofEuclid#00000000000000000080> ,
                                                                                                        <http://www.foom.com/pappus_proofEuclid#00000000000000000082> ;
                                                               <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
                                                               <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
@@ -526,6 +548,8 @@
                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
                                                               <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000085> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <http://www.foom.com/pappus_proofEuclid#00000000000000000103> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000055> <http://www.foom.com/pappus_proofEuclid#00000000000000000067> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000119> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Rectilinear angle ACF (proof Euclid)"@en .
 
@@ -541,7 +565,9 @@
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000104
 <http://www.foom.com/pappus_proofEuclid#00000000000000000104> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000012> ;
-                                                              <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000085> ;
+                                                              <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000085> ,
+                                                                                                              <http://www.foom.com/pappus_proofEuclid#00000000000000000124> ,
+                                                                                                              <http://www.foom.com/pappus_proofEuclid#00000000000000000125> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <http://www.foom.com/pappus_proofEuclid#00000000000000000105> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Rectilinear angle ABG (proof Euclid)"@en .
@@ -595,8 +621,13 @@
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000110
 <http://www.foom.com/pappus_proofEuclid#00000000000000000110> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
-                                                              <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000107> ;
+                                                              owl:differentFrom <http://www.foom.com/pappus_proofEuclid#00000000000000000119> ;
+                                                              <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000107> ,
+                                                                                                              <http://www.foom.com/pappus_proofEuclid#00000000000000000124> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000020> <http://www.foom.com/pappus_proofEuclid#00000000000000000096> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <http://www.foom.com/pappus_proofEuclid#00000000000000000109> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000055> <http://www.foom.com/pappus_proofEuclid#00000000000000000066> ,
+                                                                                                                               <http://www.foom.com/pappus_proofEuclid#00000000000000000122> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Rectlinear angle AGB (proof Euclid)"@en .
 
@@ -616,7 +647,9 @@
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000112
 <http://www.foom.com/pappus_proofEuclid#00000000000000000112> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/core/Proof_step> ;
-                                                              <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus_proofEuclid#00000000000000000082> ;
+                                                              <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus_proofEuclid#00000000000000000080> ,
+                                                                                                       <http://www.foom.com/pappus_proofEuclid#00000000000000000082> ,
+                                                                                                       <http://www.foom.com/pappus_proofEuclid#00000000000000000111> ;
                                                               <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
                                                               <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -675,6 +708,106 @@
                                                               <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000112> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Triangle BCG (proof Euclid)"@en .
+
+
+###  http://www.foom.com/pappus_proofEuclid#00000000000000000119
+<http://www.foom.com/pappus_proofEuclid#00000000000000000119> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
+                                                              <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000120> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000020> <http://www.foom.com/pappus_proofEuclid#00000000000000000117> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000028> <http://www.foom.com/pappus_proofEuclid#00000000000000000121> ;
+                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                              rdfs:label "Rectilinear angle FCB (proof Euclid)"@en .
+
+
+###  http://www.foom.com/pappus_proofEuclid#00000000000000000120
+<http://www.foom.com/pappus_proofEuclid#00000000000000000120> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.foom.com/core/Proof_step> ;
+                                                              <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus_proofEuclid#00000000000000000112> ;
+                                                              <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
+                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                              rdfs:label "Step 19 (proof Euclid)"@en .
+
+
+###  http://www.foom.com/pappus_proofEuclid#00000000000000000121
+<http://www.foom.com/pappus_proofEuclid#00000000000000000121> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
+                                                              <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000120> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000076> <http://www.foom.com/pappus_proofEuclid#00000000000000000122> ;
+                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                              rdfs:label "Amount of rotation of rectilinear angle FCB (proof Euclid)"@en .
+
+
+###  http://www.foom.com/pappus_proofEuclid#00000000000000000122
+<http://www.foom.com/pappus_proofEuclid#00000000000000000122> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
+                                                              <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000120> ,
+                                                                                                              <http://www.foom.com/pappus_proofEuclid#00000000000000000125> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000028> <http://www.foom.com/pappus_proofEuclid#00000000000000000123> ;
+                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                              rdfs:label "Rectilinear angle CBG (proof Euclid)"@en .
+
+
+###  http://www.foom.com/pappus_proofEuclid#00000000000000000123
+<http://www.foom.com/pappus_proofEuclid#00000000000000000123> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
+                                                              <http://www.foom.com/core#00000000000000000000> <http://www.foom.com/pappus_proofEuclid#00000000000000000120> ;
+                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                              rdfs:label "Amount of rotation of rectilinear angle CBG (proof Euclid)"@en .
+
+
+###  http://www.foom.com/pappus_proofEuclid#00000000000000000124
+<http://www.foom.com/pappus_proofEuclid#00000000000000000124> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.foom.com/core/Proof_step> ;
+                                                              <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ,
+                                                                                                       <http://www.foom.com/pappus_proofEuclid#00000000000000000112> ;
+                                                              <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
+                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                              rdfs:label "Step 20 (proof Euclid)"@en .
+
+
+###  http://www.foom.com/pappus_proofEuclid#00000000000000000125
+<http://www.foom.com/pappus_proofEuclid#00000000000000000125> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.foom.com/core/Proof_step> ;
+                                                              <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ,
+                                                                                                       <http://www.foom.com/pappus_proofEuclid#00000000000000000112> ;
+                                                              <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
+                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                              rdfs:label "Step 21 (proof Euclid)"@en .
+
+
+###  http://www.foom.com/pappus_proofEuclid#00000000000000000126
+<http://www.foom.com/pappus_proofEuclid#00000000000000000126> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.foom.com/core/Proof_step> ;
+                                                              <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ,
+                                                                                                       <http://www.foom.com/pappus_proofEuclid#00000000000000000112> ;
+                                                              <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
+                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                              rdfs:label "Step 22 (proof Euclid)"@en .
+
+
+###  http://www.foom.com/pappus_proofEuclid#00000000000000000127
+<http://www.foom.com/pappus_proofEuclid#00000000000000000127> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.foom.com/core/Proof_step> ;
+                                                              <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ,
+                                                                                                       <http://www.foom.com/pappus_proofEuclid#00000000000000000112> ;
+                                                              <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
+                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                              rdfs:label "Step 23 (proof Euclid)"@en .
+
+
+###  http://www.foom.com/pappus_proofEuclid#00000000000000000128
+<http://www.foom.com/pappus_proofEuclid#00000000000000000128> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.foom.com/core/Proof_step> ;
+                                                              <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/core#00000000000000000044> "true"^^xsd:boolean ;
+                                                              <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
+                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                              rdfs:label "Step 24 (proof Euclid)"@en .
 
 
 #################################################################
@@ -849,6 +982,29 @@
 
 
 [ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.foom.com/pappus_proofEuclid#00000000000000000066>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000067>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000099>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000102>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000104>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000106>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000119>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.foom.com/pappus_proofEuclid#00000000000000000066>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000067>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000102>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000104>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000106>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000122>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( <http://www.foom.com/pappus_proofEuclid#00000000000000000075>
                         <http://www.foom.com/pappus_proofEuclid#00000000000000000091>
                         <http://www.foom.com/pappus_proofEuclid#00000000000000000092>
@@ -862,6 +1018,15 @@
                         <http://www.foom.com/pappus_proofEuclid#00000000000000000092>
                         <http://www.foom.com/pappus_proofEuclid#00000000000000000113>
                         <http://www.foom.com/pappus_proofEuclid#00000000000000000115>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.foom.com/pappus_proofEuclid#00000000000000000099>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000110>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000119>
+                        <http://www.foom.com/pappus_proofEuclid#00000000000000000122>
                       )
 ] .
 
