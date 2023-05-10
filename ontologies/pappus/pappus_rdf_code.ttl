@@ -199,7 +199,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (vii) BD is a segment distinct from all the segments mentioned in previous steps
 # (viii) F lies on BD
 
-# 5. proposition I.3
+# 5. proposition I.3 (not stated in the proof)
 
 # 6. On AE, cut segment AG such that the lenght of segment AF is the same as the lenght of segment AG (stated, construction; by 2, 3, 5)
 <http://www.foom.com/pappus_proofEuclid#00000000000000000054>
@@ -213,7 +213,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (iii) points A and E are the extremities of AE and are distinct
 # (iv) the lenght of AF is equivalent to the lenght of AE
 
-# 7. axiom 1
+# 7. axiom 1 (not stated in the proof)
 # <http://www.foom.com/pappus_proofEuclid#00000000000000000077>
 
 # 8. Join point F and point C (stated, construction; by 0, 6, 7)
@@ -261,7 +261,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (ii) Angle FAG internal to triangle AFC
 # (iii) Angle FAG has sides segments AG and AB
 
-# 12. proposition 1.4
+# 12. proposition 1.4 (not stated in the proof)
 # <http://www.foom.com/pappus_proofEuclid#00000000000000000082>
 
 # 13. The length of segment FC is equivalent to the lenght of segment BG (stated; by 6, 8, 9, 10, 11, 12)
@@ -276,7 +276,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (iii) Segment FC is the basis of triangle AFC
 # (iv) Segment BG is the basis of triangle AGB
 
-# 14. Triangle AFC is perfectly overlappable with triangle AGB
+# 14. Triangle AFC is perfectly overlappable with triangle AGB by a rigid movement (stated; by 12, 13)
 <http://www.foom.com/pappus_proofEuclid#00000000000000000101>
     a rdf:Statement ;
     rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000095> ;
@@ -285,32 +285,43 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # related ontology:
 # (i)
 
-# 13. The amount of rotation of angle ABG is equivalent to the amount of rotation of angle ACF
-<>
+# 15. The amount of rotation of angle ABG is equivalent to the amount of rotation of angle ACF (stated; by 14)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000085>
     a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000105> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000103> .
+# related ontology:
+# (i) angles ABG and ACF (distinct) and their amounts of rotation
+
+# 16. Angle AFC has the same amount of rotation as angle AGB (stated; by 14)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000107>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000108> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000109> .
+# related ontology:
+# (i) angles AFC and AGB (distinct) and their amounts of rotation
+
+# 17. Segment BF has the same length as segment CG (stated; by 0, 4, 6)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000111>
+    a rdf:Statement ;
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000114> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000116> .
 # related ontology:
 # (i)
 
-# 14. Segment BF has the same length as segment CG
-<>
+# 18. Triangle FBC is perfectly overlappable to triangle BCG (stated, by 12)
+<http://www.foom.com/pappus_proofEuclid#00000000000000000112>
     a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
+    rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000117> ;
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000097> ;
+    rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000118> .
 # related ontology:
-# (i)
+# (i) triangles FBC and BCG (distinct) with their sides
 
-# 15. Triangle FBC is perfectly overlappable to triangle BCG
-<>
-    a rdf:Statement ;
-    rdf:subject <> ;
-    rdf:predicate <> ;
-    rdf:object <> .
-# related ontology:
-# (i)
+
 
 # 16. Angle FCB has the equivalent amount of rotation as angle CBG
 <>
