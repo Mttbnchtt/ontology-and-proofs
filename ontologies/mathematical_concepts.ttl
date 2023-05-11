@@ -234,10 +234,6 @@
 <http://www.foom.com/core#00000000000000000039> rdf:type owl:Class .
 
 
-###  http://www.foom.com/core#00000000000000000040
-<http://www.foom.com/core#00000000000000000040> rdf:type owl:Class .
-
-
 ###  http://www.foom.com/core/Object
 <http://www.foom.com/core/Object> rdf:type owl:Class .
 

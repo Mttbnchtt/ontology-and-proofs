@@ -387,7 +387,100 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 ### PAPPUS' PROOF
 
+# 0. Let ABC be an isosceles triangle where
+# side AB has the same lenght as side AC and
+# BC is the base of triangle ABC (stated, given)
+<>
+    a rdf:Statement ;
+    rdf:subject <> ; # Triangle ABC
+    rdf:predicate rdf:type ;
+    rdf:object <> . # Isosceles triangle
+# related ontology:
+# (i) A is a point
+# (ii) O is a point
+# (iii) point A and point O are distinct
+# (iv) B is a point
+# (v) point B and point O are distinct
+# (vi) point A and point B are distinct
+# (vii) AB is a segment
+# (viii) A is extremity of segment AB
+# (viii) B is extremity of segment AB
+# (ix) AC is a segment
+# (x) A is extremity of segment AC
+# (xi) C is extremity of segment AC
+# (xii) BC is a segment
+# (xiii) B is extremity of segment BC
+# (xiv) C is is extremity of segment BC
+# (xv) segment AB is side of triangle ABC
+# (xvi) segment BC is side of triangle ABC
+# (xvii) side AB has lenght |AB|
+# (xviii) side AC has lenght |AC|
+# (xix)the lenght of side AB is equivalent to the lenght of side AC
+# (xx) segment BC is a basis of triangle ABC
 
+# 1. Let ACB be an isoscles triangle where
+# side AB has the same lenght as side AC and
+# BC is the base of triangle ABC (stated, given)
+<>
+    a rdf:Statement ;
+    rdf:subject <> ; # Triangle ABC
+    rdf:predicate rdf:type ;
+    rdf:object <> . # Isosceles triangle
+# related ontology:
+# (i) triangle ABC is identical to triangle ACB
+
+# 2. side AB of triangle ABC has the same length as side AC of triangle ACB (stated; by 0, 1)
+<>
+    a rdf:Statement ;
+    rdf:subject <> ; # 
+    rdf:predicate rdf:type ;
+    rdf:object <> . # 
+# related ontology:
+# (i)
+
+# 3. side AC of triangle ABC has the same length as side AB of triangle ACB (stated; by 0, 1)
+<>
+    a rdf:Statement ;
+    rdf:subject <> ; # 
+    rdf:predicate rdf:type ;
+    rdf:object <> . # 
+# related ontology:
+# (i)
+
+# 4. angle BAC of triangle ABC has the same amount of rotation as angle BAC of triangle ACB (stated; by 0, 1)
+<>
+    a rdf:Statement ;
+    rdf:subject <> ; # 
+    rdf:predicate rdf:type ;
+    rdf:object <> . # 
+# related ontology:
+# (i)
+
+# 5. proposition 4 from book I of Euclid's Elements (not stated explicitly; given)
+<>
+    a rdf:Statement ;
+    rdf:subject <> ; # 
+    rdf:predicate rdf:type ;
+    rdf:object <> . # 
+# related ontology:
+# (i)
+
+# 6. triangle ABC is perfectly overlappable to triangle ACB by a rigid movement
+# where side AB of triangle ABC coincides with side AC of triangle ACB, 
+# side AC of triangle ABC coincides with side AB of triangle ACB,
+# side BC of triangle ABC coincides with side BC of triangle ACB,
+# angle BAC of triangle ABC coincides with angle BAC of triangle ACB,
+# angle ABC of triangle ABC coincides with angle ACB of triangle ACB,
+# angle ACB of triangle ABC coincides with angle ABC of triangle ACB. (stated; by 0, 1, 2, 3, 4, 5)
+<>
+    a rdf:Statement ;
+    rdf:subject <> ; # 
+    rdf:predicate rdf:type ;
+    rdf:object <> . # 
+# related ontology:
+# (i)
+
+# . angle ABC has the same amount of rotation as angle ACB (stated; goal by 0, 1, 6)
 
 
 

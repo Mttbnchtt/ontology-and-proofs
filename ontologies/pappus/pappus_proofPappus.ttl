@@ -11,4 +11,188 @@
                                                        <http://www.foom.com/mathematical_concepts> ;
                                            rdfs:comment "Ontological analysis of Pappus proof of proposition I.5 from Euclid's Elements. The proof is given in Proclus' commentary on Euclid at pp. 249-250 (ed. Friedlein)."@en .
 
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000131
+<https://www.foom.com/pappus_proofPappus#00000000000000000131> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/core/Proof> ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Proof Pappus"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000132
+<https://www.foom.com/pappus_proofPappus#00000000000000000132> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/core/Proof_step> ;
+                                                               <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Step 0 (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000133
+<https://www.foom.com/pappus_proofPappus#00000000000000000133> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/core/Proof_step> ;
+                                                               <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Step 1 (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000134
+<https://www.foom.com/pappus_proofPappus#00000000000000000134> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000058> ;
+                                                               owl:sameAs <https://www.foom.com/pappus_proofPappus#00000000000000000147> ;
+                                                               <http://www.foom.com/core#00000000000000000000> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Triangle ABC (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000147
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000135
+<https://www.foom.com/pappus_proofPappus#00000000000000000135> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000015> ;
+                                                               <http://www.foom.com/core#00000000000000000000> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofPappus#00000000000000000144> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000074> <https://www.foom.com/pappus_proofPappus#00000000000000000134> ,
+                                                                                                                                <https://www.foom.com/pappus_proofPappus#00000000000000000138> ,
+                                                                                                                                <https://www.foom.com/pappus_proofPappus#00000000000000000140> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Segment AB (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000136
+<https://www.foom.com/pappus_proofPappus#00000000000000000136> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000015> ;
+                                                               <http://www.foom.com/core#00000000000000000000> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofPappus#00000000000000000145> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000074> <https://www.foom.com/pappus_proofPappus#00000000000000000134> ,
+                                                                                                                                <https://www.foom.com/pappus_proofPappus#00000000000000000138> ,
+                                                                                                                                <https://www.foom.com/pappus_proofPappus#00000000000000000139> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Segment AC (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000137
+<https://www.foom.com/pappus_proofPappus#00000000000000000137> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000015> ;
+                                                               <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofPappus#00000000000000000146> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000074> <https://www.foom.com/pappus_proofPappus#00000000000000000134> ,
+                                                                                                                                <https://www.foom.com/pappus_proofPappus#00000000000000000138> ,
+                                                                                                                                <https://www.foom.com/pappus_proofPappus#00000000000000000139> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Segment BC (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000138
+<https://www.foom.com/pappus_proofPappus#00000000000000000138> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
+                                                               <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofPappus#00000000000000000141> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Rectilinear angle ABC (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000139
+<https://www.foom.com/pappus_proofPappus#00000000000000000139> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
+                                                               <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofPappus#00000000000000000142> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Rectilinear angle ACB (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000140
+<https://www.foom.com/pappus_proofPappus#00000000000000000140> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
+                                                               <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofPappus#00000000000000000143> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Rectilinear angle BAC (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000141
+<https://www.foom.com/pappus_proofPappus#00000000000000000141> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
+                                                               <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Amount of rotation of rectilinear angle ABC (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000142
+<https://www.foom.com/pappus_proofPappus#00000000000000000142> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
+                                                               <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Amount of rotation of rectilinear angle ACB (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000143
+<https://www.foom.com/pappus_proofPappus#00000000000000000143> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
+                                                               <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Amount of rotation of rectilinear angle BAC (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000144
+<https://www.foom.com/pappus_proofPappus#00000000000000000144> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000027> ;
+                                                               <http://www.foom.com/core#00000000000000000000> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000076> <https://www.foom.com/pappus_proofPappus#00000000000000000145> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Lenght of segment AB (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000145
+<https://www.foom.com/pappus_proofPappus#00000000000000000145> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000027> ;
+                                                               <http://www.foom.com/core#00000000000000000000> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Lenght of segment AC (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000146
+<https://www.foom.com/pappus_proofPappus#00000000000000000146> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000027> ;
+                                                               <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Lenght of segment BC (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000147
+<https://www.foom.com/pappus_proofPappus#00000000000000000147> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000058> ;
+                                                               <http://www.foom.com/core#00000000000000000000> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
+                                                               <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
+                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               rdfs:label "Triangle ACB (proof Pappus)"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <https://www.foom.com/pappus_proofPappus#00000000000000000135>
+                        <https://www.foom.com/pappus_proofPappus#00000000000000000136>
+                        <https://www.foom.com/pappus_proofPappus#00000000000000000137>
+                      )
+] .
+
+
 ###  Generated by the OWL API (version 4.5.24.2023-01-14T21:28:32Z) https://github.com/owlcs/owlapi
