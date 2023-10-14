@@ -1,0 +1,2 @@
+endpoint:http://localhost:12110
+dstore:pappus

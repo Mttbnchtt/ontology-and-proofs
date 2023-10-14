@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.foom.com/core" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/core.owl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/conceptual_space" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/conceptual_space.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofPappus" uri="pappus_proofPappus.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.foom.com/pappus_proofEuclid" uri="pappus_proofEuclid.ttl"/>
     <uri id="Imports Wizard Entry" name="http://www.foom.com/mathematical_concepts" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/mathematical_concepts.ttl"/>
     <uri id="Imports Wizard Entry" name="http://www.foom.com/core" uri="file:/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/core.owl"/>
     <uri id="Imports Wizard Entry" name="https://www.foom.com/pappus_proofAristotle" uri="pappus_proofAristotle.ttl"/>

@@ -17,6 +17,23 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # and x is a step of proof z,
 # then y is a proof step and it is a step of proof z
 
+# if (x is in definition y) and (y is in definition z),
+# then x is in definition y
+
+# if (x is in proof step y) and (x has definition z)
+# and (v is in definition z), then v logically supports y
+
+# if (x has antecedent y) and (y has antecedent z), 
+# then x has antecedent z
+
+# if (x has antecendent y) and (z logically supports y),
+# then z logically supports x
+
+# if x has antecedent y, then y logically supports x
+
+# if (x has definition y) and (z is in definition y), 
+# then z logically supports x 
+
 
 # GEOMETRY
 
@@ -54,6 +71,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # if x is an extremity of segment y, then
 # x is lies on y
 
+# if rectilinear angle x is perfectly overlappable by rigid movement to rectilinear angle y,
+# then the amount of rotation of x is equivalent (as an amount) as the amount of rotation of y
 
 # ONTOLOGY
 
@@ -63,3 +82,61 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # (NOT SURE) if P is a property, yPx, and x is in proof step z, 
 # then y is in proof step z
+
+
+# HEURISTICS
+
+# if x is specialization of y,
+# then x inductively supports y
+
+
+# if x is generalization of y,
+# then y is a specialization of x
+
+
+# if x is a y, 
+# then x inductively supports y
+
+
+# if (x p y) and (z p y) 
+# and (p is a datatype property),
+# then x is analogous to y
+
+# if (x p y) and (z p y) 
+# and (p is an object property),
+# then x is analogous to y
+
+
+# Euclid's heuristic techniques
+# 1. Draw a diagram
+# 1.1 Add auxiliary lines
+# 1.1.1 Divide a figure into simpler figures
+# 2. Work backwards
+# 3. Apply previous theorems
+# 3.2 Apply results concerning parallel lines
+# 3.3 Apply results concerning perpendicular lines
+# 3.4 Apply results concerning angles
+# 3.1 Apply results on congruence of triangles
+# 6. Reason by cases
+
+# heuristic techniques
+# 1. Drawing a Diagram: Creating a clear, accurately scaled diagram to help visualize the problem.
+# 2. Adding Auxiliary Lines: Adding extra lines such as medians or altitudes to simplify the problem.
+# 3. Finding Symmetry: Identifying lines of symmetry or rotational symmetry in figures.
+# 4. Applying Transformations: Using transformations like translation, rotation, or reflection.
+# 5. Working Backwards: Starting from the goal and working backwards to what is given.
+# 6. Considering Special Cases: Simplifying the problem by considering a specific or special case.
+# 7. Using Coordinates: Assigning coordinates to points and using algebraic methods.
+# 8. Applying Similar Triangles: Using properties of similar triangles to solve problems.
+# 9. Checking for Parallel and Perpendicular Lines: Identifying parallel and perpendicular relationships.
+# 10. Using Angle and Segment Relationships: Applying theorems related to angles and segments.
+# 11. Applying Circle Theorems: Using theorems related to circles, such as arc length or sector area.
+# 12. Dividing into Simpler Figures: Breaking a complex figure into simpler shapes.
+
+
+
+
+
+
+
+

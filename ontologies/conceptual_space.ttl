@@ -1,0 +1,235 @@
+@prefix : <http://www.semanticweb.org/matteobianchetti/ontologies/2023/9/untitled-ontology-236/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/matteobianchetti/ontologies/2023/9/untitled-ontology-236/> .
+
+<https://www.foom.com/conceptual_space> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://www.foom.com/conceptual_space#00000000000000000014
+<https://www.foom.com/conceptual_space#00000000000000000014> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000020> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "is generalization of"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000016
+<https://www.foom.com/conceptual_space#00000000000000000016> rdf:type owl:ObjectProperty ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "has conceptual space object property"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000018
+<https://www.foom.com/conceptual_space#00000000000000000018> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000019> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "has definition"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000019
+<https://www.foom.com/conceptual_space#00000000000000000019> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000020> ;
+                                                             rdf:type owl:TransitiveProperty ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "logically supports"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000020
+<https://www.foom.com/conceptual_space#00000000000000000020> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000016> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "has logical relation"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000021
+<https://www.foom.com/conceptual_space#00000000000000000021> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000016> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "has heuristic relation"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000022
+<https://www.foom.com/conceptual_space#00000000000000000022> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000021> ;
+                                                             rdf:type owl:SymmetricProperty ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "is analogous to"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000023
+<https://www.foom.com/conceptual_space#00000000000000000023> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000020> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "is specialization of"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000024
+<https://www.foom.com/conceptual_space#00000000000000000024> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000021> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "evokes"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000025
+<https://www.foom.com/conceptual_space#00000000000000000025> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000020> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "use technique"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000026
+<https://www.foom.com/conceptual_space#00000000000000000026> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000021> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "inductively supports"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000032
+<https://www.foom.com/conceptual_space#00000000000000000032> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000021> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "is important instance of"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://www.foom.com/conceptual_space#00000000000000000017
+<https://www.foom.com/conceptual_space#00000000000000000017> rdf:type owl:DatatypeProperty ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "has conceptual space datatype property"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.foom.com/core/Procedure
+<http://www.foom.com/core/Procedure> rdf:type owl:Class .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000030
+<https://www.foom.com/conceptual_space#00000000000000000030> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.foom.com/core/Procedure> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Heuristic procedure"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://www.foom.com/conceptual_space#00000000000000000046
+<https://www.foom.com/conceptual_space#00000000000000000046> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Add auxliary lines"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000047
+<https://www.foom.com/conceptual_space#00000000000000000047> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Apply previous constructions"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000048
+<https://www.foom.com/conceptual_space#00000000000000000048> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Apply previous results"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000049
+<https://www.foom.com/conceptual_space#00000000000000000049> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Apply previous theorems"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000050
+<https://www.foom.com/conceptual_space#00000000000000000050> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Apply reduction ad absurdum"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000051
+<https://www.foom.com/conceptual_space#00000000000000000051> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Apply results concerning angles"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000052
+<https://www.foom.com/conceptual_space#00000000000000000052> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Apply results concerning parallel lines"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000053
+<https://www.foom.com/conceptual_space#00000000000000000053> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Apply results concenring perpendicular lines"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000054
+<https://www.foom.com/conceptual_space#00000000000000000054> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Apply results concerning the congruence of triangles"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000055
+<https://www.foom.com/conceptual_space#00000000000000000055> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Divide a figure into simpler figures"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000056
+<https://www.foom.com/conceptual_space#00000000000000000056> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Draw a diagram"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000057
+<https://www.foom.com/conceptual_space#00000000000000000057> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000058> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Prove a particular case"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000058
+<https://www.foom.com/conceptual_space#00000000000000000058> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Reason by cases"@en .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

@@ -390,9 +390,9 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # 0. Let ABC be an isosceles triangle where
 # side AB has the same lenght as side AC and
 # BC is the base of triangle ABC (stated, given)
-<>
+<https://www.foom.com/pappus_proofPappus#00000000000000000133>
     a rdf:Statement ;
-    rdf:subject <> ; # Triangle ABC
+    rdf:subject <https://www.foom.com/pappus_proofPappus#00000000000000000134> ; # Triangle ABC
     rdf:predicate rdf:type ;
     rdf:object <> . # Isosceles triangle
 # related ontology:
@@ -421,47 +421,47 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # 1. Let ACB be an isoscles triangle where
 # side AB has the same lenght as side AC and
 # BC is the base of triangle ABC (stated, given)
-<>
+<https://www.foom.com/pappus_proofPappus#00000000000000000133>
     a rdf:Statement ;
-    rdf:subject <> ; # Triangle ABC
+    rdf:subject <https://www.foom.com/pappus_proofPappus#00000000000000000147> ; # Triangle ACB
     rdf:predicate rdf:type ;
-    rdf:object <> . # Isosceles triangle
+    rdf:object <http://www.foom.com/mathematical_concepts#00000000000000000058> . # Isosceles triangle
 # related ontology:
-# (i) triangle ABC is identical to triangle ACB
+# (i) triangle ABC is identical to triangle ACB but thought as distinct
 
 # 2. side AB of triangle ABC has the same length as side AC of triangle ACB (stated; by 0, 1)
-<>
+<https://www.foom.com/pappus_proofPappus#00000000000000000150>
     a rdf:Statement ;
-    rdf:subject <> ; # 
-    rdf:predicate rdf:type ;
-    rdf:object <> . # 
+    rdf:subject <https://www.foom.com/pappus_proofPappus#00000000000000000144> ; # 
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
+    rdf:object <https://www.foom.com/pappus_proofPappus#00000000000000000145> . # 
 # related ontology:
 # (i)
 
 # 3. side AC of triangle ABC has the same length as side AB of triangle ACB (stated; by 0, 1)
-<>
+<https://www.foom.com/pappus_proofPappus#00000000000000000151>
     a rdf:Statement ;
-    rdf:subject <> ; # 
-    rdf:predicate rdf:type ;
-    rdf:object <> . # 
+    rdf:subject <https://www.foom.com/pappus_proofPappus#00000000000000000145> ; # 
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
+    rdf:object <https://www.foom.com/pappus_proofPappus#00000000000000000144> . # 
 # related ontology:
 # (i)
 
 # 4. angle BAC of triangle ABC has the same amount of rotation as angle BAC of triangle ACB (stated; by 0, 1)
-<>
+<https://www.foom.com/pappus_proofPappus#00000000000000000152>
     a rdf:Statement ;
-    rdf:subject <> ; # 
-    rdf:predicate rdf:type ;
-    rdf:object <> . # 
+    rdf:subject <https://www.foom.com/pappus_proofPappus#00000000000000000141> ; # 
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
+    rdf:object <https://www.foom.com/pappus_proofPappus#00000000000000000141> . # 
 # related ontology:
 # (i)
 
 # 5. proposition 4 from book I of Euclid's Elements (not stated explicitly; given)
-<>
-    a rdf:Statement ;
-    rdf:subject <> ; # 
-    rdf:predicate rdf:type ;
-    rdf:object <> . # 
+# <https://www.foom.com/pappus_proofPappus#00000000000000000152>
+    # a rdf:Statement ;
+    # rdf:subject <> ; # 
+    # rdf:predicate <> ;
+    # rdf:object <> . # 
 # related ontology:
 # (i)
 
@@ -472,16 +472,27 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # angle BAC of triangle ABC coincides with angle BAC of triangle ACB,
 # angle ABC of triangle ABC coincides with angle ACB of triangle ACB,
 # angle ACB of triangle ABC coincides with angle ABC of triangle ACB. (stated; by 0, 1, 2, 3, 4, 5)
-<>
+<https://www.foom.com/pappus_proofPappus#00000000000000000153>
     a rdf:Statement ;
-    rdf:subject <> ; # 
-    rdf:predicate rdf:type ;
-    rdf:object <> . # 
+    rdf:subject <https://www.foom.com/pappus_proofPappus#00000000000000000134> ; # 
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000097> ;
+    rdf:object <https://www.foom.com/pappus_proofPappus#00000000000000000147> . # 
 # related ontology:
 # (i)
 
-# . angle ABC has the same amount of rotation as angle ACB (stated; goal by 0, 1, 6)
+# 7. angle ABC is perfectly overlappable by rigid movement to angle ACB (stated; by 6)
+<https://www.foom.com/pappus_proofPappus#00000000000000000155>
+    a rdf:Statement ;
+    rdf:subject <https://www.foom.com/pappus_proofPappus#00000000000000000138> ; # 
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000097> ;
+    rdf:object <https://www.foom.com/pappus_proofPappus#00000000000000000139> . # 
 
+# 8. angle ABC has the same amount of rotation as angle ACB (stated; goal by 7)
+<>
+    a rdf:Statement ;
+    rdf:subject <https://www.foom.com/pappus_proofPappus#00000000000000000141> ; # 
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
+    rdf:object <https://www.foom.com/pappus_proofPappus#00000000000000000142> . # 
 
 
 

@@ -8,6 +8,7 @@ import sys
 import textwrap
 
 from modules.import_script import main as import_script
+from modules.heuristics import main as heuristics
 
 
 def parse(args_lst:list=[]):
@@ -21,6 +22,7 @@ def parse(args_lst:list=[]):
             - import individuals (import, --type individuals, --input, --output, --verbose <True, False>)
             - import links of steps to proofs (import, --type forProof, --input, --output, --verbose <True, False>)
             - import proof steps (import, --type step, --input, --output, --verbose <True, False>)
+            - run heuristics on ontology (heuristics, --input <path to the input file>)
             --------------
             """),
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -65,13 +67,24 @@ def parse(args_lst:list=[]):
         default=False,
         help="verbose terminal message"
     )
+    # heuristics
+    heuristics = subparser.add_parser("heuristics")
+    heuristics.add_argument(
+        "-i",
+        "--input",
+        type=str,
+        required=True,
+        help="name of the input file"
+    )
+
     return parser.parse_args(args_lst) # the object returned by parse_args() 
                                 # contains only attributes for the main 
                                 # parser and the selected subparser
 
 def main(args_lst:list):
     cmd_options:dict = {
-        "import": import_script
+        "import": import_script,
+        "heuristics": heuristics
     }
     args = parse(args_lst)
     if args.command not in cmd_options:
