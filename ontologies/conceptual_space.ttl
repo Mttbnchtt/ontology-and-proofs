@@ -16,6 +16,10 @@
 <http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -25,6 +29,13 @@
                                                              rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000020> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                              rdfs:label "is generalization of"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000015
+<https://www.foom.com/conceptual_space#00000000000000000015> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000021> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "is the gist of result"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000016
@@ -73,6 +84,7 @@
 ###  https://www.foom.com/conceptual_space#00000000000000000023
 <https://www.foom.com/conceptual_space#00000000000000000023> rdf:type owl:ObjectProperty ;
                                                              rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000020> ;
+                                                             rdfs:domain <https://www.foom.com/conceptual_space#00000000000000000013> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                              rdfs:label "is specialization of"@en .
 
@@ -105,6 +117,13 @@
                                                              rdfs:label "is important instance of"@en .
 
 
+###  https://www.foom.com/conceptual_space#00000000000000000059
+<https://www.foom.com/conceptual_space#00000000000000000059> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000021> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "is reference result for theory"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -123,6 +142,13 @@
 <http://www.foom.com/core/Procedure> rdf:type owl:Class .
 
 
+###  https://www.foom.com/conceptual_space#00000000000000000013
+<https://www.foom.com/conceptual_space#00000000000000000013> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.foom.com/core/Procedure> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Gist of result"@en .
+
+
 ###  https://www.foom.com/conceptual_space#00000000000000000030
 <https://www.foom.com/conceptual_space#00000000000000000030> rdf:type owl:Class ;
                                                              rdfs:subClassOf <http://www.foom.com/core/Procedure> ;
@@ -130,9 +156,49 @@
                                                              rdfs:label "Heuristic procedure"@en .
 
 
+###  https://www.foom.com/conceptual_space#00000000000000000045
+<https://www.foom.com/conceptual_space#00000000000000000045> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.foom.com/core/Procedure> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "General principle"@en .
+
+
 #################################################################
 #    Individuals
 #################################################################
+
+###  https://www.foom.com/conceptual_space#00000000000000000009
+<https://www.foom.com/conceptual_space#00000000000000000009> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:comment "Used in Euclid I.4." ;
+                                                             rdfs:label "Apply translation"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000010
+<https://www.foom.com/conceptual_space#00000000000000000010> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000009> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:comment "Used in Euclid I.4." ;
+                                                             rdfs:label "Make figures overlap"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000011
+<https://www.foom.com/conceptual_space#00000000000000000011> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000009> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Juxtapose figures"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000012
+<https://www.foom.com/conceptual_space#00000000000000000012> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:comment "Analysis in the sense of Pappus" ;
+                                                             rdfs:label "Find from what antencedents the desired result could be derived"@en .
+
 
 ###  https://www.foom.com/conceptual_space#00000000000000000046
 <https://www.foom.com/conceptual_space#00000000000000000046> rdf:type owl:NamedIndividual ,
@@ -222,7 +288,7 @@
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000058> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Prove a particular case"@en .
+                                                             rdfs:label "Consider a particular case"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000058

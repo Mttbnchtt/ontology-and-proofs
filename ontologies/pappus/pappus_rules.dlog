@@ -102,36 +102,12 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # and (p is a datatype property),
 # then x is analogous to y
 
+
 # if (x p y) and (z p y) 
 # and (p is an object property),
 # then x is analogous to y
 
 
-# Euclid's heuristic techniques
-# 1. Draw a diagram
-# 1.1 Add auxiliary lines
-# 1.1.1 Divide a figure into simpler figures
-# 2. Work backwards
-# 3. Apply previous theorems
-# 3.2 Apply results concerning parallel lines
-# 3.3 Apply results concerning perpendicular lines
-# 3.4 Apply results concerning angles
-# 3.1 Apply results on congruence of triangles
-# 6. Reason by cases
-
-# heuristic techniques
-# 1. Drawing a Diagram: Creating a clear, accurately scaled diagram to help visualize the problem.
-# 2. Adding Auxiliary Lines: Adding extra lines such as medians or altitudes to simplify the problem.
-# 3. Finding Symmetry: Identifying lines of symmetry or rotational symmetry in figures.
-# 4. Applying Transformations: Using transformations like translation, rotation, or reflection.
-# 5. Working Backwards: Starting from the goal and working backwards to what is given.
-# 6. Considering Special Cases: Simplifying the problem by considering a specific or special case.
-# 7. Using Coordinates: Assigning coordinates to points and using algebraic methods.
-# 8. Applying Similar Triangles: Using properties of similar triangles to solve problems.
-# 9. Checking for Parallel and Perpendicular Lines: Identifying parallel and perpendicular relationships.
-# 10. Using Angle and Segment Relationships: Applying theorems related to angles and segments.
-# 11. Applying Circle Theorems: Using theorems related to circles, such as arc length or sector area.
-# 12. Dividing into Simpler Figures: Breaking a complex figure into simpler shapes.
 
 
 

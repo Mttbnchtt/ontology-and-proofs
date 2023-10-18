@@ -8,8 +8,7 @@
 
 <http://www.foom.com/pappus_proofEuclid> rdf:type owl:Ontology ;
                                           owl:imports <http://www.foom.com/core> ,
-                                                      <http://www.foom.com/mathematical_concepts> ,
-                                                      <https://www.foom.com/conceptual_space> ;
+                                                      <http://www.foom.com/mathematical_concepts> ;
                                           rdfs:isDefinedBy "Ontological analysis of Euclid's proof of theorem 5 of Book 1 of the Elements"@en .
 
 #################################################################
@@ -140,48 +139,27 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000058> rdf:type owl:Class .
 
 
+###  https://www.foom.com/conceptual_space#00000000000000000013
+<https://www.foom.com/conceptual_space#00000000000000000013> rdf:type owl:Class .
+
+
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://www.foom.com/mathematical_concepts#00000000000000000024
-<http://www.foom.com/mathematical_concepts#00000000000000000024> <https://www.foom.com/conceptual_space#00000000000000000018> <http://www.foom.com/pappus_proofEuclid#00000000000000000003> .
+###  http://www.foom.com/mathematical_concepts#00000000000000000127
+<http://www.foom.com/mathematical_concepts#00000000000000000127> <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000126> .
 
 
-###  http://www.foom.com/pappus_proofEuclid#00000000000000000003
-<http://www.foom.com/pappus_proofEuclid#00000000000000000003> rdf:type owl:NamedIndividual ,
-                                                                       <http://www.foom.com/core#00000000000000000001> ;
+###  http://www.foom.com/pappus_proofEuclid#00000000000000000016
+<http://www.foom.com/pappus_proofEuclid#00000000000000000016> rdf:type owl:NamedIndividual ,
+                                                                       <https://www.foom.com/conceptual_space#00000000000000000013> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                              rdfs:label "Definition of point"@en .
-
-
-###  http://www.foom.com/pappus_proofEuclid#00000000000000000005
-<http://www.foom.com/pappus_proofEuclid#00000000000000000005> rdf:type owl:NamedIndividual ,
-                                                                       <http://www.foom.com/core#00000000000000000004> ;
-                                                              <https://www.foom.com/conceptual_space#00000000000000000019> <http://www.foom.com/pappus_proofEuclid#00000000000000000003> ;
-                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                              rdfs:label "Part"@en .
-
-
-###  http://www.foom.com/pappus_proofEuclid#00000000000000000006
-<http://www.foom.com/pappus_proofEuclid#00000000000000000006> rdf:type owl:NamedIndividual ,
-                                                                       <http://www.foom.com/core#00000000000000000004> ;
-                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                              rdfs:label "Length"@en .
-
-
-###  http://www.foom.com/pappus_proofEuclid#00000000000000000007
-<http://www.foom.com/pappus_proofEuclid#00000000000000000007> rdf:type owl:NamedIndividual ,
-                                                                       <http://www.foom.com/core#00000000000000000004> ;
-                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                              rdfs:label "Latitude"@en .
-
-
-###  http://www.foom.com/pappus_proofEuclid#00000000000000000008
-<http://www.foom.com/pappus_proofEuclid#00000000000000000008> rdf:type owl:NamedIndividual ,
-                                                                       <http://www.foom.com/core#00000000000000000004> ;
-                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                              rdfs:label "Boundary"@en .
+                                                              <http://www.foom.com/core#00000000000000000021> """1. Extend the equal sides.
+2. Consider the straight angles A+C and B+D, where A and B are the angles at the base and C and D are the external angles adjacent to A and B respectively.
+3. Construct external triangles and use the SAS criterion to show that C and D are equal.
+4. Since A+C = B+D and C=D, A=B.""" ;
+                                                              rdfs:label "Gist of Euclid's proof of the statement \"In every isosceles triangle, the angles at the base are equal\""@en .
 
 
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000047
@@ -972,6 +950,7 @@
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000128
 <http://www.foom.com/pappus_proofEuclid#00000000000000000128> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/core/Proof_step> ;
+                                                              <http://www.foom.com/core#00000000000000000013> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
                                                               <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
                                                               <http://www.foom.com/core#00000000000000000044> "true"^^xsd:boolean ;
                                                               <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
