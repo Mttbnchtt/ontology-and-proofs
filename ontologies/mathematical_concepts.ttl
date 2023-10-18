@@ -669,6 +669,7 @@
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition V" ;
                                                                  rdfs:label "Definition: Surface (Euclid, Elements I)"@en .
 
 
@@ -679,6 +680,7 @@
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition VII" ;
                                                                  rdfs:label "Definition: Plane surface (Euclid, Elements I)"@en .
 
 
@@ -688,6 +690,7 @@
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition IX" ;
                                                                  rdfs:label "Definition: Plane rectilinear angle (Euclid, Elements I)"@en .
 
 
@@ -698,6 +701,7 @@
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition VIII" ;
                                                                  rdfs:label "Definition: Plane angle (Euclid, Elements I)"@en .
 
 
@@ -805,6 +809,7 @@
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition III" ;
                                                                  rdfs:label "Definition: Extremity of a line (Euclid, Elements I)"@en .
 
 
@@ -814,6 +819,7 @@
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition VI" ;
                                                                  rdfs:label "Definition: Extremity of a surface (Euclid, Elements I)"@en .
 
 
@@ -824,6 +830,7 @@
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition XIV" ;
                                                                  rdfs:label "Definition: Figure (Euclid, Elements I)"@en .
 
 
@@ -834,6 +841,7 @@
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition XIII" ;
                                                                  rdfs:label "Definition: Boundary (Euclid, Elements I)"@en .
 
 
@@ -844,6 +852,7 @@
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition XIX" ;
                                                                  rdfs:label "Definition: Rectilinear figure (Euclid, Elements I)"@en .
 
 
@@ -853,6 +862,7 @@
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000070> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition XIX" ;
                                                                  rdfs:label "Definition: Trilateral rectilinear figure (Euclid, Elements I)"@en .
 
 
@@ -861,6 +871,7 @@
                                                                           <http://www.foom.com/core#00000000000000000001> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition XX" ;
                                                                  rdfs:label "Definition: Isosceles triangle (Euclid, Elements I)"@en .
 
 
@@ -900,6 +911,7 @@
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition I" ;
                                                                  rdfs:label "Definition: Point (Euclid, Elements I)"@en .
 
 
@@ -1075,6 +1087,7 @@
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition II" ;
                                                                  rdfs:label "Definition: Line (Euclid, Elements I)"@en .
 
 
@@ -1084,6 +1097,7 @@
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition IV" ;
                                                                  rdfs:label "Document: Straight line (Euclid, Elements I)"@en .
 
 
