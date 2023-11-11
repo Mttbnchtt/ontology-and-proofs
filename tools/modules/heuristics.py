@@ -24,6 +24,14 @@ def assert_response_ok(response, message):
             f"{message}\nStatus received= {response.status_code}\n{response.text}")
     
 def read_input_file(input_file:str=""):
+    """_summary_
+
+    Args:
+        input_file (str, optional): _description_. Defaults to "".
+
+    Returns:
+        _type_: _description_
+    """    
     with open(input_file) as f_input:
         input_data = json.load(f_input)
         return input_data
@@ -35,7 +43,7 @@ def main(args:argparse.Namespace):
     input_data:dict = read_input_file(input_file=args.input)
     endpoint:str = input_data["endpoint"]
     dstore:str = input_data["dstore"]
-    
+
 
 # Euclid's heuristic techniques
 # 1. Draw a diagram

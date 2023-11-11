@@ -20,6 +20,33 @@
 <http://www.foom.com/core#00000000000000000073> rdf:type owl:AnnotationProperty .
 
 
+###  https://www.foom.com/metadata#00000000000000000122
+<https://www.foom.com/metadata#00000000000000000122> rdf:type owl:AnnotationProperty ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "has content formulation"@en .
+
+
+###  https://www.foom.com/metadata#00000000000000000124
+<https://www.foom.com/metadata#00000000000000000124> rdf:type owl:AnnotationProperty ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "has translated content formulation"@en ;
+                                                     rdfs:subPropertyOf <https://www.foom.com/metadata#00000000000000000122> .
+
+
+###  https://www.foom.com/metadata#00000000000000000126
+<https://www.foom.com/metadata#00000000000000000126> rdf:type owl:AnnotationProperty ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "has preferred translated content formulation"@en ;
+                                                     rdfs:subPropertyOf <https://www.foom.com/metadata#00000000000000000124> .
+
+
+###  https://www.foom.com/metadata#00000000000000000127
+<https://www.foom.com/metadata#00000000000000000127> rdf:type owl:AnnotationProperty ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "has alternative translated content formulation"@en ;
+                                                     rdfs:subPropertyOf <https://www.foom.com/metadata#00000000000000000124> .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -41,6 +68,73 @@
                                                      <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                      rdfs:comment "If an item of information is in a source, then that source formulates that item of information explicitly." ;
                                                      rdfs:label "is in source"@en .
+
+
+###  https://www.foom.com/metadata#00000000000000000086
+<https://www.foom.com/metadata#00000000000000000086> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000061> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "has content formulation"@en .
+
+
+###  https://www.foom.com/metadata#00000000000000000087
+<https://www.foom.com/metadata#00000000000000000087> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000061> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "has content related object property"@en .
+
+
+###  https://www.foom.com/metadata#00000000000000000088
+<https://www.foom.com/metadata#00000000000000000088> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000061> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "content is translated from language"@en .
+
+
+###  https://www.foom.com/metadata#00000000000000000089
+<https://www.foom.com/metadata#00000000000000000089> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000061> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "has reference location"@en .
+
+
+###  https://www.foom.com/metadata#00000000000000000092
+<https://www.foom.com/metadata#00000000000000000092> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000061> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "has example"@en .
+
+
+###  https://www.foom.com/metadata#00000000000000000093
+<https://www.foom.com/metadata#00000000000000000093> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000061> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "has characterization"@en .
+
+
+###  https://www.foom.com/metadata#00000000000000000128
+<https://www.foom.com/metadata#00000000000000000128> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf <https://www.foom.com/metadata#00000000000000000086> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "has translator"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://www.foom.com/metadata#00000000000000000090
+<https://www.foom.com/metadata#00000000000000000090> rdf:type owl:DatatypeProperty ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "has metadata annotation property"@en .
+
+
+###  https://www.foom.com/metadata#00000000000000000091
+<https://www.foom.com/metadata#00000000000000000091> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:subPropertyOf <https://www.foom.com/metadata#00000000000000000090> ;
+                                                     rdfs:range xsd:boolean ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "content is translated"@en .
 
 
 #################################################################
@@ -123,6 +217,13 @@
                                                      rdfs:label "Document"@en .
 
 
+###  https://www.foom.com/metadata#00000000000000000095
+<https://www.foom.com/metadata#00000000000000000095> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.foom.com/core#00000000000000000060> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "Content formulation"@en .
+
+
 #################################################################
 #    Individuals
 #################################################################
@@ -169,6 +270,13 @@
                                                               <https://www.foom.com/metadata#00000000000000000064> ;
                                                      <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                      rdfs:label "Pappus"@en .
+
+
+###  https://www.foom.com/metadata#00000000000000000129
+<https://www.foom.com/metadata#00000000000000000129> rdf:type owl:NamedIndividual ,
+                                                              <https://www.foom.com/metadata#00000000000000000064> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:label "Matteo Bianchetti"@en .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
