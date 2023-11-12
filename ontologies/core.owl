@@ -131,6 +131,34 @@
                                                 rdfs:label "has antencendent of conditional claim"@en .
 
 
+###  http://www.foom.com/core#00000000000000000086
+<http://www.foom.com/core#00000000000000000086> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "has reification object property"@en .
+
+
+###  http://www.foom.com/core#00000000000000000087
+<http://www.foom.com/core#00000000000000000087> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000086> ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "has subject"@en .
+
+
+###  http://www.foom.com/core#00000000000000000088
+<http://www.foom.com/core#00000000000000000088> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000086> ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "has object"@en .
+
+
+###  http://www.foom.com/core#00000000000000000089
+<http://www.foom.com/core#00000000000000000089> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000086> ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "has predicate"@en .
+
+
 ###  http://www.foom.com/core/coreRelations
 <http://www.foom.com/core/coreRelations> rdf:type owl:ObjectProperty ;
                                          rdfs:label "has core object property"@en .
