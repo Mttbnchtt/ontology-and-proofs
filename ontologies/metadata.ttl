@@ -20,6 +20,14 @@
 <http://www.foom.com/core#00000000000000000073> rdf:type owl:AnnotationProperty .
 
 
+###  https://www.foom.com/metadata#00000000000000000000
+<https://www.foom.com/metadata#00000000000000000000> rdf:type owl:AnnotationProperty ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     rdfs:comment "A formulation of the content of a statement that is neither the original nor a translation of the original statement." ;
+                                                     rdfs:label "has reformulated content"@en ;
+                                                     rdfs:subPropertyOf <https://www.foom.com/metadata#00000000000000000122> .
+
+
 ###  https://www.foom.com/metadata#00000000000000000122
 <https://www.foom.com/metadata#00000000000000000122> rdf:type owl:AnnotationProperty ;
                                                      <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;

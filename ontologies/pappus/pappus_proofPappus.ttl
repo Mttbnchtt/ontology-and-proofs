@@ -7,6 +7,7 @@
 @base <http://www.semanticweb.org/matteobianchetti/ontologies/2023/4/untitled-ontology-206/> .
 
 <https://www.foom.com/pappus_proofPappus> rdf:type owl:Ontology ;
+                                           owl:imports <http://www.foom.com/core> ;
                                            rdfs:comment "Ontological analysis of Pappus proof of proposition I.5 from Euclid's Elements. The proof is given in Proclus' commentary on Euclid at pp. 249-250 (ed. Friedlein)."@en .
 
 #################################################################
@@ -15,6 +16,18 @@
 
 ###  http://purl.org/dc/elements/1.1/creator
 <http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.foom.com/core#00000000000000000087
+<http://www.foom.com/core#00000000000000000087> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.foom.com/core#00000000000000000088
+<http://www.foom.com/core#00000000000000000088> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.foom.com/core#00000000000000000089
+<http://www.foom.com/core#00000000000000000089> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -113,6 +126,14 @@
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/matteobianchetti/ontologies/2023/4/untitled-ontology-206/
+: rdf:type owl:NamedIndividual ,
+           rdf:Statement ;
+  <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofPappus#00000000000000000141> ;
+  <http://www.foom.com/core#00000000000000000088> <https://www.foom.com/pappus_proofPappus#00000000000000000142> ;
+  <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000076> .
+
+
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000000
 <https://www.foom.com/pappus_proofPappus#00000000000000000000> rdf:type owl:NamedIndividual ,
                                                                         <http://www.foom.com/core/Proof_step> ;
@@ -147,12 +168,31 @@
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                rdfs:label "Step 0 (proof Pappus)"@en .
 
+<https://www.foom.com/pappus_proofPappus#00000000000000000132>
+    a rdf:Statement ;
+    <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofPappus#00000000000000000134> ; # Triangle ABC
+    <http://www.foom.com/core#00000000000000000089> rdf:type ;
+    <http://www.foom.com/core#00000000000000000088> <http://www.foom.com/mathematical_concepts#00000000000000000058> . # Isosceles triangle
+
+
+<https://www.foom.com/pappus_proofPappus#00000000000000000133>
+    a rdf:Statement ;
+    <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofPappus#00000000000000000147> ; # Triangle ACB
+    <http://www.foom.com/core#00000000000000000089> rdf:type ;
+    <http://www.foom.com/core#00000000000000000088> <http://www.foom.com/mathematical_concepts#00000000000000000058> . # Isosceles triangle
+
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000133
 <https://www.foom.com/pappus_proofPappus#00000000000000000133> rdf:type owl:NamedIndividual ,
-                                                                        <http://www.foom.com/core/Proof_step> ;
+                                                                        <http://www.foom.com/core/Proof_step> ,
+                                                                        rdf:Statement ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               <http://www.foom.com/core#00000000000000000087> 
+                                                                                                               <https://www.foom.com/pappus_proofPappus#00000000000000000147> ;
+                                                               <http://www.foom.com/core#00000000000000000088> <http://www.foom.com/mathematical_concepts#00000000000000000058> ,
+                                                                                                               : ;
+                                                               <http://www.foom.com/core#00000000000000000089> rdf:type ;
                                                                rdfs:label "Step 1 (proof Pappus)"@en .
 
 
@@ -338,34 +378,50 @@
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000150
 <https://www.foom.com/pappus_proofPappus#00000000000000000150> rdf:type owl:NamedIndividual ,
-                                                                        <http://www.foom.com/core/Proof_step> ;
+                                                                        <http://www.foom.com/core/Proof_step> ,
+                                                                        rdf:Statement ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofPappus#00000000000000000144> ;
+                                                               <http://www.foom.com/core#00000000000000000088> <https://www.foom.com/pappus_proofPappus#00000000000000000145> ;
+                                                               <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
                                                                rdfs:label "Step 2 (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000151
 <https://www.foom.com/pappus_proofPappus#00000000000000000151> rdf:type owl:NamedIndividual ,
-                                                                        <http://www.foom.com/core/Proof_step> ;
+                                                                        <http://www.foom.com/core/Proof_step> ,
+                                                                        rdf:Statement ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofPappus#00000000000000000145> ;
+                                                               <http://www.foom.com/core#00000000000000000088> <https://www.foom.com/pappus_proofPappus#00000000000000000144> ;
+                                                               <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
                                                                rdfs:label "Step 3 (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000152
 <https://www.foom.com/pappus_proofPappus#00000000000000000152> rdf:type owl:NamedIndividual ,
-                                                                        <http://www.foom.com/core/Proof_step> ;
+                                                                        <http://www.foom.com/core/Proof_step> ,
+                                                                        rdf:Statement ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofPappus#00000000000000000141> ;
+                                                               <http://www.foom.com/core#00000000000000000088> <https://www.foom.com/pappus_proofPappus#00000000000000000141> ;
+                                                               <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
                                                                rdfs:comment "Proposition 4 from book 1 of Euclid's elements."@en ;
                                                                rdfs:label "Step 4 (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000153
 <https://www.foom.com/pappus_proofPappus#00000000000000000153> rdf:type owl:NamedIndividual ,
-                                                                        <http://www.foom.com/core/Proof_step> ;
+                                                                        <http://www.foom.com/core/Proof_step> ,
+                                                                        rdf:Statement ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                               <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofPappus#00000000000000000134> ;
+                                                               <http://www.foom.com/core#00000000000000000088> <https://www.foom.com/pappus_proofPappus#00000000000000000147> ;
+                                                               <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000097> ;
                                                                rdfs:label "Step 5 (proof Pappus)"@en .
 
 
@@ -375,6 +431,14 @@
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                rdfs:label "Step 6 (proof Pappus)"@en .
+
+
+###  https://www.foom.com/pappus_proofPappus#00000000000000000155
+<https://www.foom.com/pappus_proofPappus#00000000000000000155> rdf:type owl:NamedIndividual ,
+                                                                        rdf:Statement ;
+                                                               <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofPappus#00000000000000000138> ;
+                                                               <http://www.foom.com/core#00000000000000000088> <https://www.foom.com/pappus_proofPappus#00000000000000000139> ;
+                                                               <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000097> .
 
 
 #################################################################
@@ -389,4 +453,4 @@
 ] .
 
 
-###  Generated by the OWL API (version 4.5.24.2023-01-14T21:28:32Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

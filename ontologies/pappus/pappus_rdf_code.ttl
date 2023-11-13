@@ -8,7 +8,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 ### ARISTOTLE'S PROOF
 
 # 0. join point A to point O (stated; construction)
-<https://www.foom.com/pappus_proofAristotle#00000000000000000001>
+<https://www.foom.com/pappus_proofAristotle#00000000000000000001> # Step 0
     a rdf:Statement ;
     rdf:subject <https://www.foom.com/pappus_proofAristotle#00000000000000000042> ; # Point A
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000042> ; # is joined to
@@ -34,7 +34,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 
 # 1. join point B to point O (stated; construction)
-<https://www.foom.com/pappus_proofAristotle#00000000000000000014>
+<https://www.foom.com/pappus_proofAristotle#00000000000000000014> # Step 1
     a rdf:Statement ;
     rdf:subject <https://www.foom.com/pappus_proofAristotle#00000000000000000043> ; # Point B
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000042> ; # is joined to
@@ -65,7 +65,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # 3. the sum of rectilinear angle OAB and mixed angle AB 
 # has the same amount of rotation as the sum of rectilinear angle OBA
 # and mixed angle BA (stated; by 0, 2)
-<https://www.foom.com/pappus_proofAristotle#00000000000000000017>
+<https://www.foom.com/pappus_proofAristotle#00000000000000000017> # Step 3
     a rdf:Statement ;
     rdf:subject <https://www.foom.com/pappus_proofAristotle#00000000000000000004> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
@@ -161,7 +161,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 <http://www.foom.com/pappus_proofEuclid#00000000000000000050>
     a rdf:Statement ;
     rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000060> ;
-    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000031> # is produced to
+    rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000031> ; # is produced to
     rdf:object <http://www.foom.com/pappus_proofEuclid#00000000000000000070> .
 # related ontology:
 # (i) import ontology of steps 0 and 1
