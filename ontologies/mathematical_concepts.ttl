@@ -320,6 +320,8 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000109
 <http://www.foom.com/mathematical_concepts#00000000000000000109> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
+                                                                 owl:inverseOf <http://www.foom.com/mathematical_concepts#00000000000000000110> ;
+                                                                 rdf:type owl:TransitiveProperty ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "generalizes"@en .
 
@@ -327,6 +329,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000110
 <http://www.foom.com/mathematical_concepts#00000000000000000110> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
+                                                                 rdf:type owl:TransitiveProperty ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "specializes"@en .
 
@@ -408,6 +411,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000146
 <http://www.foom.com/mathematical_concepts#00000000000000000146> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
+                                                                 rdf:type owl:TransitiveProperty ;
                                                                  rdfs:range <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "is part of concept"@en .
@@ -450,14 +454,15 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000155
 <http://www.foom.com/mathematical_concepts#00000000000000000155> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000185> ;
+                                                                 rdf:type owl:TransitiveProperty ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "refers to concept"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000157
 <http://www.foom.com/mathematical_concepts#00000000000000000157> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000185> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "refers to action"@en .
 
@@ -479,9 +484,24 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000172
 <http://www.foom.com/mathematical_concepts#00000000000000000172> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000184> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "directly uses definition"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000184
+<http://www.foom.com/mathematical_concepts#00000000000000000184> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
+                                                                 rdf:type owl:TransitiveProperty ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "uses definition"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000185
+<http://www.foom.com/mathematical_concepts#00000000000000000185> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "refers to logical element"@en .
 
 
 #################################################################

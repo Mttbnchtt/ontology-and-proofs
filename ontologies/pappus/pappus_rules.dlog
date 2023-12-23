@@ -23,17 +23,24 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     [ ?x, <http://www.foom.com/core/hasAntecedent>, ?y ] ,
     [ ?y, <http://www.foom.com/core/inProof>, ?z  ] .
 
-# if (x is in definition y) and (y is in definition z),
-# then x is in definition y
+# if (x refers to concept y) and (y refers to concept z),
+# then x refers to concept y
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000155>, ?z ] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000155>, ?y ],
+    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000155>, ?z]
 
-# if (x is in proof step y) and (x has definition z)
-# and (v is in definition z), then v logically supports y
-
-# if (x has antecedent y) and (y has antecedent z), 
-# then x has antecedent z
+# if (x is in proof step y) and (z defines x)
+# and (z refers to logical element v), then v logically supports y
+[ ?v, <http://www.foom.com/mathematical_concepts#00000000000000000111>, ?y ] :-
+    [ ?x, <http://www.foom.com/core#00000000000000000035>, ?y ],
+    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000163>, ?x ],
+    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?v ]
 
 # if (x has antecendent y) and (z logically supports y),
 # then z logically supports x
+[ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000111>, ?x] :-
+    [ ?x, <http://www.foom.com/core#00000000000000000186>, ?y],
+    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000111>, ?y]
 
 # if x has antecedent y, then y logically supports x
 
