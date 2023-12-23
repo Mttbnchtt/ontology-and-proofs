@@ -10,12 +10,18 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # is x is a proof step and has antecedent proof step y 
 # and y is a step of proof z,
-# then x is a proof step  and it is a step of proof z
+# then x is a step of proof z
+[ ?x, <http://www.foom.com/core/inProof>, ?z ] :- 
+    [ ?x, <http://www.foom.com/core/hasAntecedent>, ?y ] ,
+    [ ?y, <http://www.foom.com/core/inProof>, ?z  ] .
 
 
 # is x is a proof step and has antecedent proof step y 
 # and x is a step of proof z,
-# then y is a proof step and it is a step of proof z
+# then y is a step of proof z
+[ ?y, <http://www.foom.com/core/inProof>, ?z ] :- 
+    [ ?x, <http://www.foom.com/core/hasAntecedent>, ?y ] ,
+    [ ?y, <http://www.foom.com/core/inProof>, ?z  ] .
 
 # if (x is in definition y) and (y is in definition z),
 # then x is in definition y
@@ -34,6 +40,11 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # if (x has definition y) and (z is in definition y), 
 # then z logically supports x 
 
+# if x uses definition y, 
+# then y logically supports as its conceptual part x
+
+# if x uses definition y and y refers to concept z,
+# then x refers to concept z
 
 # GEOMETRY
 
@@ -108,6 +119,12 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # then x is analogous to y
 
 
+# if x is a specialization of y, 
+# then y is a conceptual part o x
+
+
+# if x is a generalization of y, 
+# then x is a conceptual part of x
 
 
 

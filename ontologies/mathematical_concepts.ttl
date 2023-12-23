@@ -321,14 +321,14 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000109> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "is generalization of"@en .
+                                                                 rdfs:label "generalizes"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000110
 <http://www.foom.com/mathematical_concepts#00000000000000000110> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "is specialization of"@en .
+                                                                 rdfs:label "specializes"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000111
@@ -415,9 +415,9 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000147
 <http://www.foom.com/mathematical_concepts#00000000000000000147> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000155> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "refers to concept"@en .
+                                                                 rdfs:label "directly refers to concept"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000148
@@ -448,6 +448,13 @@
                                                                  rdfs:label "is heuristically opposite to"@en .
 
 
+###  http://www.foom.com/mathematical_concepts#00000000000000000155
+<http://www.foom.com/mathematical_concepts#00000000000000000155> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "refers to concept"@en .
+
+
 ###  http://www.foom.com/mathematical_concepts#00000000000000000157
 <http://www.foom.com/mathematical_concepts#00000000000000000157> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
@@ -455,11 +462,26 @@
                                                                  rdfs:label "refers to action"@en .
 
 
+###  http://www.foom.com/mathematical_concepts#00000000000000000163
+<http://www.foom.com/mathematical_concepts#00000000000000000163> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
+                                                                 rdfs:range <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "defines"@en .
+
+
 ###  http://www.foom.com/mathematical_concepts#00000000000000000167
 <http://www.foom.com/mathematical_concepts#00000000000000000167> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "is logically opposite of"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000172
+<http://www.foom.com/mathematical_concepts#00000000000000000172> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "uses definition"@en .
 
 
 #################################################################
@@ -733,7 +755,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000005> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000006> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000051> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000051> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -745,7 +767,8 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000006> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000008> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000052> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000052> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000172> <http://www.foom.com/mathematical_concepts#00000000000000000005> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -757,7 +780,11 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000007> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000137> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000054> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000053> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000151> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000054> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000172> <http://www.foom.com/mathematical_concepts#00000000000000000008> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000129> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -769,7 +796,11 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000008> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000007> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000053> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000151> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000175> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000053> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000172> <http://www.foom.com/mathematical_concepts#00000000000000000006> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000128> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -782,6 +813,7 @@
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000064> <http://www.foom.com/mathematical_concepts#00000000000000000151> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000040> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000146> <http://www.foom.com/mathematical_concepts#00000000000000000173> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Concept: Line"@en .
 
@@ -807,7 +839,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000044> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Concept: Latitude"@en .
+                                                                 rdfs:label "Concept: Width"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000046
@@ -831,14 +863,16 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000049
 <http://www.foom.com/mathematical_concepts#00000000000000000049> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000146> <http://www.foom.com/mathematical_concepts#00000000000000000130> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Concept: Longitude"@en .
+                                                                 rdfs:label "Concept: Length"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000050
 <http://www.foom.com/mathematical_concepts#00000000000000000050> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000113> <http://www.foom.com/mathematical_concepts#00000000000000000150> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000146> <http://www.foom.com/mathematical_concepts#00000000000000000130> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Concept: Equality"@en .
 
@@ -846,6 +880,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000051
 <http://www.foom.com/mathematical_concepts#00000000000000000051> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000146> <http://www.foom.com/mathematical_concepts#00000000000000000174> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Concept: Surface"@en .
 
@@ -890,30 +925,37 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000061> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000133> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000040> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000126> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000173> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000172> <http://www.foom.com/mathematical_concepts#00000000000000000082> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition III" ;
-                                                                 rdfs:label "Definition: Extremity of a line (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Definition: Limit of a line (Euclid, Elements I)"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000062
 <http://www.foom.com/mathematical_concepts#00000000000000000062> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000051> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000040> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000169> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000174> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000172> <http://www.foom.com/mathematical_concepts#00000000000000000128> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition VI" ;
-                                                                 rdfs:label "Definition: Extremity of a surface (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Definition: Limit of a surface (Euclid, Elements I)"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000065
 <http://www.foom.com/mathematical_concepts#00000000000000000065> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000067> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000071> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000131> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000071> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000172> <http://www.foom.com/mathematical_concepts#00000000000000000066> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -925,7 +967,9 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000066> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000065> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000131> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000169> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000170> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000131> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -937,7 +981,8 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000067> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000069> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000072> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000072> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000172> <http://www.foom.com/mathematical_concepts#00000000000000000129> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -949,7 +994,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000069> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000070> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000073> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000073> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition XIX" ;
@@ -960,6 +1005,8 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000070> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000073> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000075> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000172> <http://www.foom.com/mathematical_concepts#00000000000000000073> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition XX" ;
@@ -1012,7 +1059,7 @@
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000061> ,
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000128> ,
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000132> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000126> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000126> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -1224,6 +1271,9 @@
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000005> ,
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000062> ,
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000132> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000044> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000049> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000040> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -1234,12 +1284,24 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000129
 <http://www.foom.com/mathematical_concepts#00000000000000000129> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000151> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000151> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000172> <http://www.foom.com/mathematical_concepts#00000000000000000082> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://www.foom.com/core#00000000000000000009> "Euclid, Elements book I, definition IV" ;
                                                                  rdfs:label "Definition: Straight line (Euclid, Elements I)"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000130
+<http://www.foom.com/mathematical_concepts#00000000000000000130> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000064> <http://www.foom.com/mathematical_concepts#00000000000000000049> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000050> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000049> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000050> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Concept: Equal length"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000131
@@ -1298,6 +1360,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000137> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000001> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000135> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000163> <http://www.foom.com/mathematical_concepts#00000000000000000176> ;
                                                                  <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -1448,7 +1511,8 @@
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000164> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Proposition 2 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Proposition 2 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "At the given point, to place a straight line equal to the given straight line." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000164
@@ -1467,7 +1531,8 @@
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000179> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Proposition 3 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Proposition 3 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "Given two unequal straight lines, from the bigger, remove a straight line equal to the smaller." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000166
@@ -1487,6 +1552,20 @@
                                                                  rdfs:label "Construction requested by Proposition 1 (Euclid, Elements I)"@en .
 
 
+###  http://www.foom.com/mathematical_concepts#00000000000000000169
+<http://www.foom.com/mathematical_concepts#00000000000000000169> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Concept: Limit"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000170
+<http://www.foom.com/mathematical_concepts#00000000000000000170> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Concept: Thing"@en .
+
+
 ###  http://www.foom.com/mathematical_concepts#00000000000000000171
 <http://www.foom.com/mathematical_concepts#00000000000000000171> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000169> ;
@@ -1496,12 +1575,51 @@
                                                                  rdfs:label "Construction requested by Proposition 2 (Euclid, Elements I)"@en .
 
 
+###  http://www.foom.com/mathematical_concepts#00000000000000000173
+<http://www.foom.com/mathematical_concepts#00000000000000000173> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000169> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Concept: Limit of a line"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000174
+<http://www.foom.com/mathematical_concepts#00000000000000000174> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000169> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Concept: Limit of a surface"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000175
+<http://www.foom.com/mathematical_concepts#00000000000000000175> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Concept: Inclination"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000176
+<http://www.foom.com/mathematical_concepts#00000000000000000176> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000054> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Concept: Straight angle"@en .
+
+
 ###  http://www.foom.com/mathematical_concepts#00000000000000000177
 <http://www.foom.com/mathematical_concepts#00000000000000000177> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000169> ;
                                                                  <http://www.foom.com/core#00000000000000000170> <http://www.foom.com/mathematical_concepts#00000000000000000165> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Construction requested by Proposition 3 (Euclid, Elements I)"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000178
+<http://www.foom.com/mathematical_concepts#00000000000000000178> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000071> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Concept: Trilateral figure"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000179
@@ -1531,7 +1649,8 @@
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000183> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Proposition 4 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Proposition 4 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "If two triangles have two sides [of the first triangle] equal to two sides [of the second triangle] each to each and the angle subtended by the two equal segments [i.e. sides] [of the first triangle] equal to the angle [subtended by the two equal sides of the second triangle], then they will have the base [of the first triangle] equal to the base [of the second triangle] and the [first] triangle will be equal to the [second] triangle and the remaining angles subtended by the equal sides [of the first triangle] will be equal to the remaining angles [subtended by the equal sides of the second triangle] each to each." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000182
