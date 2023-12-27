@@ -1,5 +1,0 @@
-License: cc-by-4.0
-
-Find the legal terms: https://creativecommons.org/licenses/by-sa/4.0/legalcode .
-
-Attribute the original work to: Matteo Bianchetti, Giorgio Venturi.
