@@ -1,0 +1,26 @@
+prefix owl: <http://www.w3.org/2002/07/owl#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+prefix core: <http://www.foom.com/core/> 
+prefix euclid: <http://www.foom.com/euclid.I.17/> 
+
+# RULE 0
+# if segment x is produced to segment y, then y does not lie on x
+[?y, euclid:doesNotLieOn, ?x] :- [?x, euclid:producedTo, ?y ] .
+
+# RULE 1
+# if segment x is produced to segment y, then x lies on y
+[?x, euclid:liesOn, ?y] :- [?x, euclid:producedTo, ?y ] .
+
+# RULE 2
+# equalMagnitude is transitive
+[?x, euclid:equalMagnitude, ?z] :- [?x, euclid:equalMagnitude, ?y], [?y, euclid:equalMagnitude, ?z] .
+
+# RULE 3
+# smallerMagnitude is transitive
+[?x, euclid:smallerMagnitude, ?z] :- [?x, euclid:smallerMagnitude, ?y], [?y, euclid:smallerMagnitude, ?z] .
+
+# RULE 4
+# two points related by joinedTo result in a segment with the points as endpoints
+

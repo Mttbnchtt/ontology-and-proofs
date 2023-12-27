@@ -1,0 +1,36 @@
+
+
+1
+--
+2    1   1     1  2
+------   --    ----
+   3     4      5      I.16     1  2     1
+   ------------------------     ----     --
+            6                     8      7    postulate4    1  I.13 
+            --------------------------------------------    -------
+                       9                                      10
+                       -----------------------------------------
+                                         11
+
+Things to study or infer:
+1. Graph embedding.
+2. Graph similarity.
+3. Inferential types and flag to each (or some) node to make 
+   explicit the inferential role of that node.
+4. Euclid gives only one case explicitly but he refers to the other 
+   cases to complete the proof. The ontology should say that the full
+   proof-structure is by cases.
+5. Should the use of previously available propositions (e.g. I.16 
+   and axiom 4) be the use of the general proposition or of an instance
+   (that, e.g., mentions the specific triangle under consideration)?
+   Depending on what one choses, there are two different proof 
+   structures: (i) universal statement and statements that ABC
+   satisfies the universal statement and derivation of the consequent
+   (my modus ponens); (ii) proof of the particular statement following 
+   the template provided by the proof of the general statement.
+
+Article:
+1. We state that a segment is side of a triangle but not list this as a step in a proof.
+
+ISSUES:
+1. redo dependency graphs to have 2 in Euclid as a leave.
