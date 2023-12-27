@@ -145,6 +145,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000031
 <http://www.foom.com/mathematical_concepts#00000000000000000031> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000019> ;
+                                                                 rdfs:range <http://www.foom.com/mathematical_concepts#00000000000000000024> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "is produced to"@en .
 

@@ -140,25 +140,22 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000097> rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/matteobianchetti/ontologies/2023/4/untitled-ontology-206/
-: rdf:type owl:NamedIndividual ,
-           rdf:Statement ;
-  <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofPappus#00000000000000000141> ;
-  <http://www.foom.com/core#00000000000000000088> <https://www.foom.com/pappus_proofPappus#00000000000000000142> ;
-  <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000076> .
-
-
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#type
 rdf:type rdf:type owl:NamedIndividual .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000000
 <https://www.foom.com/pappus_proofPappus#00000000000000000000> rdf:type owl:NamedIndividual ,
-                                                                        <http://www.foom.com/core/Proof_step> ;
+                                                                        <http://www.foom.com/core/Proof_step> ,
+                                                                        rdf:Statement ;
+                                                               <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofPappus#00000000000000000138> ;
+                                                               <http://www.foom.com/core#00000000000000000088> <https://www.foom.com/pappus_proofPappus#00000000000000000139> ;
+                                                               <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000097> ;
                                                                <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus_proofPappus#00000000000000000154> ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Step 7 (proof Pappus)"@en .
+                                                               rdfs:label "Step 7 (proof Pappus)"@en ;
+                                                               <https://www.foom.com/metadata#00000000000000000000> "Angle ABC is perfectly overlappable by rigid movement to angle ACB." .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000001
@@ -169,7 +166,8 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/core#00000000000000000044> "true"^^xsd:boolean ;
                                                                <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Step 8 (proof Pappus)"@en .
+                                                               rdfs:label "Step 8 (proof Pappus)"@en ;
+                                                               <https://www.foom.com/metadata#00000000000000000000> "Angle ABC has the same amount of rotation as angle ACB." .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000131
@@ -189,7 +187,29 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Step 0 (proof Pappus)"@en .
+                                                               rdfs:label "Step 0 (proof Pappus)"@en ;
+                                                               <https://www.foom.com/metadata#00000000000000000000> "Let ABC be an isosceles triangle where side AB has the same length as side AC and BC is the base of triangle ABC" ;
+                                                               <https://www.foom.com/metadata#00000000000000000001> """# (i) A is a point
+# (ii) O is a point
+# (iii) point A and point O are distinct
+# (iv) B is a point
+# (v) point B and point O are distinct
+# (vi) point A and point B are distinct
+# (vii) AB is a segment
+# (viii) A is extremity of segment AB
+# (viii) B is extremity of segment AB
+# (ix) AC is a segment
+# (x) A is extremity of segment AC
+# (xi) C is extremity of segment AC
+# (xii) BC is a segment
+# (xiii) B is extremity of segment BC
+# (xiv) C is is extremity of segment BC
+# (xv) segment AB is side of triangle ABC
+# (xvi) segment BC is side of triangle ABC
+# (xvii) side AB has lenght |AB|
+# (xviii) side AC has lenght |AC|
+# (xix)the lenght of side AB is equivalent to the lenght of side AC
+# (xx) segment BC is a basis of triangle ABC""" .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000133
@@ -197,13 +217,14 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                         <http://www.foom.com/core/Proof_step> ,
                                                                         rdf:Statement ;
                                                                <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofPappus#00000000000000000147> ;
-                                                               <http://www.foom.com/core#00000000000000000088> <http://www.foom.com/mathematical_concepts#00000000000000000058> ,
-                                                                                                               : ;
+                                                               <http://www.foom.com/core#00000000000000000088> <http://www.foom.com/mathematical_concepts#00000000000000000058> ;
                                                                <http://www.foom.com/core#00000000000000000089> rdf:type ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Step 1 (proof Pappus)"@en .
+                                                               rdfs:label "Step 1 (proof Pappus)"@en ;
+                                                               <https://www.foom.com/metadata#00000000000000000000> "Let ACB be an isoscles triangle where side AB has the same length as side AC and BC is the base of triangle ABC." ;
+                                                               <https://www.foom.com/metadata#00000000000000000001> "# (i) triangle ABC is identical to triangle ACB but thought as distinct" .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000134
@@ -397,7 +418,8 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Step 2 (proof Pappus)"@en .
+                                                               rdfs:label "Step 2 (proof Pappus)"@en ;
+                                                               <https://www.foom.com/metadata#00000000000000000000> "Side AB of triangle ABC has the same length as side AC of triangle ACB." .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000151
@@ -411,7 +433,8 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Step 3 (proof Pappus)"@en .
+                                                               rdfs:label "Step 3 (proof Pappus)"@en ;
+                                                               <https://www.foom.com/metadata#00000000000000000000> "Side AC of triangle ABC has the same length as side AB of triangle ACB." .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000152
@@ -425,7 +448,8 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                rdfs:comment "Proposition 4 from book 1 of Euclid's elements."@en ;
-                                                               rdfs:label "Step 4 (proof Pappus)"@en .
+                                                               rdfs:label "Step 4 (proof Pappus)"@en ;
+                                                               <https://www.foom.com/metadata#00000000000000000000> "Angle BAC of triangle ABC has the same amount of rotation as angle BAC of triangle ACB." .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000153
@@ -442,7 +466,13 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                                                         <https://www.foom.com/pappus_proofPappus#00000000000000000152> ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Step 5 (proof Pappus)"@en .
+                                                               rdfs:label "Step 5 (proof Pappus)"@en ;
+                                                               <https://www.foom.com/metadata#00000000000000000000> """Triangle ABC is perfectly overlappable to triangle ACB by a rigid movement where - side AB of triangle ABC coincides with side AC of triangle ACB,  
+- side AC of triangle ABC coincides with side AB of triangle ACB,
+- side BC of triangle ABC coincides with side BC of triangle ACB,
+- angle BAC of triangle ABC coincides with angle BAC of triangle ACB,
+- angle ABC of triangle ABC coincides with angle ACB of triangle ACB, and
+- angle ACB of triangle ABC coincides with angle ABC of triangle ACB.""" .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000154
@@ -451,14 +481,6 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                rdfs:label "Step 6 (proof Pappus)"@en .
-
-
-###  https://www.foom.com/pappus_proofPappus#00000000000000000155
-<https://www.foom.com/pappus_proofPappus#00000000000000000155> rdf:type owl:NamedIndividual ,
-                                                                        rdf:Statement ;
-                                                               <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofPappus#00000000000000000138> ;
-                                                               <http://www.foom.com/core#00000000000000000088> <https://www.foom.com/pappus_proofPappus#00000000000000000139> ;
-                                                               <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000097> .
 
 
 #################################################################

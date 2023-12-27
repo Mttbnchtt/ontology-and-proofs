@@ -388,9 +388,9 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 ### PAPPUS' PROOF
 
 # 0. Let ABC be an isosceles triangle where
-# side AB has the same lenght as side AC and
+# side AB has the same length as side AC and
 # BC is the base of triangle ABC (stated, given)
-<https://www.foom.com/pappus_proofPappus#00000000000000000133>
+<https://www.foom.com/pappus_proofPappus#00000000000000000132>
     a rdf:Statement ;
     rdf:subject <https://www.foom.com/pappus_proofPappus#00000000000000000134> ; # Triangle ABC
     rdf:predicate rdf:type ;
@@ -419,7 +419,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (xx) segment BC is a basis of triangle ABC
 
 # 1. Let ACB be an isoscles triangle where
-# side AB has the same lenght as side AC and
+# side AB has the same length as side AC and
 # BC is the base of triangle ABC (stated, given)
 <https://www.foom.com/pappus_proofPappus#00000000000000000133>
     a rdf:Statement ;
@@ -488,7 +488,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     rdf:object <https://www.foom.com/pappus_proofPappus#00000000000000000139> . # 
 
 # 8. angle ABC has the same amount of rotation as angle ACB (stated; goal by 7)
-<>
+<https://www.foom.com/pappus_proofPappus#00000000000000000001>
     a rdf:Statement ;
     rdf:subject <https://www.foom.com/pappus_proofPappus#00000000000000000141> ; # 
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
