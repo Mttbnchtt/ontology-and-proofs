@@ -23,3 +23,9 @@
 
 # content of test folders
 **/test/*
+
+# files with .properties extension
+**/*.properties
+
+# files with .download extension
+**/*.download

@@ -2847,7 +2847,10 @@ ns4:Proof_step a owl:Class ;
     rdfs:subClassOf default7:00000000000000000002 .
 
 [] a owl:AllDifferent ;
-    owl:distinctMembers ( <https://www.foom.com/pappus_proofPappus#00000000000000000135> <https://www.foom.com/pappus_proofPappus#00000000000000000136> <https://www.foom.com/pappus_proofPappus#00000000000000000137> ) .
+    owl:distinctMembers ( <https://www.foom.com/pappus_proofAristotle#00000000000000000006> <https://www.foom.com/pappus_proofAristotle#00000000000000000009> <https://www.foom.com/pappus_proofAristotle#00000000000000000018> ) .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( <https://www.foom.com/pappus_proofAristotle#00000000000000000042> <https://www.foom.com/pappus_proofAristotle#00000000000000000043> <https://www.foom.com/pappus_proofAristotle#00000000000000000044> ) .
 
 [] a owl:AllDifferent ;
     owl:distinctMembers ( <http://www.foom.com/pappus_proofEuclid#00000000000000000057> <http://www.foom.com/pappus_proofEuclid#00000000000000000058> <http://www.foom.com/pappus_proofEuclid#00000000000000000059> ) .
@@ -2910,8 +2913,5 @@ ns4:Proof_step a owl:Class ;
     owl:distinctMembers ( <http://www.foom.com/pappus_proofEuclid#00000000000000000066> <http://www.foom.com/pappus_proofEuclid#00000000000000000067> <http://www.foom.com/pappus_proofEuclid#00000000000000000099> <http://www.foom.com/pappus_proofEuclid#00000000000000000102> <http://www.foom.com/pappus_proofEuclid#00000000000000000104> ) .
 
 [] a owl:AllDifferent ;
-    owl:distinctMembers ( <https://www.foom.com/pappus_proofAristotle#00000000000000000006> <https://www.foom.com/pappus_proofAristotle#00000000000000000009> <https://www.foom.com/pappus_proofAristotle#00000000000000000018> ) .
-
-[] a owl:AllDifferent ;
-    owl:distinctMembers ( <https://www.foom.com/pappus_proofAristotle#00000000000000000042> <https://www.foom.com/pappus_proofAristotle#00000000000000000043> <https://www.foom.com/pappus_proofAristotle#00000000000000000044> ) .
+    owl:distinctMembers ( <https://www.foom.com/pappus_proofPappus#00000000000000000135> <https://www.foom.com/pappus_proofPappus#00000000000000000136> <https://www.foom.com/pappus_proofPappus#00000000000000000137> ) .
 
