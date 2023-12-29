@@ -882,7 +882,6 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000047
 <http://www.foom.com/mathematical_concepts#00000000000000000047> rdf:type owl:NamedIndividual ,
-                                                                          <http://www.foom.com/core#00000000000000000158> ,
                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000045> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000133> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -1348,7 +1347,8 @@
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000157> <http://www.foom.com/mathematical_concepts#00000000000000000046> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Postulate 1 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Postulate 1 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "Be postulated to carry a straight line from every point upon every point." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000133
@@ -1358,7 +1358,8 @@
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000156> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Postulate 2 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Postulate 2 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "And [be postulated] to produce a finite straight line upon a straight line continuously." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000134
@@ -1366,7 +1367,8 @@
                                                                           <http://www.foom.com/core/Claim> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Postulate 3 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Postulate 3 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "And [be postulated] be drawn a circle with every center and [every] radius." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000135
@@ -1374,7 +1376,8 @@
                                                                           <http://www.foom.com/core/Claim> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Postulate 4 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Postulate 4 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "And [be postulated] al right angles to be equal one to the other." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000136
@@ -1382,7 +1385,8 @@
                                                                           <http://www.foom.com/core/Claim> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Postulate 5 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Postulate 5 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "And [be postulated] that, if a straight line falling to two straight lines make the internal angles on the same part less than two right angles, extending upon infinity the two straight lines meet on that part where teh two [angles] less than two right angles are." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000137
@@ -1403,7 +1407,8 @@
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000050> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Common notion 1 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Common notion 1 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "Things equal to the same [thing] are equal one to the other." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000139
@@ -1414,7 +1419,8 @@
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000145> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Common notion 2 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Common notion 2 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "And, if euqals are added to equals, then the wholes are equal." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000140
@@ -1425,7 +1431,8 @@
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000145> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Common notion 3 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Common notion 3 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "And, if equals are removed from equals, the remaining things are equal." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000141
@@ -1442,7 +1449,8 @@
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000144> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Common notion 7 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Common notion 7 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "And things applicable [congruent] one upon the other are equal one to the other." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000143
@@ -1453,7 +1461,8 @@
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000150> ;
                                                                  <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Common notion 8 (Euclid, Elements I)"@en .
+                                                                 rdfs:label "Common notion 8 (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "And the whole [is] greater than its part." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000144
@@ -1694,6 +1703,13 @@
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Concept: Inclusion"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000187
+<http://www.foom.com/mathematical_concepts#00000000000000000187> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000045> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Act type: Selecting a point on a given segment"@en .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

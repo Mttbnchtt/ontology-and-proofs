@@ -110,6 +110,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # 7. rectilinear angle OAB has the same amount of rotation
 # as rectilinear angle OBA (stated; by 3, 4, 5)
 <https://www.foom.com/pappus_proofAristotle#00000000000000000046>
+<https://www.foom.com/pappus_proofAristotle#00000000000000000046>
     a rdf:Statement ;
     rdf:subject <https://www.foom.com/pappus_proofAristotle#00000000000000000013> ;
     rdf:predicate <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
@@ -155,7 +156,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # 1. Extend a segment (not stated, axiom 2)
 # <http://www.foom.com/pappus_proofEuclid#00000000000000000049>
 # related ontology:
-# (i) class Segment is a subject of things that can be extended continously in a straight line
+# (i) class Segment is a class of things that can be extended continously in a straight line
 
 # 2. Extend AB to D (stated, construction; by 0, 1)
 <http://www.foom.com/pappus_proofEuclid#00000000000000000050>
@@ -191,7 +192,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (viii) CE is a segment, distinct from every other segment mentioned so far
 # and whose extremities are the points C and E
 
-# 4. Select point F on BD such that F lies stricly between point B and point F (stated, construction; by 2)
+# 4. Select point F on BD such that F lies stricly between point B and point F (stated; by 2)
 <http://www.foom.com/pappus_proofEuclid#00000000000000000052>
     a rdf:Statement ;
     rdf:subject <http://www.foom.com/pappus_proofEuclid#00000000000000000076> ;
