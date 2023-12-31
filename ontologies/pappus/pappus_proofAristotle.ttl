@@ -489,7 +489,7 @@
                                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofAristotle#00000000000000000000> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                   rdfs:label "Step 2 (proof Aristotle)"@en ;
-                                                                  <https://www.foom.com/metadata#00000000000000000000> "Given a circle and a cord in it, the resulting mixed angles are equal to each other." .
+                                                                  <https://www.foom.com/metadata#00000000000000000000> "Given a circle and a cord in it, the resulting mixed angles on the same side are equal to each other." .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000130
