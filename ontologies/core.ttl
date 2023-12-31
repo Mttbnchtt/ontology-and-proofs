@@ -114,6 +114,13 @@
                                                 rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000191> .
 
 
+###  http://www.foom.com/core#00000000000000000198
+<http://www.foom.com/core#00000000000000000198> rdf:type owl:AnnotationProperty ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                rdfs:label "has paraphrasis of formula"@en ;
+                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000191> .
+
+
 #################################################################
 #    Object Properties
 #################################################################

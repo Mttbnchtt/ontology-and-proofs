@@ -1716,7 +1716,11 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000189> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000008> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Predicate: Is mixed angle [angle, cord, circle -> xsd:boolean]"@en .
+                                                                 <http://www.foom.com/core#00000000000000000195> "0 -> http://www.foom.com/mathematical_concepts#00000000000000000013 (Mixed plane angle)" ,
+                                                                                                                 "1 -> http://www.foom.com/mathematical_concepts#00000000000000000015 (Segment)" ,
+                                                                                                                 "2 -> http://www.foom.com/mathematical_concepts#00000000000000000017 (Circle)" ;
+                                                                 <http://www.foom.com/core#00000000000000000196> "xsd:boolean" ;
+                                                                 rdfs:label "Predicate: is mixed angle [Mixed plane angle, Segment, Circle -> xsd:boolean]"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000190
