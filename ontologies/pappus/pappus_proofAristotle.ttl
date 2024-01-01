@@ -187,14 +187,14 @@
 <https://www.foom.com/pappus_proofAristotle#00000000000000000002> rdf:type owl:NamedIndividual ,
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000027> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Lenght of segment AO (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Lenght of segment AO (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000003
 <https://www.foom.com/pappus_proofAristotle#00000000000000000003> rdf:type owl:NamedIndividual ,
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000027> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Lenght of segment BO (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Lenght of segment BO (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000004
@@ -202,11 +202,11 @@
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000013> ;
                                                                   <http://www.foom.com/core#00000000000000000000> <https://www.foom.com/pappus_proofAristotle#00000000000000000017> ;
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000017> ;
-                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofAristotle#00000000000000000019> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000055> <https://www.foom.com/pappus_proofAristotle#00000000000000000007> ,
                                                                                                                                    <https://www.foom.com/pappus_proofAristotle#00000000000000000010> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000201> <https://www.foom.com/pappus_proofAristotle#00000000000000000019> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Sum of rectilinear angle OAB and mixed angle BAB (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Sum of rectilinear angle OAB and mixed angle BAB (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000005
@@ -215,7 +215,7 @@
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000001> ;
                                                                   <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Circle AB (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Circle AB (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000006
@@ -225,36 +225,42 @@
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofAristotle#00000000000000000002> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000074> <https://www.foom.com/pappus_proofAristotle#00000000000000000045> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Segment AO (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Segment AO (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000007
 <https://www.foom.com/pappus_proofAristotle#00000000000000000007> rdf:type owl:NamedIndividual ,
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000013> ;
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000001> ;
-                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofAristotle#00000000000000000011> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000039> <https://www.foom.com/pappus_proofAristotle#00000000000000000045> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000201> <https://www.foom.com/pappus_proofAristotle#00000000000000000011> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000205> <https://www.foom.com/pappus_proofAristotle#00000000000000000009> ,
+                                                                                                                                   <https://www.foom.com/pappus_proofAristotle#00000000000000000206> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Mixed angle BAB (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Mixed angle BAB (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000008
 <https://www.foom.com/pappus_proofAristotle#00000000000000000008> rdf:type owl:NamedIndividual ,
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000013> ;
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000001> ;
-                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofAristotle#00000000000000000012> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000039> <https://www.foom.com/pappus_proofAristotle#00000000000000000045> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000201> <https://www.foom.com/pappus_proofAristotle#00000000000000000012> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000205> <https://www.foom.com/pappus_proofAristotle#00000000000000000009> ,
+                                                                                                                                   <https://www.foom.com/pappus_proofAristotle#00000000000000000206> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Mixed angle ABA (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Mixed angle ABA (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000009
 <https://www.foom.com/pappus_proofAristotle#00000000000000000009> rdf:type owl:NamedIndividual ,
-                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000015> ;
+                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000035> ,
+                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000188> ;
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000130> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000074> <https://www.foom.com/pappus_proofAristotle#00000000000000000045> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000202> <https://www.foom.com/pappus_proofAristotle#00000000000000000005> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Segment AB (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Segment AB (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000010
@@ -262,10 +268,12 @@
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000001> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000020> <https://www.foom.com/pappus_proofAristotle#00000000000000000045> ;
-                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofAristotle#00000000000000000013> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000068> <https://www.foom.com/pappus_proofAristotle#00000000000000000045> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000201> <https://www.foom.com/pappus_proofAristotle#00000000000000000013> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000205> <https://www.foom.com/pappus_proofAristotle#00000000000000000006> ,
+                                                                                                                                   <https://www.foom.com/pappus_proofAristotle#00000000000000000009> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Rectilinear angle OAB (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Rectilinear angle OAB (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000011
@@ -274,7 +282,7 @@
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000001> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000076> <https://www.foom.com/pappus_proofAristotle#00000000000000000012> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Amount of rotation of mixed angle BAB (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Amount of rotation of mixed angle BAB (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000012
@@ -282,7 +290,7 @@
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000001> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Amount of rotation of mixed angle ABA (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Amount of rotation of mixed angle ABA (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000013
@@ -292,7 +300,7 @@
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000001> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000076> <https://www.foom.com/pappus_proofAristotle#00000000000000000016> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Amount of rotation of rectilinear angle OAB (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Amount of rotation of rectilinear angle OAB (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000014
@@ -318,10 +326,12 @@
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000014> ;
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000014> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000020> <https://www.foom.com/pappus_proofAristotle#00000000000000000045> ;
-                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofAristotle#00000000000000000016> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000068> <https://www.foom.com/pappus_proofAristotle#00000000000000000045> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000201> <https://www.foom.com/pappus_proofAristotle#00000000000000000016> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000205> <https://www.foom.com/pappus_proofAristotle#00000000000000000009> ,
+                                                                                                                                   <https://www.foom.com/pappus_proofAristotle#00000000000000000018> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Rectilinear angle OBA (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Rectilinear angle OBA (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000016
@@ -330,7 +340,7 @@
                                                                   <http://www.foom.com/core#00000000000000000000> <https://www.foom.com/pappus_proofAristotle#00000000000000000046> ;
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000014> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Amount of rotation of rectilinear angle OBA (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Amount of rotation of rectilinear angle OBA (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000017
@@ -365,14 +375,16 @@
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofAristotle#00000000000000000003> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000074> <https://www.foom.com/pappus_proofAristotle#00000000000000000045> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Segment BO (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Segment BO (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000019
 <https://www.foom.com/pappus_proofAristotle#00000000000000000019> rdf:type owl:NamedIndividual ,
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000055> <https://www.foom.com/pappus_proofAristotle#00000000000000000011> ,
+                                                                                                                                   <https://www.foom.com/pappus_proofAristotle#00000000000000000013> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Amount of rotation of sum of rectilinear angle OAB and mixed angle BAB (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Amount of rotation of sum of rectilinear angle OAB and mixed angle BAB (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000020
@@ -380,18 +392,20 @@
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000013> ;
                                                                   <http://www.foom.com/core#00000000000000000000> <https://www.foom.com/pappus_proofAristotle#00000000000000000017> ;
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000017> ;
-                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofAristotle#00000000000000000021> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000055> <https://www.foom.com/pappus_proofAristotle#00000000000000000008> ,
                                                                                                                                    <https://www.foom.com/pappus_proofAristotle#00000000000000000015> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000201> <https://www.foom.com/pappus_proofAristotle#00000000000000000021> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Sum of rectilinear angle OBA and mixed angle ABA (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Sum of rectilinear angle OBA and mixed angle ABA (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000021
 <https://www.foom.com/pappus_proofAristotle#00000000000000000021> rdf:type owl:NamedIndividual ,
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000055> <https://www.foom.com/pappus_proofAristotle#00000000000000000012> ,
+                                                                                                                                   <https://www.foom.com/pappus_proofAristotle#00000000000000000016> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Amount of rotation of sum of rectilinear angle OBA and mixed angle ABA (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Amount of rotation of sum of rectilinear angle OBA and mixed angle ABA (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000040
@@ -430,7 +444,7 @@
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000057> <https://www.foom.com/pappus_proofAristotle#00000000000000000005> ;
                                                                   <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Point A (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Point A (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000043
@@ -443,7 +457,7 @@
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000057> <https://www.foom.com/pappus_proofAristotle#00000000000000000005> ;
                                                                   <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Point B (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Point B (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000044
@@ -456,7 +470,7 @@
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000083> <https://www.foom.com/pappus_proofAristotle#00000000000000000005> ;
                                                                   <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Point O (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Point O (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000045
@@ -464,7 +478,7 @@
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000058> ;
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000014> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Triangle AOB (proof Aristotle)"@en .
+                                                                  rdfs:label "Object: Triangle AOB (proof Aristotle)"@en .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000046
@@ -487,7 +501,41 @@
 <https://www.foom.com/pappus_proofAristotle#00000000000000000129> rdf:type owl:NamedIndividual ,
                                                                            <http://www.foom.com/core/Proof_step> ;
                                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofAristotle#00000000000000000000> ;
+                                                                  <http://www.foom.com/core#00000000000000000027> "" ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                  <http://www.foom.com/core#00000000000000000192> """<http://www.foom.com/core#00000000000000000022> x,
+<http://www.foom.com/core#00000000000000000022> y,
+<http://www.foom.com/core#00000000000000000022> v,
+<http://www.foom.com/core#00000000000000000022> w, 
+<http://www.foom.com/core#00000000000000000022> z, 
+{
+    [
+        \"rdf:type (x,<http://www.foom.com/mathematical_concepts#00000000000000000017>)\" <http://www.foom.com/core#00000000000000000014>
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000202> (y,x)\" <http://www.foom.com/core#00000000000000000014>
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000189> (v,y,x)\" <http://www.foom.com/core#00000000000000000014>
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000189> (w,y,x)\"  <http://www.foom.com/core#00000000000000000014>
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000204> (v,w,y)\"
+    ]
+    <http://www.foom.com/core#00000000000000000017>
+    \"owl:sameAs (<http://www.foom.com/mathematical_concepts#00000000000000000194> (v),<http://www.foom.com/mathematical_concepts#00000000000000000194> (w))\"
+}""" ;
+                                                                  <http://www.foom.com/core#00000000000000000198> """FOR EVERY x, y, v, w, z, p {
+    [
+         \"p is a plane\" AND
+         \"x is a Circle\" AND
+         \"x lies on p\" AND 
+         \"y is a cord of x\" AND
+         \"v is a Mixed Angle formed by y and x\" AND
+         \"w is a Mixed Angle formed by y and x\" AND
+         \"v is a portion of p\" AND
+         \"z is a side of y\" AND
+         \"v lies entirely on side z of y\" AND
+         \"v lies entirely on z\" AND
+         \"w lies entirely on z\"
+    ]
+    IMPLIES
+    \"the amount of rotation of v = the amount of rotation of w'\"
+}""" ;
                                                                   rdfs:label "Step 2 (proof Aristotle)"@en ;
                                                                   <https://www.foom.com/metadata#00000000000000000000> "Given a circle and a cord in it, the resulting mixed angles on the same side are equal to each other." .
 
@@ -502,6 +550,14 @@
                                                                   rdfs:label "Step 4 (proof Aristotle)"@en ;
                                                                   <https://www.foom.com/metadata#00000000000000000000> "Join point A to B."@en ;
                                                                   <https://www.foom.com/metadata#00000000000000000001> "# (i) segment AB" .
+
+
+###  https://www.foom.com/pappus_proofAristotle#00000000000000000206
+<https://www.foom.com/pappus_proofAristotle#00000000000000000206> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000090> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000208> <https://www.foom.com/pappus_proofAristotle#00000000000000000005> ;
+                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                  rdfs:label "Object: Arc AB (proof Aristotle)"@en .
 
 
 #################################################################
