@@ -503,35 +503,55 @@
                                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofAristotle#00000000000000000000> ;
                                                                   <http://www.foom.com/core#00000000000000000027> "" ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  <http://www.foom.com/core#00000000000000000192> """<http://www.foom.com/core#00000000000000000022> x,
-<http://www.foom.com/core#00000000000000000022> y,
-<http://www.foom.com/core#00000000000000000022> v,
-<http://www.foom.com/core#00000000000000000022> w, 
-<http://www.foom.com/core#00000000000000000022> z, 
+                                                                  <http://www.foom.com/core#00000000000000000192> """<http://www.foom.com/core#00000000000000000022> x, # for every x
+<http://www.foom.com/core#00000000000000000022> y, # for every y
+<http://www.foom.com/core#00000000000000000022> v, # for every v
+<http://www.foom.com/core#00000000000000000022> w, # for every w
+<http://www.foom.com/core#00000000000000000022> z, # for every z
+<http://www.foom.com/core#00000000000000000022> p, # for every p
+<http://www.foom.com/core#00000000000000000022> s # for every s 
 {
     [
-        \"rdf:type (x,<http://www.foom.com/mathematical_concepts#00000000000000000017>)\" <http://www.foom.com/core#00000000000000000014>
-        \"<http://www.foom.com/mathematical_concepts#00000000000000000202> (y,x)\" <http://www.foom.com/core#00000000000000000014>
-        \"<http://www.foom.com/mathematical_concepts#00000000000000000189> (v,y,x)\" <http://www.foom.com/core#00000000000000000014>
-        \"<http://www.foom.com/mathematical_concepts#00000000000000000189> (w,y,x)\"  <http://www.foom.com/core#00000000000000000014>
-        \"<http://www.foom.com/mathematical_concepts#00000000000000000204> (v,w,y)\"
+        \"rdf:type (p,<http://www.foom.com/mathematical_concepts#00000000000000000192>)\" <http://www.foom.com/core#00000000000000000014> # p is a Plane and
+        \"rdf:type (x,<http://www.foom.com/mathematical_concepts#00000000000000000017>)\" <http://www.foom.com/core#00000000000000000014> # x is a Cicle and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000057> (x,p)\" <http://www.foom.com/core#00000000000000000014> # circle x lies on plane p and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000202> (y,x)\" <http://www.foom.com/core#00000000000000000014> # cord y is a cord of circle x and
+        \"rdf:type (c,<http://www.foom.com/mathematical_concepts#00000000000000000090>)\"  <http://www.foom.com/core#00000000000000000014> # arc c is an Arc and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000207> (c,y)\" <http://www.foom.com/core#00000000000000000014> # arc c is determined by cord y and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000207> (c,x)\" <http://www.foom.com/core#00000000000000000014> # arc c is determined by circle x and
+        \"rdf:type (v,<http://www.foom.com/mathematical_concepts#00000000000000000013>)\" <http://www.foom.com/core#00000000000000000014> # mixed plane angle v is a Mixed plane angle and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000205> (v,y,x)\" <http://www.foom.com/core#00000000000000000014> # mixed plane angle v is angle determined by cord y and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000205> (v,c)\" <http://www.foom.com/core#00000000000000000014> # mixed plane angle v is angle determined by arc c and
+        \"rdf:type (w,<http://www.foom.com/mathematical_concepts#00000000000000000013>)\" <http://www.foom.com/core#00000000000000000014> # mixed plane angle w is a Mixed plane angle and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000205> (w,y,x)\"  <http://www.foom.com/core#00000000000000000014> # mixed plane angle w is angle determined by cord y and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000205> (w,c)\" <http://www.foom.com/core#00000000000000000014> # mixed plane angle w is angle determined by arc c and
+        \"rdf:type (s,<http://www.foom.com/mathematical_concepts#00000000000000000195>)\" <http://www.foom.com/core#00000000000000000014> # side (portion of plane) s is a Proper portion of plane
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000207> (s,y)\" <http://www.foom.com/core#00000000000000000014> # side (portion of plane) s is a side (portion of plane) determined by of cord y and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000057> (v,s)\" <http://www.foom.com/core#00000000000000000014> # mixed plane angle v lies on side (portion of plane) s and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000057> (w,s)\" # mixed plane angle w lies on (portion on plane) side s
     ]
-    <http://www.foom.com/core#00000000000000000017>
-    \"owl:sameAs (<http://www.foom.com/mathematical_concepts#00000000000000000194> (v),<http://www.foom.com/mathematical_concepts#00000000000000000194> (w))\"
+    <http://www.foom.com/core#00000000000000000017> # implies
+    \"owl:sameAs (<http://www.foom.com/mathematical_concepts#00000000000000000194> (v),<http://www.foom.com/mathematical_concepts#00000000000000000194> (w))\" # amount of rotation of v = amount of rotation of w
 }""" ;
-                                                                  <http://www.foom.com/core#00000000000000000198> """FOR EVERY x, y, v, w, z, p {
+                                                                  <http://www.foom.com/core#00000000000000000198> """FOR EVERY x, y, v, w, z, p, s {
     [
          \"p is a plane\" AND
          \"x is a Circle\" AND
-         \"x lies on p\" AND 
-         \"y is a cord of x\" AND
+         \"circle x lies on plane p\" AND 
+         \"y is a cord of circle x\" AND
+         \"c is an arc\" AND
+         \"arc is determined by cord y\" AND
+         \"arc c is determined by circled x\" AND
          \"v is a Mixed Angle formed by y and x\" AND
+         \"v is angle determined by cord y\" AND
+         \"v is angle determined by arc c\"
          \"w is a Mixed Angle formed by y and x\" AND
-         \"v is a portion of p\" AND
-         \"z is a side of y\" AND
-         \"v lies entirely on side z of y\" AND
-         \"v lies entirely on z\" AND
-         \"w lies entirely on z\"
+         \"w is angle determined by cord y\" AND
+         \"w is angle determined by arc c\" AND
+         \"s is a proper portion of plane\" AND
+         \"side (portion of plane) s is a side (portion of plane) determined by cord y\" AND
+         \"mixed plane angle v lies on side (portion of plane) s\" AND
+         \"mixed plane angle w lies on side (portion of plane) s\" AND
     ]
     IMPLIES
     \"the amount of rotation of v = the amount of rotation of w'\"

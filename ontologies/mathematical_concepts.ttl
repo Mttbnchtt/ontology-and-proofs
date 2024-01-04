@@ -217,7 +217,7 @@
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000022> ,
                                                                                     <http://www.foom.com/mathematical_concepts#00000000000000000037> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "lies on"@en .
+                                                                 rdfs:label "lies entirely on"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000063
@@ -541,14 +541,14 @@
                                                                                           )
                                                                             ] ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "is angle formed by"@en .
+                                                                 rdfs:label "is angle determined by"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000207
 <http://www.foom.com/mathematical_concepts#00000000000000000207> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000022> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "is formed by"@en .
+                                                                 rdfs:label "is determined by"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000208
@@ -861,6 +861,13 @@
                                                                  rdfs:subClassOf <http://www.foom.com/core/Object> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Proper portion of plane"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000195
+<http://www.foom.com/mathematical_concepts#00000000000000000195> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.foom.com/mathematical_concepts#00000000000000000193> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 rdfs:label "Semi-plane determined by line or segment"@en .
 
 
 #################################################################

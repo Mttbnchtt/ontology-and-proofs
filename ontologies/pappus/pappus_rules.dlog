@@ -92,6 +92,17 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # if rectilinear angle x is perfectly overlappable by rigid movement to rectilinear angle y,
 # then the amount of rotation of x is equivalent (as an amount) as the amount of rotation of y
 
+# if x lies entirely on plane y
+# and z lies entirely on x,
+# then x lies entirely on y
+
+# if x lies entirely on plane y
+# and z lies entirely on plane y
+# and v is determined by x
+# and v is determined by y,
+# then v lies entirely on plane y
+
+
 # ONTOLOGY
 
 # (NOT SURE) if P is a property, xPy, and x is in proof step z, 
