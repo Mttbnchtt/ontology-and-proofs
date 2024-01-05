@@ -27,121 +27,164 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # then x refers to concept y
 [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000155>, ?z ] :-
     [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000155>, ?y ],
-    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000155>, ?z]
+    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000155>, ?z] .
 
 # if (x is in proof step y) and (z defines x)
 # and (z refers to logical element v), then v logically supports y
 [ ?v, <http://www.foom.com/mathematical_concepts#00000000000000000111>, ?y ] :-
     [ ?x, <http://www.foom.com/core#00000000000000000035>, ?y ],
     [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000163>, ?x ],
-    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?v ]
+    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?v ] .
 
 # if (x has antecendent y) and (z logically supports y),
 # then z logically supports x
 [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000111>, ?x] :-
     [ ?x, <http://www.foom.com/core#00000000000000000186>, ?y],
-    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000111>, ?y]
+    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000111>, ?y] .
 
 # if x has antecedent y, then y logically supports x
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000111>, ?y ] :- 
+    [ ?y, <http://www.foom.com/core#00000000000000000186>, ?x ] .
 
-# if (x has definition y) and (z is in definition y), 
+# if (x uses definition y) and (y refers to logical element z), 
 # then z logically supports x 
+[ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000111>, ?x] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000184>, ?y ],
+    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?z ] .
 
 # if x uses definition y, 
 # then y logically supports as its conceptual part x
+[ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000125>, ?x] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000184>, ?y]. 
 
 # if x uses definition y and y refers to concept z,
 # then x refers to concept z
+[ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?x] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000184>, ?y ],
+    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?z ] .
+
 
 # GEOMETRY
 
-# if x is a triangle and y is a vertex of y and 
-# z is a vertex of z and not (y = z),
+## CHECK
+# if x is a triangle and y is a vertex of x and 
+# z is a vertex of x and not (y = z),
 # then yz is a side of x
-
+# [   ] :-
+#     [ ?x, rdf:type, <http://www.foom.com/mathematical_concepts#00000000000000000016> ],
+#     [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000056>, ?x ],
+#     [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000056>, ?x ],
+#     not [ ?y, owl:sameAs, ?z ],
+#     not [ ?z, owl:sameAs, ?y].
 
 # if x is a side of y and y is a triangle, then x is a segment
-
-
-# if x is isosceles, then x is a triangle
-
+[ ?x, rdf:type, <http://www.foom.com/mathematical_concepts#00000000000000000015> ] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000074>, ?y ],
+    [ ?y, rdf:type, <http://www.foom.com/mathematical_concepts#00000000000000000016> ].
 
 # if x is a vertex of y and y is a triangle, then x is a point
+[ ?x, rdf:type, <> ] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000056>, ?y ], 
+    [ ?y, rdf:type, <http://www.foom.com/mathematical_concepts#00000000000000000016> ]
 
+# if x is a vertex of y, then x lies entirely on y
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000056>, ?y ].
 
-# if x is a vertex of y, then x lies on y
+# if x is base of triangle y, then x is a side of y.
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000074>, ?y ] :-
+    [?x, <http://www.foom.com/mathematical_concepts#00000000000000000033>, ?y ].
 
-
-# if segment x is base of triangle y, then x is a side of y.
-
-# is x and y are two vertices of a triangle and x != y, 
+## CHECK
+# if x and y are two vertices of a triangle and x != y, 
 # then xy is a segment
 
-
-# is x and y are two vertices of a triangle z and x != y, 
+## CHECK
+# if x and y are two vertices of a triangle z and x != y, 
 # then xy is a side of z
 
 
-# if x is an extremity of segment y, then
+# if (x is an extremity of y) and (y is a segment), then
 # x is a point
+[ ?x, rdf:type, <http://www.foom.com/mathematical_concepts#00000000000000000024> ] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000030>, ?y ],
+    [ ?y, rdf:type, <http://www.foom.com/mathematical_concepts#00000000000000000015> ].
 
 
-# if x is an extremity of segment y, then
-# x is lies on y
+# if (x is an extremity of y) and (y is a segment), then
+# x is lies entirely on y
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y ] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000030>, ?y ],
+    [ ?y, rdf:type, <http://www.foom.com/mathematical_concepts#00000000000000000015> ].
 
+## CHECK
 # if rectilinear angle x is perfectly overlappable by rigid movement to rectilinear angle y,
 # then the amount of rotation of x is equivalent (as an amount) as the amount of rotation of y
 
-# if x lies entirely on plane y
-# and z lies entirely on x,
-# then x lies entirely on y
 
-# if x lies entirely on plane y
+# if x lies entirely on y
+# and y is a plane
+# and z lies entirely on x,
+# then z lies entirely on y
+[ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y],
+    [ ?y, rdf:type, <http://www.foom.com/mathematical_concepts#00000000000000000192> ],
+    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?x]
+
+# if y is a plane
+# and x lies entirely on plane y
 # and z lies entirely on plane y
 # and v is determined by x
-# and v is determined by y,
+# and v is determined by z,
 # then v lies entirely on plane y
+[ ?v, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y ] :-
+    [ ?y, rdf:type, <http://www.foom.com/mathematical_concepts#00000000000000000192> ],
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y],
+    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y],
+    [ ?v, <http://www.foom.com/mathematical_concepts#00000000000000000207>, ?x ],
+    [ ?v, <http://www.foom.com/mathematical_concepts#00000000000000000207>, ?z ]
 
 
 # ONTOLOGY
 
-# (NOT SURE) if P is a property, xPy, and x is in proof step z, 
+# (WRONG RULE) if P is a property, xPy, and x is in proof step z, 
 # then y is in proof step z
+# THIS RULE IS FALSE (e.g. consider P = different-from). HOWEVER, 
+# THE RULE HOLDS FOR A LARGE CLASS OF PROPERTIES.
+# BUT WHICH CLASS EXACTLY?
 
-
-# (NOT SURE) if P is a property, yPx, and x is in proof step z, 
+# (WRONG RULE) if P is a property, yPx, and x is in proof step z, 
 # then y is in proof step z
+# THIS RULE IS FALSE (e.g. consider P = different-from). HOWEVER, 
+# THE RULE HOLDS FOR A LARGE CLASS OF PROPERTIES.
+# BUT WHICH CLASS EXACTLY?
 
 
 # HEURISTICS
 
-# if x is specialization of y,
+# (PROBABLY WRONG) if x is specialization of y,
 # then x inductively supports y
 
 
-# if x is generalization of y,
-# then y is a specialization of x
-
-
-# if x is a y, 
+# (PROBABLY WRONG) if x is a y, 
 # then x inductively supports y
 
 
-# if (x p y) and (z p y) 
-# and (p is a datatype property),
+# (WRONG )if (x P y) and (z P y) 
+# and (P is a datatype property),
 # then x is analogous to y
 
 
-# if (x p y) and (z p y) 
-# and (p is an object property),
+# (WRONG) if (x P y) and (z P y) 
+# and (P is an object property),
 # then x is analogous to y
 
 
-# if x is a specialization of y, 
+# (WRONG) if x is a specialization of y, 
 # then y is a conceptual part o x
 
 
-# if x is a generalization of y, 
+# (WRONG) if x is a generalization of y, 
 # then x is a conceptual part of x
 
 

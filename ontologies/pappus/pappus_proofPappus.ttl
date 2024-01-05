@@ -235,7 +235,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/mathematical_concepts#00000000000000000097> <https://www.foom.com/pappus_proofPappus#00000000000000000147> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Triangle ABC (proof Pappus)"@en .
+                                                               rdfs:label "Object: Triangle ABC (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000135
@@ -253,7 +253,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                                                                                 <https://www.foom.com/pappus_proofPappus#00000000000000000147> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Segment AB (proof Pappus)"@en .
+                                                               rdfs:label "Object: Segment AB (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000136
@@ -271,7 +271,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                                                                                 <https://www.foom.com/pappus_proofPappus#00000000000000000147> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Segment AC (proof Pappus)"@en .
+                                                               rdfs:label "Object: Segment AC (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000137
@@ -287,7 +287,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                                                                                 <https://www.foom.com/pappus_proofPappus#00000000000000000139> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Segment BC (proof Pappus)"@en .
+                                                               rdfs:label "Object: Segment BC (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000138
@@ -302,7 +302,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofPappus#00000000000000000141> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Rectilinear angle ABC (proof Pappus)"@en .
+                                                               rdfs:label "Object: Rectilinear angle ABC (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000139
@@ -317,7 +317,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofPappus#00000000000000000142> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Rectilinear angle ACB (proof Pappus)"@en .
+                                                               rdfs:label "Object: Rectilinear angle ACB (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000140
@@ -331,7 +331,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/mathematical_concepts#00000000000000000028> <https://www.foom.com/pappus_proofPappus#00000000000000000143> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Rectilinear angle BAC (proof Pappus)"@en .
+                                                               rdfs:label "Object: Rectilinear angle BAC (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000141
@@ -342,7 +342,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/mathematical_concepts#00000000000000000076> <https://www.foom.com/pappus_proofPappus#00000000000000000142> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Amount of rotation of rectilinear angle ABC (proof Pappus)"@en .
+                                                               rdfs:label "Object: Amount of rotation of rectilinear angle ABC (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000142
@@ -352,7 +352,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                                                                <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Amount of rotation of rectilinear angle ACB (proof Pappus)"@en .
+                                                               rdfs:label "Object: Amount of rotation of rectilinear angle ACB (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000143
@@ -362,7 +362,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                                                                <https://www.foom.com/pappus_proofPappus#00000000000000000152> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Amount of rotation of rectilinear angle BAC (proof Pappus)"@en .
+                                                               rdfs:label "Object: Amount of rotation of rectilinear angle BAC (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000144
@@ -374,7 +374,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/mathematical_concepts#00000000000000000076> <https://www.foom.com/pappus_proofPappus#00000000000000000145> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Lenght of segment AB (proof Pappus)"@en .
+                                                               rdfs:label "Object: Lenght of segment AB (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000145
@@ -385,7 +385,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                                                                <https://www.foom.com/pappus_proofPappus#00000000000000000151> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Lenght of segment AC (proof Pappus)"@en .
+                                                               rdfs:label "Object: Lenght of segment AC (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000146
@@ -394,7 +394,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Lenght of segment BC (proof Pappus)"@en .
+                                                               rdfs:label "Object: Lenght of segment BC (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000147
@@ -404,7 +404,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofPappus#00000000000000000154> ;
                                                                <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                               rdfs:label "Triangle ACB (proof Pappus)"@en .
+                                                               rdfs:label "Object: Triangle ACB (proof Pappus)"@en .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000150

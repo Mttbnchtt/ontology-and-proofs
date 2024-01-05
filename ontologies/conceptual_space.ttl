@@ -27,6 +27,7 @@
 ###  https://www.foom.com/conceptual_space#00000000000000000014
 <https://www.foom.com/conceptual_space#00000000000000000014> rdf:type owl:ObjectProperty ;
                                                              rdfs:subPropertyOf <https://www.foom.com/conceptual_space#00000000000000000020> ;
+                                                             owl:inverseOf <https://www.foom.com/conceptual_space#00000000000000000023> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                              rdfs:label "is generalization of"@en .
 
@@ -172,7 +173,7 @@
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                              rdfs:comment "Used in Euclid I.4." ;
-                                                             rdfs:label "Apply translation"@en .
+                                                             rdfs:label "Heuristic procedure: Apply translation"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000010
@@ -181,7 +182,7 @@
                                                              <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000009> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                              rdfs:comment "Used in Euclid I.4." ;
-                                                             rdfs:label "Make figures overlap"@en .
+                                                             rdfs:label "Heuristic procedure: Make figures overlap"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000011
@@ -189,7 +190,7 @@
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000009> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Juxtapose figures"@en .
+                                                             rdfs:label "Heuristic procedure: Juxtapose figures"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000012
@@ -197,14 +198,14 @@
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                              rdfs:comment "Analysis in the sense of Pappus" ;
-                                                             rdfs:label "Find from what antencedents the desired result could be derived"@en .
+                                                             rdfs:label "Heuristic procedure: Find from what antencedents the desired result could be derived"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000046
 <https://www.foom.com/conceptual_space#00000000000000000046> rdf:type owl:NamedIndividual ,
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Add auxliary lines"@en .
+                                                             rdfs:label "Heuristic procedure: Add auxliary lines"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000047
@@ -212,14 +213,14 @@
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Apply previous constructions"@en .
+                                                             rdfs:label "Heuristic procedure: Apply previous constructions"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000048
 <https://www.foom.com/conceptual_space#00000000000000000048> rdf:type owl:NamedIndividual ,
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Apply previous results"@en .
+                                                             rdfs:label "Heuristic procedure: Apply previous results"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000049
@@ -227,14 +228,14 @@
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Apply previous theorems"@en .
+                                                             rdfs:label "Heuristic procedure: Apply previous theorems"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000050
 <https://www.foom.com/conceptual_space#00000000000000000050> rdf:type owl:NamedIndividual ,
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Apply reduction ad absurdum"@en .
+                                                             rdfs:label "Heuristic procedure: Apply reduction ad absurdum"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000051
@@ -242,7 +243,7 @@
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Apply results concerning angles"@en .
+                                                             rdfs:label "Heuristic procedure: Apply results concerning angles"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000052
@@ -250,7 +251,7 @@
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Apply results concerning parallel lines"@en .
+                                                             rdfs:label "Heuristic procedure: Apply results concerning parallel lines"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000053
@@ -258,7 +259,7 @@
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Apply results concenring perpendicular lines"@en .
+                                                             rdfs:label "Heuristic procedure: Apply results concenring perpendicular lines"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000054
@@ -266,21 +267,21 @@
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Apply results concerning the congruence of triangles"@en .
+                                                             rdfs:label "Heuristic procedure: Apply results concerning the congruence of triangles"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000055
 <https://www.foom.com/conceptual_space#00000000000000000055> rdf:type owl:NamedIndividual ,
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Divide a figure into simpler figures"@en .
+                                                             rdfs:label "Heuristic procedure: Divide a figure into simpler figures"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000056
 <https://www.foom.com/conceptual_space#00000000000000000056> rdf:type owl:NamedIndividual ,
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Draw a diagram"@en .
+                                                             rdfs:label "Heuristic procedure: Draw a diagram"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000057
@@ -288,14 +289,14 @@
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000058> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Consider a particular case"@en .
+                                                             rdfs:label "Heuristic procedure: Consider a particular case"@en .
 
 
 ###  https://www.foom.com/conceptual_space#00000000000000000058
 <https://www.foom.com/conceptual_space#00000000000000000058> rdf:type owl:NamedIndividual ,
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Reason by cases"@en .
+                                                             rdfs:label "Heuristic procedure: Reason by cases"@en .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

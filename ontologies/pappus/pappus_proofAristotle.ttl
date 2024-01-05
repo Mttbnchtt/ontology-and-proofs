@@ -514,16 +514,16 @@
     [
         \"rdf:type (p,<http://www.foom.com/mathematical_concepts#00000000000000000192>)\" <http://www.foom.com/core#00000000000000000014> # p is a Plane and
         \"rdf:type (x,<http://www.foom.com/mathematical_concepts#00000000000000000017>)\" <http://www.foom.com/core#00000000000000000014> # x is a Cicle and
-        \"<http://www.foom.com/mathematical_concepts#00000000000000000057> (x,p)\" <http://www.foom.com/core#00000000000000000014> # circle x lies on plane p and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000057> (x,p)\" <http://www.foom.com/core#00000000000000000014> # circle x lies entirely on plane p and
         \"<http://www.foom.com/mathematical_concepts#00000000000000000202> (y,x)\" <http://www.foom.com/core#00000000000000000014> # cord y is a cord of circle x and
         \"rdf:type (c,<http://www.foom.com/mathematical_concepts#00000000000000000090>)\"  <http://www.foom.com/core#00000000000000000014> # arc c is an Arc and
         \"<http://www.foom.com/mathematical_concepts#00000000000000000207> (c,y)\" <http://www.foom.com/core#00000000000000000014> # arc c is determined by cord y and
         \"<http://www.foom.com/mathematical_concepts#00000000000000000207> (c,x)\" <http://www.foom.com/core#00000000000000000014> # arc c is determined by circle x and
         \"rdf:type (v,<http://www.foom.com/mathematical_concepts#00000000000000000013>)\" <http://www.foom.com/core#00000000000000000014> # mixed plane angle v is a Mixed plane angle and
-        \"<http://www.foom.com/mathematical_concepts#00000000000000000205> (v,y,x)\" <http://www.foom.com/core#00000000000000000014> # mixed plane angle v is angle determined by cord y and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000205> (v,y)\" <http://www.foom.com/core#00000000000000000014> # mixed plane angle v is angle determined by cord y and
         \"<http://www.foom.com/mathematical_concepts#00000000000000000205> (v,c)\" <http://www.foom.com/core#00000000000000000014> # mixed plane angle v is angle determined by arc c and
         \"rdf:type (w,<http://www.foom.com/mathematical_concepts#00000000000000000013>)\" <http://www.foom.com/core#00000000000000000014> # mixed plane angle w is a Mixed plane angle and
-        \"<http://www.foom.com/mathematical_concepts#00000000000000000205> (w,y,x)\"  <http://www.foom.com/core#00000000000000000014> # mixed plane angle w is angle determined by cord y and
+        \"<http://www.foom.com/mathematical_concepts#00000000000000000205> (w,y)\"  <http://www.foom.com/core#00000000000000000014> # mixed plane angle w is angle determined by cord y and
         \"<http://www.foom.com/mathematical_concepts#00000000000000000205> (w,c)\" <http://www.foom.com/core#00000000000000000014> # mixed plane angle w is angle determined by arc c and
         \"rdf:type (s,<http://www.foom.com/mathematical_concepts#00000000000000000195>)\" <http://www.foom.com/core#00000000000000000014> # side (portion of plane) s is a Proper portion of plane
         \"<http://www.foom.com/mathematical_concepts#00000000000000000207> (s,y)\" <http://www.foom.com/core#00000000000000000014> # side (portion of plane) s is a side (portion of plane) determined by of cord y and
