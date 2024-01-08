@@ -238,38 +238,6 @@
                                                              rdfs:label "Heuristic procedure: Apply reduction ad absurdum"@en .
 
 
-###  https://www.foom.com/conceptual_space#00000000000000000051
-<https://www.foom.com/conceptual_space#00000000000000000051> rdf:type owl:NamedIndividual ,
-                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
-                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
-                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Heuristic procedure: Apply results concerning angles"@en .
-
-
-###  https://www.foom.com/conceptual_space#00000000000000000052
-<https://www.foom.com/conceptual_space#00000000000000000052> rdf:type owl:NamedIndividual ,
-                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
-                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
-                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Heuristic procedure: Apply results concerning parallel lines"@en .
-
-
-###  https://www.foom.com/conceptual_space#00000000000000000053
-<https://www.foom.com/conceptual_space#00000000000000000053> rdf:type owl:NamedIndividual ,
-                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
-                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
-                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Heuristic procedure: Apply results concenring perpendicular lines"@en .
-
-
-###  https://www.foom.com/conceptual_space#00000000000000000054
-<https://www.foom.com/conceptual_space#00000000000000000054> rdf:type owl:NamedIndividual ,
-                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
-                                                             <https://www.foom.com/conceptual_space#00000000000000000023> <https://www.foom.com/conceptual_space#00000000000000000048> ;
-                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                             rdfs:label "Heuristic procedure: Apply results concerning the congruence of triangles"@en .
-
-
 ###  https://www.foom.com/conceptual_space#00000000000000000055
 <https://www.foom.com/conceptual_space#00000000000000000055> rdf:type owl:NamedIndividual ,
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
@@ -297,6 +265,41 @@
                                                                       <https://www.foom.com/conceptual_space#00000000000000000030> ;
                                                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                              rdfs:label "Heuristic procedure: Reason by cases"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000196
+<https://www.foom.com/conceptual_space#00000000000000000196> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Heuristic procedure: Apply results concerning items mentioned in the statement of the theorem"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000197
+<https://www.foom.com/conceptual_space#00000000000000000197> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Heuristic procedure: Apply results concerning items to which the statement of the theorem refers"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000198
+<https://www.foom.com/conceptual_space#00000000000000000198> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Heuristic procedure: Apply results concerning items mentioned in the proof up to the present point"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000199
+<https://www.foom.com/conceptual_space#00000000000000000199> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Heuristic procedure: Apply results concerning items to which the proof, as developed up to the present point, refers"@en .
+
+
+###  https://www.foom.com/conceptual_space#00000000000000000202
+<https://www.foom.com/conceptual_space#00000000000000000202> rdf:type owl:NamedIndividual ,
+                                                                      <https://www.foom.com/conceptual_space#00000000000000000030> ;
+                                                             <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                             rdfs:label "Heuristic procedure: embed a figure into other figures"@en .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
