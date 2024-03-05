@@ -150,6 +150,7 @@
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000000
 <https://www.foom.com/pappus_proofAristotle#00000000000000000000> rdf:type owl:NamedIndividual ,
                                                                            <http://www.foom.com/core/Proof> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000209> <https://www.foom.com/pappus_proofAristotle#00000000000000000211> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                   rdfs:label "Proof Aristotle"@en .
 
@@ -578,6 +579,20 @@
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000208> <https://www.foom.com/pappus_proofAristotle#00000000000000000005> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                   rdfs:label "Object: Arc AB (proof Aristotle)"@en .
+
+
+###  https://www.foom.com/pappus_proofAristotle#00000000000000000211
+<https://www.foom.com/pappus_proofAristotle#00000000000000000211> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000084> ;
+                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-05T15:48:54Z"^^xsd:dateTime ;
+                                                                  rdfs:comment """1. Inscribe the triangle into a circle.
+2. Let A and B be the two angles at the base.
+3. Let C be the external mixed angle below A and D the external mixed angle below B.
+4. Mixed angles formed by equal cords are equal.
+5. Therefore, A+C = B+D and C = D.
+6. Therefore, A = B.""" ;
+                                                                  rdfs:label "Gist: Gist of Aristotle's proof of the statement \"In every isosceles triangle, the angles at the base are equal\""@en .
 
 
 #################################################################

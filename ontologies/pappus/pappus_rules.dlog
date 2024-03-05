@@ -85,7 +85,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # if x is a vertex of y and y is a triangle, then x is a point
 [ ?x, rdf:type, <> ] :-
     [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000056>, ?y ], 
-    [ ?y, rdf:type, <http://www.foom.com/mathematical_concepts#00000000000000000016> ]
+    [ ?y, rdf:type, <http://www.foom.com/mathematical_concepts#00000000000000000016> ].
 
 # if x is a vertex of y, then x lies entirely on y
 [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y] :-
@@ -129,7 +129,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y] :-
     [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y],
     [ ?y, rdf:type, <http://www.foom.com/mathematical_concepts#00000000000000000192> ],
-    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?x]
+    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?x].
 
 # if y is a plane
 # and x lies entirely on plane y
@@ -142,7 +142,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y],
     [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y],
     [ ?v, <http://www.foom.com/mathematical_concepts#00000000000000000207>, ?x ],
-    [ ?v, <http://www.foom.com/mathematical_concepts#00000000000000000207>, ?z ]
+    [ ?v, <http://www.foom.com/mathematical_concepts#00000000000000000207>, ?z ].
 
 
 # ONTOLOGY

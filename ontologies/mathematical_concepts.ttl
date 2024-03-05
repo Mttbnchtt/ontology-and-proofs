@@ -19,6 +19,10 @@
 <http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#altLabel
 <http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
 
@@ -271,7 +275,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000078> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000107> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "is way of thinking about"@en .
+                                                                 rdfs:label "is a way of thinking about"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000079
@@ -285,7 +289,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000080> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000107> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "is way of thinking about a conceptual part of"@en .
+                                                                 rdfs:label "is a way of thinking about a conceptual part of"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000083
@@ -345,9 +349,9 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000112
 <http://www.foom.com/mathematical_concepts#00000000000000000112> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000107> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000113> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "uses technique"@en .
+                                                                 rdfs:label "uses"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000113
@@ -505,6 +509,22 @@
                                                                  rdfs:label "refers to logical element"@en .
 
 
+###  http://www.foom.com/mathematical_concepts#00000000000000000198
+<http://www.foom.com/mathematical_concepts#00000000000000000198> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000113> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-05T11:55:41Z"^^xsd:dateTime ;
+                                                                 rdfs:label "is important instance of"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000199
+<http://www.foom.com/mathematical_concepts#00000000000000000199> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000113> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-05T11:56:01Z"^^xsd:dateTime ;
+                                                                 rdfs:label "is reference result for theory"@en .
+
+
 ###  http://www.foom.com/mathematical_concepts#00000000000000000201
 <http://www.foom.com/mathematical_concepts#00000000000000000201> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000028> ;
@@ -558,6 +578,14 @@
                                                                  rdfs:range <http://www.foom.com/mathematical_concepts#00000000000000000017> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "is arc of circle"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000209
+<http://www.foom.com/mathematical_concepts#00000000000000000209> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000107> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-05T11:58:42Z"^^xsd:dateTime ;
+                                                                 rdfs:label "has gist"@en .
 
 
 #################################################################
@@ -804,14 +832,16 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000084
 <http://www.foom.com/mathematical_concepts#00000000000000000084> rdf:type owl:Class ;
-                                                                 rdfs:subClassOf <http://www.foom.com/core#00000000000000000002> ;
+                                                                 rdfs:subClassOf <http://www.foom.com/core#00000000000000000002> ,
+                                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000206> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Gist"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000085
 <http://www.foom.com/mathematical_concepts#00000000000000000085> rdf:type owl:Class ;
-                                                                 rdfs:subClassOf <http://www.foom.com/core/Procedure> ;
+                                                                 rdfs:subClassOf <http://www.foom.com/core/Procedure> ,
+                                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000206> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Heuristic procedure"@en .
 
@@ -868,6 +898,21 @@
                                                                  rdfs:subClassOf <http://www.foom.com/mathematical_concepts#00000000000000000193> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Semi-plane determined by line or segment"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000203
+<http://www.foom.com/mathematical_concepts#00000000000000000203> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.foom.com/mathematical_concepts#00000000000000000206> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-05T11:56:49Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic principle"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000206
+<http://www.foom.com/mathematical_concepts#00000000000000000206> rdf:type owl:Class ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-05T11:57:08Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic item"@en .
 
 
 #################################################################
@@ -1836,6 +1881,22 @@
                                                                  <http://www.foom.com/core#00000000000000000196> "http://www.foom.com/mathematical_concepts#00000000000000000025 (Amount of rotation)" ;
                                                                  <http://www.foom.com/core#00000000000000000197> "0 -> http://www.foom.com/mathematical_concepts#00000000000000000012 (Plane angle)" ;
                                                                  rdfs:label "Predicate: has amount of rotation [Angle -> Amount of rotation]"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000196
+<http://www.foom.com/mathematical_concepts#00000000000000000196> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-05T11:37:39Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Apply results concerning items to which the proof, as developed up to the present point, refers"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000197
+<http://www.foom.com/mathematical_concepts#00000000000000000197> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-05T11:37:52Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Apply results concerning items to which the statement of the theorem refers"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000200

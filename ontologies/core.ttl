@@ -28,7 +28,8 @@
 <http://www.foom.com/core#00000000000000000021> rdf:type owl:AnnotationProperty ;
                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                 rdfs:label "has content"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000084> .
+                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000084> ;
+                                                rdfs:range xsd:string .
 
 
 ###  http://www.foom.com/core#00000000000000000072

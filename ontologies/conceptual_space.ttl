@@ -6,7 +6,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.semanticweb.org/matteobianchetti/ontologies/2023/9/untitled-ontology-236/> .
 
-<https://www.foom.com/conceptual_space> rdf:type owl:Ontology .
+<https://www.foom.com/conceptual_space> rdf:type owl:Ontology ;
+                                         rdfs:comment "DEPRECATED" .
 
 #################################################################
 #    Annotation properties
