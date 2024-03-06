@@ -29,3 +29,7 @@
 
 # files with .download extension
 **/*.download
+
+# exclude virtual environment
+**/venv/
+!**/venv/code/

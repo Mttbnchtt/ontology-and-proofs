@@ -24,7 +24,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     [ ?y, <http://www.foom.com/core/inProof>, ?z  ] .
 
 # if (x refers to concept y) and (y refers to concept z),
-# then x refers to concept y
+# then x refers to concept z
 [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000155>, ?z ] :-
     [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000155>, ?y ],
     [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000155>, ?z] .
