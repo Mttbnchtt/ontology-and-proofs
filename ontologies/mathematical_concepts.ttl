@@ -612,6 +612,38 @@
                                                                  rdfs:label "refers to relation"@en .
 
 
+###  http://www.foom.com/mathematical_concepts#00000000000000000220
+<http://www.foom.com/mathematical_concepts#00000000000000000220> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000157> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-07T12:15:06Z"^^xsd:dateTime ;
+                                                                 rdfs:label "directly refes to action"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000221
+<http://www.foom.com/mathematical_concepts#00000000000000000221> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000214> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-07T12:15:17Z"^^xsd:dateTime ;
+                                                                 rdfs:label "directly refers to relation"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000222
+<http://www.foom.com/mathematical_concepts#00000000000000000222> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000211> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-07T12:15:31Z"^^xsd:dateTime ;
+                                                                 rdfs:label "directly refers to object"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000223
+<http://www.foom.com/mathematical_concepts#00000000000000000223> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000210> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-07T12:15:39Z"^^xsd:dateTime ;
+                                                                 rdfs:label "directly refers to proposition"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
