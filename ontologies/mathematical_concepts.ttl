@@ -588,6 +588,14 @@
                                                                  rdfs:label "has gist"@en .
 
 
+###  http://www.foom.com/mathematical_concepts#00000000000000000210
+<http://www.foom.com/mathematical_concepts#00000000000000000210> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000185> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-07T11:59:31Z"^^xsd:dateTime ;
+                                                                 rdfs:label "refers to proposition"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
