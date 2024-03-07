@@ -10,7 +10,6 @@
                               owl:imports <http://www.foom.com/core> ,
                                           <http://www.foom.com/mathematical_concepts> ,
                                           <http://www.foom.com/pappus_proofEuclid> ,
-                                          <https://www.foom.com/conceptual_space> ,
                                           <https://www.foom.com/pappus_proofAristotle> ,
                                           <https://www.foom.com/pappus_proofPappus> .
 
