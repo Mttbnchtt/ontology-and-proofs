@@ -282,6 +282,8 @@
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000001> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000076> <https://www.foom.com/pappus_proofAristotle#00000000000000000012> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000215> ,
+                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000219> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                   rdfs:label "Object: Amount of rotation of mixed angle BAB (proof Aristotle)"@en .
 
@@ -290,6 +292,8 @@
 <https://www.foom.com/pappus_proofAristotle#00000000000000000012> rdf:type owl:NamedIndividual ,
                                                                            <http://www.foom.com/mathematical_concepts#00000000000000000025> ;
                                                                   <http://www.foom.com/core#00000000000000000035> <https://www.foom.com/pappus_proofAristotle#00000000000000000001> ;
+                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000215> ,
+                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000219> ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                   rdfs:label "Object: Amount of rotation of mixed angle ABA (proof Aristotle)"@en .
 

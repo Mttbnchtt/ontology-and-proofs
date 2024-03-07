@@ -63,6 +63,36 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000184>, ?y ],
     [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?z ] .
 
+# if x is a concept 
+# and y is a subproperty of "refers to logical element"
+# and z is a subclass of "y value x"
+# and v is a z,
+# then v y x
+[ ?v, ?y, ?x ] :-
+    [ ?x, a, <http://www.foom.com/core#00000000000000000004> ], # x is a concept
+    [ ?y, rdfs:subPropertyOf, <http://www.foom.com/mathematical_concepts#00000000000000000185> ], # y is a subproperty of "refers to logical element"
+    [ ?z, rdfs:subClassOf, ?z_1 ], # z is a subclass of an owl Restriction on property y with value x (part 1)
+    [ ?z_1, a, owl:Restriction ], # z is a subclass of an owl Restriction on property y with value x (part 2)
+    [ ?z_1, owl:onProperty, ?y ], # z is a subclass of an owl Restriction on property y with value x (part 3)
+    [ ?z_1, owl:hasValue, ?x], # z is a subclass of an owl Restriction on property y with value x (part 4)
+    [ ?v, a, ?z], # v is a z
+
+# if x "class has related concept" y,
+# then x "directly refers to concept" y
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000147>, ?y ] :-
+    [ ?x, <http://www.foom.com/core#00000000000000000156>, ?y]
+
+# if x "directly refers to concept" y,
+# then x "class has related concept" y
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000156>, ?y ] :-
+    [ ?x, <http://www.foom.com/core#00000000000000000147>, ?y]
+
+# if x x logically supports y as its specialization
+# and z refers to x,
+# then z refers to y
+[ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?y ] :- # z refers to y
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000063>, ?y ], # x logically supports y as its specialization
+    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?x ] # z refers to x
 
 # GEOMETRY
 
