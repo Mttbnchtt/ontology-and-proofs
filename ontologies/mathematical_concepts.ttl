@@ -680,7 +680,11 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000010
 <http://www.foom.com/mathematical_concepts#00000000000000000010> rdf:type owl:Class ;
-                                                                 rdfs:subClassOf <http://www.foom.com/mathematical_concepts#00000000000000000011> ;
+                                                                 rdfs:subClassOf <http://www.foom.com/mathematical_concepts#00000000000000000011> ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.foom.com/mathematical_concepts#00000000000000000147> ;
+                                                                                   owl:hasValue <http://www.foom.com/mathematical_concepts#00000000000000000151>
+                                                                                 ] ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Straight line"@en .
 
@@ -690,6 +694,10 @@
                                                                  rdfs:subClassOf <http://www.foom.com/core/Object> ,
                                                                                  [ rdf:type owl:Restriction ;
                                                                                    owl:onProperty <http://www.foom.com/core#00000000000000000156> ;
+                                                                                   owl:hasValue <http://www.foom.com/mathematical_concepts#00000000000000000040>
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.foom.com/mathematical_concepts#00000000000000000147> ;
                                                                                    owl:hasValue <http://www.foom.com/mathematical_concepts#00000000000000000040>
                                                                                  ] ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -797,7 +805,11 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000017
 <http://www.foom.com/mathematical_concepts#00000000000000000017> rdf:type owl:Class ;
-                                                                 rdfs:subClassOf <http://www.foom.com/mathematical_concepts#00000000000000000011> ;
+                                                                 rdfs:subClassOf <http://www.foom.com/mathematical_concepts#00000000000000000011> ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.foom.com/mathematical_concepts#00000000000000000147> ;
+                                                                                   owl:hasValue <http://www.foom.com/mathematical_concepts#00000000000000000212>
+                                                                                 ] ;
                                                                  owl:disjointWith [ rdf:type owl:Class ;
                                                                                     owl:unionOf ( <http://www.foom.com/mathematical_concepts#00000000000000000012>
                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000015>
