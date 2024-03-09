@@ -94,6 +94,16 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000063>, ?y ], # x logically supports y as its specialization
     [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?x ] # z refers to x
 
+# if x logically supports y as its specialization,
+# then y specializes x
+[ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000110>, ?x ] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000063>, ?y ]
+
+# if x logically supports y as its generalization,
+# then x specializes y
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000110>, ?y ] :-
+    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000064>, ?y ]
+
 # GEOMETRY
 
 ## CHECK
