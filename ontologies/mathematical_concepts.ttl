@@ -509,6 +509,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000185
 <http://www.foom.com/mathematical_concepts#00000000000000000185> rdf:type owl:ObjectProperty ;
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
+                                                                 rdf:type owl:TransitiveProperty ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "refers to logical element"@en .
 
@@ -1198,6 +1199,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000051> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000146> <http://www.foom.com/mathematical_concepts#00000000000000000174> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000230> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Concept: Surface"@en .
 
@@ -1353,6 +1355,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000073> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000064> <http://www.foom.com/mathematical_concepts#00000000000000000072> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000072> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Concept: Trilateral rectilinear figure"@en .
 
@@ -1630,6 +1633,8 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000131
 <http://www.foom.com/mathematical_concepts#00000000000000000131> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000113> <http://www.foom.com/mathematical_concepts#00000000000000000040> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000071> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Concept: Boundary"@en .
 
@@ -1764,6 +1769,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000144> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000113> <http://www.foom.com/mathematical_concepts#00000000000000000183> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000230> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Concept: Spatial congruence"@en .
 
@@ -1797,6 +1803,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000152
 <http://www.foom.com/mathematical_concepts#00000000000000000152> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000230> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Concept: Spatial movement"@en .
 
@@ -1958,6 +1965,7 @@
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000071> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000146> <http://www.foom.com/mathematical_concepts#00000000000000000073> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000071> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Concept: Trilateral figure"@en .
 
@@ -2079,6 +2087,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000212> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000040> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000113> <http://www.foom.com/mathematical_concepts#00000000000000000224> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-07T12:05:02Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Circle"@en .
@@ -2126,6 +2135,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000218> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000063> <http://www.foom.com/mathematical_concepts#00000000000000000217> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000052> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-07T12:10:45Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Proper part of plane"@en .
@@ -2144,6 +2154,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000224
 <http://www.foom.com/mathematical_concepts#00000000000000000224> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000113> <http://www.foom.com/mathematical_concepts#00000000000000000126> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-07T18:42:09Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Center"@en .
@@ -2187,9 +2198,18 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000229
 <http://www.foom.com/mathematical_concepts#00000000000000000229> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000152> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-09T21:03:22Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Rotation"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000230
+<http://www.foom.com/mathematical_concepts#00000000000000000230> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-10T13:09:48Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Concept: Space"@en .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
