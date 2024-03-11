@@ -107,44 +107,52 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # if x is a y
 # and y directly refers to concept z,
 # then x directly refers to concept z
-[ ?x, a, ?y ] :-
-    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000147>, ?z ],
-    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000147>, ?z ]  .
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000147>, ?z ] :-
+    [ ?x, a, ?y ]
+    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000147>, ?z ] .
 
 # if x is a y
 # and y refers to action z,
 # then x refers to action z
-[ ?x, a, ?y ] :-
-    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000157>, ?z ],
-    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000157>, ?z ]  .
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000157>, ?z ] :-
+    [ ?x, a, ?y ]
+    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000157>, ?z ] .
 
 # if x is a y
 # and y refers to object z,
 # then x refers to object z
-[ ?x, a, ?y ] :-
-    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000211>, ?z ],
-    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000211>, ?z ]  .
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000211>, ?z ] :-
+    [ ?x, a, ?y ]
+    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000211>, ?z ] .
 
 # if x is a y
 # and y refers to proposition z,
 # then x refers to proposition z
 [ ?x, a, ?y ] :-
+    [ ?x, a, ?y ]
     [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000210>, ?z ],
     [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000210>, ?z ]  .
 
 # if x is a y
 # and y refers to relation z,
 # then x refers to relation z
-[ ?x, a, ?y ] :-
-    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000214>, ?z ],
-    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000214>, ?z ]  .
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000214>, ?z ] :-
+    [ ?x, a, ?y ]
+    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000214>, ?z ] .
 
 # if x is a y
 # and y refers to logical element z,
 # then x refers to logical element z
-[ ?x, a, ?y ] :-
-    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?z ],
-    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?z ]  .
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?z ] :-
+    [ ?x, a, ?y ]
+    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?z ] .
+
+# if x cites proposition y
+# and y refers to logical element z,
+# then x refers to logical element z
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?z ] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000239>, ?y ]
+    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?z] .
 
 
 # GEOMETRY
