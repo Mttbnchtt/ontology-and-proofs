@@ -225,6 +225,8 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/core#00000000000000000088> <http://www.foom.com/mathematical_concepts#00000000000000000058> ;
                                                                <http://www.foom.com/core#00000000000000000089> rdf:type ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000235> ,
+                                                                                                                                <http://www.foom.com/mathematical_concepts#00000000000000000237> ;
                                                                <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                rdfs:label "Step 1 (proof Pappus)"@en ;
@@ -421,6 +423,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
                                                                <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus_proofPappus#00000000000000000132> ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000130> ;
                                                                <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                rdfs:label "Step 2 (proof Pappus)"@en ;
@@ -436,6 +439,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
                                                                <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus_proofPappus#00000000000000000133> ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000238> ;
                                                                <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                rdfs:label "Step 3 (proof Pappus)"@en ;
@@ -450,6 +454,7 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                <http://www.foom.com/core#00000000000000000088> <https://www.foom.com/pappus_proofPappus#00000000000000000143> ;
                                                                <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000238> ;
                                                                <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                rdfs:comment "Proposition 4 from book 1 of Euclid's elements."@en ;
@@ -470,6 +475,10 @@ rdf:type rdf:type owl:NamedIndividual .
                                                                                                         <https://www.foom.com/pappus_proofPappus#00000000000000000151> ,
                                                                                                         <https://www.foom.com/pappus_proofPappus#00000000000000000152> ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000054> ,
+                                                                                                                                <http://www.foom.com/mathematical_concepts#00000000000000000130> ,
+                                                                                                                                <http://www.foom.com/mathematical_concepts#00000000000000000182> ,
+                                                                                                                                <http://www.foom.com/mathematical_concepts#00000000000000000238> ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                rdfs:label "Step 5 (proof Pappus)"@en ;
                                                                <https://www.foom.com/metadata#00000000000000000000> """Triangle ABC is perfectly overlappable to triangle ACB by a rigid movement where - side AB of triangle ABC coincides with side AC of triangle ACB,  
