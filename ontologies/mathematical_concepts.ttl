@@ -622,7 +622,7 @@
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000157> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-07T12:15:06Z"^^xsd:dateTime ;
-                                                                 rdfs:label "directly refes to action"@en .
+                                                                 rdfs:label "directly refers to action"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000221
@@ -654,7 +654,8 @@
                                                                  rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000173> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-11T16:03:06Z"^^xsd:dateTime ;
-                                                                 rdfs:label "proof-steps cites proposition"@en .
+                                                                 <http://www.foom.com/core#00000000000000000021> "Things that are identical to the same thing are also identical one another." ;
+                                                                 rdfs:label "proof step cites proposition"@en .
 
 
 #################################################################
@@ -1170,6 +1171,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000043> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000045> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000133> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000151> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Act type: carrying out act in a straight line"@en .
 
@@ -1187,6 +1189,8 @@
                                                                           <http://www.foom.com/core#00000000000000000158> ,
                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000045> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000132> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000126> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000159> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Act type: Joining two points with a segment"@en .
 
@@ -1195,6 +1199,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000047> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000045> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000133> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000159> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Act type: Producing a segment"@en .
 
@@ -1856,7 +1861,7 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000160
 <http://www.foom.com/mathematical_concepts#00000000000000000160> rdf:type owl:NamedIndividual ,
-                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                          <http://www.foom.com/core#00000000000000000158> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Act type: Limiting"@en .
 
@@ -1865,6 +1870,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000161> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000045> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000064> <http://www.foom.com/mathematical_concepts#00000000000000000160> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000151> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Act type: Limiting a straight line"@en .
 
@@ -2045,6 +2051,8 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000187
 <http://www.foom.com/mathematical_concepts#00000000000000000187> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000045> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000126> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000159> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Act type: Selecting a point on a given segment"@en .
 
@@ -2303,10 +2311,64 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000238
 <http://www.foom.com/mathematical_concepts#00000000000000000238> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
-                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000050> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000238> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-11T15:50:39Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Equal amount of rotation"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000240
+<http://www.foom.com/mathematical_concepts#00000000000000000240> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000045> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000241> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000049> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000159> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-13T17:06:19Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Act type: Cutting a segment of given length given another segment"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000241
+<http://www.foom.com/mathematical_concepts#00000000000000000241> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000045> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-13T17:07:39Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Act type: Cutting"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000243
+<http://www.foom.com/mathematical_concepts#00000000000000000243> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000045> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000244> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-13T17:23:04Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Act type: Overlapping via rigid movement"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000244
+<http://www.foom.com/mathematical_concepts#00000000000000000244> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000045> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-13T17:23:13Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Act type: Moving rigidly"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000245
+<http://www.foom.com/mathematical_concepts#00000000000000000245> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000050> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000180> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-13T17:28:28Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Concept: Equal amount"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000247
+<http://www.foom.com/mathematical_concepts#00000000000000000247> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-03-13T17:31:22Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Concept: Sum"@en .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

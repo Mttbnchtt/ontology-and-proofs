@@ -154,6 +154,20 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000239>, ?y ]
     [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?z] .
 
+# if x has object "is perfectly overlappable by rigid movement",
+# then x refers to act type overlapping by rigid movement
+[ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000220>, <http://www.foom.com/mathematical_concepts#00000000000000000243> ] :-
+    [ ?x, <http://www.foom.com/core#00000000000000000088>, <http://www.foom.com/mathematical_concepts#00000000000000000097> ]
+
+# if x has object "is same amount as",
+# then x refers to concept "equal amount"
+[ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000220>, <http://www.foom.com/mathematical_concepts#00000000000000000243> ] :-
+    [ ?x, <http://www.foom.com/core#00000000000000000088>, <http://www.foom.com/mathematical_concepts#00000000000000000076> ]
+
+# if x has object "is sum of",
+# then x refers to concept "sum"
+[ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000220>, <http://www.foom.com/mathematical_concepts#00000000000000000247> ] :-
+    [ ?x, <http://www.foom.com/core#00000000000000000088>, <http://www.foom.com/mathematical_concepts#00000000000000000055> ]
 
 # GEOMETRY
 

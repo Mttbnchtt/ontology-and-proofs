@@ -189,24 +189,6 @@
 
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000049
 
-###  http://www.foom.com/mathematical_concepts#00000000000000000138
-<http://www.foom.com/mathematical_concepts#00000000000000000138> owl:sameAs <http://www.foom.com/pappus_proofEuclid#00000000000000000077> .
-
-
-###  http://www.foom.com/pappus_proofEuclid#00000000000000000077
-
-###  http://www.foom.com/mathematical_concepts#00000000000000000165
-<http://www.foom.com/mathematical_concepts#00000000000000000165> owl:sameAs <http://www.foom.com/pappus_proofEuclid#00000000000000000053> .
-
-
-###  http://www.foom.com/pappus_proofEuclid#00000000000000000053
-
-###  http://www.foom.com/mathematical_concepts#00000000000000000181
-<http://www.foom.com/mathematical_concepts#00000000000000000181> owl:sameAs <http://www.foom.com/pappus_proofEuclid#00000000000000000082> .
-
-
-###  http://www.foom.com/pappus_proofEuclid#00000000000000000082
-
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000016
 <http://www.foom.com/pappus_proofEuclid#00000000000000000016> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/mathematical_concepts#00000000000000000084> ;
@@ -265,6 +247,7 @@
 <http://www.foom.com/pappus_proofEuclid#00000000000000000049> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/core/Proof_step> ;
                                                               <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000239> <http://www.foom.com/mathematical_concepts#00000000000000000133> ;
                                                               <http://www.foom.com/core#00000000000000000055> "false"^^xsd:boolean ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:isDefinedBy "Postulate 2 of Book I." ;
@@ -281,6 +264,7 @@
                                                               <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ,
                                                                                                        <http://www.foom.com/pappus_proofEuclid#00000000000000000049> ;
                                                               <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000220> <http://www.foom.com/mathematical_concepts#00000000000000000047> ;
                                                               <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000186> "true"^^xsd:boolean ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -307,6 +291,7 @@
                                                               <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus_proofEuclid#00000000000000000048> ,
                                                                                                        <http://www.foom.com/pappus_proofEuclid#00000000000000000049> ;
                                                               <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000220> <http://www.foom.com/mathematical_concepts#00000000000000000047> ;
                                                               <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000186> "true"^^xsd:boolean ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -332,6 +317,7 @@
                                                               <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000029> ;
                                                               <http://www.foom.com/core/hasAntecedent> <http://www.foom.com/pappus_proofEuclid#00000000000000000050> ;
                                                               <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000220> <http://www.foom.com/mathematical_concepts#00000000000000000187> ;
                                                               <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Step 4 (proof Euclid)"@en ;
@@ -350,6 +336,8 @@
 <http://www.foom.com/pappus_proofEuclid#00000000000000000053> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/core/Proof_step> ;
                                                               <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000239> <http://www.foom.com/mathematical_concepts#00000000000000000134> ,
+                                                                                                                               <http://www.foom.com/mathematical_concepts#00000000000000000165> ;
                                                               <http://www.foom.com/core#00000000000000000055> "false"^^xsd:boolean ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:isDefinedBy "Proposition 3 of Book 1."@en ;
@@ -367,6 +355,8 @@
                                                                                                        <http://www.foom.com/pappus_proofEuclid#00000000000000000051> ,
                                                                                                        <http://www.foom.com/pappus_proofEuclid#00000000000000000053> ;
                                                               <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000130> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000220> <http://www.foom.com/mathematical_concepts#00000000000000000240> ;
                                                               <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Step 6 (proof Euclid)"@en ;
@@ -601,6 +591,7 @@
 <http://www.foom.com/pappus_proofEuclid#00000000000000000077> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/core/Proof_step> ;
                                                               <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000239> <http://www.foom.com/mathematical_concepts#00000000000000000138> ;
                                                               <http://www.foom.com/core#00000000000000000055> "false"^^xsd:boolean ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:isDefinedBy "Axiom 1 of Book 1"@en ;
@@ -640,6 +631,7 @@
                                                                                                        <http://www.foom.com/pappus_proofEuclid#00000000000000000053> ,
                                                                                                        <http://www.foom.com/pappus_proofEuclid#00000000000000000054> ;
                                                               <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000220> <http://www.foom.com/mathematical_concepts#00000000000000000046> ;
                                                               <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000186> "true"^^xsd:boolean ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -678,6 +670,7 @@
 <http://www.foom.com/pappus_proofEuclid#00000000000000000082> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/core/Proof_step> ;
                                                               <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000239> <http://www.foom.com/mathematical_concepts#00000000000000000181> ;
                                                               <http://www.foom.com/core#00000000000000000055> "false"^^xsd:boolean ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:comment "Proposition 4 Book 1." ;
