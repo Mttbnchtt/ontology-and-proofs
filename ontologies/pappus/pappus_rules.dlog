@@ -92,7 +92,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # then z refers to y
 [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?y ] :- # z refers to y
     [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000063>, ?y ], # x logically supports y as its specialization
-    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?x ] # z refers to x
+    [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000185>, ?x ] . # z refers to x
 
 # if x logically supports y as its specialization,
 # then y specializes x
@@ -102,7 +102,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # if x logically supports y as its generalization,
 # then x specializes y
 [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000110>, ?y ] :-
-    [ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000064>, ?y ] .
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000064>, ?y ] .
 
 # if x is a y
 # and y directly refers to concept z,
@@ -156,18 +156,18 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # if x has object "is perfectly overlappable by rigid movement",
 # then x refers to act type overlapping by rigid movement
-[ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000220>, <http://www.foom.com/mathematical_concepts#00000000000000000243> ] :-
-    [ ?x, <http://www.foom.com/core#00000000000000000088>, <http://www.foom.com/mathematical_concepts#00000000000000000097> ]
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000220>, <http://www.foom.com/mathematical_concepts#00000000000000000243> ] :-
+    [ ?x, <http://www.foom.com/core#00000000000000000088>, <http://www.foom.com/mathematical_concepts#00000000000000000097> ] .
 
 # if x has object "is same amount as",
 # then x refers to concept "equal amount"
-[ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000220>, <http://www.foom.com/mathematical_concepts#00000000000000000243> ] :-
-    [ ?x, <http://www.foom.com/core#00000000000000000088>, <http://www.foom.com/mathematical_concepts#00000000000000000076> ]
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000220>, <http://www.foom.com/mathematical_concepts#00000000000000000243> ] :-
+    [ ?x, <http://www.foom.com/core#00000000000000000088>, <http://www.foom.com/mathematical_concepts#00000000000000000076> ] .
 
 # if x has object "is sum of",
 # then x refers to concept "sum"
-[ ?y, <http://www.foom.com/mathematical_concepts#00000000000000000220>, <http://www.foom.com/mathematical_concepts#00000000000000000247> ] :-
-    [ ?x, <http://www.foom.com/core#00000000000000000088>, <http://www.foom.com/mathematical_concepts#00000000000000000055> ]
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000220>, <http://www.foom.com/mathematical_concepts#00000000000000000247> ] :-
+    [ ?x, <http://www.foom.com/core#00000000000000000088>, <http://www.foom.com/mathematical_concepts#00000000000000000055> ] .
 
 # GEOMETRY
 
