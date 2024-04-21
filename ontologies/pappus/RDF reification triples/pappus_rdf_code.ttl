@@ -419,6 +419,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # (xix)the lenght of side AB is equivalent to the lenght of side AC
 # (xx) segment BC is a basis of triangle ABC
 
+# 1. Let ABC be conceived as two triangles.
+
 # 1. Let ACB be an isoscles triangle where
 # side AB has the same length as side AC and
 # BC is the base of triangle ABC (stated, given)
