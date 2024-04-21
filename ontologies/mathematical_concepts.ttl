@@ -2302,7 +2302,7 @@
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000236> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-11T15:46:01Z"^^xsd:dateTime ;
-                                                                 rdfs:label "Concept: Identical triangle"@en .
+                                                                 rdfs:label "Concept: Numerically identical triangle"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000238
