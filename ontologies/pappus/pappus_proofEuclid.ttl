@@ -179,10 +179,6 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000097> rdf:type owl:NamedIndividual .
 
 
-###  http://www.foom.com/mathematical_concepts#00000000000000000127
-<http://www.foom.com/mathematical_concepts#00000000000000000127> <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000126> .
-
-
 ###  http://www.foom.com/mathematical_concepts#00000000000000000133
 <http://www.foom.com/mathematical_concepts#00000000000000000133> owl:sameAs <http://www.foom.com/pappus_proofEuclid#00000000000000000049> .
 
@@ -205,6 +201,8 @@
 <http://www.foom.com/pappus_proofEuclid#00000000000000000047> rdf:type owl:NamedIndividual ,
                                                                        <http://www.foom.com/core/Proof> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000209> <http://www.foom.com/pappus_proofEuclid#00000000000000000016> ;
+                                                              <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
+                                                              <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Proof Euclid"@en .
 

@@ -1613,6 +1613,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000127
 <http://www.foom.com/mathematical_concepts#00000000000000000127> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000125> <http://www.foom.com/mathematical_concepts#00000000000000000126> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000154> <http://www.foom.com/mathematical_concepts#00000000000000000145> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Concept: Part"@en .
