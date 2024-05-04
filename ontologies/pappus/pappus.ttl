@@ -28,6 +28,10 @@
 #    Individuals
 #################################################################
 
+###  http://www.foom.com/mathematical_concepts#00000000000000000103
+<http://www.foom.com/mathematical_concepts#00000000000000000103> <http://www.foom.com/mathematical_concepts#00000000000000000109> <http://www.foom.com/mathematical_concepts#00000000000000000104> .
+
+
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000047
 <http://www.foom.com/pappus_proofEuclid#00000000000000000047> <http://www.foom.com/mathematical_concepts#00000000000000000077> <https://www.foom.com/pappus_proofAristotle#00000000000000000000> .
 
