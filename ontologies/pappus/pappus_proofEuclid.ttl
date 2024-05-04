@@ -214,6 +214,7 @@
                                                               <http://www.foom.com/core#00000000000000000087> <http://www.foom.com/pappus_proofEuclid#00000000000000000056> ;
                                                               <http://www.foom.com/core#00000000000000000088> <http://www.foom.com/mathematical_concepts#00000000000000000058> ;
                                                               <http://www.foom.com/core#00000000000000000089> rdf:type ;
+                                                              <http://www.foom.com/core/inProof> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ;
                                                               <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                               rdfs:label "Step 0 (proof Euclid)"@en ;
