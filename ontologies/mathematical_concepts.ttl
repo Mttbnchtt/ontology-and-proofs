@@ -1535,6 +1535,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000103
 <http://www.foom.com/mathematical_concepts#00000000000000000103> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000109> <http://www.foom.com/mathematical_concepts#00000000000000000104> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Heuristic procedure: Juxtapose figures"@en .
 
