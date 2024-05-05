@@ -269,9 +269,11 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000077
 <http://www.foom.com/mathematical_concepts#00000000000000000077> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000113> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ,
+                                                                                    <http://www.foom.com/mathematical_concepts#00000000000000000113> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "is analogous to"@en .
+                                                                 rdfs:label "is analogous to"@en ;
+                                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "is analogous to"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000078
@@ -369,13 +371,6 @@
                                                                  rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "inductively supports"@en .
-
-
-###  http://www.foom.com/mathematical_concepts#00000000000000000115
-<http://www.foom.com/mathematical_concepts#00000000000000000115> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
-                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "is analogous to"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000116
