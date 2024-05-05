@@ -34,5 +34,5 @@
 # Exclude everything in venv except the code folder
 **/venv/*
 !**/venv/code/
-**/venv/code/*.ipynb
+**/venv/code/.ipynb*
 **/venv/code/start.rdfox
