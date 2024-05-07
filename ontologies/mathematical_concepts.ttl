@@ -1557,6 +1557,20 @@
                                                                  rdfs:label "Heuristic procedure: Apply translation on a plane"@en .
 
 
+###  http://www.foom.com/mathematical_concepts#00000000000000000115
+<http://www.foom.com/mathematical_concepts#00000000000000000115> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000007> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000054> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000075> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000227> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000238> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-05-07T10:44:58Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Proposition 5 - first part only (Euclid, Elements I)"@en ;
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "The angles at the base of the isosceles triangles are euqal one another." .
+
+
 ###  http://www.foom.com/mathematical_concepts#00000000000000000119
 <http://www.foom.com/mathematical_concepts#00000000000000000119> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
@@ -2016,7 +2030,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000181> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000007> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000050> ,
-                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000053> ,
+                                                                                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000054> ,
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000122> ,
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000182> ,
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000183> ;
