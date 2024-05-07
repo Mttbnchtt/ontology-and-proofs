@@ -654,6 +654,16 @@
                                                                  rdfs:label "proof step cites proposition"@en .
 
 
+###  http://www.foom.com/mathematical_concepts#00000000000000000249
+<http://www.foom.com/mathematical_concepts#00000000000000000249> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000173> ;
+                                                                 rdfs:domain <http://www.foom.com/core/Proof> ;
+                                                                 rdfs:range <http://www.foom.com/core/Claim> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-05-07T10:54:57Z"^^xsd:dateTime ;
+                                                                 rdfs:label "is proof of claim"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
