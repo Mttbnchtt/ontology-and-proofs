@@ -1,2 +1,2 @@
-*.ipynb filter=dropoutput
+# *.ipynb filter=dropoutput
 *.ipynb filter=strip-notebook-output
