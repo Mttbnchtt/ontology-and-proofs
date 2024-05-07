@@ -165,6 +165,7 @@ rdf:type rdf:type owl:NamedIndividual .
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000001
 <https://www.foom.com/pappus_proofPappus#00000000000000000001> rdf:type owl:NamedIndividual ,
                                                                         <http://www.foom.com/core/Proof_step> ;
+                                                               <http://www.foom.com/core#00000000000000000013> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus_proofPappus#00000000000000000000> ;
                                                                <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofPappus#00000000000000000131> ;
                                                                <http://www.foom.com/core#00000000000000000044> "true"^^xsd:boolean ;
