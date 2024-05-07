@@ -204,7 +204,7 @@
                                                               <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                               <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                              rdfs:label "Proof Euclid"@en .
+                                                              rdfs:label "Proof: Euclid's proof"@en .
 
 
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000048
