@@ -179,6 +179,7 @@ rdf:type rdf:type owl:NamedIndividual .
 <https://www.foom.com/pappus_proofPappus#00000000000000000131> rdf:type owl:NamedIndividual ,
                                                                         <http://www.foom.com/core/Proof> ;
                                                                <http://www.foom.com/mathematical_concepts#00000000000000000209> <https://www.foom.com/pappus_proofPappus#00000000000000000210> ;
+                                                               <http://www.foom.com/mathematical_concepts#00000000000000000249> <http://www.foom.com/mathematical_concepts#00000000000000000115> ;
                                                                <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000081> ;
                                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                rdfs:label "Proof: Pappus' proof"@en .
