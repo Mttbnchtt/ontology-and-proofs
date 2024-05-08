@@ -202,6 +202,7 @@
                                                                        <http://www.foom.com/core/Proof> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000209> <http://www.foom.com/pappus_proofEuclid#00000000000000000016> ;
                                                               <http://www.foom.com/mathematical_concepts#00000000000000000249> <http://www.foom.com/mathematical_concepts#00000000000000000115> ;
+                                                              <http://www.foom.com/mathematical_concepts#00000000000000000250> <http://www.foom.com/mathematical_concepts#00000000000000000115> ;
                                                               <https://www.foom.com/metadata#00000000000000000077> <https://www.foom.com/metadata#00000000000000000076> ;
                                                               <https://www.foom.com/metadata#00000000000000000083> <https://www.foom.com/metadata#00000000000000000074> ;
                                                               <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
