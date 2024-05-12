@@ -1588,7 +1588,7 @@
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-05-07T10:44:58Z"^^xsd:dateTime ;
                                                                  rdfs:label "Proposition 5 - first part only (Euclid, Elements I)"@en ;
-                                                                 <https://www.foom.com/metadata#00000000000000000126> "The angles at the base of the isosceles triangles are euqal one another." .
+                                                                 <https://www.foom.com/metadata#00000000000000000126> "The angles at the base of the isosceles triangles are equal one another." .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000119
