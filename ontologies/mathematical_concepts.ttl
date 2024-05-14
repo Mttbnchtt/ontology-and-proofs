@@ -44,7 +44,7 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000001
 <http://www.foom.com/mathematical_concepts#00000000000000000001> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000251> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "has magnitude relation"@en .
 
@@ -82,7 +82,7 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000018
 <http://www.foom.com/mathematical_concepts#00000000000000000018> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000251> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "has addition relation"@en .
 
@@ -111,21 +111,21 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000022
 <http://www.foom.com/mathematical_concepts#00000000000000000022> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000251> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "has position relation"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000026
 <http://www.foom.com/mathematical_concepts#00000000000000000026> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000251> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "has action relation"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000028
 <http://www.foom.com/mathematical_concepts#00000000000000000028> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000251> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "has attribute"@en .
 
@@ -165,7 +165,7 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000037
 <http://www.foom.com/mathematical_concepts#00000000000000000037> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000251> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "belongs to"@en .
 
@@ -285,14 +285,14 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000079
 <http://www.foom.com/mathematical_concepts#00000000000000000079> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000251> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "has comparison relation"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000080
 <http://www.foom.com/mathematical_concepts#00000000000000000080> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000107> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000078> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "is a way of thinking about a conceptual part of"@en .
 
@@ -368,7 +368,7 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000114
 <http://www.foom.com/mathematical_concepts#00000000000000000114> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000107> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000108> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "inductively supports"@en .
 
@@ -429,7 +429,7 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000148
 <http://www.foom.com/mathematical_concepts#00000000000000000148> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000153> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "has cognitive relation to"@en .
 
@@ -672,6 +672,14 @@
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-05-08T09:42:47Z"^^xsd:dateTime ;
                                                                  rdfs:label "proves"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000251
+<http://www.foom.com/mathematical_concepts#00000000000000000251> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-05-14T14:26:30Z"^^xsd:dateTime ;
+                                                                 rdfs:label "has mathematical relation"@en .
 
 
 #################################################################
