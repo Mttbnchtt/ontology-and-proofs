@@ -269,7 +269,7 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000077
 <http://www.foom.com/mathematical_concepts#00000000000000000077> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ,
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000107> ,
                                                                                     <http://www.foom.com/mathematical_concepts#00000000000000000113> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "is analogous to"@en ;
@@ -368,21 +368,21 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000114
 <http://www.foom.com/mathematical_concepts#00000000000000000114> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000107> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "inductively supports"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000116
 <http://www.foom.com/mathematical_concepts#00000000000000000116> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000107> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "is important instance of"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000117
 <http://www.foom.com/mathematical_concepts#00000000000000000117> rdf:type owl:ObjectProperty ;
-                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000000> ;
+                                                                 rdfs:subPropertyOf <http://www.foom.com/mathematical_concepts#00000000000000000107> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "is the gist of result"@en .
 
