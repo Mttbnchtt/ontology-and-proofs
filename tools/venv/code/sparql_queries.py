@@ -96,6 +96,29 @@ def query_find_antecedent_proof_steps(proof_step_iri:str,
     return sparql_query
 
 ## find the conceptual space of the preceding proof steps
+SELECT DISTINCT
+    ?directly_related_iri
+    ?directly_related_label
+    ?indirectly_related_iri
+    ?indirectly_related_label
+WHERE {
+    # OPTIONAL {
+    #     <https://www.foom.com/pappus_proofAristotle#00000000000000000001>
+    #         <http://www.foom.com/core#00000000000000000086>+/<http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?directly_related_iri .
+    #     ?directly_related_iri
+    #         rdfs:label ?directly_related_label .
+    #     }
+
+    OPTIONAL {
+        <https://www.foom.com/pappus_proofAristotle#00000000000000000001>
+            ?p ?o .
+        ?o
+            <http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?indirectly_related_iri .
+        ?indirectly_related_iri
+            rdfs:label ?indirectly_related_label .
+        }
+}
+
 
 ## find analogous proofs 
 
