@@ -95,30 +95,36 @@ def query_find_antecedent_proof_steps(proof_step_iri:str,
     """
     return sparql_query
 
-## find the conceptual space of the preceding proof steps
-SELECT DISTINCT
-    ?directly_related_iri
-    ?directly_related_label
-    ?indirectly_related_iri
-    ?indirectly_related_label
-WHERE {
-    # OPTIONAL {
-    #     <https://www.foom.com/pappus_proofAristotle#00000000000000000001>
-    #         <http://www.foom.com/core#00000000000000000086>+/<http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?directly_related_iri .
-    #     ?directly_related_iri
-    #         rdfs:label ?directly_related_label .
-    #     }
+## find the conceptual space of given statement
+def query_find_directly_related_items(statement_iri:str) -> str:
+    sparql_query:str = f"""
+        SELECT DISTINCT
+            ?directly_related_iri
+            ?directly_related_label
+        WHERE {{
+            {statement_iri}
+                <http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?directly_related_iri .
+            ?directly_related_iri
+                rdfs:label ?directly_related_label .
+        }}
+    """
+    return sparql_query
 
-    OPTIONAL {
-        <https://www.foom.com/pappus_proofAristotle#00000000000000000001>
-            ?p ?o .
-        ?o
-            <http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?indirectly_related_iri .
-        ?indirectly_related_iri
-            rdfs:label ?indirectly_related_label .
-        }
-}
-
+def query_find_indirectly_related_items(statement_iri:str) -> str:
+    sparql_query:str = f"""
+        SELECT DISTINCT
+            ?indirectly_related_iri
+            ?indirectly_related_label
+        WHERE {{
+            {statement_iri}
+                ?p ?o .
+            ?o
+                <http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?indirectly_related_iri .
+            ?indirectly_related_iri
+                rdfs:label ?indirectly_related_label .
+        }}
+    """
+    return sparql_query
 
 ## find analogous proofs 
 
