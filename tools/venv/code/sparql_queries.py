@@ -103,7 +103,7 @@ def query_find_directly_related_items(statement_iri:str) -> str:
             ?directly_related_label
         WHERE {{
             {statement_iri}
-                <http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?directly_related_iri .
+                <http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?directly_related_iri . # has mathematical relation
             ?directly_related_iri
                 rdfs:label ?directly_related_label .
         }}
@@ -119,7 +119,7 @@ def query_find_indirectly_related_items(statement_iri:str) -> str:
             {statement_iri}
                 ?p ?o .
             ?o
-                <http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?indirectly_related_iri .
+                <http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?indirectly_related_iri . # has mathematical relation
             ?indirectly_related_iri
                 rdfs:label ?indirectly_related_label .
         }}
