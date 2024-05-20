@@ -96,7 +96,7 @@ def query_find_antecedent_proof_steps(proof_step_iri:str,
     return sparql_query
 
 ## find the conceptual space of given statement
-def query_find_directly_related_items(statement_iri:str) -> str:
+def query_find_mathematically_directly_related_items(statement_iri:str) -> str:
     sparql_query:str = f"""
         SELECT DISTINCT
             ?directly_related_iri
@@ -110,7 +110,7 @@ def query_find_directly_related_items(statement_iri:str) -> str:
     """
     return sparql_query
 
-def query_find_indirectly_related_items(statement_iri:str) -> str:
+def query_find_mathematically_indirectly_related_items(statement_iri:str) -> str:
     sparql_query:str = f"""
         SELECT DISTINCT
             ?indirectly_related_iri
@@ -120,6 +120,36 @@ def query_find_indirectly_related_items(statement_iri:str) -> str:
                 ?p ?o .
             ?o
                 <http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?indirectly_related_iri . # has mathematical relation
+            ?indirectly_related_iri
+                rdfs:label ?indirectly_related_label .
+        }}
+    """
+    return sparql_query
+
+def query_find_conceptually_directly_related_items(statement_iri:str) -> str:
+    sparql_query:str = f"""
+        SELECT DISTINCT
+            ?directly_related_iri
+            ?directly_related_label
+        WHERE {{
+            {statement_iri}
+                <http://www.foom.com/mathematical_concepts#00000000000000000153>+ ?directly_related_iri . # has conceptual relation
+            ?directly_related_iri
+                rdfs:label ?directly_related_label .
+        }}
+    """
+    return sparql_query
+
+def query_find_conceptually_indirectly_related_items(statement_iri:str) -> str:
+    sparql_query:str = f"""
+        SELECT DISTINCT
+            ?indirectly_related_iri
+            ?indirectly_related_label
+        WHERE {{
+            {statement_iri}
+                ?p ?o .
+            ?o
+                <http://www.foom.com/mathematical_concepts#00000000000000000153>+ ?indirectly_related_iri . # has conceptual relation
             ?indirectly_related_iri
                 rdfs:label ?indirectly_related_label .
         }}
