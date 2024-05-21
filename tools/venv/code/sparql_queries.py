@@ -110,6 +110,20 @@ def query_find_mathematically_directly_related_items(statement_iri:str) -> str:
     """
     return sparql_query
 
+def query_find_mathematically_directly_related_items_reverse(statement_iri:str) -> str:
+    sparql_query:str = f"""
+        SELECT DISTINCT
+            ?directly_related_iri
+            ?directly_related_label
+        WHERE {{
+            ?directly_related_iri 
+                <http://www.foom.com/mathematical_concepts#00000000000000000251>+ {statement_iri} . # has mathematical relation
+            ?directly_related_iri
+                rdfs:label ?directly_related_label .
+        }}
+    """
+    return sparql_query
+
 def query_find_mathematically_indirectly_related_items(statement_iri:str) -> str:
     sparql_query:str = f"""
         SELECT DISTINCT
@@ -119,6 +133,21 @@ def query_find_mathematically_indirectly_related_items(statement_iri:str) -> str
             {statement_iri}
                 ?p ?o .
             ?o
+                <http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?indirectly_related_iri . # has mathematical relation
+            ?indirectly_related_iri
+                rdfs:label ?indirectly_related_label .
+        }}
+    """
+    return sparql_query
+
+def query_find_mathematically_indirectly_related_items_reverse(statement_iri:str) -> str:
+    sparql_query:str = f"""
+        SELECT DISTINCT
+            ?indirectly_related_iri
+            ?indirectly_related_label
+        WHERE {{
+            ?s ?p {statement_iri} .
+            ?s
                 <http://www.foom.com/mathematical_concepts#00000000000000000251>+ ?indirectly_related_iri . # has mathematical relation
             ?indirectly_related_iri
                 rdfs:label ?indirectly_related_label .
@@ -140,6 +169,20 @@ def query_find_conceptually_directly_related_items(statement_iri:str) -> str:
     """
     return sparql_query
 
+def query_find_conceptually_directly_related_items_reverse(statement_iri:str) -> str:
+    sparql_query:str = f"""
+        SELECT DISTINCT
+            ?directly_related_iri
+            ?directly_related_label
+        WHERE {{
+            ?directly_related_iri 
+                <http://www.foom.com/mathematical_concepts#00000000000000000153>+ {statement_iri} . # has conceptual relation
+            ?directly_related_iri
+                rdfs:label ?directly_related_label .
+        }}
+    """
+    return sparql_query
+
 def query_find_conceptually_indirectly_related_items(statement_iri:str) -> str:
     sparql_query:str = f"""
         SELECT DISTINCT
@@ -149,6 +192,21 @@ def query_find_conceptually_indirectly_related_items(statement_iri:str) -> str:
             {statement_iri}
                 ?p ?o .
             ?o
+                <http://www.foom.com/mathematical_concepts#00000000000000000153>+ ?indirectly_related_iri . # has conceptual relation
+            ?indirectly_related_iri
+                rdfs:label ?indirectly_related_label .
+        }}
+    """
+    return sparql_query
+
+def query_find_conceptually_indirectly_related_items_reverse(statement_iri:str) -> str:
+    sparql_query:str = f"""
+        SELECT DISTINCT
+            ?indirectly_related_iri
+            ?indirectly_related_label
+        WHERE {{
+            ?s ?p {statement_iri} .
+            ?s
                 <http://www.foom.com/mathematical_concepts#00000000000000000153>+ ?indirectly_related_iri . # has conceptual relation
             ?indirectly_related_iri
                 rdfs:label ?indirectly_related_label .
