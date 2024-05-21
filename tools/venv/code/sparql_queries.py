@@ -159,13 +159,13 @@ def query_find_conceptually_indirectly_related_items(statement_iri:str) -> str:
 def find_related_objects(proof_step_iri:str) -> str:
     sparql_query:str = f"""
         SELECT DISTINCT 
-        ?item_iri
-        ?item_label
+        ?object_iri
+        ?object_label
         WHERE {{
-            ?item_iri 
+            ?object_iri 
                 a/rdfs:subClassOf+ <http://www.foom.com/core/Object> ;
                 <http://www.foom.com/core#00000000000000000035> {proof_step_iri} ;
-                rdfs:label ?item_label .
+                rdfs:label ?object_label .
         }}
     """
 
