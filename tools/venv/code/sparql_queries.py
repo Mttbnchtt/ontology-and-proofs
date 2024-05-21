@@ -168,6 +168,7 @@ def find_related_objects(proof_step_iri:str) -> str:
                 rdfs:label ?object_label .
         }}
     """
+    return sparql_query
 
 ## find analogous proofs 
 
