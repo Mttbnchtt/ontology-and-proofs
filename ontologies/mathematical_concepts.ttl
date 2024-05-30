@@ -2303,6 +2303,7 @@
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000123> <http://www.foom.com/mathematical_concepts#00000000000000000233> ,
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000235> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000236> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-11T14:57:53Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Numerically distinct items"@en .
@@ -2312,6 +2313,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000234> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000233> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000236> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-11T14:58:15Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Numerically distinct points"@en .
@@ -2321,6 +2323,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000235> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000233> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000236> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-11T15:00:50Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Numerically distinct triangles"@en .
@@ -2329,7 +2332,9 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000236
 <http://www.foom.com/mathematical_concepts#00000000000000000236> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000253> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000123> <http://www.foom.com/mathematical_concepts#00000000000000000237> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000253> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-11T15:45:51Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Numerical identity"@en .
@@ -2339,6 +2344,7 @@
 <http://www.foom.com/mathematical_concepts#00000000000000000237> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000236> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000236> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-03-11T15:46:01Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Numerically identical triangle"@en .
@@ -2375,6 +2381,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000242
 <http://www.foom.com/mathematical_concepts#00000000000000000242> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000248> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-04-21T00:29:54Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Conceptually distinct items"@en .
@@ -2427,9 +2434,19 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000248
 <http://www.foom.com/mathematical_concepts#00000000000000000248> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000110> <http://www.foom.com/mathematical_concepts#00000000000000000253> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000155> <http://www.foom.com/mathematical_concepts#00000000000000000253> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-04-21T00:53:03Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Conceptual identity"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000253
+<http://www.foom.com/mathematical_concepts#00000000000000000253> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/core#00000000000000000004> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-05-30T10:37:03Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Concept: Identity"@en .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
