@@ -49,19 +49,11 @@ def query_find_classes_of_reification_values(statement_iri:str):
         SELECT DISTINCT
             ?class_iri
             ?class_label 
-            ?super_class_iri
-            ?super_class_label
         WHERE {{
             {statement_iri}
-                a ?class_iri .
+                a/rdfs:subClassOf* ?class_iri .
             ?class_iri 
                 rdfs:label ?class_label .
-            OPTIONAL {{
-                ?class_iri 
-                    rdfs:subClassOf+ ?super_class_iri .
-                ?super_class_iri 
-                    rdfs:label ?super_class_label .
-            }}
         }}
     """
     return sparql_query
