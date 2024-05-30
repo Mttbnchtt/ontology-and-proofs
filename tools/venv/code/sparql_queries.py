@@ -25,23 +25,47 @@ def query_find_proof_step_label(proof_step_iri:str) -> str:
 def query_find_reification_values(statement_iri:str):
     sparql_query:str = f"""
         SELECT DISTINCT
-        ?subject_iri 
-        ?subject_label
-        ?predicate_iri
-        ?predicate_label
-        ?object_iri
-        ?object_label 
-    WHERE {{
-        {statement_iri}
-            <http://www.foom.com/core#00000000000000000087> ?subject_iri ;
-            <http://www.foom.com/core#00000000000000000089> ?predicate_iri ;
-            <http://www.foom.com/core#00000000000000000088> ?object_iri .
-        ?subject_iri rdfs:label ?subject_label .
-        ?predicate_iri rdfs:label ?predicate_label .
-        ?object_iri rdfs:label ?object_label .
-    }}
+            ?subject_iri 
+            ?subject_label
+            ?predicate_iri
+            ?predicate_label
+            ?object_iri
+            ?object_label 
+        WHERE {{
+            {statement_iri}
+                <http://www.foom.com/core#00000000000000000087> ?subject_iri ;
+                <http://www.foom.com/core#00000000000000000089> ?predicate_iri ;
+                <http://www.foom.com/core#00000000000000000088> ?object_iri .
+            ?subject_iri rdfs:label ?subject_label .
+            ?predicate_iri rdfs:label ?predicate_label .
+            ?object_iri rdfs:label ?object_label .
+        }}
     """
     return sparql_query
+
+# find classes of reification values
+def query_find_classes_of_reification_values(statement_iri:str):
+    sparql_query:str = f"""
+        SELECT DISTINCT
+            ?class_iri
+            ?class_label 
+            ?super_class_iri
+            ?super_class_label
+        WHERE {{
+            {statement_iri}
+                a ?class_iri .
+            ?class_iri 
+                rdfs:label ?class_label .
+            OPTIONAL {{
+                ?class_iri 
+                    rdfs:subClassOf+ ?super_class_iri .
+                ?super_class_iri 
+                    rdfs:label ?super_class_label .
+            }}
+        }}
+    """
+    return sparql_query
+
 
 # find the proof to which the given proof step belongs
 def query_find_proof(proof_step_iri:str) -> str:
