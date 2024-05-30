@@ -1,577 +1,605 @@
+@base <http://www.foom.com/core#> .
 @prefix : <http://www.foom.com/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.foom.com/core#> .
-
-<http://www.foom.com/core> rdf:type owl:Ontology ;
-                            rdfs:comment "Upper classes and relations relevant to every mathematical domain or proof."@en .
-
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/elements/1.1/creator
-<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
-
-
-###  http://www.foom.com/core#00000000000000000009
-<http://www.foom.com/core#00000000000000000009> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has reference location"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000085> .
-
-
-###  http://www.foom.com/core#00000000000000000021
-<http://www.foom.com/core#00000000000000000021> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has content"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000084> ;
-                                                rdfs:range xsd:string .
-
-
-###  http://www.foom.com/core#00000000000000000072
-<http://www.foom.com/core#00000000000000000072> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has characterization"@en ;
-                                                rdfs:subPropertyOf rdfs:comment .
-
-
-###  http://www.foom.com/core#00000000000000000073
-<http://www.foom.com/core#00000000000000000073> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has examples"@en ;
-                                                rdfs:subPropertyOf rdfs:comment .
-
-
-###  http://www.foom.com/core#00000000000000000081
-<http://www.foom.com/core#00000000000000000081> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has translator of content"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000084> .
-
-
-###  http://www.foom.com/core#00000000000000000082
-<http://www.foom.com/core#00000000000000000082> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "content is translated"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000084> .
-
-
-###  http://www.foom.com/core#00000000000000000083
-<http://www.foom.com/core#00000000000000000083> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "content has original language"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000084> .
-
-
-###  http://www.foom.com/core#00000000000000000084
-<http://www.foom.com/core#00000000000000000084> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has annotation property related to content"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000085> .
-
-
-###  http://www.foom.com/core#00000000000000000085
-<http://www.foom.com/core#00000000000000000085> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has core annotation property"@en .
-
-
-###  http://www.foom.com/core#00000000000000000191
-<http://www.foom.com/core#00000000000000000191> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has core logical annotation property"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000085> .
-
-
-###  http://www.foom.com/core#00000000000000000192
-<http://www.foom.com/core#00000000000000000192> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has formula"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000191> .
-
-
-###  http://www.foom.com/core#00000000000000000195
-<http://www.foom.com/core#00000000000000000195> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has domain"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000191> .
-
-
-###  http://www.foom.com/core#00000000000000000196
-<http://www.foom.com/core#00000000000000000196> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has range"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000191> .
-
-
-###  http://www.foom.com/core#00000000000000000197
-<http://www.foom.com/core#00000000000000000197> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has projection type"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000191> .
-
-
-###  http://www.foom.com/core#00000000000000000198
-<http://www.foom.com/core#00000000000000000198> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has paraphrasis of formula"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000191> .
-
-
-###  http://www.foom.com/core#00000000000000000199
-<http://www.foom.com/core#00000000000000000199> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has semi-formal formula"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000191> .
-
-
-###  http://www.foom.com/core#00000000000000000203
-<http://www.foom.com/core#00000000000000000203> rdf:type owl:AnnotationProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has informal interpretation"@en ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000191> .
-
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  http://www.foom.com/core#00000000000000000000
-<http://www.foom.com/core#00000000000000000000> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000035> ;
-                                                rdfs:range <http://www.foom.com/core/Proof_step> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "is referred explicitly to at proof step"@en .
-
-
-###  http://www.foom.com/core#00000000000000000010
-<http://www.foom.com/core#00000000000000000010> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has core logical object property"@en .
-
-
-###  http://www.foom.com/core#00000000000000000012
-<http://www.foom.com/core#00000000000000000012> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
-                                                rdfs:domain <http://www.foom.com/core/Claim> ;
-                                                rdfs:range <http://www.foom.com/core#00000000000000000006> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has consequent of conditional claim"@en .
-
-
-###  http://www.foom.com/core#00000000000000000013
-<http://www.foom.com/core#00000000000000000013> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core/inProof> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "is goal of proof"@en .
-
-
-###  http://www.foom.com/core#00000000000000000020
-<http://www.foom.com/core#00000000000000000020> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000174> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "is theorem of theory"@en .
-
-
-###  http://www.foom.com/core#00000000000000000035
-<http://www.foom.com/core#00000000000000000035> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000173> ;
-                                                rdfs:range <http://www.foom.com/core/Proof_step> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "is in proof step"@en .
-
-
-###  http://www.foom.com/core#00000000000000000061
-<http://www.foom.com/core#00000000000000000061> rdf:type owl:ObjectProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has metadata object property"@en .
-
-
-###  http://www.foom.com/core#00000000000000000080
-<http://www.foom.com/core#00000000000000000080> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
-                                                rdfs:domain <http://www.foom.com/core/Claim> ;
-                                                rdfs:range <http://www.foom.com/core#00000000000000000005> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has antencendent of conditional claim"@en .
-
-
-###  http://www.foom.com/core#00000000000000000086
-<http://www.foom.com/core#00000000000000000086> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has reification object property"@en .
-
-
-###  http://www.foom.com/core#00000000000000000087
-<http://www.foom.com/core#00000000000000000087> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000086> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has subject"@en .
-
-
-###  http://www.foom.com/core#00000000000000000088
-<http://www.foom.com/core#00000000000000000088> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000086> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has object"@en .
-
-
-###  http://www.foom.com/core#00000000000000000089
-<http://www.foom.com/core#00000000000000000089> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000086> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has predicate"@en .
-
-
-###  http://www.foom.com/core#00000000000000000156
-<http://www.foom.com/core#00000000000000000156> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "class has related concept"@en .
-
-
-###  http://www.foom.com/core#00000000000000000170
-<http://www.foom.com/core#00000000000000000170> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000172> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "construction satisfies request"@en .
-
-
-###  http://www.foom.com/core#00000000000000000172
-<http://www.foom.com/core#00000000000000000172> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has construction-related object property"@en .
-
-
-###  http://www.foom.com/core#00000000000000000173
-<http://www.foom.com/core#00000000000000000173> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has proof-related object property"@en .
-
-
-###  http://www.foom.com/core#00000000000000000174
-<http://www.foom.com/core#00000000000000000174> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has theory-related object property"@en .
-
-
-###  http://www.foom.com/core#00000000000000000175
-<http://www.foom.com/core#00000000000000000175> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000174> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "is construction within theory"@en .
-
-
-###  http://www.foom.com/core#00000000000000000176
-<http://www.foom.com/core#00000000000000000176> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000172> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "is in construction"@en .
-
-
-###  http://www.foom.com/core#00000000000000000186
-<http://www.foom.com/core#00000000000000000186> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core/coreRelations> ;
-                                                rdf:type owl:TransitiveProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has antecedent"@en .
-
-
-###  http://www.foom.com/core/coreRelations
-<http://www.foom.com/core/coreRelations> rdf:type owl:ObjectProperty ;
-                                         rdfs:label "has core object property"@en .
-
-
-###  http://www.foom.com/core/domainRelations
-<http://www.foom.com/core/domainRelations> rdf:type owl:ObjectProperty ;
-                                           rdfs:label "has domain relation"@en .
-
-
-###  http://www.foom.com/core/hasAntecedent
-<http://www.foom.com/core/hasAntecedent> rdf:type owl:ObjectProperty ;
-                                         rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000186> ;
-                                         rdfs:domain <http://www.foom.com/core/Proof_step> ;
-                                         rdfs:range <http://www.foom.com/core/Proof_step> ;
-                                         rdfs:label "has immediate antecedent"@en .
-
-
-###  http://www.foom.com/core/inProof
-<http://www.foom.com/core/inProof> rdf:type owl:ObjectProperty ;
-                                   rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000173> ;
-                                   rdfs:domain <http://www.foom.com/core/Proof_step> ;
-                                   rdfs:range <http://www.foom.com/core/Proof> ;
-                                   rdfs:label "is in proof"@en .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  http://www.foom.com/core#00000000000000000024
-<http://www.foom.com/core#00000000000000000024> rdf:type owl:DatatypeProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000045> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has core logical datatype property"@en .
-
-
-###  http://www.foom.com/core#00000000000000000025
-<http://www.foom.com/core#00000000000000000025> rdf:type owl:DatatypeProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000024> ;
-                                                rdfs:range xsd:nonNegativeInteger ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has arity"@en .
-
-
-###  http://www.foom.com/core#00000000000000000026
-<http://www.foom.com/core#00000000000000000026> rdf:type owl:DatatypeProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000045> ;
-                                                rdfs:range xsd:boolean ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has part"@en .
-
-
-###  http://www.foom.com/core#00000000000000000027
-<http://www.foom.com/core#00000000000000000027> rdf:type owl:DatatypeProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000024> ;
-                                                rdfs:range xsd:boolean ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "is unrestricted first-order formula"@en .
-
-
-###  http://www.foom.com/core#00000000000000000043
-<http://www.foom.com/core#00000000000000000043> rdf:type owl:DatatypeProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000045> ;
-                                                rdfs:domain <http://www.foom.com/core/Proof_step> ;
-                                                rdfs:range xsd:boolean ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "is given"@en .
-
-
-###  http://www.foom.com/core#00000000000000000044
-<http://www.foom.com/core#00000000000000000044> rdf:type owl:DatatypeProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000045> ;
-                                                rdfs:domain <http://www.foom.com/core/Proof_step> ;
-                                                rdfs:range xsd:boolean ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "is goal"@en .
-
-
-###  http://www.foom.com/core#00000000000000000045
-<http://www.foom.com/core#00000000000000000045> rdf:type owl:DatatypeProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has core datatype property"@en .
-
-
-###  http://www.foom.com/core#00000000000000000055
-<http://www.foom.com/core#00000000000000000055> rdf:type owl:DatatypeProperty ;
-                                                rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000045> ;
-                                                rdfs:domain <http://www.foom.com/core/Proof_step> ;
-                                                rdfs:range xsd:boolean ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "is explicitly formulated"@en .
-
-
-###  http://www.foom.com/core#00000000000000000062
-<http://www.foom.com/core#00000000000000000062> rdf:type owl:DatatypeProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has metadata datatype property"@en .
-
-
-###  http://www.foom.com/core#00000000000000000067
-<http://www.foom.com/core#00000000000000000067> rdf:type owl:DatatypeProperty ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "has domain relation"@en .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  http://www.foom.com/core#00000000000000000001
-<http://www.foom.com/core#00000000000000000001> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.foom.com/core#00000000000000000002> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Definition"@en .
-
-
-###  http://www.foom.com/core#00000000000000000002
-<http://www.foom.com/core#00000000000000000002> rdf:type owl:Class ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Proposition"@en .
-
-
-###  http://www.foom.com/core#00000000000000000003
-<http://www.foom.com/core#00000000000000000003> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.foom.com/core/Claim> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Conditional claim"@en .
-
-
-###  http://www.foom.com/core#00000000000000000004
-<http://www.foom.com/core#00000000000000000004> rdf:type owl:Class ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Concept"@en .
-
-
-###  http://www.foom.com/core#00000000000000000005
-<http://www.foom.com/core#00000000000000000005> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.foom.com/core/Claim> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Antecedent of conditional claim"@en .
-
-
-###  http://www.foom.com/core#00000000000000000006
-<http://www.foom.com/core#00000000000000000006> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.foom.com/core/Claim> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Consequent of conditional claim"@en .
-
-
-###  http://www.foom.com/core#00000000000000000007
-<http://www.foom.com/core#00000000000000000007> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.foom.com/core/Claim> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Theorem"@en .
-
-
-###  http://www.foom.com/core#00000000000000000008
-<http://www.foom.com/core#00000000000000000008> rdf:type owl:Class ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Predicate"@en .
-
-
-###  http://www.foom.com/core#00000000000000000011
-<http://www.foom.com/core#00000000000000000011> rdf:type owl:Class ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Logical resources"@en .
-
-
-###  http://www.foom.com/core#00000000000000000015
-<http://www.foom.com/core#00000000000000000015> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.foom.com/core#00000000000000000002> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Conjecture"@en .
-
-
-###  http://www.foom.com/core#00000000000000000018
-<http://www.foom.com/core#00000000000000000018> rdf:type owl:Class ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Theory"@en .
-
-
-###  http://www.foom.com/core#00000000000000000039
-<http://www.foom.com/core#00000000000000000039> rdf:type owl:Class ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Enumeration"@en .
-
-
-###  http://www.foom.com/core#00000000000000000060
-<http://www.foom.com/core#00000000000000000060> rdf:type owl:Class ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Metadata"@en .
-
-
-###  http://www.foom.com/core#00000000000000000158
-<http://www.foom.com/core#00000000000000000158> rdf:type owl:Class ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Act"@en .
-
-
-###  http://www.foom.com/core#00000000000000000163
-<http://www.foom.com/core#00000000000000000163> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.foom.com/core#00000000000000000002> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Request"@en .
-
-
-###  http://www.foom.com/core#00000000000000000169
-<http://www.foom.com/core#00000000000000000169> rdf:type owl:Class ;
-                                                rdfs:subClassOf <http://www.foom.com/core/Procedure> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Construction"@en .
-
-
-###  http://www.foom.com/core/Claim
-<http://www.foom.com/core/Claim> rdf:type owl:Class ;
-                                 rdfs:subClassOf <http://www.foom.com/core#00000000000000000002> .
-
-
-###  http://www.foom.com/core/Object
-<http://www.foom.com/core/Object> rdf:type owl:Class .
-
-
-###  http://www.foom.com/core/Procedure
-<http://www.foom.com/core/Procedure> rdf:type owl:Class .
-
-
-###  http://www.foom.com/core/Proof
-<http://www.foom.com/core/Proof> rdf:type owl:Class .
-
-
-###  http://www.foom.com/core/Proof_step
-<http://www.foom.com/core/Proof_step> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://www.foom.com/core#00000000000000000002> ;
-                                      rdfs:label "Proof step" .
-
-
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
-rdf:Statement rdf:type owl:Class ;
-              rdfs:subClassOf <http://www.foom.com/core#00000000000000000002> .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  http://www.foom.com/core#00000000000000000014
-<http://www.foom.com/core#00000000000000000014> rdf:type owl:NamedIndividual ,
-                                                         <http://www.foom.com/core#00000000000000000011> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Logical resource: And"@en .
-
-
-###  http://www.foom.com/core#00000000000000000016
-<http://www.foom.com/core#00000000000000000016> rdf:type owl:NamedIndividual ,
-                                                         <http://www.foom.com/core#00000000000000000011> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Logical resource: Or"@en .
-
-
-###  http://www.foom.com/core#00000000000000000017
-<http://www.foom.com/core#00000000000000000017> rdf:type owl:NamedIndividual ,
-                                                         <http://www.foom.com/core#00000000000000000011> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Logical resource: Implies"@en .
-
-
-###  http://www.foom.com/core#00000000000000000019
-<http://www.foom.com/core#00000000000000000019> rdf:type owl:NamedIndividual ,
-                                                         <http://www.foom.com/core#00000000000000000011> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Logical resource: Not"@en .
-
-
-###  http://www.foom.com/core#00000000000000000022
-<http://www.foom.com/core#00000000000000000022> rdf:type owl:NamedIndividual ,
-                                                         <http://www.foom.com/core#00000000000000000011> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Logical resource: For every"@en .
-
-
-###  http://www.foom.com/core#00000000000000000023
-<http://www.foom.com/core#00000000000000000023> rdf:type owl:NamedIndividual ,
-                                                         <http://www.foom.com/core#00000000000000000011> ;
-                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Logical resource: For some"@en .
-
-
-###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/creator
+# 
+# http://www.foom.com/core#00000000000000000009
+# 
+# http://www.foom.com/core#00000000000000000021
+# 
+# http://www.foom.com/core#00000000000000000072
+# 
+# http://www.foom.com/core#00000000000000000073
+# 
+# http://www.foom.com/core#00000000000000000081
+# 
+# http://www.foom.com/core#00000000000000000082
+# 
+# http://www.foom.com/core#00000000000000000083
+# 
+# http://www.foom.com/core#00000000000000000084
+# 
+# http://www.foom.com/core#00000000000000000085
+# 
+# http://www.foom.com/core#00000000000000000191
+# 
+# http://www.foom.com/core#00000000000000000192
+# 
+# http://www.foom.com/core#00000000000000000195
+# 
+# http://www.foom.com/core#00000000000000000196
+# 
+# http://www.foom.com/core#00000000000000000197
+# 
+# http://www.foom.com/core#00000000000000000198
+# 
+# http://www.foom.com/core#00000000000000000199
+# 
+# http://www.foom.com/core#00000000000000000203
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.foom.com/core#00000000000000000000
+# 
+# http://www.foom.com/core#00000000000000000010
+# 
+# http://www.foom.com/core#00000000000000000012
+# 
+# http://www.foom.com/core#00000000000000000013
+# 
+# http://www.foom.com/core#00000000000000000020
+# 
+# http://www.foom.com/core#00000000000000000035
+# 
+# http://www.foom.com/core#00000000000000000061
+# 
+# http://www.foom.com/core#00000000000000000080
+# 
+# http://www.foom.com/core#00000000000000000086
+# 
+# http://www.foom.com/core#00000000000000000087
+# 
+# http://www.foom.com/core#00000000000000000088
+# 
+# http://www.foom.com/core#00000000000000000089
+# 
+# http://www.foom.com/core#00000000000000000156
+# 
+# http://www.foom.com/core#00000000000000000170
+# 
+# http://www.foom.com/core#00000000000000000172
+# 
+# http://www.foom.com/core#00000000000000000173
+# 
+# http://www.foom.com/core#00000000000000000174
+# 
+# http://www.foom.com/core#00000000000000000175
+# 
+# http://www.foom.com/core#00000000000000000176
+# 
+# http://www.foom.com/core#00000000000000000186
+# 
+# http://www.foom.com/core/coreRelations
+# 
+# http://www.foom.com/core/domainRelations
+# 
+# http://www.foom.com/core/hasAntecedent
+# 
+# http://www.foom.com/core/inProof
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.foom.com/core#00000000000000000024
+# 
+# http://www.foom.com/core#00000000000000000025
+# 
+# http://www.foom.com/core#00000000000000000026
+# 
+# http://www.foom.com/core#00000000000000000027
+# 
+# http://www.foom.com/core#00000000000000000043
+# 
+# http://www.foom.com/core#00000000000000000044
+# 
+# http://www.foom.com/core#00000000000000000045
+# 
+# http://www.foom.com/core#00000000000000000055
+# 
+# http://www.foom.com/core#00000000000000000062
+# 
+# http://www.foom.com/core#00000000000000000067
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.foom.com/core#00000000000000000001
+# 
+# http://www.foom.com/core#00000000000000000002
+# 
+# http://www.foom.com/core#00000000000000000003
+# 
+# http://www.foom.com/core#00000000000000000004
+# 
+# http://www.foom.com/core#00000000000000000005
+# 
+# http://www.foom.com/core#00000000000000000006
+# 
+# http://www.foom.com/core#00000000000000000007
+# 
+# http://www.foom.com/core#00000000000000000008
+# 
+# http://www.foom.com/core#00000000000000000011
+# 
+# http://www.foom.com/core#00000000000000000015
+# 
+# http://www.foom.com/core#00000000000000000018
+# 
+# http://www.foom.com/core#00000000000000000039
+# 
+# http://www.foom.com/core#00000000000000000060
+# 
+# http://www.foom.com/core#00000000000000000158
+# 
+# http://www.foom.com/core#00000000000000000163
+# 
+# http://www.foom.com/core#00000000000000000169
+# 
+# http://www.foom.com/core/Claim
+# 
+# http://www.foom.com/core/Object
+# 
+# http://www.foom.com/core/Procedure
+# 
+# http://www.foom.com/core/Proof
+# 
+# http://www.foom.com/core/Proof_step
+# 
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.foom.com/core#00000000000000000014
+# 
+# http://www.foom.com/core#00000000000000000016
+# 
+# http://www.foom.com/core#00000000000000000017
+# 
+# http://www.foom.com/core#00000000000000000019
+# 
+# http://www.foom.com/core#00000000000000000022
+# 
+# http://www.foom.com/core#00000000000000000023
+# 
+# Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
+
+<core> a owl:Ontology;
+  rdfs:comment "Upper classes and relations relevant to every mathematical domain or proof."@en .
+
+<http://purl.org/dc/elements/1.1/creator> a owl:AnnotationProperty .
+
+:00000000000000000009 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has reference location"@en;
+  rdfs:subPropertyOf :00000000000000000085 .
+
+:00000000000000000021 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has content"@en;
+  rdfs:subPropertyOf :00000000000000000084;
+  rdfs:range xsd:string .
+
+:00000000000000000072 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has characterization"@en;
+  rdfs:subPropertyOf rdfs:comment .
+
+:00000000000000000073 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has examples"@en;
+  rdfs:subPropertyOf rdfs:comment .
+
+:00000000000000000081 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has translator of content"@en;
+  rdfs:subPropertyOf :00000000000000000084 .
+
+:00000000000000000082 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "content is translated"@en;
+  rdfs:subPropertyOf :00000000000000000084 .
+
+:00000000000000000083 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "content has original language"@en;
+  rdfs:subPropertyOf :00000000000000000084 .
+
+:00000000000000000084 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has annotation property related to content"@en;
+  rdfs:subPropertyOf :00000000000000000085 .
+
+:00000000000000000085 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has core annotation property"@en .
+
+:00000000000000000191 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has core logical annotation property"@en;
+  rdfs:subPropertyOf :00000000000000000085 .
+
+:00000000000000000192 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has formula"@en;
+  rdfs:subPropertyOf :00000000000000000191 .
+
+:00000000000000000195 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has domain"@en;
+  rdfs:subPropertyOf :00000000000000000191 .
+
+:00000000000000000196 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has range"@en;
+  rdfs:subPropertyOf :00000000000000000191 .
+
+:00000000000000000197 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has projection type"@en;
+  rdfs:subPropertyOf :00000000000000000191 .
+
+:00000000000000000198 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has paraphrasis of formula"@en;
+  rdfs:subPropertyOf :00000000000000000191 .
+
+:00000000000000000199 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has semi-formal formula"@en;
+  rdfs:subPropertyOf :00000000000000000191 .
+
+:00000000000000000203 a owl:AnnotationProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has informal interpretation"@en;
+  rdfs:subPropertyOf :00000000000000000191 .
+
+:00000000000000000000 a owl:ObjectProperty;
+  rdfs:subPropertyOf :00000000000000000035;
+  rdfs:range <core/Proof_step>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "is referred explicitly to at proof step"@en .
+
+:00000000000000000010 a owl:ObjectProperty;
+  rdfs:subPropertyOf <core/coreRelations>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has core logical object property"@en .
+
+:00000000000000000012 a owl:ObjectProperty;
+  rdfs:subPropertyOf <core/coreRelations>;
+  rdfs:domain <core/Claim>;
+  rdfs:range :00000000000000000006;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has consequent of conditional claim"@en .
+
+:00000000000000000013 a owl:ObjectProperty;
+  rdfs:subPropertyOf <core/inProof>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "is goal of proof"@en .
+
+:00000000000000000020 a owl:ObjectProperty;
+  rdfs:subPropertyOf :00000000000000000174;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "is theorem of theory"@en .
+
+:00000000000000000035 a owl:ObjectProperty;
+  rdfs:subPropertyOf :00000000000000000173;
+  rdfs:range <core/Proof_step>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "is in proof step"@en .
+
+:00000000000000000061 a owl:ObjectProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has metadata object property"@en .
+
+:00000000000000000080 a owl:ObjectProperty;
+  rdfs:subPropertyOf <core/coreRelations>;
+  rdfs:domain <core/Claim>;
+  rdfs:range :00000000000000000005;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has antencendent of conditional claim"@en .
+
+:00000000000000000086 a owl:ObjectProperty;
+  rdfs:subPropertyOf <core/coreRelations>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has reification object property"@en .
+
+:00000000000000000087 a owl:ObjectProperty;
+  rdfs:subPropertyOf :00000000000000000086;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has subject"@en .
+
+:00000000000000000088 a owl:ObjectProperty;
+  rdfs:subPropertyOf :00000000000000000086;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has object"@en .
+
+:00000000000000000089 a owl:ObjectProperty;
+  rdfs:subPropertyOf :00000000000000000086;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has predicate"@en .
+
+:00000000000000000156 a owl:ObjectProperty;
+  rdfs:subPropertyOf <core/coreRelations>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "class has related concept"@en .
+
+:00000000000000000170 a owl:ObjectProperty;
+  rdfs:subPropertyOf :00000000000000000172;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "construction satisfies request"@en .
+
+:00000000000000000172 a owl:ObjectProperty;
+  rdfs:subPropertyOf <core/coreRelations>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has construction-related object property"@en .
+
+:00000000000000000173 a owl:ObjectProperty;
+  rdfs:subPropertyOf <core/coreRelations>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has proof-related object property"@en .
+
+:00000000000000000174 a owl:ObjectProperty;
+  rdfs:subPropertyOf <core/coreRelations>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has theory-related object property"@en .
+
+:00000000000000000175 a owl:ObjectProperty;
+  rdfs:subPropertyOf :00000000000000000174;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "is construction within theory"@en .
+
+:00000000000000000176 a owl:ObjectProperty;
+  rdfs:subPropertyOf :00000000000000000172;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "is in construction"@en .
+
+:00000000000000000186 a owl:ObjectProperty, owl:TransitiveProperty;
+  rdfs:subPropertyOf <core/coreRelations>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has antecedent"@en .
+
+<core/coreRelations> a owl:ObjectProperty;
+  rdfs:label "has core object property"@en .
+
+<core/domainRelations> a owl:ObjectProperty;
+  rdfs:label "has domain relation"@en .
+
+<core/hasAntecedent> a owl:ObjectProperty;
+  rdfs:subPropertyOf :00000000000000000186;
+  rdfs:domain <core/Proof_step>;
+  rdfs:range <core/Proof_step>;
+  rdfs:label "has immediate antecedent"@en .
+
+<core/inProof> a owl:ObjectProperty;
+  rdfs:subPropertyOf :00000000000000000173;
+  rdfs:domain <core/Proof_step>;
+  rdfs:range <core/Proof>;
+  rdfs:label "is in proof"@en .
+
+:00000000000000000024 a owl:DatatypeProperty;
+  rdfs:subPropertyOf :00000000000000000045;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has core logical datatype property"@en .
+
+:00000000000000000025 a owl:DatatypeProperty;
+  rdfs:subPropertyOf :00000000000000000024;
+  rdfs:range xsd:nonNegativeInteger;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has arity"@en .
+
+:00000000000000000026 a owl:DatatypeProperty;
+  rdfs:subPropertyOf :00000000000000000045;
+  rdfs:range xsd:boolean;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has part"@en .
+
+:00000000000000000027 a owl:DatatypeProperty;
+  rdfs:subPropertyOf :00000000000000000024;
+  rdfs:range xsd:boolean;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "is unrestricted first-order formula"@en .
+
+:00000000000000000043 a owl:DatatypeProperty;
+  rdfs:subPropertyOf :00000000000000000045;
+  rdfs:domain _:genid1;
+  rdfs:range xsd:boolean;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "is given"@en .
+
+_:genid1 a owl:Class;
+  owl:unionOf _:genid3 .
+
+_:genid3 a rdf:List;
+  rdf:first <core/Object>;
+  rdf:rest _:genid2 .
+
+_:genid2 a rdf:List;
+  rdf:first <core/Proof_step>;
+  rdf:rest rdf:nil .
+
+:00000000000000000044 a owl:DatatypeProperty;
+  rdfs:subPropertyOf :00000000000000000045;
+  rdfs:domain <core/Proof_step>;
+  rdfs:range xsd:boolean;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "is goal"@en .
+
+:00000000000000000045 a owl:DatatypeProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has core datatype property"@en .
+
+:00000000000000000055 a owl:DatatypeProperty;
+  rdfs:subPropertyOf :00000000000000000045;
+  rdfs:domain <core/Proof_step>;
+  rdfs:range xsd:boolean;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "is explicitly formulated"@en .
+
+:00000000000000000062 a owl:DatatypeProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has metadata datatype property"@en .
+
+:00000000000000000067 a owl:DatatypeProperty;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "has domain relation"@en .
+
+:00000000000000000001 a owl:Class;
+  rdfs:subClassOf :00000000000000000002;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Definition"@en .
+
+:00000000000000000002 a owl:Class;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Proposition"@en .
+
+:00000000000000000003 a owl:Class;
+  rdfs:subClassOf <core/Claim>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Conditional claim"@en .
+
+:00000000000000000004 a owl:Class;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Concept"@en .
+
+:00000000000000000005 a owl:Class;
+  rdfs:subClassOf <core/Claim>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Antecedent of conditional claim"@en .
+
+:00000000000000000006 a owl:Class;
+  rdfs:subClassOf <core/Claim>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Consequent of conditional claim"@en .
+
+:00000000000000000007 a owl:Class;
+  rdfs:subClassOf <core/Claim>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Theorem"@en .
+
+:00000000000000000008 a owl:Class;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Predicate"@en .
+
+:00000000000000000011 a owl:Class;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Logical resources"@en .
+
+:00000000000000000015 a owl:Class;
+  rdfs:subClassOf :00000000000000000002;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Conjecture"@en .
+
+:00000000000000000018 a owl:Class;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Theory"@en .
+
+:00000000000000000039 a owl:Class;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Enumeration"@en .
+
+:00000000000000000060 a owl:Class;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Metadata"@en .
+
+:00000000000000000158 a owl:Class;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Act"@en .
+
+:00000000000000000163 a owl:Class;
+  rdfs:subClassOf :00000000000000000002;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Request"@en .
+
+:00000000000000000169 a owl:Class;
+  rdfs:subClassOf <core/Procedure>;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Construction"@en .
+
+<core/Claim> a owl:Class;
+  rdfs:subClassOf :00000000000000000002 .
+
+<core/Object> a owl:Class .
+
+<core/Procedure> a owl:Class .
+
+<core/Proof> a owl:Class .
+
+<core/Proof_step> a owl:Class;
+  rdfs:subClassOf :00000000000000000002;
+  rdfs:label "Proof step" .
+
+rdf:Statement a owl:Class;
+  rdfs:subClassOf :00000000000000000002 .
+
+:00000000000000000014 a owl:NamedIndividual, :00000000000000000011;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Logical resource: And"@en .
+
+:00000000000000000016 a owl:NamedIndividual, :00000000000000000011;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Logical resource: Or"@en .
+
+:00000000000000000017 a owl:NamedIndividual, :00000000000000000011;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Logical resource: Implies"@en .
+
+:00000000000000000019 a owl:NamedIndividual, :00000000000000000011;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Logical resource: Not"@en .
+
+:00000000000000000022 a owl:NamedIndividual, :00000000000000000011;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Logical resource: For every"@en .
+
+:00000000000000000023 a owl:NamedIndividual, :00000000000000000011;
+  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387>;
+  rdfs:label "Logical resource: For some"@en .
