@@ -1,0 +1,29 @@
+# find proof steps and related reification values
+
+SELECT DISTINCT 
+    ?proof_step_iri
+    ?proof_step_label
+    ?subject_iri
+    ?predicate_iri
+    ?object_iri
+    ?subject_label
+    ?predicate_label
+    ?object_label
+WHERE {
+    ?proof_step_iri
+        a <http://www.foom.com/core/Proof_step> ;
+        rdfs:label ?proof_step_label .
+    OPTIONAL {
+        ?proof_step_iri
+            <http://www.foom.com/core#00000000000000000087> ?subject_iri ;
+            <http://www.foom.com/core#00000000000000000089> ?predicate_iri ;
+            <http://www.foom.com/core#00000000000000000088> ?object_iri .
+        ?subject_iri 
+            rdfs:label ?subject_label .
+        ?predicate_iri
+            rdfs:label ?predicate_label .
+        ?object_iri
+            rdfs:label ?object_label .
+        }
+}
+ORDER BY ?proof_step_label
