@@ -1,0 +1,20 @@
+flowchart LR
+    step3[Step 3]--has subject-->segmentAC[Segment AC] ;
+    step3--has predicate-->is_produced_to[is produced to] ;
+    step3--has object-->segmentAE[Segment AE] ;
+    step3--is in proof-->proofEuclid[Euclid's proof] ;
+    step3--has immediate antencedent-->step2[Step 2] ;
+    step2--has imemdiate antencedent-->step1[Step 1] ;
+    step1--has immediate antencedent-->step0[Step 0] ;
+    proofEuclid--proves-->theorem[The angles at the base of an isosceles triangle are equal one to the other] ;
+    proofEuclid--has goal-->goal[Goal] ;
+    goal--has subject-->rotationABC[Amount of rotation of rectilinear angle ABC] ;
+    goal--has predicate-->equivalent_amount[is equivalent amount as] ;
+    goal--has object-->rotationACB[Amount of rotation of rectilinear angle ACB] ;
+    segmentAC--is a-->segment[Segment] ;
+    segmentAC--is side of-->triangleABC[Triangle ABC] ;
+    segmentAC--is side of-->angleABC[Angle ABC] ;
+    segment--directly refers to concet-->conceptSegment[Concept of segment] ;
+    conceptSegment--evokes-->conceptStraightLine[Concept of straight line] ;
+    step1--states-->postulate2[Be postulated to produce a finite straight line upon a striaght line continuously] ;
+    step1--directly refers to concept-->conceptStraightLine ;
