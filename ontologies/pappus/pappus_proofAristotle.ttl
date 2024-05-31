@@ -359,12 +359,11 @@
                                                                   <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofAristotle#00000000000000000004> ;
                                                                   <http://www.foom.com/core#00000000000000000088> <https://www.foom.com/pappus_proofAristotle#00000000000000000020> ;
                                                                   <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
-                                                                  <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus_proofAristotle#00000000000000000014> ,
-                                                                                                           <https://www.foom.com/pappus_proofAristotle#00000000000000000129> ;
+                                                                  <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus_proofAristotle#00000000000000000129> ;
                                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofAristotle#00000000000000000000> ;
                                                                   <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Step 3 (proof Aristotle)"@en ;
+                                                                  rdfs:label "Step 4 (proof Aristotle)"@en ;
                                                                   <https://www.foom.com/metadata#00000000000000000000> "The sum of rectilinear angle OAB and mixed angle AB has the same amount of rotation as the sum of rectilinear angle OBA and mixed angle BA." ;
                                                                   <https://www.foom.com/metadata#00000000000000000001> """# (i) rectilinear angle OAB is a rectilinear angle
 # (ii) rectilinear angle OBA is a rectilinear angle
@@ -424,8 +423,7 @@
                                                                   <http://www.foom.com/core#00000000000000000087> <https://www.foom.com/pappus_proofAristotle#00000000000000000011> ;
                                                                   <http://www.foom.com/core#00000000000000000088> <https://www.foom.com/pappus_proofAristotle#00000000000000000012> ;
                                                                   <http://www.foom.com/core#00000000000000000089> <http://www.foom.com/mathematical_concepts#00000000000000000076> ;
-                                                                  <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus_proofAristotle#00000000000000000129> ,
-                                                                                                           <https://www.foom.com/pappus_proofAristotle#00000000000000000130> ;
+                                                                  <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus_proofAristotle#00000000000000000017> ;
                                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofAristotle#00000000000000000000> ;
                                                                   <http://www.foom.com/core#00000000000000000055> "true"^^xsd:boolean ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
@@ -513,6 +511,7 @@
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000129
 <https://www.foom.com/pappus_proofAristotle#00000000000000000129> rdf:type owl:NamedIndividual ,
                                                                            <http://www.foom.com/core/Proof_step> ;
+                                                                  <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus_proofAristotle#00000000000000000130> ;
                                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofAristotle#00000000000000000000> ;
                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000147> <http://www.foom.com/mathematical_concepts#00000000000000000052> ,
                                                                                                                                    <http://www.foom.com/mathematical_concepts#00000000000000000053> ,
@@ -577,18 +576,19 @@
     IMPLIES
     \"the amount of rotation of v = the amount of rotation of w'\"
 }""" ;
-                                                                  rdfs:label "Step 2 (proof Aristotle)"@en ;
+                                                                  rdfs:label "Step 3 (proof Aristotle)"@en ;
                                                                   <https://www.foom.com/metadata#00000000000000000000> "Given a circle and a cord in it, the resulting mixed angles on the same side are equal to each other." .
 
 
 ###  https://www.foom.com/pappus_proofAristotle#00000000000000000130
 <https://www.foom.com/pappus_proofAristotle#00000000000000000130> rdf:type owl:NamedIndividual ,
                                                                            <http://www.foom.com/core/Proof_step> ;
+                                                                  <http://www.foom.com/core/hasAntecedent> <https://www.foom.com/pappus_proofAristotle#00000000000000000014> ;
                                                                   <http://www.foom.com/core/inProof> <https://www.foom.com/pappus_proofAristotle#00000000000000000000> ;
                                                                   <http://www.foom.com/core#00000000000000000043> "true"^^xsd:boolean ;
                                                                   <http://www.foom.com/core#00000000000000000055> "false"^^xsd:boolean ;
                                                                   <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                  rdfs:label "Step 4 (proof Aristotle)"@en ;
+                                                                  rdfs:label "Step 2 (proof Aristotle)"@en ;
                                                                   <https://www.foom.com/metadata#00000000000000000000> "Join point A to B."@en ;
                                                                   <https://www.foom.com/metadata#00000000000000000001> "# (i) segment AB" .
 
