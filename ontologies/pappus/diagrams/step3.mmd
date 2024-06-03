@@ -14,7 +14,16 @@ flowchart LR
     segmentAC--is a-->segment[Segment] ;
     segmentAC--is side of-->triangleABC[Triangle ABC] ;
     segmentAC--is side of-->angleABC[Angle ABC] ;
-    segment--directly refers to concet-->conceptSegment[Concept of segment] ;
-    conceptSegment--evokes-->conceptStraightLine[Concept of straight line] ;
+    segment--directly refers to concet-->conceptSegment[Concept of a segment] ;
+    conceptSegment--evokes-->conceptStraightLine[Concept of a straight line] ;
     step1--states-->postulate2[Be postulated to produce a finite straight line upon a striaght line continuously] ;
     step1--directly refers to concept-->conceptStraightLine ;
+    conceptStraightLine--specializes-->coonceptLine[Concept of a line] ;
+    coonceptLine--evokes-->conceptPoint[Concept of a point] ;
+    definitionPoint[Definition of a point]--defines-->conceptPoint ;
+    definitionPoint--is in source-->elements[Euclid, Elements book I] ;;
+    definitionPoint--logically supports as its conceptual part-->defnitionLimitOfLine[Definition of the limit of a line] ;
+    definitionPoint--logically supports as its conceptual part-->postulate1[Postulate 1] ;
+    postulate1--is in source-->elements ;
+    postulate2--is in source-->elements ;
+    defnitionLimitOfLine--logically supports as its conceptual part-->postulate2 ;
