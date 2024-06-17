@@ -1,4 +1,57 @@
 # %%time
+
+def query_find_sub_properties(property: str) -> str:
+    sparql_query: str = f"""
+        SELECT DISTINCT
+            ?property_iri
+        WHERE {{
+            ?property_iri
+                rdfs:subPropertyOf+ {property} .
+        }}
+    """
+    return sparql_query
+
+def query_find_nodes_path(start_iri: str,
+                          property_path: str) -> str:
+    sparql_query:str = f"""
+        SELECT 
+            (GROUP_CONCAT(?step_iri; SEPARATOR=" -> ") AS ?path_iri)
+            (GROUP_CONCAT(?step; SEPARATOR=" -> ") AS ?path)
+        WHERE {{
+        {{
+            SELECT 
+                ?step_iri
+                ?step
+            WHERE {{
+                {start_iri}
+                    (
+                        {property_path}
+                    )+
+                        ?next .
+                        ?next rdfs:label ?label .
+                
+                BIND(CONCAT(" ", STR(?next)) AS ?step_iri)
+                BIND(CONCAT(" ", STR(?label)) AS ?step)
+                }}
+            }}
+        }}
+    """
+    return sparql_query
+
+
+def query_find_proof_steps(proof_iri: str):
+    sparql_query: str = f"""
+        SELECT DISTINCT
+            ?step_iri
+            ?step_label 
+        WHERE {{
+            ?step_iri
+                rdfs:label ?step_label ;
+                <http://www.foom.com/core/inProof> {proof_iri} .
+        }}
+    """
+    return sparql_query
+
 ################################
 ## FIND INFORMATION CONCERCING 
 ## THE CONCEPTUAL SPACE OF 
