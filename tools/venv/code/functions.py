@@ -22,6 +22,7 @@ def create_property_path_for_nodes_finding(sub_properties: set) -> str:
 def find_related_concepts(start_iri: str,
                           property_path: str,
                           selected_datastore: str):
+    print(property_path)
     sparql_query = sparql_queries.query_find_nodes_path(
         start_iri,
         property_path)
@@ -33,12 +34,14 @@ def find_related_concepts(start_iri: str,
                                                  datastore = selected_datastore):
         related_concepts["iris"].extend([iri.strip() for iri in row.path_iri.split("->")])
         related_concepts["concepts"].extend([label.strip() for label in row.path.split("->")])
+    # paths = set()
     # for row in sparql_classes.SparqlQueryResults(sparql_query,
     #                                              datastore = selected_datastore):
     #     iris = tuple(iri.strip() for iri in row.path_iri.split("->"))
     #     labels = tuple(label.strip() for label in row.path.split("->"))
     #     paths.add((iris, labels))
     return related_concepts
+    # return paths
 
 def organize_property_path_creation(top_properties: set,
                                     selected_datastore: str):

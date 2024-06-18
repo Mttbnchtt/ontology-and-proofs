@@ -1,0 +1,5 @@
+@prefix : <https://www.example.com/> .
+
+:A :r1 :B .
+:B :r2 :C .
+:C :r3 :Z .
