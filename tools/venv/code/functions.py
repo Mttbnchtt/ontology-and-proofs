@@ -51,9 +51,7 @@ def find_related_concepts(start_iri: str, property_path: str, selected_datastore
     Returns:
         dict: A dictionary containing lists of IRIs and their corresponding concept labels.
     """
-    # print(property_path)
     sparql_query = sparql_queries.query_find_nodes_path(start_iri, property_path)
-    # print(sparql_query)
     related_concepts: dict = {
         "concept_iris": [],
         "concept_labels": []
@@ -153,7 +151,7 @@ def extract_ordinal_number_of_proof_step(proof_step_label: str) -> int:
     
 
 ###################################
-## FIND CONCEPTUAL SPACE OF PROOF
+## FIND CONCEPTUAL SPACE OF PROOFS
 ###################################
 
 def find_conceptual_space_of_proof(proof_iri: str,
@@ -169,8 +167,8 @@ def find_conceptual_space_of_proof(proof_iri: str,
                                          selected_datastore)
         for proof_step in proof_steps
     }
-    conceptual_space_copy = copy.deepcopy(conceptual_space)
-    conceptual_space["general"] = sum_conceptual_space(conceptual_space_copy)
+    # conceptual_space_copy = copy.deepcopy(conceptual_space)
+    # conceptual_space["general"] = sum_conceptual_space(conceptual_space_copy)
     return conceptual_space
 
 def sum_conceptual_space(conceptual_space: dict) -> dict:
@@ -182,3 +180,42 @@ def sum_conceptual_space(conceptual_space: dict) -> dict:
         sum_concepts["concept_iris"].update(values["concept_iris"])
         sum_concepts["concept_labels"].update(values["concept_labels"])
     return sum_concepts
+
+def find_conceptual_space_of_proofs(proof_iri: str,
+                                    top_properties: set,
+                                    selected_datastore: str) -> dict:
+    # find proofs of the same proposition
+    sparql_query = sparql_queries.query_find_related_proofs(proof_iri)
+    related_proofs: set = {
+        str(row.related_proof_iri)
+        for row in sparql_classes.SparqlQueryResults(sparql_query, datastore=selected_datastore)
+    }
+    # retrieve conceptual space of each proof
+    conceptual_space: dict = {}
+    for related_proof_iri in related_proofs:
+        conceptual_space = conceptual_space | find_conceptual_space_of_proof(
+            related_proof_iri, 
+            top_properties, 
+            selected_datastore
+            )
+    conceptual_space_copy = copy.deepcopy(conceptual_space)
+    conceptual_space["general"] = sum_conceptual_space(conceptual_space_copy)
+    return conceptual_space
+
+
+#######################################
+## FIND CONCEPTUAL SPACE OF PROOF STEP
+#######################################
+
+def find_conceptual_space_before_proof_step(proof_step: str) -> dict:
+    # find proof of proof step
+    
+    # find previous proof steps in proof
+
+    # find conceptual space of previous proof steps in proof
+
+    # find related proofs
+
+    # find conceptual space of related proofs
+
+    

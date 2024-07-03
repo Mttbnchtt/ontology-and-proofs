@@ -1,6 +1,8 @@
 import json
+import urllib.parse
 import requests
 import typing # to add advanced type hinting
+import urllib
 
 class Row:
     """ Represents a single row of SPARQL query results. """
@@ -39,15 +41,15 @@ class SparqlQueryResults():
         self.response_dictionary = self.response_to_dictionary()
         self.rows = self.create_rows()
         self.index = 0  # For the iterator in the __next__ method
-
-    # submit sparql query and retrieve results
+        # self.debug_query()
+    
     def query_ontology(self) -> str:
         """ Submit SPARQL query and retrieve results. """
         # define the headers of the request
         headers = {
             "Accept": self.format_response
         }
-        
+
         # query the datastore at the rdfox server
         response = requests.get(f"{self.rdfox_server}{self.datastore}",
                                 params={"query": self.sparql_query},

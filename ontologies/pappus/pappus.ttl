@@ -37,7 +37,7 @@
 
 
 ###  http://www.foom.com/pappus_proofEuclid#00000000000000000128
-<http://www.foom.com/pappus_proofEuclid#00000000000000000128> <http://www.foom.com/mathematical_concepts#00000000000000000077> <http://www.foom.com/pappus_proofEuclid#00000000000000000128> .
+<http://www.foom.com/pappus_proofEuclid#00000000000000000128> <http://www.foom.com/mathematical_concepts#00000000000000000077> <https://www.foom.com/pappus_proofAristotle#00000000000000000046> .
 
 
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000001
