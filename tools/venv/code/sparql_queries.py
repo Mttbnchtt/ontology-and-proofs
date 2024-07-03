@@ -69,6 +69,31 @@ def query_find_related_proofs(proof_iri: str) -> str:
     """
     return sparql_query
 
+def query_find_proof_of_proof_step(proof_step_iri: str) -> str:
+    proof_step_iri = iri_enclosing(proof_step_iri)
+    sparql_query: str = f"""
+        SELECT DISTINCT
+            ?proof_iri
+        WHERE {{
+            {proof_step_iri}
+                <http://www.foom.com/core/inProof> ?proof_iri .
+        }}
+    """
+    return sparql_query
+
+def query_find_antencedent_proof_steps(proof_step_iri: str) -> str:
+    proof_step_iri = iri_enclosing(proof_step_iri)
+    sparql_query: str = f"""
+        SELECT DISTINCT
+            ?antencedent_proof_step_iri
+        WHERE {{
+            {proof_step_iri}
+                <http://www.foom.com/core#00000000000000000186> ?antencedent_proof_step_iri .
+        }}
+    """
+    return sparql_query
+
+
 def iri_enclosing(iri: str) -> str:
     if not (iri.startswith("<") and iri.endswith(">")):
         iri = f"<{iri}>"

@@ -2,6 +2,7 @@ import copy
 import re
 import sparql_classes
 import sparql_queries
+import sys
 
 ##########################
 ## FIND RELATED CONCEPTS
@@ -207,11 +208,56 @@ def find_conceptual_space_of_proofs(proof_iri: str,
 ## FIND CONCEPTUAL SPACE OF PROOF STEP
 #######################################
 
-def find_conceptual_space_before_proof_step(proof_step: str) -> dict:
-    # find proof of proof step
-    
-    # find previous proof steps in proof
+def find_proof_of_proof_step(proof_step: str,
+                             selected_datastore: str):
+    sparql_query = sparql_queries.query_find_proof_of_proof_step(
+        proof_step, 
+        datastore=selected_datastore)
+    sparql_results = [
+            row.proof_iri 
+            for row in sparql_classes.SparqlQueryResults(
+                sparql_query, 
+                datastore=selected_datastore
+            )
+        ]
+    if sparql_results:
+        return sparql_results[0]
+    else:
+        return False
 
+def find_previous_proof_steps(proof_step: str,
+                              proof_iri: str,
+                              selected_datastore: str) -> set:
+    sparql_query = sparql_queries.query_find_antencedent_proof_steps(proof_step_iri)
+    antencedent_proof_steps = {
+        row.antencedent_proof_step
+        for row in sparql_classes.SparqlQueryResults(
+            sparql_query,
+            datastore=selected_datastore
+        )
+    }
+    if antencedent_proof_steps:
+        return antencedent_proof_steps
+    else:
+        return False
+
+def find_conceptual_space_before_proof_step(proof_step: str,
+                                            selected_datastore: str) -> dict:
+    # find proof of proof step
+    proof_iri = find_proof_of_proof_step(proof_step, selected_datastore)
+
+    # find previous proof steps in proof
+    if proof_iri:
+        antencedent_proof_steps = find_previous_proof_steps(
+            proof_step,
+            proof_iri,
+            selected_datastore)
+    else:
+        print("Proof iri not found.")
+        sys.exit()
+
+    # find conceptual space of previous steps in proof
+    
     # find conceptual space of previous proof steps in proof
 
     # find related proofs
