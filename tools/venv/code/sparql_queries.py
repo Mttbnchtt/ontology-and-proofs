@@ -98,3 +98,32 @@ def iri_enclosing(iri: str) -> str:
     if not (iri.startswith("<") and iri.endswith(">")):
         iri = f"<{iri}>"
     return iri
+
+def query_find_related_concepts(concept_iri: str,
+                                top_property_iri: str) -> str:
+    concept_iri = iri_enclosing(concept_iri)
+    top_property_iri = iri_enclosing(top_property_iri)
+    sparql_query: str = f"""
+        SELECT DISTINCT
+            ?related_concept_iri
+            ?related_concept_label
+        WHERE {{}
+            {concept_iri}
+                {top_property_iri}+ ?related_concept_iri .
+        ?related_concept_iri
+            rdfs:label ?related_concept_label .
+        }}
+    """
+    return sparql_query
+
+def query_find_values_of_reified_triple(iri: str) -> str :
+    iri = iri_enclosing(iri)
+    sparql_query: str = f"""
+        SELECT DISTINCT
+            ?reified_value_iri
+        WHERE {{}
+            {iri}
+                <http://www.foom.com/core#00000000000000000086> ?reified_value_iri .
+        }}
+    """
+    return sparql_query
