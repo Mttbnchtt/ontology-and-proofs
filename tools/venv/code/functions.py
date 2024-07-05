@@ -210,9 +210,7 @@ def find_conceptual_space_of_proofs(proof_iri: str,
 
 def find_proof_of_proof_step(proof_step: str,
                              selected_datastore: str):
-    sparql_query = sparql_queries.query_find_proof_of_proof_step(
-        proof_step, 
-        datastore=selected_datastore)
+    sparql_query = sparql_queries.query_find_proof_of_proof_step(proof_step)
     sparql_results = [
             row.proof_iri 
             for row in sparql_classes.SparqlQueryResults(
@@ -228,9 +226,9 @@ def find_proof_of_proof_step(proof_step: str,
 def find_previous_proof_steps(proof_step: str,
                               proof_iri: str,
                               selected_datastore: str) -> set:
-    sparql_query = sparql_queries.query_find_antencedent_proof_steps(proof_step_iri)
+    sparql_query = sparql_queries.query_find_antencedent_proof_steps(proof_step)
     antencedent_proof_steps = {
-        row.antencedent_proof_step
+        row.antencedent_proof_step_iri
         for row in sparql_classes.SparqlQueryResults(
             sparql_query,
             datastore=selected_datastore
@@ -245,13 +243,14 @@ def find_conceptual_space_before_proof_step(proof_step: str,
                                             selected_datastore: str) -> dict:
     # find proof of proof step
     proof_iri = find_proof_of_proof_step(proof_step, selected_datastore)
-
+    print(proof_iri)
     # find previous proof steps in proof
     if proof_iri:
         antencedent_proof_steps = find_previous_proof_steps(
             proof_step,
             proof_iri,
             selected_datastore)
+        print(antencedent_proof_steps)
     else:
         print("Proof iri not found.")
         sys.exit()
