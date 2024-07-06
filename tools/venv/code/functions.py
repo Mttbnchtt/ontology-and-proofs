@@ -1,8 +1,6 @@
-import copy
 import re
 import sparql_classes
 import sparql_queries
-import sys
 
 ##########################
 ## FIND RELATED CONCEPTS
@@ -247,8 +245,53 @@ def find_conceptual_space_before_proof_step(proof_step: str,
         )
     )
 
-    # sum of conceptual space
+    return conceptual_space
 
+#################################
+## FIND CONCEPTUAL OF PROOF STEP
+#################################
 
+def find_conceptual_space_of_proof_step(proof_step: str,
+                                        selected_datastore: str,
+                                        top_property: str = "<http://www.foom.com/mathematical_concepts#00000000000000000000>") -> dict:
+    # initialize dictionary of related concepts
+    conceptual_space = {
+        "concept_iris": [],
+        "concept_labels": []
+    }
+    # find reified values of the proof step
+    reified_values = find_values_of_reified_triple(proof_step, selected_datastore)
+    # find conceptual space of each reified value
+    for value in reified_values:
+        conceptual_space.update(
+            find_conceptual_space_of_concept(
+                value, 
+                selected_datastore,
+                top_property
+            )
+        )
     return conceptual_space
     
+#############################################
+## FIND DIFFERENCE BETWEEN CONCEPTUAL SPACES
+#############################################
+
+def diff_conceptual_spaces(conceptual_space_1: dict,
+                           conceptual_space_2: dict) -> dict:
+    diff_conceptual_space = {
+        "concept_iris": [iri for iri in conceptual_space_2["concept_iris"] if not iri in conceptual_space_1["concept_iris"]],
+        "concept_labels": [[label for label in conceptual_space_2["concept_labels"] if not label in conceptual_space_1["concept_labels"]]]
+    }
+    return diff_conceptual_space
+
+
+#############################################
+## HEURISTIC SEARCHES
+#############################################
+
+
+
+#########################################
+## CONCEPTUAL SPACES OF PROOF TO ANALYZE
+#########################################
+
