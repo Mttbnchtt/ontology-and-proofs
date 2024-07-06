@@ -45,6 +45,11 @@
                                                                                                                                 <https://www.foom.com/pappus_proofAristotle#00000000000000000046> .
 
 
+###  https://www.foom.com/pappus_proofPappus#00000000000000000131
+<https://www.foom.com/pappus_proofPappus#00000000000000000131> <http://www.foom.com/mathematical_concepts#00000000000000000250> <http://www.foom.com/pappus_proofEuclid#00000000000000000047> ,
+                                                                                                                                <https://www.foom.com/pappus_proofAristotle#00000000000000000000> .
+
+
 ###  https://www.foom.com/pappus_proofPappus#00000000000000000134
 <https://www.foom.com/pappus_proofPappus#00000000000000000134> <http://www.foom.com/mathematical_concepts#00000000000000000077> <http://www.foom.com/pappus_proofEuclid#00000000000000000056> .
 

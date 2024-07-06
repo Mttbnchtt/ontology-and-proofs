@@ -8,38 +8,6 @@ import sys
 ## FIND RELATED CONCEPTS
 ##########################
 
-def find_sub_properties(sparq_query_text: str, selected_datastore: str) -> set:
-    """
-    Finds sub-properties of a given SPARQL query.
-
-    Args:
-        sparq_query_text (str): The SPARQL query text used to find sub-properties.
-        selected_datastore (str): The datastore where the query is executed.
-
-    Returns:
-        set: A set of sub-property IRIs.
-    """
-    sub_properties: set = set(
-        f"<{row.property_iri}>"
-        for row in sparql_classes.SparqlQueryResults(sparq_query_text, datastore=selected_datastore)
-    )
-    return sub_properties
-
-
-def create_property_path_for_nodes_finding(sub_properties: set) -> str:
-    """
-    Creates a property path string for node finding.
-
-    Args:
-        sub_properties (set): A set of sub-property IRIs.
-
-    Returns:
-        str: A property path string constructed by joining sub-properties with '|'.
-    """
-    property_path: str = " | ".join(sub_properties)
-    return property_path
-
-
 def find_related_concepts(start_iri: str, property_path: str, selected_datastore: str) -> dict:
     """
     Finds related concepts based on a starting IRI and property path.
@@ -61,47 +29,6 @@ def find_related_concepts(start_iri: str, property_path: str, selected_datastore
         related_concepts["concept_iris"].extend([iri.strip() for iri in row.path_iri.split("->")])
         related_concepts["concept_labels"].extend([label.strip() for label in row.path.split("->")])
     return related_concepts
-
-
-def organize_property_path_creation(top_properties: set, selected_datastore: str) -> set:
-    """
-    Organizes the creation of a property path by finding all sub-properties for the top properties.
-
-    Args:
-        top_properties (set): A set of top property IRIs.
-        selected_datastore (str): The datastore where queries are executed.
-
-    Returns:
-        set: A set of all sub-property IRIs.
-    """
-    sub_properties: set = set()
-    for top_property in top_properties:
-        sub_properties = sub_properties.union(
-            find_sub_properties(
-                sparql_queries.query_find_sub_properties(top_property),
-                selected_datastore
-            )
-        )
-    return sub_properties
-
-
-def organize_nodes_paths(start_iri: str, top_properties: set, selected_datastore: str) -> dict:
-    """
-    Organizes the process of finding related concepts by creating property paths.
-
-    Args:
-        start_iri (str): The starting IRI for finding related concepts.
-        top_properties (set): A set of top property IRIs.
-        selected_datastore (str): The datastore where queries are executed.
-
-    Returns:
-        dict: A dictionary containing related concept IRIs and their labels.
-    """
-    sub_properties: set = organize_property_path_creation(top_properties, selected_datastore)
-    property_path: str = create_property_path_for_nodes_finding(sub_properties)
-    related_concepts = find_related_concepts(start_iri, property_path, selected_datastore)
-    return related_concepts
-
 
 ##########################
 ## FIND PROOF STEPS
@@ -151,62 +78,20 @@ def extract_ordinal_number_of_proof_step(proof_step_label: str) -> int:
         return ordinal_number
     
 
-###################################
-## FIND CONCEPTUAL SPACE OF PROOFS
-###################################
+#########
+## UTILS
+#########
 
-def find_conceptual_space_of_proof(proof_iri: str,
-                                   top_properties: set, 
-                                   selected_datastore: str) -> dict:
-    # find proof steps in given proof
-    proof_steps: list = find_proof_steps(proof_iri, 
-                                         selected_datastore)
-    # loop through proof steps to find related concepts
-    conceptual_space: dict = {
-        proof_step[1]: organize_nodes_paths(f"<{proof_step[1]}>",
-                                         top_properties,
-                                         selected_datastore)
-        for proof_step in proof_steps
-    }
-    # conceptual_space_copy = copy.deepcopy(conceptual_space)
-    # conceptual_space["general"] = sum_conceptual_space(conceptual_space_copy)
-    return conceptual_space
-
-def sum_conceptual_space(conceptual_space: dict) -> dict:
-    sum_concepts:dict = {
-        "concept_iris": set(),
-        "concept_labels": set()
-    }
-    for proof_step, values in conceptual_space.items():
-        sum_concepts["concept_iris"].update(values["concept_iris"])
-        sum_concepts["concept_labels"].update(values["concept_labels"])
-    return sum_concepts
-
-def find_conceptual_space_of_proofs(proof_iri: str,
-                                    top_properties: set,
-                                    selected_datastore: str) -> dict:
-    # find proofs of the same proposition
-    sparql_query = sparql_queries.query_find_related_proofs(proof_iri)
-    related_proofs: set = {
-        str(row.related_proof_iri)
-        for row in sparql_classes.SparqlQueryResults(sparql_query, datastore=selected_datastore)
-    }
-    # retrieve conceptual space of each proof
-    conceptual_space: dict = {}
-    for related_proof_iri in related_proofs:
-        conceptual_space = conceptual_space | find_conceptual_space_of_proof(
-            related_proof_iri, 
-            top_properties, 
-            selected_datastore
-            )
-    conceptual_space_copy = copy.deepcopy(conceptual_space)
-    conceptual_space["general"] = sum_conceptual_space(conceptual_space_copy)
+def update_conceptual_space(conceptual_space: dict,
+                            new_data: dict) -> dict:
+    for key in conceptual_space:
+        conceptual_space[key].extend(new_data[key])
     return conceptual_space
 
 
-#######################################
-## FIND CONCEPTUAL SPACE OF PROOF STEP
-#######################################
+####################################################
+## FIND CONCEPTUAL SPACE OF ANTENCEDENT PROOF STEPS
+####################################################
 
 def find_proof_of_proof_step(proof_step: str,
                              selected_datastore: str):
@@ -218,10 +103,7 @@ def find_proof_of_proof_step(proof_step: str,
                 datastore=selected_datastore
             )
         ]
-    if sparql_results:
-        return sparql_results[0]
-    else:
-        return False
+    return sparql_results[0] if sparql_results else None
 
 def find_previous_proof_steps(proof_step: str,
                               proof_iri: str,
@@ -234,27 +116,24 @@ def find_previous_proof_steps(proof_step: str,
             datastore=selected_datastore
         )
     }
-    if antencedent_proof_steps:
-        return antencedent_proof_steps
-    else:
-        return False
+    return antencedent_proof_steps
     
 def find_values_of_reified_triple(iri: str,
                                   selected_datastore: str) -> str:
     sparql_query = sparql_queries.query_find_values_of_reified_triple(iri)
-    reified_valies = {
+    reified_values = {
             row.reified_value_iri
             for row in sparql_classes.SparqlQueryResults(
                 sparql_query,
                 datastore=selected_datastore
             )
         }
-    return reified_valies
+    return reified_values
 
 def find_conceptual_space_of_concept(concept_iri: str,
                                      selected_datastore: str,
                                      top_property: str) -> str :
-    sparql_query = sparql_classes.query_find_related_concepts(
+    sparql_query = sparql_queries.query_find_related_concepts(
         concept_iri, 
         top_property
     )
@@ -263,16 +142,9 @@ def find_conceptual_space_of_concept(concept_iri: str,
         "concept_labels": []
     }
     for row in sparql_classes.SparqlQueryResults(sparql_query, datastore=selected_datastore):
-        related_concepts["concepts_iris"].append(row.related_concept_iri)
+        related_concepts["concept_iris"].append(row.related_concept_iri)
         related_concepts["concept_labels"].append(row.related_concept_label)
     return related_concepts
-
-    
-def update_conceptual_space(conceptual_space: dict,
-                            new_data: dict) -> dict:
-    for key in conceptual_space:
-        conceptual_space[key].extend(new_data[key])
-    return conceptual_space
 
 def find_conceptual_space_of_antecedent_proof_steps(proof_steps: set,
                                                     selected_datastore: str,
@@ -284,13 +156,64 @@ def find_conceptual_space_of_antecedent_proof_steps(proof_steps: set,
     }
     # loop through proof steps
     for proof_step_iri in proof_steps:
-        # find values of reified statement
-        reified_values = find_values_of_reified_triple(iri, selected_datastore)
-        # loop through the values to find the conceptual space of that concept
-        for value_iri in reified_values:
-            conceptual_space_of_value = find_conceptual_space_of_concept(value_iri, selected_datastore, top_property)
-            conceptual_space = update_conceptual_space(conceptual_space, conceptual_space_of_value)
+        conceptual_space = update_conceptual_space_with_concepts_related_to_proof_step(
+            proof_step_iri,
+            selected_datastore,
+            top_property,
+            conceptual_space
+        )
     return conceptual_space
+
+def update_conceptual_space_with_concepts_related_to_proof_step(proof_step_iri: str, 
+                                                                selected_datastore: str,
+                                                                top_property: str,
+                                                                conceptual_space: dict) -> dict:
+    # find values of reified statement
+    reified_values = find_values_of_reified_triple(proof_step_iri, selected_datastore)
+    # loop through the values to find the conceptual space of that concept
+    for value_iri in reified_values:
+        conceptual_space_of_value = find_conceptual_space_of_concept(value_iri, selected_datastore, top_property)
+        conceptual_space = update_conceptual_space(conceptual_space, conceptual_space_of_value)
+    return conceptual_space
+
+###################################
+## FIND CONCEPTUAL SPACE OF PROOFS
+###################################
+
+def find_related_proofs(proof_iri: str,
+                        selected_datastore: str) -> set:
+    sparql_query = sparql_queries.query_find_related_proofs(proof_iri)
+    related_proofs = {
+        row.related_proof_iri
+        for row in sparql_classes.SparqlQueryResults(
+            sparql_query, 
+            datastore=selected_datastore
+        )
+    }
+    return related_proofs
+
+def find_conceptual_space_of_related_proofs(related_proofs: set,
+                                            top_property: str,
+                                            selected_datastore: str) -> dict:
+    conceptual_space = {
+        "concept_iris": [],
+        "concept_labels": []
+    }
+    for related_proof_iri in related_proofs:
+        proof_steps = find_proof_steps(related_proof_iri, selected_datastore)
+        for proof_step_iri in proof_steps:
+            conceptual_space = update_conceptual_space_with_concepts_related_to_proof_step(
+                proof_step_iri[1],
+                selected_datastore,
+                top_property,
+                conceptual_space
+            )
+    return conceptual_space
+
+
+#####################################
+## FIND CONCEPTUAL BEFORE PROOF STEP
+#####################################
 
 def find_conceptual_space_before_proof_step(proof_step: str,
                                             selected_datastore: str,
@@ -298,15 +221,13 @@ def find_conceptual_space_before_proof_step(proof_step: str,
     # find proof of proof step
     proof_iri = find_proof_of_proof_step(proof_step, selected_datastore)
     # find previous proof steps in proof
-    if proof_iri:
-        antencedent_proof_steps = find_previous_proof_steps(
-            proof_step,
-            proof_iri,
-            selected_datastore)
-    else:
-        print("Proof iri not found.")
-        sys.exit()
-
+    if not proof_iri:
+        raise ValueError("Proof iri not found.")
+    antencedent_proof_steps = find_previous_proof_steps(
+        proof_step,
+        proof_iri,
+        selected_datastore)
+    
     # find conceptual space of previous steps in proof
     conceptual_space = find_conceptual_space_of_antecedent_proof_steps(
         antencedent_proof_steps,
@@ -315,11 +236,19 @@ def find_conceptual_space_before_proof_step(proof_step: str,
     )
 
     # find related proofs
+    related_proofs = find_related_proofs(proof_iri, selected_datastore)
 
     # find conceptual space of related proofs
-    # (remove sum of conceptual space and re-add it later)
+    conceptual_space.update(
+        find_conceptual_space_of_related_proofs(
+            related_proofs,
+            top_property,
+            selected_datastore
+        )
+    )
 
     # sum of conceptual space
+
 
     return conceptual_space
     

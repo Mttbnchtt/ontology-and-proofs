@@ -54,20 +54,20 @@ def query_find_proof_steps(proof_iri: str) -> str:
     """
     return sparql_query
 
-def query_find_related_proofs(proof_iri: str) -> str:
-    proof_iri = iri_enclosing(proof_iri)
-    sparql_query: str = f"""
-        SELECT DISTINCT
-            ?related_proof_iri
-        WHERE {{
-            {proof_iri}
-                <http://www.foom.com/mathematical_concepts#00000000000000000249> ?claim_iri .
-             ?related_proof_iri   
-                <http://www.foom.com/mathematical_concepts#00000000000000000249> ?claim_iri .
-            FILTER ( {proof_iri} != ?related_proof_iri )
-        }}
-    """
-    return sparql_query
+# def query_find_related_proofs(proof_iri: str) -> str:
+#     proof_iri = iri_enclosing(proof_iri)
+#     sparql_query: str = f"""
+#         SELECT DISTINCT
+#             ?related_proof_iri
+#         WHERE {{
+#             {proof_iri}
+#                 <http://www.foom.com/mathematical_concepts#00000000000000000249> ?claim_iri .
+#              ?related_proof_iri   
+#                 <http://www.foom.com/mathematical_concepts#00000000000000000249> ?claim_iri .
+#             FILTER ( {proof_iri} != ?related_proof_iri )
+#         }}
+#     """
+#     return sparql_query
 
 def query_find_proof_of_proof_step(proof_step_iri: str) -> str:
     proof_step_iri = iri_enclosing(proof_step_iri)
@@ -107,7 +107,7 @@ def query_find_related_concepts(concept_iri: str,
         SELECT DISTINCT
             ?related_concept_iri
             ?related_concept_label
-        WHERE {{}
+        WHERE {{
             {concept_iri}
                 {top_property_iri}+ ?related_concept_iri .
         ?related_concept_iri
@@ -121,9 +121,21 @@ def query_find_values_of_reified_triple(iri: str) -> str :
     sparql_query: str = f"""
         SELECT DISTINCT
             ?reified_value_iri
-        WHERE {{}
+        WHERE {{
             {iri}
                 <http://www.foom.com/core#00000000000000000086> ?reified_value_iri .
+        }}
+    """
+    return sparql_query
+
+def query_find_related_proofs(proof_iri: str) -> str:
+    proof_iri = iri_enclosing(proof_iri)
+    sparql_query: str = f"""
+        SELECT DISTINCT
+            ?related_proof_iri
+        WHERE {{
+            {proof_iri}
+                <http://www.foom.com/mathematical_concepts#00000000000000000250> ?related_proof_iri .
         }}
     """
     return sparql_query
