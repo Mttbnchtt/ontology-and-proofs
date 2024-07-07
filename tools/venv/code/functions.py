@@ -263,7 +263,8 @@ def find_conceptual_space_of_proof_step(proof_step: str,
     reified_values = find_values_of_reified_triple(proof_step, selected_datastore)
     # find conceptual space of each reified value
     for value in reified_values:
-        conceptual_space.update(
+        conceptual_space = update_conceptual_space(
+            conceptual_space,
             find_conceptual_space_of_concept(
                 value, 
                 selected_datastore,
@@ -280,7 +281,7 @@ def diff_conceptual_spaces(conceptual_space_1: dict,
                            conceptual_space_2: dict) -> dict:
     diff_conceptual_space = {
         "concept_iris": [iri for iri in conceptual_space_2["concept_iris"] if not iri in conceptual_space_1["concept_iris"]],
-        "concept_labels": [[label for label in conceptual_space_2["concept_labels"] if not label in conceptual_space_1["concept_labels"]]]
+        "concept_labels": [label for label in conceptual_space_2["concept_labels"] if not label in conceptual_space_1["concept_labels"]]
     }
     return diff_conceptual_space
 
