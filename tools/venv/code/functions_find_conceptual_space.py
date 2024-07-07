@@ -83,6 +83,16 @@ x
 
 def find_proof_of_proof_step(proof_step: str,
                              selected_datastore: str):
+    """
+    Finds the proof IRI associated with a given proof step.
+
+    Args:
+        proof_step (str): The proof step for which the proof IRI is to be found.
+        selected_datastore (str): The datastore to be queried.
+
+    Returns:
+        str or None: The proof IRI if found, otherwise None.
+    """
     sparql_query = sparql_queries.query_find_proof_of_proof_step(proof_step)
     sparql_results = [
             row.proof_iri 
@@ -96,6 +106,17 @@ def find_proof_of_proof_step(proof_step: str,
 def find_previous_proof_steps(proof_step: str,
                               proof_iri: str,
                               selected_datastore: str) -> set:
+    """
+    Finds the antecedent proof steps for a given proof step within a specific proof.
+
+    Args:
+        proof_step (str): The proof step for which antecedent proof steps are to be found.
+        proof_iri (str): The IRI of the proof containing the proof step.
+        selected_datastore (str): The datastore to be queried.
+
+    Returns:
+        set: A set of antecedent proof step IRIs.
+    """
     sparql_query = sparql_queries.query_find_antencedent_proof_steps(proof_step)
     antencedent_proof_steps = {
         row.antencedent_proof_step_iri
@@ -108,6 +129,16 @@ def find_previous_proof_steps(proof_step: str,
     
 def find_values_of_reified_triple(iri: str,
                                   selected_datastore: str) -> str:
+    """
+    Finds the values of a reified triple given its IRI.
+
+    Args:
+        iri (str): The IRI of the reified triple.
+        selected_datastore (str): The datastore to be queried.
+
+    Returns:
+        set: A set of IRIs representing the values of the reified triple.
+    """
     sparql_query = sparql_queries.query_find_values_of_reified_triple(iri)
     reified_values = {
             row.reified_value_iri
@@ -120,7 +151,18 @@ def find_values_of_reified_triple(iri: str,
 
 def find_conceptual_space_of_concept(concept_iri: str,
                                      selected_datastore: str,
-                                     top_property: str) -> str :
+                                     top_property: str) -> str:
+    """
+    Finds the conceptual space of a given concept.
+
+    Args:
+        concept_iri (str): The IRI of the concept.
+        selected_datastore (str): The datastore to be queried.
+        top_property (str): The top property used to find related concepts.
+
+    Returns:
+        dict: A dictionary containing IRIs and labels of related concepts.
+    """
     sparql_query = sparql_queries.query_find_related_concepts(
         concept_iri, 
         top_property
@@ -137,6 +179,17 @@ def find_conceptual_space_of_concept(concept_iri: str,
 def find_conceptual_space_of_antecedent_proof_steps(proof_steps: set,
                                                     selected_datastore: str,
                                                     top_property: str) -> dict:
+    """
+    Finds the conceptual space of antecedent proof steps.
+
+    Args:
+        proof_steps (set): A set of antecedent proof step IRIs.
+        selected_datastore (str): The datastore to be queried.
+        top_property (str): The top property used to find related concepts.
+
+    Returns:
+        dict: A dictionary containing IRIs and labels of related concepts.
+    """
     # initialize conceptual space
     conceptual_space = {
         "concept_iris": [],
@@ -156,6 +209,18 @@ def update_conceptual_space_with_concepts_related_to_proof_step(proof_step_iri: 
                                                                 selected_datastore: str,
                                                                 top_property: str,
                                                                 conceptual_space: dict) -> dict:
+    """
+    Updates the conceptual space with concepts related to a given proof step.
+
+    Args:
+        proof_step_iri (str): The IRI of the proof step.
+        selected_datastore (str): The datastore to be queried.
+        top_property (str): The top property used to find related concepts.
+        conceptual_space (dict): The existing conceptual space to be updated.
+
+    Returns:
+        dict: An updated dictionary containing IRIs and labels of related concepts.
+    """
     # find values of reified statement
     reified_values = find_values_of_reified_triple(proof_step_iri, selected_datastore)
     # loop through the values to find the conceptual space of that concept
@@ -170,6 +235,16 @@ def update_conceptual_space_with_concepts_related_to_proof_step(proof_step_iri: 
 
 def find_related_proofs(proof_iri: str,
                         selected_datastore: str) -> set:
+    """
+    Finds proofs related to a given proof.
+
+    Args:
+        proof_iri (str): The IRI of the proof.
+        selected_datastore (str): The datastore to be queried.
+
+    Returns:
+        set: A set of IRIs representing related proofs.
+    """
     sparql_query = sparql_queries.query_find_related_proofs(proof_iri)
     related_proofs = {
         row.related_proof_iri
@@ -183,6 +258,17 @@ def find_related_proofs(proof_iri: str,
 def find_conceptual_space_of_related_proofs(related_proofs: set,
                                             top_property: str,
                                             selected_datastore: str) -> dict:
+    """
+    Finds the conceptual space of related proofs.
+
+    Args:
+        related_proofs (set): A set of IRIs representing related proofs.
+        top_property (str): The top property used to find related concepts.
+        selected_datastore (str): The datastore to be queried.
+
+    Returns:
+        dict: A dictionary containing IRIs and labels of related concepts.
+    """
     conceptual_space = {
         "concept_iris": [],
         "concept_labels": []
@@ -206,6 +292,17 @@ def find_conceptual_space_of_related_proofs(related_proofs: set,
 def find_conceptual_space_before_proof_step(proof_step: str,
                                             selected_datastore: str,
                                             top_property: str = "<http://www.foom.com/mathematical_concepts#00000000000000000000>") -> dict:
+    """
+    Finds the conceptual space before a given proof step.
+
+    Args:
+        proof_step (str): The proof step IRI.
+        selected_datastore (str): The datastore to be queried.
+        top_property (str): The top property used to find related concepts (default is a specific mathematical concept IRI).
+
+    Returns:
+        dict: A dictionary containing IRIs and labels of related concepts.
+    """
     # find proof of proof step
     proof_iri = find_proof_of_proof_step(proof_step, selected_datastore)
     # find previous proof steps in proof
@@ -245,6 +342,17 @@ def find_conceptual_space_before_proof_step(proof_step: str,
 def find_conceptual_space_of_proof_step(proof_step: str,
                                         selected_datastore: str,
                                         top_property: str = "<http://www.foom.com/mathematical_concepts#00000000000000000000>") -> dict:
+    """
+    Finds the conceptual space of a given proof step.
+
+    Args:
+        proof_step (str): The IRI of the proof step.
+        selected_datastore (str): The datastore to be queried.
+        top_property (str): The top property used to find related concepts (default is a specific mathematical concept IRI).
+
+    Returns:
+        dict: A dictionary containing IRIs and labels of related concepts.
+    """
     # initialize dictionary of related concepts
     conceptual_space = {
         "concept_iris": [],
@@ -270,22 +378,18 @@ def find_conceptual_space_of_proof_step(proof_step: str,
 
 def diff_conceptual_spaces(conceptual_space_1: dict,
                            conceptual_space_2: dict) -> dict:
+    """
+    Finds the difference between two conceptual spaces.
+
+    Args:
+        conceptual_space_1 (dict): The first conceptual space.
+        conceptual_space_2 (dict): The second conceptual space.
+
+    Returns:
+        dict: A dictionary containing IRIs and labels of concepts present in the second conceptual space but not in the first.
+    """
     diff_conceptual_space = {
         "concept_iris": [iri for iri in conceptual_space_2["concept_iris"] if not iri in conceptual_space_1["concept_iris"]],
         "concept_labels": [label for label in conceptual_space_2["concept_labels"] if not label in conceptual_space_1["concept_labels"]]
     }
     return diff_conceptual_space
-
-
-
-#########################################
-## CONCEPTUAL SPACES OF PROOF TO ANALYZE
-#########################################
-
-# structure
-# memory: working and paper
-# production
-# selection of production
-# representation: concepts, results, and problem
-# knowledge: domain (organized in concepts, results [theorems, conjectures, techniques, gists], examples), strategic (), control of development
-# item evocation, connectedness, polyvalence
