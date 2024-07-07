@@ -2442,6 +2442,15 @@
                                                                  rdfs:label "Concept: Conceptual identity"@en .
 
 
+###  http://www.foom.com/mathematical_concepts#00000000000000000252
+<http://www.foom.com/mathematical_concepts#00000000000000000252> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000109> <http://www.foom.com/mathematical_concepts#00000000000000000086> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-07-07T09:59:33Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Add auxiliary elements"@en .
+
+
 ###  http://www.foom.com/mathematical_concepts#00000000000000000253
 <http://www.foom.com/mathematical_concepts#00000000000000000253> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/core#00000000000000000004> ;
