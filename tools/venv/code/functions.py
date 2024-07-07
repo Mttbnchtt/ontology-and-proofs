@@ -288,6 +288,7 @@ def diff_conceptual_spaces(conceptual_space_1: dict,
 #############################################
 ## HEURISTIC SEARCHES
 #############################################
+# organize conceptual space along heuristic dimensions
 
 
 
