@@ -1479,6 +1479,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000091
 <http://www.foom.com/mathematical_concepts#00000000000000000091> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Heuristic procedure: Apply reduction ad absurdum"@en .
 
@@ -1524,6 +1525,7 @@
                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
                                                                  <http://www.foom.com/mathematical_concepts#00000000000000000109> <http://www.foom.com/mathematical_concepts#00000000000000000105> ,
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000119> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Heuristic procedure: Consider particular cases"@en .
 
@@ -1538,6 +1540,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000100
 <http://www.foom.com/mathematical_concepts#00000000000000000100> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Heuristic procedure: Consider a more general case"@en .
 
@@ -1545,6 +1548,7 @@
 ###  http://www.foom.com/mathematical_concepts#00000000000000000101
 <http://www.foom.com/mathematical_concepts#00000000000000000101> rdf:type owl:NamedIndividual ,
                                                                           <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Heuristic procedure: Draw a diagram"@en .
 
@@ -2457,6 +2461,105 @@
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  <http://purl.org/dc/elements/1.1/date> "2024-05-30T10:37:03Z"^^xsd:dateTime ;
                                                                  rdfs:label "Concept: Identity"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000255
+<http://www.foom.com/mathematical_concepts#00000000000000000255> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-07-07T10:11:04Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Consider the definitions"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000256
+<http://www.foom.com/mathematical_concepts#00000000000000000256> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-07-07T10:11:43Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Use an analogy"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000258
+<http://www.foom.com/mathematical_concepts#00000000000000000258> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-07-07T10:14:10Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Use decomposing"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000259
+<http://www.foom.com/mathematical_concepts#00000000000000000259> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-07-07T10:14:31Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Use recombining"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000260
+<http://www.foom.com/mathematical_concepts#00000000000000000260> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-07-07T10:17:42Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Modify the conditions"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000261
+<http://www.foom.com/mathematical_concepts#00000000000000000261> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-07-07T10:20:37Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Try experimentally"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000262
+<http://www.foom.com/mathematical_concepts#00000000000000000262> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-07-07T10:21:12Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Introduce a suitable notation"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000263
+<http://www.foom.com/mathematical_concepts#00000000000000000263> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <http://www.foom.com/mathematical_concepts#00000000000000000109> <http://www.foom.com/mathematical_concepts#00000000000000000264> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-07-07T10:21:45Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Find an auxiliary problem"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000264
+<http://www.foom.com/mathematical_concepts#00000000000000000264> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-07-07T10:22:02Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Find a lemma"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000265
+<http://www.foom.com/mathematical_concepts#00000000000000000265> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-07-07T10:23:27Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Try plausible reasoning"@en .
+
+
+###  http://www.foom.com/mathematical_concepts#00000000000000000266
+<http://www.foom.com/mathematical_concepts#00000000000000000266> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.foom.com/mathematical_concepts#00000000000000000085> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
+                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                 <http://purl.org/dc/elements/1.1/date> "2024-07-07T10:24:36Z"^^xsd:dateTime ;
+                                                                 rdfs:label "Heuristic procedure: Assume the conclusion or construction"@en .
 
 
 #################################################################

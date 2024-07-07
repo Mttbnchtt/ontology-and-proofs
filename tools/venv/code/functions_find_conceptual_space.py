@@ -1,4 +1,5 @@
 import re
+import functions_utils
 import sparql_classes
 import sparql_queries
 
@@ -74,18 +75,7 @@ def extract_ordinal_number_of_proof_step(proof_step_label: str) -> int:
     if matches:
         ordinal_number: int = int(matches[0])
         return ordinal_number
-    
-
-#########
-## UTILS
-#########
-
-def update_conceptual_space(conceptual_space: dict,
-                            new_data: dict) -> dict:
-    for key in conceptual_space:
-        conceptual_space[key].extend(new_data[key])
-    return conceptual_space
-
+x
 
 ####################################################
 ## FIND CONCEPTUAL SPACE OF ANTENCEDENT PROOF STEPS
@@ -171,7 +161,7 @@ def update_conceptual_space_with_concepts_related_to_proof_step(proof_step_iri: 
     # loop through the values to find the conceptual space of that concept
     for value_iri in reified_values:
         conceptual_space_of_value = find_conceptual_space_of_concept(value_iri, selected_datastore, top_property)
-        conceptual_space = update_conceptual_space(conceptual_space, conceptual_space_of_value)
+        conceptual_space = functions_utils.update_conceptual_space(conceptual_space, conceptual_space_of_value)
     return conceptual_space
 
 ###################################
@@ -237,7 +227,8 @@ def find_conceptual_space_before_proof_step(proof_step: str,
     related_proofs = find_related_proofs(proof_iri, selected_datastore)
 
     # find conceptual space of related proofs
-    conceptual_space.update(
+    conceptual_space = functions_utils.update_conceptual_space(
+        conceptual_space,
         find_conceptual_space_of_related_proofs(
             related_proofs,
             top_property,
@@ -263,7 +254,7 @@ def find_conceptual_space_of_proof_step(proof_step: str,
     reified_values = find_values_of_reified_triple(proof_step, selected_datastore)
     # find conceptual space of each reified value
     for value in reified_values:
-        conceptual_space = update_conceptual_space(
+        conceptual_space = functions_utils.update_conceptual_space(
             conceptual_space,
             find_conceptual_space_of_concept(
                 value, 
@@ -286,14 +277,15 @@ def diff_conceptual_spaces(conceptual_space_1: dict,
     return diff_conceptual_space
 
 
-#############################################
-## HEURISTIC SEARCHES
-#############################################
-# organize conceptual space along heuristic dimensions
-
-
 
 #########################################
 ## CONCEPTUAL SPACES OF PROOF TO ANALYZE
 #########################################
 
+# structure
+# memory: working and paper
+# production
+# selection of production
+# representation: concepts, results, and problem
+# knowledge: domain (organized in concepts, results [theorems, conjectures, techniques, gists], examples), strategic (), control of development
+# item evocation, connectedness, polyvalence

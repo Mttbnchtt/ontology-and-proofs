@@ -137,6 +137,14 @@
                                                      rdfs:label "has translator"@en .
 
 
+###  https://www.foom.com/metadata#00000000000000000254
+<https://www.foom.com/metadata#00000000000000000254> rdf:type owl:ObjectProperty ;
+                                                     rdfs:subPropertyOf <http://www.foom.com/core#00000000000000000061> ;
+                                                     <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                     <http://purl.org/dc/elements/1.1/date> "2024-07-07T10:10:08Z"^^xsd:dateTime ;
+                                                     rdfs:label "is recommended by"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
