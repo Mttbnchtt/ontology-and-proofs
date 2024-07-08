@@ -1465,6 +1465,7 @@
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000093> ,
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000094> ,
                                                                                                                                   <http://www.foom.com/mathematical_concepts#00000000000000000096> ;
+                                                                 <https://www.foom.com/metadata#00000000000000000254> <https://www.foom.com/metadata#00000000000000000253> ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
                                                                  rdfs:label "Heuristic procedure: Apply previous results"@en .
 

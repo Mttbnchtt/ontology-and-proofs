@@ -75,7 +75,7 @@ def extract_ordinal_number_of_proof_step(proof_step_label: str) -> int:
     if matches:
         ordinal_number: int = int(matches[0])
         return ordinal_number
-x
+
 
 ####################################################
 ## FIND CONCEPTUAL SPACE OF ANTENCEDENT PROOF STEPS
@@ -335,9 +335,9 @@ def find_conceptual_space_before_proof_step(proof_step: str,
 
     return conceptual_space
 
-#################################
-## FIND CONCEPTUAL OF PROOF STEP
-#################################
+#######################################
+## FIND CONCEPTUAL SPACE OF PROOF STEP
+#######################################
 
 def find_conceptual_space_of_proof_step(proof_step: str,
                                         selected_datastore: str,
@@ -371,25 +371,40 @@ def find_conceptual_space_of_proof_step(proof_step: str,
             )
         )
     return conceptual_space
+
+##################################
+## FIND CONCEPTUAL SPACE OF CLAIM
+##################################
+
+def find_conceptual_space_of_claim(claim_iri: str,
+                                   selected_datastore: str,
+                                   top_property: str = "<http://www.foom.com/mathematical_concepts#00000000000000000000>") -> dict:
     
-#############################################
-## FIND DIFFERENCE BETWEEN CONCEPTUAL SPACES
-#############################################
-
-def diff_conceptual_spaces(conceptual_space_1: dict,
-                           conceptual_space_2: dict) -> dict:
-    """
-    Finds the difference between two conceptual spaces.
-
-    Args:
-        conceptual_space_1 (dict): The first conceptual space.
-        conceptual_space_2 (dict): The second conceptual space.
-
-    Returns:
-        dict: A dictionary containing IRIs and labels of concepts present in the second conceptual space but not in the first.
-    """
-    diff_conceptual_space = {
-        "concept_iris": [iri for iri in conceptual_space_2["concept_iris"] if not iri in conceptual_space_1["concept_iris"]],
-        "concept_labels": [label for label in conceptual_space_2["concept_labels"] if not label in conceptual_space_1["concept_labels"]]
+    # initialize dictionary of related concepts
+    conceptual_space = {
+        "concept_iris": [],
+        "concept_labels": []
     }
-    return diff_conceptual_space
+    # find reified values of the proof step
+    reified_values = find_values_of_reified_triple(claim_iri, selected_datastore)
+    # find conceptual space of each reified value
+    for value in reified_values:
+        conceptual_space = functions_utils.update_conceptual_space(
+            conceptual_space,
+            find_conceptual_space_of_concept(
+                value, 
+                selected_datastore,
+                top_property
+            )
+        )
+    # find related concepts
+    conceptual_space = functions_utils.update_conceptual_space(
+        conceptual_space,
+        find_conceptual_space_of_concept(
+                claim_iri, 
+                selected_datastore,
+                top_property
+            )
+
+    )
+    return conceptual_space

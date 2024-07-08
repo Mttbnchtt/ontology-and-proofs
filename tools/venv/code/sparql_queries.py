@@ -54,20 +54,6 @@ def query_find_proof_steps(proof_iri: str) -> str:
     """
     return sparql_query
 
-# def query_find_related_proofs(proof_iri: str) -> str:
-#     proof_iri = iri_enclosing(proof_iri)
-#     sparql_query: str = f"""
-#         SELECT DISTINCT
-#             ?related_proof_iri
-#         WHERE {{
-#             {proof_iri}
-#                 <http://www.foom.com/mathematical_concepts#00000000000000000249> ?claim_iri .
-#              ?related_proof_iri   
-#                 <http://www.foom.com/mathematical_concepts#00000000000000000249> ?claim_iri .
-#             FILTER ( {proof_iri} != ?related_proof_iri )
-#         }}
-#     """
-#     return sparql_query
 
 def query_find_proof_of_proof_step(proof_step_iri: str) -> str:
     proof_step_iri = iri_enclosing(proof_step_iri)
@@ -136,6 +122,31 @@ def query_find_related_proofs(proof_iri: str) -> str:
         WHERE {{
             {proof_iri}
                 <http://www.foom.com/mathematical_concepts#00000000000000000250> ?related_proof_iri .
+        }}
+    """
+    return sparql_query
+
+def query_find_goal_of_proof(proof_iri: str) -> str:
+    proof_iri = iri_enclosing(proof_iri)
+    sparql_query: str = f"""
+        SELECT DISTINCT
+            ?goal_iri
+        WHERE {{
+            {proof_iri}
+                <http://www.foom.com/mathematical_concepts#00000000000000000249> ?goal_iri .
+        }}
+    """
+    return sparql_query
+
+def query_find_last_proof_step_of_proof(proof_iri: str) -> str:
+    proof_iri = iri_enclosing(proof_iri)
+    sparql_query: str = f"""
+        SELECT DISTINCT
+            ?last_proof_step
+        WHERE {{
+            ?last_proof_step
+                <http://www.foom.com/core/inProof> {proof_iri} ;
+                <http://www.foom.com/core#00000000000000000044> true .
         }}
     """
     return sparql_query
