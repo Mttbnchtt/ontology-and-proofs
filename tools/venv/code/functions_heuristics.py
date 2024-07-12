@@ -7,7 +7,11 @@ import sparql_queries
 ## HEURISTIC SEARCHES
 #############################################
 
+
+
 ## organize conceptual space along heuristic dimensions (concepts, results, examples)
+
+
 
 
 ## apply strategic knowledge
@@ -26,6 +30,11 @@ def main(proof_step_iri: str,
             selected_datastore,
             top_property
         )
+    
+    # find goal of proof
+
+
+    # organize conceptual space before proof step
 
     # find conceptual space of proof step
     conceptual_space_of_proof_step = functions_find_conceptual_space.find_conceptual_space_of_proof_step(
@@ -33,7 +42,9 @@ def main(proof_step_iri: str,
                 selected_datastore,
                 top_property
         )
+    
+    # find conceptual of claim to prove
 
-    # apply heuristics on conceptual space before proof step
+    ## apply heuristics on conceptual space before proof step
+    # find diff between conceptual space before proof and conceptual space of claim to prove
 
-    return conceptual_space_of_proof_step

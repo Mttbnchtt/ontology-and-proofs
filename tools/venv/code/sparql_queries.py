@@ -150,3 +150,15 @@ def query_find_last_proof_step_of_proof(proof_iri: str) -> str:
         }}
     """
     return sparql_query
+
+def query_find_directly_related_concepts(item_iri: str) -> str:
+    item_iri = iri_enclosing(item_iri)
+    sparql_query: str = f"""
+        SELECT DISTINCT
+            ?related_concept_iri
+        WHERE {{
+            {item_iri}
+                <http://www.foom.com/mathematical_concepts#00000000000000000147> ?related_concept_iri .
+        }}
+    """
+    return sparql_query
