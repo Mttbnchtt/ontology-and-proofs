@@ -169,6 +169,18 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000220>, <http://www.foom.com/mathematical_concepts#00000000000000000247> ] :-
     [ ?x, <http://www.foom.com/core#00000000000000000088>, <http://www.foom.com/mathematical_concepts#00000000000000000055> ] .
 
+# if x specializes concept y,
+# then x directly refers to y
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000147>, ?y ] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000110>, ?y ], # x specializes y
+    [ ?y, a, <http://www.foom.com/core#00000000000000000004> ] . # y is a concept
+
+# if x generalizes concept y,
+# then x directly refers to y
+[ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000147>, ?y ] :-
+    [ ?x, <http://www.foom.com/mathematical_concepts#00000000000000000109>, ?y ], # x generalizes y
+    [ ?y, a, <http://www.foom.com/core#00000000000000000004> ] . # y is a concept
+
 # GEOMETRY
 
 ## CHECK
@@ -248,6 +260,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     [ ?z, <http://www.foom.com/mathematical_concepts#00000000000000000057>, ?y],
     [ ?v, <http://www.foom.com/mathematical_concepts#00000000000000000207>, ?x ],
     [ ?v, <http://www.foom.com/mathematical_concepts#00000000000000000207>, ?z ].
+
+
 
 
 # ONTOLOGY
