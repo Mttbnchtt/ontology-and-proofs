@@ -158,7 +158,7 @@ def query_find_directly_related_concepts(item_iri: str) -> str:
             ?related_concept_iri
         WHERE {{
             {item_iri}
-                <http://www.foom.com/mathematical_concepts#00000000000000000147> ?related_concept_iri .
+                <http://www.foom.com/mathematical_concepts#00000000000000000147> ?related_concept_iri . # directly refers to concept ?related_concept_iri
         }}
     """
     return sparql_query
