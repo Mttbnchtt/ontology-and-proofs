@@ -291,7 +291,8 @@ def find_conceptual_space_of_related_proofs(related_proofs: set,
 
 def find_conceptual_space_before_proof_step(proof_step: str,
                                             selected_datastore: str,
-                                            top_property: str = "<http://www.foom.com/mathematical_concepts#00000000000000000000>") -> dict:
+                                            top_property: str = "<http://www.foom.com/mathematical_concepts#00000000000000000000>" # has mathematical concepts object property
+                                            ) -> dict:
     """
     Finds the conceptual space before a given proof step.
 
