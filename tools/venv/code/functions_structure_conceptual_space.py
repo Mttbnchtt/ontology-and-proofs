@@ -103,6 +103,7 @@ def find_concepts_related_to_goal_of_proof(values: set,
             row.connected_item_iri
             for row in sparql_classes.SparqlQueryResults(sparql_remotely_connected_items,
                                                          datastore=selected_datastore)
+            if not row.connected_item_iri in connected_items
         }
         values_enhanced[value]["remotely_connected_items"] = remotely_connected_items
     return values_enhanced

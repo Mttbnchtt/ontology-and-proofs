@@ -169,11 +169,21 @@ def query_find_concepts_connected_to_goal(item_iri: str) -> str:
         SELECT DISTINCT
             ?connected_item_iri
         WHERE {{
-            {item_iri}
-                ( 
-                    <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> 
-                )
-                    ?connected_item_iri .
+            {{
+                {item_iri}
+                    ( 
+                        <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> 
+                    )
+                        ?connected_item_iri .
+            }}
+            UNION
+            {{
+                ?connected_item_iri
+                    ( 
+                        <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> 
+                    )
+                        {item_iri} .
+            }}
             FILTER ( ?connected_item_iri != {item_iri} )
         }}
     """
@@ -185,20 +195,21 @@ def query_find_concepts_remotely_connected_to_goal(item_iri: str) -> str:
         SELECT DISTINCT
             ?connected_item_iri
         WHERE {{
-            {item_iri}
-                ( 
-                    <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> 
-                )+
-                    ?connected_item_iri .
-            FILTER NOT EXISTS {{
-            {item_iri}
-                    <http://www.foom.com/mathematical_concepts#00000000000000000108> ?connected_item_iri .
-                
+            {{
+                {item_iri}
+                    ( 
+                        <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> 
+                    )+
+                        ?connected_item_iri .
             }}
-            FILTER NOT EXISTS {{
-            {item_iri}
-                    <http://www.foom.com/mathematical_concepts#00000000000000000251> ?connected_item_iri .
-                
+            UNION
+            {{
+                ?connected_item_iri
+                    ( 
+                        <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> 
+                    )+
+                        {item_iri} .
+            
             }}
             FILTER ( ?connected_item_iri != {item_iri} )
         }}
