@@ -172,7 +172,7 @@ def query_find_concepts_connected_to_goal(item_iri: str) -> str:
             {{
                 {item_iri}
                     ( 
-                        <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> 
+                        <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> # logical relation or mathematical relation
                     )
                         ?connected_item_iri .
             }}
@@ -180,7 +180,7 @@ def query_find_concepts_connected_to_goal(item_iri: str) -> str:
             {{
                 ?connected_item_iri
                     ( 
-                        <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> 
+                        <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> # logical relation or mathematical relation
                     )
                         {item_iri} .
             }}
@@ -198,7 +198,7 @@ def query_find_concepts_remotely_connected_to_goal(item_iri: str) -> str:
             {{
                 {item_iri}
                     ( 
-                        <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> 
+                        <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> # logical relation or mathematical relation
                     )+
                         ?connected_item_iri .
             }}
@@ -206,7 +206,60 @@ def query_find_concepts_remotely_connected_to_goal(item_iri: str) -> str:
             {{
                 ?connected_item_iri
                     ( 
-                        <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> 
+                        <http://www.foom.com/mathematical_concepts#00000000000000000108> | <http://www.foom.com/mathematical_concepts#00000000000000000251> # logical relation or mathematical relation
+                    )+
+                        {item_iri} .
+            
+            }}
+            FILTER ( ?connected_item_iri != {item_iri} )
+        }}
+    """
+    return sparql_query
+ 
+def query_find_concepts_heuristically_connected_to_goal(item_iri: str) -> str:
+    item_iri = iri_enclosing(item_iri)
+    sparql_query: str = f"""
+        SELECT DISTINCT
+            ?connected_item_iri
+        WHERE {{
+            {{
+                {item_iri}
+                    ( 
+                        <http://www.foom.com/mathematical_concepts#00000000000000000148> | <http://www.foom.com/mathematical_concepts#00000000000000000107> # congitive relation or heuristic relation
+                    )
+                        ?connected_item_iri .
+            }}
+            UNION
+            {{
+                ?connected_item_iri
+                    ( 
+                        <http://www.foom.com/mathematical_concepts#00000000000000000148> | <http://www.foom.com/mathematical_concepts#00000000000000000107> # congitive relation or heuristic relation
+                    )
+                        {item_iri} .
+            }}
+            FILTER ( ?connected_item_iri != {item_iri} )
+        }}
+    """
+    return sparql_query
+ 
+def query_find_concepts_heuristically_remotely_connected_to_goal(item_iri: str) -> str:
+    item_iri = iri_enclosing(item_iri)
+    sparql_query: str = f"""
+        SELECT DISTINCT
+            ?connected_item_iri
+        WHERE {{
+            {{
+                {item_iri}
+                    ( 
+                        <http://www.foom.com/mathematical_concepts#00000000000000000148> | <http://www.foom.com/mathematical_concepts#00000000000000000107> # congitive relation or heuristic relation
+                    )+
+                        ?connected_item_iri .
+            }}
+            UNION
+            {{
+                ?connected_item_iri
+                    ( 
+                        <http://www.foom.com/mathematical_concepts#00000000000000000148> | <http://www.foom.com/mathematical_concepts#00000000000000000107> # congitive relation or heuristic relation
                     )+
                         {item_iri} .
             

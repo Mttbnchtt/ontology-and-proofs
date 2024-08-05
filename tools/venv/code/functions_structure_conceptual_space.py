@@ -81,23 +81,44 @@ def find_concepts_of_goal_of_proof(proof_iri: str,
 
 def find_concepts_related_to_goal_of_proof(values: set,
                                            selected_datastore: str) -> set:
+    """
+    Identify and categorize concepts related to the goal of a proof based on logical and heuristic connections.
+
+    This function enhances the input set of values by identifying logically and heuristically connected and remotely connected 
+    concepts. It categorizes these connections into four groups for each value: logically connected items, logically remotely 
+    connected items, heuristically connected items, and heuristically remotely connected items.
+
+    Parameters:
+    values (set): A set of IRIs representing initial concepts related to the goal of a proof.
+    selected_datastore (str): The datastore where the SPARQL queries will be executed.
+
+    Returns:
+    dict: A dictionary where each key is an IRI from the input set, and the value is another dictionary with the following keys:
+          - "logically_connected_items": Set of IRIs logically connected to the key IRI.
+          - "logically_remotely_connected_items": Set of IRIs logically remotely connected to the key IRI.
+          - "heuristically_connected_items": Set of IRIs heuristically connected to the key IRI.
+          - "heuristically_remotely_connected_items": Set of IRIs heuristically remotely connected to the key IRI.
+    """
     values_enhanced = {value: {
-                "connected_items": set(),
-                "remotely_connected_items": set()
+                "logically_connected_items": set(),
+                "logically_remotely_connected_items": set(),
+                "heuristically_connected_items": set(),
+                "heuristically_remotely_connected_items": set()
+                
             }
             for value in values
         }
     # iterate through value iris to select connected and remotely connected items
     for value in values:
-        # select connected items
+        # select logically connected items
         sparql_connected_items = sparql_queries.query_find_concepts_connected_to_goal(value)
         connected_items = {
             row.connected_item_iri
             for row in sparql_classes.SparqlQueryResults(sparql_connected_items,
                                                          datastore=selected_datastore)
         }
-        values_enhanced[value]["connected_items"] = connected_items
-        # select remotely connected items
+        values_enhanced[value]["logically_connected_items"] = connected_items
+        # select logically remotely connected items
         sparql_remotely_connected_items = sparql_queries.query_find_concepts_remotely_connected_to_goal(value)
         remotely_connected_items = {
             row.connected_item_iri
@@ -105,8 +126,30 @@ def find_concepts_related_to_goal_of_proof(values: set,
                                                          datastore=selected_datastore)
             if not row.connected_item_iri in connected_items
         }
-        values_enhanced[value]["remotely_connected_items"] = remotely_connected_items
+        values_enhanced[value]["logically_remotely_connected_items"] = remotely_connected_items
+        # select heuristically connected items
+        sparql_connected_items = sparql_queries.query_find_concepts_heuristically_connected_to_goal(value)
+        connected_items = {
+            row.connected_item_iri
+            for row in sparql_classes.SparqlQueryResults(sparql_connected_items,
+                                                         datastore=selected_datastore)
+        }
+        values_enhanced[value]["heuristically_connected_items"] = connected_items
+        # select heuristically remotely connected items
+        sparql_remotely_connected_items = sparql_queries.query_find_concepts_heuristically_remotely_connected_to_goal(value)
+        remotely_connected_items = {
+            row.connected_item_iri
+            for row in sparql_classes.SparqlQueryResults(sparql_remotely_connected_items,
+                                                         datastore=selected_datastore)
+            if not row.connected_item_iri in connected_items
+        }
+        values_enhanced[value]["heuristically_remotely_connected_items"] = remotely_connected_items
+        
     return values_enhanced
+
+# 3. find enciclopedic material: previous proofs, analogous proofs, relevant facts
+
+
 
 
 # 2. On the basis of the concepts directly related to the goal of the proof
@@ -117,7 +160,7 @@ def find_concepts_related_to_goal_of_proof(values: set,
 # for that concept (logical items, illustrative items, heuristic principles)
 
 
-# 3. Create a conceptual file for the reificiation values 
+# 3. Create a conceptual file for the reification values 
 # of the antencedent proof steps and of the concepts directly related 
 # to these proof steps.
 
