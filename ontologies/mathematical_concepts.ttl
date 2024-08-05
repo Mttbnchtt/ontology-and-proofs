@@ -781,6 +781,10 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000013
 <http://www.foom.com/mathematical_concepts#00000000000000000013> rdf:type owl:Class ;
+                                                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.foom.com/mathematical_concepts#00000000000000000257> ;
+                                                                                       owl:hasValue <http://www.foom.com/mathematical_concepts#00000000000000000215>
+                                                                                     ] ;
                                                                  rdfs:subClassOf <http://www.foom.com/mathematical_concepts#00000000000000000012> ,
                                                                                  [ rdf:type owl:Restriction ;
                                                                                    owl:onProperty <http://www.foom.com/mathematical_concepts#00000000000000000147> ;
@@ -792,6 +796,10 @@
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000014
 <http://www.foom.com/mathematical_concepts#00000000000000000014> rdf:type owl:Class ;
+                                                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.foom.com/mathematical_concepts#00000000000000000257> ;
+                                                                                       owl:hasValue <http://www.foom.com/mathematical_concepts#00000000000000000054>
+                                                                                     ] ;
                                                                  rdfs:subClassOf <http://www.foom.com/mathematical_concepts#00000000000000000012> ,
                                                                                  [ rdf:type owl:Restriction ;
                                                                                    owl:onProperty <http://www.foom.com/mathematical_concepts#00000000000000000147> ;

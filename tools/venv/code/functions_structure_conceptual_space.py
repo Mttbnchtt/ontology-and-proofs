@@ -1,3 +1,4 @@
+import copy
 import sparql_classes
 import sparql_queries
 
@@ -78,9 +79,33 @@ def find_concepts_of_goal_of_proof(proof_iri: str,
 # 2. (Understand the claim: part 2) find ontological items 
 # related to the values of the claim to prove
 
-def finc_concepts_related_to_goal_of_proof(values: set,
-                                   selected_datastore: str) -> set:
-
+def find_concepts_related_to_goal_of_proof(values: set,
+                                           selected_datastore: str) -> set:
+    values_enhanced = {value: {
+                "connected_items": set(),
+                "remotely_connected_items": set()
+            }
+            for value in values
+        }
+    # iterate through value iris to select connected and remotely connected items
+    for value in values:
+        # select connected items
+        sparql_connected_items = sparql_queries.query_find_concepts_connected_to_goal(value)
+        connected_items = {
+            row.connected_item_iri
+            for row in sparql_classes.SparqlQueryResults(sparql_connected_items,
+                                                         datastore=selected_datastore)
+        }
+        values_enhanced[value]["connected_items"] = connected_items
+        # select remotely connected items
+        sparql_remotely_connected_items = sparql_queries.query_find_concepts_remotely_connected_to_goal(value)
+        remotely_connected_items = {
+            row.connected_item_iri
+            for row in sparql_classes.SparqlQueryResults(sparql_remotely_connected_items,
+                                                         datastore=selected_datastore)
+        }
+        values_enhanced[value]["remotely_connected_items"] = remotely_connected_items
+    return values_enhanced
 
 
 # 2. On the basis of the concepts directly related to the goal of the proof
