@@ -15,10 +15,24 @@ import sparql_queries
 
 ## The structure of the conceptual space before a given proof step depends on the goal of the proof.
 
-# 1. Find goal of proof
+# 1. (Understand the claim: part 1) Find goal of proof
 
 def find_concepts_of_goal_of_proof(proof_iri: str,
                                    selected_datastore: str) -> set:
+    
+    """
+    Identify and retrieve the concepts related to the goal and last step of a proof.
+
+    This function finds the goal of a proof and its last step, then retrieves the reified values and directly related concepts
+    associated with these elements. The identified concepts form a conceptual space pertinent to the proof's goal.
+
+    Parameters:
+    proof_iri (str): The IRI of the proof whose goal and last step are to be analyzed.
+    selected_datastore (str): The datastore where the SPARQL queries will be executed.
+
+    Returns:
+    set: A set of IRIs representing the concepts related to the goal and last step of the proof.
+    """
     # find goal of proof
     sparql_query_goal = sparql_queries.query_find_goal_of_proof(proof_iri)
     goal_iri = {
@@ -60,6 +74,14 @@ def find_concepts_of_goal_of_proof(proof_iri: str,
                 }
             )
     return values
+
+# 2. (Understand the claim: part 2) find ontological items 
+# related to the values of the claim to prove
+
+def finc_concepts_related_to_goal_of_proof(values: set,
+                                   selected_datastore: str) -> set:
+
+
 
 # 2. On the basis of the concepts directly related to the goal of the proof
 # structure the conceptual space before the given proof step.
