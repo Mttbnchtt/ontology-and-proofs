@@ -787,7 +787,7 @@
                                                                                    owl:hasValue <http://www.foom.com/mathematical_concepts#00000000000000000215>
                                                                                  ] ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Mixed plane angle"@en .
+                                                                 rdfs:label "Plane mixed angle"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000014
@@ -798,7 +798,7 @@
                                                                                    owl:hasValue <http://www.foom.com/mathematical_concepts#00000000000000000054>
                                                                                  ] ;
                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                                 rdfs:label "Rectilinear plane angle"@en .
+                                                                 rdfs:label "Plane rectilinear angle"@en .
 
 
 ###  http://www.foom.com/mathematical_concepts#00000000000000000015
