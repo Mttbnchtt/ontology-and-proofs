@@ -1,0 +1,28 @@
+flowchart TD
+    A(Triangle ABC) -->|is a| B(Isosceles triangle)
+    B-->|is subclass of| C(Triangle)
+    D(Segment AB) -->|is side of| A
+    E(Segment BC) -->|is side of| A
+    D -->|has length| F(Lenght of segment AB)
+    E -->|has length| G(Lenght of segment BC)
+    F -->|is equivalent amount as| G
+    F -->|is a| H(Length)
+    G -->|is a| H
+    H -->|is subclass of| I(Magnitude)
+    A -->|is in| J(Proof step 0)
+    J -->|is in| K(Proof of I.5)
+    K -->|has goal| L(Goal of proof of I.5)
+    M(Rectilinear angle ABC) -->|is a| N(Rectilinear angle)
+    O(Rectilinear angle ACB) -->|is a| N(Rectilinear angle)
+    M(Rectilinear angle ABC) -->|has amount of rotation| P(Amount of rotation of angle ABC)
+    N(Rectilinear angle ACB) -->|has amount of rotation| Q(Amount of rotation of angle ACB)
+    P(Amount of rotation of angle ABC) -->|is a| R(Amount of rotation)
+    S(Amount of rotation of angle ACB) -->|is a| R(Amount of rotation)
+    R(Amount of rotation) -->|is subclass of| I
+    L -->|has subject| P
+    L -->|has predicate| T(is equivalent amount as)
+    L -->|has object| Q
+    S(has amount of rotation) -->|is sub-property of| T(has attribute)
+    U(has length) -->|is sub-property of| T
+    S -->|has range| R
+    U -->|has range| H

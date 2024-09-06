@@ -151,6 +151,9 @@ def find_concepts_related_to_goal_of_proof(values: set,
 
 
 
+# 4. given a proof step, repeat previous steps for antencedent proof steps
+
+
 
 # 2. On the basis of the concepts directly related to the goal of the proof
 # structure the conceptual space before the given proof step.

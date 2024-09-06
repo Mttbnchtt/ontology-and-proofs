@@ -1,0 +1,147 @@
+PRELIMINARY TERMINAL COMMANDS
+
+activate the virtual environment
+cd /Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/tools/venv
+source foom_venv_3.12.2/bin/activate
+
+launch jupyter lab
+jupyter lab
+
+launch rdfox
+/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Computer_programming/Artificial_intelligence/Topics_in_AI/Ontologist/Ontologies/Ontologies_tools/RDFox_folder/RDFox-macOS-arm64-7.1b/RDFox sandbox
+
+start datastore and import ontologies and rules
+/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/tools/venv/code/start.rdfox
+
+######################################
+You know the programming language Python 3 very well. You also know RDF, RDFS, OWL, and SPARQL very well.
+
+Read the following piece of code carefully because I will ask you questions about it:
+<code>
+
+</code>
+
+When I run the code above, I get the following error message:
+<error_message>
+
+</error_message>
+
+<task>
+Identify the issue and fix it.
+</task>
+
+Take a deep breath and work on this serious task step by step.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##################################
+
+Read the following piece of code carefully because I will ask you questions about it later:
+<code>
+class SparqlQueryResults:
+
+    def __init__(self,
+                sparq_query,
+                rdfox_server:str = "http://localhost:12110",
+                datastore:str = "/datastores/foom_pappus/sparql",
+                format_response:str = "application/sparql-results+json"):
+        self.sparq_query = sparq_query
+        self.rdfox_server = rdfox_server
+        self.datastore = datastore
+        self.format_response = format_response
+        self.response_text = self.query_ontology(sparq_query, rdfox_server, datastore)
+        self.response_dictionary
+
+    # submit sparql query and retrieve results
+    def query_ontology(self):
+                       # sparql_query:str,
+                       # rdfox_server:str = self.rdfox_server,
+                       # datastore:str = self.datastore,
+                       # format_response:str = self.format_response) -> str:
+        # define the headers of the request
+        headers = {
+            "Accept": self.format_response
+        }
+        
+        # query the datastore at the rdfox server
+        response = requests.get(f"{self.rdfox_server}{self.datastore}",
+                                params={"query": self.sparql_query},
+                                headers=headers)
+        
+        # check if the REST endpoint returns an unexpected status code
+        if not response.ok:
+            return ""
+            
+        # if the REST endpoint returns an expected response, return the text of the response
+        return response.text
+
+    # transform the text response to the ontology query
+    # into a python dictionary and
+    # extract the relevant information about
+    # headers and values
+    def response_to_dictionary(self):
+                               # response:str = self.response_text) -> dict:
+        # transform the text response to the ontology query
+        # into a json object
+        response_data = json.loads(self.response_text)
+
+        # select the headers for the new dictionary of data
+        headers:list = response_data["head"]["vars"]
+
+        # transform the json response into a dictionary
+        # with headers and values
+        response_dictionary:dict = {header: [] for header in headers}
+        for binding in response_data["results"]["bindings"]:
+            for header in headers:
+                response_dictionary[header].append(binding[header]["value"])
+                
+        return response_dictionary
+    
+    def print_response(self):
+        print(self.response)
+
+
+# Example usage
+query = "SELECT * WHERE {?s ?p ?o} LIMIT 10"
+sparql_query_results = SparqlQueryResults(query)
+# sparql_query_results.query_ontology()
+# sparql_query_results.print_response()
+</code>
+
+When I run the above piece of code, I get the following error message:
+<error_message>
+ypeError                                 Traceback (most recent call last)
+Cell In[130], line 66
+     64 # Example usage
+     65 query = "SELECT * WHERE {?s ?p ?o} LIMIT 10"
+---> 66 sparql_query_results = SparqlQueryResults(query)
+     67 # sparql_query_results.query_ontology()
+     68 # sparql_query_results.print_response()
+
+Cell In[130], line 12, in SparqlQueryResults.__init__(self, sparq_query, rdfox_server, datastore, format_response)
+     10 self.datastore = datastore
+     11 self.format_response = format_response
+---> 12 self.response_text = self.query_ontology(sparq_query, rdfox_server, datastore)
+     13 self.response_dictionary
+
+TypeError: SparqlQueryResults.query_ontology() takes 1 positional argument but 4 were given
+</error_message>
+
+<task>
+Explain the issue and fix it.
+</task>
+
+Take a deep breath and work on this serious task step by step.
