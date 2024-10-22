@@ -456,7 +456,7 @@
 ###  http://www.foom.com/core#00000000000000000011
 <http://www.foom.com/core#00000000000000000011> rdf:type owl:Class ;
                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
-                                                rdfs:label "Logical resources"@en .
+                                                rdfs:label "Logical resource"@en .
 
 
 ###  http://www.foom.com/core#00000000000000000015
