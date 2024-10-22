@@ -147,6 +147,9 @@ def find_concepts_related_to_goal_of_proof(values: set,
         
     return values_enhanced
 
+# 3. find triples connecting related concepts
+
+
 # 3. find enciclopedic material: previous proofs, analogous proofs, relevant facts
 
 
