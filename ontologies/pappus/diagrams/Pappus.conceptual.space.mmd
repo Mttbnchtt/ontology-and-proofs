@@ -1,0 +1,33 @@
+flowchart TD
+    A(Amount of rotation) -->|is a| B(Concept)
+    A -->|specializes| C(Magnitude)
+    A -->|refers to| D(Rotation)
+    C -->|is conceptual part of| E(Smaller magnitude than)
+    C -->|is conceptual part of| F(Bigger magnitude than) 
+    D -->|refers to| G(Spatial movement)
+    G -->|refers to| H(Space)
+    E -->|is opposite of| F
+    E -->|specializes| C
+    F -->|specializes| C
+    %% G -->|is a| B
+    %% H -->|is a| B
+    %% C -->|is a| B
+    %% E -->|is a| B
+    %% F -->|is a| B
+    I(The whole is greater than its part) -->|refers to| F
+    I -->|refers to| J(Part)
+    J -->|logically supports| L(Point)
+    %% L -->|is a| B
+    J -->|is heuristic opposite of| M(Whole)
+    N(Selecting a point on a segment) -->|refers to| L
+    N -->|is a| Q(Act type)
+    O(Definition of point) -->|is a| P(Definition)
+    O -->|defines| L
+    O -->|logically supports| R(Definition of line)
+    R -->|is a| P
+    I -->|is in| S(Elements, Book I)
+    O -->|is in| S
+    R -->|is in| S
+    S -->|has author| T(Euclid)
+    U(Amount of rotation of angle ACB) -->|is in proof step| V(Step 0)
+    V -->|is in| W(Euclid's proof of I.5)
