@@ -1,0 +1,24 @@
+POSTULATES
+Let the following be postulated:
+Postulate 1.
+To draw a straight line from any point to any point.
+Postulate 2.
+To produce a finite straight line continuously in a straight line.
+Postulate 3.
+To describe a circle with any center and radius.
+Postulate 4.
+That all right angles equal one another.
+Postulate 5.
+That, if a straight line falling on two straight lines makes the interior angles on the same side less than two right angles, the two straight lines, if produced indefinitely, meet on that side on which are the angles less than the two right angles.
+
+COMMON NOTIONS
+Common notion 1.
+Things which equal the same thing also equal one another.
+Common notion 2.
+If equals are added to equals, then the wholes are equal.
+Common notion 3.
+If equals are subtracted from equals, then the remainders are equal.
+Common notion 4.
+Things which coincide with one another equal one another.
+Common notion 5.
+The whole is greater than the part.
