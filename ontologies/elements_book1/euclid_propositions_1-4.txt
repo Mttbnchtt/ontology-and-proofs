@@ -1,0 +1,8 @@
+Proposition 1.
+To construct an equilateral triangle on a given finite straight line.
+Proposition 2.
+To place a straight line equal to a given straight line with one end at a given point.
+Proposition 3.
+To cut off from the greater of two given unequal straight lines a straight line equal to the less.
+Proposition 4.
+If two triangles have two sides equal to two sides respectively, and have the angles contained by the equal straight lines equal, then they also have the base equal to the base, the triangle equals the triangle, and the remaining angles equal the remaining angles respectively, namely those opposite the equal sides.

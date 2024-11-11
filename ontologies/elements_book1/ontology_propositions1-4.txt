@@ -1,0 +1,28 @@
+Proposition 1:
+concepts: equilateral triangle, finite straight line
+relations: finite(straight_line), equilateral(triangle)
+operations: construct(equilateral_triangle, finite_straight_line) --> equilateral_triangle 
+implication: construct(equilateral_triangle, finite_straight_line) |-is_located(equilateral_triangle, finite_straight_line)
+
+Proposition 2:
+concepts: straight line, point
+relations: equal(new_line, given_line), given(point), given(straight_line)
+operations: place(straight_line) & fix_endpoint(straight_line, point) --> placed_line & equal(placed_line, given_line)
+
+Proposition 3:
+concepts: straight line
+relations: unequal(line1, line2), greater(line1, line2), given(line1), given(line2)
+operations: cut_off(greater_line, length_of_lesser_line) --> cut_line & equal(cut_line, lesser_line)
+
+Proposition 4:
+concepts: triangle, side, angle, base
+relations: 
+- equal(side1_triangle1, side1_triangle2)
+- equal(side2_triangle1, side2_triangle2)
+- equal(contained_angle1, contained_angle2)
+- opposite(angle, side)
+operations: compare(triangles) --> 
+  equal(base1, base2) & 
+  equal(triangle1, triangle2) & 
+  equal(remaining_angle1, remaining_angle2) & 
+  equal(opposite_angles, opposite_sides)
