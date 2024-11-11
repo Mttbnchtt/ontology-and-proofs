@@ -1,0 +1,50 @@
+Postulate 1:
+concepts: straight line, point
+relations:
+operation: join(point, point) --> straight line
+
+Postulate 2:
+concepts: finite straight line
+relations:
+operation: produce(straight_line) --> straight line
+
+Postulate 3:
+concepts: circle, center, radius
+relations:
+operation: draw(center, radius) --> circle
+
+Postulate 4:
+concepts: right angle
+relations: equal(right_angle, right_angle)
+operation:
+
+Postulate 5:
+concepts: straight line, interior angle, right angle, side of line, same side of lide, sum
+relations: less_than(sum(inclination_of_interior_angles), inclination_of_two_right_angles) --> 
+         meet(straight_lines)
+operation: produce(straight_lines) --> [intersection_point]
+
+Common Notion 1:
+concepts: thing
+relations: equal(thing1, x) AND equal(thing2, x) --> equal(thing1, thing2)
+operation:
+
+Common Notion 2:
+concepts: equal things, whole
+relations: equal(thing1, thing2)
+operation: add(thing1, x) = whole1 & add(thing2, x) = whole2 --> equal(whole1, whole2); add(thing1, thing2) --> thing3; add(thing1, thing2) = whole
+
+Common Notion 3:
+concepts: equal things, remainder
+relations: equal(thing1, thing2)
+operation: subtract(thing1, x) = remainder1 & subtract(thing2, x) = remainder2 --> equal(remainder1, remainder2); subtract(thing1, thing2) --> thing3; subtract(thing1, thing2) = remainder
+
+Common Notion 7:
+concepts: thing
+relations: superimpose(thing1, thing2) --> equal(thing1, thing2)
+operation: superimpose(thing1, thing2) --> thing3
+
+Common Notion 5:
+concepts: whole, part_of_whole
+relations: greater_than(whole, part_of_whole)
+operation:
