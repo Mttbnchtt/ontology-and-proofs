@@ -1,5 +1,5 @@
 Proposition 1:
-concepts: equilateral triangle, finite straight line, given finite straight line
+concepts: equilateral triangle, finite straight line, given finite straight line, construction
 relations: finite(straight_line), equilateral(triangle)
 operations: construct(equilateral_triangle, finite_straight_line) --> equilateral_triangle 
 implication: construct(equilateral_triangle, finite_straight_line) |- is_located(equilateral_triangle, finite_straight_line)

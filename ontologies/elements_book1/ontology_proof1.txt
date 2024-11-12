@@ -3,9 +3,9 @@ concepts:
 - point
 - circle
 - center
-- distance
 - intersection point
 - equilateral triangle
+_ interval
 
 relations:
 - is_center(point, circle)
@@ -15,12 +15,13 @@ relations:
 - given(straight_line)
 
 procedures:
-1. describe_circle(center: A, radius: AB) --> circle BCD
-2. describe_circle(center: B, radius: BA) --> circle ACE
+1. draw_circle(center: A, interval: AB) --> circle BCD
+2. draw_circle(center: B, interval: BA) --> circle ACE
 3. identify_intersection(circle1, circle2) --> point C
 4. join_points(point1: C, point2: A) --> line CA
 5. join_points(point1: C, point2: B) --> line CB
 6. verify_equal_lengths(CA, CB, AB)
+7. construct(given: finite_straight_line) --> equilateral_triangle
 
 implications:
 - is_center(A, circle_BCD) |- equal(AC, AB)
@@ -47,3 +48,5 @@ Common Notions:
 
 Key insight:
 Us circles as a tool to ensure equal distances, leveraging the fact that all radii of a circle are equal.
+
+proposition type: construction
