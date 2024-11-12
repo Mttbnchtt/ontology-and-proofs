@@ -10,14 +10,16 @@ concepts: finite straight line, point, given point
 relations: equal(new_line, given_line), given(point), given(finite straight_line)
 operations: place(finite straight_line, point) --> line
 implication: place(finite straight_line, point) |- equal(place(finite straight_line, point), finite straight_line)
-moral: feasibility of rigid motion
+moral: 
+gist: applicability of rigid motion
 
 Proposition 3:
 concepts: straight line, unequal lengths of finite straight lines
 relations: unequal(lenght_of_line1, lenght_of_line2), greater(lenght_of_line1, lenght_of_line2), given(line1), given(line2)
 operations: cut_off(greater_line, length_of_lesser_line) --> finite_straight_line
 implication: cut_off(greater_line, length_of_lesser_line) |- unequal(greater_line, lesser_line)
-moral: subtraction of lengths
+moral: 
+gist: subtraction of lengths
 
 Proposition 4:
 concepts: triangle, side, angle, base, sides subtending angle
@@ -29,3 +31,26 @@ relations:
 operations: compare(lenght_of_sides, inclination_of_angles) [mental_operation]
 implication: compare(triangle1, triangle2, side1AB, side2AB, side1AC, side2AC, angle1ABC, angle2ABC) |- congruent(triangle1, triangle2)
 moral: SAS criterion forcongruence
+
+Proposition 5:
+concepts: isosceles triangle, angle at the base, straight line, equal straight lines, angles under the base, produced straight lines
+relations:
+- isosceles(triangle)
+- equal(length_of_side1, length_of_side2)
+- at_base(angle1)
+- at_base(angle2)
+- under_base(angle3)
+- under_base(angle4)
+- produced(equal_straight_lines)
+
+operations: 
+- produce(straight_line) --> straight_line
+- compare(angles) [mental_operation]
+
+implication: 
+isosceles(triangle) |- 
+  equal(inclination_of_base_angle1, inclination_of_base_angle2) &
+  equal(inclination_of_under_base_angle1, inclination_of_under_base_angle2)
+
+moral: isosceles triangles are symmetric
+gist: isosceles triangles have equal angles at the base
