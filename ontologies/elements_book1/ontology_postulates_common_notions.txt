@@ -28,6 +28,7 @@ Common Notion 1:
 concepts: thing
 relations: equal(thing1, x) AND equal(thing2, x) --> equal(thing1, thing2)
 operation:
+name: equal_to_same_are_equal
 
 Common Notion 2:
 concepts: equal things, whole

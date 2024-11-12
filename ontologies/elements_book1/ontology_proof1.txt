@@ -1,0 +1,49 @@
+concepts:
+- finite straight line
+- point
+- circle
+- center
+- distance
+- intersection point
+- equilateral triangle
+
+relations:
+- is_center(point, circle)
+- equal(straight_line1, straight_line2)
+- intersect(circle1, circle2, point)
+- is_radius(straight_line, circle)
+- given(straight_line)
+
+procedures:
+1. describe_circle(center: A, radius: AB) --> circle BCD
+2. describe_circle(center: B, radius: BA) --> circle ACE
+3. identify_intersection(circle1, circle2) --> point C
+4. join_points(point1: C, point2: A) --> line CA
+5. join_points(point1: C, point2: B) --> line CB
+6. verify_equal_lengths(CA, CB, AB)
+
+implications:
+- is_center(A, circle_BCD) |- equal(AC, AB)
+- is_center(B, circle_CAE) |- equal(BC, BA)
+- equal(CA, AB) & equal(CB, AB) & equal_to_same_are_equal |- equal(CA, CB)
+- equal(CA, AB, BC) |- equilateral(triangle_ABC)
+
+moral: 
+Construction proves existence - by showing how to construct an object, we prove it exists
+
+gist:
+Two circles centered at endpoints of given line intersect, creating third vertex of equilateral triangle
+
+dependencies:
+Postulates:
+- Postulate 1 (drawing straight lines by joining points)
+- Postulate 3 (describing circles given center and radius)
+
+Definitions:
+- Definition 15 (circle and equality of radii)
+
+Common Notions:
+- Common Notion 1 (things equal to same thing are equal) [equal_to_same_are_equal]
+
+Key insight:
+Us circles as a tool to ensure equal distances, leveraging the fact that all radii of a circle are equal.
