@@ -1,0 +1,187 @@
+PROPOSITION 2
+
+concepts:
+- point
+- straight line
+- equilateral triangle
+- circle
+- center
+- interval
+- remainder
+
+relations:
+- given(point)
+- given(finite_straight_line)
+- is_center(point, circle)
+- equal(finite_straight_line1, finite_straight_line2)
+- is_extremity(point, finite_straight_line)
+- is_remainder(line_segment)
+
+procedures:
+1. join_points(point: A, point: B) --> line AB
+2. construct_equilateral_triangle(finite_straight_line: AB) --> triangle DAB
+3. produce_lines(DA, DB) --> lines AE, BF
+4. draw_circle(center: B, distance: BC) --> circle CGH
+5. draw_circle(center: D, distance: DG) --> circle GKL
+6. verify_equal_lengths(AL, BC)
+- put_at(point: point, finite_straight_line: finite_straight_line)
+- put(finite_straight_line: finite_straight_line)
+- put_at(point: point, finite_straight_line: finite_straight_line, condition: length_equal_to_given_finite_straight_line)
+
+implications:
+- is_center(B, circle_CGH) |- equal(BC, BG)
+- is_center(D, circle_GKL) |- equal(DL, DG)
+- equal(DA, DB) & equal(DL, DG) |- equal(AL, BG)
+- equal(AL, BG) & equal(BC, BG) |- equal(AL, BC)
+
+moral:
+Construction can transfer lengths while preserving equality
+
+gist:
+Using circles and an equilateral triangle to copy a line segment to a new position
+
+key insights:
+Use of an auxiliary equilateral triangle and two circles to transfer a length
+
+dependencies:
+- Proposition 1 (construction of equilateral triangle)
+- Postulates 1, 2, 3
+- Common Notions 1, 3
+
+proposition type: construction
+
+-----------------------------------
+
+PROPOSITION 3
+
+concepts:
+- unequal straight lines
+- point
+- circle
+- center
+- distance
+
+relations:
+- greater_than(line1, line2)
+- equal(line1, line2)
+- is_center(point, circle)
+
+procedures:
+1. place_equal_line(point: A, given_line: C) --> line AD
+2. draw_circle(center: A, distance: AD) --> circle DEF
+3. identify_intersection(circle, greater_line) --> point E
+
+implications:
+- is_center(A, circle_DEF) |- equal(AE, AD)
+- equal(C, AD) & equal(AE, AD) |- equal(AE, C)
+
+moral:
+Length can be transferred to cut off a segment from a larger line
+
+gist:
+Using a circle to cut off a segment equal to a given smaller line
+
+key insights:
+Use a circle to transfer length, leveraging equality of radii
+
+dependencies:
+- Proposition 2 (placing equal line)
+- Postulate 3 (drawing circles)
+- Definition 15 (circle)
+- Common Notion 1
+
+proposition type: construction
+
+-----------------------------------
+
+PROPOSITION 4
+
+concepts:
+- triangle
+- side
+- angle
+- base
+- coincidence of figures
+
+relations:
+- equal(side1, side2)
+- equal(angle1, angle2)
+- coincide(point1, point2)
+- coincide(line1, line2)
+- subtend(side, angle)
+
+procedures:
+1. apply(triangle1, triangle2)
+2. place(point_A, point_D)
+3. align(line_AB, line_DE)
+4. verify_coincidence(points, lines)
+
+implications:
+- equal(AB, DE) & equal(AC, DF) & equal(angle_BAC, angle_EDF) |- 
+  coincide(B, E) & coincide(C, F)
+- coincide(B, E) & coincide(C, F) |- coincide(BC, EF)
+- coincide(figures) |- equal(figures)
+
+moral:
+Equal parts force whole figures to coincide, proving their equality
+
+gist:
+If two triangles have two sides and included angle equal, they are congruent
+
+key insights:
+Use of superposition as a proof technique, showing that equal parts must coincide
+
+dependencies:
+- Common Notion 4 (coincident things are equal)
+- Axiom: Two lines cannot enclose a space
+
+proposition type: theorem
+
+-----------------------------------
+
+PROPOSITION 5
+
+concepts:
+- isosceles triangle
+- base angle
+- produced line
+- random point
+
+relations:
+- equal(side1, side2)
+- equal(angle1, angle2)
+- random(point)
+- under_base(angle)
+
+procedures:
+1. produce_lines(AB, AC) --> BD, CE
+2. select_random_point(on: BD) --> point F
+3. cut_off_equal(AE, AF) --> point G
+4. join_points(F, C) & join_points(G, B)
+5. compare_triangles(AFC, AGB)
+6. compare_triangles(BFC, CGB)
+
+implications:
+- isosceles(triangle_ABC) |- equal(AB, AC)
+- equal(FA, AG) & equal(AB, AC) & equal(angle_FAG) |- 
+  equal(triangle_AFC, triangle_AGB)
+- equal(triangles) |- equal(base_angles)
+- equal(base_angles) |- equal(under_base_angles)
+
+moral:
+Symmetry in figures leads to equality of corresponding parts
+
+gist:
+In an isosceles triangle, base angles are equal and angles under produced sides are equal
+
+key insights:
+Use of auxiliary construction with random point to prove symmetry properties
+
+dependencies:
+- Proposition 1 (equal lines)
+- Proposition 3 (cutting off equal lines)
+- Proposition 4 (triangle congruence)
+- Postulates 1, 2
+- Common Notions 1, 3
+
+proposition type: theorem
