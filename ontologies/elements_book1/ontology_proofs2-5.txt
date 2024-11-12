@@ -20,10 +20,11 @@ relations:
 procedures:
 1. join_points(point: A, point: B) --> line AB
 2. construct_equilateral_triangle(finite_straight_line: AB) --> triangle DAB
-3. produce_lines(DA, DB) --> lines AE, BF
-4. draw_circle(center: B, distance: BC) --> circle CGH
-5. draw_circle(center: D, distance: DG) --> circle GKL
-6. verify_equal_lengths(AL, BC)
+3. produce_line(finite_straight_line: DA) --> line: AE
+4. produce_line(finite_straight_line: DB) --> line: BF
+4. draw_circle(center: B, interval: BC) --> circle CGH
+5. draw_circle(center: D, interval: DG) --> circle GKL
+6. verify_equal_lengths(finite_straight_line: AL, finite_straight_line: BC)
 - put_at(point: point, finite_straight_line: finite_straight_line)
 - put(finite_straight_line: finite_straight_line)
 - put_at(point: point, finite_straight_line: finite_straight_line, condition: length_equal_to_given_finite_straight_line)
@@ -35,7 +36,7 @@ implications:
 - equal(AL, BG) & equal(BC, BG) |- equal(AL, BC)
 
 moral:
-Construction can transfer lengths while preserving equality
+Construction can transfer lengths while preserving equality; applicability of rigid motion
 
 gist:
 Using circles and an equilateral triangle to copy a line segment to a new position
@@ -55,24 +56,29 @@ proposition type: construction
 PROPOSITION 3
 
 concepts:
-- unequal straight lines
+- finitestraight line
+- finitestraight lines of unequal lengths
 - point
 - circle
 - center
 - distance
 
 relations:
-- greater_than(line1, line2)
-- equal(line1, line2)
+- greater_than(length_of_finite_straight_line1, length_of_finite_straight_line2)
+- equal(length_of_finite_straight_line1, length_of_finite_straight_line2)
 - is_center(point, circle)
+- given(finite_straight_line: AD)
+- given(finite_straight_line: AB)
 
 procedures:
 1. place_equal_line(point: A, given_line: C) --> line AD
-2. draw_circle(center: A, distance: AD) --> circle DEF
+2. draw_circle(center: A, interval: AD) --> circle DEF
 3. identify_intersection(circle, greater_line) --> point E
+4. remove_finite_straight_line(finite_straight_line: AD, finite_straight_line: AB)
+5. put_at(point: A, finite_straight_line: AD)
 
 implications:
-- is_center(A, circle_DEF) |- equal(AE, AD)
+- is_center(point: A, circle: circle_DEF) |- equal(AE, AD)
 - equal(C, AD) & equal(AE, AD) |- equal(AE, C)
 
 moral:
