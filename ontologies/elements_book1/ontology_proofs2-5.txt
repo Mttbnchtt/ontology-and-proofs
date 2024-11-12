@@ -10,30 +10,30 @@ concepts:
 - remainder
 
 relations:
-- given(point)
-- given(finite_straight_line)
-- is_center(point, circle)
-- equal(finite_straight_line1, finite_straight_line2)
-- is_extremity(point, finite_straight_line)
-- is_remainder(line_segment)
+- given(point: point)
+- given(finite_straight_line: finite_straight_line)
+- is_center(point: point, circle: circle)
+- equal(finite_straight_line: finite_straight_line1, finite_straight_line: finite_straight_line2)
+- is_extremity(point: point, finite_straight_line: finite_straight_line)
+- is_remainder(line_segment: line_segment)
 
 procedures:
-1. join_points(point: A, point: B) --> line AB
-2. construct_equilateral_triangle(finite_straight_line: AB) --> triangle DAB
+1. join_points(point: A, point: B) --> line: AB
+2. construct_equilateral_triangle(finite_straight_line: AB) --> triangle: DAB
 3. produce_line(finite_straight_line: DA) --> line: AE
 4. produce_line(finite_straight_line: DB) --> line: BF
-4. draw_circle(center: B, interval: BC) --> circle CGH
-5. draw_circle(center: D, interval: DG) --> circle GKL
+4. draw_circle(center: B, interval: BC) --> circle: CGH
+5. draw_circle(center: D, interval: DG) --> circle: GKL
 6. verify_equal_lengths(finite_straight_line: AL, finite_straight_line: BC)
 - put_at(point: point, finite_straight_line: finite_straight_line)
 - put(finite_straight_line: finite_straight_line)
 - put_at(point: point, finite_straight_line: finite_straight_line, condition: length_equal_to_given_finite_straight_line)
 
 implications:
-- is_center(B, circle_CGH) |- equal(BC, BG)
-- is_center(D, circle_GKL) |- equal(DL, DG)
-- equal(DA, DB) & equal(DL, DG) |- equal(AL, BG)
-- equal(AL, BG) & equal(BC, BG) |- equal(AL, BC)
+- is_center(point:B, circle_CGH) |- equal(BC, BG)
+- is_center(point:D, circle_GKL) |- equal(DL, DG)
+- equal(finite_straight_line: DA, finite_straight_line: DB) & equal(finite_straight_line: DL, finite_straight_line: DG) |- equal(finite_straight_line: AL, finite_straight_line: BG)
+- equal(finite_straight_line: AL, finite_straight_line: BG) & equal(finite_straight_line: BC, finite_straight_line: BG) |- equal(finite_straight_line: AL, finite_straight_line: BC)
 
 moral:
 Construction can transfer lengths while preserving equality; applicability of rigid motion
@@ -62,24 +62,28 @@ concepts:
 - circle
 - center
 - distance
+- greater than
+- unequal magnitudes
+- equal magnitudes
+- less than
 
 relations:
-- greater_than(length_of_finite_straight_line1, length_of_finite_straight_line2)
-- equal(length_of_finite_straight_line1, length_of_finite_straight_line2)
-- is_center(point, circle)
+- greater_than(length_of_finite_straight_line: length1, length_of_finite_straight_line: length2)
+- equal(length_of_finite_straight_line: length1, length_of_finite_straight_line: length2)
+- is_center(point: point, circle: circle)
 - given(finite_straight_line: AD)
 - given(finite_straight_line: AB)
 
 procedures:
-1. place_equal_line(point: A, given_line: C) --> line AD
-2. draw_circle(center: A, interval: AD) --> circle DEF
-3. identify_intersection(circle, greater_line) --> point E
+1. place_equal_line(point: A, finite_straight_line: C) --> finite_straight_line: AD
+2. draw_circle(center: A, interval: AD) --> circle: DEF
+3. identify_intersection(circle: circle, finite_straight_line: greater_line) --> point: E
 4. remove_finite_straight_line(finite_straight_line: AD, finite_straight_line: AB)
 5. put_at(point: A, finite_straight_line: AD)
 
 implications:
 - is_center(point: A, circle: circle_DEF) |- equal(AE, AD)
-- equal(C, AD) & equal(AE, AD) |- equal(AE, C)
+- equal(finite_straight_line: C, finite_straight_line: AD) & equal(finite_straight_line: AE, finite_straight_line: AD) |- equal(finite_straight_line: AE, finite_straight_line: C)
 
 moral:
 Length can be transferred to cut off a segment from a larger line
@@ -110,22 +114,22 @@ concepts:
 - coincidence of figures
 
 relations:
-- equal(side1, side2)
-- equal(angle1, angle2)
-- coincide(point1, point2)
-- coincide(line1, line2)
-- subtend(side, angle)
+- equal(side: side1, side: side2)
+- equal(angle: angle1, angle: angle2)
+- coincide(point: point1, point: point2)
+- coincide(line: line1, line: line2)
+- subtend(side: side, angle: angle)
 
 procedures:
-1. apply(triangle1, triangle2)
-2. place(point_A, point_D)
-3. align(line_AB, line_DE)
-4. verify_coincidence(points, lines)
+1. apply(triangle: triangle1, triangle: triangle2)
+2. place(point: point_A, point: point_D)
+3. align(line: line_AB, line: line_DE)
+4. verify_coincidence(point: point1, point: point2, line: line1, line: line2)
 
 implications:
-- equal(AB, DE) & equal(AC, DF) & equal(angle_BAC, angle_EDF) |- 
-  coincide(B, E) & coincide(C, F)
-- coincide(B, E) & coincide(C, F) |- coincide(BC, EF)
+- equal(finite_straight_line: AB, finite_straight_line: DE) & equal(finite_straight_line: AC, finite_straight_line: DF) & equal(angle: angle_BAC, angle: angle_EDF) |- 
+  coincide(point: B, point: E) & coincide(point: C, point: F)
+- coincide(point: B, point: E) & coincide(point: C, point: F) |- coincide(finite_straight_line: BC, finite_straight_line: EF)
 - coincide(figures) |- equal(figures)
 
 moral:
@@ -152,36 +156,37 @@ concepts:
 - base angle
 - produced line
 - random point
+- random point on given finite straight line
 
 relations:
-- equal(side1, side2)
-- equal(angle1, angle2)
-- random(point)
-- under_base(angle)
+- equal(side: side1, side: side2)
+- equal(angle: angle1, angle: angle2)
+- randomly_selected(point: point)
+- position_under_base(angle: angle)
 
 procedures:
-1. produce_lines(AB, AC) --> BD, CE
-2. select_random_point(on: BD) --> point F
-3. cut_off_equal(AE, AF) --> point G
-4. join_points(F, C) & join_points(G, B)
-5. compare_triangles(AFC, AGB)
-6. compare_triangles(BFC, CGB)
+1. produce_lines(finite_straight_line: AB, finite_straight_line: AC) --> line: BD, line: CE
+2. select_random_point(on: finite_straight_line: BD) --> point: F
+3. cut_off_equal(line: AE, line: AF) --> point: G
+4. join_points(point: F, point: C) & join_points(point: G, point: B)
+5. compare_triangles(triangle: AFC, triangle: AGB)
+6. compare_triangles(triangle: BFC, triangle: CGB)
 
 implications:
-- isosceles(triangle_ABC) |- equal(AB, AC)
+- isosceles(triangle_ABC) |- equal(finite_straight_line: AB, finite_straight_line: AC)
 - equal(FA, AG) & equal(AB, AC) & equal(angle_FAG) |- 
   equal(triangle_AFC, triangle_AGB)
 - equal(triangles) |- equal(base_angles)
 - equal(base_angles) |- equal(under_base_angles)
 
 moral:
-Symmetry in figures leads to equality of corresponding parts
+
 
 gist:
 In an isosceles triangle, base angles are equal and angles under produced sides are equal
 
 key insights:
-Use of auxiliary construction with random point to prove symmetry properties
+Use of extesions of finite straight lines with randomly selected point to prove symmetry properties
 
 dependencies:
 - Proposition 1 (equal lines)
