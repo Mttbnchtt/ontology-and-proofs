@@ -1,0 +1,108 @@
+Proposition 2: To place at a given point (as an extremity) a straight line equal to a given straight line.
+
+Let A be the given point, and BC the given straight line.
+Thus it is required to place at the point A (as an extremity)
+a straight line equal to the given straight line BC.
+
+From the point A to the point B let the straight line AB be joined; [Post. 1] and on it let the equilateral triangle
+DAB be constructed. [I. 1]
+
+Let the straight lines AE, BF be produced in a straight line with DA, DB; [Post. 2] with centre B and distance BC let the
+circle CGH be described; [Post. 3] and again, with centre D and distance DG let the circle GKL be described. [Post. 3]
+
+Then, since the point B is the centre of the circle CGH,
+
+BC is equal to BG.
+
+Again, since the point D is the centre of the circle GKL,
+
+DL is equal to DG.
+And in these DA is equal to DB;
+
+therefore the remainder AL is equal to the remainder BG. [C.N. 3]
+
+But BC was also proved equal to BG;
+
+therefore each of the straight lines AL, BC is equal to BG.
+And things which are equal to the same thing are also equal to one another; [C.N. 1]
+
+therefore AL is also equal to BC.
+Therefore at the given point A the straight line AL is placed equal to the given straight line BC.
+
+######################
+Proposition 3: Given two unequal straight lines, to cut off from the greater a straight line equal to the less.
+
+Let AB, C be the-two given unequal straight lines, and let AB be the greater of them.
+Thus it is required to cut off from AB the greater a straight line equal to C the less.
+
+At the point A let AD be placed equal to the straight line C; [I. 2] and with centre A and distance AD let the circle DEF be described. [Post. 3]
+
+Now, since the point A is the centre of the circle DEF, AE is equal to AD. [Def. 15] But C is also equal to AD. Therefore each of the straight lines AE, C is equal to AD; so that AE is also equal to C. [C.N. 1]
+Therefore, given the two straight lines AB, C, from AB the greater AE has been cut off equal to C the less.
+
+######################
+Proposition 4: If two triangles have the two sides equal to two sides respectively, and have the angles contained by the equal straight lines equal, they will also have the base equal to the base, the triangle will be equal to the triangle, and the remaining angles
+will be equal to the remaining angles respectively, namely those which the equal sides subtend.
+
+Let ABC, DEF be two triangles having the two sides AB, AC equal to the two sides DE, DF respectively, namely AB to DE and AC to DF, and the angle BAC equal to the
+angle EDF.
+I say that the base BC is also equal to the base EF, the triangle ABC will be equal to the triangle DEF, and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend, that
+is, the angle ABC to the angle DEF, and the angle ACB to the angle DFE.
+
+For, if the triangle ABC be applied to the triangle DEF,
+
+and if the point A be placed on the point D and the straight line AB on DE,
+then the point B will also coincide with E, because AB is equal to DE.
+Again, AB coinciding with DE, the straight line AC will also coincide with DF, because the angle BAC is equal to the angle EDF;
+
+hence the point C will also coincide with the point F, because AC is again equal to DF.
+
+But B also coincided with E; hence the base BC will coincide with the base EF.
+
+[For if, when B coincides with E and C with F, the base BC does not coincide with the base EF, two straight lines will enclose a space: which is impossible.
+
+Therefore the base BC will coincide with EF] and will be equal to it. [C.N. 4]
+Thus the whole triangle ABC will coincide with the whole triangle DEF,
+
+and will be equal to it.
+
+And the remaining angles will also coincide with the remaining angles and will be equal to them, the angle ABC to the angle DEF, and the angle ACB to the angle DFE.
+
+Therefore etc.
+
+######################
+Proposition 5.
+In isosceles triangles the angles at the base are equal to one another, and, if the equal straight lines be produced further, the angles under the base will be equal to one another.
+
+Let ABC be an isosceles triangle having the side AB
+equal to the side AC; and let the straight lines BD, CE be produced further in a straight line with AB, AC. [Post. 2]
+I say that the angle ABC is equal to the angle ACB, and the angle CBD to the angle BCE.
+
+Let a point F be taken at random on BD; from AE the greater let AG be cut off equal to AF the less; [I. 3] and let the straight lines FC, GB be joined. [Post. 1]
+
+Then, since AF is equal to AG and AB to AC,
+
+the two sides FA, AC are equal to the two sides GA, AB, respectively;
+and they contain a common angle, the angle FAG.
+Therefore the base FC is equal to the base GB, and the triangle AFC is equal to the triangle AGB,
+and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend,
+that is, the angle ACF to the angle ABG, and the angle AFC to the angle AGB. [I. 4]
+And, since the whole AF is equal to the whole AG,
+
+and in these AB is equal to AC, the remainder BF is equal to the remainder CG.
+But FC was also proved equal to GB;
+therefore the two sides BF, FC are equal to the two sides CG, GB respectively; and the angle BFC is equal to the angle CGB,
+
+while the base BC is common to them;
+therefore the triangle BFC is also equal to the triangle CGB,
+and the remaining angles will be equal to the remaining angles respectively, namely those which the equal sides subtend;
+therefore the angle FBC is equal to the angle GCB, and the angle BCF to the angle CBG.
+
+Accordingly, since the whole angle ABG was proved equal to the angle ACF,
+
+and in these the angle CBG is equal to the angle BCF,
+the remaining angle ABC is equal to the remaining angle ACB;
+and they are at the base of the triangle ABC.
+But the angle FBC was also proved equal to the angle GCB;
+and they are under the base.
+Therefore etc.
