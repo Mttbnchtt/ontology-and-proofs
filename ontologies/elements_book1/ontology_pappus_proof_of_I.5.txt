@@ -8,7 +8,7 @@ concepts:
 - same angle
 
 relations:
-- equal(finite_straight_line: AB, finite_straight_line: AC)
+- equal(length: length_of_finite_straight_line: AB, length: length_of_finite_straight_line: AC)
 - equal(inclination: inclination_of_angle_BAC, inclination: inclination_of_angle_CAB)
 - equal(inclination: inclination_of_angle_ABC, inclination: inclination_of_angle_ACB)
 - isosceles(triangle: ABC)
@@ -21,29 +21,29 @@ procedures:
 3. verify_equal_parts(finite_straight_line: AB, finite_straight_line: AC, angle: BAC)
 
 implications:
-- isosceles(triangle: ABC) |- equal(finite_straight_line: AB, finite_straight_line: AC)
-- equal(finite_straight_line: AB, finite_straight_line: AC) & same(angle: BAC) |- 
-    equal(triangle: ABC1, triangle: ABC2)
-- equal(triangle: ABC1, triangle: ABC2) |- equal(angle: ABC, angle: ACB)
+- equal(length: length_of_finite_straight_line: AB, length: length_of_finite_straight_line: AC) & same(inclination: inclination_of_angle_BAC) |- 
+    congruent(triangle: ABC1, triangle: ABC2)
+- congruent(triangle: ABC1, triangle: ABC2) |- equal(inclination: inclination_of_angle_ABC, inclination: inclination_of_angle_ACB)
 
 moral:
-A figure can be thought of as containing two instances of itself when it has symmetry; identity implies equality
+A figure can be thought of as containing two instances of itself ; identity implies equality.
 
 gist:
-An isosceles triangle can be viewed as two identical triangles sharing the same sides and angles
+View an isosceles triangle as two identical triangles sharing the same sides and angles.
 
 key insights:
-- Instead of Euclid's construction with extended lines, Pappus uses a mental operation of viewing the same triangle twice
-- The proof leverages the fact that an angle is equal to itself (identity principle)
-- The symmetry of the isosceles triangle is revealed by this mental superposition
-- No need for auxiliary constructions, unlike Euclid's proof
+Mental operation of viewing the same triangle twice.
+
+additional notes:
+- Instead of Euclid's construction with extended lines, Pappus uses a mental operation of viewing the same triangle twice.
+- The proof leverages the fact that equality is reflexive.
+- No need for auxiliary constructions, unlike Euclid's proof.
+- More abstract approach to geometric proof than Euclid's.
 
 dependencies:
 - Proposition 4 (SAS triangle congruence)
 - Common Notion 1 (things equal to same are equal)
 - Definition of isosceles triangle
-- Identity principle (a thing is equal to itself)
+- Reflexivity of equality
 
 proposition type: theorem
-
-The key difference from Euclid's proof is that Pappus uses a clever mental operation (considering the same triangle twice) rather than physical construction. This demonstrates a more abstract, conceptual approach to geometric proof.
