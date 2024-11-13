@@ -5,7 +5,7 @@ import collections
 
 def parse_git_status():
     """Parse git status --porcelain output into categorized changes."""
-    changes = defaultdict(list)
+    changes = collections.defaultdict(list)
     
     try:
         result = subprocess.run(['git', 'status', '--porcelain'], 

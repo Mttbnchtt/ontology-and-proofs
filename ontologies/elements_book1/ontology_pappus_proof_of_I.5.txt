@@ -9,10 +9,10 @@ concepts:
 
 relations:
 - equal(finite_straight_line: AB, finite_straight_line: AC)
-- equal(angle: BAC, angle: CAB)
-- equal(angle: ABC, angle: ACB)
+- equal(inclination: inclination_of_angle_BAC, inclination: inclination_of_angle_CAB)
+- equal(inclination: inclination_of_angle_ABC, inclination: inclination_of_angle_ACB)
 - isosceles(triangle: ABC)
-- same(angle: BAC, angle: CAB)
+- same(inclination: inclination_of_angle_BAC, inclination: inclination_of_angle_CAB)
 - enclose(angle: BAC, finite_straight_line: AB, finite_straight_line: AC)
 
 procedures:
