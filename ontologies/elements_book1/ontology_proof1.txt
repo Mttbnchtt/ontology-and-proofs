@@ -30,7 +30,7 @@ implications:
 - equal(CA, AB, BC) |- equilateral(triangle_ABC)
 
 moral: 
-Construction proves existence - by showing how to construct an object, we prove it exists
+Construction proves existence; by showing how to construct an object, we prove it exists
 
 gist:
 Two circles centered at endpoints of given line intersect, creating third vertex of equilateral triangle
@@ -47,6 +47,6 @@ Common Notions:
 - Common Notion 1 (things equal to same thing are equal) [equal_to_same_are_equal]
 
 Key insight:
-Us circles as a tool to ensure equal distances, leveraging the fact that all radii of a circle are equal.
+Use circles as a tool to ensure equal distances, leveraging the fact that all radii of a circle are equal.
 
 proposition type: construction
