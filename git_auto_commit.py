@@ -51,7 +51,7 @@ def commit_changes():
             if files:
                 changes_list.append(f"{change_type}: {', '.join(files)}")
         
-        message = f"Auto-commit at {timestamp} {'; '.join(changes_list)}"
+        message = f"Auto-commit at {timestamp}; {'; '.join(changes_list)}"
         
         # Commit
         subprocess.run(['git', 'commit', '-m', message])
