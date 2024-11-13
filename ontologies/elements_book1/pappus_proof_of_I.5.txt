@@ -1,0 +1,9 @@
+Let [the triangle] $\triangle{ABC}$ be isosceles and $AB$ equal to $AC$.
+
+Then, we would think this one as two triangles and we would say thus. 
+Since $\overline{AB}$ is equal to $\overline{AC}$ and $\overline{AC}$ to $\overline{AB}$, 
+the two [sides] $\overline{AB}$ [and] $\overline{AC}$ [are] equal to the two [sides] $\overline{AC}$ 
+[and] $AB$ and $\angle{BAC}$ [is] equal to $\angle{C AB}$ (for it is the same). 
+
+Therefore each is equal to each: on the one hand, $\overline{BC}$ to $\overline{BC}$, on the other hand, 
+$\angle{ABC}$ to $\angle{AC B}$ and $\angle{AC B}$ to the angle $\angle{ABC}$.
