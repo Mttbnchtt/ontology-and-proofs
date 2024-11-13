@@ -1,0 +1,49 @@
+concepts:
+- isosceles triangle
+- side of triangle
+- angle
+- enclosed angle
+- equal sides
+- equal angles
+- same angle
+
+relations:
+- equal(finite_straight_line: AB, finite_straight_line: AC)
+- equal(angle: BAC, angle: CAB)
+- equal(angle: ABC, angle: ACB)
+- isosceles(triangle: ABC)
+- same(angle: BAC, angle: CAB)
+- enclose(angle: BAC, finite_straight_line: AB, finite_straight_line: AC)
+
+procedures:
+1. consider_as_two(triangle: ABC) --> triangle: ABC1, triangle: ABC2
+2. compare_triangles(triangle: ABC1, triangle: ABC2)
+3. verify_equal_parts(finite_straight_line: AB, finite_straight_line: AC, angle: BAC)
+
+implications:
+- isosceles(triangle: ABC) |- equal(finite_straight_line: AB, finite_straight_line: AC)
+- equal(finite_straight_line: AB, finite_straight_line: AC) & same(angle: BAC) |- 
+    equal(triangle: ABC1, triangle: ABC2)
+- equal(triangle: ABC1, triangle: ABC2) |- equal(angle: ABC, angle: ACB)
+
+moral:
+A figure can be thought of as containing two instances of itself when it has symmetry; identity implies equality
+
+gist:
+An isosceles triangle can be viewed as two identical triangles sharing the same sides and angles
+
+key insights:
+- Instead of Euclid's construction with extended lines, Pappus uses a mental operation of viewing the same triangle twice
+- The proof leverages the fact that an angle is equal to itself (identity principle)
+- The symmetry of the isosceles triangle is revealed by this mental superposition
+- No need for auxiliary constructions, unlike Euclid's proof
+
+dependencies:
+- Proposition 4 (SAS triangle congruence)
+- Common Notion 1 (things equal to same are equal)
+- Definition of isosceles triangle
+- Identity principle (a thing is equal to itself)
+
+proposition type: theorem
+
+The key difference from Euclid's proof is that Pappus uses a clever mental operation (considering the same triangle twice) rather than physical construction. This demonstrates a more abstract, conceptual approach to geometric proof.
