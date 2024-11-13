@@ -1,8 +1,7 @@
-import os
 import subprocess
 import time
-from datetime import datetime
-from collections import defaultdict
+import datetime
+import collections
 
 def parse_git_status():
     """Parse git status --porcelain output into categorized changes."""
@@ -35,7 +34,7 @@ def parse_git_status():
         return changes, len(result.stdout.splitlines())
     except Exception as e:
         print(f"Error checking git status: {e}")
-        return defaultdict(list), 0
+        return collections.defaultdict(list), 0
 
 def commit_changes():
     try:
@@ -46,7 +45,7 @@ def commit_changes():
         changes, _ = parse_git_status()
         
         # Create commit message with changes
-        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         changes_list = []
         for change_type, files in changes.items():
             if files:
@@ -92,63 +91,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-#########################
-
-# import os
-# import subprocess
-# import time
-# import datetime
-
-# def count_changes():
-#     try:
-#         result = subprocess.run(['git', 'status', '--porcelain'], 
-#                               capture_output=True, text=True)
-#         return len(result.stdout.splitlines())
-#     except Exception as e:
-#         print(f"Error checking git status: {e}")
-#         return 0
-
-# def commit_changes():
-#     try:
-#         # Add all changes
-#         subprocess.run(['git', 'add', '--all'])
-        
-#         # Create commit message with timestamp
-#         timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-#         message = f"Auto-commit: Batch of changes at {timestamp}"
-        
-#         # Commit
-#         subprocess.run(['git', 'commit', '-m', message])
-        
-#         # Push
-#         subprocess.run(['git', 'push'])
-        
-#         print(f"Successfully committed and pushed changes: {message}")
-#     except Exception as e:
-#         print(f"Error during git operations: {e}")
-
-# def main():
-#     change_count = 0
-#     last_change_count = 0
-    
-#     print("Monitoring git changes... (Press Ctrl+C to stop)")
-    
-#     while True:
-#         current_changes = count_changes()
-        
-#         if current_changes != last_change_count:
-#             change_count += abs(current_changes - last_change_count)
-#             last_change_count = current_changes
-            
-#             print(f"Changes detected. Total changes: {change_count}")
-            
-#             if change_count >= 1:
-#                 print("Committing changes...")
-#                 commit_changes()
-#                 change_count = 0
-        
-#         time.sleep(600)  # Check every 60 seconds
-
-# if __name__ == "__main__":
-#     main()
