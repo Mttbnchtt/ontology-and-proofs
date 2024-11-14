@@ -1,0 +1,448 @@
+@prefix ns1: <https://www.foom.com/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ns1:refers_to a owl:ObjectProperty ;
+    rdfs:label "refers to" ;
+    skos:prefLabel "refers to" .
+
+<https://www.foom.com/euclid#3_sides_of_equal_length> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: 3_sides_of_equal_length" ;
+    skos:prefLabel "3_sides_of_equal_length" ;
+    ns1:refers_to <https://www.foom.com/euclid#isosceles_triangle> .
+
+<https://www.foom.com/euclid#angle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Angle" ;
+    skos:prefLabel "Angle" ;
+    ns1:refers_to <https://www.foom.com/euclid#quadrilateral_igure>,
+        <https://www.foom.com/euclid#rectangular>,
+        <https://www.foom.com/euclid#rectilinear_angle>,
+        <https://www.foom.com/euclid#rhomboid>,
+        <https://www.foom.com/euclid#square>,
+        <https://www.foom.com/euclid#trapezoid_quadrilateral_figure> .
+
+<https://www.foom.com/euclid#breadth> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Breadth" ;
+    skos:prefLabel "Breadth" ;
+    ns1:refers_to <https://www.foom.com/euclid#line> .
+
+<https://www.foom.com/euclid#breath> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Breath" ;
+    skos:prefLabel "Breath" ;
+    ns1:refers_to <https://www.foom.com/euclid#surface> .
+
+<https://www.foom.com/euclid#circumference> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Circumference" ;
+    skos:prefLabel "Circumference" ;
+    ns1:refers_to <https://www.foom.com/euclid#diameter>,
+        <https://www.foom.com/euclid#semicircle> .
+
+<https://www.foom.com/euclid#end> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: End" ;
+    skos:prefLabel "End" ;
+    ns1:refers_to <https://www.foom.com/euclid#boundary> .
+
+<https://www.foom.com/euclid#equal_inclination> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Equal_inclination" ;
+    skos:prefLabel "Equal_inclination" ;
+    ns1:refers_to <https://www.foom.com/euclid#perpendicular_straight_lines>,
+        <https://www.foom.com/euclid#quadrilateral_igure>,
+        <https://www.foom.com/euclid#rectangular>,
+        <https://www.foom.com/euclid#rhomboid>,
+        <https://www.foom.com/euclid#right_angle>,
+        <https://www.foom.com/euclid#square>,
+        <https://www.foom.com/euclid#trapezoid_quadrilateral_figure> .
+
+<https://www.foom.com/euclid#equal_length> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Equal_length" ;
+    skos:prefLabel "Equal_length" ;
+    ns1:refers_to <https://www.foom.com/euclid#circle>,
+        <https://www.foom.com/euclid#quadrilateral_igure>,
+        <https://www.foom.com/euclid#rectangular>,
+        <https://www.foom.com/euclid#rhomboid>,
+        <https://www.foom.com/euclid#square>,
+        <https://www.foom.com/euclid#trapezoid_quadrilateral_figure> .
+
+<https://www.foom.com/euclid#equal_length_of_sides> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Equal_length_of_sides" ;
+    skos:prefLabel "Equal_length_of_sides" ;
+    ns1:refers_to <https://www.foom.com/euclid#equilateral_triangle>,
+        <https://www.foom.com/euclid#isosceles_triangle>,
+        <https://www.foom.com/euclid#scalene_triangle> .
+
+<https://www.foom.com/euclid#equal_level> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Equal_level" ;
+    skos:prefLabel "Equal_level" ;
+    ns1:refers_to <https://www.foom.com/euclid#plane_surface>,
+        <https://www.foom.com/euclid#straight_line> .
+
+<https://www.foom.com/euclid#greater> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Greater" ;
+    skos:prefLabel "Greater" ;
+    ns1:refers_to <https://www.foom.com/euclid#obtuse_angle> .
+
+<https://www.foom.com/euclid#half> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Half" ;
+    skos:prefLabel "Half" ;
+    ns1:refers_to <https://www.foom.com/euclid#diameter> .
+
+<https://www.foom.com/euclid#inclination> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Inclination" ;
+    skos:prefLabel "Inclination" ;
+    ns1:refers_to <https://www.foom.com/euclid#plane_angle> .
+
+<https://www.foom.com/euclid#indefinite_extension> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Indefinite_extension" ;
+    skos:prefLabel "Indefinite_extension" ;
+    ns1:refers_to <https://www.foom.com/euclid#parallel_lines> .
+
+<https://www.foom.com/euclid#interior> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Interior" ;
+    skos:prefLabel "Interior" ;
+    ns1:refers_to <https://www.foom.com/euclid#circle> .
+
+<https://www.foom.com/euclid#interior_point> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Interior_point" ;
+    skos:prefLabel "Interior_point" ;
+    ns1:refers_to <https://www.foom.com/euclid#center>,
+        <https://www.foom.com/euclid#circle> .
+
+<https://www.foom.com/euclid#lenght> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Lenght" ;
+    skos:prefLabel "Lenght" ;
+    ns1:refers_to <https://www.foom.com/euclid#line>,
+        <https://www.foom.com/euclid#surface> .
+
+<https://www.foom.com/euclid#less> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Less" ;
+    skos:prefLabel "Less" ;
+    ns1:refers_to <https://www.foom.com/euclid#acute_angle> .
+
+<https://www.foom.com/euclid#lying_on> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Lying_on" ;
+    skos:prefLabel "Lying_on" ;
+    ns1:refers_to <https://www.foom.com/euclid#straight_line> .
+
+<https://www.foom.com/euclid#meeting> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Meeting" ;
+    skos:prefLabel "Meeting" ;
+    ns1:refers_to <https://www.foom.com/euclid#parallel_lines>,
+        <https://www.foom.com/euclid#plane_angle> .
+
+<https://www.foom.com/euclid#numbers> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Numbers" ;
+    skos:prefLabel "Numbers" ;
+    ns1:refers_to <https://www.foom.com/euclid#multilateral_rectilinear_figure>,
+        <https://www.foom.com/euclid#quadrilateral_igure>,
+        <https://www.foom.com/euclid#quadrilateral_rectilinear_figure>,
+        <https://www.foom.com/euclid#rectangular>,
+        <https://www.foom.com/euclid#rectilinear_figure>,
+        <https://www.foom.com/euclid#rhomboid>,
+        <https://www.foom.com/euclid#square>,
+        <https://www.foom.com/euclid#trapezoid_quadrilateral_figure>,
+        <https://www.foom.com/euclid#trilateral> .
+
+<https://www.foom.com/euclid#only> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Only" ;
+    skos:prefLabel "Only" ;
+    ns1:refers_to <https://www.foom.com/euclid#surface> .
+
+<https://www.foom.com/euclid#opposite_angles> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Opposite_angles" ;
+    skos:prefLabel "Opposite_angles" ;
+    ns1:refers_to <https://www.foom.com/euclid#quadrilateral_igure>,
+        <https://www.foom.com/euclid#rectangular>,
+        <https://www.foom.com/euclid#rhomboid>,
+        <https://www.foom.com/euclid#square>,
+        <https://www.foom.com/euclid#trapezoid_quadrilateral_figure> .
+
+<https://www.foom.com/euclid#opposite_sides> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Opposite_sides" ;
+    skos:prefLabel "Opposite_sides" ;
+    ns1:refers_to <https://www.foom.com/euclid#quadrilateral_igure>,
+        <https://www.foom.com/euclid#rectangular>,
+        <https://www.foom.com/euclid#rhomboid>,
+        <https://www.foom.com/euclid#square>,
+        <https://www.foom.com/euclid#trapezoid_quadrilateral_figure> .
+
+<https://www.foom.com/euclid#part> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Part" ;
+    skos:prefLabel "Part" ;
+    ns1:refers_to <https://www.foom.com/euclid#point> .
+
+<https://www.foom.com/euclid#plane> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Plane" ;
+    skos:prefLabel "Plane" ;
+    ns1:refers_to <https://www.foom.com/euclid#parallel_lines>,
+        <https://www.foom.com/euclid#plane_angle> .
+
+<https://www.foom.com/euclid#plane_figure> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Plane_figure" ;
+    skos:prefLabel "Plane_figure" ;
+    ns1:refers_to <https://www.foom.com/euclid#circle> .
+
+<https://www.foom.com/euclid#quadrilateral> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Quadrilateral" ;
+    skos:prefLabel "Quadrilateral" ;
+    ns1:refers_to <https://www.foom.com/euclid#rectangular>,
+        <https://www.foom.com/euclid#rhomboid>,
+        <https://www.foom.com/euclid#square> .
+
+<https://www.foom.com/euclid#side> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Side" ;
+    skos:prefLabel "Side" ;
+    ns1:refers_to <https://www.foom.com/euclid#quadrilateral_igure>,
+        <https://www.foom.com/euclid#rectangular>,
+        <https://www.foom.com/euclid#rhomboid>,
+        <https://www.foom.com/euclid#square>,
+        <https://www.foom.com/euclid#trapezoid_quadrilateral_figure> .
+
+<https://www.foom.com/euclid#boundary> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Boundary" ;
+    skos:prefLabel "Boundary" ;
+    ns1:refers_to <https://www.foom.com/euclid#figure> .
+
+<https://www.foom.com/euclid#figure> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Figure" ;
+    skos:prefLabel "Figure" ;
+    ns1:refers_to <https://www.foom.com/euclid#rectangular>,
+        <https://www.foom.com/euclid#rhomboid>,
+        <https://www.foom.com/euclid#semicircle>,
+        <https://www.foom.com/euclid#square> .
+
+<https://www.foom.com/euclid#point> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Point" ;
+    skos:prefLabel "Point" ;
+    ns1:refers_to <https://www.foom.com/euclid#center>,
+        <https://www.foom.com/euclid#circle>,
+        <https://www.foom.com/euclid#end_of_line>,
+        <https://www.foom.com/euclid#straight_line> .
+
+<https://www.foom.com/euclid#acute_angle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Acute_angle" ;
+    skos:prefLabel "Acute_angle" ;
+    ns1:refers_to <https://www.foom.com/euclid#acute_triangle> .
+
+<https://www.foom.com/euclid#acute_triangle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Acute_triangle" ;
+    skos:prefLabel "Acute_triangle" .
+
+<https://www.foom.com/euclid#end_of_line> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: End_of_line" ;
+    skos:prefLabel "End_of_line" .
+
+<https://www.foom.com/euclid#end_of_surface> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: End_of_surface" ;
+    skos:prefLabel "End_of_surface" .
+
+<https://www.foom.com/euclid#equilateral_triangle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Equilateral_triangle" ;
+    skos:prefLabel "Equilateral_triangle" .
+
+<https://www.foom.com/euclid#line> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Line" ;
+    skos:prefLabel "Line" ;
+    ns1:refers_to <https://www.foom.com/euclid#circle>,
+        <https://www.foom.com/euclid#end_of_line>,
+        <https://www.foom.com/euclid#end_of_surface> .
+
+<https://www.foom.com/euclid#multilateral_rectilinear_figure> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Multilateral_rectilinear_figure" ;
+    skos:prefLabel "Multilateral_rectilinear_figure" .
+
+<https://www.foom.com/euclid#obtuse_angle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Obtuse_angle" ;
+    skos:prefLabel "Obtuse_angle" ;
+    ns1:refers_to <https://www.foom.com/euclid#obtuse_triangle> .
+
+<https://www.foom.com/euclid#obtuse_triangle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Obtuse_triangle" ;
+    skos:prefLabel "Obtuse_triangle" .
+
+<https://www.foom.com/euclid#perpendicular_straight_lines> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Perpendicular_straight_lines" ;
+    skos:prefLabel "Perpendicular_straight_lines" .
+
+<https://www.foom.com/euclid#plane_surface> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Plane_surface" ;
+    skos:prefLabel "Plane_surface" .
+
+<https://www.foom.com/euclid#quadrilateral_rectilinear_figure> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Quadrilateral_rectilinear_figure" ;
+    skos:prefLabel "Quadrilateral_rectilinear_figure" .
+
+<https://www.foom.com/euclid#rectilinear_angle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Rectilinear_angle" ;
+    skos:prefLabel "Rectilinear_angle" .
+
+<https://www.foom.com/euclid#rectilinear_figure> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Rectilinear_figure" ;
+    skos:prefLabel "Rectilinear_figure" ;
+    ns1:refers_to <https://www.foom.com/euclid#trilateral> .
+
+<https://www.foom.com/euclid#right_angle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Right_angle" ;
+    skos:prefLabel "Right_angle" ;
+    ns1:refers_to <https://www.foom.com/euclid#acute_angle>,
+        <https://www.foom.com/euclid#obtuse_angle>,
+        <https://www.foom.com/euclid#perpendicular_straight_lines>,
+        <https://www.foom.com/euclid#right_triangle> .
+
+<https://www.foom.com/euclid#right_triangle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Right_triangle" ;
+    skos:prefLabel "Right_triangle" .
+
+<https://www.foom.com/euclid#scalene_triangle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Scalene_triangle" ;
+    skos:prefLabel "Scalene_triangle" .
+
+<https://www.foom.com/euclid#center> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Center" ;
+    skos:prefLabel "Center" ;
+    ns1:refers_to <https://www.foom.com/euclid#diameter>,
+        <https://www.foom.com/euclid#semicircle> .
+
+<https://www.foom.com/euclid#isosceles_triangle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Isosceles_triangle" ;
+    skos:prefLabel "Isosceles_triangle" .
+
+<https://www.foom.com/euclid#straight_line> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Straight_line" ;
+    skos:prefLabel "Straight_line" ;
+    ns1:refers_to <https://www.foom.com/euclid#diameter>,
+        <https://www.foom.com/euclid#multilateral_rectilinear_figure>,
+        <https://www.foom.com/euclid#parallel_lines>,
+        <https://www.foom.com/euclid#plane_angle>,
+        <https://www.foom.com/euclid#plane_surface>,
+        <https://www.foom.com/euclid#quadrilateral_rectilinear_figure>,
+        <https://www.foom.com/euclid#rectilinear_angle>,
+        <https://www.foom.com/euclid#rectilinear_figure>,
+        <https://www.foom.com/euclid#right_angle>,
+        <https://www.foom.com/euclid#trilateral> .
+
+<https://www.foom.com/euclid#surface> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Surface" ;
+    skos:prefLabel "Surface" ;
+    ns1:refers_to <https://www.foom.com/euclid#end_of_surface> .
+
+<https://www.foom.com/euclid#trilateral> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Trilateral" ;
+    skos:prefLabel "Trilateral" ;
+    ns1:refers_to <https://www.foom.com/euclid#acute_triangle>,
+        <https://www.foom.com/euclid#equilateral_triangle>,
+        <https://www.foom.com/euclid#isosceles_triangle>,
+        <https://www.foom.com/euclid#obtuse_triangle>,
+        <https://www.foom.com/euclid#right_triangle>,
+        <https://www.foom.com/euclid#scalene_triangle> .
+
+<https://www.foom.com/euclid#diameter> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Diameter" ;
+    skos:prefLabel "Diameter" ;
+    ns1:refers_to <https://www.foom.com/euclid#semicircle> .
+
+<https://www.foom.com/euclid#parallel_lines> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Parallel_lines" ;
+    skos:prefLabel "Parallel_lines" .
+
+<https://www.foom.com/euclid#plane_angle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Plane_angle" ;
+    skos:prefLabel "Plane_angle" .
+
+<https://www.foom.com/euclid#semicircle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Semicircle" ;
+    skos:prefLabel "Semicircle" .
+
+<https://www.foom.com/euclid#circle> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Circle" ;
+    skos:prefLabel "Circle" ;
+    ns1:refers_to <https://www.foom.com/euclid#center> .
+
+<https://www.foom.com/euclid#quadrilateral_igure> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Quadrilateral_igure" ;
+    skos:prefLabel "Quadrilateral_igure" .
+
+<https://www.foom.com/euclid#trapezoid_quadrilateral_figure> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Trapezoid_quadrilateral_figure" ;
+    skos:prefLabel "Trapezoid_quadrilateral_figure" .
+
+<https://www.foom.com/euclid#rectangular> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Rectangular" ;
+    skos:prefLabel "Rectangular" .
+
+<https://www.foom.com/euclid#rhomboid> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Rhomboid" ;
+    skos:prefLabel "Rhomboid" .
+
+<https://www.foom.com/euclid#square> a owl:NamedIndividual,
+        ns1:Concept ;
+    rdfs:label "Concept: Square" ;
+    skos:prefLabel "Square" .
+
+ns1:Concept a owl:Class ;
+    rdfs:label "Concept" ;
+    skos:prefLabel "Concept" .
+
