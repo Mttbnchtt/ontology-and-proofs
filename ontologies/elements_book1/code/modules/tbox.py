@@ -20,7 +20,6 @@ definition_refers_to = utils.create_iri("definition refers to", namespace="https
 is_defined_in = utils.create_iri("is defined in", namespace="https://www.foom.com/core")
 contains_definition_of = utils.create_iri("contains_definition_of", namespace="https://www.foom.com/core")
 
-
 def add_tbox_triples(kg: rdflib.Graph,
                      label: str,
                      graph_type: rdflib.URIRef,

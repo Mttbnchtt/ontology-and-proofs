@@ -19,7 +19,9 @@ concept_class = utils.create_iri("Concept", namespace="https://www.foom.com/core
 definition_refers_to = utils.create_iri("definition refers to", namespace="https://www.foom.com/core")
 is_defined_in = utils.create_iri("is defined in", namespace="https://www.foom.com/core")
 contains_definition_of = utils.create_iri("contains_definition_of", namespace="https://www.foom.com/core")
-
+is_in = utils.create_iri("is in", namespace="https://www.foom.com/core")
+has_definition = utils.create_iri("has definition", namespace="https://www.foom.com/core")
+defines = utils.create_iri("defines", namespace="https://www.foom.com/core")
 def extract_definition_concepts(lines: list) -> dict:
     concepts = {line.split()[0]: {
             "definition": "",
@@ -59,9 +61,17 @@ def add_definition_concepts(kg: rdflib.Graph,
         
     return kg
 
-def add_definition(kg: rdflb.Graph,
-                   definition: str) -> rdflb.Graph:
-    return
+def add_definition(kg: rdflib.Graph,
+                   definition: str,
+                   definition_iri: rdflib.URIRef) -> rdflib.Graph:
+    definiton_label = f"Definition: {definition}"
+    kg.add((definition_iri, rdf_type, owl_individual))
+    kg.add((definition_iri, rdfs_label, rdflib.Literal(definiton_label)))
+    kg.add((definition_iri, rdf_type, utils.create_iri("Definition")))
+    kg.add((definition_iri, is_in, utils.create_iri("Elements Book 1")))
+    kg.add((definition_iri, skos_prefLabel, rdflib.Literal(definiton_label)))
+
+    return kg
 
 def main_add_definition_concepts(file_path: str,
                                  kg: rdflib.Graph) -> rdflib.Graph:
