@@ -3,10 +3,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-ns1:Document a owl:Class ;
-    rdfs:label "Document" ;
-    skos:prefLabel "Document" .
-
 ns1:contains_definition_of a owl:ObjectProperty ;
     rdfs:label "contains_definition_of" ;
     skos:prefLabel "contains_definition_of" .
@@ -238,6 +234,10 @@ ns1:is_defined_in a owl:ObjectProperty ;
         <https://www.foom.com/euclid#rhomboid>,
         <https://www.foom.com/euclid#square>,
         <https://www.foom.com/euclid#trapezoid_quadrilateral_figure> .
+
+ns1:Document a owl:Class ;
+    rdfs:label "Document" ;
+    skos:prefLabel "Document" .
 
 <https://www.foom.com/euclid#boundary> a owl:NamedIndividual,
         ns1:Concept ;
@@ -489,7 +489,8 @@ ns1:is_defined_in a owl:ObjectProperty ;
     skos:prefLabel "Square" ;
     ns1:is_defined_in <https://www.foom.com/euclid#Elements_Book_1> .
 
-<https://www.foom.com/euclid#Elements_Book_1> a owl:NamedIndividual ;
+<https://www.foom.com/euclid#Elements_Book_1> a owl:NamedIndividual,
+        ns1:Document ;
     rdfs:label "Document: Elements Book 1" ;
     skos:prefLabel "Elements Book 1" ;
     ns1:contains_definition_of <https://www.foom.com/euclid#acute_angle>,
