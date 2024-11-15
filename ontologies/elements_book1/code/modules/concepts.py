@@ -3,7 +3,22 @@ import rdflib
 import re
 
 import modules.utils as utils
-# import modules.tbox as tbox
+
+# common IRIs
+rdf_type = rdflib.RDF.type
+rdfs_label = rdflib.RDFS.label
+skos_prefLabel = rdflib.SKOS.prefLabel
+skos_altLabel = rdflib.SKOS.altLabel
+owl_class = rdflib.OWL.Class
+owl_individual = rdflib.OWL.NamedIndividual
+owl_object_property = rdflib.OWL.ObjectProperty
+owl_data_property = rdflib.OWL.DatatypeProperty
+owl_annotation_property = rdflib.OWL.AnnotationProperty
+
+concept_class = utils.create_iri("Concept", namespace="https://www.foom.com/core")
+definition_refers_to = utils.create_iri("definition refers to", namespace="https://www.foom.com/core")
+is_defined_in = utils.create_iri("is defined in", namespace="https://www.foom.com/core")
+contains_definition_of = utils.create_iri("contains_definition_of", namespace="https://www.foom.com/core")
 
 def extract_definition_concepts(lines: list) -> dict:
     concepts = {line.split()[0]: {
@@ -24,29 +39,28 @@ def add_triples(kg: rdflib.Graph,
                 class_iri: rdflib.URIRef,
                 prefix_label: str):
     kg.add((concept_iri, rdf_type, owl_individual))
-    kg.add((concept_iri, rdfs_label, rdflib.Literal(f"{prefix_label}: {capitalize_first_letter(concept)}")))
-    kg.add((concept_iri, skos_prefLabel, rdflib.Literal(capitalize_first_letter(concept))))
+    kg.add((concept_iri, rdfs_label, rdflib.Literal(f"{prefix_label}: {utils.capitalize_first_letter(concept)}")))
+    kg.add((concept_iri, skos_prefLabel, rdflib.Literal(utils.capitalize_first_letter(concept))))
     kg.add((concept_iri, rdf_type, class_iri))
     return kg
 
 def add_definition_concepts(kg: rdflib.Graph,
                             concepts: dict) -> rdflib.Graph:
     for concept, concept_data in concepts.items():
-        concept_iri = create_iri(concept)
+        concept_iri = utils.create_iri(concept)
         kg = add_triples(kg, concept, concept_iri, concept_class, "Concept")
-        kg.add((concept_iri, is_defined_in, create_iri("Elements Book 1")))
-        kg.add((create_iri("Elements Book 1"), contains_definition_of, concept_iri))
+        kg.add((concept_iri, is_defined_in, utils.create_iri("Elements Book 1")))
+        kg.add((utils.create_iri("Elements Book 1"), contains_definition_of, concept_iri))
         for subconcept in concept_data["subconcepts"]:
             subconcept_label = subconcept.replace("~", "").replace(",", "").strip()
-            subconcept_iri = create_iri(subconcept_label)
+            subconcept_iri = utils.create_iri(subconcept_label)
             kg = add_triples(kg, subconcept_label, subconcept_iri, concept_class, "Concept")
-            kg.add((create_iri(subconcept_label), definition_refers_to, create_iri(concept)))
+            kg.add((utils.create_iri(subconcept_label), definition_refers_to, utils.create_iri(concept)))
     return kg
 
 def main_add_definition_concepts(file_path: str,
                                  kg: rdflib.Graph) -> rdflib.Graph:
     lines = utils.read_text_file(file_path)
     concepts = extract_definition_concepts(lines)
-    # kg = add_tbox(kg, ontology_items, triples)
     kg = add_definition_concepts(kg, concepts)
     return kg
