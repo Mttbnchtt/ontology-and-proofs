@@ -89,15 +89,18 @@ def add_definition_concepts(kg: rdflib.Graph,
             subconcept_iri = utils.create_iri(subconcept_label)
             kg = add_triples(kg, subconcept_label, subconcept_iri, concept_class, "Concept")
             kg.add((utils.create_iri(subconcept_label), definition_refers_to, utils.create_iri(concept)))
-        
+        definition_label = f"Definition: {concept_data['definition']}"
+        definition_iri = utils.create_iri(definition_label)
+        kg = add_definition(kg, definition_label, definition_iri)
+        kg.add((concept_iri, has_definition, definition_iri))
+        kg.add((definition_iri, defines, concept_iri))
     return kg
 
 def add_definition(kg: rdflib.Graph,
-                   definition: str,
+                   definition_label: str,
                    definition_iri: rdflib.URIRef) -> rdflib.Graph:
-    definiton_label = f"Definition: {definition}"
     kg.add((definition_iri, rdf_type, owl_individual))
-    kg.add((definition_iri, rdfs_label, rdflib.Literal(definiton_label)))
+    kg.add((definition_iri, rdfs_label, rdflib.Literal(definition_label)))
     kg.add((definition_iri, rdf_type, utils.create_iri("Definition")))
     kg.add((definition_iri, is_in, utils.create_iri("Elements Book 1")))
     kg.add((definition_iri, skos_prefLabel, rdflib.Literal(definiton_label)))
