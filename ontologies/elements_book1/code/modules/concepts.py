@@ -44,10 +44,8 @@ def add_definition_concepts(kg: rdflib.Graph,
     return kg
 
 def main_add_definition_concepts(file_path: str,
-                                 kg: rdflib.Graph,
-                                 ontology_items: set,
-                                 triples: set) -> rdflib.Graph:
-    lines = read_text_file(file_path)
+                                 kg: rdflib.Graph) -> rdflib.Graph:
+    lines = utils.read_text_file(file_path)
     concepts = extract_definition_concepts(lines)
     # kg = add_tbox(kg, ontology_items, triples)
     kg = add_definition_concepts(kg, concepts)
