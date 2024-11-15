@@ -1,3 +1,34 @@
+"""
+Module: concepts.py
+Author: [Your Name]
+Date: [Insert Date]
+Description:
+    This module defines functions to extract concepts and their definitions from a text file,
+    and to add these concepts as RDF triples into a knowledge graph using the rdflib library.
+
+Dependencies:
+    - os
+    - rdflib
+    - re
+    - modules.utils
+
+Functions:
+    - extract_definition_concepts: Parses lines of text to extract concepts, their definitions, and subconcepts.
+    - add_triples: Adds triples related to a concept into a knowledge graph.
+    - add_definition_concepts: Adds multiple concepts and their relationships to a knowledge graph.
+    - add_definition: Adds definition-specific triples into a knowledge graph.
+    - main_add_definition_concepts: Main function to process a file and update a knowledge graph.
+
+Usage:
+    This module is intended for processing ontological data and building RDF-based knowledge graphs.
+
+License:
+    MIT
+
+Author:
+    Matteo Bianchetti
+"""
+
 import os
 import rdflib
 import re

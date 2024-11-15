@@ -1,3 +1,32 @@
+"""
+Module: tbox.py
+Author: [Your Name]
+Date: [Insert Date]
+Description:
+    This module provides functions to define TBox-level triples for ontologies, 
+    facilitating the creation of RDF-based knowledge graphs using the rdflib library.
+
+Dependencies:
+    - os
+    - rdflib
+    - modules.utils
+
+Functions:
+    - add_tbox_triples: Adds TBox-level triples to a knowledge graph.
+    - add_tbox: Processes a set of ontology items and associated triples to populate a knowledge graph.
+
+Usage:
+    This module is intended for defining terminological axioms (TBox) in ontologies, 
+    supporting RDF and OWL representations.
+
+License:
+    [Insert License Information, e.g., MIT, GPL, etc.]
+
+Contact:
+    [Your Email or Contact Information]
+"""
+
+
 import os
 import rdflib
 import re
