@@ -1,6 +1,6 @@
 """
 Module: concepts.py
-Author: [Your Name]
+Author: Matteo Bianchetti
 Date: [Insert Date]
 Description:
     This module defines functions to extract concepts and their definitions from a text file,
@@ -53,7 +53,19 @@ contains_definition_of = utils.create_iri("contains_definition_of", namespace="h
 is_in = utils.create_iri("is in", namespace="https://www.foom.com/core")
 has_definition = utils.create_iri("has definition", namespace="https://www.foom.com/core")
 defines = utils.create_iri("defines", namespace="https://www.foom.com/core")
+
+
 def extract_definition_concepts(lines: list) -> dict:
+    """
+    Extracts concepts, their definitions, and subconcepts from a list of lines.
+
+    Args:
+        lines (list): A list of strings where each string represents a line of text.
+
+    Returns:
+        dict: A dictionary where each key is a concept, and the value is a dictionary
+              containing its definition and a list of subconcepts.
+    """
     concepts = {line.split()[0]: {
             "definition": "",
             "subconcepts": []
@@ -66,19 +78,44 @@ def extract_definition_concepts(lines: list) -> dict:
 
     return concepts
 
+
 def add_triples(kg: rdflib.Graph,
                 concept: str,
                 concept_iri: rdflib.URIRef,
                 class_iri: rdflib.URIRef,
                 prefix_label: str):
+    """
+    Adds RDF triples for a concept into a knowledge graph.
+
+    Args:
+        kg (rdflib.Graph): The knowledge graph to which triples are added.
+        concept (str): The name of the concept.
+        concept_iri (rdflib.URIRef): The IRI of the concept.
+        class_iri (rdflib.URIRef): The IRI of the class the concept belongs to.
+        prefix_label (str): A prefix to use for the concept label.
+
+    Returns:
+        rdflib.Graph: The updated knowledge graph with the new triples added.
+    """
     kg.add((concept_iri, rdf_type, owl_individual))
     kg.add((concept_iri, rdfs_label, rdflib.Literal(f"{prefix_label}: {utils.capitalize_first_letter(concept)}")))
     kg.add((concept_iri, skos_prefLabel, rdflib.Literal(utils.capitalize_first_letter(concept))))
     kg.add((concept_iri, rdf_type, class_iri))
     return kg
 
+
 def add_definition_concepts(kg: rdflib.Graph,
                             concepts: dict) -> rdflib.Graph:
+    """
+    Adds concepts and their relationships (definitions and subconcepts) to a knowledge graph.
+
+    Args:
+        kg (rdflib.Graph): The knowledge graph to which triples are added.
+        concepts (dict): A dictionary of concepts with their definitions and subconcepts.
+
+    Returns:
+        rdflib.Graph: The updated knowledge graph with the new triples added.
+    """
     for concept, concept_data in concepts.items():
         concept_iri = utils.create_iri(concept)
         kg = add_triples(kg, concept, concept_iri, concept_class, "Concept")
@@ -96,19 +133,43 @@ def add_definition_concepts(kg: rdflib.Graph,
         kg.add((definition_iri, defines, concept_iri))
     return kg
 
+
 def add_definition(kg: rdflib.Graph,
                    definition_label: str,
                    definition_iri: rdflib.URIRef) -> rdflib.Graph:
+    """
+    Adds a definition as RDF triples into a knowledge graph.
+
+    Args:
+        kg (rdflib.Graph): The knowledge graph to which triples are added.
+        definition_label (str): The label of the definition.
+        definition_iri (rdflib.URIRef): The IRI of the definition.
+
+    Returns:
+        rdflib.Graph: The updated knowledge graph with the definition triples added.
+    """
     kg.add((definition_iri, rdf_type, owl_individual))
     kg.add((definition_iri, rdfs_label, rdflib.Literal(definition_label)))
     kg.add((definition_iri, rdf_type, utils.create_iri("Definition")))
     kg.add((definition_iri, is_in, utils.create_iri("Elements Book 1")))
-    kg.add((definition_iri, skos_prefLabel, rdflib.Literal(definiton_label)))
+    kg.add((definition_iri, skos_prefLabel, rdflib.Literal(definition_label)))
 
     return kg
 
+
 def main_add_definition_concepts(file_path: str,
                                  kg: rdflib.Graph) -> rdflib.Graph:
+    """
+    Main function to process a file and add extracted concepts and their relationships
+    to a knowledge graph.
+
+    Args:
+        file_path (str): The path to the file containing concept definitions.
+        kg (rdflib.Graph): The knowledge graph to which triples are added.
+
+    Returns:
+        rdflib.Graph: The updated knowledge graph with the new triples added.
+    """
     lines = utils.read_text_file(file_path)
     concepts = extract_definition_concepts(lines)
     kg = add_definition_concepts(kg, concepts)

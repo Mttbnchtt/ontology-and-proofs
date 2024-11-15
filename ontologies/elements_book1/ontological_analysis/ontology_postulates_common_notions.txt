@@ -1,0 +1,40 @@
+Postulate_1 concepts: straight line, point
+Postulate_1 relations:
+Postulate_1 operation: join(point, point) --> straight line
+
+Postulate_2 concepts: finite straight line
+Postulate_2 relations:
+Postulate_2 operation: produce(straight_line) --> straight line
+
+Postulate_3 concepts: circle, center, radius
+Postulate_3 relations:
+Postulate_3 operation: draw(center, radius) --> circle
+
+Postulate_4 concepts: right angle
+Postulate_4 relations: equal(right_angle, right_angle)
+Postulate_4 operation:
+
+Postulate_5 concepts: straight line, interior angle, right angle, side of line, same side of lide, sum
+Postulate_5 relations: less_than(sum(inclination_of_interior_angles), inclination_of_two_right_angles) --> 
+Postulate_5 operation: produce(straight_lines) --> [intersection_point]
+
+Common Notion_1 concepts: thing
+Common Notion_1 relations: equal(thing1, x) AND equal(thing2, x) --> equal(thing1, thing2)
+Common Notion_1 operation:
+Common Notion_1 name: equal_to_same_are_equal
+
+Common Notion_2 concepts: equal things, whole
+Common Notion_2 relations: equal(thing1, thing2)
+Common Notion_2 operation: add(thing1, x) = whole1 & add(thing2, x) = whole2 --> equal(whole1, whole2); add(thing1, thing2) --> thing3; add(thing1, thing2) = whole
+
+Common Notion_3 concepts: equal things, remainder
+Common Notion_3 relations: equal(thing1, thing2)
+Common Notion_3 operation: subtract(thing1, x) = remainder1 & subtract(thing2, x) = remainder2 --> equal(remainder1, remainder2); subtract(thing1, thing2) --> thing3; subtract(thing1, thing2) = remainder
+
+Common Notion_7 concepts: thing
+Common Notion_7 relations: superimpose(thing1, thing2) --> equal(thing1, thing2)
+Common Notion_7 operation: superimpose(thing1, thing2) --> thing3
+
+Common Notion_8 concepts: whole, part_of_whole
+Common Notion_8 relations: greater_than(whole, part_of_whole)
+Common Notion_8 operation:
