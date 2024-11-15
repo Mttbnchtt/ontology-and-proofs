@@ -56,7 +56,12 @@ def add_definition_concepts(kg: rdflib.Graph,
             subconcept_iri = utils.create_iri(subconcept_label)
             kg = add_triples(kg, subconcept_label, subconcept_iri, concept_class, "Concept")
             kg.add((utils.create_iri(subconcept_label), definition_refers_to, utils.create_iri(concept)))
+        
     return kg
+
+def add_definition(kg: rdflb.Graph,
+                   definition: str) -> rdflb.Graph:
+    return
 
 def main_add_definition_concepts(file_path: str,
                                  kg: rdflib.Graph) -> rdflib.Graph:
