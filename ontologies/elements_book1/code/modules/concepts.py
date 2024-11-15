@@ -117,15 +117,15 @@ def add_definition_concepts(kg: rdflib.Graph,
         rdflib.Graph: The updated knowledge graph with the new triples added.
     """
     for concept, concept_data in concepts.items():
-        concept_iri = utils.create_iri(concept)
+        concept_iri = utils.create_iri(concept, namespace="https://www.foom.com/euclid")
         kg = add_triples(kg, concept, concept_iri, concept_class, "Concept")
-        kg.add((concept_iri, is_defined_in, utils.create_iri("Elements Book 1")))
-        kg.add((utils.create_iri("Elements Book 1"), contains_definition_of, concept_iri))
+        kg.add((concept_iri, is_defined_in, utils.create_iri("Elements Book 1", namespace="https://www.foom.com/euclid")))
+        kg.add((utils.create_iri("Elements Book 1", namespace="https://www.foom.com/euclid"), contains_definition_of, concept_iri))
         for subconcept in concept_data["subconcepts"]:
             subconcept_label = subconcept.replace("~", "").replace(",", "").strip()
-            subconcept_iri = utils.create_iri(subconcept_label)
+            subconcept_iri = utils.create_iri(subconcept_label, namespace="https://www.foom.com/euclid")
             kg = add_triples(kg, subconcept_label, subconcept_iri, concept_class, "Concept")
-            kg.add((utils.create_iri(subconcept_label), definition_refers_to, utils.create_iri(concept)))
+            kg.add((utils.create_iri(subconcept_label, namespace="https://www.foom.com/euclid"), definition_refers_to, utils.create_iri(concept, namespace="https://www.foom.com/euclid")))
         definition_label = f"Definition: {concept_data['definition']}"
         definition_iri = utils.create_iri(definition_label, namespace="https://www.foom.com/euclid")
         kg = add_definition(kg, definition_label, definition_iri)
@@ -151,7 +151,7 @@ def add_definition(kg: rdflib.Graph,
     kg.add((definition_iri, rdf_type, owl_individual))
     kg.add((definition_iri, rdfs_label, rdflib.Literal(definition_label)))
     kg.add((definition_iri, rdf_type, utils.create_iri("Definition", namespace="https://www.foom.com/core")))
-    kg.add((definition_iri, is_in, utils.create_iri("Elements Book 1")))
+    kg.add((definition_iri, is_in, utils.create_iri("Elements Book 1", namespace="https://www.foom.com/euclid")))
     kg.add((definition_iri, skos_prefLabel, rdflib.Literal(definition_label)))
 
     return kg
