@@ -48,6 +48,7 @@ owl_annotation_property = rdflib.OWL.AnnotationProperty
 
 concept_class = utils.create_iri("Concept", namespace="https://www.foom.com/core")
 definition_refers_to = utils.create_iri("definition refers to", namespace="https://www.foom.com/core")
+is_used_in_definition_of = utils.create_iri("is used in definition of", namespace="https://www.foom.com/core")
 is_defined_in = utils.create_iri("is defined in", namespace="https://www.foom.com/core")
 contains_definition_of = utils.create_iri("contains_definition_of", namespace="https://www.foom.com/core")
 is_in = utils.create_iri("is in", namespace="https://www.foom.com/core")
@@ -125,7 +126,8 @@ def add_definition_concepts(kg: rdflib.Graph,
             subconcept_label = subconcept.replace("~", "").replace(",", "").strip()
             subconcept_iri = utils.create_iri(subconcept_label, namespace="https://www.foom.com/euclid")
             kg = add_triples(kg, subconcept_label, subconcept_iri, concept_class, "Concept")
-            kg.add((utils.create_iri(subconcept_label, namespace="https://www.foom.com/euclid"), definition_refers_to, utils.create_iri(concept, namespace="https://www.foom.com/euclid")))
+            kg.add((utils.create_iri(subconcept_label, namespace="https://www.foom.com/euclid"), is_used_in_definition_of, utils.create_iri(concept, namespace="https://www.foom.com/euclid")))
+            kg.add((utils.create_iri(concept, namespace="https://www.foom.com/euclid"), is_used_in_definition_of, utils.create_iri(subconcept_label, namespace="https://www.foom.com/euclid")))
         definition_label = f"Definition: {concept_data['definition']}"
         definition_iri = utils.create_iri(definition_label, namespace="https://www.foom.com/euclid")
         kg = add_definition(kg, definition_label, definition_iri)
