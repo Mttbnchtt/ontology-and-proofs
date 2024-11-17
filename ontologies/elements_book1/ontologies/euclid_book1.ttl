@@ -37,6 +37,10 @@ ns1:defines a owl:ObjectProperty ;
     rdfs:label "defines" ;
     skos:prefLabel "defines" .
 
+ns1:definition_refers_to a owl:ObjectProperty ;
+    rdfs:label "definition refers to" ;
+    skos:prefLabel "definition refers to" .
+
 ns1:has_definition a owl:ObjectProperty ;
     rdfs:label "has definition" ;
     skos:prefLabel "has definition" .
@@ -60,6 +64,10 @@ ns1:is_defined_in a owl:ObjectProperty ;
 ns1:is_in a owl:ObjectProperty ;
     rdfs:label "is in" ;
     skos:prefLabel "is in" .
+
+ns1:is_used_in_definition_of a owl:ObjectProperty ;
+    rdfs:label "is used in definition of" ;
+    skos:prefLabel "is used in definition of" .
 
 ns1:refers_to a owl:ObjectProperty ;
     rdfs:label "refers to" ;
