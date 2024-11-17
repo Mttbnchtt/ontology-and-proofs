@@ -100,7 +100,7 @@ def add_triples(kg: rdflib.Graph,
     """
     kg.add((concept_iri, rdf_type, owl_individual))
     kg.add((concept_iri, rdfs_label, rdflib.Literal(f"{prefix_label}: {utils.capitalize_first_letter(concept)}")))
-    kg.add((concept_iri, skos_prefLabel, rdflib.Literal(utils.capitalize_first_letter(concept))))
+    kg.add((concept_iri, skos_prefLabel, rdflib.Literal(utils.capitalize_first_letter(concept).replace("_", " "))))
     kg.add((concept_iri, rdf_type, class_iri))
     return kg
 
@@ -127,7 +127,7 @@ def add_definition_concepts(kg: rdflib.Graph,
             subconcept_iri = utils.create_iri(f"Concept: {subconcept_label}", namespace="https://www.foom.com/euclid")
             kg = add_triples(kg, subconcept_label, subconcept_iri, concept_class, "Concept")
             kg.add((subconcept_iri, is_used_in_definition_of, concept_iri))
-            kg.add((concept_iri, is_used_in_definition_of, subconcept_iri))
+            kg.add((concept_iri, definition_refers_to, subconcept_iri))
         definition_label = f"Definition: {concept_data['definition']}"
         definition_iri = utils.create_iri(definition_label, namespace="https://www.foom.com/euclid")
         kg = add_definition(kg, definition_label, definition_iri)
