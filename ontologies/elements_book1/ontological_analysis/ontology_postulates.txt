@@ -1,15 +1,16 @@
-Postulate_1 concepts: finite_straight_line, point
-Postulate_1 relations:
-Postulate_1 operations: join(point,point)->finite_straight_line
-Postulate_2 concepts: finite_straight_line
-Postulate_2 relations:
-Postulate_2 operations: produce(finite_straight_line)->infinite_straight_line
-Postulate_3 concepts: circle; center; interval
-Postulate_3 relations:
-Postulate_3 operations: draw(center,interval)->circle
-Postulate_4 concepts: right_angle
-Postulate_4 relations: equal(right_angle,right_angle)
-Postulate_4 operations:
-Postulate_5 concepts: finite_straight_line; interior_angle; right_angle; side_of_line; same_side_of_line; sum; inclination_of_angles; inclination_of_interior_angles; inclination_of_two_right_angles
-Postulate_5 relations: less_than(sum(inclination_of_interior_angles),sum(inclination_of_two_right_angles))
-Postulate_5 operations: produce(finite_straight_lines)->intersection_point, sum(inclination_of_angles)
+Postulate_1 concepts finite_straight_line, point
+Postulate_1 relations
+Postulate_1 operations join(point,point)->finite_straight_line
+Postulate_2 concepts finite_straight_line
+Postulate_2 relations
+Postulate_2 operations produce(finite_straight_line)->infinite_straight_line
+Postulate_3 concepts circle; center; interval
+Postulate_3 relations
+Postulate_3 operations draw(center,interval)->circle
+Postulate_4 concepts right_angle
+Postulate_4 relations equal(right_angle,right_angle)
+Postulate_4 operations
+Postulate_5 concepts finite_straight_line; interior_angle; right_angle; side_of_line; same_side_of_line; sum; inclination_of_angles; inclination_of_interior_angles; inclination_of_two_right_angles
+Postulate_5 relations less_than(sum(inclination_of_interior_angles),sum(inclination_of_two_right_angles)) 
+Postulate_4 relations_types less_than(magnitude:, magnitude:); sum(magnitude:, magnitude:)
+Postulate_5 operations produce(finite_straight_lines)->intersection_point, sum(inclination_of_angles)
