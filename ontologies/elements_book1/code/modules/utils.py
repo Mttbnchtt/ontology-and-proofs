@@ -37,7 +37,7 @@ def read_text_file(file_path: str) -> list:
     return lines
 
 def create_iri(input_string: str,
-               namespace:str = "https://www.foom.com/euclid") -> rdflib.URIRef:
+               namespace:str = "https://www.foom.com/core") -> rdflib.URIRef:
     """Creates an IRI (Internationalized Resource Identifier).
 
     Combines a namespace with a cleaned version of the input string to form
