@@ -24,7 +24,7 @@ def edit_string(input_string: str) -> str:
     # [^\w\s] matches any character that is not a word character or a whitespace character
     # ^ inside the square brackets acts as a negation
     # \w matches any word character (alphanumeric characters and underscores)
-    return string.strip()
+    return string.lower().strip()
 
 def capitalize_first_letter(text):
     if len(text) == 0:

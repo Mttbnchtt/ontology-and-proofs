@@ -3,60 +3,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-ns1:Common_notion a owl:Class ;
+ns1:common_notion a owl:Class ;
     rdfs:label "Common notion" ;
     skos:prefLabel "Common notion" .
-
-ns1:Magnitude a owl:Class ;
-    rdfs:label "Magnitude" ;
-    skos:prefLabel "Magnitude" .
-
-ns1:Operation a owl:Class ;
-    rdfs:label "Operation" ;
-    skos:prefLabel "Operation" .
-
-ns1:Postulate_1 a owl:NamedIndividual,
-        ns1:Postulate ;
-    rdfs:label "Postulate 1" ;
-    skos:prefLabel "Postulate 1" .
-
-ns1:Postulate_2 a owl:NamedIndividual,
-        ns1:Postulate ;
-    rdfs:label "Postulate 2" ;
-    skos:prefLabel "Postulate 2" .
-
-ns1:Postulate_3 a owl:NamedIndividual,
-        ns1:Postulate ;
-    rdfs:label "Postulate 3" ;
-    skos:prefLabel "Postulate 3" .
-
-ns1:Postulate_4 a owl:NamedIndividual,
-        ns1:Postulate ;
-    rdfs:label "Postulate 4" ;
-    skos:prefLabel "Postulate 4" .
-
-ns1:Postulate_5 a owl:NamedIndividual,
-        ns1:Postulate ;
-    rdfs:label "Postulate 5" ;
-    skos:prefLabel "Postulate 5" .
-
-ns1:Proposition a owl:Class ;
-    rdfs:label "Proposition" ;
-    skos:prefLabel "Proposition" .
-
-ns1:Proposition_type__Construction a owl:NamedIndividual,
-        ns1:Proposition_type ;
-    rdfs:label "Proposition type: Construction" ;
-    skos:prefLabel "Construction" .
-
-ns1:Proposition_type__Theorem a owl:NamedIndividual,
-        ns1:Proposition_type ;
-    rdfs:label "Proposition type: Theorem" ;
-    skos:prefLabel "Theorem" .
-
-ns1:Statement a owl:Class ;
-    rdfs:label "Statement" ;
-    skos:prefLabel "Statement" .
 
 ns1:contains_definition_of a owl:ObjectProperty ;
     rdfs:label "contains_definition_of" ;
@@ -106,947 +55,992 @@ ns1:is_used_in_definition_of a owl:ObjectProperty ;
     rdfs:label "is used in definition of" ;
     skos:prefLabel "is used in definition of" .
 
+ns1:operation a owl:Class ;
+    rdfs:label "Operation" ;
+    skos:prefLabel "Operation" .
+
+ns1:proposition a owl:Class ;
+    rdfs:label "Proposition" ;
+    skos:prefLabel "Proposition" .
+
+ns1:proposition_type__construction a owl:NamedIndividual,
+        ns1:proposition_type ;
+    rdfs:label "Proposition type: Construction" ;
+    skos:prefLabel "Construction" .
+
+ns1:proposition_type__theorem a owl:NamedIndividual,
+        ns1:proposition_type ;
+    rdfs:label "Proposition type: Theorem" ;
+    skos:prefLabel "Theorem" .
+
 ns1:refers_to a owl:ObjectProperty ;
     rdfs:label "refers to" ;
     skos:prefLabel "refers to" .
 
-ns1:Concept__3_sides_of_equal_length a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:statement a owl:Class ;
+    rdfs:label "Statement" ;
+    skos:prefLabel "Statement" .
+
+ns1:concept__3_sides_of_equal_length a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: 3_sides_of_equal_length" ;
     skos:prefLabel "3 sides of equal length" ;
-    ns1:is_used_in_definition_of ns1:Concept__isosceles_triangle .
+    ns1:is_used_in_definition_of ns1:concept__isosceles_triangle .
 
-ns1:Concept__end a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__end a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: End" ;
     skos:prefLabel "End" ;
-    ns1:is_used_in_definition_of ns1:Concept__boundary .
+    ns1:is_used_in_definition_of ns1:concept__boundary .
 
-ns1:Concept__finite_straight_line_ ns1:is_in ns1:Postulate__Postulate_1 .
+ns1:concept__finite_straight_line_ ns1:is_in ns1:postulate_1 .
 
-ns1:Concept__greater a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__greater a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Greater" ;
     skos:prefLabel "Greater" ;
-    ns1:is_used_in_definition_of ns1:Concept__obtuse_angle .
+    ns1:is_used_in_definition_of ns1:concept__obtuse_angle .
 
-ns1:Concept__half a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__half a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Half" ;
     skos:prefLabel "Half" ;
-    ns1:is_used_in_definition_of ns1:Concept__diameter .
+    ns1:is_used_in_definition_of ns1:concept__diameter .
 
-ns1:Concept__inclination a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__inclination a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Inclination" ;
     skos:prefLabel "Inclination" ;
-    ns1:is_used_in_definition_of ns1:Concept__plane_angle .
+    ns1:is_used_in_definition_of ns1:concept__plane_angle .
 
-ns1:Concept__inclination_of_angles ns1:is_in ns1:Postulate__Postulate_5 .
+ns1:concept__inclination_of_angles ns1:is_in ns1:postulate_5 .
 
-ns1:Concept__inclination_of_interior_angles ns1:is_in ns1:Postulate__Postulate_5 .
+ns1:concept__inclination_of_interior_angles ns1:is_in ns1:postulate_5 .
 
-ns1:Concept__inclination_of_two_right_angles ns1:is_in ns1:Postulate__Postulate_5 .
+ns1:concept__inclination_of_two_right_angles ns1:is_in ns1:postulate_5 .
 
-ns1:Concept__indefinite_extension a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__indefinite_extension a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Indefinite_extension" ;
     skos:prefLabel "Indefinite extension" ;
-    ns1:is_used_in_definition_of ns1:Concept__parallel_lines .
+    ns1:is_used_in_definition_of ns1:concept__parallel_lines .
 
-ns1:Concept__interior a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__interior a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Interior" ;
     skos:prefLabel "Interior" ;
-    ns1:is_used_in_definition_of ns1:Concept__circle .
+    ns1:is_used_in_definition_of ns1:concept__circle .
 
-ns1:Concept__interior_angle ns1:is_in ns1:Postulate__Postulate_5 .
+ns1:concept__interior_angle ns1:is_in ns1:postulate_5 .
 
-ns1:Concept__interval ns1:is_in ns1:Postulate__Postulate_3 .
+ns1:concept__interval ns1:is_in ns1:postulate_3 .
 
-ns1:Concept__less a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__less a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Less" ;
     skos:prefLabel "Less" ;
-    ns1:is_used_in_definition_of ns1:Concept__acute_angle .
+    ns1:is_used_in_definition_of ns1:concept__acute_angle .
 
-ns1:Concept__lying_on a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__lying_on a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Lying_on" ;
     skos:prefLabel "Lying on" ;
-    ns1:is_used_in_definition_of ns1:Concept__straight_line .
+    ns1:is_used_in_definition_of ns1:concept__straight_line .
 
-ns1:Concept__only a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__only a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Only" ;
     skos:prefLabel "Only" ;
-    ns1:is_used_in_definition_of ns1:Concept__surface .
+    ns1:is_used_in_definition_of ns1:concept__surface .
 
-ns1:Concept__part a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__part a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Part" ;
     skos:prefLabel "Part" ;
-    ns1:is_used_in_definition_of ns1:Concept__point .
+    ns1:is_used_in_definition_of ns1:concept__point .
 
-ns1:Concept__plane_figure a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__plane_figure a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Plane_figure" ;
     skos:prefLabel "Plane figure" ;
-    ns1:is_used_in_definition_of ns1:Concept__circle .
+    ns1:is_used_in_definition_of ns1:concept__circle .
 
-ns1:Concept__same_side_of_line ns1:is_in ns1:Postulate__Postulate_5 .
+ns1:concept__same_side_of_line ns1:is_in ns1:postulate_5 .
 
-ns1:Concept__side_of_line ns1:is_in ns1:Postulate__Postulate_5 .
+ns1:concept__side_of_line ns1:is_in ns1:postulate_5 .
 
-ns1:Concept__sum ns1:is_in ns1:Postulate__Postulate_5 .
+ns1:concept__sum ns1:is_in ns1:postulate_5 .
 
-ns1:Definition__1 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__1 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 1" ;
     skos:prefLabel "Definition: 1" ;
-    ns1:defines ns1:Concept__point ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__point ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__11 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__11 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 11" ;
     skos:prefLabel "Definition: 11" ;
-    ns1:defines ns1:Concept__obtuse_angle ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__obtuse_angle ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__12 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__12 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 12" ;
     skos:prefLabel "Definition: 12" ;
-    ns1:defines ns1:Concept__acute_angle ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__acute_angle ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__13 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__13 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 13" ;
     skos:prefLabel "Definition: 13" ;
-    ns1:defines ns1:Concept__boundary ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__boundary ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__14 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__14 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 14" ;
     skos:prefLabel "Definition: 14" ;
-    ns1:defines ns1:Concept__figure ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__figure ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__15 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__15 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 15" ;
     skos:prefLabel "Definition: 15" ;
-    ns1:defines ns1:Concept__circle ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__circle ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__16 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__16 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 16" ;
     skos:prefLabel "Definition: 16" ;
-    ns1:defines ns1:Concept__center ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__center ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__17 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__17 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 17" ;
     skos:prefLabel "Definition: 17" ;
-    ns1:defines ns1:Concept__diameter ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__diameter ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__18 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__18 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 18" ;
     skos:prefLabel "Definition: 18" ;
-    ns1:defines ns1:Concept__semicircle ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__semicircle ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__2 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__2 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 2" ;
     skos:prefLabel "Definition: 2" ;
-    ns1:defines ns1:Concept__line ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__line ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__23 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__23 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 23" ;
     skos:prefLabel "Definition: 23" ;
-    ns1:defines ns1:Concept__parallel_lines ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__parallel_lines ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__3 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__3 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 3" ;
     skos:prefLabel "Definition: 3" ;
-    ns1:defines ns1:Concept__end_of_line ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__end_of_line ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__4 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__4 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 4" ;
     skos:prefLabel "Definition: 4" ;
-    ns1:defines ns1:Concept__straight_line ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__straight_line ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__5 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__5 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 5" ;
     skos:prefLabel "Definition: 5" ;
-    ns1:defines ns1:Concept__surface ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__surface ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__6 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__6 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 6" ;
     skos:prefLabel "Definition: 6" ;
-    ns1:defines ns1:Concept__end_of_surface ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__end_of_surface ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__7 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__7 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 7" ;
     skos:prefLabel "Definition: 7" ;
-    ns1:defines ns1:Concept__plane_surface ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__plane_surface ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__8 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__8 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 8" ;
     skos:prefLabel "Definition: 8" ;
-    ns1:defines ns1:Concept__plane_angle ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__plane_angle ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__9 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__9 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 9" ;
     skos:prefLabel "Definition: 9" ;
-    ns1:defines ns1:Concept__rectilinear_angle ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__rectilinear_angle ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Document a owl:Class ;
+ns1:document a owl:Class ;
     rdfs:label "Document" ;
     skos:prefLabel "Document" .
 
-ns1:Domain a owl:Class ;
+ns1:domain a owl:Class ;
     rdfs:label "Domain" ;
     skos:prefLabel "Domain" .
 
-ns1:Enumeration a owl:Class ;
+ns1:enumeration a owl:Class ;
     rdfs:label "Enumeration" ;
     skos:prefLabel "Enumeration" .
 
-ns1:Postulate__Postulate_2 ns1:refers_to ns1:Concept__finite_straight_line .
-
-ns1:Relation__equal_right_angle_right_angle_ a owl:NamedIndividual,
-        ns1:Relation_instance ;
-    rdfs:label "Relation: equal(right_angle,right_angle)" ;
-    skos:prefLabel "equal(right_angle,right_angle)" ;
-    ns1:is_in ns1:Postulate__Postulate_4 .
-
-ns1:Relation__less_than_sum_inclination_of_interior_angles__sum_inclination_of_two_right_angles__ a owl:NamedIndividual,
-        ns1:Relation_instance ;
-    rdfs:label "Relation: less_than(sum(inclination_of_interior_angles),sum(inclination_of_two_right_angles))" ;
-    skos:prefLabel "less_than(sum(inclination_of_interior_angles),sum(inclination_of_two_right_angles))" ;
-    ns1:is_in ns1:Postulate__Postulate_5 ;
-    ns1:refers_to ns1:less_than,
-        ns1:sum .
-
-ns1:less_than a ns1:Relation ;
+ns1:less_than a ns1:relation ;
     rdfs:label "less_than(magnitude,magnitude)" ;
     skos:prefLabel "less_than" ;
     ns1:has_domain ns1:magnitude .
 
-ns1:sum a ns1:Relation ;
+ns1:postulate_2 a owl:NamedIndividual,
+        ns1:postulate ;
+    rdfs:label "Postulate 2" ;
+    skos:prefLabel "Postulate 2" ;
+    ns1:refers_to ns1:concept__finite_straight_line .
+
+ns1:relation__equal_right_angle_right_angle_ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation: equal(right_angle,right_angle)" ;
+    skos:prefLabel "equal(right_angle,right_angle)" ;
+    ns1:is_in ns1:postulate_4 .
+
+ns1:relation__less_than_sum_inclination_of_interior_angles__sum_inclination_of_two_right_angles__ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation: less_than(sum(inclination_of_interior_angles),sum(inclination_of_two_right_angles))" ;
+    skos:prefLabel "less_than(sum(inclination_of_interior_angles),sum(inclination_of_two_right_angles))" ;
+    ns1:is_in ns1:postulate_5 ;
+    ns1:refers_to ns1:less_than,
+        ns1:sum .
+
+ns1:sum a ns1:relation ;
     rdfs:label "sum(magnitude,magnitude)" ;
     skos:prefLabel "sum" ;
     ns1:has_domain ns1:magnitude .
 
-ns1:Concept__breadth a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__breadth a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Breadth" ;
     skos:prefLabel "Breadth" ;
-    ns1:is_used_in_definition_of ns1:Concept__line,
-        ns1:Concept__surface .
+    ns1:is_used_in_definition_of ns1:concept__line,
+        ns1:concept__surface .
 
-ns1:Concept__circumference a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__circumference a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Circumference" ;
     skos:prefLabel "Circumference" ;
-    ns1:is_used_in_definition_of ns1:Concept__diameter,
-        ns1:Concept__semicircle .
+    ns1:is_used_in_definition_of ns1:concept__diameter,
+        ns1:concept__semicircle .
 
-ns1:Concept__equal_level a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__equal_level a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Equal_level" ;
     skos:prefLabel "Equal level" ;
-    ns1:is_used_in_definition_of ns1:Concept__plane_surface,
-        ns1:Concept__straight_line .
+    ns1:is_used_in_definition_of ns1:concept__plane_surface,
+        ns1:concept__straight_line .
 
-ns1:Concept__finite_straight_line ns1:is_in ns1:Postulate__Postulate_2,
-        ns1:Postulate__Postulate_5 .
+ns1:concept__finite_straight_line ns1:is_in ns1:postulate_2,
+        ns1:postulate_5 .
 
-ns1:Concept__interior_point a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__interior_point a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Interior_point" ;
     skos:prefLabel "Interior point" ;
-    ns1:is_used_in_definition_of ns1:Concept__center,
-        ns1:Concept__circle .
+    ns1:is_used_in_definition_of ns1:concept__center,
+        ns1:concept__circle .
 
-ns1:Concept__lenght a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__lenght a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Lenght" ;
     skos:prefLabel "Lenght" ;
-    ns1:is_used_in_definition_of ns1:Concept__line,
-        ns1:Concept__surface .
+    ns1:is_used_in_definition_of ns1:concept__line,
+        ns1:concept__surface .
 
-ns1:Concept__meeting a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__meeting a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Meeting" ;
     skos:prefLabel "Meeting" ;
-    ns1:is_used_in_definition_of ns1:Concept__parallel_lines,
-        ns1:Concept__plane_angle .
+    ns1:is_used_in_definition_of ns1:concept__parallel_lines,
+        ns1:concept__plane_angle .
 
-ns1:Concept__plane a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__plane a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Plane" ;
     skos:prefLabel "Plane" ;
-    ns1:is_used_in_definition_of ns1:Concept__parallel_lines,
-        ns1:Concept__plane_angle .
+    ns1:is_used_in_definition_of ns1:concept__parallel_lines,
+        ns1:concept__plane_angle .
 
-ns1:Definition__10 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__10 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 10" ;
     skos:prefLabel "Definition: 10" ;
-    ns1:defines ns1:Concept__perpendicular_straight_lines,
-        ns1:Concept__right_angle ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__perpendicular_straight_lines,
+        ns1:concept__right_angle ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Postulate__Postulate_1 ns1:refers_to ns1:Concept__finite_straight_line_,
-        ns1:Concept__point .
+ns1:magnitude a owl:Class,
+        ns1:domain ;
+    rdfs:label "Magnitude" ;
+    skos:prefLabel "Magnitude" .
 
-ns1:Postulate__Postulate_4 ns1:refers_to ns1:Concept__right_angle,
-        ns1:Relation__equal_right_angle_right_angle_ .
+ns1:postulate_1 a owl:NamedIndividual,
+        ns1:postulate ;
+    rdfs:label "Postulate 1" ;
+    skos:prefLabel "Postulate 1" ;
+    ns1:refers_to ns1:concept__finite_straight_line_,
+        ns1:concept__point .
 
-ns1:Proposition_type a owl:Class ;
+ns1:postulate_4 a owl:NamedIndividual,
+        ns1:postulate ;
+    rdfs:label "Postulate 4" ;
+    skos:prefLabel "Postulate 4" ;
+    ns1:refers_to ns1:concept__right_angle,
+        ns1:relation__equal_right_angle_right_angle_ .
+
+ns1:proposition_type a owl:Class ;
     rdfs:label "Proposition type" ;
-    rdfs:subClassOf ns1:Enumeration ;
+    rdfs:subClassOf ns1:enumeration ;
     skos:prefLabel "Proposition type" .
 
-ns1:Relation a owl:Class ;
+ns1:relation a owl:Class ;
     rdfs:label "Relation" ;
     skos:prefLabel "Relation" .
 
-ns1:Relation_instance a owl:Class ;
+ns1:relation_instance a owl:Class ;
     rdfs:label "Relation instance" ;
     skos:prefLabel "Relation instance" .
 
-ns1:magnitude a ns1:Domain .
-
-ns1:Concept__equal_length_of_sides a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__equal_length_of_sides a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Equal_length_of_sides" ;
     skos:prefLabel "Equal length of sides" ;
-    ns1:is_used_in_definition_of ns1:Concept__equilateral_triangle,
-        ns1:Concept__isosceles_triangle,
-        ns1:Concept__scalene_triangle .
+    ns1:is_used_in_definition_of ns1:concept__equilateral_triangle,
+        ns1:concept__isosceles_triangle,
+        ns1:concept__scalene_triangle .
 
-ns1:Concept__quadrilateral a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__quadrilateral a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Quadrilateral" ;
     skos:prefLabel "Quadrilateral" ;
-    ns1:is_used_in_definition_of ns1:Concept__rectangular,
-        ns1:Concept__rhomboid,
-        ns1:Concept__square .
+    ns1:is_used_in_definition_of ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__square .
 
-ns1:Definition__20 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__20 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 20" ;
     skos:prefLabel "Definition: 20" ;
-    ns1:defines ns1:Concept__equilateral_triangle,
-        ns1:Concept__isosceles_triangle,
-        ns1:Concept__scalene_triangle ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__equilateral_triangle,
+        ns1:concept__isosceles_triangle,
+        ns1:concept__scalene_triangle ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Definition__21 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__21 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 21" ;
     skos:prefLabel "Definition: 21" ;
-    ns1:defines ns1:Concept__acute_triangle,
-        ns1:Concept__obtuse_triangle,
-        ns1:Concept__right_triangle ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__acute_triangle,
+        ns1:concept__obtuse_triangle,
+        ns1:concept__right_triangle ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Postulate__Postulate_3 ns1:refers_to ns1:Concept__center,
-        ns1:Concept__circle,
-        ns1:Concept__interval .
+ns1:postulate_3 a owl:NamedIndividual,
+        ns1:postulate ;
+    rdfs:label "Postulate 3" ;
+    skos:prefLabel "Postulate 3" ;
+    ns1:refers_to ns1:concept__center,
+        ns1:concept__circle,
+        ns1:concept__interval .
 
-ns1:Concept__acute_triangle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__acute_triangle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Acute_triangle" ;
     skos:prefLabel "Acute triangle" ;
-    ns1:definition_refers_to ns1:Concept__acute_angle,
-        ns1:Concept__trilateral ;
-    ns1:has_definition ns1:Definition__21 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__acute_angle,
+        ns1:concept__trilateral ;
+    ns1:has_definition ns1:definition__21 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__boundary a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__boundary a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Boundary" ;
     skos:prefLabel "Boundary" ;
-    ns1:definition_refers_to ns1:Concept__end ;
-    ns1:has_definition ns1:Definition__13 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_used_in_definition_of ns1:Concept__figure .
+    ns1:definition_refers_to ns1:concept__end ;
+    ns1:has_definition ns1:definition__13 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_used_in_definition_of ns1:concept__figure .
 
-ns1:Concept__end_of_line a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__end_of_line a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: End_of_line" ;
     skos:prefLabel "End of line" ;
-    ns1:definition_refers_to ns1:Concept__line,
-        ns1:Concept__point ;
-    ns1:has_definition ns1:Definition__3 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__line,
+        ns1:concept__point ;
+    ns1:has_definition ns1:definition__3 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__end_of_surface a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__end_of_surface a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: End_of_surface" ;
     skos:prefLabel "End of surface" ;
-    ns1:definition_refers_to ns1:Concept__line,
-        ns1:Concept__surface ;
-    ns1:has_definition ns1:Definition__6 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__line,
+        ns1:concept__surface ;
+    ns1:has_definition ns1:definition__6 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__equilateral_triangle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__equilateral_triangle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Equilateral_triangle" ;
     skos:prefLabel "Equilateral triangle" ;
-    ns1:definition_refers_to ns1:Concept__equal_length_of_sides,
-        ns1:Concept__trilateral ;
-    ns1:has_definition ns1:Definition__20 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__equal_length_of_sides,
+        ns1:concept__trilateral ;
+    ns1:has_definition ns1:definition__20 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__multilateral_rectilinear_figure a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__multilateral_rectilinear_figure a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Multilateral_rectilinear_figure" ;
     skos:prefLabel "Multilateral rectilinear figure" ;
-    ns1:definition_refers_to ns1:Concept__numbers,
-        ns1:Concept__straight_line ;
-    ns1:has_definition ns1:Definition__19 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__numbers,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__19 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__obtuse_triangle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__obtuse_triangle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Obtuse_triangle" ;
     skos:prefLabel "Obtuse triangle" ;
-    ns1:definition_refers_to ns1:Concept__obtuse_angle,
-        ns1:Concept__trilateral ;
-    ns1:has_definition ns1:Definition__21 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__obtuse_angle,
+        ns1:concept__trilateral ;
+    ns1:has_definition ns1:definition__21 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__perpendicular_straight_lines a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__perpendicular_straight_lines a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Perpendicular_straight_lines" ;
     skos:prefLabel "Perpendicular straight lines" ;
-    ns1:definition_refers_to ns1:Concept__equal_inclination,
-        ns1:Concept__right_angle ;
-    ns1:has_definition ns1:Definition__10 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__equal_inclination,
+        ns1:concept__right_angle ;
+    ns1:has_definition ns1:definition__10 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__plane_surface a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__plane_surface a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Plane_surface" ;
     skos:prefLabel "Plane surface" ;
-    ns1:definition_refers_to ns1:Concept__equal_level,
-        ns1:Concept__straight_line ;
-    ns1:has_definition ns1:Definition__7 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__equal_level,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__7 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__quadrilateral_rectilinear_figure a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__quadrilateral_rectilinear_figure a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Quadrilateral_rectilinear_figure" ;
     skos:prefLabel "Quadrilateral rectilinear figure" ;
-    ns1:definition_refers_to ns1:Concept__numbers,
-        ns1:Concept__straight_line ;
-    ns1:has_definition ns1:Definition__19 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__numbers,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__19 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__rectilinear_angle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__rectilinear_angle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Rectilinear_angle" ;
     skos:prefLabel "Rectilinear angle" ;
-    ns1:definition_refers_to ns1:Concept__angle,
-        ns1:Concept__straight_line ;
-    ns1:has_definition ns1:Definition__9 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__angle,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__9 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__right_triangle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__right_triangle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Right_triangle" ;
     skos:prefLabel "Right triangle" ;
-    ns1:definition_refers_to ns1:Concept__right_angle,
-        ns1:Concept__trilateral ;
-    ns1:has_definition ns1:Definition__21 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__right_angle,
+        ns1:concept__trilateral ;
+    ns1:has_definition ns1:definition__21 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__scalene_triangle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__scalene_triangle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Scalene_triangle" ;
     skos:prefLabel "Scalene triangle" ;
-    ns1:definition_refers_to ns1:Concept__equal_length_of_sides,
-        ns1:Concept__trilateral ;
-    ns1:has_definition ns1:Definition__20 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__equal_length_of_sides,
+        ns1:concept__trilateral ;
+    ns1:has_definition ns1:definition__20 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Definition__19 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__19 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 19" ;
     skos:prefLabel "Definition: 19" ;
-    ns1:defines ns1:Concept__multilateral_rectilinear_figure,
-        ns1:Concept__quadrilateral_rectilinear_figure,
-        ns1:Concept__rectilinear_figure,
-        ns1:Concept__trilateral ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__multilateral_rectilinear_figure,
+        ns1:concept__quadrilateral_rectilinear_figure,
+        ns1:concept__rectilinear_figure,
+        ns1:concept__trilateral ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Concept__acute_angle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__acute_angle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Acute_angle" ;
     skos:prefLabel "Acute angle" ;
-    ns1:definition_refers_to ns1:Concept__less,
-        ns1:Concept__right_angle ;
-    ns1:has_definition ns1:Definition__12 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_used_in_definition_of ns1:Concept__acute_triangle .
+    ns1:definition_refers_to ns1:concept__less,
+        ns1:concept__right_angle ;
+    ns1:has_definition ns1:definition__12 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_used_in_definition_of ns1:concept__acute_triangle .
 
-ns1:Concept__isosceles_triangle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__isosceles_triangle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Isosceles_triangle" ;
     skos:prefLabel "Isosceles triangle" ;
-    ns1:definition_refers_to ns1:Concept__3_sides_of_equal_length,
-        ns1:Concept__equal_length_of_sides,
-        ns1:Concept__trilateral ;
-    ns1:has_definition ns1:Definition__20 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__3_sides_of_equal_length,
+        ns1:concept__equal_length_of_sides,
+        ns1:concept__trilateral ;
+    ns1:has_definition ns1:definition__20 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__obtuse_angle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__obtuse_angle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Obtuse_angle" ;
     skos:prefLabel "Obtuse angle" ;
-    ns1:definition_refers_to ns1:Concept__greater,
-        ns1:Concept__right_angle ;
-    ns1:has_definition ns1:Definition__11 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_used_in_definition_of ns1:Concept__obtuse_triangle .
+    ns1:definition_refers_to ns1:concept__greater,
+        ns1:concept__right_angle ;
+    ns1:has_definition ns1:definition__11 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_used_in_definition_of ns1:concept__obtuse_triangle .
 
-ns1:Concept__opposite_angles a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__opposite_angles a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Opposite_angles" ;
     skos:prefLabel "Opposite angles" ;
-    ns1:is_used_in_definition_of ns1:Concept__quadrilateral_igure,
-        ns1:Concept__rectangular,
-        ns1:Concept__rhomboid,
-        ns1:Concept__square,
-        ns1:Concept__trapezoid_quadrilateral_figure .
+    ns1:is_used_in_definition_of ns1:concept__quadrilateral_igure,
+        ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__square,
+        ns1:concept__trapezoid_quadrilateral_figure .
 
-ns1:Concept__opposite_sides a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__opposite_sides a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Opposite_sides" ;
     skos:prefLabel "Opposite sides" ;
-    ns1:is_used_in_definition_of ns1:Concept__quadrilateral_igure,
-        ns1:Concept__rectangular,
-        ns1:Concept__rhomboid,
-        ns1:Concept__square,
-        ns1:Concept__trapezoid_quadrilateral_figure .
+    ns1:is_used_in_definition_of ns1:concept__quadrilateral_igure,
+        ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__square,
+        ns1:concept__trapezoid_quadrilateral_figure .
 
-ns1:Concept__rectilinear_figure a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__rectilinear_figure a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Rectilinear_figure" ;
     skos:prefLabel "Rectilinear figure" ;
-    ns1:definition_refers_to ns1:Concept__numbers,
-        ns1:Concept__straight_line ;
-    ns1:has_definition ns1:Definition__19 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_used_in_definition_of ns1:Concept__trilateral .
+    ns1:definition_refers_to ns1:concept__numbers,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__19 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_used_in_definition_of ns1:concept__trilateral .
 
-ns1:Concept__side a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__side a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Side" ;
     skos:prefLabel "Side" ;
-    ns1:is_used_in_definition_of ns1:Concept__quadrilateral_igure,
-        ns1:Concept__rectangular,
-        ns1:Concept__rhomboid,
-        ns1:Concept__square,
-        ns1:Concept__trapezoid_quadrilateral_figure .
+    ns1:is_used_in_definition_of ns1:concept__quadrilateral_igure,
+        ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__square,
+        ns1:concept__trapezoid_quadrilateral_figure .
 
-ns1:Definition__22 a owl:NamedIndividual,
-        ns1:Definition ;
+ns1:definition__22 a owl:NamedIndividual,
+        ns1:definition ;
     rdfs:label "Definition: 22" ;
     skos:prefLabel "Definition: 22" ;
-    ns1:defines ns1:Concept__quadrilateral_igure,
-        ns1:Concept__rectangular,
-        ns1:Concept__rhomboid,
-        ns1:Concept__square,
-        ns1:Concept__trapezoid_quadrilateral_figure ;
-    ns1:is_in ns1:Document__Elements_Book_1 .
+    ns1:defines ns1:concept__quadrilateral_igure,
+        ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__square,
+        ns1:concept__trapezoid_quadrilateral_figure ;
+    ns1:is_in ns1:document__elements_book_1 .
 
-ns1:Postulate a owl:Class ;
+ns1:postulate a owl:Class ;
     rdfs:label "Postulate" ;
     skos:prefLabel "Postulate" .
 
-ns1:Concept__angle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__angle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Angle" ;
     skos:prefLabel "Angle" ;
-    ns1:is_used_in_definition_of ns1:Concept__quadrilateral_igure,
-        ns1:Concept__rectangular,
-        ns1:Concept__rectilinear_angle,
-        ns1:Concept__rhomboid,
-        ns1:Concept__square,
-        ns1:Concept__trapezoid_quadrilateral_figure .
+    ns1:is_used_in_definition_of ns1:concept__quadrilateral_igure,
+        ns1:concept__rectangular,
+        ns1:concept__rectilinear_angle,
+        ns1:concept__rhomboid,
+        ns1:concept__square,
+        ns1:concept__trapezoid_quadrilateral_figure .
 
-ns1:Concept__equal_length a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__equal_length a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Equal_length" ;
     skos:prefLabel "Equal length" ;
-    ns1:is_used_in_definition_of ns1:Concept__circle,
-        ns1:Concept__quadrilateral_igure,
-        ns1:Concept__rectangular,
-        ns1:Concept__rhomboid,
-        ns1:Concept__square,
-        ns1:Concept__trapezoid_quadrilateral_figure .
+    ns1:is_used_in_definition_of ns1:concept__circle,
+        ns1:concept__quadrilateral_igure,
+        ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__square,
+        ns1:concept__trapezoid_quadrilateral_figure .
 
-ns1:Concept__parallel_lines a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__parallel_lines a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Parallel_lines" ;
     skos:prefLabel "Parallel lines" ;
-    ns1:definition_refers_to ns1:Concept__indefinite_extension,
-        ns1:Concept__meeting,
-        ns1:Concept__plane,
-        ns1:Concept__straight_line ;
-    ns1:has_definition ns1:Definition__23 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__indefinite_extension,
+        ns1:concept__meeting,
+        ns1:concept__plane,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__23 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__plane_angle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__plane_angle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Plane_angle" ;
     skos:prefLabel "Plane angle" ;
-    ns1:definition_refers_to ns1:Concept__inclination,
-        ns1:Concept__meeting,
-        ns1:Concept__plane,
-        ns1:Concept__straight_line ;
-    ns1:has_definition ns1:Definition__8 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__inclination,
+        ns1:concept__meeting,
+        ns1:concept__plane,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__8 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__semicircle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__semicircle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Semicircle" ;
     skos:prefLabel "Semicircle" ;
-    ns1:definition_refers_to ns1:Concept__center,
-        ns1:Concept__circumference,
-        ns1:Concept__diameter,
-        ns1:Concept__figure ;
-    ns1:has_definition ns1:Definition__18 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__center,
+        ns1:concept__circumference,
+        ns1:concept__diameter,
+        ns1:concept__figure ;
+    ns1:has_definition ns1:definition__18 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__surface a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__surface a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Surface" ;
     skos:prefLabel "Surface" ;
-    ns1:definition_refers_to ns1:Concept__breadth,
-        ns1:Concept__lenght,
-        ns1:Concept__only ;
-    ns1:has_definition ns1:Definition__5 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_used_in_definition_of ns1:Concept__end_of_surface .
+    ns1:definition_refers_to ns1:concept__breadth,
+        ns1:concept__lenght,
+        ns1:concept__only ;
+    ns1:has_definition ns1:definition__5 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_used_in_definition_of ns1:concept__end_of_surface .
 
-ns1:Concept__diameter a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__diameter a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Diameter" ;
     skos:prefLabel "Diameter" ;
-    ns1:definition_refers_to ns1:Concept__center,
-        ns1:Concept__circumference,
-        ns1:Concept__half,
-        ns1:Concept__straight_line ;
-    ns1:has_definition ns1:Definition__17 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_used_in_definition_of ns1:Concept__semicircle .
+    ns1:definition_refers_to ns1:concept__center,
+        ns1:concept__circumference,
+        ns1:concept__half,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__17 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_used_in_definition_of ns1:concept__semicircle .
 
-ns1:Concept__equal_inclination a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__equal_inclination a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Equal_inclination" ;
     skos:prefLabel "Equal inclination" ;
-    ns1:is_used_in_definition_of ns1:Concept__perpendicular_straight_lines,
-        ns1:Concept__quadrilateral_igure,
-        ns1:Concept__rectangular,
-        ns1:Concept__rhomboid,
-        ns1:Concept__right_angle,
-        ns1:Concept__square,
-        ns1:Concept__trapezoid_quadrilateral_figure .
+    ns1:is_used_in_definition_of ns1:concept__perpendicular_straight_lines,
+        ns1:concept__quadrilateral_igure,
+        ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__right_angle,
+        ns1:concept__square,
+        ns1:concept__trapezoid_quadrilateral_figure .
 
-ns1:Concept__figure a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__figure a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Figure" ;
     skos:prefLabel "Figure" ;
-    ns1:definition_refers_to ns1:Concept__boundary ;
-    ns1:has_definition ns1:Definition__14 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_used_in_definition_of ns1:Concept__rectangular,
-        ns1:Concept__rhomboid,
-        ns1:Concept__semicircle,
-        ns1:Concept__square .
+    ns1:definition_refers_to ns1:concept__boundary ;
+    ns1:has_definition ns1:definition__14 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_used_in_definition_of ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__semicircle,
+        ns1:concept__square .
 
-ns1:Concept__line a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__line a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Line" ;
     skos:prefLabel "Line" ;
-    ns1:definition_refers_to ns1:Concept__breadth,
-        ns1:Concept__lenght ;
-    ns1:has_definition ns1:Definition__2 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_used_in_definition_of ns1:Concept__circle,
-        ns1:Concept__end_of_line,
-        ns1:Concept__end_of_surface .
+    ns1:definition_refers_to ns1:concept__breadth,
+        ns1:concept__lenght ;
+    ns1:has_definition ns1:definition__2 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_used_in_definition_of ns1:concept__circle,
+        ns1:concept__end_of_line,
+        ns1:concept__end_of_surface .
 
-ns1:Concept__center a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__center a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Center" ;
     skos:prefLabel "Center" ;
-    ns1:definition_refers_to ns1:Concept__circle,
-        ns1:Concept__interior_point,
-        ns1:Concept__point ;
-    ns1:has_definition ns1:Definition__16 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_in ns1:Postulate__Postulate_3 ;
-    ns1:is_used_in_definition_of ns1:Concept__diameter,
-        ns1:Concept__semicircle .
+    ns1:definition_refers_to ns1:concept__circle,
+        ns1:concept__interior_point,
+        ns1:concept__point ;
+    ns1:has_definition ns1:definition__16 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_in ns1:postulate_3 ;
+    ns1:is_used_in_definition_of ns1:concept__diameter,
+        ns1:concept__semicircle .
 
-ns1:Concept__point a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__point a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Point" ;
     skos:prefLabel "Point" ;
-    ns1:definition_refers_to ns1:Concept__part ;
-    ns1:has_definition ns1:Definition__1 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_in ns1:Postulate__Postulate_1 ;
-    ns1:is_used_in_definition_of ns1:Concept__center,
-        ns1:Concept__circle,
-        ns1:Concept__end_of_line,
-        ns1:Concept__straight_line .
+    ns1:definition_refers_to ns1:concept__part ;
+    ns1:has_definition ns1:definition__1 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_in ns1:postulate_1 ;
+    ns1:is_used_in_definition_of ns1:concept__center,
+        ns1:concept__circle,
+        ns1:concept__end_of_line,
+        ns1:concept__straight_line .
 
-ns1:Concept__numbers a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__numbers a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Numbers" ;
     skos:prefLabel "Numbers" ;
-    ns1:is_used_in_definition_of ns1:Concept__multilateral_rectilinear_figure,
-        ns1:Concept__quadrilateral_igure,
-        ns1:Concept__quadrilateral_rectilinear_figure,
-        ns1:Concept__rectangular,
-        ns1:Concept__rectilinear_figure,
-        ns1:Concept__rhomboid,
-        ns1:Concept__square,
-        ns1:Concept__trapezoid_quadrilateral_figure,
-        ns1:Concept__trilateral .
+    ns1:is_used_in_definition_of ns1:concept__multilateral_rectilinear_figure,
+        ns1:concept__quadrilateral_igure,
+        ns1:concept__quadrilateral_rectilinear_figure,
+        ns1:concept__rectangular,
+        ns1:concept__rectilinear_figure,
+        ns1:concept__rhomboid,
+        ns1:concept__square,
+        ns1:concept__trapezoid_quadrilateral_figure,
+        ns1:concept__trilateral .
 
-ns1:Concept__quadrilateral_igure a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__quadrilateral_igure a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Quadrilateral_igure" ;
     skos:prefLabel "Quadrilateral igure" ;
-    ns1:definition_refers_to ns1:Concept__angle,
-        ns1:Concept__equal_inclination,
-        ns1:Concept__equal_length,
-        ns1:Concept__numbers,
-        ns1:Concept__opposite_angles,
-        ns1:Concept__opposite_sides,
-        ns1:Concept__side ;
-    ns1:has_definition ns1:Definition__22 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__angle,
+        ns1:concept__equal_inclination,
+        ns1:concept__equal_length,
+        ns1:concept__numbers,
+        ns1:concept__opposite_angles,
+        ns1:concept__opposite_sides,
+        ns1:concept__side ;
+    ns1:has_definition ns1:definition__22 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__trapezoid_quadrilateral_figure a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__trapezoid_quadrilateral_figure a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Trapezoid_quadrilateral_figure" ;
     skos:prefLabel "Trapezoid quadrilateral figure" ;
-    ns1:definition_refers_to ns1:Concept__angle,
-        ns1:Concept__equal_inclination,
-        ns1:Concept__equal_length,
-        ns1:Concept__numbers,
-        ns1:Concept__opposite_angles,
-        ns1:Concept__opposite_sides,
-        ns1:Concept__side ;
-    ns1:has_definition ns1:Definition__22 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__angle,
+        ns1:concept__equal_inclination,
+        ns1:concept__equal_length,
+        ns1:concept__numbers,
+        ns1:concept__opposite_angles,
+        ns1:concept__opposite_sides,
+        ns1:concept__side ;
+    ns1:has_definition ns1:definition__22 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__circle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__circle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Circle" ;
     skos:prefLabel "Circle" ;
-    ns1:definition_refers_to ns1:Concept__equal_length,
-        ns1:Concept__interior,
-        ns1:Concept__interior_point,
-        ns1:Concept__line,
-        ns1:Concept__plane_figure,
-        ns1:Concept__point ;
-    ns1:has_definition ns1:Definition__15 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_in ns1:Postulate__Postulate_3 ;
-    ns1:is_used_in_definition_of ns1:Concept__center .
+    ns1:definition_refers_to ns1:concept__equal_length,
+        ns1:concept__interior,
+        ns1:concept__interior_point,
+        ns1:concept__line,
+        ns1:concept__plane_figure,
+        ns1:concept__point ;
+    ns1:has_definition ns1:definition__15 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_in ns1:postulate_3 ;
+    ns1:is_used_in_definition_of ns1:concept__center .
 
-ns1:Concept__right_angle a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__right_angle a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Right_angle" ;
     skos:prefLabel "Right angle" ;
-    ns1:definition_refers_to ns1:Concept__equal_inclination,
-        ns1:Concept__straight_line ;
-    ns1:has_definition ns1:Definition__10 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_in ns1:Postulate__Postulate_4,
-        ns1:Postulate__Postulate_5 ;
-    ns1:is_used_in_definition_of ns1:Concept__acute_angle,
-        ns1:Concept__obtuse_angle,
-        ns1:Concept__perpendicular_straight_lines,
-        ns1:Concept__right_triangle .
+    ns1:definition_refers_to ns1:concept__equal_inclination,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__10 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_in ns1:postulate_4,
+        ns1:postulate_5 ;
+    ns1:is_used_in_definition_of ns1:concept__acute_angle,
+        ns1:concept__obtuse_angle,
+        ns1:concept__perpendicular_straight_lines,
+        ns1:concept__right_triangle .
 
-ns1:Postulate__Postulate_5 ns1:refers_to ns1:Concept__finite_straight_line,
-        ns1:Concept__inclination_of_angles,
-        ns1:Concept__inclination_of_interior_angles,
-        ns1:Concept__inclination_of_two_right_angles,
-        ns1:Concept__interior_angle,
-        ns1:Concept__right_angle,
-        ns1:Concept__same_side_of_line,
-        ns1:Concept__side_of_line,
-        ns1:Concept__sum,
-        ns1:Relation__less_than_sum_inclination_of_interior_angles__sum_inclination_of_two_right_angles__ .
+ns1:postulate_5 a owl:NamedIndividual,
+        ns1:postulate ;
+    rdfs:label "Postulate 5" ;
+    skos:prefLabel "Postulate 5" ;
+    ns1:refers_to ns1:concept__finite_straight_line,
+        ns1:concept__inclination_of_angles,
+        ns1:concept__inclination_of_interior_angles,
+        ns1:concept__inclination_of_two_right_angles,
+        ns1:concept__interior_angle,
+        ns1:concept__right_angle,
+        ns1:concept__same_side_of_line,
+        ns1:concept__side_of_line,
+        ns1:concept__sum,
+        ns1:relation__less_than_sum_inclination_of_interior_angles__sum_inclination_of_two_right_angles__ .
 
-ns1:Concept__rectangular a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__rectangular a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Rectangular" ;
     skos:prefLabel "Rectangular" ;
-    ns1:definition_refers_to ns1:Concept__angle,
-        ns1:Concept__equal_inclination,
-        ns1:Concept__equal_length,
-        ns1:Concept__figure,
-        ns1:Concept__numbers,
-        ns1:Concept__opposite_angles,
-        ns1:Concept__opposite_sides,
-        ns1:Concept__quadrilateral,
-        ns1:Concept__side ;
-    ns1:has_definition ns1:Definition__22 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__angle,
+        ns1:concept__equal_inclination,
+        ns1:concept__equal_length,
+        ns1:concept__figure,
+        ns1:concept__numbers,
+        ns1:concept__opposite_angles,
+        ns1:concept__opposite_sides,
+        ns1:concept__quadrilateral,
+        ns1:concept__side ;
+    ns1:has_definition ns1:definition__22 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__rhomboid a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__rhomboid a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Rhomboid" ;
     skos:prefLabel "Rhomboid" ;
-    ns1:definition_refers_to ns1:Concept__angle,
-        ns1:Concept__equal_inclination,
-        ns1:Concept__equal_length,
-        ns1:Concept__figure,
-        ns1:Concept__numbers,
-        ns1:Concept__opposite_angles,
-        ns1:Concept__opposite_sides,
-        ns1:Concept__quadrilateral,
-        ns1:Concept__side ;
-    ns1:has_definition ns1:Definition__22 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__angle,
+        ns1:concept__equal_inclination,
+        ns1:concept__equal_length,
+        ns1:concept__figure,
+        ns1:concept__numbers,
+        ns1:concept__opposite_angles,
+        ns1:concept__opposite_sides,
+        ns1:concept__quadrilateral,
+        ns1:concept__side ;
+    ns1:has_definition ns1:definition__22 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__square a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__square a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Square" ;
     skos:prefLabel "Square" ;
-    ns1:definition_refers_to ns1:Concept__angle,
-        ns1:Concept__equal_inclination,
-        ns1:Concept__equal_length,
-        ns1:Concept__figure,
-        ns1:Concept__numbers,
-        ns1:Concept__opposite_angles,
-        ns1:Concept__opposite_sides,
-        ns1:Concept__quadrilateral,
-        ns1:Concept__side ;
-    ns1:has_definition ns1:Definition__22 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 .
+    ns1:definition_refers_to ns1:concept__angle,
+        ns1:concept__equal_inclination,
+        ns1:concept__equal_length,
+        ns1:concept__figure,
+        ns1:concept__numbers,
+        ns1:concept__opposite_angles,
+        ns1:concept__opposite_sides,
+        ns1:concept__quadrilateral,
+        ns1:concept__side ;
+    ns1:has_definition ns1:definition__22 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:Concept__trilateral a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__trilateral a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Trilateral" ;
     skos:prefLabel "Trilateral" ;
-    ns1:definition_refers_to ns1:Concept__numbers,
-        ns1:Concept__rectilinear_figure,
-        ns1:Concept__straight_line ;
-    ns1:has_definition ns1:Definition__19 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_used_in_definition_of ns1:Concept__acute_triangle,
-        ns1:Concept__equilateral_triangle,
-        ns1:Concept__isosceles_triangle,
-        ns1:Concept__obtuse_triangle,
-        ns1:Concept__right_triangle,
-        ns1:Concept__scalene_triangle .
+    ns1:definition_refers_to ns1:concept__numbers,
+        ns1:concept__rectilinear_figure,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__19 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_used_in_definition_of ns1:concept__acute_triangle,
+        ns1:concept__equilateral_triangle,
+        ns1:concept__isosceles_triangle,
+        ns1:concept__obtuse_triangle,
+        ns1:concept__right_triangle,
+        ns1:concept__scalene_triangle .
 
-ns1:Concept__straight_line a owl:NamedIndividual,
-        ns1:Concept ;
+ns1:concept__straight_line a owl:NamedIndividual,
+        ns1:concept ;
     rdfs:label "Concept: Straight_line" ;
     skos:prefLabel "Straight line" ;
-    ns1:definition_refers_to ns1:Concept__equal_level,
-        ns1:Concept__lying_on,
-        ns1:Concept__point ;
-    ns1:has_definition ns1:Definition__4 ;
-    ns1:is_defined_in ns1:Document__Elements_Book_1 ;
-    ns1:is_used_in_definition_of ns1:Concept__diameter,
-        ns1:Concept__multilateral_rectilinear_figure,
-        ns1:Concept__parallel_lines,
-        ns1:Concept__plane_angle,
-        ns1:Concept__plane_surface,
-        ns1:Concept__quadrilateral_rectilinear_figure,
-        ns1:Concept__rectilinear_angle,
-        ns1:Concept__rectilinear_figure,
-        ns1:Concept__right_angle,
-        ns1:Concept__trilateral .
+    ns1:definition_refers_to ns1:concept__equal_level,
+        ns1:concept__lying_on,
+        ns1:concept__point ;
+    ns1:has_definition ns1:definition__4 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_used_in_definition_of ns1:concept__diameter,
+        ns1:concept__multilateral_rectilinear_figure,
+        ns1:concept__parallel_lines,
+        ns1:concept__plane_angle,
+        ns1:concept__plane_surface,
+        ns1:concept__quadrilateral_rectilinear_figure,
+        ns1:concept__rectilinear_angle,
+        ns1:concept__rectilinear_figure,
+        ns1:concept__right_angle,
+        ns1:concept__trilateral .
 
-ns1:Definition a owl:Class ;
+ns1:definition a owl:Class ;
     rdfs:label "Definition" ;
     skos:prefLabel "Definition" .
 
-ns1:Document__Elements_Book_1 a owl:NamedIndividual,
-        ns1:Document ;
+ns1:document__elements_book_1 a owl:NamedIndividual,
+        ns1:document ;
     rdfs:label "Document: Elements Book 1" ;
     skos:prefLabel "Elements Book 1" ;
-    ns1:contains_definition_of ns1:Concept__acute_angle,
-        ns1:Concept__acute_triangle,
-        ns1:Concept__boundary,
-        ns1:Concept__center,
-        ns1:Concept__circle,
-        ns1:Concept__diameter,
-        ns1:Concept__end_of_line,
-        ns1:Concept__end_of_surface,
-        ns1:Concept__equilateral_triangle,
-        ns1:Concept__figure,
-        ns1:Concept__isosceles_triangle,
-        ns1:Concept__line,
-        ns1:Concept__multilateral_rectilinear_figure,
-        ns1:Concept__obtuse_angle,
-        ns1:Concept__obtuse_triangle,
-        ns1:Concept__parallel_lines,
-        ns1:Concept__perpendicular_straight_lines,
-        ns1:Concept__plane_angle,
-        ns1:Concept__plane_surface,
-        ns1:Concept__point,
-        ns1:Concept__quadrilateral_igure,
-        ns1:Concept__quadrilateral_rectilinear_figure,
-        ns1:Concept__rectangular,
-        ns1:Concept__rectilinear_angle,
-        ns1:Concept__rectilinear_figure,
-        ns1:Concept__rhomboid,
-        ns1:Concept__right_angle,
-        ns1:Concept__right_triangle,
-        ns1:Concept__scalene_triangle,
-        ns1:Concept__semicircle,
-        ns1:Concept__square,
-        ns1:Concept__straight_line,
-        ns1:Concept__surface,
-        ns1:Concept__trapezoid_quadrilateral_figure,
-        ns1:Concept__trilateral .
+    ns1:contains_definition_of ns1:concept__acute_angle,
+        ns1:concept__acute_triangle,
+        ns1:concept__boundary,
+        ns1:concept__center,
+        ns1:concept__circle,
+        ns1:concept__diameter,
+        ns1:concept__end_of_line,
+        ns1:concept__end_of_surface,
+        ns1:concept__equilateral_triangle,
+        ns1:concept__figure,
+        ns1:concept__isosceles_triangle,
+        ns1:concept__line,
+        ns1:concept__multilateral_rectilinear_figure,
+        ns1:concept__obtuse_angle,
+        ns1:concept__obtuse_triangle,
+        ns1:concept__parallel_lines,
+        ns1:concept__perpendicular_straight_lines,
+        ns1:concept__plane_angle,
+        ns1:concept__plane_surface,
+        ns1:concept__point,
+        ns1:concept__quadrilateral_igure,
+        ns1:concept__quadrilateral_rectilinear_figure,
+        ns1:concept__rectangular,
+        ns1:concept__rectilinear_angle,
+        ns1:concept__rectilinear_figure,
+        ns1:concept__rhomboid,
+        ns1:concept__right_angle,
+        ns1:concept__right_triangle,
+        ns1:concept__scalene_triangle,
+        ns1:concept__semicircle,
+        ns1:concept__square,
+        ns1:concept__straight_line,
+        ns1:concept__surface,
+        ns1:concept__trapezoid_quadrilateral_figure,
+        ns1:concept__trilateral .
 
-ns1:Concept a owl:Class ;
+ns1:concept a owl:Class ;
     rdfs:label "Concept" ;
     skos:prefLabel "Concept" .
 
