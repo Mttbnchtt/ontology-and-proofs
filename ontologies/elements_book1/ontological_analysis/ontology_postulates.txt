@@ -8,7 +8,7 @@ Postulate_2 relations
 Postulate_2 relations_types
 Postulate_2 operations produce(finite_straight_line)->straight_line
 Postulate_2 operations_types produce(finite_straight_line)->straight_line
-Postulate_3 concepts circle; center; interval
+Postulate_3 concepts circle, center, interval
 Postulate_3 relations
 Postulate_3 relations_types
 Postulate_3 operations draw(center,interval)->circle
