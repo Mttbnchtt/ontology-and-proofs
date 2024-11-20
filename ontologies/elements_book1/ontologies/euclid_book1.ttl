@@ -93,7 +93,11 @@ ns1:concept__end a owl:NamedIndividual,
     skos:prefLabel "End" ;
     ns1:is_used_in_definition_of ns1:concept__boundary .
 
-ns1:concept__finite_straight_line_ ns1:is_in ns1:postulate_1 .
+ns1:concept__finite_straight_line_ a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Finite_straight_line," ;
+    skos:prefLabel "Finite straight line," ;
+    ns1:is_in ns1:postulate_1 .
 
 ns1:concept__greater a owl:NamedIndividual,
         ns1:concept ;
@@ -113,11 +117,23 @@ ns1:concept__inclination a owl:NamedIndividual,
     skos:prefLabel "Inclination" ;
     ns1:is_used_in_definition_of ns1:concept__plane_angle .
 
-ns1:concept__inclination_of_angles ns1:is_in ns1:postulate_5 .
+ns1:concept__inclination_of_angles a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Inclination_of_angles" ;
+    skos:prefLabel "Inclination of angles" ;
+    ns1:is_in ns1:postulate_5 .
 
-ns1:concept__inclination_of_interior_angles ns1:is_in ns1:postulate_5 .
+ns1:concept__inclination_of_interior_angles a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Inclination_of_interior_angles" ;
+    skos:prefLabel "Inclination of interior angles" ;
+    ns1:is_in ns1:postulate_5 .
 
-ns1:concept__inclination_of_two_right_angles ns1:is_in ns1:postulate_5 .
+ns1:concept__inclination_of_two_right_angles a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Inclination_of_two_right_angles" ;
+    skos:prefLabel "Inclination of two right angles" ;
+    ns1:is_in ns1:postulate_5 .
 
 ns1:concept__indefinite_extension a owl:NamedIndividual,
         ns1:concept ;
@@ -131,9 +147,17 @@ ns1:concept__interior a owl:NamedIndividual,
     skos:prefLabel "Interior" ;
     ns1:is_used_in_definition_of ns1:concept__circle .
 
-ns1:concept__interior_angle ns1:is_in ns1:postulate_5 .
+ns1:concept__interior_angle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Interior_angle" ;
+    skos:prefLabel "Interior angle" ;
+    ns1:is_in ns1:postulate_5 .
 
-ns1:concept__interval ns1:is_in ns1:postulate_3 .
+ns1:concept__interval a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Interval" ;
+    skos:prefLabel "Interval" ;
+    ns1:is_in ns1:postulate_3 .
 
 ns1:concept__less a owl:NamedIndividual,
         ns1:concept ;
@@ -165,11 +189,23 @@ ns1:concept__plane_figure a owl:NamedIndividual,
     skos:prefLabel "Plane figure" ;
     ns1:is_used_in_definition_of ns1:concept__circle .
 
-ns1:concept__same_side_of_line ns1:is_in ns1:postulate_5 .
+ns1:concept__same_side_of_line a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Same_side_of_line" ;
+    skos:prefLabel "Same side of line" ;
+    ns1:is_in ns1:postulate_5 .
 
-ns1:concept__side_of_line ns1:is_in ns1:postulate_5 .
+ns1:concept__side_of_line a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Side_of_line" ;
+    skos:prefLabel "Side of line" ;
+    ns1:is_in ns1:postulate_5 .
 
-ns1:concept__sum ns1:is_in ns1:postulate_5 .
+ns1:concept__sum a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Sum" ;
+    skos:prefLabel "Sum" ;
+    ns1:is_in ns1:postulate_5 .
 
 ns1:definition__1 a owl:NamedIndividual,
         ns1:definition ;
@@ -360,7 +396,11 @@ ns1:concept__equal_level a owl:NamedIndividual,
     ns1:is_used_in_definition_of ns1:concept__plane_surface,
         ns1:concept__straight_line .
 
-ns1:concept__finite_straight_line ns1:is_in ns1:postulate_2,
+ns1:concept__finite_straight_line a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Finite_straight_line" ;
+    skos:prefLabel "Finite straight line" ;
+    ns1:is_in ns1:postulate_2,
         ns1:postulate_5 .
 
 ns1:concept__interior_point a owl:NamedIndividual,
