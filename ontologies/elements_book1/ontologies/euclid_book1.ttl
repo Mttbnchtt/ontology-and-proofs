@@ -79,13 +79,13 @@ ns1:magnitude a owl:Class ;
     rdfs:label "Magnitude" ;
     skos:prefLabel "Magnitude" .
 
-ns1:operation a owl:Class ;
-    rdfs:label "Operation" ;
-    skos:prefLabel "Operation" .
-
 ns1:operation_instance a owl:Class ;
     rdfs:label "Operation instance" ;
     skos:prefLabel "Operation instance" .
+
+ns1:operation_type a owl:Class ;
+    rdfs:label "Operation type" ;
+    skos:prefLabel "Operation type" .
 
 ns1:proposition a owl:Class ;
     rdfs:label "Proposition" ;
@@ -387,9 +387,6 @@ ns1:enumeration a owl:Class ;
     rdfs:label "Enumeration" ;
     skos:prefLabel "Enumeration" .
 
-ns1:concept__ ns1:is_used_in ns1:relation__,
-        ns1:relation_type__ .
-
 ns1:concept__breadth a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Breadth" ;
@@ -425,7 +422,11 @@ ns1:concept__interval a owl:NamedIndividual,
     ns1:is_sub_concept_of ns1:concept__magnitude ;
     ns1:is_used_in ns1:postulate_3 .
 
-ns1:concept__is_less_than ns1:is_used_in ns1:relation__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__,
+ns1:concept__is_less_than a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Is_less_than" ;
+    skos:prefLabel "Is less than" ;
+    ns1:is_used_in ns1:relation_instance__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__,
         ns1:relation_type__is_less_than_magnitude__magnitude_ .
 
 ns1:concept__lenght a owl:NamedIndividual,
@@ -457,17 +458,25 @@ ns1:definition__10 a owl:NamedIndividual,
         ns1:concept__right_angle ;
     ns1:is_in ns1:document__elements_book_1 .
 
+ns1:postulate_2 a owl:NamedIndividual,
+        ns1:postulate ;
+    rdfs:label "Postulate 2" ;
+    skos:prefLabel "Postulate 2" ;
+    ns1:refers_to ns1:concept__finite_straight_line,
+        ns1:concept__produce .
+
 ns1:proposition_type a owl:Class ;
     rdfs:label "Proposition type" ;
     rdfs:subClassOf ns1:enumeration ;
     skos:prefLabel "Proposition type" .
 
-ns1:relation_type__ a owl:NamedIndividual,
-        ns1:relation ;
-    rdfs:label "Relation: " ;
-    skos:prefLabel "" ;
-    ns1:is_used_in ns1:relation__ ;
-    ns1:refers_to ns1:concept__ .
+ns1:relation_instance a owl:Class ;
+    rdfs:label "Relation instance" ;
+    skos:prefLabel "Relation instance" .
+
+ns1:relation_type a owl:Class ;
+    rdfs:label "Relation type" ;
+    skos:prefLabel "Relation type" .
 
 ns1:concept__equal_length_of_sides a owl:NamedIndividual,
         ns1:concept ;
@@ -482,7 +491,7 @@ ns1:concept__equals a owl:NamedIndividual,
     rdfs:label "Concept: Equals" ;
     skos:prefLabel "Equals" ;
     ns1:is_used_in ns1:postulate_4,
-        ns1:relation__equals_right_angle__right_angle_,
+        ns1:relation_instance__equals_right_angle__right_angle_,
         ns1:relation_type__equals_magnitude__magnitude_ .
 
 ns1:concept__finite_straight_line a owl:NamedIndividual,
@@ -493,11 +502,19 @@ ns1:concept__finite_straight_line a owl:NamedIndividual,
         ns1:postulate_2,
         ns1:postulate_5 .
 
-ns1:concept__inclination_of_interior_angle ns1:is_sub_concept_of ns1:concept__magnitude ;
-    ns1:is_used_in ns1:relation__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__,
+ns1:concept__inclination_of_interior_angle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Inclination_of_interior_angle" ;
+    skos:prefLabel "Inclination of interior angle" ;
+    ns1:is_sub_concept_of ns1:concept__magnitude ;
+    ns1:is_used_in ns1:relation_instance__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__,
         ns1:relation_type__is_less_than_magnitude__magnitude_ .
 
-ns1:concept__magnitude ns1:is_super_concept_of ns1:concept__inclination_of_interior_angle,
+ns1:concept__magnitude a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Magnitude" ;
+    skos:prefLabel "Magnitude" ;
+    ns1:is_super_concept_of ns1:concept__inclination_of_interior_angle,
         ns1:concept__interval ;
     ns1:is_used_in ns1:relation_type__equals_magnitude__magnitude_ .
 
@@ -527,13 +544,13 @@ ns1:definition__21 a owl:NamedIndividual,
         ns1:concept__right_triangle ;
     ns1:is_in ns1:document__elements_book_1 .
 
-ns1:postulate_2 a owl:NamedIndividual,
+ns1:postulate_1 a owl:NamedIndividual,
         ns1:postulate ;
-    rdfs:label "Postulate 2" ;
-    skos:prefLabel "Postulate 2" ;
+    rdfs:label "Postulate 1" ;
+    skos:prefLabel "Postulate 1" ;
     ns1:refers_to ns1:concept__finite_straight_line,
-        ns1:concept__produce,
-        ns1:relation__ .
+        ns1:concept__join,
+        ns1:concept__point .
 
 ns1:postulate_4 a owl:NamedIndividual,
         ns1:postulate ;
@@ -541,29 +558,21 @@ ns1:postulate_4 a owl:NamedIndividual,
     skos:prefLabel "Postulate 4" ;
     ns1:refers_to ns1:concept__equals,
         ns1:concept__right_angle,
-        ns1:relation__equals_right_angle__right_angle_ .
-
-ns1:relation a owl:Class ;
-    rdfs:label "Relation" ;
-    skos:prefLabel "Relation" .
-
-ns1:relation_instance a owl:Class ;
-    rdfs:label "Relation instance" ;
-    skos:prefLabel "Relation instance" .
+        ns1:relation_instance__equals_right_angle__right_angle_ .
 
 ns1:relation_type__equals_magnitude__magnitude_ a owl:NamedIndividual,
-        ns1:relation ;
-    rdfs:label "Relation: equals(magnitude, magnitude)" ;
+        ns1:relation_type ;
+    rdfs:label "Relation type: equals(magnitude, magnitude)" ;
     skos:prefLabel "equals(magnitude, magnitude)" ;
-    ns1:is_used_in ns1:relation__equals_right_angle__right_angle_ ;
+    ns1:is_used_in ns1:relation_instance__equals_right_angle__right_angle_ ;
     ns1:refers_to ns1:concept__equals,
         ns1:concept__magnitude .
 
 ns1:relation_type__is_less_than_magnitude__magnitude_ a owl:NamedIndividual,
-        ns1:relation ;
-    rdfs:label "Relation: is_less_than(magnitude, magnitude)" ;
+        ns1:relation_type ;
+    rdfs:label "Relation type: is_less_than(magnitude, magnitude)" ;
     skos:prefLabel "is_less_than(magnitude, magnitude)" ;
-    ns1:is_used_in ns1:relation__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__ ;
+    ns1:is_used_in ns1:relation_instance__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__ ;
     ns1:refers_to ns1:concept__inclination_of_interior_angle,
         ns1:concept__is_less_than .
 
@@ -694,27 +703,27 @@ ns1:definition__19 a owl:NamedIndividual,
         ns1:concept__trilateral ;
     ns1:is_in ns1:document__elements_book_1 .
 
-ns1:postulate_1 a owl:NamedIndividual,
+ns1:postulate_3 a owl:NamedIndividual,
         ns1:postulate ;
-    rdfs:label "Postulate 1" ;
-    skos:prefLabel "Postulate 1" ;
-    ns1:refers_to ns1:concept__finite_straight_line,
-        ns1:concept__join,
-        ns1:concept__point,
-        ns1:relation__ .
+    rdfs:label "Postulate 3" ;
+    skos:prefLabel "Postulate 3" ;
+    ns1:refers_to ns1:concept__center,
+        ns1:concept__circle,
+        ns1:concept__draw,
+        ns1:concept__interval .
 
-ns1:relation__equals_right_angle__right_angle_ a owl:NamedIndividual,
+ns1:relation_instance__equals_right_angle__right_angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation: equals(right_angle, right_angle)" ;
+    rdfs:label "Relation instance: equals(right_angle, right_angle)" ;
     skos:prefLabel "equals(right_angle, right_angle)" ;
     ns1:is_used_in ns1:postulate_4 ;
     ns1:refers_to ns1:concept__equals,
         ns1:concept__right_angle,
         ns1:relation_type__equals_magnitude__magnitude_ .
 
-ns1:relation__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__ a owl:NamedIndividual,
+ns1:relation_instance__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation: is_less_than(sum(inclination_of_interior_angle, inclination_of_interior_angle), sum(inclination_of_right_angle, inclination_of_right_angle))" ;
+    rdfs:label "Relation instance: is_less_than(sum(inclination_of_interior_angle, inclination_of_interior_angle), sum(inclination_of_right_angle, inclination_of_right_angle))" ;
     skos:prefLabel "is_less_than(sum(inclination_of_interior_angle, inclination_of_interior_angle), sum(inclination_of_right_angle, inclination_of_right_angle))" ;
     ns1:is_used_in ns1:postulate_5 ;
     ns1:refers_to ns1:concept__inclination_of_interior_angle,
@@ -805,26 +814,6 @@ ns1:definition__22 a owl:NamedIndividual,
 ns1:postulate a owl:Class ;
     rdfs:label "Postulate" ;
     skos:prefLabel "Postulate" .
-
-ns1:postulate_3 a owl:NamedIndividual,
-        ns1:postulate ;
-    rdfs:label "Postulate 3" ;
-    skos:prefLabel "Postulate 3" ;
-    ns1:refers_to ns1:concept__center,
-        ns1:concept__circle,
-        ns1:concept__draw,
-        ns1:concept__interval,
-        ns1:relation__ .
-
-ns1:relation__ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation: " ;
-    skos:prefLabel "" ;
-    ns1:is_used_in ns1:postulate_1,
-        ns1:postulate_2,
-        ns1:postulate_3 ;
-    ns1:refers_to ns1:concept__,
-        ns1:relation_type__ .
 
 ns1:concept__angle a owl:NamedIndividual,
         ns1:concept ;
@@ -1067,7 +1056,7 @@ ns1:concept__right_angle a owl:NamedIndividual,
     ns1:is_defined_in ns1:document__elements_book_1 ;
     ns1:is_used_in ns1:postulate_4,
         ns1:postulate_5,
-        ns1:relation__equals_right_angle__right_angle_ ;
+        ns1:relation_instance__equals_right_angle__right_angle_ ;
     ns1:is_used_in_definition_of ns1:concept__acute_angle,
         ns1:concept__obtuse_angle,
         ns1:concept__perpendicular_straight_lines,
@@ -1120,7 +1109,7 @@ ns1:postulate_5 a owl:NamedIndividual,
         ns1:concept__same_side_of_line,
         ns1:concept__side_of_line,
         ns1:concept__sum,
-        ns1:relation__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__ .
+        ns1:relation_instance__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__ .
 
 ns1:concept__straight_line a owl:NamedIndividual,
         ns1:concept ;
