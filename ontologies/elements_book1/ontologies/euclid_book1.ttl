@@ -3,32 +3,28 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-ns1:common_notion a owl:Class ;
-    rdfs:label "Common notion" ;
-    skos:prefLabel "Common notion" .
-
 ns1:common_notion_1 a owl:NamedIndividual,
-        ns1:concept ;
+        ns1:common_notion ;
     rdfs:label "Common notion: Common_notion_1" ;
     skos:prefLabel "Common notion 1" .
 
 ns1:common_notion_2 a owl:NamedIndividual,
-        ns1:concept ;
+        ns1:common_notion ;
     rdfs:label "Common notion: Common_notion_2" ;
     skos:prefLabel "Common notion 2" .
 
 ns1:common_notion_3 a owl:NamedIndividual,
-        ns1:concept ;
+        ns1:common_notion ;
     rdfs:label "Common notion: Common_notion_3" ;
     skos:prefLabel "Common notion 3" .
 
 ns1:common_notion_7 a owl:NamedIndividual,
-        ns1:concept ;
+        ns1:common_notion ;
     rdfs:label "Common notion: Common_notion_7" ;
     skos:prefLabel "Common notion 7" .
 
 ns1:common_notion_8 a owl:NamedIndividual,
-        ns1:concept ;
+        ns1:common_notion ;
     rdfs:label "Common notion: Common_notion_8" ;
     skos:prefLabel "Common notion 8" .
 
@@ -791,6 +787,10 @@ ns1:relation_instance__is_less_than_sum_inclination_of_interior_angle__inclinati
     ns1:refers_to ns1:concept__inclination_of_interior_angle,
         ns1:concept__is_less_than,
         ns1:relation_type__is_less_than_magnitude__magnitude_ .
+
+ns1:common_notion a owl:Class ;
+    rdfs:label "Common notion" ;
+    skos:prefLabel "Common notion" .
 
 ns1:concept__acute_angle a owl:NamedIndividual,
         ns1:concept ;

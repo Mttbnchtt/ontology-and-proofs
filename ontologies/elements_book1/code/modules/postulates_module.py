@@ -86,7 +86,9 @@ has_predicate = utils.create_iri("has predicate", namespace="https://www.foom.co
 has_object = utils.create_iri("has object", namespace="https://www.foom.com/core")
 
 has_domain = utils.create_iri("has domain", namespace="https://www.foom.com/core")
+is_domain_of = utils.create_iri("is domain of", namespace="https://www.foom.com/core")
 has_range = utils.create_iri("has_range", namespace="https://www.foom.com/core")
+is_range_of = utils.create_iri("is range of", namespace="https://www.foom.com/core")
 
 
 def add_postulates(kg: rdflib.Graph,
@@ -282,7 +284,9 @@ def add_domain_range(kg: rdflib.Graph,
         kg = concepts.add_triples(kg, domain_preflabel, domain_iri, set_class, "Set")
         kg = concepts.add_triples(kg, range_preflabel, range_iri, set_class, "Set")
         kg.add((main_operation_iri, has_domain, domain_iri))
+        kg.add((domain_iri, is_domain_of, main_operation_iri))
         kg.add((main_operation_iri, has_range, range_iri))
+        kg.add((range_iri, is_range_of, main_operation_iri))
     return kg
 
 
