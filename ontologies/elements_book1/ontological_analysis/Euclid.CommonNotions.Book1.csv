@@ -1,6 +1,8 @@
-common_notion,concepts,relation_instance,relation_instance_concepts,relation_type,relation_type_concepts,operation_instance,operation_instance_concepts,operation_instance_start,operation_instance_end,operation_type,operation_type_concepts,operation_type_start,operation_type_end,hierarchy_of_concepts
-Common_notion_1,"equals, thing","equals(x, z) AND equals(y, z) --> equals(x, y)",,,,,,,,,,,,
-Common_notion_2,,,,,,,,,,,,,,
-Common_notion_3,,,,,,,,,,,,,,
-Common_notion_7,,,,,,,,,,,,,,
-Common_notion_8,,,,,,,,,,,,,,
+common_notion,statement,statement_concepts,relation_instance,relation_instance_concepts,relation_type,relation_type_concepts,operation_instance,operation_instance_concepts,operation_instance_start,operation_instance_end,operation_type,operation_type_concepts,operation_type_start,operation_type_end,hierarchy_of_concepts,gist
+Common_notion_1,"equals(x, z) & equals(y, z) -> equals(x, y)","equals, thing, if-then, and","equals(x, y)","equals, thing","equals(x, y)","equals, thing",,,,,,,,,,equals to the same are equal
+Common_notion_2,"(equals(x, y) & equals(v, w)) -> equals(sum(x, v), sum(y, w))","equals, thing, sum, if-then, and","equals(x, y)","equals, thing","equals(x, y)","equals, thing","sum(magnitude, magnitude)->magnitude","sum, magnitude","magnitude, magnitude",magnitude,"sum(magnitude, magnitude)->magnitude","sum, magnitude","magnitude, magnitude",magnitude,,
+Common_notion_3,"(equals(x, y) & equals(v, w)) -> equals(subtract(x, v), subtract(y, w))","equals, thing, subtract, if-then, and","equals(x, y)","equals, thing","equals(x, y)","equals, thing","subtract(magnitude, magnitude)->magnitude","sum, magnitude","magnitude, magnitude",magnitude,"subtract(magnitude, magnitude)->magnitude","sum, magnitude","magnitude, magnitude",magnitude,,
+Common_notion_7,"congruent(x, y)->equals(x, y)","equals, thing, if-then, congruent","equals(x, y)","equals, thing","equals(x, y)",,,,,,,,,,,
+Common_notion_7,"congruent(x, y)->equals(x, y)","equals, thing, if-then, congruent","congruent(x, y)","congruent, thing","congruent(x, y)",,,,,,,,,,,
+Common_notion_8,"greater_than(whole, part) & is_part_of(part, whole)","greater_than, whole, part, is_part_of","greater_than(whole, part)","greater_than, whole, part","greater_than(magnitude, magnitude)","greater_than, magnitude",,,,,,,,,,
+Common_notion_8,"greater_than(whole, part) & is_part_of(part, whole)","greater_than, whole, part, is_part_of","is_part_of(part, whole)","is_part_of, part, whole","is_part_of(thing, thing)","is_part_of, thing",,,,,,,,,,
