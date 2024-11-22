@@ -1,15 +1,15 @@
 Common Notion_1 concepts: thing
-Common Notion_1 relations: equal(thing1, x) AND equal(thing2, x) --> equal(thing1, thing2)
+Common Notion_1 relations: equals(thing1, x) AND equals(thing2, x) --> equals(thing1, thing2)
 Common Notion_1 operation:
 Common Notion_1 name: equal_to_same_are_equal
-Common Notion_2 concepts: equal things, whole
-Common Notion_2 relations: equal(thing1, thing2)
-Common Notion_2 operation: add(thing1, x) = whole1 & add(thing2, x) = whole2 --> equal(whole1, whole2); add(thing1, thing2) --> thing3; add(thing1, thing2) = whole
-Common Notion_3 concepts: equal things, remainder
-Common Notion_3 relations: equal(thing1, thing2)
-Common Notion_3 operation: subtract(thing1, x) = remainder1 & subtract(thing2, x) = remainder2 --> equal(remainder1, remainder2); subtract(thing1, thing2) --> thing3; subtract(thing1, thing2) = remainder
+Common Notion_2 concepts: equals things, whole
+Common Notion_2 relations: equals(thing1, thing2)
+Common Notion_2 operation: add(thing1, x) = whole1 & add(thing2, x) = whole2 --> equals(whole1, whole2); add(thing1, thing2) --> thing3; add(thing1, thing2) = whole
+Common Notion_3 concepts: equals things, remainder
+Common Notion_3 relations: equals(thing1, thing2)
+Common Notion_3 operation: subtract(thing1, x) = remainder1 & subtract(thing2, x) = remainder2 --> equals(remainder1, remainder2); subtract(thing1, thing2) --> thing3; subtract(thing1, thing2) = remainder
 Common Notion_7 concepts: thing
-Common Notion_7 relations: superimpose(thing1, thing2) --> equal(thing1, thing2)
+Common Notion_7 relations: superimpose(thing1, thing2) --> equals(thing1, thing2)
 Common Notion_7 operation: superimpose(thing1, thing2) --> thing3
 Common Notion_8 concepts: whole, part_of_whole
 Common Notion_8 relations: greater_than(whole, part_of_whole)

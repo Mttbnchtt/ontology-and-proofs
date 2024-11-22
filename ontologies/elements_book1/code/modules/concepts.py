@@ -29,9 +29,7 @@ Author:
     Matteo Bianchetti
 """
 
-import os
 import rdflib
-import re
 
 import modules.utils as utils
 
