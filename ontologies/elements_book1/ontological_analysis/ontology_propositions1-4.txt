@@ -8,26 +8,26 @@ gist: construction of equilateral triangles
 
 Proposition 2:
 concepts: finite straight line, point, given point
-relations: equal(new_line, given_line), given(point), given(finite straight_line)
+relations: equals(new_line, given_line), given(point), given(finite straight_line)
 operations: place(finite straight_line, point) --> line
-implication: place(finite straight_line, point) |- equal(place(finite straight_line, point), finite straight_line)
+implication: place(finite straight_line, point) |- equals(place(finite straight_line, point), finite straight_line)
 moral: 
 gist: applicability of rigid motion
 
 Proposition 3:
 concepts: straight line, unequal lengths of finite straight lines
-relations: unequal(lenght_of_line1, lenght_of_line2), greater(lenght_of_line1, lenght_of_line2), given(line1), given(line2)
+relations: unequals(lenght_of_line1, lenght_of_line2), greater(lenght_of_line1, lenght_of_line2), given(line1), given(line2)
 operations: cut_off(greater_line, length_of_lesser_line) --> finite_straight_line
-implication: cut_off(greater_line, length_of_lesser_line) |- unequal(greater_line, lesser_line)
+implication: cut_off(greater_line, length_of_lesser_line) |- unequals(greater_line, lesser_line)
 moral: 
 gist: subtraction of lengths
 
 Proposition 4:
 concepts: triangle, side, angle, base, sides subtending angle
 relations: 
-- equal(lenght_of_side1_triangle1, lenght_of_side1_triangle2)
-- equal(lenght_of_side2_triangle1, lenght_of_side2_triangle2)
-- equal(inclination_of_contained_angle1, inclination_of_contained_angle2)
+- equals(lenght_of_side1_triangle1, lenght_of_side1_triangle2)
+- equals(lenght_of_side2_triangle1, lenght_of_side2_triangle2)
+- equals(inclination_of_contained_angle1, inclination_of_contained_angle2)
 - opposite(angle, side)
 operations: compare(lenght_of_sides, inclination_of_angles) [mental_operation]
 implication: compare(triangle1, triangle2, side1AB, side2AB, side1AC, side2AC, angle1ABC, angle2ABC) |- congruent(triangle1, triangle2)
