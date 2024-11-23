@@ -6,7 +6,7 @@ implication: construct(equilateral_triangle, finite_straight_line) |- is_located
 moral: existence of triangles
 gist: construction of equilateral triangles
 
-Proposition 2:
+Proposition 2:relation
 concepts: finite straight line, point, given point
 relations: equal(new_line, given_line), given(point), given(finite straight_line)
 operations: place(finite straight_line, point) --> line
