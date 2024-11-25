@@ -55,10 +55,6 @@ ns1:has_subject a owl:ObjectProperty ;
     rdfs:label "has subject" ;
     skos:prefLabel "has subject" .
 
-ns1:implication a owl:Class ;
-    rdfs:label "Implication" ;
-    skos:prefLabel "Implication" .
-
 ns1:is_conceptual_component_of a owl:ObjectProperty ;
     rdfs:label "is conceptual component of" ;
     skos:prefLabel "is conceptual component of" .
@@ -107,23 +103,21 @@ ns1:magnitude a owl:Class ;
     rdfs:label "Magnitude" ;
     skos:prefLabel "Magnitude" .
 
-ns1:proposition a owl:Class ;
-    rdfs:label "Proposition" ;
-    skos:prefLabel "Proposition" .
-
-ns1:proposition_type__construction a owl:NamedIndividual,
-        ns1:proposition_type ;
-    rdfs:label "Proposition type: Construction" ;
-    skos:prefLabel "Construction" .
-
-ns1:proposition_type__theorem a owl:NamedIndividual,
-        ns1:proposition_type ;
-    rdfs:label "Proposition type: Theorem" ;
-    skos:prefLabel "Theorem" .
-
 ns1:refers_to a owl:ObjectProperty ;
     rdfs:label "refers to" ;
     skos:prefLabel "refers to" .
+
+ns1:___equals_inclination_of_at_base_angle__isoscles_triangle____inclination_of_at_base_angle__isoscles_triangle___ a owl:NamedIndividual,
+        ns1:implication ;
+    rdfs:label "Implication: |- equals(inclination_of(at_base(angle, isoscles_triangle)), inclination_of(at_base(angle, isoscles_triangle)))" ;
+    skos:prefLabel "|- equals(inclination of(at base(angle, isoscles triangle)), inclination of(at base(angle, isoscles triangle)))" ;
+    ns1:is_implication_of ns1:proposition_5a .
+
+ns1:___equals_inclination_of_at_base_angle__isoscles_triangle____inclination_of_at_base_angle__isoscles_triangle______equals_inclination_of_under_base_angle__isoscles_triangle____inclination_under_base_angle__isoscles_triangle___ a owl:NamedIndividual,
+        ns1:implication ;
+    rdfs:label "Implication: |- equals(inclination_of(at_base(angle, isoscles_triangle)), inclination_of(at_base(angle, isoscles_triangle))) & equals(inclination_of(under_base(angle, isoscles_triangle)), inclination(under_base(angle, isoscles_triangle)))" ;
+    skos:prefLabel "|- equals(inclination of(at base(angle, isoscles triangle)), inclination of(at base(angle, isoscles triangle))) & equals(inclination of(under base(angle, isoscles triangle)), inclination(under base(angle, isoscles triangle)))" ;
+    ns1:is_implication_of ns1:proposition_5 .
 
 ns1:common_notion_1 a owl:NamedIndividual,
         ns1:common_notion ;
@@ -391,6 +385,276 @@ ns1:postulate_4 a owl:NamedIndividual,
     skos:prefLabel "Postulate 4" ;
     ns1:refers_to ns1:relation_instance__equals_right_angle__right_angle_ .
 
+ns1:proposition_10 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 10" ;
+    skos:prefLabel "Proposition 10" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_11 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 11" ;
+    skos:prefLabel "Proposition 11" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_12 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 12" ;
+    skos:prefLabel "Proposition 12" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_13 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 13" ;
+    skos:prefLabel "Proposition 13" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_14 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 14" ;
+    skos:prefLabel "Proposition 14" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_15 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 15" ;
+    skos:prefLabel "Proposition 15" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_16 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 16" ;
+    skos:prefLabel "Proposition 16" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_17 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 17" ;
+    skos:prefLabel "Proposition 17" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_18 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 18" ;
+    skos:prefLabel "Proposition 18" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_19 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 19" ;
+    skos:prefLabel "Proposition 19" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_20 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 20" ;
+    skos:prefLabel "Proposition 20" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_21 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 21" ;
+    skos:prefLabel "Proposition 21" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_22 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 22" ;
+    skos:prefLabel "Proposition 22" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_23 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 23" ;
+    skos:prefLabel "Proposition 23" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_24 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 24" ;
+    skos:prefLabel "Proposition 24" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_25 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 25" ;
+    skos:prefLabel "Proposition 25" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_26 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 26" ;
+    skos:prefLabel "Proposition 26" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_27 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 27" ;
+    skos:prefLabel "Proposition 27" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_28 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 28" ;
+    skos:prefLabel "Proposition 28" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_29 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 29" ;
+    skos:prefLabel "Proposition 29" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_30 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 30" ;
+    skos:prefLabel "Proposition 30" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_31 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 31" ;
+    skos:prefLabel "Proposition 31" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_32 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 32" ;
+    skos:prefLabel "Proposition 32" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_33 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 33" ;
+    skos:prefLabel "Proposition 33" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_34 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 34" ;
+    skos:prefLabel "Proposition 34" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_35 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 35" ;
+    skos:prefLabel "Proposition 35" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_36 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 36" ;
+    skos:prefLabel "Proposition 36" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_37 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 37" ;
+    skos:prefLabel "Proposition 37" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_38 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 38" ;
+    skos:prefLabel "Proposition 38" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_39 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 39" ;
+    skos:prefLabel "Proposition 39" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_40 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 40" ;
+    skos:prefLabel "Proposition 40" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_41 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 41" ;
+    skos:prefLabel "Proposition 41" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_42 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 42" ;
+    skos:prefLabel "Proposition 42" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_43 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 43" ;
+    skos:prefLabel "Proposition 43" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_44 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 44" ;
+    skos:prefLabel "Proposition 44" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_45 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 45" ;
+    skos:prefLabel "Proposition 45" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_46 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 46" ;
+    skos:prefLabel "Proposition 46" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_47 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 47" ;
+    skos:prefLabel "Proposition 47" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_48 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 48" ;
+    skos:prefLabel "Proposition 48" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_6 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 6" ;
+    skos:prefLabel "Proposition 6" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_7 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 7" ;
+    skos:prefLabel "Proposition 7" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_8 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 8" ;
+    skos:prefLabel "Proposition 8" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:proposition_9 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 9" ;
+    skos:prefLabel "Proposition 9" ;
+    ns1:is_in ns1:document__elements_book_1 .
+
+ns1:set__center__interval a owl:NamedIndividual,
+        ns1:set ;
+    rdfs:label "Set: Center, interval" ;
+    skos:prefLabel "Center, interval" ;
+    ns1:is_domain_of ns1:operation__draw_center__interval_____circle .
+
+ns1:set__center_interval a owl:NamedIndividual,
+        ns1:set ;
+    rdfs:label "Set: Center,interval" ;
+    skos:prefLabel "Center,interval" ;
+    ns1:is_domain_of ns1:operation_type__draw_center__interval_____circle .
+
 ns1:set__inclination_of_interior_angle a owl:NamedIndividual,
         ns1:set ;
     rdfs:label "Set: Inclination_of_interior_angle" ;
@@ -414,6 +678,26 @@ ns1:set__point_point a owl:NamedIndividual,
     rdfs:label "Set: Point,point" ;
     skos:prefLabel "Point,point" ;
     ns1:is_domain_of ns1:operation__join_point__point_____finite_straight_line .
+
+ns1:under_base a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Under_base" ;
+    skos:prefLabel "Under base" ;
+    ns1:is_used_in ns1:proposition_5 .
+
+ns1:angle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Angle" ;
+    skos:prefLabel "Angle" ;
+    ns1:is_used_in ns1:proposition_5,
+        ns1:proposition_5a .
+
+ns1:at_base a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: At_base" ;
+    skos:prefLabel "At base" ;
+    ns1:is_used_in ns1:proposition_5,
+        ns1:proposition_5a .
 
 ns1:concept__ a owl:NamedIndividual,
         ns1:concept ;
@@ -535,12 +819,65 @@ ns1:definition__10 a owl:NamedIndividual,
         ns1:concept__right_angle ;
     ns1:is_in ns1:document__elements_book_1 .
 
+ns1:equals a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Equals" ;
+    skos:prefLabel "Equals" ;
+    ns1:is_used_in ns1:proposition_5,
+        ns1:proposition_5a .
+
+ns1:implication a owl:Class ;
+    rdfs:label "Implication" ;
+    skos:prefLabel "Implication" .
+
+ns1:inclination_of a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Inclination_of" ;
+    skos:prefLabel "Inclination of" ;
+    ns1:is_used_in ns1:proposition_5,
+        ns1:proposition_5a .
+
+ns1:isosceles_triangle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Isosceles_triangle" ;
+    skos:prefLabel "Isosceles triangle" ;
+    ns1:is_used_in ns1:proposition_5,
+        ns1:proposition_5a .
+
 ns1:postulate_5 a owl:NamedIndividual,
         ns1:postulate ;
     rdfs:label "Postulate 5" ;
     skos:prefLabel "Postulate 5" ;
     ns1:refers_to ns1:operation__sum_inclination_of_interior_angle__inclination_of_interior_angle___inclination_of_interior_angle,
         ns1:relation_instance__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__ .
+
+ns1:proposition_1 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 1" ;
+    skos:prefLabel "Proposition 1" ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:proposition_type__construction .
+
+ns1:proposition_2 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 2" ;
+    skos:prefLabel "Proposition 2" ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:proposition_type__construction .
+
+ns1:proposition_3 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 3" ;
+    skos:prefLabel "Proposition 3" ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:proposition_type__construction .
+
+ns1:proposition_4 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 4" ;
+    skos:prefLabel "Proposition 4" ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:proposition_type__theorem .
 
 ns1:proposition_type a owl:Class ;
     rdfs:label "Proposition type" ;
@@ -553,13 +890,6 @@ ns1:relation_type__congruent_x__y_ a owl:NamedIndividual,
     skos:prefLabel "Congruent(x, y)" ;
     ns1:is_used_in ns1:relation_instance__congruent_x__y_ ;
     ns1:refers_to ns1:concept__ .
-
-ns1:set__center_interval a owl:NamedIndividual,
-        ns1:set ;
-    rdfs:label "Set: Center,interval" ;
-    skos:prefLabel "Center,interval" ;
-    ns1:is_domain_of ns1:operation__draw_center__interval_____circle,
-        ns1:operation_type__draw_center__interval_____circle .
 
 ns1:set__circle a owl:NamedIndividual,
         ns1:set ;
@@ -640,6 +970,22 @@ ns1:operation_type__subtract_magnitude__magnitude___magnitude a owl:NamedIndivid
     ns1:has_domain ns1:set__magnitude__magnitude ;
     ns1:has_range ns1:set__magnitude ;
     ns1:is_used_in ns1:operation_instance__subtract_magnitude__magnitude___magnitude .
+
+ns1:proposition_type__construction a owl:NamedIndividual,
+        ns1:proposition_type ;
+    rdfs:label "Proposition type: Construction" ;
+    skos:prefLabel "Construction" ;
+    ns1:is_used_in ns1:proposition_1,
+        ns1:proposition_2,
+        ns1:proposition_3 .
+
+ns1:proposition_type__theorem a owl:NamedIndividual,
+        ns1:proposition_type ;
+    rdfs:label "Proposition type: Theorem" ;
+    skos:prefLabel "Theorem" ;
+    ns1:is_used_in ns1:proposition_4,
+        ns1:proposition_5,
+        ns1:proposition_5a .
 
 ns1:relation_type__equals_magnitude__magnitude_ a owl:NamedIndividual,
         ns1:relation_type ;
@@ -1304,7 +1650,7 @@ ns1:operation__draw_center__interval_____circle a owl:NamedIndividual,
         ns1:operation_instance ;
     rdfs:label "Operation instance: draw(center, interval) -> circle" ;
     skos:prefLabel "draw(center, interval) -> circle" ;
-    ns1:has_domain ns1:set__center_interval ;
+    ns1:has_domain ns1:set__center__interval ;
     ns1:has_range ns1:set__circle ;
     ns1:is_used_in ns1:postulate_3 ;
     ns1:refers_to ns1:concept__center,
@@ -1312,6 +1658,19 @@ ns1:operation__draw_center__interval_____circle a owl:NamedIndividual,
         ns1:concept__draw,
         ns1:concept__interval,
         ns1:operation_type__draw_center__interval_____circle .
+
+ns1:proposition_5a a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 5a" ;
+    skos:prefLabel "Proposition 5a" ;
+    ns1:has_implication ns1:___equals_inclination_of_at_base_angle__isoscles_triangle____inclination_of_at_base_angle__isoscles_triangle___ ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:angle,
+        ns1:at_base,
+        ns1:equals,
+        ns1:inclination_of,
+        ns1:isosceles_triangle,
+        ns1:proposition_type__theorem .
 
 ns1:concept__numbers a owl:NamedIndividual,
         ns1:concept ;
@@ -1369,9 +1728,19 @@ ns1:concept__trapezoid_quadrilateral_figure a owl:NamedIndividual,
     ns1:has_definition ns1:definition__22 ;
     ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:set a owl:Class ;
-    rdfs:label "Set" ;
-    skos:prefLabel "Set" .
+ns1:proposition_5 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 5" ;
+    skos:prefLabel "Proposition 5" ;
+    ns1:has_implication ns1:___equals_inclination_of_at_base_angle__isoscles_triangle____inclination_of_at_base_angle__isoscles_triangle______equals_inclination_of_under_base_angle__isoscles_triangle____inclination_under_base_angle__isoscles_triangle___ ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:angle,
+        ns1:at_base,
+        ns1:equals,
+        ns1:inclination_of,
+        ns1:isosceles_triangle,
+        ns1:proposition_type__theorem,
+        ns1:under_base .
 
 ns1:concept__center a owl:NamedIndividual,
         ns1:concept ;
@@ -1402,6 +1771,10 @@ ns1:concept__point a owl:NamedIndividual,
         ns1:concept__circle,
         ns1:concept__end_of_line,
         ns1:concept__straight_line .
+
+ns1:set a owl:Class ;
+    rdfs:label "Set" ;
+    skos:prefLabel "Set" .
 
 ns1:concept__circle a owl:NamedIndividual,
         ns1:concept ;
@@ -1507,10 +1880,67 @@ ns1:definition a owl:Class ;
     rdfs:label "Definition" ;
     skos:prefLabel "Definition" .
 
+ns1:proposition a owl:Class ;
+    rdfs:label "Proposition" ;
+    skos:prefLabel "Proposition" .
+
+ns1:concept a owl:Class ;
+    rdfs:label "Concept" ;
+    skos:prefLabel "Concept" .
+
 ns1:document__elements_book_1 a owl:NamedIndividual,
         ns1:document ;
     rdfs:label "Document: Elements Book 1" ;
     skos:prefLabel "Elements Book 1" ;
+    ns1:contains ns1:proposition_1,
+        ns1:proposition_10,
+        ns1:proposition_11,
+        ns1:proposition_12,
+        ns1:proposition_13,
+        ns1:proposition_14,
+        ns1:proposition_15,
+        ns1:proposition_16,
+        ns1:proposition_17,
+        ns1:proposition_18,
+        ns1:proposition_19,
+        ns1:proposition_2,
+        ns1:proposition_20,
+        ns1:proposition_21,
+        ns1:proposition_22,
+        ns1:proposition_23,
+        ns1:proposition_24,
+        ns1:proposition_25,
+        ns1:proposition_26,
+        ns1:proposition_27,
+        ns1:proposition_28,
+        ns1:proposition_29,
+        ns1:proposition_3,
+        ns1:proposition_30,
+        ns1:proposition_31,
+        ns1:proposition_32,
+        ns1:proposition_33,
+        ns1:proposition_34,
+        ns1:proposition_35,
+        ns1:proposition_36,
+        ns1:proposition_37,
+        ns1:proposition_38,
+        ns1:proposition_39,
+        ns1:proposition_4,
+        ns1:proposition_40,
+        ns1:proposition_41,
+        ns1:proposition_42,
+        ns1:proposition_43,
+        ns1:proposition_44,
+        ns1:proposition_45,
+        ns1:proposition_46,
+        ns1:proposition_47,
+        ns1:proposition_48,
+        ns1:proposition_5,
+        ns1:proposition_5a,
+        ns1:proposition_6,
+        ns1:proposition_7,
+        ns1:proposition_8,
+        ns1:proposition_9 ;
     ns1:contains_definition_of ns1:concept__acute_angle,
         ns1:concept__acute_triangle,
         ns1:concept__boundary,
@@ -1546,8 +1976,4 @@ ns1:document__elements_book_1 a owl:NamedIndividual,
         ns1:concept__surface,
         ns1:concept__trapezoid_quadrilateral_figure,
         ns1:concept__trilateral .
-
-ns1:concept a owl:Class ;
-    rdfs:label "Concept" ;
-    skos:prefLabel "Concept" .
 
