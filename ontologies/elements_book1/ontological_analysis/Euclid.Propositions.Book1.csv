@@ -1,10 +1,10 @@
-proposition,proposition_type,implication,implication_concepts,given,requirement,relation_instance,operation_instance,gist,moral,operation_implicit
+proposition,proposition_type,implication,implication_concepts,given_concepts,requirement,relation_instance,operation_instance,gist,moral,operation_implicit
 Proposition_1,construction,,,finite_straight_line,,"is_located(equilateral_triangle, finite_straight_line)","construct_on(equilateteral_triangle, finite_straight_line)->is_located(equilateral_triangle, finite_straight_line)",construction of equilaterla triangles via intersecting circles,existence of triangles,is_located_on
 Proposition_2,construction,,,"point, finite_straight_line",,"is_located(finite_straight_line, point) & equals(flength_of(finite_straight_line), length_of(finite_straight_line))","place_on(finite_straight_line, point, finite_straight_line)->is_located(finite_straight_line, point) & equals(length_of(finite_straight_line), length_of(finite_straight_line))",movement of finite straight line via construction of circles,rigid movement is possible,length_of
 Proposition_2,construction,,,,,,length_of(finite_straight_line)->length,,,
 Proposition_3,construction,,,"finite_straigth_line, two, unequal, length_of",,,length_of(finite_straight_line)->length,subtraction of lengths via construction with circles,subtraction of lengths,
 Proposition_3,construction,,,,,"unequal(length_of(finite_straight_line), length_of(finite_straight_line))","subtract(length_of(finite_straight_line), length_of(finite_straight_line))->finite_straight_line",,,
-Proposition_4,theorem,,,,,"equals(length_of(side_of_triangle), length_of(side_of_triangle))",,,,
+Proposition_4,theorem,,,triangle,,"equals(length_of(side_of_triangle), length_of(side_of_triangle))",,,,
 Proposition_4,,,,,,"equals(inclination_of(angle), inclination_of(angle))",,,SAS criterion for the congruence of triangles,
 Proposition_4,,,,,,"corresponding(side_of_triangle, side_of_triangle)",,,,
 Proposition_4,,,,,,"corresponding(interior_angle_of_triangle, interior_angle_of_triangle)",,,,
@@ -14,7 +14,7 @@ Proposition_4,,,,,,"remaining(interior_angle_of_triangle, interior_angle_of_tria
 Proposition_4,,,,,,"equals(triangle, triangle)",,,,
 Proposition_5a,theorem,"|- equals(inclination_of(at_base(angle, isoscles_triangle)), inclination_of(at_base(angle, isoscles_triangle)))","equals, inclination_of, at_base, angle, isosceles_triangle",isosceles_triangle,,"at_base(interior_angle_of_triangle, triangle)",,isosceles triangles have equal angles at the base,,
 Proposition_5a,,,,,,"equals(at_base(interior_angle_of_triangle), at_base(interior_angle_of_triangle))",,,,
-Proposition_5,theorem,"|- equals(inclination_of(at_base(angle, isoscles_triangle)), inclination_of(at_base(angle, isoscles_triangle))) & equals(inclination_of(under_base(angle, isoscles_triangle)), inclination(under_base(angle, isoscles_triangle)))","equals, inclination_of, at_base, angle, isosceles_triangle, under_base",,,"under_base(angle, triangle)",extend(side_of_triangle),,,
+Proposition_5,theorem,"|- equals(inclination_of(at_base(angle, isoscles_triangle)), inclination_of(at_base(angle, isoscles_triangle))) & equals(inclination_of(under_base(angle, isoscles_triangle)), inclination(under_base(angle, isoscles_triangle)))","equals, inclination_of, at_base, angle, isosceles_triangle, under_base",isosceles_triangle,,"under_base(angle, triangle)",extend(side_of_triangle),,,
 Proposition_5,,,,,,"equals(inclination_of(angle), inclination_of(angle))",,,,inclination_of
 Proposition_6,,,,,,,,,,
 Proposition_7,,,,,,,,,,
