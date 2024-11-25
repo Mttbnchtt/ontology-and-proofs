@@ -13,8 +13,6 @@ Key Features:
 - **Given Concepts Integration**: Capabilities to add given concepts related to propositions.
 - **Relation and Operation Instances**: Support for adding relation and operation instances.
 - **Gist and Moral Inclusion**: Functions to include gists and morals associated with propositions.
-- **CSV Input Parsing**: Reads propositions data from CSV files to populate the knowledge graph.
-- **Ontology Output**: Exports the constructed ontology in Turtle format.
 
 Classes and IRIs Utilized:
 - **Common RDF Vocabularies**: RDF, RDFS, SKOS, OWL.
@@ -115,7 +113,7 @@ has_moral = utils.create_iri("has moral", namespace="https://www.foom.com/core")
 is_moral_of = utils.create_iri("is moral of", namespace="https://www.foom.com/core")
 
 
-
+# functions
 def add_propositions(kg: rdflib.Graph,
                      propositions_input_file_path: str) -> rdflib.Graph:
     """
