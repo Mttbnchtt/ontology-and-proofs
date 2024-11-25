@@ -3,6 +3,10 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
+ns1:contains a owl:ObjectProperty ;
+    rdfs:label "contains" ;
+    skos:prefLabel "contains" .
+
 ns1:contains_definition_of a owl:ObjectProperty ;
     rdfs:label "contains_definition_of" ;
     skos:prefLabel "contains_definition_of" .
@@ -27,6 +31,10 @@ ns1:has_domain a owl:ObjectProperty ;
     rdfs:label "has domain" ;
     skos:prefLabel "has domain" .
 
+ns1:has_implication a owl:ObjectProperty ;
+    rdfs:label "has implication" ;
+    skos:prefLabel "has implication" .
+
 ns1:has_object a owl:ObjectProperty ;
     rdfs:label "has object" ;
     skos:prefLabel "has object" .
@@ -47,6 +55,10 @@ ns1:has_subject a owl:ObjectProperty ;
     rdfs:label "has subject" ;
     skos:prefLabel "has subject" .
 
+ns1:implication a owl:Class ;
+    rdfs:label "Implication" ;
+    skos:prefLabel "Implication" .
+
 ns1:is_conceptual_component_of a owl:ObjectProperty ;
     rdfs:label "is conceptual component of" ;
     skos:prefLabel "is conceptual component of" .
@@ -58,6 +70,14 @@ ns1:is_defined_in a owl:ObjectProperty ;
 ns1:is_domain_of a owl:ObjectProperty ;
     rdfs:label "is domain of" ;
     skos:prefLabel "is domain of" .
+
+ns1:is_implication_of a owl:ObjectProperty ;
+    rdfs:label "is implication of" ;
+    skos:prefLabel "is implication of" .
+
+ns1:is_in a owl:ObjectProperty ;
+    rdfs:label "is in" ;
+    skos:prefLabel "is in" .
 
 ns1:is_range_of a owl:ObjectProperty ;
     rdfs:label "is range of" ;

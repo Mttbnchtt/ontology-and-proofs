@@ -29,6 +29,9 @@ relation_instance_class = utils.create_iri("Relation instance", namespace="https
 set_class = utils.create_iri("Set", namespace="https://www.foom.com/core")
 statement_class = utils.create_iri("Statement", namespace="https://www.foom.com/core")
 
+# individual IRIs
+elements_book_1 = rdflib.URIRef("https://www.foom.com/core#document__elements_book_1")
+
 # object properties IRIs
 elements_book_1 = utils.create_iri("Document: Elements Book 1", namespace="https://www.foom.com/core")
 proposition_type_construction = utils.create_iri("Proposition type: Construction", namespace="https://www.foom.com/core")
@@ -64,6 +67,9 @@ is_range_of = utils.create_iri("is range of", namespace="https://www.foom.com/co
 has_statement = utils.create_iri("has statement", namespace="https://www.foom.com/core")
 is_statement_of = utils.create_iri("is statement of", namespace="https://www.foom.com/core")
 
+is_in = utils.create_iri("is in", namespace="https://www.foom.com/core")
+contains = utils.create_iri("contains", namespace="https://www.foom.com/core")
+
 def add_common_notions(kg: rdflib.Graph, 
                        input_file_path: str) -> rdflib.Graph:
     # read common notions data
@@ -73,6 +79,9 @@ def add_common_notions(kg: rdflib.Graph,
         common_notion_preflabel = common_notions.at[i, "common_notion"].strip()
         common_notion_iri = utils.create_iri(common_notion_preflabel, namespace="https://www.foom.com/core")
         kg = concepts.add_triples(kg, common_notion_preflabel, common_notion_iri, common_notion_class, "Common notion")
+        # common notion is in Elements book 1
+        kg.add((common_notion_iri, is_in, elements_book_1))
+        kg.add((elements_book_1, contains, common_notion_iri))
         # add statement
         kg, statement_iri = add_statement(kg, common_notion_iri, common_notions.at[i, "statement"])
         # add relation instance

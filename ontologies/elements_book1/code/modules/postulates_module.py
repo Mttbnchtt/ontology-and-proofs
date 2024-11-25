@@ -58,6 +58,9 @@ relation_type_class = utils.create_iri("Relation type", namespace="https://www.f
 relation_instance_class = utils.create_iri("Relation instance", namespace="https://www.foom.com/core")
 set_class = utils.create_iri("Set", namespace="https://www.foom.com/core")
 
+# individual IRIs
+elements_book_1 = rdflib.URIRef("https://www.foom.com/core#document__elements_book_1")
+
 # object properties IRIs
 elements_book_1 = utils.create_iri("Document: Elements Book 1", namespace="https://www.foom.com/core")
 proposition_type_construction = utils.create_iri("Proposition type: Construction", namespace="https://www.foom.com/core")
@@ -89,6 +92,9 @@ has_domain = utils.create_iri("has domain", namespace="https://www.foom.com/core
 is_domain_of = utils.create_iri("is domain of", namespace="https://www.foom.com/core")
 has_range = utils.create_iri("has_range", namespace="https://www.foom.com/core")
 is_range_of = utils.create_iri("is range of", namespace="https://www.foom.com/core")
+
+is_in = utils.create_iri("is in", namespace="https://www.foom.com/core")
+contains = utils.create_iri("contains", namespace="https://www.foom.com/core")
 
 
 def add_postulates(kg: rdflib.Graph,
@@ -311,4 +317,7 @@ def add_postulate_triples(kg: rdflib.Graph,
         kg.add((postulate_iri, rdf_type, utils.create_iri("Postulate", namespace="https://www.foom.com/core")))
         kg.add((postulate_iri, rdfs_label, postulate_label))
         kg.add((postulate_iri, skos_prefLabel, postulate_label))
+        # postulate is in Elements book 1
+        kg.add((postulate_iri, is_in, elements_book_1))
+        kg.add((elements_book_1, contains, postulate_iri))
     return kg
