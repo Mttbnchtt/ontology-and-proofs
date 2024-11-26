@@ -192,7 +192,8 @@ def add_gist_moral(kg: rdflib.Graph,
         rdflib.Graph: The updated RDF graph with the added gist or moral.
     """
     item_iri = utils.create_iri(f"{item_type}: {item_preflabel}", namespace="https://www.foom.com/core")
-    kg = concepts.add_triples(kg, item_preflabel, item_iri, concept_class, item_type)
+    item_class_iri = utils.create_iri(item_type)
+    kg = concepts.add_triples(kg, item_preflabel, item_iri, concept_class, item_class_iri)
     if item_type == "Gist":
         kg.add((proposition_iri, has_gist, item_iri))
         kg.add((item_iri, is_gist_of, proposition_iri))
