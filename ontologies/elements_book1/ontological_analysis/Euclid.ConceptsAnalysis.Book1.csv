@@ -1,4 +1,4 @@
-concepts,hierarchy,type,dataytpe_property
+concepts,hierarchy,type,datatype_property
 equilateral_triangle,triangle,object,is_a_diagrammatic_object
 finite_straight_line,straight_line,object,is_a_diagrammatic_object
 straight_line,line,object,is_a_diagrammatic_object
