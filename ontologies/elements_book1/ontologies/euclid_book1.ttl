@@ -443,10 +443,6 @@ ns1:encompassing a owl:NamedIndividual,
     ns1:has_concept_type ns1:concept_type__relation ;
     ns1:has_domain_of_diagrammatic_objects true .
 
-ns1:enumeration a owl:Class ;
-    rdfs:label "Enumeration" ;
-    skos:prefLabel "Enumeration" .
-
 ns1:extend a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Extend" ;
@@ -854,6 +850,10 @@ ns1:definition__10 a owl:NamedIndividual,
     ns1:defines ns1:concept__perpendicular_straight_lines,
         ns1:concept__right_angle ;
     ns1:is_in ns1:document__elements_book_1 .
+
+ns1:enumeration a owl:Class ;
+    rdfs:label "Enumeration" ;
+    skos:prefLabel "Enumeration" .
 
 ns1:equilateral_triangle a owl:NamedIndividual,
         ns1:concept ;
@@ -1339,6 +1339,7 @@ ns1:concept__quadrilateral a owl:NamedIndividual,
 
 ns1:concept_type a owl:Class ;
     rdfs:label "Concept type" ;
+    rdfs:subClassOf ns1:enumeration ;
     skos:prefLabel "Concept type" .
 
 ns1:definition__20 a owl:NamedIndividual,
@@ -1458,8 +1459,7 @@ ns1:statement__greater_than_whole__part____is_part_of_part__whole_ a owl:NamedIn
 
 ns1:straight_line a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Straight line",
-        "Concept: Straight_line" ;
+    rdfs:label "Concept: Straight line" ;
     skos:prefLabel "Straight line" ;
     ns1:has_concept_type ns1:concept_type__object ;
     ns1:is_a_diagrammatic_object true ;
@@ -1622,8 +1622,7 @@ ns1:definition__19 a owl:NamedIndividual,
 
 ns1:finite_straight_line a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Finite straight line",
-        "Concept: Finite_straight_line" ;
+    rdfs:label "Concept: Finite straight line" ;
     skos:prefLabel "Finite straight line" ;
     ns1:has_concept_type ns1:concept_type__object ;
     ns1:is_a_diagrammatic_object true ;

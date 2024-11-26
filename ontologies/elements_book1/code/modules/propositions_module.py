@@ -246,7 +246,8 @@ def add_givens(kg: rdflib.Graph,
         rdflib.Graph: The updated RDF graph with the added given concepts.
     """
     for given_concept in given_concepts:
-        given_concept_iri = utils.create_iri(f"Concept: {given_concept}", namespace="https://www.foom.com/core")
+        given_concept_preflabel = given_concept.replace("_", " ").strip().capitalize()
+        given_concept_iri = utils.create_iri(f"Concept: {given_concept_preflabel}", namespace="https://www.foom.com/core")
         kg.add((proposition_iri, has_given_concept, given_concept_iri))
         kg.add((given_concept_iri, is_given_concept_of, proposition_iri))
     return kg

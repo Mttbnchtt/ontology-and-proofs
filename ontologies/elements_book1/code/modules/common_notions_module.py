@@ -76,9 +76,9 @@ def add_common_notions(kg: rdflib.Graph,
     common_notions = pd.read_csv(input_file_path).fillna("")
     # add common notions elements and related data
     for i in common_notions.index:
-        common_notion_preflabel = common_notions.at[i, "common_notion"].strip()
+        common_notion_preflabel = common_notions.at[i, "common_notion"].replace("_", " ").strip()
         common_notion_iri = utils.create_iri(common_notion_preflabel, namespace="https://www.foom.com/core")
-        kg = concepts.add_triples(kg, common_notion_preflabel, common_notion_iri, common_notion_class, "Common notion")
+        kg = concepts.add_triples(kg, common_notion_preflabel, common_notion_iri, common_notion_class, "")
         # common notion is in Elements book 1
         kg.add((common_notion_iri, is_in, elements_book_1))
         kg.add((elements_book_1, contains, common_notion_iri))
@@ -95,7 +95,7 @@ def add_common_notions(kg: rdflib.Graph,
                                         "Relation instance", 
                                         common_notions.at[i, "relation_instance_concepts"].split(","),)
             # add relation type
-            relation_type_preflabel = common_notions.at[i, "relation_type"]
+            relation_type_preflabel = common_notions.at[i, "relation_type"].strip()
             relation_type_iri = utils.create_iri(f"Relation type: {relation_type_preflabel}", namespace="https://www.foom.com/core")
             kg = concepts.add_triples(kg, relation_type_preflabel, relation_type_iri, relation_type_class, "Relation type")
             kg.add((relation_instance_iri, refers_to, relation_type_iri))
@@ -114,7 +114,7 @@ def add_common_notions(kg: rdflib.Graph,
                                         common_notions.at[i, "operation_instance_start"], 
                                         common_notions.at[i, "operation_instance_end"])
             # add operation type
-            operation_type_preflabel = common_notions.at[i, "operation_type"]
+            operation_type_preflabel = common_notions.at[i, "operation_type"].strip()
             operation_type_iri = utils.create_iri(f"Operation type: {operation_type_preflabel}", namespace="https://www.foom.com/core")
             kg = concepts.add_triples(kg, operation_type_preflabel, operation_type_iri, operation_type_class, "Operation type")
             kg.add((operation_instance_iri, refers_to, operation_type_iri))
@@ -178,7 +178,7 @@ def add_item_concepts(kg: rdflib.Graph,
                       item_iri: rdflib.URIRef,
                       list_of_concepts: list) -> rdflib.Graph:
     for concept in list_of_concepts:
-        concept_preflabel = concept.strip().capitalize()
+        concept_preflabel = concept.replace("_", " ").strip().capitalize()
         concept_iri = utils.create_iri(f"Concept: {concept_preflabel}", namespace="https://www.foom.com/core")
         kg = concepts.add_triples(kg, concept_preflabel, concept_iri, concept_class, "Concept")
         kg.add((item_iri, refers_to, concept_iri))
