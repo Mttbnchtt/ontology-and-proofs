@@ -228,9 +228,6 @@ def add_relation_operation_instance(kg: rdflib.Graph,
     kg.add((item_instance_iri, is_used_in, proposition_iri))
     return kg
 
-# https://www.foom.com/core#concept__finite_straight_line
-# https://www.foom.com/core#concept__finite_straigth_line
-
 def add_givens(kg: rdflib.Graph,
                proposition_iri: rdflib.URIRef,
                given_concepts: list) -> rdflib.Graph:
@@ -308,6 +305,7 @@ def add_implications(kg: rdflib.Graph,
     implication_iri = utils.create_iri(f"Implication: {implication_preflabel}", namespace="https://www.foom.com/core")
     kg = concepts.add_triples(kg, implication_preflabel, implication_iri, implication_class, "Implication")
     for concept in implication_concepts:
+        concept = concept.replace("_", " ").strip().capitalize()
         concept_iri = utils.create_iri(f"Concept: {concept}", namespace="https://www.foom.com/core")
         kg = concepts.add_triples(kg, concept, concept_iri, concept_class, "Concept")
         kg.add((proposition_iri, refers_to, concept_iri))
