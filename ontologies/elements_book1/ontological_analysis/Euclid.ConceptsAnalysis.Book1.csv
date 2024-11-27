@@ -21,6 +21,6 @@ triangle,,object,is_a_diagrammatic_object
 at_base,,relation,has_domain_of_diagrammatic_objects
 under_base,,relation,has_domain_of_diagrammatic_objects
 length,,object,is_an_abstract_object
-two,,,is_an_abstract_object
-unequal_length,length,,
-equal_length,length,,
+two,,object,is_an_abstract_object
+unequal_length,length,object,
+equal_length,length,object,
