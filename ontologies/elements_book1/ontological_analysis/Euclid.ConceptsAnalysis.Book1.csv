@@ -1,26 +1,82 @@
-concepts,hierarchy,type,datatype_property
-equilateral_triangle,triangle,object,is_a_diagrammatic_object
-finite_straight_line,straight_line,object,is_a_diagrammatic_object
-straight_line,line,object,is_a_diagrammatic_object
-line,,object,is_a_diagrammatic_object
-construct_on,construct,operation,"produces_new_diagrammatic_object, modifies_diagram"
-place_on,place,operation,"produces_new_diagrammatic_object, modifies_diagram"
-extend,,operation,"produces_new_diagrammatic_object, modifies_diagram"
-length_of,,operation,produces_abstract_object
-subtract,,operation,produces_new_diagrammatic_object
-is_located,,relation,has_domain_of_diagrammatic_objects
-point,,object,is_a_diagrammatic_object
-equals,,relation,has_domain_of_objects
-unequal,,relation,has_domain_of_objects
-side_of_triangle,finite_straight_line,object,is_a_diagrammatic_object
-corresponding,,relation,has_domain_of_diagrammatic_objects
-encompassing,,relation,has_domain_of_diagrammatic_objects
-interior_angle_of_triangle,angle,object,is_a_diagrammatic_object
-base_of_triangle,finite_straight_line,object,is_a_diagrammatic_object
-triangle,,object,is_a_diagrammatic_object
-at_base,,relation,has_domain_of_diagrammatic_objects
-under_base,,relation,has_domain_of_diagrammatic_objects
-length,,object,is_an_abstract_object
-two,,object,is_an_abstract_object
-unequal_length,length,object,
-equal_length,length,object,
+concepts,hierarchy,conceptual_components,type,datatype_property,datatype_property_hierarchy,notes
+equilateral_triangle,triangle,,object,is_a_diagrammatic_object,,
+finite_straight_line,straight_line,finite,object,is_a_diagrammatic_object,,
+straight_line,line,straight,object,is_a_diagrammatic_object,,
+line,,,object,is_a_diagrammatic_object,,
+construct_on,construct,,operation,"produces_new_diagrammatic_object, modifies_diagram",,
+place_on,place,,operation,"produces_new_diagrammatic_object, modifies_diagram",,
+extend,,,operation,"produces_new_diagrammatic_object, modifies_diagram",,
+length_of,,length,operation,produces_abstract_object,,
+subtract,,,operation,produces_new_diagrammatic_object,,
+is_located,,,relation,has_field_of_diagrammatic_objects,,
+point,,,object,is_a_diagrammatic_object,,
+equals,,,relation,has_field_of_objects,,
+unequal,,,relation,has_field_of_objects,,
+side_of_triangle,side,triangle,object,is_a_diagrammatic_object,,
+corresponding,,,relation,has_field_of_diagrammatic_objects,,
+encompassing,,,relation,has_field_of_diagrammatic_objects,,
+interior_angle_of_triangle,angle,,object,is_a_diagrammatic_object,,
+base_of_triangle,base,,object,is_a_diagrammatic_object,,
+triangle,rectilinear_figure,,object,is_a_diagrammatic_object,,
+at_base,,,relation,has_field_of_diagrammatic_objects,,
+under_base,,,relation,has_field_of_diagrammatic_objects,,
+length,magnitude,,object,is_an_abstract_object,,
+two,,,object,is_an_abstract_object,,
+unequal_length,length,,object,is_an_abstract_object,,
+equal_length,length,,object,is_an_abstract_object,,
+subtended_by,,,relation,has_field_of_diagrammatic_objects,,
+is_placed_on,,,relation,has_field_of_diagrammatic_objects,,
+magnitude,,,object,is_an_abstract_object,,
+construct_to_given_point,construct,point,operation,has_domain_of_diagrammatic_objects,,
+part,,,object,is_a_diagrammatic_object,,there may be type difference between part of figure and part of plane
+is_on_the_same_part,,"part, are_same",relation,has_field_of_diagrammatic_objects,,
+distinct,,,relation,has_field_of_diagrammatic_objects,,
+base_of_triangle,side_of_triangle,,object,is_a_diagrammatic_object,,
+right_angle,angle,,object,is_a_diagrammatic_object,,
+cut_into_two_parts,cut_operation,,operation,produces_new_diagrammatic_object,,
+infinite_straight_line,,,object,is_a_diagrammatic_object,,
+are_perpendicular,,,operation,has_domain_of_diagrammatic_objects,has_domain_of_objects,
+are_same,,,relation,has_field_of_objects,,
+are_consecutive,,vertex,relation,has_field_of_diagrammatic_objects,,
+are_at_vertex,,,relation,has_field_of_diagrammatic_objects,,
+cut,,,relation,has_field_of_diagrammatic_objects,,
+taken_together_in_any_way,,,operation,has_field_of_diagrammatic_objects,,how does this operation relate to the sum operation
+greatest,,,relation,has_field_of_diagrammatic_objects,,"meizona like for ""greater_than"""
+greater_than,,,relation,has_field_of_diagrammatic_objects,,"meizona like for ""greatest"""
+enclose,,,relation,has_field_of_diagrammatic_objects,,related to subtended_by
+end_of_side_of_triangle,end_of_line,side_of_triangle,object,is_a_diagrammatic_object,,
+construct_inside,construct,,operation,has_domain_of_diagrammatic_objects,,
+remaining_sides_of,,side,relation,has_field_of_diagrammatic_objects,,
+less_than,,,relation,has_field_of_diagrammatic_objects,,
+construct_from,construct,,operation,has_domain_of_diagrammatic_objects,,
+falls_on,,,relation,has_field_of_diagrammatic_objects,,
+are_parallel,,,relation,has_field_of_diagrammatic_objects,,
+one,,,object,is_an_abstract_object,,
+are_alternate,,,relation,has_field_of_diagrammatic_objects,,
+is_opposite_to,,,relation,has_field_of_diagrammatic_objects,,
+is_internal,,,relation,has_field_of_diagrammatic_objects,,
+is_external,,,relation,has_field_of_diagrammatic_objects,,
+conduct,,,operation,has_domain_of_diagrammatic_objects,,
+produce,,,operation,has_domain_of_diagrammatic_objects,,
+parallelogram,rectilinear_figure,,object,is_a_diagrammatic_object,,
+base_of_parallelogram,base,,object,is_a_diagrammatic_object,,
+have_same_base,,"are_same, base",relation,has_field_of_diagrammatic_objects,,
+base,finite_straight_line,,object,is_a_diagrammatic_object,,
+side,finite_straight_line,,object,is_a_diagrammatic_object,,
+finite,,,relation,has_field_of_diagrammatic_objects,,
+straight,,,relation,has_field_of_diagrammatic_objects,,
+part,,,relation,has_field_of_diagrammatic_objects,,?
+vertex,,,object,is_a_diagrammatic_object,,
+is_double,,,relation,has_field_of_diagrammatic_objects,,
+rectilinear_angle,angle,,object,is_a_diagrammatic_object,,
+construct_in,construct,,relation,has_field_of_diagrammatic_objects,,
+diameter,finite_straight_line,,object,is_a_diagrammatic_object,,
+complement_of_parallelogram,complement,,object,is_a_diagrammatic_object,,
+complement,,,object,is_a_diagrammatic_object,,
+diameter_of_parallelogram,diameter,,object,is_a_diagrammatic_object,,
+apply_to,apply,,operation,has_domain_of_diagrammatic_objects,,
+apply_in,apply,,operation,has_domain_of_diagrammatic_objects,,
+apply,,,operation,has_domain_of_diagrammatic_objects,,
+rectilinear_figure,,,object,is_a_diagrammatic_object,,
+describe_on,,,operation,has_domain_of_diagrammatic_objects,,
+is_right_angled,,right_angle,relation,has_field_of_diagrammatic_objects,,
