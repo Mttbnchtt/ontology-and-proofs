@@ -47,7 +47,7 @@ enclose,,,relation,has_field_of_diagrammatic_objects,,related to subtended_by
 end_of_side_of_triangle,end_of_line,side_of_triangle,object,is_a_diagrammatic_object,,
 construct_inside,construct,,operation,has_domain_of_diagrammatic_objects,,
 remaining_sides_of,,side,relation,has_field_of_diagrammatic_objects,,
-less_than,,,relation,has_field_of_diagrammatic_objects,,
+smaller_than,,,relation,has_field_of_diagrammatic_objects,,
 construct_from,construct,,operation,has_domain_of_diagrammatic_objects,,
 falls_on,,,relation,has_field_of_diagrammatic_objects,,
 are_parallel,,,relation,has_field_of_diagrammatic_objects,,
