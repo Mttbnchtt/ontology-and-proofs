@@ -1,0 +1,9 @@
+datatype_property,hierarchy,notes
+is_a_diagrammatic_object,,
+produces_new_diagrammatic_object,produces_an_object,"define ""new"" (consider subtract in proposition 3)"
+produces_abstract_object,produces_an_object,
+has_field_of_diagrammatic_objects,has_field_of_objects,
+has_field_of_objects,,
+is_an_abstract_object,,
+has_domain_of_diagrammatic_objects,has_domain_of_objects,
+modifies_diagram,,
