@@ -1,4 +1,3 @@
-
 """
 propositions_module.py
 

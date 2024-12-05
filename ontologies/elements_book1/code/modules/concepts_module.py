@@ -14,11 +14,7 @@ import pandas as pd
 import rdflib
 
 import modules.utils as utils
-import modules.tbox as tbox
 import modules.concepts as concepts
-import modules.postulates_module as postulate_module
-import modules.common_notions_module as common_notions_module
-import modules.propositions_module as propositions_module
 
 # common IRIs
 rdf_type = rdflib.RDF.type
