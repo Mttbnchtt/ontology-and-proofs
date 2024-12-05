@@ -111,6 +111,8 @@ is_gist_of = utils.create_iri("is gist of", namespace="https://www.foom.com/core
 has_moral = utils.create_iri("has moral", namespace="https://www.foom.com/core")
 is_moral_of = utils.create_iri("is moral of", namespace="https://www.foom.com/core")
 
+contains_concept = utils.create_iri("contains concept", namespace="https://www.foom.com/core")
+is_concept_in = utils.create_iri("is concept in", namespace="https://www.foom.com/core")
 
 # functions
 def add_propositions(kg: rdflib.Graph,
@@ -142,6 +144,11 @@ def add_propositions(kg: rdflib.Graph,
         if implication_preflabel:
             implication_concepts = [concept.strip() for concept in propositions.at[i, "implication_concepts"].split(",")]
             kg = add_implications(kg, proposition_iri, implication_preflabel, implication_concepts)
+
+        # add concepts
+        proposition_concepts = [concept.strip() for concept in propositions.at[i, "given_concepts"].split(",")]
+        if proposition_concepts:
+            kg = add_proposition_concepts(kg, proposition_iri, proposition_concepts)
 
         # add givens
         given_concepts = [concept.strip() for concept in propositions.at[i, "given_concepts"].split(",")]
@@ -279,6 +286,16 @@ def add_proposition(kg: rdflib.Graph,
     elif proposition_type == "theorem": 
         kg.add((proposition_iri, refers_to, proposition_type_theorem))
         kg.add((proposition_type_theorem, is_used_in, proposition_iri))
+    return kg
+
+def add_proposition_concepts(kg: rdflib.Graph,
+                             proposition_iri: rdflib.URIRef,
+                             proposition_concepts: list) -> rdflib.Graph:
+    for proposition_concept in proposition_concepts:
+        proposition_concept_preflabel = proposition_concept.replace("_", " ").strip().capitalize()
+        proposition_concept_iri = utils.create_iri(f"Concept: {proposition_concept_preflabel}", namespace="https://www.foom.com/core")
+        kg.add((proposition_iri, contains_concept, proposition_concept_iri))
+        kg.add((proposition_concept_iri, is_concept_in, proposition_iri))
     return kg
 
 def add_implications(kg: rdflib.Graph,
