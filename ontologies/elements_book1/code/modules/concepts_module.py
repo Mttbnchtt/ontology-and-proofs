@@ -165,6 +165,20 @@ def add_concepts(kg: rdflib.Graph,
 def add_datatype_property(kg: rdflib.Graph,
                           datatype_property_preflabel: str,
                           datatype_property_iri = rdflib.URIRef) -> rdflib.Graph:
+    """
+    Adds a datatype property to the knowledge graph.
+
+    This function creates a datatype property with the provided preflabel and IRI,
+    associates it with an RDF type, and sets its range as a boolean datatype.
+
+    Args:
+        kg (rdflib.Graph): The knowledge graph to which the datatype property will be added.
+        datatype_property_preflabel (str): The preferred label for the datatype property.
+        datatype_property_iri (rdflib.URIRef): The IRI of the datatype property.
+
+    Returns:
+        rdflib.Graph: The updated knowledge graph with the new datatype property.
+    """
     kg.add((datatype_property_iri, rdf_type, owl_data_property))
     kg.add((datatype_property_iri, rdfs_label, rdflib.Literal(datatype_property_preflabel)))
     kg.add((datatype_property_iri, skos_prefLabel, rdflib.Literal(datatype_property_preflabel)))
@@ -173,6 +187,19 @@ def add_datatype_property(kg: rdflib.Graph,
 
 def add_concept_types(kg: rdflib.Graph,
                       concept_types_preflabels: set) -> rdflib.Graph:
+    """
+    Adds concept types to the knowledge graph.
+
+    This function iterates through a set of concept type preflabels, creates corresponding IRIs, 
+    and adds them to the knowledge graph along with their associated data.
+
+    Args:
+        kg (rdflib.Graph): The knowledge graph to which concept types will be added.
+        concept_types_preflabels (set): A set of preflabels for concept types.
+
+    Returns:
+        rdflib.Graph: The updated knowledge graph with new concept types.
+    """
     for concept_type_preflabel in concept_types_preflabels:
         concept_type_iri = utils.create_iri(f"Concept type: {concept_type_preflabel}", namespace="https://www.foom.com/core")
         kg = concepts.add_triples(kg, concept_type_preflabel, concept_type_iri, concept_type_class, "Concept type")
