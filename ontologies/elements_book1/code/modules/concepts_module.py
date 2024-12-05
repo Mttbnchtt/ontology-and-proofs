@@ -1,3 +1,15 @@
+"""
+This module is part of the ontology-and-proofs project. It provides functions for managing and 
+adding concepts, concept types, and hierarchies to a knowledge graph using RDF and OWL standards. 
+The main goal of this module is to streamline the process of integrating conceptual data and 
+associated properties into the ontology for reasoning and knowledge representation.
+
+Key functionalities:
+- Adding concept types, concepts, and their hierarchies.
+- Associating datatype properties with concepts.
+- Managing relationships between concepts, such as hierarchy or type relations.
+"""
+
 import pandas as pd
 import rdflib
 
@@ -105,6 +117,20 @@ is_concept_type_of = utils.create_iri("is concept type of", namespace="https://w
 
 def add_concepts(kg: rdflib.Graph,
                  concepts_analysis_input_file_path: str) -> rdflib.Graph:
+    """
+    Adds concepts and their associated data to a knowledge graph.
+
+    This function processes an input CSV file containing concept information, adds the concepts
+    to the knowledge graph (KG), associates datatype properties, and establishes relationships 
+    such as hierarchy and concept types.
+
+    Args:
+        kg (rdflib.Graph): The knowledge graph to which concepts will be added.
+        concepts_analysis_input_file_path (str): Path to the CSV file containing concepts data.
+
+    Returns:
+        rdflib.Graph: The updated knowledge graph with new concepts.
+    """
     # add concept types
     kg = add_concept_types(kg, {"Object", "Operation", "Relation"})
 
@@ -115,8 +141,6 @@ def add_concepts(kg: rdflib.Graph,
 
         # add concept
         concept_iri = utils.create_iri(f"Concept: {concept_preflabel}", namespace="https://www.foom.com/core")
-
-        # add concept
         kg = concepts.add_triples(kg, concept_preflabel, concept_iri, concept_class, "Concept")
 
         # add hierarchy
@@ -157,6 +181,20 @@ def add_concept_types(kg: rdflib.Graph,
 def add_concept_hierarchy(kg: rdflib.Graph,
                           concept_iri: rdflib.URIRef,
                           concept_hierarchy_preflabel: str) -> rdflib.Graph:
+    """
+    Adds a concept hierarchy to the knowledge graph.
+
+    This function links a concept to a parent concept in a hierarchical structure by adding 
+    sub-concept and super-concept relationships.
+
+    Args:
+        kg (rdflib.Graph): The knowledge graph to which the hierarchy will be added.
+        concept_iri (rdflib.URIRef): The IRI of the concept being added to the hierarchy.
+        concept_hierarchy_preflabel (str): The preferred label of the parent concept in the hierarchy.
+
+    Returns:
+        rdflib.Graph: The updated knowledge graph with the new hierarchy relationships.
+    """
     concept_hierarchy_iri = utils.create_iri(f"Concept: {concept_hierarchy_preflabel}", namespace="https://www.foom.com/core")
     kg = concepts.add_triples(kg, concept_hierarchy_preflabel, concept_hierarchy_iri, concept_class, "Concept")
     kg.add((concept_iri, is_sub_concept_of, concept_hierarchy_iri))
