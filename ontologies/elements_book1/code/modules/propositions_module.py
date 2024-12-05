@@ -136,7 +136,6 @@ def add_propositions(kg: rdflib.Graph,
     for i in propositions.index:
         # add propositions
         proposition_preflabel = propositions.at[i, "proposition"].replace("_", " ").strip()
-        print(proposition_preflabel)
         proposition_iri = utils.create_iri(proposition_preflabel, namespace="https://www.foom.com/core")
         proposition_type = propositions.at[i, "proposition_type"]
         kg = add_proposition(kg, proposition_iri, proposition_preflabel, proposition_type)
@@ -148,13 +147,11 @@ def add_propositions(kg: rdflib.Graph,
 
         # add concepts
         proposition_concepts = [concept.strip() for concept in propositions.at[i, "given_concepts"].split(",")]
-        print(proposition_concepts)
         if proposition_concepts:
             kg = add_proposition_concepts(kg, proposition_iri, proposition_concepts)
 
         # add givens
         given_concepts = [concept.strip() for concept in propositions.at[i, "given_concepts"].split(",")]
-        print(given_concepts)
         if given_concepts:
             kg = add_givens(kg, proposition_iri, given_concepts)
 
@@ -177,7 +174,6 @@ def add_propositions(kg: rdflib.Graph,
         moral_preflabel = propositions.at[i, "moral"].strip()
         if moral_preflabel:
             kg = add_gist_moral(kg, proposition_iri, moral_preflabel, "Moral")
-        print("")
 
     return kg
 
@@ -298,7 +294,6 @@ def add_proposition_concepts(kg: rdflib.Graph,
                              proposition_concepts: list) -> rdflib.Graph:
     for proposition_concept in proposition_concepts:
         if proposition_concept:
-            print(proposition_concept)
             proposition_concept_preflabel = proposition_concept.replace("_", " ").strip().capitalize()
             proposition_concept_iri = utils.create_iri(f"Concept: {proposition_concept_preflabel}", namespace="https://www.foom.com/core")
             kg.add((proposition_iri, contains_concept, proposition_concept_iri))
