@@ -136,6 +136,7 @@ def add_propositions(kg: rdflib.Graph,
     for i in propositions.index:
         # add propositions
         proposition_preflabel = propositions.at[i, "proposition"].replace("_", " ").strip()
+        print(proposition_preflabel)
         proposition_iri = utils.create_iri(proposition_preflabel, namespace="https://www.foom.com/core")
         proposition_type = propositions.at[i, "proposition_type"]
         kg = add_proposition(kg, proposition_iri, proposition_preflabel, proposition_type)
@@ -147,11 +148,13 @@ def add_propositions(kg: rdflib.Graph,
 
         # add concepts
         proposition_concepts = [concept.strip() for concept in propositions.at[i, "given_concepts"].split(",")]
+        print(proposition_concepts)
         if proposition_concepts:
             kg = add_proposition_concepts(kg, proposition_iri, proposition_concepts)
 
         # add givens
         given_concepts = [concept.strip() for concept in propositions.at[i, "given_concepts"].split(",")]
+        print(given_concepts)
         if given_concepts:
             kg = add_givens(kg, proposition_iri, given_concepts)
 
@@ -174,6 +177,7 @@ def add_propositions(kg: rdflib.Graph,
         moral_preflabel = propositions.at[i, "moral"].strip()
         if moral_preflabel:
             kg = add_gist_moral(kg, proposition_iri, moral_preflabel, "Moral")
+        print("")
 
     return kg
 
@@ -252,10 +256,11 @@ def add_givens(kg: rdflib.Graph,
         rdflib.Graph: The updated RDF graph with the added given concepts.
     """
     for given_concept in given_concepts:
-        given_concept_preflabel = given_concept.replace("_", " ").strip().capitalize()
-        given_concept_iri = utils.create_iri(f"Concept: {given_concept_preflabel}", namespace="https://www.foom.com/core")
-        kg.add((proposition_iri, has_given_concept, given_concept_iri))
-        kg.add((given_concept_iri, is_given_concept_of, proposition_iri))
+        if given_concept:
+            given_concept_preflabel = given_concept.replace("_", " ").strip().capitalize()
+            given_concept_iri = utils.create_iri(f"Concept: {given_concept_preflabel}", namespace="https://www.foom.com/core")
+            kg.add((proposition_iri, has_given_concept, given_concept_iri))
+            kg.add((given_concept_iri, is_given_concept_of, proposition_iri))
     return kg
 
 def add_proposition(kg: rdflib.Graph,
@@ -292,10 +297,12 @@ def add_proposition_concepts(kg: rdflib.Graph,
                              proposition_iri: rdflib.URIRef,
                              proposition_concepts: list) -> rdflib.Graph:
     for proposition_concept in proposition_concepts:
-        proposition_concept_preflabel = proposition_concept.replace("_", " ").strip().capitalize()
-        proposition_concept_iri = utils.create_iri(f"Concept: {proposition_concept_preflabel}", namespace="https://www.foom.com/core")
-        kg.add((proposition_iri, contains_concept, proposition_concept_iri))
-        kg.add((proposition_concept_iri, is_concept_in, proposition_iri))
+        if proposition_concept:
+            print(proposition_concept)
+            proposition_concept_preflabel = proposition_concept.replace("_", " ").strip().capitalize()
+            proposition_concept_iri = utils.create_iri(f"Concept: {proposition_concept_preflabel}", namespace="https://www.foom.com/core")
+            kg.add((proposition_iri, contains_concept, proposition_concept_iri))
+            kg.add((proposition_concept_iri, is_concept_in, proposition_iri))
     return kg
 
 def add_implications(kg: rdflib.Graph,
@@ -321,11 +328,12 @@ def add_implications(kg: rdflib.Graph,
     implication_iri = utils.create_iri(f"Implication: {implication_preflabel}", namespace="https://www.foom.com/core")
     kg = concepts.add_triples(kg, implication_preflabel, implication_iri, implication_class, "Implication")
     for concept in implication_concepts:
-        concept = concept.replace("_", " ").strip().capitalize()
-        concept_iri = utils.create_iri(f"Concept: {concept}", namespace="https://www.foom.com/core")
-        kg = concepts.add_triples(kg, concept, concept_iri, concept_class, "Concept")
-        kg.add((proposition_iri, refers_to, concept_iri))
-        kg.add((concept_iri, is_used_in, proposition_iri))
+        if concept:
+            concept = concept.replace("_", " ").strip().capitalize()
+            concept_iri = utils.create_iri(f"Concept: {concept}", namespace="https://www.foom.com/core")
+            kg = concepts.add_triples(kg, concept, concept_iri, concept_class, "Concept")
+            kg.add((proposition_iri, refers_to, concept_iri))
+            kg.add((concept_iri, is_used_in, proposition_iri))
     kg.add((proposition_iri, has_implication, implication_iri))
     kg.add((implication_iri, is_implication_of, proposition_iri))
     return kg
