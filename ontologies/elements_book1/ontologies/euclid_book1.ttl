@@ -43,17 +43,14 @@ ns1:has_domain a owl:ObjectProperty ;
 ns1:has_domain_of_diagrammatic_objects a owl:DatatypeProperty ;
     rdfs:label "has_domain_of_diagrammatic_objects" ;
     rdfs:range xsd:boolean ;
+    rdfs:subPropertyOf ns1:has_domain_of_objects ;
     skos:prefLabel "has_domain_of_diagrammatic_objects" .
 
 ns1:has_field_of_diagrammatic_objects a owl:DatatypeProperty ;
     rdfs:label "has_field_of_diagrammatic_objects" ;
     rdfs:range xsd:boolean ;
+    rdfs:subPropertyOf ns1:has_field_of_objects ;
     skos:prefLabel "has_field_of_diagrammatic_objects" .
-
-ns1:has_field_of_objects a owl:DatatypeProperty ;
-    rdfs:label "has_field_of_objects" ;
-    rdfs:range xsd:boolean ;
-    skos:prefLabel "has_field_of_objects" .
 
 ns1:has_gist a owl:ObjectProperty ;
     rdfs:label "has gist" ;
@@ -177,11 +174,13 @@ ns1:modifies_diagram a owl:DatatypeProperty ;
 ns1:produces_abstract_object a owl:DatatypeProperty ;
     rdfs:label "produces_abstract_object" ;
     rdfs:range xsd:boolean ;
+    rdfs:subPropertyOf ns1:produces_an_object ;
     skos:prefLabel "produces_abstract_object" .
 
 ns1:produces_new_diagrammatic_object a owl:DatatypeProperty ;
     rdfs:label "produces_new_diagrammatic_object" ;
     rdfs:range xsd:boolean ;
+    rdfs:subPropertyOf ns1:produces_an_object ;
     skos:prefLabel "produces_new_diagrammatic_object" .
 
 ns1:refers_to a owl:ObjectProperty ;
@@ -647,6 +646,16 @@ ns1:gist__transitivity_of_are_parallel a owl:NamedIndividual,
     rdfs:label "Gist: Transitivity of are_parallel" ;
     skos:prefLabel "Transitivity of are parallel" ;
     ns1:is_gist_of ns1:proposition_30 .
+
+ns1:has_domain_of_objects a owl:DatatypeProperty ;
+    rdfs:label "has_domain_of_objects" ;
+    rdfs:range xsd:boolean ;
+    skos:prefLabel "has_domain_of_objects" .
+
+ns1:has_field_of_objects a owl:DatatypeProperty ;
+    rdfs:label "has_field_of_objects" ;
+    rdfs:range xsd:boolean ;
+    skos:prefLabel "has_field_of_objects" .
 
 ns1:implication_____at_base_angle__isoscles_triangle___at_base_angle__isoscles_triangle__ a owl:NamedIndividual,
         ns1:implication ;
@@ -1516,6 +1525,11 @@ ns1:postulate_5 a owl:NamedIndividual,
     skos:prefLabel "Postulate 5" ;
     ns1:refers_to ns1:operation__sum_inclination_of_interior_angle__inclination_of_interior_angle___inclination_of_interior_angle,
         ns1:relation_instance__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__ .
+
+ns1:produces_an_object a owl:DatatypeProperty ;
+    rdfs:label "produces_an_object" ;
+    rdfs:range xsd:boolean ;
+    skos:prefLabel "produces_an_object" .
 
 ns1:proposition_type a owl:Class ;
     rdfs:label "Proposition type" ;
