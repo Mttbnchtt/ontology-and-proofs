@@ -927,17 +927,17 @@ ns1:relation_instance__distinct_point__point_ a owl:NamedIndividual,
     skos:prefLabel "Distinct(point, point)" ;
     ns1:is_used_in ns1:proposition_7 .
 
-ns1:relation_instance__encompassing_side_of_triangle__rangle_ a owl:NamedIndividual,
+ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Encompassing(side_of_triangle, rangle)" ;
-    skos:prefLabel "Encompassing(side of triangle, rangle)" ;
-    ns1:is_used_in ns1: .
+    rdfs:label "Relation instance: Encompassing(side_of_triangle, side_of_triangle, angle)" ;
+    skos:prefLabel "Encompassing(side of triangle, side of triangle, angle)" ;
+    ns1:is_used_in ns1:proposition_48 .
 
-ns1:relation_instance__encompassing_side_of_triangle__right_angle_ a owl:NamedIndividual,
+ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__right_angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Encompassing(side_of_triangle, right_angle)" ;
-    skos:prefLabel "Encompassing(side of triangle, right angle)" ;
-    ns1:is_used_in ns1: .
+    rdfs:label "Relation instance: Encompassing(side_of_triangle, side_of_triangle, right_angle)" ;
+    skos:prefLabel "Encompassing(side of triangle, side of triangle, right angle)" ;
+    ns1:is_used_in ns1:proposition_47 .
 
 ns1:relation_instance__equals_angle__right_angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -975,12 +975,6 @@ ns1:relation_instance__equals_triangle__parallelogram_ a owl:NamedIndividual,
     skos:prefLabel "Equals(triangle, parallelogram)" ;
     ns1:is_used_in ns1:proposition_42 .
 
-ns1:relation_instance__exterior_angle__triangle_ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation instance: Exterior(angle, triangle)" ;
-    skos:prefLabel "Exterior(angle, triangle)" ;
-    ns1:is_used_in ns1:proposition_16 .
-
 ns1:relation_instance__have_same_base_parallelogram__triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
     rdfs:label "Relation instance: Have_same_base(parallelogram, triangle)" ;
@@ -993,17 +987,17 @@ ns1:relation_instance__inclined_at_finite_straight_line__finite_straight_line__r
     skos:prefLabel "Inclined at(finite straight line, finite straight line, right angle)" ;
     ns1:is_used_in ns1:proposition_11 .
 
-ns1:relation_instance__interior_angle__triangle_ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation instance: Interior(angle, triangle)" ;
-    skos:prefLabel "Interior(angle, triangle)" ;
-    ns1:is_used_in ns1:proposition_16 .
-
 ns1:relation_instance__is_double_parallelogram__triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
     rdfs:label "Relation instance: Is_double(parallelogram, triangle)" ;
     skos:prefLabel "Is double(parallelogram, triangle)" ;
     ns1:is_used_in ns1:proposition_41 .
+
+ns1:relation_instance__is_external_angle__straight_line_ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation instance: Is_external(angle, straight_line)" ;
+    skos:prefLabel "Is external(angle, straight line)" ;
+    ns1:is_used_in ns1:proposition_28 .
 
 ns1:relation_instance__is_external_angle__straight_line__straight_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -1017,10 +1011,16 @@ ns1:relation_instance__is_external_angle__triangle_ a owl:NamedIndividual,
     skos:prefLabel "Is external(angle, triangle)" ;
     ns1:is_used_in ns1:proposition_32 .
 
-ns1:relation_instance__is_external_angle_of_angle__straight_line_ a owl:NamedIndividual,
+ns1:relation_instance__is_external_exterior_angle__triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Is_external_angle_of(angle, straight_line)" ;
-    skos:prefLabel "Is external angle of(angle, straight line)" ;
+    rdfs:label "Relation instance: Is_external(exterior_angle, triangle)" ;
+    skos:prefLabel "Is external(exterior angle, triangle)" ;
+    ns1:is_used_in ns1:proposition_16 .
+
+ns1:relation_instance__is_internal_angle__straight_line_ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation instance: Is_internal(angle, straight_line)" ;
+    skos:prefLabel "Is internal(angle, straight line)" ;
     ns1:is_used_in ns1:proposition_28 .
 
 ns1:relation_instance__is_internal_angle__straight_line__straight_line_ a owl:NamedIndividual,
@@ -1028,18 +1028,6 @@ ns1:relation_instance__is_internal_angle__straight_line__straight_line_ a owl:Na
     rdfs:label "Relation instance: Is_internal(angle, straight_line, straight_line)" ;
     skos:prefLabel "Is internal(angle, straight line, straight line)" ;
     ns1:is_used_in ns1:proposition_29 .
-
-ns1:relation_instance__is_internal_angle__triangle_ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation instance: Is_internal(angle, triangle)" ;
-    skos:prefLabel "Is internal(angle, triangle)" ;
-    ns1:is_used_in ns1:proposition_32 .
-
-ns1:relation_instance__is_internal_angle_of_angle__straight_line_ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation instance: Is_internal_angle_of(angle, straight_line)" ;
-    skos:prefLabel "Is internal angle of(angle, straight line)" ;
-    ns1:is_used_in ns1:proposition_28 .
 
 ns1:relation_instance__is_on_the_same_part_finite_straight_line__finite_straight_line__part_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -1129,7 +1117,7 @@ ns1:relation_instance__is_right_angled_triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
     rdfs:label "Relation instance: Is_right_angled(triangle)" ;
     skos:prefLabel "Is right angled(triangle)" ;
-    ns1:is_used_in ns1: .
+    ns1:is_used_in ns1:proposition_47 .
 
 ns1:relation_instance__remaining_angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -1165,7 +1153,7 @@ ns1:relation_instance__subtended_by_side_of_triangle__right_angle_ a owl:NamedIn
         ns1:relation_instance ;
     rdfs:label "Relation instance: Subtended_by(side_of_triangle, right_angle)" ;
     skos:prefLabel "Subtended by(side of triangle, right angle)" ;
-    ns1:is_used_in ns1: .
+    ns1:is_used_in ns1:proposition_47 .
 
 ns1:relation_instance__under_base_angle__isoscles_triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -1406,6 +1394,14 @@ ns1:concept__equal_level a owl:NamedIndividual,
     ns1:is_used_in_definition_of ns1:concept__plane_surface,
         ns1:concept__straight_line .
 
+ns1:concept__exterior_angle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Exterior angle" ;
+    skos:prefLabel "Exterior angle" ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_sub_concept_of ns1:concept__angle .
+
 ns1:concept__interior_point a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Interior_point" ;
@@ -1582,8 +1578,8 @@ ns1:relation_instance__equals_square__sum_square__square__ a owl:NamedIndividual
         ns1:relation_instance ;
     rdfs:label "Relation instance: Equals(square, sum(square, square))" ;
     skos:prefLabel "Equals(square, sum(square, square))" ;
-    ns1:is_used_in ns1:,
-        ns1:proposition_47 .
+    ns1:is_used_in ns1:proposition_47,
+        ns1:proposition_48 .
 
 ns1:relation_instance__greater_than_base_of_triangle__base_of_triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -1613,6 +1609,13 @@ ns1:relation_instance__greatest_side_of_triangle_ a owl:NamedIndividual,
     ns1:is_used_in ns1:proposition_18,
         ns1:proposition_19 .
 
+ns1:relation_instance__is_internal_angle__triangle_ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation instance: Is_internal(angle, triangle)" ;
+    skos:prefLabel "Is internal(angle, triangle)" ;
+    ns1:is_used_in ns1:proposition_16,
+        ns1:proposition_32 .
+
 ns1:relation_instance__is_on_the_same_part_angle__angle__straight_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
     rdfs:label "Relation instance: Is_on_the_same_part(angle, angle, straight_line)" ;
@@ -1631,15 +1634,15 @@ ns1:relation_instance__is_placed_on_square__side_of_triangle_ a owl:NamedIndivid
         ns1:relation_instance ;
     rdfs:label "Relation instance: Is_placed_on(square, side_of_triangle)" ;
     skos:prefLabel "Is placed on(square, side of triangle)" ;
-    ns1:is_used_in ns1:,
+    ns1:is_used_in ns1:proposition_47,
         ns1:proposition_48 .
 
 ns1:relation_instance__remaining_side_of_triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
     rdfs:label "Relation instance: Remaining(side_of_triangle)" ;
     skos:prefLabel "Remaining(side of triangle)" ;
-    ns1:is_used_in ns1:,
-        ns1:proposition_26 .
+    ns1:is_used_in ns1:proposition_26,
+        ns1:proposition_48 .
 
 ns1:set__circle a owl:NamedIndividual,
         ns1:set ;
@@ -1859,22 +1862,6 @@ ns1:operation_type__subtract_magnitude__magnitude___magnitude a owl:NamedIndivid
     ns1:has_range ns1:set__magnitude ;
     ns1:is_used_in ns1:operation_instance__subtract_magnitude__magnitude___magnitude .
 
-ns1:proposition_47 a owl:NamedIndividual,
-        ns1:proposition ;
-    rdfs:label "Proposition: Proposition 47" ;
-    skos:prefLabel "Proposition 47" ;
-    ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__equals_square__sum_square__square__ .
-
-ns1:proposition_48 a owl:NamedIndividual,
-        ns1:proposition ;
-    rdfs:label "Proposition: Proposition 48" ;
-    skos:prefLabel "Proposition 48" ;
-    ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__is_placed_on_square__side_of_triangle_ .
-
 ns1:relation_instance__corresponding_angle__angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
     rdfs:label "Relation instance: Corresponding(angle, angle)" ;
@@ -2032,16 +2019,6 @@ ns1:concept__end_of_surface a owl:NamedIndividual,
         ns1:concept__surface ;
     ns1:has_definition ns1:definition__6 ;
     ns1:is_defined_in ns1:document__elements_book_1 .
-
-ns1:concept__exterior_angle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Exterior angle" ;
-    skos:prefLabel "Exterior angle" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:proposition_16 ;
-    ns1:is_given_concept_of ns1:proposition_16 ;
-    ns1:is_sub_concept_of ns1:concept__angle .
 
 ns1:concept__interior_angle_of_triangle a owl:NamedIndividual,
         ns1:concept ;
@@ -2700,6 +2677,17 @@ ns1:proposition_36 a owl:NamedIndividual,
         ns1:relation_instance__are_same_straight_line__straight_line_,
         ns1:relation_instance__equals_parallelogram__parallelogram_ .
 
+ns1:proposition_48 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 48" ;
+    skos:prefLabel "Proposition 48" ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:proposition_type__theorem,
+        ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__angle_,
+        ns1:relation_instance__equals_square__sum_square__square__,
+        ns1:relation_instance__is_placed_on_square__side_of_triangle_,
+        ns1:relation_instance__remaining_side_of_triangle_ .
+
 ns1:relation_instance__are_same_straight_line__straight_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
     rdfs:label "Relation instance: Are_same(straight_line, straight_line)" ;
@@ -2898,6 +2886,18 @@ ns1:proposition_41 a owl:NamedIndividual,
         ns1:relation_instance__is_placed_on_parallelogram__straight_line_,
         ns1:relation_instance__is_placed_on_triangle__straight_line_ .
 
+ns1:proposition_47 a owl:NamedIndividual,
+        ns1:proposition ;
+    rdfs:label "Proposition: Proposition 47" ;
+    skos:prefLabel "Proposition 47" ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:proposition_type__theorem,
+        ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__right_angle_,
+        ns1:relation_instance__equals_square__sum_square__square__,
+        ns1:relation_instance__is_placed_on_square__side_of_triangle_,
+        ns1:relation_instance__is_right_angled_triangle_,
+        ns1:relation_instance__subtended_by_side_of_triangle__right_angle_ .
+
 ns1:proposition_9 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 9" ;
@@ -2921,19 +2921,6 @@ ns1:relation_instance__equals_x__y_ a owl:NamedIndividual,
     ns1:refers_to ns1:concept___thing,
         ns1:concept__equals,
         ns1:relation_type__equals_x__y_ .
-
-ns1: a owl:NamedIndividual,
-        ns1:proposition ;
-    rdfs:label "Proposition: " ;
-    skos:prefLabel "" ;
-    ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:relation_instance__encompassing_side_of_triangle__rangle_,
-        ns1:relation_instance__encompassing_side_of_triangle__right_angle_,
-        ns1:relation_instance__equals_square__sum_square__square__,
-        ns1:relation_instance__is_placed_on_square__side_of_triangle_,
-        ns1:relation_instance__is_right_angled_triangle_,
-        ns1:relation_instance__remaining_side_of_triangle_,
-        ns1:relation_instance__subtended_by_side_of_triangle__right_angle_ .
 
 ns1:concept__equal_length a owl:NamedIndividual,
         ns1:concept ;
@@ -3307,8 +3294,8 @@ ns1:proposition_28 a owl:NamedIndividual,
         ns1:relation_instance__are_parallel_straight_line__straight_line_,
         ns1:relation_instance__equals_angle__right_angle_,
         ns1:relation_instance__falls_on_straight_line__straight_line_,
-        ns1:relation_instance__is_external_angle_of_angle__straight_line_,
-        ns1:relation_instance__is_internal_angle_of_angle__straight_line_,
+        ns1:relation_instance__is_external_angle__straight_line_,
+        ns1:relation_instance__is_internal_angle__straight_line_,
         ns1:relation_instance__is_on_the_same_part_angle__angle__straight_line_,
         ns1:relation_instance__is_opposite_to_angle__angle_ .
 
@@ -3604,18 +3591,18 @@ ns1:proposition_16 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 16" ;
     skos:prefLabel "Proposition 16" ;
-    ns1:contains_concept ns1:concept__exterior_angle,
-        ns1:concept__one,
-        ns1:concept__produce ;
-    ns1:has_given_concept ns1:concept__exterior_angle,
-        ns1:concept__one,
-        ns1:concept__produce ;
+    ns1:contains_concept ns1:concept__one,
+        ns1:concept__produce,
+        ns1:concept__triangle ;
+    ns1:has_given_concept ns1:concept__one,
+        ns1:concept__produce,
+        ns1:concept__triangle ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__produce_side_of_triangle_,
         ns1:proposition_type__theorem,
-        ns1:relation_instance__exterior_angle__triangle_,
         ns1:relation_instance__greater_than_angle__angle_,
-        ns1:relation_instance__interior_angle__triangle_,
+        ns1:relation_instance__is_external_exterior_angle__triangle_,
+        ns1:relation_instance__is_internal_angle__triangle_,
         ns1:relation_instance__is_opposite_to_angle__angle_ .
 
 ns1:proposition_4 a owl:NamedIndividual,
@@ -3768,31 +3755,6 @@ ns1:proposition_22 a owl:NamedIndividual,
         ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
         ns1:relation_instance__smaller_than_finite_straight_line__finite_straight_line_ .
 
-ns1:concept__triangle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Triangle" ;
-    skos:prefLabel "Triangle" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:proposition_17,
-        ns1:proposition_18,
-        ns1:proposition_24,
-        ns1:proposition_4,
-        ns1:proposition_42,
-        ns1:proposition_44,
-        ns1:proposition_6,
-        ns1:proposition_8 ;
-    ns1:is_given_concept_of ns1:proposition_17,
-        ns1:proposition_18,
-        ns1:proposition_24,
-        ns1:proposition_4,
-        ns1:proposition_42,
-        ns1:proposition_44,
-        ns1:proposition_6,
-        ns1:proposition_8 ;
-    ns1:is_sub_concept_of ns1:concept__rectilinear_figure ;
-    ns1:is_super_concept_of ns1:concept__equilateral_triangle .
-
 ns1:concept__angle a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Angle" ;
@@ -3819,6 +3781,33 @@ ns1:concept__angle a owl:NamedIndividual,
         ns1:concept__rhomboid,
         ns1:concept__square,
         ns1:concept__trapezoid_quadrilateral_figure .
+
+ns1:concept__triangle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Triangle" ;
+    skos:prefLabel "Triangle" ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:proposition_16,
+        ns1:proposition_17,
+        ns1:proposition_18,
+        ns1:proposition_24,
+        ns1:proposition_4,
+        ns1:proposition_42,
+        ns1:proposition_44,
+        ns1:proposition_6,
+        ns1:proposition_8 ;
+    ns1:is_given_concept_of ns1:proposition_16,
+        ns1:proposition_17,
+        ns1:proposition_18,
+        ns1:proposition_24,
+        ns1:proposition_4,
+        ns1:proposition_42,
+        ns1:proposition_44,
+        ns1:proposition_6,
+        ns1:proposition_8 ;
+    ns1:is_sub_concept_of ns1:concept__rectilinear_figure ;
+    ns1:is_super_concept_of ns1:concept__equilateral_triangle .
 
 ns1:proposition_24 a owl:NamedIndividual,
         ns1:proposition ;
@@ -4160,8 +4149,7 @@ ns1:document__elements_book_1 a owl:NamedIndividual,
         ns1:document ;
     rdfs:label "Document: Elements Book 1" ;
     skos:prefLabel "Elements Book 1" ;
-    ns1:contains ns1:,
-        ns1:common_notion_1,
+    ns1:contains ns1:common_notion_1,
         ns1:common_notion_2,
         ns1:common_notion_3,
         ns1:common_notion_7,
