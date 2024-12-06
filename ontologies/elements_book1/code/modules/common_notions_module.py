@@ -152,10 +152,11 @@ def add_concepts(kg: rdflib.Graph,
                  list_concepts: list,
                  item_iri: rdflib.URIRef) -> rdflib.Graph:
     for concept in list_concepts:
-        concept_iri = utils.create_iri(f"Concept: {concept}", namespace="https://www.foom.com/core")
-        kg = concepts.add_triples(kg, concept, concept_iri, concept_class, "Concept")
-        kg.add((item_iri, refers_to, concept_iri))
-        kg.add((concept_iri, is_used_in, item_iri))
+        if concept:
+            concept_iri = utils.create_iri(f"Concept: {concept}", namespace="https://www.foom.com/core")
+            kg = concepts.add_triples(kg, concept, concept_iri, concept_class, "Concept")
+            kg.add((item_iri, refers_to, concept_iri))
+            kg.add((concept_iri, is_used_in, item_iri))
     return kg
 
 def add_domain_range(kg: rdflib.Graph,
