@@ -1,4 +1,5 @@
 import os
+import pandas as pd
 import rdflib
 import re
 
@@ -61,3 +62,26 @@ def output_ontology(kg: rdflib.Graph,
     output_file_path = os.path.join(folder_path, file_name)
     with open(output_file_path, "w") as f:
         f.write(kg.serialize(format=selected_format))
+
+
+def diff_concepts_propositions_and_concepts_list(propositions_input_file_path: str,
+                                                 concepts_analysis_input_file_path: str) -> None:
+    propositions_df = pd.read_csv(propositions_input_file_path).fillna("")
+    concepts_df = pd.read_csv(concepts_analysis_input_file_path).fillna("")
+
+    concepts_propositions_set = set()
+    concepts_set = {row["concepts"] for _, row in concepts_df.iterrows()}
+
+    for _, row in propositions_df.iterrows():
+        concepts = [concept.strip() for concept in row["proposition_concepts"].split(",")]
+        for concept in concepts:
+            concepts_propositions_set.add(concept)
+    
+    concepts_not_in_propositions_set = sorted(list(concepts_set - concepts_propositions_set))
+    concepts_not_in_concepts_set = sorted(list(concepts_propositions_set - concepts_set))
+
+    print("Concepts not in propositions:")
+    print(concepts_not_in_propositions_set)
+
+    print("Concepts not in set of concepts:")
+    print(concepts_not_in_concepts_set)
