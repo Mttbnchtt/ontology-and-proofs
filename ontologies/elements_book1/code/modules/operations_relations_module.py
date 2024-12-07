@@ -4,13 +4,12 @@ import typing
 
 import modules.utils as utils
 
+# common IRIs
 rdf_type = rdflib.RDF.type
 rdfs_label = rdflib.RDFS.label
 skos_prefLabel = rdflib.SKOS.prefLabel
 
-RELATIONS_INPUT_FILE_PATH = "input/Euclid.RelationsAnalysis.Book1.csv"
-OPERATIONS_INPUT_FILE_PATH = "input/Euclid.OperationsAnalysis.Book1.csv"
-
+# classes IRIs
 ONTOLOGY_NAMESPACE = "https://www.foom.com/core"
 CONCEPT_CLASS = utils.create_iri("Concept", namespace=ONTOLOGY_NAMESPACE)
 CONTAINS_CONCEPT = utils.create_iri("contains concept", namespace=ONTOLOGY_NAMESPACE)
@@ -20,14 +19,16 @@ OPERATION_TYPE_CLASS = utils.create_iri("Operation type", namespace=ONTOLOGY_NAM
 RELATION_INSTANCE_CLASS = utils.create_iri("Relation instance", namespace=ONTOLOGY_NAMESPACE)
 RELATION_TYPE_CLASS = utils.create_iri("Relation type", namespace=ONTOLOGY_NAMESPACE)
 
-
+# object properties IRIs
 HAS_RELATION_TYPE = utils.create_iri("has relation type", namespace=ONTOLOGY_NAMESPACE)
 IS_RELATION_TYPE_OF = utils.create_iri("is relation type of", namespace=ONTOLOGY_NAMESPACE)
 
 HAS_OPERATION_TYPE = utils.create_iri("has operation type", namespace=ONTOLOGY_NAMESPACE)
 IS_OPERATION_TYPE_OF = utils.create_iri("is operation type of", namespace=ONTOLOGY_NAMESPACE)
 
-
+################
+# main function
+################
 def add_relations_operations(kg: rdflib.Graph,
                              input_file_path: str,
                              item_type: typing.Literal["relations", "operations"]) -> rdflib.Graph:
@@ -57,6 +58,10 @@ def add_relations_operations(kg: rdflib.Graph,
 
     return kg
 
+
+#####################
+# helper functions
+####################
 def find_concepts(item_pref_label: str) -> set:
     item_pref_label_v1 = item_pref_label.replace("(", " ").replace(")", " ").replace(",", " ")
 
