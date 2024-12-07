@@ -84,7 +84,7 @@ Proposition_26,theorem,"triangle, two, side_of_triangle, corresponding,  one, is
 Proposition_26,,,,,,,,"equals(side_of_triangle, side_of_triangle)",,,,,,,
 Proposition_26,,,,,,,,"equals(angle, angle)",,,,,,,
 Proposition_26,,,,,,,,"is_placed_on(side_of_triangle, angle)",,,,,,,"is_placed_on(side_of_triangle, angle, angle)"
-Proposition_26,,,,,,,,"subtended_by(angle, sinde_of_triangle, side_of_triangle)",,,,,,,
+Proposition_26,,,,,,,,"subtended_by(angle, side_of_triangle, side_of_triangle)",,,,,,,
 Proposition_26,,,,,,,,remaining(side_of_triangle),,,,,,,
 Proposition_26,,,,,,,,remaining(angle),,,,,,,
 Proposition_27,theorem,"two, straight_line, falls_on, are_alternate",,,,,,"are_alternate(angle, angle)  ",,,,,,,
