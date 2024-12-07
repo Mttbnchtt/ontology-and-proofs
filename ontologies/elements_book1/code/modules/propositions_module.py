@@ -158,12 +158,12 @@ def add_propositions(kg: rdflib.Graph,
         # add relation instances
         relation_instance_preflabel = propositions.at[i, "relation_instance"].strip()
         if relation_instance_preflabel:
-            kg = add_relation_operation_instance(kg, proposition_iri, relation_instance_preflabel, "Relation")
+            kg = add_relation_operation_instance(kg, proposition_iri, relation_instance_preflabel, "Relation instance", relation_instance_class)
 
         # add operation instances
         operation_instance_preflabel = propositions.at[i, "operation_instance"].strip()
         if operation_instance_preflabel:
-            kg = add_relation_operation_instance(kg, proposition_iri, operation_instance_preflabel, "Operation")
+            kg = add_relation_operation_instance(kg, proposition_iri, operation_instance_preflabel, "Operation instance", operation_instance_class)
 
         # add gists
         gist_preflabel = propositions.at[i, "gist"].strip()
@@ -211,7 +211,8 @@ def add_gist_moral(kg: rdflib.Graph,
 def add_relation_operation_instance(kg: rdflib.Graph,
                                     proposition_iri: rdflib.URIRef,
                                     item_instance_preflabel: str,
-                                    type_name: str) -> rdflib.Graph:
+                                    type_name: str,
+                                    class_type: rdflib.URIRef) -> rdflib.Graph:
     """
     Add a relation or operation instance to a proposition in the knowledge graph.
 
@@ -228,8 +229,9 @@ def add_relation_operation_instance(kg: rdflib.Graph,
     Returns:
         rdflib.Graph: The updated RDF graph with the added relation or operation instance.
     """
-    item_instance_iri = utils.create_iri(f"{type_name} instance: {item_instance_preflabel}", namespace="https://www.foom.com/core")
-    kg = concepts.add_triples(kg, item_instance_preflabel, item_instance_iri, relation_instance_class, "Relation instance")
+    item_instance_preflabel = item_instance_preflabel.strip().capitalize()
+    item_instance_iri = utils.create_iri(f"{type_name}: {item_instance_preflabel}", namespace="https://www.foom.com/core")
+    kg = concepts.add_triples(kg, item_instance_preflabel, item_instance_iri, class_type, type_name)
     kg.add((proposition_iri, refers_to, item_instance_iri))
     kg.add((item_instance_iri, is_used_in, proposition_iri))
     return kg

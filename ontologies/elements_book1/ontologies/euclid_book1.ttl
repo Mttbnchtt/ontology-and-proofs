@@ -590,151 +590,151 @@ ns1:moral__subtraction_of_lengths a owl:NamedIndividual,
 
 ns1:operation_instance__apply_in_rectilinear_angle__parallelogram_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Apply_in(rectilinear_angle, parallelogram)" ;
+    rdfs:label "Operation instance: Apply_in(rectilinear_angle, parallelogram)" ;
     skos:prefLabel "Apply in(rectilinear angle, parallelogram)" ;
     ns1:is_used_in ns1:proposition_44 .
 
 ns1:operation_instance__apply_to_finite_straight_line__parallelogram_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Apply_to(finite_straight_line, parallelogram)" ;
+    rdfs:label "Operation instance: Apply_to(finite_straight_line, parallelogram)" ;
     skos:prefLabel "Apply to(finite straight line, parallelogram)" ;
     ns1:is_used_in ns1:proposition_44 .
 
 ns1:operation_instance__conduct_finite_straight_line__finite_straight_line__point__right_angle___finite_straight_line a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Conduct(finite_straight_line, finite_straight_line, point, right_angle)->finite_straight_line" ;
+    rdfs:label "Operation instance: Conduct(finite_straight_line, finite_straight_line, point, right_angle)->finite_straight_line" ;
     skos:prefLabel "Conduct(finite straight line, finite straight line, point, right angle)->finite straight line" ;
     ns1:is_used_in ns1:proposition_11 .
 
 ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__point__right_angle___infinite_straight_line a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Conduct(infinite_straight_line, infinite_straight_line, point, right_angle)->infinite_straight_line" ;
+    rdfs:label "Operation instance: Conduct(infinite_straight_line, infinite_straight_line, point, right_angle)->infinite_straight_line" ;
     skos:prefLabel "Conduct(infinite straight line, infinite straight line, point, right angle)->infinite straight line" ;
     ns1:is_used_in ns1:proposition_12 .
 
 ns1:operation_instance__conduct_straight_line__straight_line__point___straight_line a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Conduct(straight_line, straight_line, point)->straight_line" ;
+    rdfs:label "Operation instance: Conduct(straight_line, straight_line, point)->straight_line" ;
     skos:prefLabel "Conduct(straight line, straight line, point)->straight line" ;
     ns1:is_used_in ns1:proposition_31 .
 
 ns1:operation_instance__construct_from_angle__angle__point__finite_straight_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Construct_from(angle, angle, point, finite_straight_line)" ;
+    rdfs:label "Operation instance: Construct_from(angle, angle, point, finite_straight_line)" ;
     skos:prefLabel "Construct from(angle, angle, point, finite straight line)" ;
     ns1:is_used_in ns1:proposition_23 .
 
 ns1:operation_instance__construct_from_triangle__finite_straight_line__finite_straight_line__finite_straight_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Construct_from(triangle, finite_straight_line, finite_straight_line, finite_straight_line)" ;
+    rdfs:label "Operation instance: Construct_from(triangle, finite_straight_line, finite_straight_line, finite_straight_line)" ;
     skos:prefLabel "Construct from(triangle, finite straight line, finite straight line, finite straight line)" ;
     ns1:is_used_in ns1:proposition_22 .
 
 ns1:operation_instance__construct_inside_finite_straight_line__triangle___finite_straight_line a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Construct_inside(finite_straight_line, triangle)->finite_straight_line" ;
+    rdfs:label "Operation instance: Construct_inside(finite_straight_line, triangle)->finite_straight_line" ;
     skos:prefLabel "Construct inside(finite straight line, triangle)->finite straight line" ;
     ns1:is_used_in ns1:proposition_21 .
 
 ns1:operation_instance__construct_on_angle__finite_straight_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Construct_on(angle, finite_straight_line)" ;
+    rdfs:label "Operation instance: Construct_on(angle, finite_straight_line)" ;
     skos:prefLabel "Construct on(angle, finite straight line)" ;
     ns1:is_used_in ns1:proposition_23 .
 
 ns1:operation_instance__construct_on_angle__point_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Construct_on(angle, point)" ;
+    rdfs:label "Operation instance: Construct_on(angle, point)" ;
     skos:prefLabel "Construct on(angle, point)" ;
     ns1:is_used_in ns1:proposition_23 .
 
 ns1:operation_instance__construct_on_equilateteral_triangle__finite_straight_line___is_located_equilateral_triangle__finite_straight_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Construct_on(equilateteral_triangle, finite_straight_line)->is_located(equilateral_triangle, finite_straight_line)" ;
+    rdfs:label "Operation instance: Construct_on(equilateteral_triangle, finite_straight_line)->is_located(equilateral_triangle, finite_straight_line)" ;
     skos:prefLabel "Construct on(equilateteral triangle, finite straight line)->is located(equilateral triangle, finite straight line)" ;
     ns1:is_used_in ns1:proposition_1 .
 
 ns1:operation_instance__construct_on_finite_straight_line__end_of_side_of_triangle___finite_straight_line a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Construct_on(finite_straight_line, end_of_side_of_triangle)->finite_straight_line" ;
+    rdfs:label "Operation instance: Construct_on(finite_straight_line, end_of_side_of_triangle)->finite_straight_line" ;
     skos:prefLabel "Construct on(finite straight line, end of side of triangle)->finite straight line" ;
     ns1:is_used_in ns1:proposition_21 .
 
 ns1:operation_instance__construct_to_given_point_finite_straight_line__point__point_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Construct_to_given_point(finite_straight_line, point, point)" ;
+    rdfs:label "Operation instance: Construct_to_given_point(finite_straight_line, point, point)" ;
     skos:prefLabel "Construct to given point(finite straight line, point, point)" ;
     ns1:is_used_in ns1:proposition_7 .
 
 ns1:operation_instance__cut_into_two_halves_diameter__angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Cut_into_two_halves(diameter, angle)" ;
+    rdfs:label "Operation instance: Cut_into_two_halves(diameter, angle)" ;
     skos:prefLabel "Cut into two halves(diameter, angle)" ;
     ns1:is_used_in ns1:proposition_34 .
 
 ns1:operation_instance__cut_into_two_halves_finite_straight_line____finite_straight_line__finite_straight_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Cut_into_two_halves(finite_straight_line)->(finite_straight_line, finite_straight_line)" ;
+    rdfs:label "Operation instance: Cut_into_two_halves(finite_straight_line)->(finite_straight_line, finite_straight_line)" ;
     skos:prefLabel "Cut into two halves(finite straight line)->(finite straight line, finite straight line)" ;
     ns1:is_used_in ns1:proposition_10 .
 
 ns1:operation_instance__cut_into_two_halves_right_angle____angle__angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Cut_into_two_halves(right_angle)->(angle, angle)" ;
+    rdfs:label "Operation instance: Cut_into_two_halves(right_angle)->(angle, angle)" ;
     skos:prefLabel "Cut into two halves(right angle)->(angle, angle)" ;
     ns1:is_used_in ns1:proposition_9 .
 
 ns1:operation_instance__describe_on_square__finite_straight_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Describe_on(square, finite_straight_line)" ;
+    rdfs:label "Operation instance: Describe_on(square, finite_straight_line)" ;
     skos:prefLabel "Describe on(square, finite straight line)" ;
     ns1:is_used_in ns1:proposition_46 .
 
 ns1:operation_instance__extend_side_of_triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Extend(side_of_triangle)" ;
+    rdfs:label "Operation instance: Extend(side_of_triangle)" ;
     skos:prefLabel "Extend(side of triangle)" ;
     ns1:is_used_in ns1:proposition_5 .
 
 ns1:operation_instance__join_finte_straight_line__finite_striaght_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Join(finte_straight_line, finite_striaght_line)" ;
+    rdfs:label "Operation instance: Join(finte_straight_line, finite_striaght_line)" ;
     skos:prefLabel "Join(finte straight line, finite striaght line)" ;
     ns1:is_used_in ns1:proposition_33 .
 
 ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_line___is_located_finite_straight_line__point____equals_length_of_finite_straight_line___length_of_finite_straight_line__ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Place_on(finite_straight_line, point, finite_straight_line)->is_located(finite_straight_line, point) & equals(length_of(finite_straight_line), length_of(finite_straight_line))" ;
+    rdfs:label "Operation instance: Place_on(finite_straight_line, point, finite_straight_line)->is_located(finite_straight_line, point) & equals(length_of(finite_straight_line), length_of(finite_straight_line))" ;
     skos:prefLabel "Place on(finite straight line, point, finite straight line)->is located(finite straight line, point) & equals(length of(finite straight line), length of(finite straight line))" ;
     ns1:is_used_in ns1:proposition_2 .
 
 ns1:operation_instance__produce_side_of_triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Produce(side_of_triangle)" ;
+    rdfs:label "Operation instance: Produce(side_of_triangle)" ;
     skos:prefLabel "Produce(side of triangle)" ;
     ns1:is_used_in ns1:proposition_16 .
 
 ns1:operation_instance__produce_side_of_triangle___finite_straight_line a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Produce(side_of_triangle)->finite_straight_line" ;
+    rdfs:label "Operation instance: Produce(side_of_triangle)->finite_straight_line" ;
     skos:prefLabel "Produce(side of triangle)->finite straight line" ;
     ns1:is_used_in ns1:proposition_32 .
 
 ns1:operation_instance__subtract_finite_straight_line__finite_straight_line___finite_straight_line a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Subtract(finite_straight_line, finite_straight_line)->finite_straight_line" ;
+    rdfs:label "Operation instance: Subtract(finite_straight_line, finite_straight_line)->finite_straight_line" ;
     skos:prefLabel "Subtract(finite straight line, finite straight line)->finite straight line" ;
     ns1:is_used_in ns1:proposition_3 .
 
 ns1:operation_instance__sum_angle__angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Sum(angle, angle)" ;
+    rdfs:label "Operation instance: Sum(angle, angle)" ;
     skos:prefLabel "Sum(angle, angle)" ;
     ns1:is_used_in ns1:proposition_14 .
 
 ns1:operation_instance__taken_together_in_any_way_angle__angle___angle a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Taken_together_in_any_way(angle, angle)->angle" ;
+    rdfs:label "Operation instance: Taken_together_in_any_way(angle, angle)->angle" ;
     skos:prefLabel "Taken together in any way(angle, angle)->angle" ;
     ns1:is_used_in ns1:proposition_17 .
 
@@ -1067,21 +1067,21 @@ ns1:implication a owl:Class ;
 
 ns1:operation_instance__construct_in_parallelogram__rectilinear_angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Construct_in(parallelogram, rectilinear_angle)" ;
+    rdfs:label "Operation instance: Construct_in(parallelogram, rectilinear_angle)" ;
     skos:prefLabel "Construct in(parallelogram, rectilinear angle)" ;
     ns1:is_used_in ns1:proposition_42,
         ns1:proposition_45 .
 
 ns1:operation_instance__sum_angle__angle___angle a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Sum(angle, angle)->angle" ;
+    rdfs:label "Operation instance: Sum(angle, angle)->angle" ;
     skos:prefLabel "Sum(angle, angle)->angle" ;
     ns1:is_used_in ns1:proposition_17,
         ns1:proposition_28 .
 
 ns1:operation_instance__taken_together_in_any_way_finite_straight_line__finite_straight_line___finite_straight_line a owl:NamedIndividual,
         ns1:relation_instance ;
-    rdfs:label "Relation instance: Taken_together_in_any_way(finite_straight_line, finite_straight_line)->finite_straight_line" ;
+    rdfs:label "Operation instance: Taken_together_in_any_way(finite_straight_line, finite_straight_line)->finite_straight_line" ;
     skos:prefLabel "Taken together in any way(finite straight line, finite straight line)->finite straight line" ;
     ns1:is_used_in ns1:proposition_20,
         ns1:proposition_22 .
