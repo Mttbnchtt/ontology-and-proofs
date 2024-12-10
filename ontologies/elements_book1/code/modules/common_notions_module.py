@@ -107,6 +107,7 @@ def add_common_notions(kg: rdflib.Graph,
             kg = add_concepts(kg, common_notions.at[i, "relation_type_concepts"].split(","), relation_type_iri)
         # add operation instance
         if operation_instance := common_notions.at[i, "operation_instance"]:
+            operation_instance = operation_instance.replace(" -> ", "->")
             operation_instance_iri = utils.create_iri(f"Operation instance: {operation_instance}", namespace="https://www.foom.com/core")
             kg = add_relation_operation(kg, 
                                         statement_iri, 
@@ -118,7 +119,7 @@ def add_common_notions(kg: rdflib.Graph,
                                         common_notions.at[i, "operation_instance_start"], 
                                         common_notions.at[i, "operation_instance_end"])
             # add operation type
-            operation_type_preflabel = common_notions.at[i, "operation_type"].strip()
+            operation_type_preflabel = common_notions.at[i, "operation_type"].replace(" -> ", "->").strip()
             operation_type_iri = utils.create_iri(f"Operation type: {operation_type_preflabel}", namespace="https://www.foom.com/core")
             kg = concepts.add_triples(kg, operation_type_preflabel, operation_type_iri, operation_type_class, "Operation type")
             kg.add((operation_instance_iri, refers_to, operation_type_iri))
@@ -134,13 +135,8 @@ def add_relation_operation(kg: rdflib.Graph,
                            class_iri: rdflib.URIRef,
                            prefix: str,
                            list_of_concepts: list,
-                        #    item_type: str,
-                        #    list_of_concepts_type: list,
-                        #    prefix_type: str,
                            domain: str="",
-                           range: str="",
-                        #    add_type: bool=True
-                           ) -> rdflib.Graph:
+                           range: str="") -> rdflib.Graph:
     # item_iri = utils.create_iri(f"{prefix}: {item_preflabel}", namespace="https://www.foom.com/core")
     kg = concepts.add_triples(kg, item_preflabel, item_iri, class_iri, prefix)
     kg.add((common_notion_iri, refers_to, item_iri))

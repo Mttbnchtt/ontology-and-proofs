@@ -249,7 +249,7 @@ def add_operations(kg: rdflib.Graph,
     for i in postulates.index:
         postulate = postulates.at[i, "postulate_name"].strip()
         postulate_iri = utils.create_iri(postulate, namespace="https://www.foom.com/core")
-        operation_prelabel = postulates.at[i, "operations"].strip()
+        operation_prelabel = postulates.at[i, "operations"].replace(" -> ", "->").strip()
         # add operation instance
         if operation_prelabel:
             operation_iri = utils.create_iri(f"Operation: {operation_prelabel}", namespace="https://www.foom.com/core")

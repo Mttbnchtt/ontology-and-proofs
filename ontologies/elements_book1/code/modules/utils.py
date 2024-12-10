@@ -16,6 +16,7 @@ def edit_string(input_string: str) -> str:
     Returns:
         The cleaned string.
     """
+    input_string = input_string.replace(" -> ", "->")
     # Use a regular expression to replace all unwanted characters
     string = re.sub(r'\s|_{2,}|[^\w\s]', '_', input_string)
     # \s matches withespace characters (spaces, tabs, newlines, etc.)
