@@ -97,6 +97,10 @@ is_in = utils.create_iri("is in", namespace="https://www.foom.com/core")
 contains = utils.create_iri("contains", namespace="https://www.foom.com/core")
 
 
+CONTAINS_CONCEPT = utils.create_iri("contains concept", namespace=ONTOLOGY_NAMESPACE)
+IS_CONCEPT_IN = utils.create_iri("is concept in", namespace=ONTOLOGY_NAMESPACE)
+
+
 def add_postulates(kg: rdflib.Graph,
                    input_file_path: str) -> rdflib.Graph:
     """
@@ -196,8 +200,8 @@ def add_relation_operation_concept_triples(kg: rdflib.Graph,
             concept_preflabel = concept.strip()
             concept_iri = utils.create_iri(f"Concept: {concept_preflabel}", namespace="https://www.foom.com/core")
             kg = concepts.add_triples(kg, concept_preflabel, concept_iri, concept_class, "Concept")
-            kg.add((thing_that_refers, refers_to, concept_iri))
-            kg.add((concept_iri, is_used_in, thing_that_refers))
+            kg.add((thing_that_refers, CONTAINS_CONCEPT, concept_iri))
+            kg.add((concept_iri, IS_CONCEPT_IN, thing_that_refers))
     return kg
 
 def add_relations(kg: rdflib.Graph,

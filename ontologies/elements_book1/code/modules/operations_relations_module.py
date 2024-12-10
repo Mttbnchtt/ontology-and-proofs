@@ -12,8 +12,6 @@ skos_prefLabel = rdflib.SKOS.prefLabel
 # classes IRIs
 ONTOLOGY_NAMESPACE = "https://www.foom.com/core"
 CONCEPT_CLASS = utils.create_iri("Concept", namespace=ONTOLOGY_NAMESPACE)
-CONTAINS_CONCEPT = utils.create_iri("contains concept", namespace=ONTOLOGY_NAMESPACE)
-IS_CONCEPT_IN = utils.create_iri("is concept in", namespace=ONTOLOGY_NAMESPACE)
 OPERATION_INSTANCE_CLASS = utils.create_iri("Operation instance", namespace=ONTOLOGY_NAMESPACE)
 OPERATION_TYPE_CLASS = utils.create_iri("Operation type", namespace=ONTOLOGY_NAMESPACE)
 RELATION_INSTANCE_CLASS = utils.create_iri("Relation instance", namespace=ONTOLOGY_NAMESPACE)
@@ -25,6 +23,10 @@ IS_RELATION_TYPE_OF = utils.create_iri("is relation type of", namespace=ONTOLOGY
 
 HAS_OPERATION_TYPE = utils.create_iri("has operation type", namespace=ONTOLOGY_NAMESPACE)
 IS_OPERATION_TYPE_OF = utils.create_iri("is operation type of", namespace=ONTOLOGY_NAMESPACE)
+
+
+CONTAINS_CONCEPT = utils.create_iri("contains concept", namespace=ONTOLOGY_NAMESPACE)
+IS_CONCEPT_IN = utils.create_iri("is concept in", namespace=ONTOLOGY_NAMESPACE)
 
 ################
 # main function

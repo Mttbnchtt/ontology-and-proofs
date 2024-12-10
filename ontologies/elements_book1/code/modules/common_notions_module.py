@@ -70,6 +70,10 @@ is_statement_of = utils.create_iri("is statement of", namespace="https://www.foo
 is_in = utils.create_iri("is in", namespace="https://www.foom.com/core")
 contains = utils.create_iri("contains", namespace="https://www.foom.com/core")
 
+CONTAINS_CONCEPT = utils.create_iri("contains concept", namespace=ONTOLOGY_NAMESPACE)
+IS_CONCEPT_IN = utils.create_iri("is concept in", namespace=ONTOLOGY_NAMESPACE)
+
+
 def add_common_notions(kg: rdflib.Graph, 
                        input_file_path: str) -> rdflib.Graph:
     # read common notions data
@@ -155,8 +159,8 @@ def add_concepts(kg: rdflib.Graph,
         if concept:
             concept_iri = utils.create_iri(f"Concept: {concept}", namespace="https://www.foom.com/core")
             kg = concepts.add_triples(kg, concept, concept_iri, concept_class, "Concept")
-            kg.add((item_iri, refers_to, concept_iri))
-            kg.add((concept_iri, is_used_in, item_iri))
+            kg.add((item_iri, CONTAINS_CONCEPT, concept_iri))
+            kg.add((concept_iri, IS_CONCEPT_IN, item_iri))
     return kg
 
 def add_domain_range(kg: rdflib.Graph,
@@ -175,16 +179,16 @@ def add_domain_range(kg: rdflib.Graph,
     kg.add((range_item_iri, is_range_of, item_iri))    
     return kg
 
-def add_item_concepts(kg: rdflib.Graph,
-                      item_iri: rdflib.URIRef,
-                      list_of_concepts: list) -> rdflib.Graph:
-    for concept in list_of_concepts:
-        concept_preflabel = concept.replace("_", " ").strip().capitalize()
-        concept_iri = utils.create_iri(f"Concept: {concept_preflabel}", namespace="https://www.foom.com/core")
-        kg = concepts.add_triples(kg, concept_preflabel, concept_iri, concept_class, "Concept")
-        kg.add((item_iri, refers_to, concept_iri))
-        kg.add((concept_iri, is_used_in, item_iri))
-    return kg
+# def add_item_concepts(kg: rdflib.Graph,
+#                       item_iri: rdflib.URIRef,
+#                       list_of_concepts: list) -> rdflib.Graph:
+#     for concept in list_of_concepts:
+#         concept_preflabel = concept.replace("_", " ").strip().capitalize()
+#         concept_iri = utils.create_iri(f"Concept: {concept_preflabel}", namespace="https://www.foom.com/core")
+#         kg = concepts.add_triples(kg, concept_preflabel, concept_iri, concept_class, "Concept")
+#         kg.add((item_iri, CONTAINS_CONCEPT, concept_iri))
+#         kg.add((concept_iri, IS_CONCEPT_IN, item_iri))
+#     return kg
 
 def add_statement(kg: rdflib.Graph,
                   common_notion_iri: rdflib.URIRef,
