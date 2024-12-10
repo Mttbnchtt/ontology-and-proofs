@@ -46,6 +46,7 @@ owl_individual = rdflib.OWL.NamedIndividual
 owl_object_property = rdflib.OWL.ObjectProperty
 owl_data_property = rdflib.OWL.DatatypeProperty
 owl_annotation_property = rdflib.OWL.AnnotationProperty
+ONTOLOGY_NAMESPACE = "https://www.foom.com/core"
 
 # classes IRIs
 concept_class = utils.create_iri("Concept", namespace="https://www.foom.com/core")

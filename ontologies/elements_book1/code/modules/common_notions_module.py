@@ -15,6 +15,7 @@ owl_individual = rdflib.OWL.NamedIndividual
 owl_object_property = rdflib.OWL.ObjectProperty
 owl_data_property = rdflib.OWL.DatatypeProperty
 owl_annotation_property = rdflib.OWL.AnnotationProperty
+ONTOLOGY_NAMESPACE = "https://www.foom.com/core"
 
 # classes IRIs
 common_notion_class = utils.create_iri("Common notion", namespace="https://www.foom.com/core")
