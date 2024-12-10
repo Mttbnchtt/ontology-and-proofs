@@ -1,0 +1,3 @@
+proof,proof_concepts,relation_instance,operation_instance,gist,moral,notes
+1,"finite_straight_line, equilateral_triangle, construct_on, center, interval, circle, ",,"construct_on(equilateteral_triangle, finite_straight_line)->equilateral_triangle",,,
+,,,"draw(center, interval)->circle",,,
