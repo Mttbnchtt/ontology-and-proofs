@@ -183,6 +183,7 @@ Proposition_44,,,,,,,,"equals(angle_of_parallelogram, angle)",,,"apply_in(rectil
 Proposition_45,construction,"rectilinear_angle, equals, parallelogram, rectilinear_figure, construct_in",,,"rectilinear_angle, rectilinear_figure",,,"equals(parallelogram, rectilinear_figure)",,,"construct_in(parallelogram, rectilinear_angle)->parallelogram",,,,
 Proposition_46,construction,"describe_on, finite_straight_line, square",,,finite_straight_line,,,,,,"describe_on(square, finite_straight_line)->square",,,,
 Proposition_47,theorem,"is_right_angled, triangle, right_angle, square, subtended_by, equals, encompassing, side_of_triangle, is_placed_on",,,,,,"equals(square, sum(square, square))",,"sum(square, square)->rectilinear_figure",,,,,
+Proposition_47,,,,,,,,"equals(square, rectilinear_figure)",,,,,,,
 Proposition_47,,,,,,,,"subtended_by(side_of_triangle, right_angle)",,,,,,,
 Proposition_47,,,,,,,,"encompassing(side_of_triangle, side_of_triangle, right_angle)",,,,,,,
 Proposition_47,,,,,,,,"is_placed_on(square, side_of_triangle)",,,,,,,
