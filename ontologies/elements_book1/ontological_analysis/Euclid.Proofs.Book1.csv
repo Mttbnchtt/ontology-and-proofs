@@ -1,4 +1,4 @@
-proof,additiona_proof_concepts,relation_instance,operation_instance,implicit_operation_instance,reductio,gist,moral,notes
+proof,additional_proof_concepts,relation_instance,operation_instance,implicit_operation_instance,reductio,gist,moral,notes
 1,three,"cut(circle, circle)","construct_on(equilateteral_triangle, finite_straight_line)->equilateral_triangle",,0,,,
 1,,"is_center_of(point, circle)","draw(center, interval)->circle",,,,,
 1,,"equals(finite_straight_line, finite_straight_line)","join(point, point)->finite_straight_line",,,,,
