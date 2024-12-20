@@ -86,3 +86,62 @@ def diff_concepts_propositions_and_concepts_list(propositions_input_file_path: s
 
     print("Concepts not in set of concepts:")
     print(concepts_not_in_concepts_set)
+
+
+#################################################################################
+# github issue 128
+# Diff of concepts, relations, and operations considering the analysis of proofs
+CONCEPTS_INPUT_FILE_PATH = "input/Euclid.ConceptsAnalysis.Book1.csv"
+RELATIONS_INPUT_FILE_PATH = "input/Euclid.RelationsAnalysis.Book1.csv"
+OPERATIONS_INPUT_FILE_PATH = "input/Euclid.OperationsAnalysis.Book1.csv"
+PROOFS_INPUT_FILE_PATH = "input/Euclid.Proofs.Book1.csv"
+
+def diff_concepts_proofs(concepts_input_file_path: str = CONCEPTS_INPUT_FILE_PATH,
+                         proofs_input_file_path: str = PROOFS_INPUT_FILE_PATH):
+    """
+    Find concepts that are in proofs_df but not in concepts_df.
+
+    Args:
+        concepts_input_file_path (str): Path to the concepts input file. Defaults to CONCEPTS_INPUT_FILE_PATH.
+        proofs_input_file_path (str): Path to the proofs input file. Defaults to PROOFS_INPUT_FILE_PATH.
+
+    Returns:
+        set: Concepts that are in proofs_df but not in concepts_df.
+    """
+    #  read input files
+    concepts_df = pd.read_csv(concepts_input_file_path).fillna("")
+    proofs_df = pd.read_csv(proofs_input_file_path).fillna("")
+
+    # read columns from proofs_df and extract their concepts
+    relation_concepts = extract_concepts(set(proofs_df["relation_instance"].values))
+    operation_concepts = extract_concepts(set(proofs_df["operation_instance"].values))
+    additional_proof_concepts = extract_concepts(set(proofs_df["additional_proof_concepts"].values))
+
+    # store all the concepts from proofs_df in a unique set
+    extracted_concepts_proofs = relation_concepts.union(operation_concepts).union(additional_proof_concepts)
+
+    # store the concepts from concepts_df in a set
+    extracted_concepts_concepts = set(concepts_df["concepts"].values)
+
+    # find concepts that are in proofs_df but not in concepts_df
+    diff_proofs_concepts = extracted_concepts_proofs.difference(extracted_concepts_concepts)
+
+    return diff_proofs_concepts
+
+
+def extract_concepts(items: set) -> set:
+    """
+    Extract concepts from a set of items.
+
+    Args:
+        items (set): Set of items to extract concepts from.
+
+    Returns:
+        set: Extracted concepts.
+    """
+    extracted_concepts = set()
+    for item in items:
+        item_edited = item.replace("(", " ").replace(")", " ").replace(",", " ").replace("->", " ")
+        extracted_concepts.update({concept.strip() for concept in item_edited.split()})
+
+    return extracted_concepts
