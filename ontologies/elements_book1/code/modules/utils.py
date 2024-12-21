@@ -90,14 +90,13 @@ def diff_concepts_propositions_and_concepts_list(propositions_input_file_path: s
 
 #################################################################################
 # github issue 128
-# Diff of concepts, relations, and operations considering the analysis of proofs
+# Diff of concepts considering the analysis of proofs
 CONCEPTS_INPUT_FILE_PATH = "input/Euclid.ConceptsAnalysis.Book1.csv"
-RELATIONS_INPUT_FILE_PATH = "input/Euclid.RelationsAnalysis.Book1.csv"
-OPERATIONS_INPUT_FILE_PATH = "input/Euclid.OperationsAnalysis.Book1.csv"
 PROOFS_INPUT_FILE_PATH = "input/Euclid.Proofs.Book1.csv"
 
-def diff_concepts_proofs(concepts_input_file_path: str = CONCEPTS_INPUT_FILE_PATH,
-                         proofs_input_file_path: str = PROOFS_INPUT_FILE_PATH):
+def find_diff_concepts_proofs(concepts_input_file_path: str = CONCEPTS_INPUT_FILE_PATH,
+                              proofs_input_file_path: str = PROOFS_INPUT_FILE_PATH,
+                              verbose: bool = False):
     """
     Find concepts that are in proofs_df but not in concepts_df.
 
@@ -126,6 +125,11 @@ def diff_concepts_proofs(concepts_input_file_path: str = CONCEPTS_INPUT_FILE_PAT
     # find concepts that are in proofs_df but not in concepts_df
     diff_proofs_concepts = extracted_concepts_proofs.difference(extracted_concepts_concepts)
 
+    if verbose:
+        print("Concepts in proofs but not in list of concepts:")
+        print(len(diff_proofs_concepts))
+        print(*diff_proofs_concepts, sep="\n")
+
     return diff_proofs_concepts
 
 
@@ -145,3 +149,45 @@ def extract_concepts(items: set) -> set:
         extracted_concepts.update({concept.strip() for concept in item_edited.split()})
 
     return extracted_concepts
+
+#################################################################################
+# github issue 135
+# Diff of relations considering the analysis of proofs
+RELATIONS_INPUT_FILE_PATH = "input/Euclid.RelationsAnalysis.Book1.csv"
+PROOFS_INPUT_FILE_PATH = "input/Euclid.Proofs.Book1.csv"
+
+def find_diff_relations_proofs(relations_input_file_path: str = RELATIONS_INPUT_FILE_PATH, 
+                               proofs_input_file_path: str = PROOFS_INPUT_FILE_PATH,
+                               verbose: bool = False) -> set:
+    """Finds the difference between relations in proofs and the list of relations.
+
+    This function reads two CSV files, one containing a list of relations and the other containing relations used in proofs.
+    It then compares the two lists and returns a set of relations that are in the proofs but not in the list of relations.
+
+    Args:
+        relations_input_file_path: The path to the CSV file containing the list of relations.
+        proofs_input_file_path: The path to the CSV file containing the relations used in proofs.
+        verbose: Whether to print information about the difference.
+
+    Returns:
+        A set of relations that are in the proofs but not in the list of relations.
+    """
+    #  read input files
+    relations_df = pd.read_csv(relations_input_file_path).fillna("")
+    proofs_df = pd.read_csv(proofs_input_file_path).fillna("")
+
+    # put relation instances into sets
+    relations = set(relations_df["relation_instance"].values)
+    proofs = set(proofs_df["relation_instance"].values)
+
+    # diff: relations in list proofs but not in list of relations
+    diff_proofs_relations = proofs.difference(relations)
+
+    # print information
+    if verbose:
+        print("Relations in proofs but not in list of relations:")
+        print(len(diff_proofs_relations))
+        print(*diff_proofs_relations, sep="\n")
+
+    # return the relations
+    return diff_proofs_relations
