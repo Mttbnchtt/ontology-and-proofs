@@ -177,8 +177,8 @@ def find_diff_relations_proofs(relations_input_file_path: str = RELATIONS_INPUT_
     proofs_df = pd.read_csv(proofs_input_file_path).fillna("")
 
     # put relation instances into sets
-    relations = set(relations_df["relation_instance"].values)
-    proofs = set(proofs_df["relation_instance"].values)
+    relations = set(relation for relation in relations_df["relation_instance"].str.strip() if relation)
+    proofs = set(relation for relation in proofs_df["relation_instance"].str.strip() if relation)
 
     # diff: relations in list proofs but not in list of relations
     diff_proofs_relations = proofs.difference(relations)
