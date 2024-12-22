@@ -187,49 +187,9 @@ def find_diff_proofs(input_file_path: str = RELATIONS_INPUT_FILE_PATH,
 
     # print information
     if verbose:
-        print("Relations in proofs but not in list of relations:")
+        print("Items in proofs but not in list of relations:")
         print(len(diff_proofs))
         print(*diff_proofs, sep="\n")
 
     # return the diff
     return diff_proofs
-
-
-# RELATIONS_INPUT_FILE_PATH = "input/Euclid.RelationsAnalysis.Book1.csv"
-# PROOFS_INPUT_FILE_PATH = "input/Euclid.Proofs.Book1.csv"
-
-# def find_diff_relations_proofs(relations_input_file_path: str = RELATIONS_INPUT_FILE_PATH, 
-#                                proofs_input_file_path: str = PROOFS_INPUT_FILE_PATH,
-#                                verbose: bool = False) -> set:
-#     """Finds the difference between relations in proofs and the list of relations.
-
-#     This function reads two CSV files, one containing a list of relations and the other containing relations used in proofs.
-#     It then compares the two lists and returns a set of relations that are in the proofs but not in the list of relations.
-
-#     Args:
-#         relations_input_file_path: The path to the CSV file containing the list of relations.
-#         proofs_input_file_path: The path to the CSV file containing the relations used in proofs.
-#         verbose: Whether to print information about the difference.
-
-#     Returns:
-#         A set of relations that are in the proofs but not in the list of relations.
-#     """
-#     #  read input files
-#     relations_df = pd.read_csv(relations_input_file_path).fillna("")
-#     proofs_df = pd.read_csv(proofs_input_file_path).fillna("")
-
-#     # put relation instances into sets
-#     relations = set(relation for relation in relations_df["relation_instance"].str.strip() if relation)
-#     proofs = set(relation for relation in proofs_df["relation_instance"].str.strip() if relation)
-
-#     # diff: relations in list proofs but not in list of relations
-#     diff_proofs_relations = proofs.difference(relations)
-
-#     # print information
-#     if verbose:
-#         print("Relations in proofs but not in list of relations:")
-#         print(len(diff_proofs_relations))
-#         print(*diff_proofs_relations, sep="\n")
-
-#     # return the relations
-#     return diff_proofs_relations
