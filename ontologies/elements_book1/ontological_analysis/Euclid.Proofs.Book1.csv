@@ -393,7 +393,7 @@ proof,additional_proof_concepts,relation_instance,operation_instance,implicit_op
 44,,"falls_on(finite_straight_line, finite_straight_line, finite_straight_line)","join(point, point)->finite_straight_line",,,,,
 44,,"equals(angle, angle)","sum(right_angle, right_angle)->angle",,,,,
 44,,"subtended_by(angle, side_of_parallelogram, side_of_parallelogram)","sum(angle, angle)->angle",,,,,
-44,,"less_than(angle, angle)",produce_to_infinity(finite_straight_line)->finite_straight_line,,,,,
+44,,"less_than(angle, angle)",produce_to_infinity(finite_straight_line)->straight_line,,,,,
 44,,"meet_on_the_part_of(straight_line, straight_line, angle, angle)","produce_to(finite_straight_line, point)->finite_straight_line",,,,,
 44,,"meet_at_point(straight_line, straight_line, point)",,,,,,
 44,,is_parallelogram(parallelogram),,,,,,
