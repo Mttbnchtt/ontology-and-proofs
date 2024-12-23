@@ -170,16 +170,20 @@ def add_concepts(kg: rdflib.Graph,
                 concept_iri, 
                 concepts_df, 
                 has_conceptual_component_iri, 
-                is_conceptual_component_of_iri
+                is_conceptual_component_of_iri,
+                i
             )
 
         # add equivalent concepts
         equivalent_concept = concepts_df.at[i, "equivalent_to"].replace("_", " ").strip().capitalize()
-        kg = add_equivalent__opposite_concepts(kg, concept_iri, equivalent_concept, is_equivalent_to_iri)
+        if equivalent_concept:
+            print(equivalent_concept)
+            kg = add_equivalent__opposite_concepts(kg, concept_iri, equivalent_concept, is_equivalent_to_iri)
 
         # add opposite concepts
-        opposite_concept = concepts_df.at[i, "opposite"].replace("_", " ").strip().capitalize()
-        kg = add_equivalent__opposite_concepts(kg, concept_iri, opposite_concept, is_opposite_to_iri)
+        opposite_concept = concepts_df.at[i, "opposite_to"].replace("_", " ").strip().capitalize()
+        if opposite_concept:
+            kg = add_equivalent__opposite_concepts(kg, concept_iri, opposite_concept, is_opposite_to_iri)
 
     return kg
 
