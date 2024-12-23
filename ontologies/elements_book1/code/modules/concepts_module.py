@@ -66,8 +66,8 @@ proposition_type_theorem = utils.create_iri("Proposition type: Theorem", namespa
 refers_to = utils.create_iri("refers to", namespace="https://www.foom.com/core")
 definition_refers_to = utils.create_iri("definition refers to", namespace="https://www.foom.com/core")
 
-has_conceptual_component = utils.create_iri("has conceptual component", namespace="https://www.foom.com/core")
-is_conceptual_component_of = utils.create_iri("is conceptual component of", namespace="https://www.foom.com/core")
+CONTAINS_CONCEPT = utils.create_iri("contains concept", namespace=ONTOLOGY_NAMESPACE)
+IS_CONCEPT_IN = utils.create_iri("is concept in", namespace=ONTOLOGY_NAMESPACE)
 
 is_sub_concept_of = utils.create_iri("is sub-concept of", namespace="https://www.foom.com/core")
 is_super_concept_of = utils.create_iri("is super-concept of", namespace="https://www.foom.com/core")
@@ -133,8 +133,6 @@ def add_concepts(kg: rdflib.Graph,
     kg = add_concept_types(kg, {"Object", "Operation", "Relation"})
 
     # add object properties for conceptual components
-    kg, has_conceptual_component_iri = add_conceptual_object_property(kg, "has conceptual component")
-    kg, is_conceptual_component_of_iri = add_conceptual_object_property(kg, "is conceptual component of")
     kg, is_equivalent_to_iri = add_conceptual_object_property(kg, "is equivalent to")
     kg, is_opposite_to_iri = add_conceptual_object_property(kg, "is opposite to")
 
@@ -169,8 +167,8 @@ def add_concepts(kg: rdflib.Graph,
                 kg, 
                 concept_iri, 
                 concepts_df, 
-                has_conceptual_component_iri, 
-                is_conceptual_component_of_iri,
+                CONTAINS_CONCEPT, 
+                IS_CONCEPT_IN,
                 i
             )
 
