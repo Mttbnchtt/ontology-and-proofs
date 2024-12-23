@@ -177,7 +177,6 @@ def add_concepts(kg: rdflib.Graph,
         # add equivalent concepts
         equivalent_concept = concepts_df.at[i, "equivalent_to"].replace("_", " ").strip().capitalize()
         if equivalent_concept:
-            print(equivalent_concept)
             kg = add_equivalent__opposite_concepts(kg, concept_iri, equivalent_concept, is_equivalent_to_iri)
 
         # add opposite concepts
@@ -206,10 +205,11 @@ def add_conceptual_components(kg: rdflib.Graph,
     conceptual_components = [
             conceptual_component.replace("_", " ").strip().capitalize() 
             for conceptual_component in concepts_df.at[df_index, "conceptual_components"].split(",")
+            if conceptual_component.replace(" ", "")
         ]
     # connect conceptual components to the main concept
     for conceptual_component in conceptual_components:
-        conceptual_component_iri = utils.create_iri(conceptual_component, namespace=ONTOLOGY_NAMESPACE)
+        conceptual_component_iri = utils.create_iri(f"Concept: {conceptual_component}", namespace=ONTOLOGY_NAMESPACE)
         kg.add((concept_iri, has_conceptual_component_iri, conceptual_component_iri))
         kg.add((conceptual_component_iri, is_conceptual_component_of_iri, concept_iri))
     return kg
