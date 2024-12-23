@@ -181,7 +181,6 @@ def add_concepts(kg: rdflib.Graph,
         opposite_concept = concepts_df.at[i, "opposite"].replace("_", " ").strip().capitalize()
         kg = add_equivalent__opposite_concepts(kg, concept_iri, opposite_concept, is_opposite_to_iri)
 
-
     return kg
 
 def add_equivalent__opposite_concepts(kg: rdflib.Graph,
@@ -197,11 +196,12 @@ def add_conceptual_components(kg: rdflib.Graph,
                               concept_iri: rdflib.URIRef,
                               concepts_df: pd.DataFrame,
                               has_conceptual_component_iri: rdflib.URIRef,
-                              is_conceptual_component_of_iri: rdflib.Graph) -> rdflib.Graph:
+                              is_conceptual_component_of_iri: rdflib.Graph,
+                              df_index: int) -> rdflib.Graph:
     # list conceptual components
     conceptual_components = [
             conceptual_component.replace("_", " ").strip().capitalize() 
-            for conceptual_component in concepts_df.at[i, "conceptual_components"].split(",")
+            for conceptual_component in concepts_df.at[df_index, "conceptual_components"].split(",")
         ]
     # connect conceptual components to the main concept
     for conceptual_component in conceptual_components:
@@ -213,7 +213,7 @@ def add_conceptual_components(kg: rdflib.Graph,
 def add_conceptual_object_property(kg: rdflib.Graph,
                                    label: str) -> rdflib.Graph:
     property_iri = utils.create_iri(label, namespace=ONTOLOGY_NAMESPACE)
-    kg = tbox.add_triples(
+    kg = tbox.add_tbox_triples(
         kg,
         label,
         owl_object_property,
