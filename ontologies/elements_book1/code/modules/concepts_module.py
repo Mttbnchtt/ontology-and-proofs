@@ -156,6 +156,8 @@ def add_concepts(kg: rdflib.Graph,
             kg = add_datatype_property(kg, datatype_property, datatype_property_iri)
             kg.add((concept_iri, datatype_property_iri, xsd_true))
 
+        # add
+
     return kg
 
 def add_datatype_property(kg: rdflib.Graph,
