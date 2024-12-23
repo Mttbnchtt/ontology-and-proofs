@@ -15,6 +15,7 @@ import rdflib
 
 import modules.utils as utils
 import modules.concepts as concepts
+import modules.tbox as tbox
 
 # common IRIs
 rdf_type = rdflib.RDF.type
@@ -33,6 +34,7 @@ xsd_true = rdflib.Literal("true", datatype=xsd_boolean)
 xsd_false = rdflib.Literal("false", datatype=xsd_boolean)
 
 # classes IRIs
+ONTOLOGY_NAMESPACE = "https://www.foom.com/core"
 common_notion_class = utils.create_iri("Common notion", namespace="https://www.foom.com/core")
 concept_class = utils.create_iri("Concept", namespace="https://www.foom.com/core")
 concept_type_class = utils.create_iri("Concept type", namespace="https://www.foom.com/core")
@@ -130,6 +132,12 @@ def add_concepts(kg: rdflib.Graph,
     # add concept types
     kg = add_concept_types(kg, {"Object", "Operation", "Relation"})
 
+    # add object properties for conceptual components
+    kg, has_conceptual_component_iri = add_conceptual_object_property(kg, "has conceptual component")
+    kg, is_conceptual_component_of_iri = add_conceptual_object_property(kg, "is conceptual component of")
+    kg, is_equivalent_to_iri = add_conceptual_object_property(kg, "is equivalent to")
+    kg, is_opposite_to_iri = add_conceptual_object_property(kg, "is opposite to")
+
     # read concepts data
     concepts_df = pd.read_csv(concepts_analysis_input_file_path).fillna("")
     for i in concepts_df.index:
@@ -156,9 +164,62 @@ def add_concepts(kg: rdflib.Graph,
             kg = add_datatype_property(kg, datatype_property, datatype_property_iri)
             kg.add((concept_iri, datatype_property_iri, xsd_true))
 
-        # add
+        # add conceptual components
+        kg = add_conceptual_components(
+                kg, 
+                concept_iri, 
+                concepts_df, 
+                has_conceptual_component_iri, 
+                is_conceptual_component_of_iri
+            )
+
+        # add equivalent concepts
+        equivalent_concept = concepts_df.at[i, "equivalent_to"].replace("_", " ").strip().capitalize()
+        kg = add_equivalent__opposite_concepts(kg, concept_iri, equivalent_concept, is_equivalent_to_iri)
+
+        # add opposite concepts
+        opposite_concept = concepts_df.at[i, "opposite"].replace("_", " ").strip().capitalize()
+        kg = add_equivalent__opposite_concepts(kg, concept_iri, opposite_concept, is_opposite_to_iri)
+
 
     return kg
+
+def add_equivalent__opposite_concepts(kg: rdflib.Graph,
+                            concept_iri: rdflib.URIRef,
+                            selected_concept: str,
+                            selected_object_property_iri: rdflib.URIRef) -> rdflib.Graph:
+    selected_concept_iri = utils.create_iri(f"Concept: {selected_concept}", namespace=ONTOLOGY_NAMESPACE)
+    kg.add((concept_iri, selected_object_property_iri, selected_concept_iri))
+    kg.add((selected_concept_iri, selected_object_property_iri, concept_iri))
+    return kg
+
+def add_conceptual_components(kg: rdflib.Graph,
+                              concept_iri: rdflib.URIRef,
+                              concepts_df: pd.DataFrame,
+                              has_conceptual_component_iri: rdflib.URIRef,
+                              is_conceptual_component_of_iri: rdflib.Graph) -> rdflib.Graph:
+    # list conceptual components
+    conceptual_components = [
+            conceptual_component.replace("_", " ").strip().capitalize() 
+            for conceptual_component in concepts_df.at[i, "conceptual_components"].split(",")
+        ]
+    # connect conceptual components to the main concept
+    for conceptual_component in conceptual_components:
+        conceptual_component_iri = utils.create_iri(conceptual_component, namespace=ONTOLOGY_NAMESPACE)
+        kg.add((concept_iri, has_conceptual_component_iri, conceptual_component_iri))
+        kg.add((conceptual_component_iri, is_conceptual_component_of_iri, concept_iri))
+    return kg
+
+def add_conceptual_object_property(kg: rdflib.Graph,
+                                   label: str) -> rdflib.Graph:
+    property_iri = utils.create_iri(label, namespace=ONTOLOGY_NAMESPACE)
+    kg = tbox.add_triples(
+        kg,
+        label,
+        owl_object_property,
+        ONTOLOGY_NAMESPACE
+    )
+    return kg, property_iri
 
 def add_datatype_property(kg: rdflib.Graph,
                           datatype_property_preflabel: str,
