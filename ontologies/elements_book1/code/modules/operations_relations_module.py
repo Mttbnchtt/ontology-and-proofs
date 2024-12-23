@@ -65,9 +65,9 @@ def add_relations_operations(kg: rdflib.Graph,
 # helper functions
 ####################
 def find_concepts(item_pref_label: str) -> set:
-    item_pref_label_v1 = item_pref_label.replace("(", " ").replace(")", " ").replace(",", " ")
+    item_pref_label_v1 = item_pref_label.replace("(", " ").replace(")", " ").replace(",", " ").replace("->", " ")
 
-    return {concept.strip() for concept in item_pref_label_v1.split()}
+    return {concept.replace("_", " ").strip().capitalize() for concept in item_pref_label_v1.split() if concept.replace(" ", "")}
 
 
 def add_concepts(kg: rdflib.Graph,
