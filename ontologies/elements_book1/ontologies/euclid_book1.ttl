@@ -2075,14 +2075,6 @@ ns1:operation_instance__carry_over_parallel_to_point__point__finite_straight_lin
         ns1:concept__point ;
     ns1:has_relation_type ns1:operation_type__carry_over_parallel_to_point__point__finite_straight_line___finite_straight_line .
 
-ns1:operation_instance__carry_over_to_finite_straight_line__point___finite_straight_line a ns1:operation_instance ;
-    rdfs:label "Operation instance: Carry_over_to(finite_straight_line, point)->finite_straight_line" ;
-    skos:prefLabel "Carry_over_to(finite_straight_line, point)->finite_straight_line" ;
-    ns1:contains_concept ns1:concept__carry_over_to,
-        ns1:concept__finite_straight_line,
-        ns1:concept__point ;
-    ns1:has_relation_type ns1:operation_type__carry_over_to_finite_straight_line__point___finite_straight_line .
-
 ns1:operation_instance__choose_at_random_point__finite_straight_line___point a ns1:operation_instance ;
     rdfs:label "Operation instance: Choose_at_random(point, finite_straight_line)->point" ;
     skos:prefLabel "Choose_at_random(point, finite_straight_line)->point" ;
@@ -2106,14 +2098,6 @@ ns1:operation_instance__conduct_straight_line__straight_line__point___straight_l
         ns1:concept__point,
         ns1:concept__straight_line ;
     ns1:has_relation_type ns1:operation_type__conduct_straight_line__straight_line__point___straight_line .
-
-ns1:operation_instance__conduct_to_finite_straight_line__point___finite_straight_line a ns1:operation_instance ;
-    rdfs:label "Operation instance: Conduct_to(finite_straight_line, point)->finite_straight_line" ;
-    skos:prefLabel "Conduct_to(finite_straight_line, point)->finite_straight_line" ;
-    ns1:contains_concept ns1:concept__conduct_to,
-        ns1:concept__finite_straight_line,
-        ns1:concept__point ;
-    ns1:has_relation_type ns1:operation_type__conduct_to_finite_straight_line__point___finite_straight_line .
 
 ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle a ns1:operation_instance ;
     rdfs:label "Operation instance: Construct_on(equilateral_triangle, finite_straight_line)->equilateral_triangle" ;
@@ -3536,6 +3520,15 @@ ns1:operation_instance__apply_to_finite_straight_line__parallelogram___parallelo
     ns1:has_relation_type ns1:operation_type__apply_to_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
     ns1:is_used_in ns1:proposition_44 .
 
+ns1:operation_instance__carry_over_to_finite_straight_line__point___finite_straight_line a ns1:operation_instance ;
+    rdfs:label "Operation instance: Carry_over_to(finite_straight_line, point)->finite_straight_line" ;
+    skos:prefLabel "Carry_over_to(finite_straight_line, point)->finite_straight_line" ;
+    ns1:contains_concept ns1:concept__carry_over_to,
+        ns1:concept__finite_straight_line,
+        ns1:concept__point ;
+    ns1:has_relation_type ns1:operation_type__carry_over_to_finite_straight_line__point___finite_straight_line ;
+    ns1:is_equivalent_to ns1:operation_instance__conduct_to_finite_straight_line__point___finite_straight_line .
+
 ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line a owl:NamedIndividual,
         ns1:operation_instance ;
     rdfs:label "Operation instance: Conduct_parallel(straight_line, straight_line, point)->straight_line" ;
@@ -3546,6 +3539,15 @@ ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___s
         ns1:concept__straight_line ;
     ns1:has_relation_type ns1:operation_type__conduct_parallel_straight_line__straight_line__point___straight_line ;
     ns1:is_used_in ns1:proposition_31 .
+
+ns1:operation_instance__conduct_to_finite_straight_line__point___finite_straight_line a ns1:operation_instance ;
+    rdfs:label "Operation instance: Conduct_to(finite_straight_line, point)->finite_straight_line" ;
+    skos:prefLabel "Conduct_to(finite_straight_line, point)->finite_straight_line" ;
+    ns1:contains_concept ns1:concept__conduct_to,
+        ns1:concept__finite_straight_line,
+        ns1:concept__point ;
+    ns1:has_relation_type ns1:operation_type__conduct_to_finite_straight_line__point___finite_straight_line ;
+    ns1:is_equivalent_to ns1:operation_instance__carry_over_to_finite_straight_line__point___finite_straight_line .
 
 ns1:operation_instance__conduct_to_side_of_triangle__point___finite_straight_line a ns1:operation_instance ;
     rdfs:label "Operation instance: Conduct_to(side_of_triangle, point)->finite_straight_line" ;
@@ -3953,17 +3955,6 @@ ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_ a owl:NamedI
         ns1:concept__parallelogram ;
     ns1:has_relation_type ns1:relation_type__cut_into_two_halves_diameter__diagrammatic_object_ ;
     ns1:is_used_in ns1:proposition_34 .
-
-ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__angle_ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation instance: Encompassing(side_of_triangle, side_of_triangle, angle)" ;
-    skos:prefLabel "Encompassing(side of triangle, side of triangle, angle)",
-        "Encompassing(side_of_triangle, side_of_triangle, angle)" ;
-    ns1:contains_concept ns1:concept__angle,
-        ns1:concept__encompassing,
-        ns1:concept__side_of_triangle ;
-    ns1:has_relation_type ns1:relation_type__encompassing_straight_line__straight_line__angle_ ;
-    ns1:is_used_in ns1:proposition_48 .
 
 ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__right_angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -4838,6 +4829,18 @@ ns1:relation_instance__at_base_interior_angle_of_triangle__isosceles_triangle_ a
     ns1:has_relation_type ns1:relation_type__at_base_angle__rectilinear_figure_ ;
     ns1:is_used_in ns1:proposition_5,
         ns1:proposition_5a .
+
+ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__angle_ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation instance: Encompassing(side_of_triangle, side_of_triangle, angle)" ;
+    skos:prefLabel "Encompassing(side of triangle, side of triangle, angle)",
+        "Encompassing(side_of_triangle, side_of_triangle, angle)" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__encompassing,
+        ns1:concept__side_of_triangle ;
+    ns1:has_relation_type ns1:relation_type__encompassing_straight_line__straight_line__angle_ ;
+    ns1:is_equivalent_to ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ ;
+    ns1:is_used_in ns1:proposition_48 .
 
 ns1:relation_instance__equals_base_of_triangle__base_of_triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -5813,21 +5816,6 @@ ns1:relation_instance__equals_side_of_triangle__side_of_triangle_ a owl:NamedInd
         ns1:proposition_6,
         ns1:proposition_8 .
 
-ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation instance: Subtended_by(angle, side_of_triangle, side_of_triangle)" ;
-    skos:prefLabel "Subtended by(angle, side of triangle, side of triangle)",
-        "Subtended_by(angle, side_of_triangle, side_of_triangle)" ;
-    ns1:contains_concept ns1:concept__angle,
-        ns1:concept__side_of_triangle,
-        ns1:concept__subtended_by ;
-    ns1:has_relation_type ns1:relation_type__subtended_by_angle__straight_line__straight_line_ ;
-    ns1:is_used_in ns1:proposition_18,
-        ns1:proposition_19,
-        ns1:proposition_4,
-        ns1:proposition_6,
-        ns1:proposition_8 .
-
 ns1:relation_type__greater_than_magnitude__magnitude_ a owl:NamedIndividual,
         ns1:relation_type ;
     rdfs:label "Relation type: Greater_than(magnitude, magnitude)" ;
@@ -5978,6 +5966,22 @@ ns1:proposition_6 a owl:NamedIndividual,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+
+ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation instance: Subtended_by(angle, side_of_triangle, side_of_triangle)" ;
+    skos:prefLabel "Subtended by(angle, side of triangle, side of triangle)",
+        "Subtended_by(angle, side_of_triangle, side_of_triangle)" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__side_of_triangle,
+        ns1:concept__subtended_by ;
+    ns1:has_relation_type ns1:relation_type__subtended_by_angle__straight_line__straight_line_ ;
+    ns1:is_equivalent_to ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__angle_ ;
+    ns1:is_used_in ns1:proposition_18,
+        ns1:proposition_19,
+        ns1:proposition_4,
+        ns1:proposition_6,
+        ns1:proposition_8 .
 
 ns1:relation_type__remaining_diagrammatic_object_ a ns1:relation_type ;
     rdfs:label "Relation type: Remaining(diagrammatic_object)" ;

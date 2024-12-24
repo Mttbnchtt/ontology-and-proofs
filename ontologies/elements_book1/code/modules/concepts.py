@@ -97,7 +97,10 @@ def add_triples(kg: rdflib.Graph,
         rdflib.Graph: The updated knowledge graph with the new triples added.
     """
     kg.add((concept_iri, rdf_type, owl_individual))
-    kg.add((concept_iri, rdfs_label, rdflib.Literal(f"{prefix_label}: {utils.capitalize_first_letter(concept)}")))
+    if prefix_label:
+        kg.add((concept_iri, rdfs_label, rdflib.Literal(f"{prefix_label}: {utils.capitalize_first_letter(concept)}")))
+    else:
+        kg.add((concept_iri, rdfs_label, rdflib.Literal(f"{utils.capitalize_first_letter(concept)}")))
     kg.add((concept_iri, skos_prefLabel, rdflib.Literal(utils.capitalize_first_letter(concept).replace("_", " "))))
     kg.add((concept_iri, rdf_type, class_iri))
     return kg

@@ -24,9 +24,10 @@ IS_RELATION_TYPE_OF = utils.create_iri("is relation type of", namespace=ONTOLOGY
 HAS_OPERATION_TYPE = utils.create_iri("has operation type", namespace=ONTOLOGY_NAMESPACE)
 IS_OPERATION_TYPE_OF = utils.create_iri("is operation type of", namespace=ONTOLOGY_NAMESPACE)
 
-
 CONTAINS_CONCEPT = utils.create_iri("contains concept", namespace=ONTOLOGY_NAMESPACE)
 IS_CONCEPT_IN = utils.create_iri("is concept in", namespace=ONTOLOGY_NAMESPACE)
+
+IS_EQUIVALENT_TO = utils.create_iri("is equivalent to", namespace=ONTOLOGY_NAMESPACE)
 
 ################
 # main function
@@ -37,26 +38,32 @@ def add_relations_operations(kg: rdflib.Graph,
     items_df = pd.read_csv(input_file_path).fillna("")
     for _, row in items_df.iterrows():
 
+        equivalent_item = row["equivalent_to"].strip()
+
         if item_type == "relations":
             instance_pref_label = row["relation_instance"].strip().capitalize()
             type_pref_label = row["relation_type"].strip().capitalize()
             kg, instance_iri, type_iri = add_relation_instance_type(kg, instance_pref_label, type_pref_label, "Relation instance", "Relation type")
-
-            # find concepts in instance and in type and add them to the graph
-            kg = add_concepts(kg, instance_iri, instance_pref_label)
-            kg = add_concepts(kg, type_iri, type_pref_label)
+            equivalent_item_label = f"Relation instance: {equivalent_item.capitalize()}"
 
         elif item_type == "operations":
             instance_pref_label = row["operation_instance"].strip().capitalize()
             type_pref_label = row["operation_type"].strip().capitalize()
             kg, instance_iri, type_iri = add_operation_instance_type(kg, instance_pref_label, type_pref_label, "Operation instance", "Operation type")
-
-            # find concepts in instance and in type and add them to the graph
-            kg = add_concepts(kg, instance_iri, instance_pref_label)
-            kg = add_concepts(kg, type_iri, type_pref_label)
+            equivalent_item_label = f"Operation instance: {equivalent_item.capitalize()}"
 
         else:
             raise ValueError(f"Invalid item type: {item_type}")
+
+        # find concepts in instance and in type and add them to the graph
+        kg = add_concepts(kg, instance_iri, instance_pref_label)
+        kg = add_concepts(kg, type_iri, type_pref_label)
+
+        # add equivalent items
+        if equivalent_item:
+            equivalent_item_iri = utils.create_iri(equivalent_item_label, namespace=ONTOLOGY_NAMESPACE)
+            kg.add((instance_iri, IS_EQUIVALENT_TO, equivalent_item_iri))
+            kg.add((equivalent_item_iri, IS_EQUIVALENT_TO, instance_iri))
 
     return kg
 
