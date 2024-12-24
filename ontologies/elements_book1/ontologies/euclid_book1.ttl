@@ -545,35 +545,35 @@ ns1:set__point_point a owl:NamedIndividual,
 
 ns1:common_notion_1 a owl:NamedIndividual,
         ns1:common_notion ;
-    rdfs:label ": Common notion 1" ;
+    rdfs:label "Common notion 1" ;
     skos:prefLabel "Common notion 1" ;
     ns1:has_statement ns1:statement__equals_x__z____equals_y__z___equals_x__y_ ;
     ns1:is_in ns1:document__elements_book_1 .
 
 ns1:common_notion_2 a owl:NamedIndividual,
         ns1:common_notion ;
-    rdfs:label ": Common notion 2" ;
+    rdfs:label "Common notion 2" ;
     skos:prefLabel "Common notion 2" ;
     ns1:has_statement ns1:statement___equals_x__y____equals_v__w____equals_sum_x__v___sum_y__w__ ;
     ns1:is_in ns1:document__elements_book_1 .
 
 ns1:common_notion_3 a owl:NamedIndividual,
         ns1:common_notion ;
-    rdfs:label ": Common notion 3" ;
+    rdfs:label "Common notion 3" ;
     skos:prefLabel "Common notion 3" ;
     ns1:has_statement ns1:statement___equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__ ;
     ns1:is_in ns1:document__elements_book_1 .
 
 ns1:common_notion_7 a owl:NamedIndividual,
         ns1:common_notion ;
-    rdfs:label ": Common notion 7" ;
+    rdfs:label "Common notion 7" ;
     skos:prefLabel "Common notion 7" ;
     ns1:has_statement ns1:statement__congruent_x__y___equals_x__y_ ;
     ns1:is_in ns1:document__elements_book_1 .
 
 ns1:common_notion_8 a owl:NamedIndividual,
         ns1:common_notion ;
-    rdfs:label ": Common notion 8" ;
+    rdfs:label "Common notion 8" ;
     skos:prefLabel "Common notion 8" ;
     ns1:has_statement ns1:statement__greater_than_whole__part____is_part_of_part__whole_ ;
     ns1:is_in ns1:document__elements_book_1 .
