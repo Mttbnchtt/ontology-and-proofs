@@ -211,6 +211,11 @@ ns1:refers_to a owl:ObjectProperty ;
     rdfs:label "refers to" ;
     skos:prefLabel "refers to" .
 
+ns1:uses_reduction_ad_absurdum a owl:DatatypeProperty ;
+    rdfs:label "uses_reduction_ad_absurdum" ;
+    rdfs:range xsd:boolean ;
+    skos:prefLabel "uses_reduction_ad_absurdum" .
+
 ns1:concept__3_sides_of_equal_length a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: 3_sides_of_equal_length" ;
@@ -8862,6 +8867,10 @@ ns1:relation_instance__equals_angle__angle_ a owl:NamedIndividual,
         ns1:proposition_5a,
         ns1:proposition_6,
         ns1:proposition_8 .
+
+ns1:proof a owl:Class ;
+    rdfs:label "Proof" ;
+    skos:prefLabel "Proof" .
 
 ns1:proposition a owl:Class ;
     rdfs:label "Proposition" ;
