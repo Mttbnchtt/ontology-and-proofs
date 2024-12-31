@@ -1,4 +1,0 @@
-concepts,hierarchy,conceptual_components,equivalent_to,opposite_to,type,datatype_property,notes
-semicircle,figure,"circle, half",,,object,is_a_diagrammatic_object,
-angle_of_semicircle,angle,semicircle,,,object,is_a_diagrammatic_object,
-section,figure,,,,object,is_a_diagrammatic_object,
