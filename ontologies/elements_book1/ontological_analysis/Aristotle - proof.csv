@@ -1,0 +1,8 @@
+proof,additional_proof_concepts,relation_instance,operation_instance,implicit_operation_instance,reductio,gist,moral,statement,notes
+Aristotle,,"equals(angle_at_base, angle_at_base, isosceles_triangle)","join(point, point)->finite_straight_line",,,,,"(equals(x, y) & equals(v, w)) -> equals(subtract(x, v), subtract(y, w))",
+Aristotle,,"is_center_of(point, circle)","sum(angle, angle)->angle",,,,,"equals(angle_of_semicircle, angle_of_semicircle)",
+Aristotle,,is_angle_of(semicircle),"subtract(magnitude, magnitude)->magnitude",,,,,"equals(angle_of_section, angle_of_section)",
+Aristotle,,"equals(angle_of_semicircle, angle_of_semicircle)","subtract(angle, angle)->angle",,,,,,
+Aristotle,,is_angle_of(section),,,,,,,
+Aristotle,,remaining(angle),,,,,,,
+Arisstotle,,"equals(angle_of_section, angle_of_section)",,,,,,,
