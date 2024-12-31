@@ -1,0 +1,7 @@
+proof,additional_proof_concepts,relation_instance,operation_instance,implicit_operation_instance,reductio,gist,moral,statement,notes
+Pappus,"one, two",is_triangle(triangle),"think_one_as_two(triangle)->(triangle, triangle)",,,,,,
+Pappus,,"equals(side_of_triangle, side_of_triangle)",,,,,,,
+Pappus,,"subtended_by(angle, side_of_triangle, side_of_triangle)",,,,,,,
+Pappus,,"equals(angle, angle)",,,,,,,
+Pappus,,"equals(triangle, triangle)",,,,,,,
+Pappus,,"corresponding(angle, angle)",,,,,,,
