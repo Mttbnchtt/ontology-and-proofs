@@ -5,6 +5,11 @@ import modules.utils as utils
 
 PROOFS_INPUT_FILE_PATH = "input/Euclid.Proofs.Book1.csv"
 
+
+rdf_type = rdflib.RDF.type
+rdfs_label = rdflib.RDFS.label
+skos_prefLabel = rdflib.SKOS.prefLabel
+
 ONTOLOGY_NAMESPACE = "https://www.foom.com/core"
 PROOF_CLASS = utils.create_iri("Proof", namespace=ONTOLOGY_NAMESPACE)
 CONTAINS_CONCEPT = utils.create_iri("contains concept", namespace="https://www.foom.com/core")
