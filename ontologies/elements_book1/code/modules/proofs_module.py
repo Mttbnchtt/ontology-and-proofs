@@ -59,9 +59,11 @@ def add_proofs(kg: rdflib.Graph,
 
         # add statements
         if add_statements:
-            kg, statement_iri = statements_module.add_statement(kg, row["statement"])
-            kg.add((proof_iri, REFERS_TO, statement_iri))
-            kg.add((statement_iri, IS_USED_IN, proof_iri))
+            statement = row["statement"].strip()
+            if statement.replace(" ", ""):
+                kg, statement_iri = statements_module.add_statement(kg, statement)
+                kg.add((proof_iri, REFERS_TO, statement_iri))
+                kg.add((statement_iri, IS_USED_IN, proof_iri))
 
     return kg
 
