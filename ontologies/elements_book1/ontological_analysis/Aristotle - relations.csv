@@ -1,0 +1,8 @@
+relation_instance,relation_instance_concepts,equivalent_to,relation_type,relation_type_concepts,notes
+"equals(angle_at_base, angle_at_base, isosceles_triangle)",,,"equals(object, object)",,
+"is_center_of(point, circle)",,,"is_center_of(point, circle)",,
+is_angle_of(semicircle),,,is_angle_of(figure),,
+"equals(angle_of_semicircle, angle_of_semicircle)",,,"equals(object, object)",,
+is_angle_of(section),,,is_angle_of(figure),,
+remaining(angle),,,remaining(diagrammatic_object),,
+"equals(angle_of_section, angle_of_section)",,,"equals(object, object)",,

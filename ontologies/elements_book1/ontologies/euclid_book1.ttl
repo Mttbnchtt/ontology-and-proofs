@@ -29,11 +29,6 @@ ns1:definition_refers_to a owl:ObjectProperty ;
     rdfs:label "definition refers to" ;
     skos:prefLabel "definition refers to" .
 
-ns1:euclid a owl:NamedIndividual,
-        ns1:author ;
-    rdfs:label "Author: Euclid" ;
-    skos:prefLabel "Euclid" .
-
 ns1:has_author a owl:ObjectProperty ;
     rdfs:label "has author" ;
     skos:prefLabel "has author" .
@@ -253,12 +248,6 @@ ns1:concept__end a owl:NamedIndividual,
     skos:prefLabel "End" ;
     ns1:is_used_in_definition_of ns1:concept__boundary .
 
-ns1:concept__half a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Half" ;
-    skos:prefLabel "Half" ;
-    ns1:is_used_in_definition_of ns1:concept__diameter .
-
 ns1:concept__indefinite_extension a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Indefinite_extension" ;
@@ -431,6 +420,11 @@ ns1:document a owl:Class ;
     rdfs:label "Document" ;
     skos:prefLabel "Document" .
 
+ns1:euclid a owl:NamedIndividual,
+        ns1:author ;
+    rdfs:label "Author: Euclid" ;
+    skos:prefLabel "Euclid" .
+
 ns1:gist__construction_of_equilateral_triangles_via_intersecting_circles a owl:NamedIndividual,
         ns1:gist ;
     rdfs:label "Gist: Construction of equilateral triangles via intersecting circles" ;
@@ -524,6 +518,16 @@ ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_li
     rdfs:label "Operation instance: Place_on(finite_straight_line, point, finite_straight_line)->finite_staight_line" ;
     skos:prefLabel "Place on(finite straight line, point, finite straight line)->finite staight line" ;
     ns1:is_used_in ns1:proposition_2 .
+
+ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_ ns1:is_used_in ns1:proof_aristotle .
+
+ns1:relation_instance__equals_angle_of_section__angle_of_section_ ns1:is_used_in ns1:proof_arisstotle .
+
+ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_ ns1:is_used_in ns1:proof_aristotle .
+
+ns1:relation_instance__is_angle_of_section_ ns1:is_used_in ns1:proof_aristotle .
+
+ns1:relation_instance__is_angle_of_semicircle_ ns1:is_used_in ns1:proof_aristotle .
 
 ns1:relation_type__congruent_x__y_ a owl:NamedIndividual,
         ns1:relation_type ;
@@ -655,6 +659,13 @@ ns1:concept__equal_level a owl:NamedIndividual,
     ns1:is_used_in_definition_of ns1:concept__plane_surface,
         ns1:concept__straight_line .
 
+ns1:concept__half a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Half" ;
+    skos:prefLabel "Half" ;
+    ns1:is_concept_in ns1:concept__semicircle ;
+    ns1:is_used_in_definition_of ns1:concept__diameter .
+
 ns1:concept__inclination a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Inclination" ;
@@ -760,6 +771,14 @@ ns1:concept__remaining_sides_of a owl:NamedIndividual,
     ns1:has_field_of_diagrammatic_objects true ;
     ns1:is_concept_in ns1:relation_instance__remaining_sides_of_triangle_ .
 
+ns1:concept__section a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Section" ;
+    skos:prefLabel "Section" ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_sub_concept_of ns1:concept__figure .
+
 ns1:concept__straight a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Straight" ;
@@ -825,6 +844,12 @@ ns1:produces_an_object a owl:DatatypeProperty ;
     rdfs:range xsd:boolean ;
     skos:prefLabel "produces_an_object" .
 
+ns1:proof_arisstotle a ns1:proof ;
+    rdfs:label "Proof Arisstotle" ;
+    skos:prefLabel "Arisstotle" ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:relation_instance__equals_angle_of_section__angle_of_section_ .
+
 ns1:proposition_type a owl:Class ;
     rdfs:label "Proposition type" ;
     rdfs:subClassOf ns1:enumeration ;
@@ -864,6 +889,15 @@ ns1:concept__absurd a owl:NamedIndividual,
     ns1:is_an_abstract_object true ;
     ns1:is_concept_in ns1:proof_6 ;
     ns1:is_sub_concept_of ns1:concept__abstract_object .
+
+ns1:concept__angle_of_semicircle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Angle of semicircle" ;
+    skos:prefLabel "Angle of semicircle" ;
+    ns1:contains_concept ns1:concept__semicircle ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_sub_concept_of ns1:concept__angle .
 
 ns1:concept__apply a owl:NamedIndividual,
         ns1:concept ;
@@ -969,15 +1003,6 @@ ns1:concept__inclination_of_interior_angle a owl:NamedIndividual,
     ns1:is_concept_in ns1:operation__sum_inclination_of_interior_angle__inclination_of_interior_angle___inclination_of_interior_angle,
         ns1:relation_instance__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__ ;
     ns1:is_sub_concept_of ns1:concept__magnitude .
-
-ns1:concept__is_angle_of a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Is angle of" ;
-    skos:prefLabel "Is angle of" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_sub_concept_of ns1:concept__is_located ;
-    ns1:is_super_concept_of ns1:concept__is_internal_angle_of .
 
 ns1:concept__is_equilateral a owl:NamedIndividual,
         ns1:concept ;
@@ -1580,6 +1605,16 @@ ns1:concept__interior_angle a owl:NamedIndividual,
     ns1:is_sub_concept_of ns1:concept__angle ;
     ns1:is_super_concept_of ns1:concept__interior_angle_of_triangle .
 
+ns1:concept__is_angle_of a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Is angle of" ;
+    skos:prefLabel "Is angle of" ;
+    ns1:contains_concept ns1:concept__angle ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_sub_concept_of ns1:concept__is_located ;
+    ns1:is_super_concept_of ns1:concept__is_internal_angle_of .
+
 ns1:concept__is_internal_angle_of a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Is internal angle of" ;
@@ -1998,22 +2033,6 @@ ns1:operation_type__taken_together_in_any_way_object__object___object a ns1:oper
         ns1:concept__taken_together_in_any_way ;
     ns1:is_relation_type_of ns1:operation_instance__taken_together_in_any_way_angle__angle___angle,
         ns1:operation_instance__taken_together_in_any_way_finite_straight_line__finite_straight_line___finite_straight_line .
-
-ns1:proof_3 a ns1:proof ;
-    rdfs:label "Proof 3" ;
-    skos:prefLabel 3 ;
-    ns1:refers_to ns1:operation_instance__draw_center__interval___circle,
-        ns1:operation_instance__subtract_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__greater_than_finite_straight_line__finite_straight_line_ .
-
-ns1:proof_30 a ns1:proof ;
-    rdfs:label "Proof 30" ;
-    skos:prefLabel 30 ;
-    ns1:refers_to ns1:operation_instance__fall_on_straight_line__straight_line_,
-        ns1:relation_instance__are_alternate_angle__angle_,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
-        ns1:relation_instance__equals_angle__angle_ .
 
 ns1:proposition_30 a owl:NamedIndividual,
         ns1:proposition ;
@@ -3072,14 +3091,23 @@ ns1:postulate a owl:Class ;
     rdfs:label "Postulate" ;
     skos:prefLabel "Postulate" .
 
-ns1:proof_2 a ns1:proof ;
-    rdfs:label "Proof 2" ;
-    skos:prefLabel 2 ;
-    ns1:refers_to ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
-        ns1:operation_instance__draw_center__interval___circle,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:operation_instance__produce_finite_straight_line___finite_straight_line,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_ .
+ns1:proof_3 a ns1:proof ;
+    rdfs:label "Proof 3" ;
+    skos:prefLabel 3 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__draw_center__interval___circle,
+        ns1:operation_instance__subtract_finite_straight_line__finite_straight_line___finite_straight_line,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__greater_than_finite_straight_line__finite_straight_line_ .
+
+ns1:proof_30 a ns1:proof ;
+    rdfs:label "Proof 30" ;
+    skos:prefLabel 30 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__fall_on_straight_line__straight_line_,
+        ns1:relation_instance__are_alternate_angle__angle_,
+        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+        ns1:relation_instance__equals_angle__angle_ .
 
 ns1:proposition_15 a owl:NamedIndividual,
         ns1:proposition ;
@@ -3311,15 +3339,6 @@ ns1:relation_instance__infinite_according_to_straight_line__point_ a ns1:relatio
         ns1:concept__straight_line ;
     ns1:has_relation_type ns1:relation_type__infinite_according_to_straight_line__point_ ;
     ns1:is_used_in ns1:proof_22 .
-
-ns1:relation_instance__is_center_of_point__circle_ a ns1:relation_instance ;
-    rdfs:label "Relation instance: Is_center_of(point, circle)" ;
-    skos:prefLabel "Is_center_of(point, circle)" ;
-    ns1:contains_concept ns1:concept__circle,
-        ns1:concept__is_center_of,
-        ns1:concept__point ;
-    ns1:has_relation_type ns1:relation_type__is_center_of_point__circle_ ;
-    ns1:is_used_in ns1:proof_1 .
 
 ns1:relation_instance__is_complement_of_complement_of_parallelogram__parallelogram_ a ns1:relation_instance ;
     rdfs:label "Relation instance: Is_complement_of(complement_of_parallelogram, parallelogram)" ;
@@ -3714,17 +3733,6 @@ ns1:concept__plane_angle a owl:NamedIndividual,
     ns1:has_definition ns1:definition__8 ;
     ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:concept__semicircle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Semicircle" ;
-    skos:prefLabel "Semicircle" ;
-    ns1:definition_refers_to ns1:concept__center,
-        ns1:concept__circumference,
-        ns1:concept__diameter,
-        ns1:concept__figure ;
-    ns1:has_definition ns1:definition__18 ;
-    ns1:is_defined_in ns1:document__elements_book_1 .
-
 ns1:concept__set_up_equal_to a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Set up equal to" ;
@@ -3858,17 +3866,6 @@ ns1:operation_instance__set_up_equal_to_finite_straight_line__straight_line___fi
     ns1:is_used_in ns1:proof_22,
         ns1:proof_26 .
 
-ns1:operation_instance__subtract_magnitude__magnitude___magnitude a owl:NamedIndividual,
-        ns1:operation_instance ;
-    rdfs:label "Operation instance: Subtract(magnitude, magnitude)->magnitude" ;
-    skos:prefLabel "Subtract(magnitude, magnitude)->magnitude" ;
-    ns1:contains_concept ns1:concept___magnitude,
-        ns1:concept__sum ;
-    ns1:has_domain ns1:set__magnitude__magnitude ;
-    ns1:has_range ns1:set__magnitude ;
-    ns1:is_used_in ns1:statement___equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__ ;
-    ns1:refers_to ns1:operation_type__subtract_magnitude__magnitude___magnitude .
-
 ns1:operation_instance__sum_magnitude__magnitude___magnitude a owl:NamedIndividual,
         ns1:operation_instance ;
     rdfs:label "Operation instance: Sum(magnitude, magnitude)->magnitude" ;
@@ -3931,15 +3928,15 @@ ns1:operation_type__join_point__point___finite_straight_line a owl:NamedIndividu
     ns1:has_range ns1:set__finite_straight_line ;
     ns1:is_used_in ns1:operation__join_point__point___finite_straight_line .
 
-ns1:proof_19 a ns1:proof ;
-    rdfs:label "Proof 19" ;
-    skos:prefLabel 19 ;
-    ns1:refers_to ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__greater_angle_,
-        ns1:relation_instance__greater_side_of_triangle_,
-        ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__less_than_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+ns1:proof_2 a ns1:proof ;
+    rdfs:label "Proof 2" ;
+    skos:prefLabel 2 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
+        ns1:operation_instance__draw_center__interval___circle,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:operation_instance__produce_finite_straight_line___finite_straight_line,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_ .
 
 ns1:proposition_36 a owl:NamedIndividual,
         ns1:proposition ;
@@ -4159,6 +4156,16 @@ ns1:relation_instance__is_at_vertex_angle_ a owl:NamedIndividual,
     ns1:is_used_in ns1:proof_15,
         ns1:proof_16,
         ns1:proposition_15 .
+
+ns1:relation_instance__is_center_of_point__circle_ a ns1:relation_instance ;
+    rdfs:label "Relation instance: Is_center_of(point, circle)" ;
+    skos:prefLabel "Is_center_of(point, circle)" ;
+    ns1:contains_concept ns1:concept__circle,
+        ns1:concept__is_center_of,
+        ns1:concept__point ;
+    ns1:has_relation_type ns1:relation_type__is_center_of_point__circle_ ;
+    ns1:is_used_in ns1:proof_1,
+        ns1:proof_aristotle .
 
 ns1:relation_instance__is_external_angle__straight_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -4737,17 +4744,6 @@ ns1:operation_instance__produce_to_side_of_triangle__point___finite_straight_lin
     ns1:is_used_in ns1:proof_16,
         ns1:proof_17 .
 
-ns1:operation_instance__subtract_angle__angle___angle a ns1:operation_instance ;
-    rdfs:label "Operation instance: Subtract(angle, angle)->angle" ;
-    skos:prefLabel "Subtract(angle, angle)->angle" ;
-    ns1:contains_concept ns1:concept__angle,
-        ns1:concept__subtract ;
-    ns1:has_relation_type ns1:operation_type__subtract_magnitude__magnitude___magnitude ;
-    ns1:is_used_in ns1:proof_14,
-        ns1:proof_15,
-        ns1:proof_28,
-        ns1:proof_46 .
-
 ns1:operation_instance__subtract_finite_straight_line__finite_straight_line___finite_straight_line a owl:NamedIndividual,
         ns1:operation_instance ;
     rdfs:label "Operation instance: Subtract(finite_straight_line, finite_straight_line)->finite_straight_line" ;
@@ -4760,6 +4756,18 @@ ns1:operation_instance__subtract_finite_straight_line__finite_straight_line___fi
         ns1:proof_5,
         ns1:proof_9,
         ns1:proposition_3 .
+
+ns1:operation_instance__subtract_magnitude__magnitude___magnitude a owl:NamedIndividual,
+        ns1:operation_instance ;
+    rdfs:label "Operation instance: Subtract(magnitude, magnitude)->magnitude" ;
+    skos:prefLabel "Subtract(magnitude, magnitude)->magnitude" ;
+    ns1:contains_concept ns1:concept___magnitude,
+        ns1:concept__sum ;
+    ns1:has_domain ns1:set__magnitude__magnitude ;
+    ns1:has_range ns1:set__magnitude ;
+    ns1:is_used_in ns1:proof_aristotle,
+        ns1:statement___equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__ ;
+    ns1:refers_to ns1:operation_type__subtract_magnitude__magnitude___magnitude .
 
 ns1:operation_instance__sum_right_angle__right_angle___angle a ns1:operation_instance ;
     rdfs:label "Operation instance: Sum(right_angle, right_angle)->angle" ;
@@ -4797,38 +4805,16 @@ ns1:operation_type__draw_point__interval___circle a owl:NamedIndividual,
     ns1:has_range ns1:set__circle ;
     ns1:is_used_in ns1:operation__draw_center__interval___circle .
 
-ns1:proof_1 a ns1:proof ;
-    rdfs:label "Proof 1" ;
-    skos:prefLabel 1 ;
-    ns1:contains_concept ns1:concept__three ;
-    ns1:refers_to ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
-        ns1:operation_instance__draw_center__interval___circle,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:relation_instance__cut_circle__circle_,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__is_center_of_point__circle_ .
-
-ns1:proof_17 a ns1:proof ;
-    rdfs:label "Proof 17" ;
-    skos:prefLabel 17 ;
-    ns1:refers_to ns1:operation_instance__produce_to_side_of_triangle__point___finite_straight_line,
-        ns1:operation_instance__sum_angle__angle___angle,
-        ns1:operation_instance__taken_together_in_any_way_angle__angle___angle,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__is_external_exterior_angle__triangle_,
+ns1:proof_19 a ns1:proof ;
+    rdfs:label "Proof 19" ;
+    skos:prefLabel 19 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__greater_angle_,
+        ns1:relation_instance__greater_side_of_triangle_,
         ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__smaller_than_angle__angle_ .
-
-ns1:proof_43 a ns1:proof ;
-    rdfs:label "Proof 43" ;
-    skos:prefLabel 43 ;
-    ns1:refers_to ns1:operation_instance__sum_triangle__triangle___rectilinear_figure,
-        ns1:relation_instance__are_placed_about_complement_of_parallelogram__complement_of_parallelogram__diameter_of_parallelogram_,
-        ns1:relation_instance__equals_complement_of_parallelogram__complement_of_parallelogram_,
-        ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__is_parallelogram_parallelogram_,
-        ns1:relation_instance__is_placed_on_complement_of_parallelogram__diameter_of_parallelogram_,
-        ns1:relation_instance__remaining_complement_of_parallelogram_ .
+        ns1:relation_instance__less_than_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
 
 ns1:proposition_1 a owl:NamedIndividual,
         ns1:proposition ;
@@ -5408,29 +5394,53 @@ ns1:operation_instance__produce_side_of_triangle___finite_straight_line a owl:Na
         ns1:proposition_16,
         ns1:proposition_32 .
 
-ns1:proof_15 a ns1:proof ;
-    rdfs:label "Proof 15" ;
-    skos:prefLabel 15 ;
-    ns1:contains_concept ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__subtract_angle__angle___angle,
-        ns1:relation_instance__cut_straight_line__straight_line_,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__is_at_vertex_angle_,
-        ns1:relation_instance__is_placed_on_straight_line__straight_line_,
-        ns1:relation_instance__remaining_angle_,
-        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_ .
+ns1:operation_instance__subtract_angle__angle___angle a ns1:operation_instance ;
+    rdfs:label "Operation instance: Subtract(angle, angle)->angle" ;
+    skos:prefLabel "Subtract(angle, angle)->angle" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__subtract ;
+    ns1:has_relation_type ns1:operation_type__subtract_magnitude__magnitude___magnitude ;
+    ns1:is_used_in ns1:proof_14,
+        ns1:proof_15,
+        ns1:proof_28,
+        ns1:proof_46,
+        ns1:proof_aristotle .
 
-ns1:proof_18 a ns1:proof ;
-    rdfs:label "Proof 18" ;
-    skos:prefLabel 18 ;
-    ns1:refers_to ns1:operation_instance__set_up_equal_to_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:relation_instance__equals_angle__angle_,
+ns1:proof_1 a ns1:proof ;
+    rdfs:label "Proof 1" ;
+    skos:prefLabel 1 ;
+    ns1:contains_concept ns1:concept__three ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
+        ns1:operation_instance__draw_center__interval___circle,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:relation_instance__cut_circle__circle_,
         ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__greater_angle_,
-        ns1:relation_instance__greater_side_of_triangle_,
+        ns1:relation_instance__is_center_of_point__circle_ .
+
+ns1:proof_17 a ns1:proof ;
+    rdfs:label "Proof 17" ;
+    skos:prefLabel 17 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__produce_to_side_of_triangle__point___finite_straight_line,
+        ns1:operation_instance__sum_angle__angle___angle,
+        ns1:operation_instance__taken_together_in_any_way_angle__angle___angle,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__is_external_exterior_angle__triangle_,
         ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+        ns1:relation_instance__smaller_than_angle__angle_ .
+
+ns1:proof_43 a ns1:proof ;
+    rdfs:label "Proof 43" ;
+    skos:prefLabel 43 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__sum_triangle__triangle___rectilinear_figure,
+        ns1:relation_instance__are_placed_about_complement_of_parallelogram__complement_of_parallelogram__diameter_of_parallelogram_,
+        ns1:relation_instance__equals_complement_of_parallelogram__complement_of_parallelogram_,
+        ns1:relation_instance__equals_triangle__triangle_,
+        ns1:relation_instance__is_parallelogram_parallelogram_,
+        ns1:relation_instance__is_placed_on_complement_of_parallelogram__diameter_of_parallelogram_,
+        ns1:relation_instance__remaining_complement_of_parallelogram_ .
 
 ns1:proposition_31 a owl:NamedIndividual,
         ns1:proposition ;
@@ -5844,44 +5854,31 @@ ns1:operation_type__subtract_magnitude__magnitude___magnitude a owl:NamedIndivid
         ns1:operation_instance__subtract_triangle__triangle___trapezium ;
     ns1:is_used_in ns1:operation_instance__subtract_magnitude__magnitude___magnitude .
 
-ns1:proof_10 a ns1:proof ;
-    rdfs:label "Proof 10" ;
-    skos:prefLabel 10 ;
+ns1:proof_15 a ns1:proof ;
+    rdfs:label "Proof 15" ;
+    skos:prefLabel 15 ;
     ns1:contains_concept ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
-        ns1:operation_instance__cut_into_two_halves_finite_straight_line____finite_straight_line__finite_straight_line_,
-        ns1:operation_instance__cut_into_two_halves_rectilinear_angle____angle__angle_,
-        ns1:relation_instance__are_same_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__corresponding_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__is_triangle_triangle_ .
-
-ns1:proof_13 a ns1:proof ;
-    rdfs:label "Proof 13" ;
-    skos:prefLabel 13 ;
-    ns1:contains_concept ns1:concept__three,
-        ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__point__right_angle___infinite_straight_line,
-        ns1:operation_instance__sum_angle__angle_,
-        ns1:relation_instance__are_perpendicular_infinite_straight_line__infinite_straight_line_,
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__subtract_angle__angle___angle,
+        ns1:relation_instance__cut_straight_line__straight_line_,
         ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__is_placed_on_infinite_straight_line__infinite_straight_line_,
-        ns1:relation_instance__is_right_angle_angle_,
+        ns1:relation_instance__is_at_vertex_angle_,
+        ns1:relation_instance__is_placed_on_straight_line__straight_line_,
+        ns1:relation_instance__remaining_angle_,
         ns1:relation_instance__subtended_by_angle__straight_line__straight_line_ .
 
-ns1:proof_31 a ns1:proof ;
-    rdfs:label "Proof 31" ;
-    skos:prefLabel 31 ;
-    ns1:refers_to ns1:operation_instance__choose_at_random_point__finite_straight_line___point,
-        ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line,
-        ns1:operation_instance__construct_on_angle__point___angle,
-        ns1:operation_instance__extend_straight_straight_line___straight_line,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:relation_instance__are_alternate_angle__angle_,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+ns1:proof_18 a ns1:proof ;
+    rdfs:label "Proof 18" ;
+    skos:prefLabel 18 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__set_up_equal_to_finite_straight_line__finite_straight_line___finite_straight_line,
         ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__falls_on_straight_line__straight_line_ .
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__greater_angle_,
+        ns1:relation_instance__greater_side_of_triangle_,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
 
 ns1:proposition_17 a owl:NamedIndividual,
         ns1:proposition ;
@@ -6146,33 +6143,47 @@ ns1:operation_instance__draw_center__interval___circle a ns1:operation_instance 
         ns1:proof_22,
         ns1:proof_3 .
 
-ns1:proof_24 a ns1:proof ;
-    rdfs:label "Proof 24" ;
-    skos:prefLabel 24 ;
-    ns1:refers_to ns1:operation_instance__construct_from_angle__angle__point__finite_straight_line___angle,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
+ns1:proof_10 a ns1:proof ;
+    rdfs:label "Proof 10" ;
+    skos:prefLabel 10 ;
+    ns1:contains_concept ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
+        ns1:operation_instance__cut_into_two_halves_finite_straight_line____finite_straight_line__finite_straight_line_,
+        ns1:operation_instance__cut_into_two_halves_rectilinear_angle____angle__angle_,
+        ns1:relation_instance__are_same_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__corresponding_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__greater_than_angle__angle_,
-        ns1:relation_instance__greater_than_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__greater_than_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+        ns1:relation_instance__is_triangle_triangle_ .
 
-ns1:proof_41 a ns1:proof ;
-    rdfs:label "Proof 41" ;
-    skos:prefLabel 41 ;
-    ns1:refers_to ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
-        ns1:relation_instance__are_same_base__base_,
-        ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_,
-        ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__have_same_base_parallelogram__triangle_,
-        ns1:relation_instance__is_double_parallelogram__triangle_,
-        ns1:relation_instance__is_placed_on_parallelogram__base_,
-        ns1:relation_instance__is_placed_on_same_triangle__triangle__base_of_triangle_,
-        ns1:relation_instance__is_placed_on_triangle__base_ .
+ns1:proof_13 a ns1:proof ;
+    rdfs:label "Proof 13" ;
+    skos:prefLabel 13 ;
+    ns1:contains_concept ns1:concept__three,
+        ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__point__right_angle___infinite_straight_line,
+        ns1:operation_instance__sum_angle__angle_,
+        ns1:relation_instance__are_perpendicular_infinite_straight_line__infinite_straight_line_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__is_placed_on_infinite_straight_line__infinite_straight_line_,
+        ns1:relation_instance__is_right_angle_angle_,
+        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_ .
+
+ns1:proof_31 a ns1:proof ;
+    rdfs:label "Proof 31" ;
+    skos:prefLabel 31 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__choose_at_random_point__finite_straight_line___point,
+        ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line,
+        ns1:operation_instance__construct_on_angle__point___angle,
+        ns1:operation_instance__extend_straight_straight_line___straight_line,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:relation_instance__are_alternate_angle__angle_,
+        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__falls_on_straight_line__straight_line_ .
 
 ns1:proposition_2 a owl:NamedIndividual,
         ns1:proposition ;
@@ -6387,6 +6398,23 @@ ns1:concept__rhomboid a owl:NamedIndividual,
     ns1:has_definition ns1:definition__22 ;
     ns1:is_defined_in ns1:document__elements_book_1 .
 
+ns1:concept__semicircle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Semicircle" ;
+    skos:prefLabel "Semicircle" ;
+    ns1:contains_concept ns1:concept__circle,
+        ns1:concept__half ;
+    ns1:definition_refers_to ns1:concept__center,
+        ns1:concept__circumference,
+        ns1:concept__diameter,
+        ns1:concept__figure ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__18 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:concept__angle_of_semicircle ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_sub_concept_of ns1:concept__figure .
+
 ns1:concept__trilateral a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Trilateral" ;
@@ -6403,66 +6431,50 @@ ns1:concept__trilateral a owl:NamedIndividual,
         ns1:concept__right_triangle,
         ns1:concept__scalene_triangle .
 
-ns1:proof_25 a ns1:proof ;
-    rdfs:label "Proof 25" ;
-    skos:prefLabel 25 ;
-    ns1:contains_concept ns1:concept__two ;
-    ns1:refers_to ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+ns1:proof_24 a ns1:proof ;
+    rdfs:label "Proof 24" ;
+    skos:prefLabel 24 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__construct_from_angle__angle__point__finite_straight_line___angle,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__greater_than_angle__angle_,
         ns1:relation_instance__greater_than_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__greater_than_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__less_than_angle__angle_,
-        ns1:relation_instance__less_than_base_of_triangle__base_of_triangle_ .
+        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
 
-ns1:proof_36 a ns1:proof ;
-    rdfs:label "Proof 36" ;
-    skos:prefLabel 36 ;
+ns1:proof_41 a ns1:proof ;
+    rdfs:label "Proof 41" ;
+    skos:prefLabel 41 ;
+    ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:relation_instance__are_in_the_same_parallels_base_of_parallelogram__base_of_parallelogram__straight_line__straight_line_,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
-        ns1:relation_instance__are_same_base_of_parallelogram__base_of_parallelogram_,
-        ns1:relation_instance__are_same_straight_line__straight_line_,
-        ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__equals_parallelogram__parallelogram_,
-        ns1:relation_instance__equals_side_of_parallelogram__side_of_parallelogram_,
-        ns1:relation_instance__is_parallelogram_parallelogram_,
-        ns1:relation_instance__joining_on_the_same_part_finite_straight_line__finite_straight_line__finite_straight_line__finite_straight_line_ .
-
-ns1:proof_40 a ns1:proof ;
-    rdfs:label "Proof 40" ;
-    skos:prefLabel 40 ;
-    ns1:contains_concept ns1:concept__impossible ;
-    ns1:refers_to ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
+        ns1:relation_instance__are_same_base__base_,
+        ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_,
         ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__greater_than_triangle__triangle_,
-        ns1:relation_instance__is_on_the_same_part_triangle__triangle_,
-        ns1:relation_instance__is_placed_on_triangle__base_of_triangle_,
-        ns1:relation_instance__is_placed_on_triangle__straight_line_,
-        ns1:relation_instance__smaller_than_triangle__triangle_ ;
-    ns1:uses_reductio true .
+        ns1:relation_instance__have_same_base_parallelogram__triangle_,
+        ns1:relation_instance__is_double_parallelogram__triangle_,
+        ns1:relation_instance__is_placed_on_parallelogram__base_,
+        ns1:relation_instance__is_placed_on_same_triangle__triangle__base_of_triangle_,
+        ns1:relation_instance__is_placed_on_triangle__base_ .
 
-ns1:proof_9 a ns1:proof ;
-    rdfs:label "Proof 9" ;
-    skos:prefLabel 9 ;
-    ns1:refers_to ns1:operation_instance__choose_at_random_point__finite_straight_line___point,
-        ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
-        ns1:operation_instance__cut_into_two_halves_rectilinear_angle____angle__angle_,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:operation_instance__subtract_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:relation_instance__corresponding_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__subtended_by_angle__finite_straight_line__finite_straight_line_ .
+ns1:proof_aristotle a ns1:proof ;
+    rdfs:label "Proof Aristotle" ;
+    skos:prefLabel "Aristotle" ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:operation_instance__subtract_angle__angle___angle,
+        ns1:operation_instance__subtract_magnitude__magnitude___magnitude,
+        ns1:operation_instance__sum_angle__angle___angle,
+        ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_,
+        ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_,
+        ns1:relation_instance__is_angle_of_section_,
+        ns1:relation_instance__is_angle_of_semicircle_,
+        ns1:relation_instance__is_center_of_point__circle_,
+        ns1:relation_instance__remaining_angle_ .
 
 ns1:proposition_29 a owl:NamedIndividual,
         ns1:proposition ;
@@ -6511,22 +6523,6 @@ ns1:relation_instance__is_parallelogram_parallelogram_ a ns1:relation_instance ;
         ns1:proof_44,
         ns1:proof_45,
         ns1:proof_46 .
-
-ns1:relation_instance__remaining_angle_ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation instance: Remaining(angle)" ;
-    skos:prefLabel "Remaining(angle)" ;
-    ns1:contains_concept ns1:concept__angle,
-        ns1:concept__remaining ;
-    ns1:has_relation_type ns1:relation_type__remaining_diagrammatic_object_ ;
-    ns1:is_used_in ns1:proof_14,
-        ns1:proof_15,
-        ns1:proof_16,
-        ns1:proof_26,
-        ns1:proof_28,
-        ns1:proof_33,
-        ns1:proof_34,
-        ns1:proposition_26 .
 
 ns1:relation_instance__remaining_side_of_triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -6619,54 +6615,70 @@ ns1:concept__subtended_by a owl:NamedIndividual,
         ns1:relation_type__subtended_by_straight_line__angle_ ;
     ns1:is_sub_concept_of ns1:concept__is_located .
 
-ns1:proof_20 a ns1:proof ;
-    rdfs:label "Proof 20" ;
-    skos:prefLabel 20 ;
-    ns1:refers_to ns1:operation_instance__conduct_to_side_of_triangle__point___finite_straight_line,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:operation_instance__set_up_equal_to_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:operation_instance__sum_side_of_triangle__side_of_triangle___finite_straight_line,
-        ns1:operation_instance__taken_together_in_any_way_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__greater_than_angle__angle_,
-        ns1:relation_instance__greater_than_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__greater_than_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__remaining_side_of_triangle_ .
-
-ns1:proof_23 a ns1:proof ;
-    rdfs:label "Proof 23" ;
-    skos:prefLabel 23 ;
+ns1:proof_25 a ns1:proof ;
+    rdfs:label "Proof 25" ;
+    skos:prefLabel 25 ;
     ns1:contains_concept ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__choose_at_random_point__finite_straight_line___point,
-        ns1:operation_instance__construct_from_angle__angle__point__finite_straight_line___angle,
-        ns1:operation_instance__construct_from_triangle__finite_straight_line__finite_straight_line__finite_straight_line___triangle,
-        ns1:operation_instance__construct_on_angle__finite_straight_line___angle,
-        ns1:operation_instance__construct_on_angle__point___angle,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:relation_instance__are_same_point__point_,
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+        ns1:relation_instance__greater_than_angle__angle_,
+        ns1:relation_instance__greater_than_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_instance__less_than_angle__angle_,
+        ns1:relation_instance__less_than_base_of_triangle__base_of_triangle_ .
 
-ns1:proof_27 a ns1:proof ;
-    rdfs:label "Proof 27" ;
-    skos:prefLabel 27 ;
-    ns1:contains_concept ns1:concept__impossible,
-        ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__extend_straight_line___straight_line,
-        ns1:relation_instance__are_alternate_angle__angle_,
+ns1:proof_36 a ns1:proof ;
+    rdfs:label "Proof 36" ;
+    skos:prefLabel 36 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:relation_instance__are_in_the_same_parallels_base_of_parallelogram__base_of_parallelogram__straight_line__straight_line_,
         ns1:relation_instance__are_parallel_straight_line__straight_line_,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__falls_on_straight_line__straight_line_,
-        ns1:relation_instance__is_external_exterior_angle__triangle_,
-        ns1:relation_instance__is_internal_angle__triangle_,
-        ns1:relation_instance__meet_on_the_part_of_straight_line__straight_line__point__point_,
-        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_ ;
+        ns1:relation_instance__are_same_base_of_parallelogram__base_of_parallelogram_,
+        ns1:relation_instance__are_same_straight_line__straight_line_,
+        ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__equals_parallelogram__parallelogram_,
+        ns1:relation_instance__equals_side_of_parallelogram__side_of_parallelogram_,
+        ns1:relation_instance__is_parallelogram_parallelogram_,
+        ns1:relation_instance__joining_on_the_same_part_finite_straight_line__finite_straight_line__finite_straight_line__finite_straight_line_ .
+
+ns1:proof_40 a ns1:proof ;
+    rdfs:label "Proof 40" ;
+    skos:prefLabel 40 ;
+    ns1:contains_concept ns1:concept__impossible ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__equals_triangle__triangle_,
+        ns1:relation_instance__greater_than_triangle__triangle_,
+        ns1:relation_instance__is_on_the_same_part_triangle__triangle_,
+        ns1:relation_instance__is_placed_on_triangle__base_of_triangle_,
+        ns1:relation_instance__is_placed_on_triangle__straight_line_,
+        ns1:relation_instance__smaller_than_triangle__triangle_ ;
     ns1:uses_reductio true .
+
+ns1:proof_9 a ns1:proof ;
+    rdfs:label "Proof 9" ;
+    skos:prefLabel 9 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__choose_at_random_point__finite_straight_line___point,
+        ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
+        ns1:operation_instance__cut_into_two_halves_rectilinear_angle____angle__angle_,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:operation_instance__subtract_finite_straight_line__finite_straight_line___finite_straight_line,
+        ns1:relation_instance__corresponding_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_instance__subtended_by_angle__finite_straight_line__finite_straight_line_ .
 
 ns1:proposition_11 a owl:NamedIndividual,
         ns1:proposition ;
@@ -6737,6 +6749,23 @@ ns1:relation_instance__is_placed_on_triangle__straight_line_ a owl:NamedIndividu
         ns1:proposition_39,
         ns1:proposition_40 .
 
+ns1:relation_instance__remaining_angle_ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation instance: Remaining(angle)" ;
+    skos:prefLabel "Remaining(angle)" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__remaining ;
+    ns1:has_relation_type ns1:relation_type__remaining_diagrammatic_object_ ;
+    ns1:is_used_in ns1:proof_14,
+        ns1:proof_15,
+        ns1:proof_16,
+        ns1:proof_26,
+        ns1:proof_28,
+        ns1:proof_33,
+        ns1:proof_34,
+        ns1:proof_aristotle,
+        ns1:proposition_26 .
+
 ns1:relation_instance__subtended_by_angle__straight_line__straight_line_ a ns1:relation_instance ;
     rdfs:label "Relation instance: Subtended_by(angle, straight_line, straight_line)" ;
     skos:prefLabel "Subtended_by(angle, straight_line, straight_line)" ;
@@ -6769,91 +6798,56 @@ ns1:relation_type__are_same_object__object_ a ns1:relation_type ;
         ns1:relation_instance__are_same_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__are_same_straight_line__straight_line_ .
 
-ns1:proof_11 a ns1:proof ;
-    rdfs:label "Proof 11" ;
-    skos:prefLabel 11 ;
-    ns1:contains_concept ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__choose_at_random_point__finite_straight_line___point,
-        ns1:operation_instance__conduct_finite_straight_line__finite_straight_line__point__right_angle___finite_straight_line,
-        ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
+ns1:proof_20 a ns1:proof ;
+    rdfs:label "Proof 20" ;
+    skos:prefLabel 20 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__conduct_to_side_of_triangle__point___finite_straight_line,
         ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:relation_instance__are_consecutive_angle__angle_,
-        ns1:relation_instance__corresponding_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+        ns1:operation_instance__set_up_equal_to_finite_straight_line__finite_straight_line___finite_straight_line,
+        ns1:operation_instance__sum_side_of_triangle__side_of_triangle___finite_straight_line,
+        ns1:operation_instance__taken_together_in_any_way_finite_straight_line__finite_straight_line___finite_straight_line,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__inclined_at_finite_straight_line__finite_straight_line__right_angle_,
-        ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
-
-ns1:proof_21 a ns1:proof ;
-    rdfs:label "Proof 21" ;
-    skos:prefLabel 21 ;
-    ns1:contains_concept ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__conduct_to_side_of_triangle__point___finite_straight_line,
-        ns1:operation_instance__construct_inside_finite_straight_line__triangle___finite_straight_line,
-        ns1:operation_instance__construct_on_finite_straight_line__end_of_side_of_triangle___finite_straight_line,
-        ns1:operation_instance__sum_side_of_triangle__side_of_triangle___finite_straight_line,
-        ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
         ns1:relation_instance__greater_than_angle__angle_,
-        ns1:relation_instance__is_external_exterior_angle__triangle_,
-        ns1:relation_instance__is_placed_on_finite_straight_line__end_of_side_of_triangle_,
+        ns1:relation_instance__greater_than_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__greater_than_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__remaining_side_of_triangle_,
-        ns1:relation_instance__smaller_than_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+        ns1:relation_instance__remaining_side_of_triangle_ .
 
-ns1:proof_28 a ns1:proof ;
-    rdfs:label "Proof 28" ;
-    skos:prefLabel 28 ;
+ns1:proof_23 a ns1:proof ;
+    rdfs:label "Proof 23" ;
+    skos:prefLabel 23 ;
     ns1:contains_concept ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__subtract_angle__angle___angle,
-        ns1:operation_instance__sum_angle__angle___angle,
-        ns1:relation_instance__are_alternate_angle__angle_,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
-        ns1:relation_instance__equals_angle__right_angle_,
-        ns1:relation_instance__falls_on_straight_line__straight_line_,
-        ns1:relation_instance__is_external_angle__straight_line_,
-        ns1:relation_instance__is_internal_angle__straight_line_,
-        ns1:relation_instance__is_on_the_same_part_angle__angle__straight_line_,
-        ns1:relation_instance__is_opposite_to_angle__angle_,
-        ns1:relation_instance__remaining_angle_,
-        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_ .
-
-ns1:proof_6 a ns1:proof ;
-    rdfs:label "Proof 6" ;
-    skos:prefLabel 6 ;
-    ns1:contains_concept ns1:concept__absurd ;
-    ns1:refers_to ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:operation_instance__subtract_side_of_triangle__side_of_triangle___finite_straight_line,
-        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__choose_at_random_point__finite_straight_line___point,
+        ns1:operation_instance__construct_from_angle__angle__point__finite_straight_line___angle,
+        ns1:operation_instance__construct_from_triangle__finite_straight_line__finite_straight_line__finite_straight_line___triangle,
+        ns1:operation_instance__construct_on_angle__finite_straight_line___angle,
+        ns1:operation_instance__construct_on_angle__point___angle,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:relation_instance__are_same_point__point_,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__greater_than_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__greater_than_triangle__triangle_,
-        ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__unequal_side_of_triangle__side_of_triangle_ ;
-    ns1:uses_reductio true .
+        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
 
-ns1:proof_7 a ns1:proof ;
-    rdfs:label "Proof 7" ;
-    skos:prefLabel 7 ;
+ns1:proof_27 a ns1:proof ;
+    rdfs:label "Proof 27" ;
+    skos:prefLabel 27 ;
     ns1:contains_concept ns1:concept__impossible,
-        ns1:concept__possible,
         ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__construct_to_given_point_finite_straight_line__point__point___finite_straight_line,
-        ns1:relation_instance__corresponding_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__distinct_point__point_,
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__extend_straight_line___straight_line,
+        ns1:relation_instance__are_alternate_angle__angle_,
+        ns1:relation_instance__are_parallel_straight_line__straight_line_,
         ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__greater_than_angle__angle_,
-        ns1:relation_instance__is_on_the_same_part_finite_straight_line__finite_straight_line__part_,
-        ns1:relation_instance__is_placed_on_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__subtended_by_angle__finite_straight_line__finite_straight_line_ ;
+        ns1:relation_instance__falls_on_straight_line__straight_line_,
+        ns1:relation_instance__is_external_exterior_angle__triangle_,
+        ns1:relation_instance__is_internal_angle__triangle_,
+        ns1:relation_instance__meet_on_the_part_of_straight_line__straight_line__point__point_,
+        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_ ;
     ns1:uses_reductio true .
 
 ns1:proposition_12 a owl:NamedIndividual,
@@ -7030,114 +7024,97 @@ ns1:concept__side a owl:NamedIndividual,
         ns1:concept__square,
         ns1:concept__trapezoid_quadrilateral_figure .
 
-ns1:proof_22 a ns1:proof ;
-    rdfs:label "Proof 22" ;
-    skos:prefLabel 22 ;
-    ns1:contains_concept ns1:concept__three,
-        ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__construct_from_triangle__finite_straight_line__finite_straight_line__finite_straight_line___triangle,
-        ns1:operation_instance__draw_center__interval___circle,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:operation_instance__set_up_equal_to_finite_straight_line__straight_line___finite_straight_line,
-        ns1:operation_instance__take_straight_line_,
-        ns1:operation_instance__taken_together_in_any_way_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__finite_according_to_straight_line__point_,
-        ns1:relation_instance__infinite_according_to_straight_line__point_,
-        ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__remaining_finite_straight_line_,
-        ns1:relation_instance__smaller_than_finite_straight_line__finite_straight_line_ .
-
-ns1:proof_32 a ns1:proof ;
-    rdfs:label "Proof 32" ;
-    skos:prefLabel 32 ;
-    ns1:contains_concept ns1:concept__three,
-        ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line,
-        ns1:operation_instance__produce_side_of_triangle___finite_straight_line,
-        ns1:operation_instance__sum_angle__angle___angle,
-        ns1:operation_instance__sum_right_angle__right_angle___angle,
-        ns1:relation_instance__are_alternate_angle__angle_,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
-        ns1:relation_instance__are_same_straight_line__straight_line_,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__falls_on_straight_line__straight_line_,
-        ns1:relation_instance__is_external_angle__triangle_,
-        ns1:relation_instance__is_internal_angle__triangle_,
-        ns1:relation_instance__is_opposite_to_angle__angle_ .
-
-ns1:proof_33 a ns1:proof ;
-    rdfs:label "Proof 33" ;
-    skos:prefLabel 33 ;
-    ns1:refers_to ns1:operation_instance__join_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:operation_instance__join_on_the_same_part_point__point__point__point____finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__are_alternate_angle__angle_,
-        ns1:relation_instance__are_parallel_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__corresponding_angle__angle_,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__falls_on_straight_line__straight_line_,
-        ns1:relation_instance__joining_on_the_same_part_finite_straight_line__finite_straight_line__finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__remaining_angle_,
-        ns1:relation_instance__subtended_by_angle__finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_ .
-
-ns1:proof_39 a ns1:proof ;
-    rdfs:label "Proof 39" ;
-    skos:prefLabel 39 ;
-    ns1:contains_concept ns1:concept__impossible ;
-    ns1:refers_to ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
-        ns1:relation_instance__are_same_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__are_same_straight_line__straight_line_,
-        ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__greater_than_triangle__triangle_,
-        ns1:relation_instance__is_on_the_same_part_triangle__triangle_,
-        ns1:relation_instance__is_placed_on_same_triangle__triangle__base_of_triangle_,
-        ns1:relation_instance__is_placed_on_triangle__base_of_triangle_,
-        ns1:relation_instance__is_placed_on_triangle__straight_line_,
-        ns1:relation_instance__smaller_than_triangle__triangle_ ;
-    ns1:uses_reductio true .
-
-ns1:proof_46 a ns1:proof ;
-    rdfs:label "Proof 46" ;
-    skos:prefLabel 46 ;
-    ns1:contains_concept ns1:concept__four ;
-    ns1:refers_to ns1:operation_instance__conduct_finite_straight_line__finite_straight_line__point__right_angle___finite_straight_line,
-        ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line,
-        ns1:operation_instance__describe_on_square__finite_straight_line___square,
-        ns1:operation_instance__subtract_angle__angle___angle,
-        ns1:operation_instance__sum_angle__angle___angle,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__equals_side_of_parallelogram__side_of_parallelogram_,
-        ns1:relation_instance__inclined_at_finite_straight_line__finite_straight_line__right_angle_,
-        ns1:relation_instance__is_equilateral_parallelogram_,
-        ns1:relation_instance__is_parallelogram_parallelogram_,
-        ns1:relation_instance__is_rectangular_parallelogram_,
-        ns1:relation_instance__subtended_by_angle__side_of_parallelogram__side_of_parallelogram_ .
-
-ns1:proof_8 a ns1:proof ;
-    rdfs:label "Proof 8" ;
-    skos:prefLabel 8 ;
+ns1:proof_11 a ns1:proof ;
+    rdfs:label "Proof 11" ;
+    skos:prefLabel 11 ;
     ns1:contains_concept ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__construct_to_given_point_finite_straight_line__point__point___finite_straight_line,
-        ns1:operation_instance__fit_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:operation_instance__fit_triangle__triangle___triangle,
-        ns1:operation_instance__place_on_point__point___point,
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__choose_at_random_point__finite_straight_line___point,
+        ns1:operation_instance__conduct_finite_straight_line__finite_straight_line__point__right_angle___finite_straight_line,
+        ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:relation_instance__are_consecutive_angle__angle_,
         ns1:relation_instance__corresponding_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__deviates_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__distinct_point__point_,
         ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__is_on_the_same_part_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__inclined_at_finite_straight_line__finite_straight_line__right_angle_,
         ns1:relation_instance__is_triangle_triangle_,
         ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+
+ns1:proof_21 a ns1:proof ;
+    rdfs:label "Proof 21" ;
+    skos:prefLabel 21 ;
+    ns1:contains_concept ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__conduct_to_side_of_triangle__point___finite_straight_line,
+        ns1:operation_instance__construct_inside_finite_straight_line__triangle___finite_straight_line,
+        ns1:operation_instance__construct_on_finite_straight_line__end_of_side_of_triangle___finite_straight_line,
+        ns1:operation_instance__sum_side_of_triangle__side_of_triangle___finite_straight_line,
+        ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
+        ns1:relation_instance__greater_than_angle__angle_,
+        ns1:relation_instance__is_external_exterior_angle__triangle_,
+        ns1:relation_instance__is_placed_on_finite_straight_line__end_of_side_of_triangle_,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_instance__remaining_side_of_triangle_,
+        ns1:relation_instance__smaller_than_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+
+ns1:proof_28 a ns1:proof ;
+    rdfs:label "Proof 28" ;
+    skos:prefLabel 28 ;
+    ns1:contains_concept ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__subtract_angle__angle___angle,
+        ns1:operation_instance__sum_angle__angle___angle,
+        ns1:relation_instance__are_alternate_angle__angle_,
+        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+        ns1:relation_instance__equals_angle__right_angle_,
+        ns1:relation_instance__falls_on_straight_line__straight_line_,
+        ns1:relation_instance__is_external_angle__straight_line_,
+        ns1:relation_instance__is_internal_angle__straight_line_,
+        ns1:relation_instance__is_on_the_same_part_angle__angle__straight_line_,
+        ns1:relation_instance__is_opposite_to_angle__angle_,
+        ns1:relation_instance__remaining_angle_,
+        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_ .
+
+ns1:proof_6 a ns1:proof ;
+    rdfs:label "Proof 6" ;
+    skos:prefLabel 6 ;
+    ns1:contains_concept ns1:concept__absurd ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:operation_instance__subtract_side_of_triangle__side_of_triangle___finite_straight_line,
+        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__equals_triangle__triangle_,
+        ns1:relation_instance__greater_than_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__greater_than_triangle__triangle_,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__unequal_side_of_triangle__side_of_triangle_ ;
+    ns1:uses_reductio true .
+
+ns1:proof_7 a ns1:proof ;
+    rdfs:label "Proof 7" ;
+    skos:prefLabel 7 ;
+    ns1:contains_concept ns1:concept__impossible,
+        ns1:concept__possible,
+        ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__construct_to_given_point_finite_straight_line__point__point___finite_straight_line,
+        ns1:relation_instance__corresponding_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__distinct_point__point_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__greater_than_angle__angle_,
+        ns1:relation_instance__is_on_the_same_part_finite_straight_line__finite_straight_line__part_,
+        ns1:relation_instance__is_placed_on_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_instance__subtended_by_angle__finite_straight_line__finite_straight_line_ ;
+    ns1:uses_reductio true .
 
 ns1:proposition_13 a owl:NamedIndividual,
         ns1:proposition ;
@@ -7237,63 +7214,120 @@ ns1:concept__corresponding a owl:NamedIndividual,
         ns1:proposition_7,
         ns1:proposition_8 .
 
-ns1:proof_29 a ns1:proof ;
-    rdfs:label "Proof 29" ;
-    skos:prefLabel 29 ;
-    ns1:refers_to ns1:operation_instance__extend_straight_line___straight_line,
+ns1:proof_22 a ns1:proof ;
+    rdfs:label "Proof 22" ;
+    skos:prefLabel 22 ;
+    ns1:contains_concept ns1:concept__three,
+        ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__construct_from_triangle__finite_straight_line__finite_straight_line__finite_straight_line___triangle,
+        ns1:operation_instance__draw_center__interval___circle,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:operation_instance__set_up_equal_to_finite_straight_line__straight_line___finite_straight_line,
+        ns1:operation_instance__take_straight_line_,
+        ns1:operation_instance__taken_together_in_any_way_finite_straight_line__finite_straight_line___finite_straight_line,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__finite_according_to_straight_line__point_,
+        ns1:relation_instance__infinite_according_to_straight_line__point_,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_instance__remaining_finite_straight_line_,
+        ns1:relation_instance__smaller_than_finite_straight_line__finite_straight_line_ .
+
+ns1:proof_32 a ns1:proof ;
+    rdfs:label "Proof 32" ;
+    skos:prefLabel 32 ;
+    ns1:contains_concept ns1:concept__three,
+        ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line,
+        ns1:operation_instance__produce_side_of_triangle___finite_straight_line,
         ns1:operation_instance__sum_angle__angle___angle,
+        ns1:operation_instance__sum_right_angle__right_angle___angle,
         ns1:relation_instance__are_alternate_angle__angle_,
         ns1:relation_instance__are_parallel_straight_line__straight_line_,
-        ns1:relation_instance__corresponding_angle__angle_,
+        ns1:relation_instance__are_same_straight_line__straight_line_,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__falls_on_straight_line__straight_line_,
-        ns1:relation_instance__greater_than_angle__angle_,
-        ns1:relation_instance__is_external_angle__straight_line__straight_line_,
-        ns1:relation_instance__is_internal_angle__straight_line__straight_line_,
-        ns1:relation_instance__is_on_the_same_part_angle__angle__straight_line_,
-        ns1:relation_instance__is_opposite_to_angle__angle_,
-        ns1:relation_instance__meet_straight_line__straight_line_,
-        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_,
-        ns1:relation_instance__unequal_angle__angle_ ;
-    ns1:uses_reductio true .
+        ns1:relation_instance__is_external_angle__triangle_,
+        ns1:relation_instance__is_internal_angle__triangle_,
+        ns1:relation_instance__is_opposite_to_angle__angle_ .
 
-ns1:proof_35 a ns1:proof ;
-    rdfs:label "Proof 35" ;
-    skos:prefLabel 35 ;
-    ns1:refers_to ns1:operation_instance__subtract_triangle__triangle___trapezium,
-        ns1:operation_instance__sum_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:operation_instance__sum_triangle__trapezium___triangle,
+ns1:proof_33 a ns1:proof ;
+    rdfs:label "Proof 33" ;
+    skos:prefLabel 33 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__join_finite_straight_line__finite_straight_line___finite_straight_line,
+        ns1:operation_instance__join_on_the_same_part_point__point__point__point____finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__are_alternate_angle__angle_,
         ns1:relation_instance__are_parallel_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__are_same_straight_line__straight_line_,
+        ns1:relation_instance__corresponding_angle__angle_,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__equals_parallelogram__parallelogram_,
         ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__is_external_angle__triangle_,
-        ns1:relation_instance__is_internal_angle__triangle_,
-        ns1:relation_instance__is_placed_on_base_of_parallelogram__parallelogram_,
-        ns1:relation_instance__is_placed_on_straight_line__parallelogram_,
-        ns1:relation_instance__remaining_trapezium_ .
+        ns1:relation_instance__falls_on_straight_line__straight_line_,
+        ns1:relation_instance__joining_on_the_same_part_finite_straight_line__finite_straight_line__finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__remaining_angle_,
+        ns1:relation_instance__subtended_by_angle__finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_ .
 
-ns1:proof_37 a ns1:proof ;
-    rdfs:label "Proof 37" ;
-    skos:prefLabel 37 ;
+ns1:proof_39 a ns1:proof ;
+    rdfs:label "Proof 39" ;
+    skos:prefLabel 39 ;
+    ns1:contains_concept ns1:concept__impossible ;
+    ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line,
-        ns1:operation_instance__produce_to_finite_straight_line__point___finite_straight_line,
-        ns1:relation_instance__are_in_the_same_parallels_parallelogram__parallelogram__straight_line__straight_line_,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
         ns1:relation_instance__are_parallel_straight_line__straight_line_,
-        ns1:relation_instance__are_same_base_of_parallelogram__base_of_parallelogram_,
         ns1:relation_instance__are_same_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__are_same_straight_line__straight_line_,
-        ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_,
-        ns1:relation_instance__equals_parallelogram__parallelogram_,
         ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__is_half_triangle__parallelogram_,
-        ns1:relation_instance__is_parallelogram_parallelogram_,
-        ns1:relation_instance__is_placed_on_base_of_parallelogram__parallelogram_,
+        ns1:relation_instance__greater_than_triangle__triangle_,
+        ns1:relation_instance__is_on_the_same_part_triangle__triangle_,
+        ns1:relation_instance__is_placed_on_same_triangle__triangle__base_of_triangle_,
         ns1:relation_instance__is_placed_on_triangle__base_of_triangle_,
-        ns1:relation_instance__is_placed_on_triangle__straight_line_ .
+        ns1:relation_instance__is_placed_on_triangle__straight_line_,
+        ns1:relation_instance__smaller_than_triangle__triangle_ ;
+    ns1:uses_reductio true .
+
+ns1:proof_46 a ns1:proof ;
+    rdfs:label "Proof 46" ;
+    skos:prefLabel 46 ;
+    ns1:contains_concept ns1:concept__four ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__conduct_finite_straight_line__finite_straight_line__point__right_angle___finite_straight_line,
+        ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line,
+        ns1:operation_instance__describe_on_square__finite_straight_line___square,
+        ns1:operation_instance__subtract_angle__angle___angle,
+        ns1:operation_instance__sum_angle__angle___angle,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__equals_side_of_parallelogram__side_of_parallelogram_,
+        ns1:relation_instance__inclined_at_finite_straight_line__finite_straight_line__right_angle_,
+        ns1:relation_instance__is_equilateral_parallelogram_,
+        ns1:relation_instance__is_parallelogram_parallelogram_,
+        ns1:relation_instance__is_rectangular_parallelogram_,
+        ns1:relation_instance__subtended_by_angle__side_of_parallelogram__side_of_parallelogram_ .
+
+ns1:proof_8 a ns1:proof ;
+    rdfs:label "Proof 8" ;
+    skos:prefLabel 8 ;
+    ns1:contains_concept ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__construct_to_given_point_finite_straight_line__point__point___finite_straight_line,
+        ns1:operation_instance__fit_finite_straight_line__finite_straight_line___finite_straight_line,
+        ns1:operation_instance__fit_triangle__triangle___triangle,
+        ns1:operation_instance__place_on_point__point___point,
+        ns1:relation_instance__corresponding_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__deviates_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__distinct_point__point_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__is_on_the_same_part_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
 
 ns1:relation_instance__are_alternate_angle__angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -7381,44 +7415,64 @@ ns1:concept__magnitude a owl:NamedIndividual,
         ns1:concept__interval,
         ns1:concept__length .
 
-ns1:proof_14 a ns1:proof ;
-    rdfs:label "Proof 14" ;
-    skos:prefLabel 14 ;
-    ns1:contains_concept ns1:concept__impossible,
-        ns1:concept__negation ;
-    ns1:refers_to ns1:operation_instance__subtract_angle__angle___angle,
+ns1:proof_29 a ns1:proof ;
+    rdfs:label "Proof 29" ;
+    skos:prefLabel 29 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__extend_straight_line___straight_line,
         ns1:operation_instance__sum_angle__angle___angle,
-        ns1:relation_instance__are_consecutive_angle__angle_,
-        ns1:relation_instance__are_in_a_straight_line_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__are_same_part__part_,
-        ns1:relation_instance__are_same_point__point_,
+        ns1:relation_instance__are_alternate_angle__angle_,
+        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+        ns1:relation_instance__corresponding_angle__angle_,
         ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__falls_on_straight_line__straight_line_,
         ns1:relation_instance__greater_than_angle__angle_,
-        ns1:relation_instance__is_on_the_same_part_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__is_placed_on_straight_line__point_,
-        ns1:relation_instance__is_placed_on_straight_line__straight_line_,
-        ns1:relation_instance__is_right_angle_angle_,
-        ns1:relation_instance__remaining_angle_,
-        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_ ;
+        ns1:relation_instance__is_external_angle__straight_line__straight_line_,
+        ns1:relation_instance__is_internal_angle__straight_line__straight_line_,
+        ns1:relation_instance__is_on_the_same_part_angle__angle__straight_line_,
+        ns1:relation_instance__is_opposite_to_angle__angle_,
+        ns1:relation_instance__meet_straight_line__straight_line_,
+        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_,
+        ns1:relation_instance__unequal_angle__angle_ ;
     ns1:uses_reductio true .
 
-ns1:proof_38 a ns1:proof ;
-    rdfs:label "Proof 38" ;
-    skos:prefLabel 38 ;
+ns1:proof_35 a ns1:proof ;
+    rdfs:label "Proof 35" ;
+    skos:prefLabel 35 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__subtract_triangle__triangle___trapezium,
+        ns1:operation_instance__sum_finite_straight_line__finite_straight_line___finite_straight_line,
+        ns1:operation_instance__sum_triangle__trapezium___triangle,
+        ns1:relation_instance__are_parallel_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__are_same_straight_line__straight_line_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__equals_parallelogram__parallelogram_,
+        ns1:relation_instance__equals_triangle__triangle_,
+        ns1:relation_instance__is_external_angle__triangle_,
+        ns1:relation_instance__is_internal_angle__triangle_,
+        ns1:relation_instance__is_placed_on_base_of_parallelogram__parallelogram_,
+        ns1:relation_instance__is_placed_on_straight_line__parallelogram_,
+        ns1:relation_instance__remaining_trapezium_ .
+
+ns1:proof_37 a ns1:proof ;
+    rdfs:label "Proof 37" ;
+    skos:prefLabel 37 ;
+    ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line,
-        ns1:operation_instance__produce_on_both_parts_finite_straight_line__point___finite_straight_line,
         ns1:operation_instance__produce_to_finite_straight_line__point___finite_straight_line,
         ns1:relation_instance__are_in_the_same_parallels_parallelogram__parallelogram__straight_line__straight_line_,
-        ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
         ns1:relation_instance__are_parallel_straight_line__straight_line_,
+        ns1:relation_instance__are_same_base_of_parallelogram__base_of_parallelogram_,
+        ns1:relation_instance__are_same_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__are_same_straight_line__straight_line_,
         ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_,
-        ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__equals_parallelogram__parallelogram_,
         ns1:relation_instance__equals_triangle__triangle_,
         ns1:relation_instance__is_half_triangle__parallelogram_,
         ns1:relation_instance__is_parallelogram_parallelogram_,
+        ns1:relation_instance__is_placed_on_base_of_parallelogram__parallelogram_,
         ns1:relation_instance__is_placed_on_triangle__base_of_triangle_,
         ns1:relation_instance__is_placed_on_triangle__straight_line_ .
 
@@ -7564,47 +7618,48 @@ ns1:operation_type__sum_magnitude__magnitude___magnitude a owl:NamedIndividual,
     ns1:is_used_in ns1:operation__sum_inclination_of_interior_angle__inclination_of_interior_angle___inclination_of_interior_angle,
         ns1:operation_instance__sum_magnitude__magnitude___magnitude .
 
-ns1:proof_12 a ns1:proof ;
-    rdfs:label "Proof 12" ;
-    skos:prefLabel 12 ;
-    ns1:contains_concept ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__point__right_angle___infinite_straight_line,
-        ns1:operation_instance__cut_into_two_halves_finite_straight_line____finite_straight_line__finite_straight_line_,
-        ns1:operation_instance__draw_center__interval___circle,
-        ns1:operation_instance__join_point__point___finite_straight_line,
+ns1:proof_14 a ns1:proof ;
+    rdfs:label "Proof 14" ;
+    skos:prefLabel 14 ;
+    ns1:contains_concept ns1:concept__impossible,
+        ns1:concept__negation ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__subtract_angle__angle___angle,
+        ns1:operation_instance__sum_angle__angle___angle,
         ns1:relation_instance__are_consecutive_angle__angle_,
-        ns1:relation_instance__are_perpendicular_infinite_straight_line__finite_straight_line_,
-        ns1:relation_instance__are_perpendicular_infinite_straight_line__infinite_straight_line_,
-        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__are_in_a_straight_line_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__are_same_part__part_,
+        ns1:relation_instance__are_same_point__point_,
         ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__is_on_the_other_part_finite_straight_line__point__point_,
-        ns1:relation_instance__is_placed_on_infinite_straight_line__infinite_straight_line_,
+        ns1:relation_instance__greater_than_angle__angle_,
+        ns1:relation_instance__is_on_the_same_part_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__is_placed_on_straight_line__point_,
+        ns1:relation_instance__is_placed_on_straight_line__straight_line_,
         ns1:relation_instance__is_right_angle_angle_,
-        ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+        ns1:relation_instance__remaining_angle_,
+        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_ ;
+    ns1:uses_reductio true .
 
-ns1:proof_48 a ns1:proof ;
-    rdfs:label "Proof 48" ;
-    skos:prefLabel 48 ;
-    ns1:contains_concept ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__conduct_finite_straight_line__finite_straight_line__point__right_angle___finite_straight_line,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:operation_instance__sum_square__square___rectilinear_figure,
-        ns1:relation_instance__are_same_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__angle_,
-        ns1:relation_instance__equals_angle__angle_,
+ns1:proof_38 a ns1:proof ;
+    rdfs:label "Proof 38" ;
+    skos:prefLabel 38 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line,
+        ns1:operation_instance__produce_on_both_parts_finite_straight_line__point___finite_straight_line,
+        ns1:operation_instance__produce_to_finite_straight_line__point___finite_straight_line,
+        ns1:relation_instance__are_in_the_same_parallels_parallelogram__parallelogram__straight_line__straight_line_,
+        ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
+        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+        ns1:relation_instance__are_same_straight_line__straight_line_,
+        ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_,
+        ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_,
         ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_finite_straight_line__side_of_triangle_,
-        ns1:relation_instance__equals_side_of_square__side_of_square_,
-        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__equals_square__square_,
-        ns1:relation_instance__equals_square__sum_square__square__,
-        ns1:relation_instance__is_placed_on_square__side_of_triangle_,
-        ns1:relation_instance__is_right_angle_right_angle_,
-        ns1:relation_instance__remaining_side_of_triangle_,
-        ns1:relation_instance__subtended_by_right_angle__side_of_triangle__side_of_triangle_ .
+        ns1:relation_instance__equals_parallelogram__parallelogram_,
+        ns1:relation_instance__equals_triangle__triangle_,
+        ns1:relation_instance__is_half_triangle__parallelogram_,
+        ns1:relation_instance__is_parallelogram_parallelogram_,
+        ns1:relation_instance__is_placed_on_triangle__base_of_triangle_,
+        ns1:relation_instance__is_placed_on_triangle__straight_line_ .
 
 ns1:proposition_23 a owl:NamedIndividual,
         ns1:proposition ;
@@ -7651,6 +7706,50 @@ ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_ a owl:N
         ns1:proposition_4,
         ns1:proposition_8 .
 
+ns1:proof_12 a ns1:proof ;
+    rdfs:label "Proof 12" ;
+    skos:prefLabel 12 ;
+    ns1:contains_concept ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__point__right_angle___infinite_straight_line,
+        ns1:operation_instance__cut_into_two_halves_finite_straight_line____finite_straight_line__finite_straight_line_,
+        ns1:operation_instance__draw_center__interval___circle,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:relation_instance__are_consecutive_angle__angle_,
+        ns1:relation_instance__are_perpendicular_infinite_straight_line__finite_straight_line_,
+        ns1:relation_instance__are_perpendicular_infinite_straight_line__infinite_straight_line_,
+        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__is_on_the_other_part_finite_straight_line__point__point_,
+        ns1:relation_instance__is_placed_on_infinite_straight_line__infinite_straight_line_,
+        ns1:relation_instance__is_right_angle_angle_,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+
+ns1:proof_48 a ns1:proof ;
+    rdfs:label "Proof 48" ;
+    skos:prefLabel 48 ;
+    ns1:contains_concept ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__conduct_finite_straight_line__finite_straight_line__point__right_angle___finite_straight_line,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:operation_instance__sum_square__square___rectilinear_figure,
+        ns1:relation_instance__are_same_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__angle_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__equals_finite_straight_line__side_of_triangle_,
+        ns1:relation_instance__equals_side_of_square__side_of_square_,
+        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__equals_square__square_,
+        ns1:relation_instance__equals_square__sum_square__square__,
+        ns1:relation_instance__is_placed_on_square__side_of_triangle_,
+        ns1:relation_instance__is_right_angle_right_angle_,
+        ns1:relation_instance__remaining_side_of_triangle_,
+        ns1:relation_instance__subtended_by_right_angle__side_of_triangle__side_of_triangle_ .
+
 ns1:concept__circle a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Circle" ;
@@ -7664,7 +7763,8 @@ ns1:concept__circle a owl:NamedIndividual,
     ns1:has_concept_type ns1:concept_type__object ;
     ns1:has_definition ns1:definition__15 ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:operation__draw_center__interval___circle,
+    ns1:is_concept_in ns1:concept__semicircle,
+        ns1:operation__draw_center__interval___circle,
         ns1:operation_instance__draw_center__interval___circle,
         ns1:operation_type__draw_center__interval___circle,
         ns1:operation_type__draw_point__interval___circle,
@@ -7674,75 +7774,6 @@ ns1:concept__circle a owl:NamedIndividual,
     ns1:is_defined_in ns1:document__elements_book_1 ;
     ns1:is_sub_concept_of ns1:concept__figure ;
     ns1:is_used_in_definition_of ns1:concept__center .
-
-ns1:concept__figure a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Figure" ;
-    skos:prefLabel "Figure" ;
-    ns1:definition_refers_to ns1:concept__boundary ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__14 ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:operation_type__describe_on_figure__finite_straight_line___figure,
-        ns1:relation_type__are_in_the_same_parallels_figure__figure__straight_line__straight_line_,
-        ns1:relation_type__are_not_on_the_same_part_figure__figure_,
-        ns1:relation_type__are_placed_about_figure__figure__figure_,
-        ns1:relation_type__is_on_the_same_part_diagrammatic_object__diagrammatic_object__figure_,
-        ns1:relation_type__is_rectangular_figure_ ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_sub_concept_of ns1:concept__diagrammatic_object ;
-    ns1:is_super_concept_of ns1:concept__circle,
-        ns1:concept__point,
-        ns1:concept__rectilinear_figure ;
-    ns1:is_used_in_definition_of ns1:concept__rectangular,
-        ns1:concept__rhomboid,
-        ns1:concept__semicircle,
-        ns1:concept__square .
-
-ns1:operation_instance__sum_angle__angle___angle a owl:NamedIndividual,
-        ns1:operation_instance ;
-    rdfs:label "Operation instance: Sum(angle, angle)->angle" ;
-    skos:prefLabel "Sum(angle, angle)->angle" ;
-    ns1:contains_concept ns1:concept__angle,
-        ns1:concept__sum ;
-    ns1:has_relation_type ns1:operation_type__sum_magnitude__magnitude___magnitude ;
-    ns1:is_used_in ns1:proof_14,
-        ns1:proof_17,
-        ns1:proof_28,
-        ns1:proof_29,
-        ns1:proof_32,
-        ns1:proof_34,
-        ns1:proof_44,
-        ns1:proof_45,
-        ns1:proof_46,
-        ns1:proof_47,
-        ns1:proof_5,
-        ns1:proposition_13,
-        ns1:proposition_14,
-        ns1:proposition_17,
-        ns1:proposition_28 .
-
-ns1:proof_42 a ns1:proof ;
-    rdfs:label "Proof 42" ;
-    skos:prefLabel 42 ;
-    ns1:refers_to ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line,
-        ns1:operation_instance__construct_in_parallelogram__rectilinear_angle___parallelogram,
-        ns1:operation_instance__construct_on_angle__finite_straight_line___angle,
-        ns1:operation_instance__construct_on_angle__point___angle,
-        ns1:operation_instance__cut_into_two_halves_base_of_triangle____finite_straight_line__finite_straight_line_,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
-        ns1:relation_instance__are_same_base_of_parallelogram__base_of_triangle_,
-        ns1:relation_instance__are_same_straight_line__straight_line_,
-        ns1:relation_instance__equals_angle_of_parallelogram__angle_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__equals_triangle__parallelogram_,
-        ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__is_double_parallelogram__triangle_,
-        ns1:relation_instance__is_double_triangle__triangle_,
-        ns1:relation_instance__is_parallelogram_parallelogram_,
-        ns1:relation_instance__is_placed_on_triangle__base_of_triangle_ .
 
 ns1:concept__part a owl:NamedIndividual,
         ns1:concept ;
@@ -7770,51 +7801,52 @@ ns1:concept__part a owl:NamedIndividual,
     ns1:is_super_concept_of ns1:concept__complement ;
     ns1:is_used_in_definition_of ns1:concept__point .
 
-ns1:proof_34 a ns1:proof ;
-    rdfs:label "Proof 34" ;
-    skos:prefLabel 34 ;
-    ns1:contains_concept ns1:concept__one,
-        ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__sum_angle__angle___angle,
-        ns1:relation_instance__are_alternate_angle__angle_,
-        ns1:relation_instance__are_parallel_side__side_,
-        ns1:relation_instance__are_same_straight_line__straight_line_,
-        ns1:relation_instance__corresponding_angle__angle_,
-        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__cut_into_two_halves_diameter__angle_,
-        ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_side__side_,
-        ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__falls_on_straight_line__straight_line_,
-        ns1:relation_instance__is_opposite_to_angle__angle_,
-        ns1:relation_instance__is_opposite_to_side__side_,
-        ns1:relation_instance__remaining_angle_,
-        ns1:relation_instance__remaining_side_of_triangle_ .
-
-ns1:proof_4 a ns1:proof ;
-    rdfs:label "Proof 4" ;
-    skos:prefLabel 4 ;
+ns1:operation_instance__sum_angle__angle___angle a owl:NamedIndividual,
+        ns1:operation_instance ;
+    rdfs:label "Operation instance: Sum(angle, angle)->angle" ;
+    skos:prefLabel "Sum(angle, angle)->angle" ;
     ns1:contains_concept ns1:concept__angle,
-        ns1:concept__corresponding,
-        ns1:concept__triangle,
-        ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__fit_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:operation_instance__fit_point__point___point,
-        ns1:operation_instance__fit_triangle__triangle___triangle,
-        ns1:operation_instance__place_on_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:operation_instance__place_on_point__point___point,
-        ns1:relation_instance__corresponding_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__corresponding_interior_angle_of_triangle__interior_angle_of_triangle_,
-        ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
+        ns1:concept__sum ;
+    ns1:has_relation_type ns1:operation_type__sum_magnitude__magnitude___magnitude ;
+    ns1:is_used_in ns1:proof_14,
+        ns1:proof_17,
+        ns1:proof_28,
+        ns1:proof_29,
+        ns1:proof_32,
+        ns1:proof_34,
+        ns1:proof_44,
+        ns1:proof_45,
+        ns1:proof_46,
+        ns1:proof_47,
+        ns1:proof_5,
+        ns1:proof_aristotle,
+        ns1:proposition_13,
+        ns1:proposition_14,
+        ns1:proposition_17,
+        ns1:proposition_28 .
+
+ns1:proof_42 a ns1:proof ;
+    rdfs:label "Proof 42" ;
+    skos:prefLabel 42 ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line,
+        ns1:operation_instance__construct_in_parallelogram__rectilinear_angle___parallelogram,
+        ns1:operation_instance__construct_on_angle__finite_straight_line___angle,
+        ns1:operation_instance__construct_on_angle__point___angle,
+        ns1:operation_instance__cut_into_two_halves_base_of_triangle____finite_straight_line__finite_straight_line_,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+        ns1:relation_instance__are_same_base_of_parallelogram__base_of_triangle_,
+        ns1:relation_instance__are_same_straight_line__straight_line_,
+        ns1:relation_instance__equals_angle_of_parallelogram__angle_,
         ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_interior_angle_of_triangle__interior_angle_of_triangle_,
-        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__equals_triangle__parallelogram_,
         ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__remaining_interior_angle_of_triangle__interior_angle_of_triangle_,
-        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+        ns1:relation_instance__is_double_parallelogram__triangle_,
+        ns1:relation_instance__is_double_triangle__triangle_,
+        ns1:relation_instance__is_parallelogram_parallelogram_,
+        ns1:relation_instance__is_placed_on_triangle__base_of_triangle_ .
 
 ns1:proposition_22 a owl:NamedIndividual,
         ns1:proposition ;
@@ -7889,10 +7921,85 @@ ns1:concept__are_same a owl:NamedIndividual,
     ns1:is_given_concept_of ns1:proposition_14,
         ns1:proposition_23 .
 
+ns1:concept__figure a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Figure" ;
+    skos:prefLabel "Figure" ;
+    ns1:definition_refers_to ns1:concept__boundary ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__14 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:operation_type__describe_on_figure__finite_straight_line___figure,
+        ns1:relation_type__are_in_the_same_parallels_figure__figure__straight_line__straight_line_,
+        ns1:relation_type__are_not_on_the_same_part_figure__figure_,
+        ns1:relation_type__are_placed_about_figure__figure__figure_,
+        ns1:relation_type__is_on_the_same_part_diagrammatic_object__diagrammatic_object__figure_,
+        ns1:relation_type__is_rectangular_figure_ ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_sub_concept_of ns1:concept__diagrammatic_object ;
+    ns1:is_super_concept_of ns1:concept__circle,
+        ns1:concept__point,
+        ns1:concept__rectilinear_figure,
+        ns1:concept__section,
+        ns1:concept__semicircle ;
+    ns1:is_used_in_definition_of ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__semicircle,
+        ns1:concept__square .
+
+ns1:proof_34 a ns1:proof ;
+    rdfs:label "Proof 34" ;
+    skos:prefLabel 34 ;
+    ns1:contains_concept ns1:concept__one,
+        ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__sum_angle__angle___angle,
+        ns1:relation_instance__are_alternate_angle__angle_,
+        ns1:relation_instance__are_parallel_side__side_,
+        ns1:relation_instance__are_same_straight_line__straight_line_,
+        ns1:relation_instance__corresponding_angle__angle_,
+        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__cut_into_two_halves_diameter__angle_,
+        ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__equals_side__side_,
+        ns1:relation_instance__equals_triangle__triangle_,
+        ns1:relation_instance__falls_on_straight_line__straight_line_,
+        ns1:relation_instance__is_opposite_to_angle__angle_,
+        ns1:relation_instance__is_opposite_to_side__side_,
+        ns1:relation_instance__remaining_angle_,
+        ns1:relation_instance__remaining_side_of_triangle_ .
+
+ns1:proof_4 a ns1:proof ;
+    rdfs:label "Proof 4" ;
+    skos:prefLabel 4 ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__corresponding,
+        ns1:concept__triangle,
+        ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__fit_finite_straight_line__finite_straight_line___finite_straight_line,
+        ns1:operation_instance__fit_point__point___point,
+        ns1:operation_instance__fit_triangle__triangle___triangle,
+        ns1:operation_instance__place_on_finite_straight_line__finite_straight_line___finite_straight_line,
+        ns1:operation_instance__place_on_point__point___point,
+        ns1:relation_instance__corresponding_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__corresponding_interior_angle_of_triangle__interior_angle_of_triangle_,
+        ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__equals_interior_angle_of_triangle__interior_angle_of_triangle_,
+        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__equals_triangle__triangle_,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_instance__remaining_interior_angle_of_triangle__interior_angle_of_triangle_,
+        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+
 ns1:proof_16 a ns1:proof ;
     rdfs:label "Proof 16" ;
     skos:prefLabel 16 ;
     ns1:contains_concept ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__conduct_to_finite_straight_line__point___finite_straight_line,
         ns1:operation_instance__cut_into_two_halves_finite_straight_line____finite_straight_line__finite_straight_line_,
         ns1:operation_instance__join_point__point___finite_straight_line,
@@ -7966,33 +8073,6 @@ ns1:concept__square a owl:NamedIndividual,
         ns1:relation_instance__is_placed_on_square__side_of_triangle_ ;
     ns1:is_defined_in ns1:document__elements_book_1 ;
     ns1:is_sub_concept_of ns1:concept__parallelogram .
-
-ns1:proof_26 a ns1:proof ;
-    rdfs:label "Proof 26" ;
-    skos:prefLabel 26 ;
-    ns1:contains_concept ns1:concept__impossible,
-        ns1:concept__one,
-        ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:operation_instance__set_up_equal_to_finite_straight_line__straight_line___finite_straight_line,
-        ns1:relation_instance__corresponding_angle__angle_,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__greater_than_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__is_external_exterior_angle__triangle_,
-        ns1:relation_instance__is_internal_angle__triangle_,
-        ns1:relation_instance__is_opposite_to_angle__angle_,
-        ns1:relation_instance__is_placed_on_side_of_triangle__angle_,
-        ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__less_than_angle__angle_,
-        ns1:relation_instance__remaining_angle_,
-        ns1:relation_instance__remaining_side_of_triangle_,
-        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__subtended_by_side_of_triangle__angle_,
-        ns1:relation_instance__unequal_side_of_triangle__side_of_triangle_ ;
-    ns1:uses_reductio true .
 
 ns1:proposition_7 a owl:NamedIndividual,
         ns1:proposition ;
@@ -8078,59 +8158,33 @@ ns1:definition a owl:Class ;
     rdfs:label "Definition" ;
     skos:prefLabel "Definition" .
 
-ns1:proof_45 a ns1:proof ;
-    rdfs:label "Proof 45" ;
-    skos:prefLabel 45 ;
-    ns1:contains_concept ns1:concept__two ;
-    ns1:refers_to ns1:operation_instance__apply_in_rectilinear_angle__parallelogram___parallelogram,
-        ns1:operation_instance__apply_to_finite_straight_line__parallelogram___parallelogram,
-        ns1:operation_instance__construct_in_parallelogram__rectilinear_angle___parallelogram,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:operation_instance__sum_angle__angle___angle,
-        ns1:operation_instance__sum_parallelogram__parallelogram___parallelogram,
-        ns1:operation_instance__sum_right_angle__right_angle___angle,
-        ns1:relation_instance__are_alternate_angle__angle_,
-        ns1:relation_instance__are_consecutive_angle__angle_,
-        ns1:relation_instance__are_in_a_straight_line_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__are_not_on_the_same_part_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__are_parallel_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__are_same_point__point_,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__equals_parallelogram__rectilinear_figure_,
-        ns1:relation_instance__equals_parallelogram__triangle_,
-        ns1:relation_instance__falls_on_finite_straight_line__finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__is_parallelogram_parallelogram_,
-        ns1:relation_instance__is_placed_on_finite_straight_line__finite_straight_line__point_,
-        ns1:relation_instance__is_placed_on_finite_straight_line__finite_straight_line__straight_line_,
-        ns1:relation_instance__subtended_by_angle__side_of_parallelogram__side_of_parallelogram_ .
-
-ns1:proof_5 a ns1:proof ;
-    rdfs:label "Proof 5" ;
-    skos:prefLabel 5 ;
-    ns1:contains_concept ns1:concept__isosceles_triangle,
-        ns1:concept__two,
-        ns1:concept__whole ;
-    ns1:refers_to ns1:operation_instance__choose_at_random_point__finite_straight_line___point,
-        ns1:operation_instance__extend_side_of_triangle___finite_straight_line,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:operation_instance__subtract_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:operation_instance__sum_angle__angle___angle,
-        ns1:relation_instance__are_same_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__are_same_interior_angle_of_triangle__interior_angle_of_triangle_,
-        ns1:relation_instance__at_base_interior_angle_of_triangle__isosceles_triangle_,
-        ns1:relation_instance__corresponding_interior_angle_of_triangle__interior_angle_of_triangle_,
-        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+ns1:proof_26 a ns1:proof ;
+    rdfs:label "Proof 26" ;
+    skos:prefLabel 26 ;
+    ns1:contains_concept ns1:concept__impossible,
+        ns1:concept__one,
+        ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:operation_instance__set_up_equal_to_finite_straight_line__straight_line___finite_straight_line,
+        ns1:relation_instance__corresponding_angle__angle_,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__greater_than_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__greater_than_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__is_external_exterior_angle__triangle_,
+        ns1:relation_instance__is_internal_angle__triangle_,
+        ns1:relation_instance__is_opposite_to_angle__angle_,
+        ns1:relation_instance__is_placed_on_side_of_triangle__angle_,
         ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_instance__remaining_interior_angle_of_triangle_,
+        ns1:relation_instance__less_than_angle__angle_,
+        ns1:relation_instance__remaining_angle_,
+        ns1:relation_instance__remaining_side_of_triangle_,
         ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__under_base_angle__isosceles_triangle_ .
+        ns1:relation_instance__subtended_by_side_of_triangle__angle_,
+        ns1:relation_instance__unequal_side_of_triangle__side_of_triangle_ ;
+    ns1:uses_reductio true .
 
 ns1:relation_instance__equals_side_of_triangle__side_of_triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -8244,6 +8298,62 @@ ns1:relation_type__equals_object__object_ a ns1:relation_type ;
         ns1:relation_instance__equals_square__sum_square__square__,
         ns1:relation_instance__equals_triangle__parallelogram_,
         ns1:relation_instance__equals_triangle__triangle_ .
+
+ns1:proof_45 a ns1:proof ;
+    rdfs:label "Proof 45" ;
+    skos:prefLabel 45 ;
+    ns1:contains_concept ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__apply_in_rectilinear_angle__parallelogram___parallelogram,
+        ns1:operation_instance__apply_to_finite_straight_line__parallelogram___parallelogram,
+        ns1:operation_instance__construct_in_parallelogram__rectilinear_angle___parallelogram,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:operation_instance__sum_angle__angle___angle,
+        ns1:operation_instance__sum_parallelogram__parallelogram___parallelogram,
+        ns1:operation_instance__sum_right_angle__right_angle___angle,
+        ns1:relation_instance__are_alternate_angle__angle_,
+        ns1:relation_instance__are_consecutive_angle__angle_,
+        ns1:relation_instance__are_in_a_straight_line_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__are_not_on_the_same_part_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__are_parallel_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__are_same_point__point_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__equals_parallelogram__rectilinear_figure_,
+        ns1:relation_instance__equals_parallelogram__triangle_,
+        ns1:relation_instance__falls_on_finite_straight_line__finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__is_parallelogram_parallelogram_,
+        ns1:relation_instance__is_placed_on_finite_straight_line__finite_straight_line__point_,
+        ns1:relation_instance__is_placed_on_finite_straight_line__finite_straight_line__straight_line_,
+        ns1:relation_instance__subtended_by_angle__side_of_parallelogram__side_of_parallelogram_ .
+
+ns1:proof_5 a ns1:proof ;
+    rdfs:label "Proof 5" ;
+    skos:prefLabel 5 ;
+    ns1:contains_concept ns1:concept__isosceles_triangle,
+        ns1:concept__two,
+        ns1:concept__whole ;
+    ns1:is_in ns1:document__elements_book_1 ;
+    ns1:refers_to ns1:operation_instance__choose_at_random_point__finite_straight_line___point,
+        ns1:operation_instance__extend_side_of_triangle___finite_straight_line,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:operation_instance__subtract_finite_straight_line__finite_straight_line___finite_straight_line,
+        ns1:operation_instance__sum_angle__angle___angle,
+        ns1:relation_instance__are_same_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__are_same_interior_angle_of_triangle__interior_angle_of_triangle_,
+        ns1:relation_instance__at_base_interior_angle_of_triangle__isosceles_triangle_,
+        ns1:relation_instance__corresponding_interior_angle_of_triangle__interior_angle_of_triangle_,
+        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__equals_triangle__triangle_,
+        ns1:relation_instance__greater_than_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_instance__remaining_interior_angle_of_triangle_,
+        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__under_base_angle__isosceles_triangle_ .
 
 ns1:relation_instance__equals_base_of_triangle__base_of_triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -8526,12 +8636,14 @@ ns1:operation_instance__join_point__point___finite_straight_line a ns1:operation
         ns1:proof_48,
         ns1:proof_5,
         ns1:proof_6,
-        ns1:proof_9 .
+        ns1:proof_9,
+        ns1:proof_aristotle .
 
 ns1:proof_44 a ns1:proof ;
     rdfs:label "Proof 44" ;
     skos:prefLabel 44 ;
     ns1:contains_concept ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__apply_in_rectilinear_angle__parallelogram___parallelogram,
         ns1:operation_instance__apply_to_finite_straight_line__parallelogram___parallelogram,
         ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line,
@@ -8563,6 +8675,7 @@ ns1:proof_47 a ns1:proof ;
     rdfs:label "Proof 47" ;
     skos:prefLabel 47 ;
     ns1:contains_concept ns1:concept__two ;
+    ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__describe_on_square__side_of_triangle___square,
         ns1:operation_instance__describe_parallel_straight_line__straight_line__point___straight_line,
         ns1:operation_instance__join_point__point___finite_straight_line,
@@ -8902,13 +9015,13 @@ ns1:relation_instance__equals_angle__angle_ a owl:NamedIndividual,
         ns1:proposition_6,
         ns1:proposition_8 .
 
-ns1:proof a owl:Class ;
-    rdfs:label "Proof" ;
-    skos:prefLabel "Proof" .
-
 ns1:proposition a owl:Class ;
     rdfs:label "Proposition" ;
     skos:prefLabel "Proposition" .
+
+ns1:proof a owl:Class ;
+    rdfs:label "Proof" ;
+    skos:prefLabel "Proof" .
 
 ns1:concept__triangle a owl:NamedIndividual,
         ns1:concept ;
@@ -8980,6 +9093,7 @@ ns1:concept_type__object a owl:NamedIndividual,
     ns1:is_concept_type_of ns1:concept__absurd,
         ns1:concept__angle,
         ns1:concept__angle_of_parallelogram,
+        ns1:concept__angle_of_semicircle,
         ns1:concept__base,
         ns1:concept__base_of_parallelogram,
         ns1:concept__base_of_triangle,
@@ -9021,6 +9135,8 @@ ns1:concept_type__object a owl:NamedIndividual,
         ns1:concept__rectilinear_angle,
         ns1:concept__rectilinear_figure,
         ns1:concept__right_angle,
+        ns1:concept__section,
+        ns1:concept__semicircle,
         ns1:concept__side,
         ns1:concept__side_of_parallelogram,
         ns1:concept__side_of_square,
@@ -9205,7 +9321,8 @@ ns1:concept__angle a owl:NamedIndividual,
     skos:prefLabel "Angle" ;
     ns1:has_concept_type ns1:concept_type__object ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:operation_instance__construct_from_angle__angle__point__finite_straight_line___angle,
+    ns1:is_concept_in ns1:concept__is_angle_of,
+        ns1:operation_instance__construct_from_angle__angle__point__finite_straight_line___angle,
         ns1:operation_instance__construct_on_angle__finite_straight_line___angle,
         ns1:operation_instance__construct_on_angle__point___angle,
         ns1:operation_instance__cut_into_two_halves_rectilinear_angle____angle__angle_,
@@ -9275,6 +9392,7 @@ ns1:concept__angle a owl:NamedIndividual,
         ns1:proposition_24 ;
     ns1:is_sub_concept_of ns1:concept__diagrammatic_object ;
     ns1:is_super_concept_of ns1:concept__angle_of_parallelogram,
+        ns1:concept__angle_of_semicircle,
         ns1:concept__exterior_angle,
         ns1:concept__interior_angle,
         ns1:concept__rectilinear_angle,
@@ -9497,6 +9615,10 @@ ns1:concept__finite_straight_line a owl:NamedIndividual,
         ns1:concept__diameter,
         ns1:concept__side .
 
+ns1:relation_instance a owl:Class ;
+    rdfs:label "Relation instance" ;
+    skos:prefLabel "Relation instance" .
+
 ns1:document__elements_book_1 a owl:NamedIndividual,
         ns1:document ;
     rdfs:label "Document: Elements Book 1" ;
@@ -9511,6 +9633,56 @@ ns1:document__elements_book_1 a owl:NamedIndividual,
         ns1:postulate_3,
         ns1:postulate_4,
         ns1:postulate_5,
+        ns1:proof_1,
+        ns1:proof_10,
+        ns1:proof_11,
+        ns1:proof_12,
+        ns1:proof_13,
+        ns1:proof_14,
+        ns1:proof_15,
+        ns1:proof_16,
+        ns1:proof_17,
+        ns1:proof_18,
+        ns1:proof_19,
+        ns1:proof_2,
+        ns1:proof_20,
+        ns1:proof_21,
+        ns1:proof_22,
+        ns1:proof_23,
+        ns1:proof_24,
+        ns1:proof_25,
+        ns1:proof_26,
+        ns1:proof_27,
+        ns1:proof_28,
+        ns1:proof_29,
+        ns1:proof_3,
+        ns1:proof_30,
+        ns1:proof_31,
+        ns1:proof_32,
+        ns1:proof_33,
+        ns1:proof_34,
+        ns1:proof_35,
+        ns1:proof_36,
+        ns1:proof_37,
+        ns1:proof_38,
+        ns1:proof_39,
+        ns1:proof_4,
+        ns1:proof_40,
+        ns1:proof_41,
+        ns1:proof_42,
+        ns1:proof_43,
+        ns1:proof_44,
+        ns1:proof_45,
+        ns1:proof_46,
+        ns1:proof_47,
+        ns1:proof_48,
+        ns1:proof_5,
+        ns1:proof_6,
+        ns1:proof_7,
+        ns1:proof_8,
+        ns1:proof_9,
+        ns1:proof_arisstotle,
+        ns1:proof_aristotle,
         ns1:proposition_1,
         ns1:proposition_10,
         ns1:proposition_11,
@@ -9594,11 +9766,8 @@ ns1:document__elements_book_1 a owl:NamedIndividual,
         ns1:concept__straight_line,
         ns1:concept__surface,
         ns1:concept__trapezoid_quadrilateral_figure,
-        ns1:concept__trilateral .
-
-ns1:relation_instance a owl:Class ;
-    rdfs:label "Relation instance" ;
-    skos:prefLabel "Relation instance" .
+        ns1:concept__trilateral ;
+    ns1:has_author ns1:euclid .
 
 ns1:concept a owl:Class ;
     rdfs:label "Concept" ;
