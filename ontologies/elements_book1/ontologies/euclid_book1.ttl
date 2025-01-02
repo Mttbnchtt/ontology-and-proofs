@@ -236,6 +236,10 @@ ns1:concept__3_sides_of_equal_length a owl:NamedIndividual,
     skos:prefLabel "3 sides of equal length" ;
     ns1:is_used_in_definition_of ns1:concept__isosceles_triangle .
 
+ns1:concept__angle_at_base ns1:is_concept_in ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_ .
+
+ns1:concept__angle_of_section ns1:is_concept_in ns1:relation_instance__equals_angle_of_section__angle_of_section_ .
+
 ns1:concept__congruent a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Congruent" ;
@@ -519,16 +523,6 @@ ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_li
     skos:prefLabel "Place on(finite straight line, point, finite straight line)->finite staight line" ;
     ns1:is_used_in ns1:proposition_2 .
 
-ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_ ns1:is_used_in ns1:proof_aristotle .
-
-ns1:relation_instance__equals_angle_of_section__angle_of_section_ ns1:is_used_in ns1:proof_arisstotle .
-
-ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_ ns1:is_used_in ns1:proof_aristotle .
-
-ns1:relation_instance__is_angle_of_section_ ns1:is_used_in ns1:proof_aristotle .
-
-ns1:relation_instance__is_angle_of_semicircle_ ns1:is_used_in ns1:proof_aristotle .
-
 ns1:relation_type__congruent_x__y_ a owl:NamedIndividual,
         ns1:relation_type ;
     rdfs:label "Relation type: Congruent(x, y)" ;
@@ -771,14 +765,6 @@ ns1:concept__remaining_sides_of a owl:NamedIndividual,
     ns1:has_field_of_diagrammatic_objects true ;
     ns1:is_concept_in ns1:relation_instance__remaining_sides_of_triangle_ .
 
-ns1:concept__section a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Section" ;
-    skos:prefLabel "Section" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_sub_concept_of ns1:concept__figure .
-
 ns1:concept__straight a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Straight" ;
@@ -844,12 +830,6 @@ ns1:produces_an_object a owl:DatatypeProperty ;
     rdfs:range xsd:boolean ;
     skos:prefLabel "produces_an_object" .
 
-ns1:proof_arisstotle a ns1:proof ;
-    rdfs:label "Proof Arisstotle" ;
-    skos:prefLabel "Arisstotle" ;
-    ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:relation_instance__equals_angle_of_section__angle_of_section_ .
-
 ns1:proposition_type a owl:Class ;
     rdfs:label "Proposition type" ;
     rdfs:subClassOf ns1:enumeration ;
@@ -889,15 +869,6 @@ ns1:concept__absurd a owl:NamedIndividual,
     ns1:is_an_abstract_object true ;
     ns1:is_concept_in ns1:proof_6 ;
     ns1:is_sub_concept_of ns1:concept__abstract_object .
-
-ns1:concept__angle_of_semicircle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Angle of semicircle" ;
-    skos:prefLabel "Angle of semicircle" ;
-    ns1:contains_concept ns1:concept__semicircle ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_sub_concept_of ns1:concept__angle .
 
 ns1:concept__apply a owl:NamedIndividual,
         ns1:concept ;
@@ -1056,6 +1027,15 @@ ns1:concept__quadrilateral a owl:NamedIndividual,
     ns1:is_used_in_definition_of ns1:concept__rectangular,
         ns1:concept__rhomboid,
         ns1:concept__square .
+
+ns1:concept__section a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Section" ;
+    skos:prefLabel "Section" ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:relation_instance__is_angle_of_section_ ;
+    ns1:is_sub_concept_of ns1:concept__figure .
 
 ns1:concept__vertex a owl:NamedIndividual,
         ns1:concept ;
@@ -1415,6 +1395,16 @@ ns1:concept__angle_of_parallelogram a owl:NamedIndividual,
     ns1:is_concept_in ns1:relation_instance__equals_angle_of_parallelogram__angle_ ;
     ns1:is_sub_concept_of ns1:concept__angle .
 
+ns1:concept__angle_of_semicircle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Angle of semicircle" ;
+    skos:prefLabel "Angle of semicircle" ;
+    ns1:contains_concept ns1:concept__semicircle ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_ ;
+    ns1:is_sub_concept_of ns1:concept__angle .
+
 ns1:concept__apply_in a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Apply in" ;
@@ -1604,16 +1594,6 @@ ns1:concept__interior_angle a owl:NamedIndividual,
     ns1:is_concept_in ns1:concept__is_internal_angle_of ;
     ns1:is_sub_concept_of ns1:concept__angle ;
     ns1:is_super_concept_of ns1:concept__interior_angle_of_triangle .
-
-ns1:concept__is_angle_of a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Is angle of" ;
-    skos:prefLabel "Is angle of" ;
-    ns1:contains_concept ns1:concept__angle ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_sub_concept_of ns1:concept__is_located ;
-    ns1:is_super_concept_of ns1:concept__is_internal_angle_of .
 
 ns1:concept__is_internal_angle_of a owl:NamedIndividual,
         ns1:concept ;
@@ -2092,6 +2072,22 @@ ns1:relation_instance__deviates_finite_straight_line__finite_straight_line_ a ns
     ns1:has_relation_type ns1:relation_type__deviates_straight_line__straight_line_ ;
     ns1:is_used_in ns1:proof_8 .
 
+ns1:relation_instance__equals_angle_of_section__angle_of_section_ a ns1:relation_instance ;
+    rdfs:label "Relation instance: Equals(angle_of_section, angle_of_section)" ;
+    skos:prefLabel "Equals(angle_of_section, angle_of_section)" ;
+    ns1:contains_concept ns1:concept__angle_of_section,
+        ns1:concept__equals ;
+    ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+    ns1:is_used_in ns1:proof_aristotle .
+
+ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_ a ns1:relation_instance ;
+    rdfs:label "Relation instance: Equals(angle_of_semicircle, angle_of_semicircle)" ;
+    skos:prefLabel "Equals(angle_of_semicircle, angle_of_semicircle)" ;
+    ns1:contains_concept ns1:concept__angle_of_semicircle,
+        ns1:concept__equals ;
+    ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+    ns1:is_used_in ns1:proof_aristotle .
+
 ns1:relation_instance__equals_interior_angle_of_triangle__interior_angle_of_triangle_ a ns1:relation_instance ;
     rdfs:label "Relation instance: Equals(interior_angle_of_triangle, interior_angle_of_triangle)" ;
     skos:prefLabel "Equals(interior_angle_of_triangle, interior_angle_of_triangle)" ;
@@ -2124,6 +2120,22 @@ ns1:relation_instance__equals_square__square_ a ns1:relation_instance ;
         ns1:concept__square ;
     ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
     ns1:is_used_in ns1:proof_48 .
+
+ns1:relation_instance__is_angle_of_section_ a ns1:relation_instance ;
+    rdfs:label "Relation instance: Is_angle_of(section)" ;
+    skos:prefLabel "Is_angle_of(section)" ;
+    ns1:contains_concept ns1:concept__is_angle_of,
+        ns1:concept__section ;
+    ns1:has_relation_type ns1:relation_type__is_angle_of_figure_ ;
+    ns1:is_used_in ns1:proof_aristotle .
+
+ns1:relation_instance__is_angle_of_semicircle_ a ns1:relation_instance ;
+    rdfs:label "Relation instance: Is_angle_of(semicircle)" ;
+    skos:prefLabel "Is_angle_of(semicircle)" ;
+    ns1:contains_concept ns1:concept__is_angle_of,
+        ns1:concept__semicircle ;
+    ns1:has_relation_type ns1:relation_type__is_angle_of_figure_ ;
+    ns1:is_used_in ns1:proof_aristotle .
 
 ns1:relation_instance__is_double_triangle__triangle_ a ns1:relation_instance ;
     rdfs:label "Relation instance: Is_double(triangle, triangle)" ;
@@ -2338,6 +2350,14 @@ ns1:relation_type__infinite_according_to_straight_line__point_ a ns1:relation_ty
         ns1:concept__point,
         ns1:concept__straight_line ;
     ns1:is_relation_type_of ns1:relation_instance__infinite_according_to_straight_line__point_ .
+
+ns1:relation_type__is_angle_of_figure_ a ns1:relation_type ;
+    rdfs:label "Relation type: Is_angle_of(figure)" ;
+    skos:prefLabel "Is_angle_of(figure)" ;
+    ns1:contains_concept ns1:concept__figure,
+        ns1:concept__is_angle_of ;
+    ns1:is_relation_type_of ns1:relation_instance__is_angle_of_section_,
+        ns1:relation_instance__is_angle_of_semicircle_ .
 
 ns1:relation_type__is_center_of_point__circle_ a ns1:relation_type ;
     rdfs:label "Relation type: Is_center_of(point, circle)" ;
@@ -3265,6 +3285,15 @@ ns1:relation_instance__cut_straight_line__straight_line_ a owl:NamedIndividual,
     ns1:has_relation_type ns1:relation_type__cut_line__line_ ;
     ns1:is_used_in ns1:proof_15,
         ns1:proposition_15 .
+
+ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_ a ns1:relation_instance ;
+    rdfs:label "Relation instance: Equals(angle_at_base, angle_at_base, isosceles_triangle)" ;
+    skos:prefLabel "Equals(angle_at_base, angle_at_base, isosceles_triangle)" ;
+    ns1:contains_concept ns1:concept__angle_at_base,
+        ns1:concept__equals,
+        ns1:concept__isosceles_triangle ;
+    ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+    ns1:is_used_in ns1:proof_aristotle .
 
 ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_ a ns1:relation_instance ;
     rdfs:label "Relation instance: Equals(base_of_parallelogram, base_of_parallelogram)" ;
@@ -4503,6 +4532,19 @@ ns1:concept__equal_inclination a owl:NamedIndividual,
         ns1:concept__right_angle,
         ns1:concept__square,
         ns1:concept__trapezoid_quadrilateral_figure .
+
+ns1:concept__is_angle_of a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Is angle of" ;
+    skos:prefLabel "Is angle of" ;
+    ns1:contains_concept ns1:concept__angle ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:relation_instance__is_angle_of_section_,
+        ns1:relation_instance__is_angle_of_semicircle_,
+        ns1:relation_type__is_angle_of_figure_ ;
+    ns1:is_sub_concept_of ns1:concept__is_located ;
+    ns1:is_super_concept_of ns1:concept__is_internal_angle_of .
 
 ns1:concept__is_internal a owl:NamedIndividual,
         ns1:concept ;
@@ -6398,23 +6440,6 @@ ns1:concept__rhomboid a owl:NamedIndividual,
     ns1:has_definition ns1:definition__22 ;
     ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:concept__semicircle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Semicircle" ;
-    skos:prefLabel "Semicircle" ;
-    ns1:contains_concept ns1:concept__circle,
-        ns1:concept__half ;
-    ns1:definition_refers_to ns1:concept__center,
-        ns1:concept__circumference,
-        ns1:concept__diameter,
-        ns1:concept__figure ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__18 ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__angle_of_semicircle ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_sub_concept_of ns1:concept__figure .
-
 ns1:concept__trilateral a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Trilateral" ;
@@ -6464,12 +6489,12 @@ ns1:proof_41 a ns1:proof ;
 ns1:proof_aristotle a ns1:proof ;
     rdfs:label "Proof Aristotle" ;
     skos:prefLabel "Aristotle" ;
-    ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__join_point__point___finite_straight_line,
         ns1:operation_instance__subtract_angle__angle___angle,
         ns1:operation_instance__subtract_magnitude__magnitude___magnitude,
         ns1:operation_instance__sum_angle__angle___angle,
         ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_,
+        ns1:relation_instance__equals_angle_of_section__angle_of_section_,
         ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_,
         ns1:relation_instance__is_angle_of_section_,
         ns1:relation_instance__is_angle_of_semicircle_,
@@ -6596,6 +6621,24 @@ ns1:concept__parallel_lines a owl:NamedIndividual,
         ns1:concept__conduct_parallel_to,
         ns1:concept__describe_parallel ;
     ns1:is_defined_in ns1:document__elements_book_1 .
+
+ns1:concept__semicircle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Semicircle" ;
+    skos:prefLabel "Semicircle" ;
+    ns1:contains_concept ns1:concept__circle,
+        ns1:concept__half ;
+    ns1:definition_refers_to ns1:concept__center,
+        ns1:concept__circumference,
+        ns1:concept__diameter,
+        ns1:concept__figure ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__18 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:concept__angle_of_semicircle,
+        ns1:relation_instance__is_angle_of_semicircle_ ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_sub_concept_of ns1:concept__figure .
 
 ns1:concept__subtended_by a owl:NamedIndividual,
         ns1:concept ;
@@ -6983,27 +7026,6 @@ ns1:concept__diameter a owl:NamedIndividual,
     ns1:is_super_concept_of ns1:concept__diameter_of_parallelogram ;
     ns1:is_used_in_definition_of ns1:concept__semicircle .
 
-ns1:concept__isosceles_triangle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Isosceles triangle",
-        "Concept: Isosceles_triangle" ;
-    skos:prefLabel "Isosceles triangle" ;
-    ns1:definition_refers_to ns1:concept__3_sides_of_equal_length,
-        ns1:concept__equal_length_of_sides,
-        ns1:concept__trilateral ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__20 ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:proof_5,
-        ns1:proposition_5,
-        ns1:proposition_5a,
-        ns1:relation_instance__at_base_interior_angle_of_triangle__isosceles_triangle_,
-        ns1:relation_instance__under_base_angle__isosceles_triangle_ ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_given_concept_of ns1:proposition_5,
-        ns1:proposition_5a ;
-    ns1:is_sub_concept_of ns1:concept__triangle .
-
 ns1:concept__side a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Side" ;
@@ -7213,6 +7235,28 @@ ns1:concept__corresponding a owl:NamedIndividual,
     ns1:is_given_concept_of ns1:proposition_24,
         ns1:proposition_7,
         ns1:proposition_8 .
+
+ns1:concept__isosceles_triangle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Isosceles triangle",
+        "Concept: Isosceles_triangle" ;
+    skos:prefLabel "Isosceles triangle" ;
+    ns1:definition_refers_to ns1:concept__3_sides_of_equal_length,
+        ns1:concept__equal_length_of_sides,
+        ns1:concept__trilateral ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__20 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:proof_5,
+        ns1:proposition_5,
+        ns1:proposition_5a,
+        ns1:relation_instance__at_base_interior_angle_of_triangle__isosceles_triangle_,
+        ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_,
+        ns1:relation_instance__under_base_angle__isosceles_triangle_ ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_given_concept_of ns1:proposition_5,
+        ns1:proposition_5a ;
+    ns1:is_sub_concept_of ns1:concept__triangle .
 
 ns1:proof_22 a ns1:proof ;
     rdfs:label "Proof 22" ;
@@ -7921,32 +7965,6 @@ ns1:concept__are_same a owl:NamedIndividual,
     ns1:is_given_concept_of ns1:proposition_14,
         ns1:proposition_23 .
 
-ns1:concept__figure a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Figure" ;
-    skos:prefLabel "Figure" ;
-    ns1:definition_refers_to ns1:concept__boundary ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__14 ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:operation_type__describe_on_figure__finite_straight_line___figure,
-        ns1:relation_type__are_in_the_same_parallels_figure__figure__straight_line__straight_line_,
-        ns1:relation_type__are_not_on_the_same_part_figure__figure_,
-        ns1:relation_type__are_placed_about_figure__figure__figure_,
-        ns1:relation_type__is_on_the_same_part_diagrammatic_object__diagrammatic_object__figure_,
-        ns1:relation_type__is_rectangular_figure_ ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_sub_concept_of ns1:concept__diagrammatic_object ;
-    ns1:is_super_concept_of ns1:concept__circle,
-        ns1:concept__point,
-        ns1:concept__rectilinear_figure,
-        ns1:concept__section,
-        ns1:concept__semicircle ;
-    ns1:is_used_in_definition_of ns1:concept__rectangular,
-        ns1:concept__rhomboid,
-        ns1:concept__semicircle,
-        ns1:concept__square .
-
 ns1:proof_34 a ns1:proof ;
     rdfs:label "Proof 34" ;
     skos:prefLabel 34 ;
@@ -7994,6 +8012,33 @@ ns1:proof_4 a ns1:proof ;
         ns1:relation_instance__is_triangle_triangle_,
         ns1:relation_instance__remaining_interior_angle_of_triangle__interior_angle_of_triangle_,
         ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+
+ns1:concept__figure a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Figure" ;
+    skos:prefLabel "Figure" ;
+    ns1:definition_refers_to ns1:concept__boundary ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__14 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:operation_type__describe_on_figure__finite_straight_line___figure,
+        ns1:relation_type__are_in_the_same_parallels_figure__figure__straight_line__straight_line_,
+        ns1:relation_type__are_not_on_the_same_part_figure__figure_,
+        ns1:relation_type__are_placed_about_figure__figure__figure_,
+        ns1:relation_type__is_angle_of_figure_,
+        ns1:relation_type__is_on_the_same_part_diagrammatic_object__diagrammatic_object__figure_,
+        ns1:relation_type__is_rectangular_figure_ ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_sub_concept_of ns1:concept__diagrammatic_object ;
+    ns1:is_super_concept_of ns1:concept__circle,
+        ns1:concept__point,
+        ns1:concept__rectilinear_figure,
+        ns1:concept__section,
+        ns1:concept__semicircle ;
+    ns1:is_used_in_definition_of ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__semicircle,
+        ns1:concept__square .
 
 ns1:proof_16 a ns1:proof ;
     rdfs:label "Proof 16" ;
@@ -8272,33 +8317,6 @@ ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ a
         ns1:proposition_6,
         ns1:proposition_8 .
 
-ns1:relation_type__equals_object__object_ a ns1:relation_type ;
-    rdfs:label "Relation type: Equals(object, object)" ;
-    skos:prefLabel "Equals(object, object)" ;
-    ns1:contains_concept ns1:concept__equals,
-        ns1:concept__object ;
-    ns1:is_relation_type_of ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_angle__right_angle_,
-        ns1:relation_instance__equals_angle_of_parallelogram__angle_,
-        ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_complement_of_parallelogram__complement_of_parallelogram_,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__equals_finite_straight_line__side_of_triangle_,
-        ns1:relation_instance__equals_interior_angle_of_triangle__interior_angle_of_triangle_,
-        ns1:relation_instance__equals_parallelogram__parallelogram_,
-        ns1:relation_instance__equals_parallelogram__rectilinear_figure_,
-        ns1:relation_instance__equals_parallelogram__triangle_,
-        ns1:relation_instance__equals_side__side_,
-        ns1:relation_instance__equals_side_of_parallelogram__side_of_parallelogram_,
-        ns1:relation_instance__equals_side_of_square__side_of_square_,
-        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__equals_square__rectilinear_figure_,
-        ns1:relation_instance__equals_square__square_,
-        ns1:relation_instance__equals_square__sum_square__square__,
-        ns1:relation_instance__equals_triangle__parallelogram_,
-        ns1:relation_instance__equals_triangle__triangle_ .
-
 ns1:proof_45 a ns1:proof ;
     rdfs:label "Proof 45" ;
     skos:prefLabel 45 ;
@@ -8573,6 +8591,36 @@ ns1:proposition_14 a owl:NamedIndividual,
         ns1:relation_instance__is_placed_on_straight_line__point_,
         ns1:relation_instance__is_placed_on_straight_line__straight_line_,
         ns1:relation_instance__is_right_angle_angle_ .
+
+ns1:relation_type__equals_object__object_ a ns1:relation_type ;
+    rdfs:label "Relation type: Equals(object, object)" ;
+    skos:prefLabel "Equals(object, object)" ;
+    ns1:contains_concept ns1:concept__equals,
+        ns1:concept__object ;
+    ns1:is_relation_type_of ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_angle__right_angle_,
+        ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_,
+        ns1:relation_instance__equals_angle_of_parallelogram__angle_,
+        ns1:relation_instance__equals_angle_of_section__angle_of_section_,
+        ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_,
+        ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__equals_complement_of_parallelogram__complement_of_parallelogram_,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__equals_finite_straight_line__side_of_triangle_,
+        ns1:relation_instance__equals_interior_angle_of_triangle__interior_angle_of_triangle_,
+        ns1:relation_instance__equals_parallelogram__parallelogram_,
+        ns1:relation_instance__equals_parallelogram__rectilinear_figure_,
+        ns1:relation_instance__equals_parallelogram__triangle_,
+        ns1:relation_instance__equals_side__side_,
+        ns1:relation_instance__equals_side_of_parallelogram__side_of_parallelogram_,
+        ns1:relation_instance__equals_side_of_square__side_of_square_,
+        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__equals_square__rectilinear_figure_,
+        ns1:relation_instance__equals_square__square_,
+        ns1:relation_instance__equals_square__sum_square__square__,
+        ns1:relation_instance__equals_triangle__parallelogram_,
+        ns1:relation_instance__equals_triangle__triangle_ .
 
 ns1:concept__diagrammatic_object a owl:NamedIndividual,
         ns1:concept ;
@@ -8932,7 +8980,10 @@ ns1:concept__equals a owl:NamedIndividual,
         ns1:proposition_8,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__equals_angle__right_angle_,
+        ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_,
         ns1:relation_instance__equals_angle_of_parallelogram__angle_,
+        ns1:relation_instance__equals_angle_of_section__angle_of_section_,
+        ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_,
         ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_,
         ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__equals_complement_of_parallelogram__complement_of_parallelogram_,
@@ -9015,13 +9066,13 @@ ns1:relation_instance__equals_angle__angle_ a owl:NamedIndividual,
         ns1:proposition_6,
         ns1:proposition_8 .
 
-ns1:proposition a owl:Class ;
-    rdfs:label "Proposition" ;
-    skos:prefLabel "Proposition" .
-
 ns1:proof a owl:Class ;
     rdfs:label "Proof" ;
     skos:prefLabel "Proof" .
+
+ns1:proposition a owl:Class ;
+    rdfs:label "Proposition" ;
+    skos:prefLabel "Proposition" .
 
 ns1:concept__triangle a owl:NamedIndividual,
         ns1:concept ;
@@ -9615,10 +9666,6 @@ ns1:concept__finite_straight_line a owl:NamedIndividual,
         ns1:concept__diameter,
         ns1:concept__side .
 
-ns1:relation_instance a owl:Class ;
-    rdfs:label "Relation instance" ;
-    skos:prefLabel "Relation instance" .
-
 ns1:document__elements_book_1 a owl:NamedIndividual,
         ns1:document ;
     rdfs:label "Document: Elements Book 1" ;
@@ -9681,8 +9728,6 @@ ns1:document__elements_book_1 a owl:NamedIndividual,
         ns1:proof_7,
         ns1:proof_8,
         ns1:proof_9,
-        ns1:proof_arisstotle,
-        ns1:proof_aristotle,
         ns1:proposition_1,
         ns1:proposition_10,
         ns1:proposition_11,
@@ -9768,6 +9813,10 @@ ns1:document__elements_book_1 a owl:NamedIndividual,
         ns1:concept__trapezoid_quadrilateral_figure,
         ns1:concept__trilateral ;
     ns1:has_author ns1:euclid .
+
+ns1:relation_instance a owl:Class ;
+    rdfs:label "Relation instance" ;
+    skos:prefLabel "Relation instance" .
 
 ns1:concept a owl:Class ;
     rdfs:label "Concept" ;

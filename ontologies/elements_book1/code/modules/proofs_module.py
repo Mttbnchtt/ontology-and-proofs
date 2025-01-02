@@ -24,7 +24,8 @@ IS_USED_IN = utils.create_iri("is used in", namespace="https://www.foom.com/core
 USES_REDUCTION = utils.create_iri("uses_reductio", namespace=ONTOLOGY_NAMESPACE)
 
 def add_proofs(kg: rdflib.Graph,
-               input_file_path: str) -> rdflib.Graph:
+               input_file_path: str,
+               add_book_1: bool = True) -> rdflib.Graph:
 
     # read database of proofs
     proofs_df = pd.read_csv(input_file_path).fillna("")
@@ -33,8 +34,9 @@ def add_proofs(kg: rdflib.Graph,
         kg, proof_iri = add_proof(kg, row["proof"])
 
         # proof is in Elements book 1
-        kg.add((proof_iri, IS_IN, ELEMENTS_BOOK_1))
-        kg.add((ELEMENTS_BOOK_1, CONTAINS, proof_iri))
+        if add_book_1:
+            kg.add((proof_iri, IS_IN, ELEMENTS_BOOK_1))
+            kg.add((ELEMENTS_BOOK_1, CONTAINS, proof_iri))
 
         # add concepts
         if concepts := row["additional_proof_concepts"]:
