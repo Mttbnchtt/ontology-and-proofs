@@ -2,9 +2,7 @@ import pandas as pd
 import rdflib
 
 import modules.utils as utils
-
-PROOFS_INPUT_FILE_PATH = "input/Euclid.Proofs.Book1.csv"
-
+import modules.statements_module as statements_module
 
 rdf_type = rdflib.RDF.type
 rdfs_label = rdflib.RDFS.label
@@ -25,7 +23,8 @@ USES_REDUCTION = utils.create_iri("uses_reductio", namespace=ONTOLOGY_NAMESPACE)
 
 def add_proofs(kg: rdflib.Graph,
                input_file_path: str,
-               add_book_1: bool = True) -> rdflib.Graph:
+               add_book_1: bool = True,
+               add_statements: bool = False) -> rdflib.Graph:
 
     # read database of proofs
     proofs_df = pd.read_csv(input_file_path).fillna("")
@@ -58,8 +57,20 @@ def add_proofs(kg: rdflib.Graph,
         if uses_reductio := row["reductio"]:
             kg.add((proof_iri, USES_REDUCTION, rdflib.Literal("true", datatype=rdflib.XSD.boolean)))
 
+        # add statements
+        if add_statements:
+            kg, statement_iri = statements_module.add_statement(kg, row["statement"])
+            kg.add((proof_iri, REFERS_TO, statement_iri))
+            kg.add((statement_iri, IS_USED_IN, proof_iri))
+
     return kg
 
+def add_statements_to_proof(kg: rdflib.Graph,
+                            proof_iri: rdflib.URIRef,
+                            statements: str) -> rdflib.Graph:
+    
+    
+    return kg
 
 def add_proof(kg: rdflib.Graph,
               proof_number: str) -> rdflib.Graph:
