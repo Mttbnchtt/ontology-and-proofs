@@ -10,6 +10,11 @@ rdf_type = rdflib.RDF.type
 rdfs_label = rdflib.RDFS.label
 skos_prefLabel = rdflib.SKOS.prefLabel
 
+ELEMENTS_BOOK_1 = utils.create_iri("Document: Elements Book 1", namespace="https://www.foom.com/core")
+
+IS_IN = utils.create_iri("is in", namespace="https://www.foom.com/core")
+CONTAINS = utils.create_iri("contains", namespace="https://www.foom.com/core")
+
 ONTOLOGY_NAMESPACE = "https://www.foom.com/core"
 PROOF_CLASS = utils.create_iri("Proof", namespace=ONTOLOGY_NAMESPACE)
 CONTAINS_CONCEPT = utils.create_iri("contains concept", namespace="https://www.foom.com/core")
@@ -26,6 +31,10 @@ def add_proofs(kg: rdflib.Graph,
     for _, row in proofs_df.iterrows():
         # add proof
         kg, proof_iri = add_proof(kg, row["proof"])
+
+        # proof is in Elements book 1
+        kg.add((proof_iri, IS_IN, ELEMENTS_BOOK_1))
+        kg.add((ELEMENTS_BOOK_1, CONTAINS, proof_iri))
 
         # add concepts
         if concepts := row["additional_proof_concepts"]:

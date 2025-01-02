@@ -74,7 +74,6 @@ contains = utils.create_iri("contains", namespace="https://www.foom.com/core")
 CONTAINS_CONCEPT = utils.create_iri("contains concept", namespace=ONTOLOGY_NAMESPACE)
 IS_CONCEPT_IN = utils.create_iri("is concept in", namespace=ONTOLOGY_NAMESPACE)
 
-
 def add_common_notions(kg: rdflib.Graph, 
                        input_file_path: str) -> rdflib.Graph:
     # read common notions data
