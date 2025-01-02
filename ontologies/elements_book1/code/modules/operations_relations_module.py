@@ -83,9 +83,10 @@ def add_concepts(kg: rdflib.Graph,
     concepts = find_concepts(item_pref_label)
 
     for concept in concepts:
-        concept_iri = utils.create_iri(f"Concept: {concept}", namespace=ONTOLOGY_NAMESPACE)
-        kg.add((item_iri, CONTAINS_CONCEPT, concept_iri))
-        kg.add((concept_iri, IS_CONCEPT_IN, item_iri))
+        if concept.strip().replace(" ", "") and not concept in {"v", "w", "x" , "y", "z"}:
+            concept_iri = utils.create_iri(f"Concept: {concept}", namespace=ONTOLOGY_NAMESPACE)
+            kg.add((item_iri, CONTAINS_CONCEPT, concept_iri))
+            kg.add((concept_iri, IS_CONCEPT_IN, item_iri))
 
     return kg
 
