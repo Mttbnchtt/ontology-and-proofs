@@ -225,12 +225,6 @@ ns1:uses_reduction_ad_absurdum a owl:DatatypeProperty ;
     rdfs:range xsd:boolean ;
     skos:prefLabel "uses_reduction_ad_absurdum" .
 
-ns1: a owl:NamedIndividual,
-        ns1:statement ;
-    rdfs:label "" ;
-    skos:prefLabel "" ;
-    ns1:is_used_in ns1:proof_aristotle .
-
 ns1:aristotle a owl:NamedIndividual,
         ns1:author ;
     rdfs:label "Author: Aristotle" ;
@@ -527,6 +521,11 @@ ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_li
     skos:prefLabel "Place on(finite straight line, point, finite straight line)->finite staight line" ;
     ns1:is_used_in ns1:proposition_2 .
 
+ns1:operation_type__ a ns1:operation_type ;
+    rdfs:label "Operation type: " ;
+    skos:prefLabel "" ;
+    ns1:is_relation_type_of ns1:operation_instance__think_one_as_two_triangle____triangle__triangle_ .
+
 ns1:relation_type__congruent_x__y_ a owl:NamedIndividual,
         ns1:relation_type ;
     rdfs:label "Relation type: Congruent(x, y)" ;
@@ -776,6 +775,14 @@ ns1:concept__straight a owl:NamedIndividual,
     ns1:has_concept_type ns1:concept_type__relation ;
     ns1:has_field_of_diagrammatic_objects true ;
     ns1:is_concept_in ns1:concept__straight_line .
+
+ns1:concept__think_one_as_two a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Think one as two" ;
+    skos:prefLabel "Think one as two" ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_objects true ;
+    ns1:is_concept_in ns1:operation_instance__think_one_as_two_triangle____triangle__triangle_ .
 
 ns1:concept__unequal_length a owl:NamedIndividual,
         ns1:concept ;
@@ -1913,6 +1920,14 @@ ns1:operation_instance__take_straight_line_ a ns1:operation_instance ;
         ns1:concept__take ;
     ns1:has_relation_type ns1:operation_type__take_object_ ;
     ns1:is_used_in ns1:proof_22 .
+
+ns1:operation_instance__think_one_as_two_triangle____triangle__triangle_ a ns1:operation_instance ;
+    rdfs:label "Operation instance: Think_one_as_two(triangle)->(triangle, triangle)" ;
+    skos:prefLabel "Think_one_as_two(triangle)->(triangle, triangle)" ;
+    ns1:contains_concept ns1:concept__think_one_as_two,
+        ns1:concept__triangle ;
+    ns1:has_relation_type ns1:operation_type__ ;
+    ns1:is_used_in ns1:proof_pappus .
 
 ns1:operation_type__carry_over_parallel_to_point__point__finite_straight_line___finite_straight_line a ns1:operation_type ;
     rdfs:label "Operation type: Carry_over_parallel_to(point, point, finite_straight_line)->finite_straight_line" ;
@@ -3775,18 +3790,6 @@ ns1:concept__meet_on_the_part_of a owl:NamedIndividual,
         ns1:relation_type__meet_on_the_part_of_straight_line__straight_line__diagrammatic_object__diagrammatic_object_ ;
     ns1:is_sub_concept_of ns1:concept__meet .
 
-ns1:concept__one a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: One" ;
-    skos:prefLabel "One" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_an_abstract_object true ;
-    ns1:is_concept_in ns1:proof_26,
-        ns1:proof_34,
-        ns1:proposition_16 ;
-    ns1:is_given_concept_of ns1:proposition_16 ;
-    ns1:is_sub_concept_of ns1:concept__abstract_object .
-
 ns1:concept__place_on a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Place on" ;
@@ -4635,6 +4638,19 @@ ns1:concept__negation a owl:NamedIndividual,
         ns1:proposition_7 ;
     ns1:is_given_concept_of ns1:proposition_14,
         ns1:proposition_7 ;
+    ns1:is_sub_concept_of ns1:concept__abstract_object .
+
+ns1:concept__one a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: One" ;
+    skos:prefLabel "One" ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_an_abstract_object true ;
+    ns1:is_concept_in ns1:proof_26,
+        ns1:proof_34,
+        ns1:proof_pappus,
+        ns1:proposition_16 ;
+    ns1:is_given_concept_of ns1:proposition_16 ;
     ns1:is_sub_concept_of ns1:concept__abstract_object .
 
 ns1:concept__smaller_than a owl:NamedIndividual,
@@ -5790,6 +5806,10 @@ ns1:relation_type__corresponding_diagrammatic_object__diagrammatic_object_ a ns1
         ns1:relation_instance__corresponding_side__side_,
         ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_ .
 
+ns1:statement a owl:Class ;
+    rdfs:label "Statement" ;
+    skos:prefLabel "Statement" .
+
 ns1:concept__base_of_parallelogram a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Base of parallelogram" ;
@@ -5973,6 +5993,19 @@ ns1:proof_18 a ns1:proof ;
         ns1:relation_instance__is_triangle_triangle_,
         ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
 
+ns1:proof_pappus a ns1:proof ;
+    rdfs:label "Proof Pappus" ;
+    skos:prefLabel "Pappus" ;
+    ns1:contains_concept ns1:concept__one,
+        ns1:concept__two ;
+    ns1:refers_to ns1:operation_instance__think_one_as_two_triangle____triangle__triangle_,
+        ns1:relation_instance__corresponding_angle__angle_,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__equals_triangle__triangle_,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
+
 ns1:proposition_17 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 17" ;
@@ -6144,10 +6177,6 @@ ns1:relation_type__subtended_by_angle__straight_line__straight_line_ a ns1:relat
         ns1:relation_instance__subtended_by_angle__straight_line__straight_line_,
         ns1:relation_instance__subtended_by_right_angle__side_of_square__side_of_square_,
         ns1:relation_instance__subtended_by_right_angle__side_of_triangle__side_of_triangle_ .
-
-ns1:statement a owl:Class ;
-    rdfs:label "Statement" ;
-    skos:prefLabel "Statement" .
 
 ns1:concept__abstract_object a owl:NamedIndividual,
         ns1:concept ;
@@ -6325,21 +6354,6 @@ ns1:proposition_6 a owl:NamedIndividual,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
-
-ns1:relation_instance__corresponding_angle__angle_ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation instance: Corresponding(angle, angle)" ;
-    skos:prefLabel "Corresponding(angle, angle)" ;
-    ns1:contains_concept ns1:concept__angle,
-        ns1:concept__corresponding ;
-    ns1:has_relation_type ns1:relation_type__corresponding_diagrammatic_object__diagrammatic_object_ ;
-    ns1:is_used_in ns1:proof_16,
-        ns1:proof_26,
-        ns1:proof_29,
-        ns1:proof_33,
-        ns1:proof_34,
-        ns1:proposition_26,
-        ns1:proposition_29 .
 
 ns1:relation_instance__is_external_exterior_angle__triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -6557,6 +6571,22 @@ ns1:proposition_29 a owl:NamedIndividual,
         ns1:relation_instance__is_internal_angle__straight_line__straight_line_,
         ns1:relation_instance__is_on_the_same_part_angle__angle__straight_line_,
         ns1:relation_instance__is_opposite_to_angle__angle_ .
+
+ns1:relation_instance__corresponding_angle__angle_ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation instance: Corresponding(angle, angle)" ;
+    skos:prefLabel "Corresponding(angle, angle)" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__corresponding ;
+    ns1:has_relation_type ns1:relation_type__corresponding_diagrammatic_object__diagrammatic_object_ ;
+    ns1:is_used_in ns1:proof_16,
+        ns1:proof_26,
+        ns1:proof_29,
+        ns1:proof_33,
+        ns1:proof_34,
+        ns1:proof_pappus,
+        ns1:proposition_26,
+        ns1:proposition_29 .
 
 ns1:relation_instance__is_internal_angle__triangle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -7179,6 +7209,25 @@ ns1:proof_7 a ns1:proof ;
         ns1:relation_instance__subtended_by_angle__finite_straight_line__finite_straight_line_ ;
     ns1:uses_reductio true .
 
+ns1:proof_aristotle a ns1:proof ;
+    rdfs:label "Proof Aristotle" ;
+    skos:prefLabel "Aristotle" ;
+    ns1:has_author ns1:aristotle ;
+    ns1:refers_to ns1:_equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__,
+        ns1:equals_angle_of_section__angle_of_section_,
+        ns1:equals_angle_of_semicircle__angle_of_semicircle_,
+        ns1:operation_instance__join_point__point___finite_straight_line,
+        ns1:operation_instance__subtract_angle__angle___angle,
+        ns1:operation_instance__subtract_magnitude__magnitude___magnitude,
+        ns1:operation_instance__sum_angle__angle___angle,
+        ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_,
+        ns1:relation_instance__equals_angle_of_section__angle_of_section_,
+        ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_,
+        ns1:relation_instance__is_angle_of_section_,
+        ns1:relation_instance__is_angle_of_semicircle_,
+        ns1:relation_instance__is_center_of_point__circle_,
+        ns1:relation_instance__remaining_angle_ .
+
 ns1:proposition_13 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 13" ;
@@ -7413,26 +7462,6 @@ ns1:proof_8 a ns1:proof ;
         ns1:relation_instance__is_on_the_same_part_finite_straight_line__finite_straight_line_,
         ns1:relation_instance__is_triangle_triangle_,
         ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
-
-ns1:proof_aristotle a ns1:proof ;
-    rdfs:label "Proof Aristotle" ;
-    skos:prefLabel "Aristotle" ;
-    ns1:has_author ns1:aristotle ;
-    ns1:refers_to ns1:,
-        ns1:_equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__,
-        ns1:equals_angle_of_section__angle_of_section_,
-        ns1:equals_angle_of_semicircle__angle_of_semicircle_,
-        ns1:operation_instance__join_point__point___finite_straight_line,
-        ns1:operation_instance__subtract_angle__angle___angle,
-        ns1:operation_instance__subtract_magnitude__magnitude___magnitude,
-        ns1:operation_instance__sum_angle__angle___angle,
-        ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_,
-        ns1:relation_instance__equals_angle_of_section__angle_of_section_,
-        ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_,
-        ns1:relation_instance__is_angle_of_section_,
-        ns1:relation_instance__is_angle_of_semicircle_,
-        ns1:relation_instance__is_center_of_point__circle_,
-        ns1:relation_instance__remaining_angle_ .
 
 ns1:relation_instance__are_alternate_angle__angle_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -8234,32 +8263,6 @@ ns1:proposition_8 a owl:NamedIndividual,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
 
-ns1:relation_instance__is_triangle_triangle_ a ns1:relation_instance ;
-    rdfs:label "Relation instance: Is_triangle(triangle)" ;
-    skos:prefLabel "Is_triangle(triangle)" ;
-    ns1:contains_concept ns1:concept__is_triangle,
-        ns1:concept__triangle ;
-    ns1:has_relation_type ns1:relation_type__is_triangle_triangle_ ;
-    ns1:is_used_in ns1:proof_10,
-        ns1:proof_11,
-        ns1:proof_12,
-        ns1:proof_16,
-        ns1:proof_17,
-        ns1:proof_18,
-        ns1:proof_19,
-        ns1:proof_20,
-        ns1:proof_21,
-        ns1:proof_22,
-        ns1:proof_24,
-        ns1:proof_25,
-        ns1:proof_26,
-        ns1:proof_4,
-        ns1:proof_5,
-        ns1:proof_6,
-        ns1:proof_7,
-        ns1:proof_8,
-        ns1:proof_9 .
-
 ns1:definition a owl:Class ;
     rdfs:label "Definition" ;
     skos:prefLabel "Definition" .
@@ -8292,91 +8295,32 @@ ns1:proof_26 a ns1:proof ;
         ns1:relation_instance__unequal_side_of_triangle__side_of_triangle_ ;
     ns1:uses_reductio true .
 
-ns1:relation_instance__equals_side_of_triangle__side_of_triangle_ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation instance: Equals(side_of_triangle, side_of_triangle)" ;
-    skos:prefLabel "Equals(side of triangle, side of triangle)",
-        "Equals(side_of_triangle, side_of_triangle)" ;
-    ns1:contains_concept ns1:concept__equals,
-        ns1:concept__side_of_triangle ;
-    ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+ns1:relation_instance__is_triangle_triangle_ a ns1:relation_instance ;
+    rdfs:label "Relation instance: Is_triangle(triangle)" ;
+    skos:prefLabel "Is_triangle(triangle)" ;
+    ns1:contains_concept ns1:concept__is_triangle,
+        ns1:concept__triangle ;
+    ns1:has_relation_type ns1:relation_type__is_triangle_triangle_ ;
     ns1:is_used_in ns1:proof_10,
+        ns1:proof_11,
+        ns1:proof_12,
+        ns1:proof_16,
+        ns1:proof_17,
         ns1:proof_18,
         ns1:proof_19,
-        ns1:proof_23,
+        ns1:proof_20,
+        ns1:proof_21,
+        ns1:proof_22,
         ns1:proof_24,
         ns1:proof_25,
         ns1:proof_26,
         ns1:proof_4,
-        ns1:proof_47,
-        ns1:proof_48,
         ns1:proof_5,
         ns1:proof_6,
+        ns1:proof_7,
         ns1:proof_8,
         ns1:proof_9,
-        ns1:proposition_24,
-        ns1:proposition_25,
-        ns1:proposition_26,
-        ns1:proposition_4,
-        ns1:proposition_6,
-        ns1:proposition_8 .
-
-ns1:relation_instance__equals_triangle__triangle_ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation instance: Equals(triangle, triangle)" ;
-    skos:prefLabel "Equals(triangle, triangle)" ;
-    ns1:contains_concept ns1:concept__equals,
-        ns1:concept__triangle ;
-    ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
-    ns1:is_used_in ns1:proof_26,
-        ns1:proof_33,
-        ns1:proof_34,
-        ns1:proof_35,
-        ns1:proof_37,
-        ns1:proof_38,
-        ns1:proof_39,
-        ns1:proof_4,
-        ns1:proof_40,
-        ns1:proof_41,
-        ns1:proof_42,
-        ns1:proof_43,
-        ns1:proof_47,
-        ns1:proof_5,
-        ns1:proof_6,
-        ns1:proposition_37,
-        ns1:proposition_38,
-        ns1:proposition_39,
-        ns1:proposition_4,
-        ns1:proposition_40 .
-
-ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation instance: Subtended_by(angle, side_of_triangle, side_of_triangle)" ;
-    skos:prefLabel "Subtended by(angle, side of triangle, side of triangle)",
-        "Subtended_by(angle, side_of_triangle, side_of_triangle)" ;
-    ns1:contains_concept ns1:concept__angle,
-        ns1:concept__side_of_triangle,
-        ns1:concept__subtended_by ;
-    ns1:has_relation_type ns1:relation_type__subtended_by_angle__straight_line__straight_line_ ;
-    ns1:is_equivalent_to ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__angle_ ;
-    ns1:is_used_in ns1:proof_11,
-        ns1:proof_12,
-        ns1:proof_18,
-        ns1:proof_19,
-        ns1:proof_21,
-        ns1:proof_23,
-        ns1:proof_24,
-        ns1:proof_26,
-        ns1:proof_27,
-        ns1:proof_4,
-        ns1:proof_5,
-        ns1:proof_6,
-        ns1:proof_8,
-        ns1:proposition_18,
-        ns1:proposition_19,
-        ns1:proposition_4,
-        ns1:proposition_6,
-        ns1:proposition_8 .
+        ns1:proof_pappus .
 
 ns1:proof_45 a ns1:proof ;
     rdfs:label "Proof 45" ;
@@ -8493,6 +8437,95 @@ ns1:relation_instance__equals_finite_straight_line__finite_straight_line_ a owl:
         ns1:proposition_22,
         ns1:proposition_33,
         ns1:proposition_7 .
+
+ns1:relation_instance__equals_side_of_triangle__side_of_triangle_ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation instance: Equals(side_of_triangle, side_of_triangle)" ;
+    skos:prefLabel "Equals(side of triangle, side of triangle)",
+        "Equals(side_of_triangle, side_of_triangle)" ;
+    ns1:contains_concept ns1:concept__equals,
+        ns1:concept__side_of_triangle ;
+    ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+    ns1:is_used_in ns1:proof_10,
+        ns1:proof_18,
+        ns1:proof_19,
+        ns1:proof_23,
+        ns1:proof_24,
+        ns1:proof_25,
+        ns1:proof_26,
+        ns1:proof_4,
+        ns1:proof_47,
+        ns1:proof_48,
+        ns1:proof_5,
+        ns1:proof_6,
+        ns1:proof_8,
+        ns1:proof_9,
+        ns1:proof_pappus,
+        ns1:proposition_24,
+        ns1:proposition_25,
+        ns1:proposition_26,
+        ns1:proposition_4,
+        ns1:proposition_6,
+        ns1:proposition_8 .
+
+ns1:relation_instance__equals_triangle__triangle_ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation instance: Equals(triangle, triangle)" ;
+    skos:prefLabel "Equals(triangle, triangle)" ;
+    ns1:contains_concept ns1:concept__equals,
+        ns1:concept__triangle ;
+    ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+    ns1:is_used_in ns1:proof_26,
+        ns1:proof_33,
+        ns1:proof_34,
+        ns1:proof_35,
+        ns1:proof_37,
+        ns1:proof_38,
+        ns1:proof_39,
+        ns1:proof_4,
+        ns1:proof_40,
+        ns1:proof_41,
+        ns1:proof_42,
+        ns1:proof_43,
+        ns1:proof_47,
+        ns1:proof_5,
+        ns1:proof_6,
+        ns1:proof_pappus,
+        ns1:proposition_37,
+        ns1:proposition_38,
+        ns1:proposition_39,
+        ns1:proposition_4,
+        ns1:proposition_40 .
+
+ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation instance: Subtended_by(angle, side_of_triangle, side_of_triangle)" ;
+    skos:prefLabel "Subtended by(angle, side of triangle, side of triangle)",
+        "Subtended_by(angle, side_of_triangle, side_of_triangle)" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__side_of_triangle,
+        ns1:concept__subtended_by ;
+    ns1:has_relation_type ns1:relation_type__subtended_by_angle__straight_line__straight_line_ ;
+    ns1:is_equivalent_to ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__angle_ ;
+    ns1:is_used_in ns1:proof_11,
+        ns1:proof_12,
+        ns1:proof_18,
+        ns1:proof_19,
+        ns1:proof_21,
+        ns1:proof_23,
+        ns1:proof_24,
+        ns1:proof_26,
+        ns1:proof_27,
+        ns1:proof_4,
+        ns1:proof_5,
+        ns1:proof_6,
+        ns1:proof_8,
+        ns1:proof_pappus,
+        ns1:proposition_18,
+        ns1:proposition_19,
+        ns1:proposition_4,
+        ns1:proposition_6,
+        ns1:proposition_8 .
 
 ns1:concept__rectilinear_figure a owl:NamedIndividual,
         ns1:concept ;
@@ -8854,47 +8887,6 @@ ns1:concept__side_of_triangle a owl:NamedIndividual,
     ns1:is_sub_concept_of ns1:concept__side ;
     ns1:is_super_concept_of ns1:concept__base_of_triangle .
 
-ns1:concept__two a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Two" ;
-    skos:prefLabel "Two" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_an_abstract_object true ;
-    ns1:is_concept_in ns1:proof_10,
-        ns1:proof_11,
-        ns1:proof_12,
-        ns1:proof_13,
-        ns1:proof_15,
-        ns1:proof_16,
-        ns1:proof_21,
-        ns1:proof_22,
-        ns1:proof_23,
-        ns1:proof_25,
-        ns1:proof_26,
-        ns1:proof_27,
-        ns1:proof_28,
-        ns1:proof_32,
-        ns1:proof_34,
-        ns1:proof_4,
-        ns1:proof_44,
-        ns1:proof_45,
-        ns1:proof_47,
-        ns1:proof_48,
-        ns1:proof_5,
-        ns1:proof_7,
-        ns1:proof_8,
-        ns1:proposition_13,
-        ns1:proposition_14,
-        ns1:proposition_24,
-        ns1:proposition_7,
-        ns1:proposition_8 ;
-    ns1:is_given_concept_of ns1:proposition_13,
-        ns1:proposition_14,
-        ns1:proposition_24,
-        ns1:proposition_7,
-        ns1:proposition_8 ;
-    ns1:is_sub_concept_of ns1:concept__abstract_object .
-
 ns1:proposition_type__theorem a owl:NamedIndividual,
         ns1:proposition_type ;
     rdfs:label "Proposition type: Theorem" ;
@@ -8934,6 +8926,48 @@ ns1:proposition_type__theorem a owl:NamedIndividual,
         ns1:proposition_6,
         ns1:proposition_7,
         ns1:proposition_8 .
+
+ns1:concept__two a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Two" ;
+    skos:prefLabel "Two" ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_an_abstract_object true ;
+    ns1:is_concept_in ns1:proof_10,
+        ns1:proof_11,
+        ns1:proof_12,
+        ns1:proof_13,
+        ns1:proof_15,
+        ns1:proof_16,
+        ns1:proof_21,
+        ns1:proof_22,
+        ns1:proof_23,
+        ns1:proof_25,
+        ns1:proof_26,
+        ns1:proof_27,
+        ns1:proof_28,
+        ns1:proof_32,
+        ns1:proof_34,
+        ns1:proof_4,
+        ns1:proof_44,
+        ns1:proof_45,
+        ns1:proof_47,
+        ns1:proof_48,
+        ns1:proof_5,
+        ns1:proof_7,
+        ns1:proof_8,
+        ns1:proof_pappus,
+        ns1:proposition_13,
+        ns1:proposition_14,
+        ns1:proposition_24,
+        ns1:proposition_7,
+        ns1:proposition_8 ;
+    ns1:is_given_concept_of ns1:proposition_13,
+        ns1:proposition_14,
+        ns1:proposition_24,
+        ns1:proposition_7,
+        ns1:proposition_8 ;
+    ns1:is_sub_concept_of ns1:concept__abstract_object .
 
 ns1:concept__parallelogram a owl:NamedIndividual,
         ns1:concept ;
@@ -9024,58 +9058,8 @@ ns1:concept_type__operation a owl:NamedIndividual,
         ns1:concept__subtract,
         ns1:concept__sum,
         ns1:concept__take,
-        ns1:concept__taken_together_in_any_way .
-
-ns1:relation_instance__equals_angle__angle_ a owl:NamedIndividual,
-        ns1:relation_instance ;
-    rdfs:label "Relation instance: Equals(angle, angle)" ;
-    skos:prefLabel "Equals(angle, angle)" ;
-    ns1:contains_concept ns1:concept__angle,
-        ns1:concept__equals ;
-    ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
-    ns1:is_used_in ns1:proof_11,
-        ns1:proof_12,
-        ns1:proof_13,
-        ns1:proof_14,
-        ns1:proof_15,
-        ns1:proof_16,
-        ns1:proof_17,
-        ns1:proof_18,
-        ns1:proof_20,
-        ns1:proof_23,
-        ns1:proof_25,
-        ns1:proof_26,
-        ns1:proof_27,
-        ns1:proof_29,
-        ns1:proof_30,
-        ns1:proof_31,
-        ns1:proof_32,
-        ns1:proof_33,
-        ns1:proof_34,
-        ns1:proof_35,
-        ns1:proof_44,
-        ns1:proof_45,
-        ns1:proof_46,
-        ns1:proof_47,
-        ns1:proof_48,
-        ns1:proof_5,
-        ns1:proof_6,
-        ns1:proof_7,
-        ns1:proof_8,
-        ns1:proof_9,
-        ns1:proposition_13,
-        ns1:proposition_14,
-        ns1:proposition_15,
-        ns1:proposition_23,
-        ns1:proposition_26,
-        ns1:proposition_29,
-        ns1:proposition_32,
-        ns1:proposition_34,
-        ns1:proposition_4,
-        ns1:proposition_5,
-        ns1:proposition_5a,
-        ns1:proposition_6,
-        ns1:proposition_8 .
+        ns1:concept__taken_together_in_any_way,
+        ns1:concept__think_one_as_two .
 
 ns1:concept__equals a owl:NamedIndividual,
         ns1:concept ;
@@ -9130,13 +9114,65 @@ ns1:concept__equals a owl:NamedIndividual,
         ns1:proposition_8 ;
     ns1:is_opposite_to ns1:concept__unequal .
 
-ns1:proof a owl:Class ;
-    rdfs:label "Proof" ;
-    skos:prefLabel "Proof" .
+ns1:relation_instance__equals_angle__angle_ a owl:NamedIndividual,
+        ns1:relation_instance ;
+    rdfs:label "Relation instance: Equals(angle, angle)" ;
+    skos:prefLabel "Equals(angle, angle)" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__equals ;
+    ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+    ns1:is_used_in ns1:proof_11,
+        ns1:proof_12,
+        ns1:proof_13,
+        ns1:proof_14,
+        ns1:proof_15,
+        ns1:proof_16,
+        ns1:proof_17,
+        ns1:proof_18,
+        ns1:proof_20,
+        ns1:proof_23,
+        ns1:proof_25,
+        ns1:proof_26,
+        ns1:proof_27,
+        ns1:proof_29,
+        ns1:proof_30,
+        ns1:proof_31,
+        ns1:proof_32,
+        ns1:proof_33,
+        ns1:proof_34,
+        ns1:proof_35,
+        ns1:proof_44,
+        ns1:proof_45,
+        ns1:proof_46,
+        ns1:proof_47,
+        ns1:proof_48,
+        ns1:proof_5,
+        ns1:proof_6,
+        ns1:proof_7,
+        ns1:proof_8,
+        ns1:proof_9,
+        ns1:proof_pappus,
+        ns1:proposition_13,
+        ns1:proposition_14,
+        ns1:proposition_15,
+        ns1:proposition_23,
+        ns1:proposition_26,
+        ns1:proposition_29,
+        ns1:proposition_32,
+        ns1:proposition_34,
+        ns1:proposition_4,
+        ns1:proposition_5,
+        ns1:proposition_5a,
+        ns1:proposition_6,
+        ns1:proposition_8 .
 
 ns1:proposition a owl:Class ;
     rdfs:label "Proposition" ;
     skos:prefLabel "Proposition" .
+
+ns1:proof a owl:Class ;
+    rdfs:label "Proof" ;
+    skos:prefLabel "Proof" .
 
 ns1:concept__triangle a owl:NamedIndividual,
         ns1:concept ;
@@ -9155,6 +9191,7 @@ ns1:concept__triangle a owl:NamedIndividual,
         ns1:operation_instance__sum_triangle__trapezium___triangle,
         ns1:operation_instance__sum_triangle__triangle___diagrammatic_object,
         ns1:operation_instance__sum_triangle__triangle___rectilinear_figure,
+        ns1:operation_instance__think_one_as_two_triangle____triangle__triangle_,
         ns1:proof_4,
         ns1:proposition_16,
         ns1:proposition_17,

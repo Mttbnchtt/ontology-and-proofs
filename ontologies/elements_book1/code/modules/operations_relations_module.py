@@ -86,6 +86,9 @@ def add_concepts(kg: rdflib.Graph,
         for concept in concepts:
             if concept.replace(" ", "") and not concept in {"v", "w", "x" , "y", "z", "V", "W", "X", "Y", "Z"}:
                 concept_iri = utils.create_iri(f"Concept: {concept}", namespace=ONTOLOGY_NAMESPACE)
+                if str(concept_iri) == "https://www.foom.com/core#concept___":
+                    print(item_iri)
+                    print(concept)
                 kg.add((item_iri, CONTAINS_CONCEPT, concept_iri))
                 kg.add((concept_iri, IS_CONCEPT_IN, item_iri))
 
