@@ -236,8 +236,6 @@ ns1:concept__3_sides_of_equal_length a owl:NamedIndividual,
     skos:prefLabel "3 sides of equal length" ;
     ns1:is_used_in_definition_of ns1:concept__isosceles_triangle .
 
-ns1:concept___ ns1:is_concept_in ns1:_equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__ .
-
 ns1:concept__congruent a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Congruent" ;
@@ -860,6 +858,14 @@ ns1:statement__equals_x__z____equals_y__z___equals_x__y_ a owl:NamedIndividual,
     ns1:is_statement_of ns1:common_notion_1 ;
     ns1:refers_to ns1:relation_instance__equals_x__y_ .
 
+ns1:_equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__ a owl:NamedIndividual,
+        ns1:statement ;
+    rdfs:label "(equals(x, y) & equals(v, w)) -> equals(subtract(x, v), subtract(y, w))" ;
+    skos:prefLabel "(equals(x, y) & equals(v, w)) -> equals(subtract(x, v), subtract(y, w))" ;
+    ns1:contains_concept ns1:concept__equals,
+        ns1:concept__subtract ;
+    ns1:is_used_in ns1:proof_aristotle .
+
 ns1:author a owl:Class ;
     rdfs:label "Author" ;
     skos:prefLabel "Author" .
@@ -1384,15 +1390,6 @@ ns1:statement__greater_than_whole__part____is_part_of_part__whole_ a owl:NamedIn
     ns1:is_statement_of ns1:common_notion_8 ;
     ns1:refers_to ns1:relation_instance__greater_than_whole__part_,
         ns1:relation_instance__is_part_of_part__whole_ .
-
-ns1:_equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__ a owl:NamedIndividual,
-        ns1:statement ;
-    rdfs:label "(equals(x, y) & equals(v, w)) -> equals(subtract(x, v), subtract(y, w))" ;
-    skos:prefLabel "(equals(x, y) & equals(v, w)) -> equals(subtract(x, v), subtract(y, w))" ;
-    ns1:contains_concept ns1:concept___,
-        ns1:concept__equals,
-        ns1:concept__subtract ;
-    ns1:is_used_in ns1:proof_aristotle .
 
 ns1:concept___thing a owl:NamedIndividual,
         ns1:concept ;

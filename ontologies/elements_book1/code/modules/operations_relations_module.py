@@ -76,6 +76,7 @@ def find_concepts(item_pref_label: str) -> set:
 
     return {concept.replace("_", " ").strip().capitalize() for concept in item_pref_label_v1.split() if concept.replace(" ", "")}
 
+# note
 
 def add_concepts(kg: rdflib.Graph,
                  item_iri: rdflib.URIRef,
@@ -84,11 +85,8 @@ def add_concepts(kg: rdflib.Graph,
 
     if concepts:
         for concept in concepts:
-            if concept.replace(" ", "") and not concept in {"v", "w", "x" , "y", "z", "V", "W", "X", "Y", "Z"}:
+            if concept.replace(" ", "") and not concept in {"v", "w", "x" , "y", "z", "V", "W", "X", "Y", "Z", "&"}:
                 concept_iri = utils.create_iri(f"Concept: {concept}", namespace=ONTOLOGY_NAMESPACE)
-                if str(concept_iri) == "https://www.foom.com/core#concept___":
-                    print(item_iri)
-                    print(concept)
                 kg.add((item_iri, CONTAINS_CONCEPT, concept_iri))
                 kg.add((concept_iri, IS_CONCEPT_IN, item_iri))
 
