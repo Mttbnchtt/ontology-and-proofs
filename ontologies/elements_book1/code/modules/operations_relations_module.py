@@ -76,7 +76,6 @@ def find_concepts(item_pref_label: str) -> set:
 
     return {concept.replace("_", " ").strip().capitalize() for concept in item_pref_label_v1.split() if concept.replace(" ", "")}
 
-#
 def add_concepts(kg: rdflib.Graph,
                  item_iri: rdflib.URIRef,
                  item_pref_label: str) -> rdflib.Graph:
