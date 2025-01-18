@@ -1,0 +1,25 @@
+# extract exactly all concepts related to a proof 
+# either directly via the "contains_concept" relation
+# or indirectly because they are concepts contained in a relation or operation related to the proof.
+
+select distinct
+    ?proof_iri
+    ?concept
+where {
+    {
+        ?proof_iri 
+            a <https://www.foom.com/core#proof> ;
+            <https://www.foom.com/core#is_in> <https://www.foom.com/core#document__elements_book_1> ;
+            <https://www.foom.com/core#contains_concept> ?concept .
+    }
+    UNION
+    {
+        ?proof_iri 
+            a <https://www.foom.com/core#proof> ;
+            <https://www.foom.com/core#is_in> <https://www.foom.com/core#document__elements_book_1> ;
+            <https://www.foom.com/core#refers_to> ?item_iri . # relation or operation related to the proof
+        ?item_iri
+            <https://www.foom.com/core#contains_concept> ?concept . # concept contained in the relation or operation related to the proof
+    }
+}
+order by ?proof_iri
