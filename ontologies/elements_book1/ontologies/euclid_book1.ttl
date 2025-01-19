@@ -10,6 +10,7 @@ ns1:contains a owl:ObjectProperty ;
 
 ns1:contains_concept a owl:ObjectProperty ;
     rdfs:label "contains concept" ;
+    rdfs:subPropertyOf ns1:has_relation_to_concept ;
     skos:prefLabel "contains concept" .
 
 ns1:contains_definition_of a owl:ObjectProperty ;
@@ -18,10 +19,12 @@ ns1:contains_definition_of a owl:ObjectProperty ;
 
 ns1:defines a owl:ObjectProperty ;
     rdfs:label "defines" ;
+    rdfs:subPropertyOf ns1:has_relation_to_concept ;
     skos:prefLabel "defines" .
 
 ns1:definition_refers_to a owl:ObjectProperty ;
     rdfs:label "definition refers to" ;
+    rdfs:subPropertyOf ns1:has_relation_to_concept ;
     skos:prefLabel "definition refers to" .
 
 ns1:has_author a owl:ObjectProperty ;
@@ -34,6 +37,7 @@ ns1:has_concept_type a owl:ObjectProperty ;
 
 ns1:has_conceptual_component a owl:ObjectProperty ;
     rdfs:label "has conceptual component" ;
+    rdfs:subPropertyOf ns1:has_relation_to_concept ;
     skos:prefLabel "has conceptual component" .
 
 ns1:has_definition a owl:ObjectProperty ;
@@ -62,6 +66,7 @@ ns1:has_gist a owl:ObjectProperty ;
 
 ns1:has_given_concept a owl:ObjectProperty ;
     rdfs:label "has given concept" ;
+    rdfs:subPropertyOf ns1:has_relation_to_concept ;
     skos:prefLabel "has given concept" .
 
 ns1:has_implication a owl:ObjectProperty ;
@@ -184,10 +189,12 @@ ns1:is_statement_of a owl:ObjectProperty ;
 
 ns1:is_sub_concept_of a owl:ObjectProperty ;
     rdfs:label "is sub-concept of" ;
+    rdfs:subPropertyOf ns1:has_relation_to_concept ;
     skos:prefLabel "is sub-concept of" .
 
 ns1:is_super_concept_of a owl:ObjectProperty ;
     rdfs:label "is super-concept of" ;
+    rdfs:subPropertyOf ns1:has_relation_to_concept ;
     skos:prefLabel "is super-concept of" .
 
 ns1:is_used_in a owl:ObjectProperty ;
@@ -4710,6 +4717,10 @@ ns1:concept__unequal a owl:NamedIndividual,
         ns1:relation_type__unequal_object__object_ ;
     ns1:is_equivalent_to ns1:concept__distinct ;
     ns1:is_opposite_to ns1:concept__equals .
+
+ns1:has_relation_to_concept a owl:ObjectProperty ;
+    rdfs:label "has relation to concept" ;
+    skos:prefLabel "has relation to concept" .
 
 ns1:operation__join_point__point___finite_straight_line a owl:NamedIndividual,
         ns1:operation_instance ;

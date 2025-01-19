@@ -8,12 +8,15 @@ select distinct
     ?concept_iri
     ?concept_label
 where {
+    # https://www.foom.com/core#defines
     {
         ?main_item_iri 
             a <https://www.foom.com/core#proof> ;
             rdfs:label  ?main_item_label ;
             <https://www.foom.com/core#is_in> <https://www.foom.com/core#document__elements_book_1> ;
-            <https://www.foom.com/core#contains_concept> ?concept_iri .
+            ?relation_to_concept ?concept_iri .
+        ?relation_to_concept
+            rdfs:subPropertyOf <https://www.foom.com/core#has_relation_to_concept> .
         ?concept_iri
             rdfs:label ?concept_label .
     }
@@ -25,7 +28,9 @@ where {
             <https://www.foom.com/core#is_in> <https://www.foom.com/core#document__elements_book_1> ;
             <https://www.foom.com/core#refers_to> ?item_iri . # relation or operation related to the proof
         ?item_iri
-            <https://www.foom.com/core#contains_concept> ?concept_iri . # concept contained in the relation or operation related to the proof
+            ?relation_to_concept ?concept_iri .
+        ?relation_to_concept
+            rdfs:subPropertyOf <https://www.foom.com/core#has_relation_to_concept> . # concept contained in the relation or operation related to the proof
         ?concept_iri
             rdfs:label ?concept_label .
     }
