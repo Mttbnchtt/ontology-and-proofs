@@ -84,6 +84,10 @@ ns1:has_predicate a owl:ObjectProperty ;
     rdfs:label "has predicate" ;
     skos:prefLabel "has predicate" .
 
+ns1:has_proposition_type a owl:ObjectProperty ;
+    rdfs:label "has proposition type" ;
+    skos:prefLabel "has proposition type" .
+
 ns1:has_range a owl:ObjectProperty ;
     rdfs:label "has range" ;
     skos:prefLabel "has range" .
@@ -161,6 +165,10 @@ ns1:is_operation_type_of a owl:ObjectProperty ;
 ns1:is_opposite_to a owl:ObjectProperty ;
     rdfs:label "is opposite to" ;
     skos:prefLabel "is opposite to" .
+
+ns1:is_proposition_type_of a owl:ObjectProperty ;
+    rdfs:label "is proposition type of" ;
+    skos:prefLabel "is proposition type of" .
 
 ns1:is_range_of a owl:ObjectProperty ;
     rdfs:label "is range of" ;
@@ -2051,9 +2059,9 @@ ns1:proposition_30 a owl:NamedIndividual,
     rdfs:label "Proposition: Proposition 30" ;
     skos:prefLabel "Proposition 30" ;
     ns1:has_gist ns1:gist__transitivity_of_are_parallel ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_ .
+    ns1:refers_to ns1:relation_instance__are_parallel_straight_line__straight_line_ .
 
 ns1:relation_instance__are_parallel_side__side_ a ns1:relation_instance ;
     rdfs:label "Relation instance: Are_parallel(side, side)" ;
@@ -3187,9 +3195,9 @@ ns1:proposition_15 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 15" ;
     skos:prefLabel "Proposition 15" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__cut_straight_line__straight_line_,
+    ns1:refers_to ns1:relation_instance__cut_straight_line__straight_line_,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__is_at_vertex_angle_ .
 
@@ -3197,9 +3205,9 @@ ns1:proposition_19 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 19" ;
     skos:prefLabel "Proposition 19" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__greater_angle_,
+    ns1:refers_to ns1:relation_instance__greater_angle_,
         ns1:relation_instance__greater_side_of_triangle_,
         ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
 
@@ -3207,9 +3215,9 @@ ns1:proposition_20 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 20" ;
     skos:prefLabel "Proposition 20" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__taken_together_in_any_way_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:proposition_type__theorem,
         ns1:relation_instance__greater_than_finite_straight_line__finite_straight_line_,
         ns1:relation_instance__remaining_side_of_triangle_ .
 
@@ -3217,9 +3225,9 @@ ns1:proposition_27 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 27" ;
     skos:prefLabel "Proposition 27" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__are_alternate_angle__angle_,
+    ns1:refers_to ns1:relation_instance__are_alternate_angle__angle_,
         ns1:relation_instance__are_parallel_straight_line__straight_line_,
         ns1:relation_instance__falls_on_straight_line__straight_line_ .
 
@@ -3227,9 +3235,9 @@ ns1:proposition_33 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 33" ;
     skos:prefLabel "Proposition 33" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__are_parallel_finite_straight_line__finite_straight_line_,
+    ns1:refers_to ns1:relation_instance__are_parallel_finite_straight_line__finite_straight_line_,
         ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
         ns1:relation_instance__joining_on_the_same_part_finite_straight_line__finite_straight_line__finite_straight_line__finite_straight_line_ .
 
@@ -3237,9 +3245,9 @@ ns1:proposition_43 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 43" ;
     skos:prefLabel "Proposition 43" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__are_placed_about_complement_of_parallelogram__complement_of_parallelogram__diameter_of_parallelogram_,
+    ns1:refers_to ns1:relation_instance__are_placed_about_complement_of_parallelogram__complement_of_parallelogram__diameter_of_parallelogram_,
         ns1:relation_instance__equals_complement_of_parallelogram__complement_of_parallelogram_,
         ns1:relation_instance__is_placed_on_complement_of_parallelogram__diameter_of_parallelogram_ .
 
@@ -3249,9 +3257,9 @@ ns1:proposition_46 a owl:NamedIndividual,
     skos:prefLabel "Proposition 46" ;
     ns1:contains_concept ns1:concept__finite_straight_line ;
     ns1:has_given_concept ns1:concept__finite_straight_line ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:operation_instance__describe_on_square__finite_straight_line___square,
-        ns1:proposition_type__construction .
+    ns1:refers_to ns1:operation_instance__describe_on_square__finite_straight_line___square .
 
 ns1:relation_instance__are_in_the_same_parallels_base_of_parallelogram__base_of_parallelogram__straight_line__straight_line_ a ns1:relation_instance ;
     rdfs:label "Relation instance: Are_in_the_same_parallels(base_of_parallelogram, base_of_parallelogram, straight_line, straight_line)" ;
@@ -4008,9 +4016,9 @@ ns1:proposition_36 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 36" ;
     skos:prefLabel "Proposition 36" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+    ns1:refers_to ns1:relation_instance__are_parallel_straight_line__straight_line_,
         ns1:relation_instance__are_same_base_of_parallelogram__base_of_parallelogram_,
         ns1:relation_instance__are_same_straight_line__straight_line_,
         ns1:relation_instance__equals_parallelogram__parallelogram_ .
@@ -4019,9 +4027,9 @@ ns1:proposition_48 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 48" ;
     skos:prefLabel "Proposition 48" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__angle_,
+    ns1:refers_to ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__angle_,
         ns1:relation_instance__equals_square__sum_square__square__,
         ns1:relation_instance__is_placed_on_square__side_of_triangle_,
         ns1:relation_instance__remaining_side_of_triangle_ .
@@ -4930,9 +4938,9 @@ ns1:proposition_1 a owl:NamedIndividual,
     ns1:has_gist ns1:gist__construction_of_equilateral_triangles_via_intersecting_circles ;
     ns1:has_given_concept ns1:concept__finite_straight_line ;
     ns1:has_moral ns1:moral__existence_of_triangles ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:operation_instance__construct_on_equilateteral_triangle__finite_straight_line___equilateral_triangle,
-        ns1:proposition_type__construction .
+    ns1:refers_to ns1:operation_instance__construct_on_equilateteral_triangle__finite_straight_line___equilateral_triangle .
 
 ns1:proposition_10 a owl:NamedIndividual,
         ns1:proposition ;
@@ -4942,9 +4950,9 @@ ns1:proposition_10 a owl:NamedIndividual,
         ns1:concept__finite_straight_line ;
     ns1:has_given_concept ns1:concept__cut_into_two_halves,
         ns1:concept__finite_straight_line ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:operation_instance__cut_into_two_halves_finite_straight_line____finite_straight_line__finite_straight_line_,
-        ns1:proposition_type__construction .
+    ns1:refers_to ns1:operation_instance__cut_into_two_halves_finite_straight_line____finite_straight_line__finite_straight_line_ .
 
 ns1:proposition_18 a owl:NamedIndividual,
         ns1:proposition ;
@@ -4952,9 +4960,9 @@ ns1:proposition_18 a owl:NamedIndividual,
     skos:prefLabel "Proposition 18" ;
     ns1:contains_concept ns1:concept__triangle ;
     ns1:has_given_concept ns1:concept__triangle ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__greater_angle_,
+    ns1:refers_to ns1:relation_instance__greater_angle_,
         ns1:relation_instance__greater_side_of_triangle_,
         ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
 
@@ -4962,9 +4970,9 @@ ns1:proposition_25 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 25" ;
     skos:prefLabel "Proposition 25" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+    ns1:refers_to ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__greater_than_angle__angle_,
@@ -4974,9 +4982,9 @@ ns1:proposition_32 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 32" ;
     skos:prefLabel "Proposition 32" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__produce_side_of_triangle___finite_straight_line,
-        ns1:proposition_type__theorem,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__is_external_angle__triangle_,
         ns1:relation_instance__is_internal_angle__triangle_,
@@ -4986,9 +4994,9 @@ ns1:proposition_35 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 35" ;
     skos:prefLabel "Proposition 35" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__are_parallel_finite_straight_line__finite_straight_line_,
+    ns1:refers_to ns1:relation_instance__are_parallel_finite_straight_line__finite_straight_line_,
         ns1:relation_instance__are_same_straight_line__straight_line_,
         ns1:relation_instance__equals_parallelogram__parallelogram_,
         ns1:relation_instance__is_placed_on_base_of_parallelogram__parallelogram_,
@@ -4998,9 +5006,9 @@ ns1:proposition_41 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 41" ;
     skos:prefLabel "Proposition 41" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__are_same_base__base_,
+    ns1:refers_to ns1:relation_instance__are_same_base__base_,
         ns1:relation_instance__have_same_base_parallelogram__triangle_,
         ns1:relation_instance__is_double_parallelogram__triangle_,
         ns1:relation_instance__is_placed_on_parallelogram__base_,
@@ -5014,9 +5022,9 @@ ns1:proposition_9 a owl:NamedIndividual,
         ns1:concept__rectilinear_angle ;
     ns1:has_given_concept ns1:concept__cut_into_two_halves,
         ns1:concept__rectilinear_angle ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:operation_instance__cut_into_two_halves_rectilinear_angle____angle__angle_,
-        ns1:proposition_type__construction .
+    ns1:refers_to ns1:operation_instance__cut_into_two_halves_rectilinear_angle____angle__angle_ .
 
 ns1:relation_instance__are_in_a_straight_line_finite_straight_line__finite_straight_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
@@ -5556,18 +5564,18 @@ ns1:proposition_31 a owl:NamedIndividual,
         ns1:concept__straight_line ;
     ns1:has_given_concept ns1:concept__point,
         ns1:concept__straight_line ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line,
-        ns1:proposition_type__construction,
         ns1:relation_instance__are_parallel_straight_line__straight_line_ .
 
 ns1:proposition_34 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 34" ;
     skos:prefLabel "Proposition 34" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__cut_into_two_halves_diameter__angle_,
+    ns1:refers_to ns1:relation_instance__cut_into_two_halves_diameter__angle_,
         ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__equals_side__side_,
@@ -5578,9 +5586,9 @@ ns1:proposition_37 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 37" ;
     skos:prefLabel "Proposition 37" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+    ns1:refers_to ns1:relation_instance__are_parallel_straight_line__straight_line_,
         ns1:relation_instance__are_same_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__are_same_straight_line__straight_line_,
         ns1:relation_instance__equals_triangle__triangle_,
@@ -5591,9 +5599,9 @@ ns1:proposition_40 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 40" ;
     skos:prefLabel "Proposition 40" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+    ns1:refers_to ns1:relation_instance__are_parallel_straight_line__straight_line_,
         ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__equals_triangle__triangle_,
         ns1:relation_instance__is_on_the_same_part_triangle__triangle_,
@@ -5608,9 +5616,9 @@ ns1:proposition_42 a owl:NamedIndividual,
         ns1:concept__triangle ;
     ns1:has_given_concept ns1:concept__rectilinear_angle,
         ns1:concept__triangle ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__construct_in_parallelogram__rectilinear_angle___parallelogram,
-        ns1:proposition_type__construction,
         ns1:relation_instance__equals_triangle__parallelogram_ .
 
 ns1:proposition_45 a owl:NamedIndividual,
@@ -5621,18 +5629,18 @@ ns1:proposition_45 a owl:NamedIndividual,
         ns1:concept__rectilinear_figure ;
     ns1:has_given_concept ns1:concept__rectilinear_angle,
         ns1:concept__rectilinear_figure ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__construct_in_parallelogram__rectilinear_angle___parallelogram,
-        ns1:proposition_type__construction,
         ns1:relation_instance__equals_parallelogram__rectilinear_figure_ .
 
 ns1:proposition_47 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 47" ;
     skos:prefLabel "Proposition 47" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__right_angle_,
+    ns1:refers_to ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__right_angle_,
         ns1:relation_instance__equals_square__rectilinear_figure_,
         ns1:relation_instance__equals_square__sum_square__square__,
         ns1:relation_instance__is_placed_on_square__side_of_triangle_,
@@ -5647,9 +5655,9 @@ ns1:proposition_5a a owl:NamedIndividual,
     ns1:has_gist ns1:gist__isosceles_triangles_have_equal_angles_at_the_base ;
     ns1:has_given_concept ns1:concept__isosceles_triangle ;
     ns1:has_implication ns1:implication_____at_base_angle__isosceles_triangle___at_base_angle__isosceles_triangle__ ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__at_base_interior_angle_of_triangle__isosceles_triangle_,
+    ns1:refers_to ns1:relation_instance__at_base_interior_angle_of_triangle__isosceles_triangle_,
         ns1:relation_instance__equals_angle__angle_ .
 
 ns1:relation_instance__are_consecutive_angle__angle_ a owl:NamedIndividual,
@@ -6011,20 +6019,20 @@ ns1:proposition_17 a owl:NamedIndividual,
         ns1:concept__triangle ;
     ns1:has_given_concept ns1:concept__angle,
         ns1:concept__triangle ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__sum_angle__angle___angle,
         ns1:operation_instance__taken_together_in_any_way_angle__angle___angle,
-        ns1:proposition_type__theorem,
         ns1:relation_instance__smaller_than_angle__angle_ .
 
 ns1:proposition_21 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 21" ;
     skos:prefLabel "Proposition 21" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__construct_inside_finite_straight_line__triangle___finite_straight_line,
         ns1:operation_instance__construct_on_finite_straight_line__end_of_side_of_triangle___finite_straight_line,
-        ns1:proposition_type__theorem,
         ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
         ns1:relation_instance__greater_than_angle__angle_,
         ns1:relation_instance__is_placed_on_finite_straight_line__end_of_side_of_triangle_,
@@ -6035,9 +6043,9 @@ ns1:proposition_26 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 26" ;
     skos:prefLabel "Proposition 26" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__corresponding_angle__angle_,
+    ns1:refers_to ns1:relation_instance__corresponding_angle__angle_,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__is_placed_on_side_of_triangle__angle_,
@@ -6049,9 +6057,9 @@ ns1:proposition_38 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 38" ;
     skos:prefLabel "Proposition 38" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
+    ns1:refers_to ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
         ns1:relation_instance__are_parallel_straight_line__straight_line_,
         ns1:relation_instance__are_same_straight_line__straight_line_,
         ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
@@ -6066,9 +6074,9 @@ ns1:proposition_5 a owl:NamedIndividual,
     ns1:contains_concept ns1:concept__isosceles_triangle ;
     ns1:has_given_concept ns1:concept__isosceles_triangle ;
     ns1:has_implication ns1:implication_____equals_at_base_angle__isosceles_triangle___at_base_angle__isosceles_triangle_____equals_under_base_angle__isosceles_triangle___under_base_angle__isosceles_triangle__ ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__extend_side_of_triangle___finite_straight_line,
-        ns1:proposition_type__theorem,
         ns1:relation_instance__at_base_interior_angle_of_triangle__isosceles_triangle_,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__under_base_angle__isosceles_triangle_ .
@@ -6302,18 +6310,18 @@ ns1:proposition_2 a owl:NamedIndividual,
     ns1:has_given_concept ns1:concept__finite_straight_line,
         ns1:concept__point ;
     ns1:has_moral ns1:moral__rigid_movement_is_possible ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_line___finite_staight_line,
-        ns1:proposition_type__construction,
         ns1:relation_instance__equals_finite_straight_line__finite_straight_line_ .
 
 ns1:proposition_28 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 28" ;
     skos:prefLabel "Proposition 28" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__sum_angle__angle___angle,
-        ns1:proposition_type__theorem,
         ns1:relation_instance__are_parallel_straight_line__straight_line_,
         ns1:relation_instance__equals_angle__right_angle_,
         ns1:relation_instance__falls_on_straight_line__straight_line_,
@@ -6326,9 +6334,9 @@ ns1:proposition_39 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 39" ;
     skos:prefLabel "Proposition 39" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
+    ns1:refers_to ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
         ns1:relation_instance__are_parallel_straight_line__straight_line_,
         ns1:relation_instance__are_same_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__are_same_straight_line__straight_line_,
@@ -6346,9 +6354,9 @@ ns1:proposition_6 a owl:NamedIndividual,
     ns1:has_gist ns1:gist__inverse_of_proposition_5a ;
     ns1:has_given_concept ns1:concept__equals,
         ns1:concept__triangle ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__equals_angle__angle_,
+    ns1:refers_to ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
 
@@ -6557,9 +6565,9 @@ ns1:proposition_29 a owl:NamedIndividual,
         ns1:proposition ;
     rdfs:label "Proposition: Proposition 29" ;
     skos:prefLabel "Proposition 29" ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__are_alternate_angle__angle_,
+    ns1:refers_to ns1:relation_instance__are_alternate_angle__angle_,
         ns1:relation_instance__are_parallel_straight_line__straight_line_,
         ns1:relation_instance__corresponding_angle__angle_,
         ns1:relation_instance__equals_angle__angle_,
@@ -6803,9 +6811,9 @@ ns1:proposition_11 a owl:NamedIndividual,
         ns1:concept__finite_straight_line,
         ns1:concept__point,
         ns1:concept__right_angle ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__conduct_finite_straight_line__finite_straight_line__point__right_angle___finite_straight_line,
-        ns1:proposition_type__construction,
         ns1:relation_instance__inclined_at_finite_straight_line__finite_straight_line__right_angle_ .
 
 ns1:proposition_3 a owl:NamedIndividual,
@@ -6818,9 +6826,9 @@ ns1:proposition_3 a owl:NamedIndividual,
     ns1:has_given_concept ns1:concept__finite_straight_line,
         ns1:concept__point ;
     ns1:has_moral ns1:moral__subtraction_of_lengths ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__subtract_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:proposition_type__construction,
         ns1:relation_instance__greater_than_finite_straight_line__finite_straight_line_,
         ns1:relation_instance__smaller_than_finite_straight_line__finite_straight_line_,
         ns1:relation_instance__unequal_finite_straight_line__finite_straight_line_ .
@@ -6835,10 +6843,10 @@ ns1:proposition_44 a owl:NamedIndividual,
     ns1:has_given_concept ns1:concept__finite_straight_line,
         ns1:concept__rectilinear_angle,
         ns1:concept__triangle ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__apply_in_rectilinear_angle__parallelogram___parallelogram,
         ns1:operation_instance__apply_to_finite_straight_line__parallelogram___parallelogram,
-        ns1:proposition_type__construction,
         ns1:relation_instance__equals_angle_of_parallelogram__angle_,
         ns1:relation_instance__equals_parallelogram__triangle_ .
 
@@ -6973,9 +6981,9 @@ ns1:proposition_12 a owl:NamedIndividual,
         ns1:concept__infinite_straight_line,
         ns1:concept__is_placed_on,
         ns1:concept__point ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__point__right_angle___infinite_straight_line,
-        ns1:proposition_type__construction,
         ns1:relation_instance__are_perpendicular_infinite_straight_line__infinite_straight_line_,
         ns1:relation_instance__is_placed_on_infinite_straight_line__infinite_straight_line_ .
 
@@ -6989,9 +6997,9 @@ ns1:proposition_16 a owl:NamedIndividual,
     ns1:has_given_concept ns1:concept__one,
         ns1:concept__produce,
         ns1:concept__triangle ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__produce_side_of_triangle___finite_straight_line,
-        ns1:proposition_type__theorem,
         ns1:relation_instance__greater_than_angle__angle_,
         ns1:relation_instance__is_external_exterior_angle__triangle_,
         ns1:relation_instance__is_internal_angle__triangle_,
@@ -7237,9 +7245,9 @@ ns1:proposition_13 a owl:NamedIndividual,
         ns1:concept__equals,
         ns1:concept__is_placed_on,
         ns1:concept__two ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__sum_angle__angle___angle,
-        ns1:proposition_type__theorem,
         ns1:relation_instance__equals_angle__angle_,
         ns1:relation_instance__is_placed_on_infinite_straight_line__infinite_straight_line_,
         ns1:relation_instance__is_right_angle_angle_ .
@@ -7251,9 +7259,9 @@ ns1:proposition_4 a owl:NamedIndividual,
     ns1:contains_concept ns1:concept__triangle ;
     ns1:has_given_concept ns1:concept__triangle ;
     ns1:has_moral ns1:moral__sas_criterion_for_the_congruence_of_triangles ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__corresponding_interior_angle_of_triangle__interior_angle_of_triangle_,
+    ns1:refers_to ns1:relation_instance__corresponding_interior_angle_of_triangle__interior_angle_of_triangle_,
         ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
         ns1:relation_instance__equals_angle__angle_,
@@ -7267,7 +7275,7 @@ ns1:proposition_type__construction a owl:NamedIndividual,
         ns1:proposition_type ;
     rdfs:label "Proposition type: Construction" ;
     skos:prefLabel "Construction" ;
-    ns1:is_used_in ns1:proposition_1,
+    ns1:is_proposition_type_of ns1:proposition_1,
         ns1:proposition_10,
         ns1:proposition_11,
         ns1:proposition_12,
@@ -7806,11 +7814,11 @@ ns1:proposition_23 a owl:NamedIndividual,
         ns1:concept__equals,
         ns1:concept__finite_straight_line,
         ns1:concept__point ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__construct_from_angle__angle__point__finite_straight_line___angle,
         ns1:operation_instance__construct_on_angle__finite_straight_line___angle,
         ns1:operation_instance__construct_on_angle__point___angle,
-        ns1:proposition_type__construction,
         ns1:relation_instance__are_same_point__point_,
         ns1:relation_instance__equals_angle__angle_ .
 
@@ -7995,10 +8003,10 @@ ns1:proposition_22 a owl:NamedIndividual,
         ns1:concept__remaining,
         ns1:concept__taken_together_in_any_way,
         ns1:concept__three ;
+    ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__construct_from_triangle__finite_straight_line__finite_straight_line__finite_straight_line___triangle,
         ns1:operation_instance__taken_together_in_any_way_finite_straight_line__finite_straight_line___finite_straight_line,
-        ns1:proposition_type__construction,
         ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
         ns1:relation_instance__remaining_finite_straight_line_,
         ns1:relation_instance__smaller_than_finite_straight_line__finite_straight_line_ .
@@ -8170,9 +8178,9 @@ ns1:proposition_24 a owl:NamedIndividual,
         ns1:concept__side_of_triangle,
         ns1:concept__triangle,
         ns1:concept__two ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
+    ns1:refers_to ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__greater_than_angle__angle_,
@@ -8224,9 +8232,9 @@ ns1:proposition_7 a owl:NamedIndividual,
         ns1:concept__negation,
         ns1:concept__part,
         ns1:concept__two ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__construct_to_given_point_finite_straight_line__point__point___finite_straight_line,
-        ns1:proposition_type__theorem,
         ns1:relation_instance__corresponding_finite_straight_line__finite_straight_line_,
         ns1:relation_instance__distinct_point__point_,
         ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
@@ -8251,9 +8259,9 @@ ns1:proposition_8 a owl:NamedIndividual,
         ns1:concept__side_of_triangle,
         ns1:concept__triangle,
         ns1:concept__two ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:proposition_type__theorem,
-        ns1:relation_instance__corresponding_base_of_triangle__base_of_triangle_,
+    ns1:refers_to ns1:relation_instance__corresponding_base_of_triangle__base_of_triangle_,
         ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
         ns1:relation_instance__equals_angle__angle_,
@@ -8670,9 +8678,9 @@ ns1:proposition_14 a owl:NamedIndividual,
         ns1:concept__part,
         ns1:concept__straight_line,
         ns1:concept__two ;
+    ns1:has_proposition_type ns1:proposition_type__theorem ;
     ns1:is_in ns1:document__elements_book_1 ;
     ns1:refers_to ns1:operation_instance__sum_angle__angle___angle,
-        ns1:proposition_type__theorem,
         ns1:relation_instance__are_consecutive_angle__angle_,
         ns1:relation_instance__are_in_a_straight_line_finite_straight_line__finite_straight_line_,
         ns1:relation_instance__are_same_part__part_,
@@ -8888,7 +8896,7 @@ ns1:proposition_type__theorem a owl:NamedIndividual,
         ns1:proposition_type ;
     rdfs:label "Proposition type: Theorem" ;
     skos:prefLabel "Theorem" ;
-    ns1:is_used_in ns1:proposition_13,
+    ns1:is_proposition_type_of ns1:proposition_13,
         ns1:proposition_14,
         ns1:proposition_15,
         ns1:proposition_16,

@@ -114,6 +114,9 @@ is_moral_of = utils.create_iri("is moral of", namespace="https://www.foom.com/co
 contains_concept = utils.create_iri("contains concept", namespace="https://www.foom.com/core")
 is_concept_in = utils.create_iri("is concept in", namespace="https://www.foom.com/core")
 
+HAS_PROPOSITION_TYPE = utils.create_iri("has proposition type", namespace="https://www.foom.com/core")
+IS_PROPOSITION_TYPE_OF = utils.create_iri("is proposition type of", namespace="https://www.foom.com/core")
+
 # functions
 def add_propositions(kg: rdflib.Graph,
                      propositions_input_file_path: str) -> rdflib.Graph:
@@ -284,11 +287,11 @@ def add_proposition(kg: rdflib.Graph,
     kg.add((proposition_iri, is_in, elements_book_1))
     kg.add((elements_book_1, contains, proposition_iri))
     if proposition_type == "construction":
-        kg.add((proposition_iri, refers_to, proposition_type_construction))
-        kg.add((proposition_type_construction, is_used_in, proposition_iri))
+        kg.add((proposition_iri, HAS_PROPOSITION_TYPE, proposition_type_construction))
+        kg.add((proposition_type_construction, IS_PROPOSITION_TYPE_OF, proposition_iri))
     elif proposition_type == "theorem": 
-        kg.add((proposition_iri, refers_to, proposition_type_theorem))
-        kg.add((proposition_type_theorem, is_used_in, proposition_iri))
+        kg.add((proposition_iri, HAS_PROPOSITION_TYPE, proposition_type_theorem))
+        kg.add((proposition_type_theorem, IS_PROPOSITION_TYPE_OF, proposition_iri))
     return kg
 
 def add_proposition_concepts(kg: rdflib.Graph,
