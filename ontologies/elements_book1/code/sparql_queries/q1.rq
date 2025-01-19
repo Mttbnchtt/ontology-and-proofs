@@ -1,39 +1,37 @@
-# extract exactly all concepts related to a proof 
+# Extract exactly all concepts related to a category of items 
 # either directly via the "contains_concept" relation
 # or indirectly because they are concepts contained in a relation or operation related to the proof.
+# Say to which category the main item belong.
 
 select distinct
     ?main_item_iri
     ?main_item_label
     ?concept_iri
     ?concept_label
+    ?class_label 
 where {
-    # https://www.foom.com/core#defines
+    # Common filters for main items
+    ?main_item_iri 
+        a ?class_iri ;
+        rdfs:label ?main_item_label ;
+        <https://www.foom.com/core#is_in> <https://www.foom.com/core#document__elements_book_1> .
+
+    # Handle both direct and indirect paths to concepts
     {
-        ?main_item_iri 
-            a <https://www.foom.com/core#proof> ;
-            rdfs:label  ?main_item_label ;
-            <https://www.foom.com/core#is_in> <https://www.foom.com/core#document__elements_book_1> ;
-            ?relation_to_concept ?concept_iri .
-        ?relation_to_concept
-            rdfs:subPropertyOf <https://www.foom.com/core#has_relation_to_concept> .
-        ?concept_iri
-            rdfs:label ?concept_label .
+        ?main_item_iri ?relation_to_concept ?concept_iri .
     }
     UNION
     {
-        ?main_item_iri 
-            a <https://www.foom.com/core#proof> ;
-            rdfs:label  ?main_item_label ;
-            <https://www.foom.com/core#is_in> <https://www.foom.com/core#document__elements_book_1> ;
-            <https://www.foom.com/core#refers_to> ?item_iri . # relation or operation related to the proof
-        ?item_iri
-            ?relation_to_concept ?concept_iri .
-        ?relation_to_concept
-            rdfs:subPropertyOf <https://www.foom.com/core#has_relation_to_concept> . # concept contained in the relation or operation related to the proof
-        ?concept_iri
-            rdfs:label ?concept_label .
+        ?main_item_iri <https://www.foom.com/core#refers_to> ?item_iri .
+        ?item_iri ?relation_to_concept ?concept_iri .
     }
+
+    # Filter the relation to concepts
+    ?relation_to_concept rdfs:subPropertyOf <https://www.foom.com/core#has_relation_to_concept> .
+
+    # Retrieve labels
+    ?concept_iri rdfs:label ?concept_label .
+    ?class_iri rdfs:label ?class_label .
 }
 order by
     ?main_item_iri
