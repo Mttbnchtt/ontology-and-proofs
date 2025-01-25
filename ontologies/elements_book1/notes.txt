@@ -1,0 +1,12 @@
+0. go to directory
+cd /Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies
+
+1. start rdfox
+/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Computer_programming/Artificial_intelligence/Topics_in_AI/Ontologist/Ontologies/Ontologies_tools/RDFox_folder/RDFox-macOS-arm64-7.2c/RDFox sandbox
+
+2. run start.rdfox
+/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/elements_book1/code/rdfox_proof_project/start.rdfox
+
+3. import triples
+import +p /Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/elements_book1/ontologies/euclid_book1.ttl
+
