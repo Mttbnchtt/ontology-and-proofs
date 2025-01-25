@@ -1,0 +1,22 @@
+# Extract the hierarchy of concepts
+
+prefix : <https://www.foom.com/core#>
+
+select distinct
+    ?concept_iri
+    ?concept_label
+    ?super_concept_iri
+    ?super_concept_label
+where {
+    ?concept_iri
+        a :concept ;
+        rdfs:label ?concept_label .
+
+    optional {
+        ?concept_iri
+            :is_sub_concept_of ?super_concept_iri .
+        ?super_concept_iri
+            rdfs:label ?super_concept_label .
+    }
+}
+order by ?concept_iri
