@@ -1,0 +1,13 @@
+# extract concepts in a relation used in a proof
+
+prefix : <https://www.foom.com/core#>
+
+select distinct
+    ?item_iri
+?refers_to_item_iri
+where {
+    ?item_iri
+        a :proof ;
+        :refers_to / :contains_concept ?refers_to_item_iri .
+}
+order by ?item_iri
