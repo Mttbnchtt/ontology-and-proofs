@@ -4,7 +4,7 @@ prefix : <https://www.foom.com/core#>
 
 select distinct
     ?item_iri
-?refers_to_item_iri
+    ?refers_to_item_iri
 where {
     ?item_iri
         a :proof ;
