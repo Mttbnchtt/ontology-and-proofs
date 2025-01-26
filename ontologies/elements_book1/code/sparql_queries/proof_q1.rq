@@ -4,7 +4,6 @@ prefix : <https://www.foom.com/core#>
 
 select distinct
     ?item_iri
-    ?concept_iri
     ?concept_label
 where {
     ?item_iri
