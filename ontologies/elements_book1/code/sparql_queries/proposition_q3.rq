@@ -1,4 +1,4 @@
-# find concepts related to a proposition
+# find concepts of a proposition
 
 prefix : <https://www.foom.com/core#>
 
@@ -8,7 +8,7 @@ select distinct
 where {
     ?item_iri
         a :proposition ;
-        :contains_concept ?concept_iri .
+        :refers_to / :contains_concept ?concept_iri .
     ?concept_iri
         rdfs:label  ?concept_label .
 }
