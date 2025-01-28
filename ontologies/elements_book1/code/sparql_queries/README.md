@@ -4,6 +4,8 @@ Queries
 
 Proofs
 1. extract concepts directly related to a proof
+2. extract concepts in a relation used in a proof
+
 
 
 Other:
