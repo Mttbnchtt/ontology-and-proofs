@@ -2,11 +2,14 @@ This folder contains SPARQL queries to analyze the ontology of the proofs contai
 
 Queries
 
-Proofs
+Proofs:
 1. extract concepts directly related to a proof
 2. extract concepts in a relation used in a proof
 3. list proofs that use reductio ad absurdum
 
+Propositions:
+1. find concepts related to a proposition
+2.
 
 
 
