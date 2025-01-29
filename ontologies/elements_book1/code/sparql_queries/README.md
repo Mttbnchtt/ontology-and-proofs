@@ -8,8 +8,9 @@ Proofs:
 3. list proofs that use reductio ad absurdum
 
 Propositions:
-1. find concepts related to a proposition
-2.
+1. find concepts related to a proposition (main relation: "contains_concept")
+2. find given concepts of a proposition (main relation: "has_given_concept")
+3. find concepts of a proposition (main relation: "refers_to / contains_concept")
 
 
 

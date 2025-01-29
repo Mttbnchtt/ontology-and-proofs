@@ -13,3 +13,4 @@ where {
         rdfs:label  ?concept_label .
 }
 order by ?item_iri
+test
