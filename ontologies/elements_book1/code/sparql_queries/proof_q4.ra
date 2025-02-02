@@ -1,0 +1,18 @@
+prefix : <https://www.foom.com/core#>
+
+select distinct
+    ?p ?o
+where {
+    values ?proof_iri { :proof_pappus }
+    ?proof_iri 
+        ?p ?o .
+
+    filter ( 
+        ?proof_iri != ?other_proof_iri 
+    )
+    # filter not exists {
+    #     ?other_proof_iri
+    #         a :proof ;
+    #         ?p ?o .
+    # }
+}
