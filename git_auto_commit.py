@@ -87,7 +87,7 @@ def main():
                 commit_changes()
                 change_count = 0
         
-        time.sleep(600)  # Check every 600 seconds (10 minutes)
+        time.sleep(300)  # Check every 300 seconds (5 minutes)
 
 if __name__ == "__main__":
     main()
