@@ -1,7 +1,10 @@
+# link weights for the elements of Postulate
+
 SELECT
     ?s ?o
     (count (*) as ?links)
 WHERE {
+    ?s a <https://www.foom.com/core#postulate> .
     { ?s <https://www.foom.com/core#refers_to> ?o . } # refers to
     union
     { ?s <https://www.foom.com/core#refers_to> 
@@ -84,4 +87,4 @@ WHERE {
     #########################
 }
 group by ?s ?o
-order by desc(?links)
+order by ?s desc(?links) 
