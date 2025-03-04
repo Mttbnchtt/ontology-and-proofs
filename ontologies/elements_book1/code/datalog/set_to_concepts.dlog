@@ -1,0 +1,10 @@
+# triples connecting sets to concepts
+[ <https://www.foom.com/core#set__circle>, <https://www.foom.com/core#refers_to>, <https://www.foom.com/core#concept__circle> ] :- .
+[ <https://www.foom.com/core#set__magnitude>, <https://www.foom.com/core#refers_to>, <https://www.foom.com/core#concept__magnitude> ] :-  .
+[ <https://www.foom.com/core#set__magnitude__magnitude>, <https://www.foom.com/core#refers_to>, <https://www.foom.com/core#concept__magnitude> ] :-  .
+[ <https://www.foom.com/core#set__center__interval>, <https://www.foom.com/core#refers_to>, <https://www.foom.com/core#concept__center> ] :-  .
+[ <https://www.foom.com/core#set__center__interval>, <https://www.foom.com/core#refers_to>, <https://www.foom.com/core#concept__interval> ] :-  .
+[ <https://www.foom.com/core#set__finite_straight_line>, <https://www.foom.com/core#refers_to>, <https://www.foom.com/core#concept__finite_straight_line> ] :-  .
+[ <https://www.foom.com/core#set__point_point>, <https://www.foom.com/core#refers_to>, <https://www.foom.com/core#concept__point> ] :-  .
+[ <https://www.foom.com/core#set__inclination_of_interior_angle__inclination_of_interior_angle>, <https://www.foom.com/core#refers_to>, <https://www.foom.com/core#concept__inclination_of_interior_angle> ] :-  .
+[ <https://www.foom.com/core#set__inclination_of_interior_angle>, <https://www.foom.com/core#refers_to>, <https://www.foom.com/core#concept__inclination_of_interior_angle> ] :-  .

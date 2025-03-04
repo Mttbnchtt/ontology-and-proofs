@@ -1,0 +1,39 @@
+SELECT
+    ?s ?o
+    (count (*) as ?links)
+WHERE {
+    { ?s <https://www.foom.com/core#refers_to> ?o . } # items to which s refers
+    union
+    { ?s <https://www.foom.com/core#refers_to> 
+            / <https://www.foom.com/core#contains_concept> ?o . } # concepts related to items to which s refers
+    union
+    { ?s <https://www.foom.com/core#refers_to> 
+            / <https://www.foom.com/core#contains_concept> 
+            / <https://www.foom.com/core#is_super_concept_of> ?o . } # super-concepts of concepts related to items to which s refers
+    union
+    { ?s <https://www.foom.com/core#refers_to> 
+            / <https://www.foom.com/core#has_range> ?o . } # range of relations or operations related to s
+    union
+    { ?s <https://www.foom.com/core#refers_to> 
+            / <https://www.foom.com/core#has_domain> ?o . } # domain of relations or operations related to s
+    union
+    { ?s <https://www.foom.com/core#refers_to>
+            / <https://www.foom.com/core#refers_to> ?o . } # items reachable from s by refers_to twice
+    union
+    { ?s <https://www.foom.com/core#refers_to>
+            / <https://www.foom.com/core#refers_to>
+            / <https://www.foom.com/core#contains_concept> ?o . } # concepts reachable from s by refers_to twice
+    union
+    { ?s <https://www.foom.com/core#refers_to>
+            / <https://www.foom.com/core#refers_to> 
+            / <https://www.foom.com/core#contains_concept> 
+            / <https://www.foom.com/core#is_super_concept_of> ?o . } # super-concepts reachable from s by refers_to twice
+    union
+    { ?s <https://www.foom.com/core#refers_to>
+            / <https://www.foom.com/core#has_range> ?o . } # range reachable from s by refers_to twice
+    union
+    { ?s <https://www.foom.com/core#refers_to>
+            / <https://www.foom.com/core#has_domain> ?o . } # domain reachable from s by refers_to twice
+}
+group by ?s ?o
+order by desc(?links)
