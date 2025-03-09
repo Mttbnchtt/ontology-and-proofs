@@ -17,7 +17,7 @@ WHERE {
     { ?s <https://www.foom.com/core#has_statement> 
             / <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#contains_concept> 
-            / <https://www.foom.com/core#is_super_concept_of> ?o . } # refers to / contains concept / super-concept
+            / <https://www.foom.com/core#is_sub_concept_of> ?o . } # refers to / contains concept / super-concept
     ######################
     union
     { ?s <https://www.foom.com/core#has_statement> 
@@ -33,7 +33,7 @@ WHERE {
             / <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#has_range>
             / <https://www.foom.com/core#contains_concept>
-            / <https://www.foom.com/core#is_super_concept_of>  ?o . } # refers to / range / contains concept / super-concept
+            / <https://www.foom.com/core#is_sub_concept_of>  ?o . } # refers to / range / contains concept / super-concept
     #####################
     union
     { ?s <https://www.foom.com/core#has_statement> 
@@ -49,7 +49,7 @@ WHERE {
             / <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#has_domain>
             / <https://www.foom.com/core#contains_concept>
-            / <https://www.foom.com/core#is_super_concept_of>  ?o . } # refers to / domain / contains concept / super-concept
+            / <https://www.foom.com/core#is_sub_concept_of>  ?o . } # refers to / domain / contains concept / super-concept
     #########################
     union
     { ?s <https://www.foom.com/core#has_statement> 
@@ -65,7 +65,7 @@ WHERE {
             / <https://www.foom.com/core#refers_to>
             / <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#contains_concept> 
-            / <https://www.foom.com/core#is_super_concept_of> ?o . } # refers to [2] / contains concept / super-concept
+            / <https://www.foom.com/core#is_sub_concept_of> ?o . } # refers to [2] / contains concept / super-concept
     ####################################
     union
     { ?s <https://www.foom.com/core#has_statement> 
@@ -84,7 +84,7 @@ WHERE {
             / <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#has_range>
             / <https://www.foom.com/core#contains_concept>
-            / <https://www.foom.com/core#is_super_concept_of>  ?o . } # refers to [2] / range / contains concept / super-concept
+            / <https://www.foom.com/core#is_sub_concept_of>  ?o . } # refers to [2] / range / contains concept / super-concept
     #####################
     union
     { ?s <https://www.foom.com/core#has_statement> 
@@ -103,7 +103,7 @@ WHERE {
             / <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#has_domain>
             / <https://www.foom.com/core#contains_concept>
-            / <https://www.foom.com/core#is_super_concept_of>  ?o . } # refers to [2] / domain / contains concept / super-concept
+            / <https://www.foom.com/core#is_sub_concept_of>  ?o . } # refers to [2] / domain / contains concept / super-concept
     #########################
 }
 group by ?s ?o
