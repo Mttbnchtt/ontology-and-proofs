@@ -1,4 +1,4 @@
-# link weights for the elements of Postulate
+# link weights for the elements of the class Postulate
 
 SELECT
     ?s ?o
