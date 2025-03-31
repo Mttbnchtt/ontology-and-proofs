@@ -522,12 +522,6 @@ ns1:moral__subtraction_of_lengths a owl:NamedIndividual,
     skos:prefLabel "Subtraction of lengths" ;
     ns1:is_moral_of ns1:proposition_3 .
 
-ns1:operation_instance__construct_on_equilateteral_triangle__finite_straight_line___equilateral_triangle a owl:NamedIndividual,
-        ns1:operation_instance ;
-    rdfs:label "Operation instance: Construct_on(equilateteral_triangle, finite_straight_line)->equilateral_triangle" ;
-    skos:prefLabel "Construct on(equilateteral triangle, finite straight line)->equilateral triangle" ;
-    ns1:is_used_in ns1:proposition_1 .
-
 ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_line___finite_staight_line a owl:NamedIndividual,
         ns1:operation_instance ;
     rdfs:label "Operation instance: Place_on(finite_straight_line, point, finite_straight_line)->finite_staight_line" ;
@@ -4951,7 +4945,7 @@ ns1:proposition_1 a owl:NamedIndividual,
     ns1:has_moral ns1:moral__existence_of_triangles ;
     ns1:has_proposition_type ns1:proposition_type__construction ;
     ns1:is_in ns1:document__elements_book_1 ;
-    ns1:refers_to ns1:operation_instance__construct_on_equilateteral_triangle__finite_straight_line___equilateral_triangle .
+    ns1:refers_to ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle .
 
 ns1:proposition_10 a owl:NamedIndividual,
         ns1:proposition ;
@@ -5956,19 +5950,6 @@ ns1:operation_instance__construct_in_parallelogram__rectilinear_angle___parallel
         ns1:proposition_42,
         ns1:proposition_45 .
 
-ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle a ns1:operation_instance ;
-    rdfs:label "Operation instance: Construct_on(equilateral_triangle, finite_straight_line)->equilateral_triangle" ;
-    skos:prefLabel "Construct_on(equilateral_triangle, finite_straight_line)->equilateral_triangle" ;
-    ns1:contains_concept ns1:concept__construct_on,
-        ns1:concept__equilateral_triangle,
-        ns1:concept__finite_straight_line ;
-    ns1:has_relation_type ns1:operation_type__construct_on_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
-    ns1:is_used_in ns1:proof_1,
-        ns1:proof_10,
-        ns1:proof_11,
-        ns1:proof_2,
-        ns1:proof_9 .
-
 ns1:operation_type__subtract_magnitude__magnitude___magnitude a owl:NamedIndividual,
         ns1:operation_type ;
     rdfs:label "Operation type: Subtract(magnitude, magnitude)->magnitude" ;
@@ -6254,6 +6235,22 @@ ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line__
         ns1:proof_40,
         ns1:proof_44,
         ns1:proof_46 .
+
+ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle a owl:NamedIndividual,
+        ns1:operation_instance ;
+    rdfs:label "Operation instance: Construct_on(equilateral_triangle, finite_straight_line)->equilateral_triangle" ;
+    skos:prefLabel "Construct on(equilateral triangle, finite straight line)->equilateral triangle",
+        "Construct_on(equilateral_triangle, finite_straight_line)->equilateral_triangle" ;
+    ns1:contains_concept ns1:concept__construct_on,
+        ns1:concept__equilateral_triangle,
+        ns1:concept__finite_straight_line ;
+    ns1:has_relation_type ns1:operation_type__construct_on_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
+    ns1:is_used_in ns1:proof_1,
+        ns1:proof_10,
+        ns1:proof_11,
+        ns1:proof_2,
+        ns1:proof_9,
+        ns1:proposition_1 .
 
 ns1:operation_instance__draw_center__interval___circle a ns1:operation_instance ;
     rdfs:label "Operation instance: Draw(center, interval)->circle" ;
