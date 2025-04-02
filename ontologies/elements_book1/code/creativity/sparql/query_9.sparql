@@ -7,7 +7,6 @@ SELECT
 WHERE {
     ?s a <https://www.foom.com/core#postulate> .
     ######################
-    union
     { ?s <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#contains_concept> 
             / <https://www.foom.com/core#is_sub_concept_of> ?o . } # refers to / contains concept / super-concept
