@@ -13,6 +13,8 @@ SPARQL queries
 9. Link weights for the elements of the class Postulate (only hierarchical items)
 10. Link weights for the elements of the class Common notion (only hierarchical items)
 11. Link weights for the elements of the class Definition (only hierarchical items)
-12.
-13.
-14.
+
+12. Link weights for the elements of the class Proposition (without hierarchical items)
+13. Link weights for the elements of the class Proposition (only hierarchical items)
+14. Link weights for the elements of the class Proof (without hierarchical items)
+15. Link weights for the elements of the class Proof (only hierarchical items)
