@@ -1,14 +1,16 @@
 SPARQL queries
 
-1. q1: count links between elements
-
-"""
-SELECT
-    ?s ?o
-    (count (*) as ?links)
-WHERE {
-    ?s <https://www.foom.com/core#refers_to> / <https://www.foom.com/core#contains_concept>* / <https://www.foom.com/core#is_super_concept_of>* / <https://www.foom.com/core#has_range>*  ?o .
-}
-group by ?s ?o
-order by desc(?links)
-"""
+1. Link weights for the elements of the class Postulate (also with hierarchical items)
+2. Link weights for the elements of the class Common notion (also with hierarchical items)
+3. Link weights for the elements of the class Definition (also with hierarchical items)
+4.
+5.
+6. Link weights for the elements of the class Postulate (without hierarchical items)
+7. Link weights for the elements of the class Common notions (without hierarchical items)
+8. Link weights for the elements of the class Definition (without hierarchical items)
+9. Link weights for the elements of the class Postulate (only hierarchical items)
+10. Link weights for the elements of the class Common notion (only hierarchical items)
+11. Link weights for the elements of the class Definition (only hierarchical items)
+12.
+13.
+14.
