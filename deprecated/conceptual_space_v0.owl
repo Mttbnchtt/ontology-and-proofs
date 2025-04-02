@@ -1,0 +1,158 @@
+@prefix : <http://www.foom.com/conceptual_space#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.foom.com/conceptual_space#> .
+
+<http://www.foom.com/conceptual_space> rdf:type owl:Ontology ;
+                                        owl:imports <http://www.foom.com/core> ,
+                                                    <http://www.foom.com/mathematical_concepts> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000000
+<http://www.foom.com/conceptual_space#00000000000000000000> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.foom.com/conceptual_space#00000000000000000001
+<http://www.foom.com/conceptual_space#00000000000000000001> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <http://www.foom.com/conceptual_space#00000000000000000011> ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "hasImplicature"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000002
+<http://www.foom.com/conceptual_space#00000000000000000002> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <http://www.foom.com/conceptual_space#00000000000000000012> ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "isAnalogousTo"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000003
+<http://www.foom.com/conceptual_space#00000000000000000003> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <http://www.foom.com/conceptual_space#00000000000000000002> ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "isAnalogousToItem"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000004
+<http://www.foom.com/conceptual_space#00000000000000000004> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <http://www.foom.com/conceptual_space#00000000000000000002> ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "isAnalogousToStructure"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000005
+<http://www.foom.com/conceptual_space#00000000000000000005> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <http://www.foom.com/conceptual_space#00000000000000000012> ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "is inverse of"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000009
+<http://www.foom.com/conceptual_space#00000000000000000009> rdf:type owl:ObjectProperty ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "hasSemanticRelation"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000010
+<http://www.foom.com/conceptual_space#00000000000000000010> rdf:type owl:ObjectProperty ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "hasSyntacticRelation"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000011
+<http://www.foom.com/conceptual_space#00000000000000000011> rdf:type owl:ObjectProperty ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "hasPragmaticRelation"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000012
+<http://www.foom.com/conceptual_space#00000000000000000012> rdf:type owl:ObjectProperty ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "hasHeuristicRelation"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000025
+<http://www.foom.com/conceptual_space#00000000000000000025> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <http://www.foom.com/conceptual_space#00000000000000000009> ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "isLogicalConsequenceOf"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.foom.com/conceptual_space#00000000000000000014
+<http://www.foom.com/conceptual_space#00000000000000000014> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "test"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000022
+<http://www.foom.com/conceptual_space#00000000000000000022> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:range xsd:boolean ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "is identified"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000023
+<http://www.foom.com/conceptual_space#00000000000000000023> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:range xsd:boolean ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "is procedure"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000024
+<http://www.foom.com/conceptual_space#00000000000000000024> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                                            rdfs:range xsd:boolean ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "is structure"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.foom.com/conceptual_space#00000000000000000006
+<http://www.foom.com/conceptual_space#00000000000000000006> rdf:type owl:Class ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "SemanticCategory"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000007
+<http://www.foom.com/conceptual_space#00000000000000000007> rdf:type owl:Class ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "SyntacticCategory"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000008
+<http://www.foom.com/conceptual_space#00000000000000000008> rdf:type owl:Class ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "PragmaticCategory"@en .
+
+
+###  http://www.foom.com/conceptual_space#00000000000000000013
+<http://www.foom.com/conceptual_space#00000000000000000013> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.foom.com/conceptual_space#00000000000000000008> ;
+                                                            <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> ;
+                                                            rdfs:label "Implicature"@en .
+
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

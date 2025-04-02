@@ -1,0 +1,91 @@
+1. point [part] (d1)
+   - Term defined: "point"
+   - Concepts used: "part" (specifically absence of)
+
+2. line [length, breadth] (d2)
+   - Term defined: "line"
+   - Concepts used: "length", "breadth" (specifically absence of)
+
+3. line [end, point] (d3)
+   - Term defined: "line"
+   - Concepts used: "end", "point"
+
+4. straight_line [equal_level, point] (d4)
+   - Term defined: "straight line"
+   - Concepts used: "equal level", "point"
+
+5. surface [length, breadth] (d5)
+   - Term defined: "surface"
+   - Concepts used: "length", "breadth"
+
+6. surface [end, line] (d6)
+   - Term defined: "surface"
+   - Concepts used: "end", "line"
+
+7. plane_surface [equal level, straight_line] (d7)
+   - Term defined: "plane surface"
+   - Concepts used: "equal level", "straight line"
+
+8. plane_angle [inclination, line, plane, meet] (d8)
+   - Term defined: "plane angle"
+   - Concepts used: "inclination", "line", "plane", "meet"
+
+9. rectilinear_angle [straight_line] (d9)
+   - Term defined: "rectilinear angle"
+   - Concepts used: "straight line"
+
+10. right_angle [straight_line, equal_angle, perpendicular] (d10)
+    - Term defined: "right angle"
+    - Concepts used: "straight line", "equal angle", "perpendicular"
+
+11. obtuse_angle [right_angle, greater] (d11)
+    - Term defined: "obtuse angle"
+    - Concepts used: "right angle", "greater"
+
+12. acute_angle [right_angle, less] (d12)
+    - Term defined: "acute angle"
+    - Concepts used: "right angle", "less"
+
+13. boundary [extremity] (d13)
+    - Term defined: "boundary"
+    - Concepts used: "extremity"
+
+14. figure [boundary] (d14)
+    - Term defined: "figure"
+    - Concepts used: "boundary"
+
+15. circle [plane_figure, line, point, equal_distance] (d15)
+    - Term defined: "circle"
+    - Concepts used: "plane figure", "line", "point", "equal distance"
+
+16. center [point, circle] (d16)
+    - Term defined: "center"
+    - Concepts used: "point", "circle"
+
+17. diameter [straight_line, center, circumference, bisect] (d17)
+    - Term defined: "diameter"
+    - Concepts used: "straight line", "center", "circumference", "bisect"
+
+18. semicircle [figure, diameter, circumference, center] (d18)
+    - Term defined: "semicircle"
+    - Concepts used: "figure", "diameter", "circumference", "center"
+
+19. rectilinear_figure [straight_line, trilateral, quadrilateral, multilateral] (d19)
+    - Term defined: "rectilinear figure"
+    - Concepts used: "straight line", "trilateral", "quadrilateral", "multilateral"
+
+20. triangle_types [trilateral, equal_sides] (d20)
+    - Terms defined: "equilateral triangle", "isosceles triangle", "scalene triangle"
+    - Concepts used: "trilateral", "equal sides"
+
+21. triangle_angle_types [right_angle, obtuse_angle, acute_angle] (d21)
+    - Terms defined: "right-angled triangle", "obtuse-angled triangle", "acute-angled triangle"
+    - Concepts used: "right angle", "obtuse angle", "acute angle"
+
+22. quadrilateral_types [equilateral, right_angle, opposite_sides, opposite_angles] (d22)
+    - Terms defined: "square", "oblong", "rhombus", "rhomboid", "trapezia"
+    - Concepts used: "equilateral", "right angle", "opposite sides", "opposite angles"
+
+23. parallel_lines [straight_line, plane, indefinite_extension, non_meeting] (d23)
+    - Term defined: "parallel lines"
+    - Concepts used: "straight line", "plane", "indefinite extension", "non meeting"

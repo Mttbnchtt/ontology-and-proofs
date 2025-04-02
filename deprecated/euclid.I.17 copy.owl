@@ -1,0 +1,693 @@
+@prefix : <http://www.foom.com/euclid.I.17/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix core: <http://www.foom.com/core/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix euclid: <http://www.foom.com/euclid.I.17/> .
+@base <http://www.foom.com/euclid.I.17> .
+
+<http://www.foom.com/euclid.I.17> rdf:type owl:Ontology ;
+                                   owl:imports <http://www.foom.com/core> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.foom.com/euclid.I.17/additionRelations
+euclid:additionRelations rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf core:domainRelations .
+
+
+###  http://www.foom.com/euclid.I.17/constructionRelations
+euclid:constructionRelations rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf core:domainRelations ;
+                             rdfs:domain core:Object ;
+                             rdfs:range core:object .
+
+
+###  http://www.foom.com/euclid.I.17/doesNotLieOn
+euclid:doesNotLieOn rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf euclid:lyingOn ;
+                    owl:propertyDisjointWith euclid:liesOn .
+
+
+###  http://www.foom.com/euclid.I.17/equalMagnitude
+euclid:equalMagnitude rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf euclid:orderRelations ;
+                      rdf:type owl:SymmetricProperty ,
+                               owl:ReflexiveProperty .
+
+
+###  http://www.foom.com/euclid.I.17/fullyDoesNotLieOn
+euclid:fullyDoesNotLieOn rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf euclid:doesNotLieOn ;
+                         rdf:type owl:IrreflexiveProperty .
+
+
+###  http://www.foom.com/euclid.I.17/isAdjacentTo
+euclid:isAdjacentTo rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf euclid:positionRelations ;
+                    rdf:type owl:IrreflexiveProperty .
+
+
+###  http://www.foom.com/euclid.I.17/isAngleOf
+euclid:isAngleOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf core:domainRelations ;
+                 rdf:type owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain euclid:Angle ;
+                 rdfs:range core:Object .
+
+
+###  http://www.foom.com/euclid.I.17/isExternalAngleOf
+euclid:isExternalAngleOf rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf euclid:isAngleOf .
+
+
+###  http://www.foom.com/euclid.I.17/isInternalAngleOf
+euclid:isInternalAngleOf rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf euclid:isAngleOf .
+
+
+###  http://www.foom.com/euclid.I.17/isOppositeTo
+euclid:isOppositeTo rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf euclid:positionRelations ;
+                    rdf:type owl:IrreflexiveProperty .
+
+
+###  http://www.foom.com/euclid.I.17/isSideOf
+euclid:isSideOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf euclid:liesOn ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty .
+
+
+###  http://www.foom.com/euclid.I.17/joinedTo
+euclid:joinedTo rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf euclid:constructionRelations ;
+                rdf:type owl:SymmetricProperty ;
+                rdfs:domain euclid:Point ;
+                rdfs:range euclid:Point .
+
+
+###  http://www.foom.com/euclid.I.17/liesOn
+euclid:liesOn rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf euclid:lyingOn .
+
+
+###  http://www.foom.com/euclid.I.17/lyingOn
+euclid:lyingOn rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf euclid:positionRelations ;
+               rdfs:domain core:Object ;
+               rdfs:range core:Object .
+
+
+###  http://www.foom.com/euclid.I.17/orderRelations
+euclid:orderRelations rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf core:domainRelations .
+
+
+###  http://www.foom.com/euclid.I.17/positionRelations
+euclid:positionRelations rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf core:domainRelations ;
+                         rdfs:domain core:Object ;
+                         rdfs:range core:Object .
+
+
+###  http://www.foom.com/euclid.I.17/producedTo
+euclid:producedTo rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf euclid:constructionRelations ,
+                                     euclid:liesOn ;
+                  rdf:type owl:IrreflexiveProperty ;
+                  rdfs:domain euclid:Segment ;
+                  rdfs:range euclid:Segment .
+
+
+###  http://www.foom.com/euclid.I.17/smallerMagnitude
+euclid:smallerMagnitude rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf euclid:orderRelations ;
+                        rdf:type owl:AsymmetricProperty ,
+                                 owl:IrreflexiveProperty .
+
+
+###  http://www.foom.com/euclid.I.17/sumOf
+euclid:sumOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf euclid:additionRelations ;
+             rdfs:domain core:Object ;
+             rdfs:range core:Object .
+
+
+###  http://www.foom.com/euclid.I.17/summand1
+euclid:summand1 rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf euclid:additionRelations .
+
+
+###  http://www.foom.com/euclid.I.17/summand2
+euclid:summand2 rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf euclid:additionRelations .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.foom.com/euclid.I.17/isAmpliativeStep
+euclid:isAmpliativeStep rdf:type owl:DatatypeProperty ;
+                        <http://purl.org/dc/elements/1.1/creator> <http://orcid.org/0000-0002-3253-4387> .
+
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:domain core:Proof_step ;
+                    rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.foom.com/core/object
+core:object rdf:type owl:Class .
+
+
+###  http://www.foom.com/euclid.I.17/Angle
+euclid:Angle rdf:type owl:Class ;
+             rdfs:subClassOf core:Object .
+
+
+###  http://www.foom.com/euclid.I.17/Point
+euclid:Point rdf:type owl:Class ;
+             rdfs:subClassOf core:Object .
+
+
+###  http://www.foom.com/euclid.I.17/Segment
+euclid:Segment rdf:type owl:Class ;
+               rdfs:subClassOf core:Object .
+
+
+###  http://www.foom.com/euclid.I.17/Triangle
+euclid:Triangle rdf:type owl:Class ;
+                rdfs:subClassOf core:Object .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.foom.com/euclid.I.17/angle_ABC.e
+euclid:angle_ABC.e rdf:type owl:NamedIndividual ,
+                            euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/angle_ABD.p
+euclid:angle_ABD.p rdf:type owl:NamedIndividual ,
+                            euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/angle_ACB.e
+euclid:angle_ACB.e rdf:type owl:NamedIndividual ,
+                            euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/angle_ACD.e
+euclid:angle_ACD.e rdf:type owl:NamedIndividual ,
+                            euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/angle_ACD.p
+euclid:angle_ACD.p rdf:type owl:NamedIndividual ,
+                            euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/angle_ADB.p
+euclid:angle_ADB.p rdf:type owl:NamedIndividual ,
+                            euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/angle_ADC.p
+euclid:angle_ADC.p rdf:type owl:NamedIndividual ,
+                            euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/euclid.I.13
+euclid:euclid.I.13 rdf:type owl:NamedIndividual ,
+                            core:Claim ;
+                   core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/euclid.I.16
+euclid:euclid.I.16 rdf:type owl:NamedIndividual ,
+                            core:Claim ;
+                   core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/point_A.p
+euclid:point_A.p rdf:type owl:NamedIndividual ,
+                          euclid:Point .
+
+
+###  http://www.foom.com/euclid.I.17/point_B.p
+euclid:point_B.p rdf:type owl:NamedIndividual ,
+                          euclid:Point .
+
+
+###  http://www.foom.com/euclid.I.17/point_C.p
+euclid:point_C.p rdf:type owl:NamedIndividual ,
+                          euclid:Point .
+
+
+###  http://www.foom.com/euclid.I.17/point_D.e
+euclid:point_D.e rdf:type owl:NamedIndividual ,
+                          euclid:Point .
+
+
+###  http://www.foom.com/euclid.I.17/point_D.p
+euclid:point_D.p rdf:type owl:NamedIndividual ,
+                          euclid:Point .
+
+
+###  http://www.foom.com/euclid.I.17/postulate4
+euclid:postulate4 rdf:type owl:NamedIndividual ,
+                           core:Claim ;
+                  core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/proof_Euclid
+euclid:proof_Euclid rdf:type owl:NamedIndividual ,
+                             core:Proof .
+
+
+###  http://www.foom.com/euclid.I.17/proof_Proclus
+euclid:proof_Proclus rdf:type owl:NamedIndividual ,
+                              core:Proof .
+
+
+###  http://www.foom.com/euclid.I.17/rightAngle
+euclid:rightAngle rdf:type owl:NamedIndividual ,
+                           euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/segment_BC.e
+euclid:segment_BC.e rdf:type owl:NamedIndividual ,
+                             euclid:Segment .
+
+
+###  http://www.foom.com/euclid.I.17/segment_BC.p
+euclid:segment_BC.p rdf:type owl:NamedIndividual ,
+                             euclid:Segment .
+
+
+###  http://www.foom.com/euclid.I.17/segment_BD.e
+euclid:segment_BD.e rdf:type owl:NamedIndividual ,
+                             euclid:Segment .
+
+
+###  http://www.foom.com/euclid.I.17/segment_BD.p
+euclid:segment_BD.p rdf:type owl:NamedIndividual ,
+                             euclid:Segment .
+
+
+###  http://www.foom.com/euclid.I.17/segment_DC.p
+euclid:segment_DC.p rdf:type owl:NamedIndividual ,
+                             euclid:Segment .
+
+
+###  http://www.foom.com/euclid.I.17/step1.e
+euclid:step1.e rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/step1.p
+euclid:step1.p rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step10.e
+euclid:step10.e rdf:type owl:NamedIndividual ,
+                         core:Proof_step ,
+                         rdf:Statement ;
+                core:hasAntecedent euclid:euclid.I.13 ,
+                                   euclid:step1.e ;
+                core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/step10.p
+euclid:step10.p rdf:type owl:NamedIndividual ,
+                         core:Proof_step ,
+                         rdf:Statement ;
+                core:hasAntecedent euclid:step6.p ,
+                                   euclid:step8.p ;
+                core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step11.e
+euclid:step11.e rdf:type owl:NamedIndividual ,
+                         core:Proof_step ,
+                         rdf:Statement ;
+                core:hasAntecedent euclid:step10.e ,
+                                   euclid:step9.e ;
+                core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/step11.p
+euclid:step11.p rdf:type owl:NamedIndividual ,
+                         core:Proof_step ,
+                         rdf:Statement ;
+                core:hasAntecedent euclid:step10.p ,
+                                   euclid:step6.p ,
+                                   euclid:step8.p ,
+                                   euclid:step9.p ;
+                core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step12.p
+euclid:step12.p rdf:type owl:NamedIndividual ,
+                         core:Proof_step ,
+                         rdf:Statement ;
+                core:hasAntecedent euclid:step10.p ,
+                                   euclid:step11.p ,
+                                   euclid:step6.p ,
+                                   euclid:step8.p ,
+                                   euclid:step9.p ;
+                core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step13.p
+euclid:step13.p rdf:type owl:NamedIndividual ,
+                         core:Proof_step ,
+                         rdf:Statement ;
+                core:hasAntecedent euclid:step1.p ,
+                                   euclid:step7.p ;
+                core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step14.p
+euclid:step14.p rdf:type owl:NamedIndividual ,
+                         core:Proof_step ,
+                         rdf:Statement ;
+                core:hasAntecedent euclid:step13.p ,
+                                   euclid:step7.p ;
+                core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step15.p
+euclid:step15.p rdf:type owl:NamedIndividual ,
+                         core:Proof_step ,
+                         rdf:Statement ;
+                core:hasAntecedent euclid:step13.p ,
+                                   euclid:step7.p ;
+                core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step16.p
+euclid:step16.p rdf:type owl:NamedIndividual ,
+                         core:Proof_step ,
+                         rdf:Statement ;
+                core:hasAntecedent euclid:step13.p ,
+                                   euclid:step14.p ,
+                                   euclid:step15.p ,
+                                   euclid:step7.p ;
+                core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step17.p
+euclid:step17.p rdf:type owl:NamedIndividual ,
+                         core:Proof_step ,
+                         rdf:Statement ;
+                core:hasAntecedent euclid:step14.p ,
+                                   euclid:step15.p ,
+                                   euclid:step16.p ,
+                                   euclid:step7.p ;
+                core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step18.p
+euclid:step18.p rdf:type owl:NamedIndividual ,
+                         core:Proof_step ,
+                         rdf:Statement ;
+                core:hasAntecedent euclid:euclid.I.13 ,
+                                   euclid:postulate4 ,
+                                   euclid:step1.p ,
+                                   euclid:step5.p ;
+                core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step19.p
+euclid:step19.p rdf:type owl:NamedIndividual ,
+                         core:Proof_step ,
+                         rdf:Statement ;
+                core:hasAntecedent euclid:step12.p ,
+                                   euclid:step17.p ,
+                                   euclid:step18.p ;
+                core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step2.e
+euclid:step2.e rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step1.e ;
+               core:inProof euclid:proof_Euclid ;
+               euclid:isAmpliativeStep "false"^^xsd:boolean .
+
+
+###  http://www.foom.com/euclid.I.17/step2.p
+euclid:step2.p rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step1.p ;
+               core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step3.e
+euclid:step3.e rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step1.e ,
+                                  euclid:step2.e ;
+               core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/step3.p
+euclid:step3.p rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step1.p ;
+               core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step4.e
+euclid:step4.e rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step1.e ;
+               core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/step4.p
+euclid:step4.p rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step1.p ;
+               core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step5.e
+euclid:step5.e rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step1.e ,
+                                  euclid:step2.e ;
+               core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/step5.p
+euclid:step5.p rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step2.p ,
+                                  euclid:step3.p ,
+                                  euclid:step4.p ;
+               core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step6.e
+euclid:step6.e rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:euclid.I.16 ,
+                                  euclid:step3.e ,
+                                  euclid:step4.e ,
+                                  euclid:step5.e ;
+               core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/step6.p
+euclid:step6.p rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step5.p ;
+               core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step7.e
+euclid:step7.e rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step1.e ;
+               core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/step7.p
+euclid:step7.p rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step5.p ;
+               core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step8.e
+euclid:step8.e rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step1.e ,
+                                  euclid:step2.e ;
+               core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/step8.p
+euclid:step8.p rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step1.p ,
+                                  euclid:step5.p ;
+               core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/step9.e
+euclid:step9.e rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:postulate4 ,
+                                  euclid:step6.e ,
+                                  euclid:step7.e ,
+                                  euclid:step8.e ;
+               core:inProof euclid:proof_Euclid .
+
+
+###  http://www.foom.com/euclid.I.17/step9.p
+euclid:step9.p rdf:type owl:NamedIndividual ,
+                        core:Proof_step ,
+                        rdf:Statement ;
+               core:hasAntecedent euclid:step6.p ,
+                                  euclid:step8.p ;
+               core:inProof euclid:proof_Proclus .
+
+
+###  http://www.foom.com/euclid.I.17/sum_aABC.p_aACB.p
+euclid:sum_aABC.p_aACB.p rdf:type owl:NamedIndividual ,
+                                  euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/sum_aACB.e_aABC.e
+euclid:sum_aACB.e_aABC.e rdf:type owl:NamedIndividual ,
+                                  euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/sum_aACB.e_aACD.e
+euclid:sum_aACB.e_aACD.e rdf:type owl:NamedIndividual ,
+                                  euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/sum_aADB.p_aADC.p
+euclid:sum_aADB.p_aADC.p rdf:type owl:NamedIndividual ,
+                                  euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/sum_rightAngle_rightAngle
+euclid:sum_rightAngle_rightAngle rdf:type owl:NamedIndividual ,
+                                          euclid:Angle .
+
+
+###  http://www.foom.com/euclid.I.17/triangle_ABC.e
+euclid:triangle_ABC.e rdf:type owl:NamedIndividual ,
+                               euclid:Triangle .
+
+
+###  http://www.foom.com/euclid.I.17/triangle_ABC.p
+euclid:triangle_ABC.p rdf:type owl:NamedIndividual ,
+                               euclid:Triangle .
+
+
+###  http://www.foom.com/euclid.I.17/triangle_ABD.p
+euclid:triangle_ABD.p rdf:type owl:NamedIndividual ,
+                               euclid:Triangle .
+
+
+###  http://www.foom.com/euclid.I.17/triangle_ADC.p
+euclid:triangle_ADC.p rdf:type owl:NamedIndividual ,
+                               euclid:Triangle .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( euclid:Angle
+                euclid:Point
+                euclid:Segment
+                euclid:Triangle
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( euclid:angle_ABD.p
+                        euclid:angle_ACD.p
+                        euclid:angle_ADB.p
+                        euclid:angle_ADC.p
+                        euclid:euclid.I.13
+                        euclid:euclid.I.16
+                        euclid:point_A.p
+                        euclid:point_B.p
+                        euclid:point_C.p
+                        euclid:point_D.p
+                        euclid:postulate4
+                        euclid:segment_BC.p
+                        euclid:segment_BD.p
+                        euclid:segment_DC.p
+                        euclid:step1.e
+                        euclid:step10.e
+                        euclid:step11.e
+                        euclid:step2.e
+                        euclid:step3.e
+                        euclid:step4.e
+                        euclid:step5.e
+                        euclid:step6.e
+                        euclid:step7.e
+                        euclid:step8.e
+                        euclid:step9.e
+                        euclid:sum_aABC.p_aACB.p
+                        euclid:sum_aADB.p_aADC.p
+                        euclid:triangle_ABC.p
+                        euclid:triangle_ABD.p
+                        euclid:triangle_ADC.p
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
