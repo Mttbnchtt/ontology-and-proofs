@@ -1,6 +1,3 @@
 endpoint start
 dstore create aep
 active aep
-import +p ./elements_book1/ontologies/euclid_book1.ttl
-import +p ./elements_book1/code/datalog/set_to_concepts.dlog
-import +p ./elements_book1/code/datalog/same_as.dlog
