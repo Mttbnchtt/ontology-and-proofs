@@ -20,3 +20,4 @@ SPARQL queries
 15. Link weights for the elements of the class Proof (only hierarchical items)
 
 
+
