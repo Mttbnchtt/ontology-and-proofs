@@ -18,3 +18,5 @@ SPARQL queries
 13. Link weights for the elements of the class Proposition (only hierarchical items)
 14. Link weights for the elements of the class Proof (without hierarchical items)
 15. Link weights for the elements of the class Proof (only hierarchical items)
+
+
