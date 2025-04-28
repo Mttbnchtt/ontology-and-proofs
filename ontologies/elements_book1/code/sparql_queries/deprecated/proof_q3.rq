@@ -1,0 +1,12 @@
+# list proofs that use reductio ad absurdum
+
+prefix : <https://www.foom.com/core#>
+
+select distinct
+    ?item_iri
+where {
+    ?item_iri
+        a :proof ;
+        :uses_reductio ?reduction_bool .
+}
+order by ?item_iri

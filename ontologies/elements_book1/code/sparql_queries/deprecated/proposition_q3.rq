@@ -1,0 +1,15 @@
+# find concepts of a proposition
+
+prefix : <https://www.foom.com/core#>
+
+select distinct
+    ?item_iri
+    ?concept_label
+where {
+    ?item_iri
+        a :proposition ;
+        :refers_to / :contains_concept ?concept_iri .
+    ?concept_iri
+        rdfs:label  ?concept_label .
+}
+order by ?item_iri

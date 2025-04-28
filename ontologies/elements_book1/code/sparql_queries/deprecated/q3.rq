@@ -1,0 +1,40 @@
+prefix : <https://www.foom.com/core#>
+
+select distinct
+    ?item_iri
+    ?item_class_iri
+    ?refers_to_item_iri
+    ?refers_to_contains_concept_iri
+    ?contain_concept_item_iri
+    ?super_concept_iri
+    ?uses_reductio_item_iri
+where {
+    values ?item_iri { <https://www.foom.com/core#proof_1> }
+
+    ?item_iri
+        a ?item_class_iri .
+    optional{
+        ?item_iri
+            :refers_to ?refers_to_item_iri .
+        optional {
+            ?refer_to_item_iri  
+                :contains_concept ?refers_to_contains_concept_iri .
+        }
+        }
+    optional {
+        ?item_iri
+            :contains_concept ?contain_concept_item_iri .
+        optional {
+            ?contain_concept_item_iri
+                :is_sub_concept_of+ ?super_concept_iri .
+        }
+        optional {
+            ?contain_concept_item_iri
+                :contains_concept+ ?contains_concept_concept_iri .
+        }
+    }
+    optional {
+        ?item_iri
+            :uses_reductio ?uses_reductio_item_iri .
+    }
+}
