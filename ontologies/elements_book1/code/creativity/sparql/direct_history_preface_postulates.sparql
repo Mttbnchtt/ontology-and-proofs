@@ -1,3 +1,4 @@
+# direct history
 # link weights for the elements of the class Postulate
 
 SELECT
@@ -25,35 +26,6 @@ WHERE {
     { ?s <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#has_domain>
             / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / domain / contains concept
-    #########################
-    union
-    { ?s <https://www.foom.com/core#refers_to>
-            / <https://www.foom.com/core#refers_to> ?o . } # refers to [2]
-    union
-    { ?s <https://www.foom.com/core#refers_to>
-            / <https://www.foom.com/core#refers_to>
-            / <https://www.foom.com/core#contains_concept> ?o . } # refers to [2] / contains concept
-    ####################################
-    union
-    { ?s <https://www.foom.com/core#refers_to> 
-            / <https://www.foom.com/core#refers_to> 
-            / <https://www.foom.com/core#has_range> ?o . } # refers to [2] / range
-    union
-    { ?s <https://www.foom.com/core#refers_to> 
-            / <https://www.foom.com/core#refers_to> 
-            / <https://www.foom.com/core#has_range>
-            / <https://www.foom.com/core#contains_concept>  ?o . } # refers to [2] / range / contains concept
-    #####################
-    union
-    { ?s <https://www.foom.com/core#refers_to> 
-            / <https://www.foom.com/core#refers_to> 
-            / <https://www.foom.com/core#has_domain> ?o . } # refers to [2] / domain
-    union
-    { ?s <https://www.foom.com/core#refers_to> 
-            / <https://www.foom.com/core#refers_to> 
-            / <https://www.foom.com/core#has_domain>
-            / <https://www.foom.com/core#contains_concept>  ?o . } # refers to [2] / domain / contains concept
-    #########################
 }
 group by ?s ?o
 order by ?s desc(?links) 
