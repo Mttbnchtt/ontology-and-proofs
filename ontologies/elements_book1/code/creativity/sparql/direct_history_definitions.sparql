@@ -1,0 +1,11 @@
+# link weights for the elements of the class Definition
+
+SELECT
+    ?s ?o
+    (count (*) as ?links)
+WHERE {
+    ?s  a <https://www.foom.com/core#definition> ; 
+        <https://www.foom.com/core#defines> ?o .
+}
+group by ?s ?o
+order by ?s desc(?links) 
