@@ -1,7 +1,7 @@
 # link weights for the elements of the class Common notion
 
 SELECT
-    ?s ?o
+    ?o
     (count (*) as ?links)
 WHERE {
     ?s a <https://www.foom.com/core#common_notion> .
@@ -41,5 +41,5 @@ WHERE {
             / <https://www.foom.com/core#contains_concept>
             / <https://www.foom.com/core#definition_refers_to>  ?o . } # refers to / domain / contains concept / definition_refers_to
 }
-group by ?s ?o
-order by ?s desc(?links) 
+group by ?o
+order by desc(?links) 

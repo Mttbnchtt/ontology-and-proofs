@@ -1,7 +1,7 @@
 # link weights for the elements of the class Postulate
 
 SELECT
-    ?s ?o
+    ?o
     (count (*) as ?links)
 WHERE {
     ?s a <https://www.foom.com/core#postulate> .
@@ -49,5 +49,5 @@ WHERE {
             / <https://www.foom.com/core#has_domain>
             / <https://www.foom.com/core#contains_concept>  ?o . } # refers to [2] / domain / contains concept
 }
-group by ?s ?o
-order by ?s desc(?links) 
+group by ?o
+order by desc(?links) 
