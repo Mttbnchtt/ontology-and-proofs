@@ -1,0 +1,45 @@
+# link weights for the elements of the class Common notion
+
+SELECT
+    ?s ?o
+    (count (*) as ?links)
+WHERE {
+    ?s a <https://www.foom.com/core#common_notion> .
+    { ?s <https://www.foom.com/core#has_statement> 
+            / <https://www.foom.com/core#refers_to> 
+            / <https://www.foom.com/core#contains_concept> 
+            / <https://www.foom.com/core#contains_concept> ?o . } # refers to / contains concept / contains_concept
+    UNION
+    { ?s <https://www.foom.com/core#has_statement> 
+            / <https://www.foom.com/core#refers_to> 
+            / <https://www.foom.com/core#contains_concept> 
+            / <https://www.foom.com/core#definition_refers_to> ?o . } # refers to / contains concept / definition_refers_to
+    ######################
+    UNION
+    { ?s <https://www.foom.com/core#has_statement> 
+            / <https://www.foom.com/core#refers_to> 
+            / <https://www.foom.com/core#has_range>
+            / <https://www.foom.com/core#contains_concept>
+            / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / range / contains concept / contains_concept
+    UNION
+    { ?s <https://www.foom.com/core#has_statement> 
+            / <https://www.foom.com/core#refers_to> 
+            / <https://www.foom.com/core#has_range>
+            / <https://www.foom.com/core#contains_concept>
+            / <https://www.foom.com/core#definition_refers_to>  ?o . } # refers to / range / contains concept / definition_refers_to
+    #####################
+    UNION
+    { ?s <https://www.foom.com/core#has_statement> 
+            / <https://www.foom.com/core#refers_to> 
+            / <https://www.foom.com/core#has_domain>
+            / <https://www.foom.com/core#contains_concept>
+            / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / domain / contains concept / contains_concept
+    UNION
+    { ?s <https://www.foom.com/core#has_statement> 
+            / <https://www.foom.com/core#refers_to> 
+            / <https://www.foom.com/core#has_domain>
+            / <https://www.foom.com/core#contains_concept>
+            / <https://www.foom.com/core#definition_refers_to>  ?o . } # refers to / domain / contains concept / definition_refers_to
+}
+group by ?s ?o
+order by ?s desc(?links) 
