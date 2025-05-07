@@ -1,41 +1,32 @@
-# link weights for the elements of the class Common notion
+# link weights for the elements of the class Postulate
 
 SELECT
     ?s ?o1 ?o2
 WHERE {
-    ?s a <https://www.foom.com/core#common_notion> .
-    { ?s <https://www.foom.com/core#has_statement> ?o1 , ?o2 .
-      FILTER ( STR(?o1) < STR(?o2) ) }
-    union
-    { ?s <https://www.foom.com/core#has_statement> 
-            / <https://www.foom.com/core#refers_to> ?o1  , ?o2 .
+    ?s a <https://www.foom.com/core#postulate> .
+    { ?s <https://www.foom.com/core#refers_to> ?o1 , ?o2 .
       FILTER ( STR(?o1) < STR(?o2) ) } # refers to
     union
-    { ?s <https://www.foom.com/core#has_statement> 
-            / <https://www.foom.com/core#refers_to> 
+    { ?s <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#contains_concept> ?o1 , ?o2 .
       FILTER ( STR(?o1) < STR(?o2) ) } # refers to / contains concept
     ######################
     union
-    { ?s <https://www.foom.com/core#has_statement> 
-            / <https://www.foom.com/core#refers_to> 
+    { ?s <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#has_range> ?o1 , ?o2 .
       FILTER ( STR(?o1) < STR(?o2) ) } # refers to / range
     union
-    { ?s <https://www.foom.com/core#has_statement> 
-            / <https://www.foom.com/core#refers_to> 
+    { ?s <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#has_range>
             / <https://www.foom.com/core#contains_concept>  ?o1 , ?o2 .
       FILTER ( STR(?o1) < STR(?o2) ) } # refers to / range / contains concept
     #####################
     union
-    { ?s <https://www.foom.com/core#has_statement> 
-            / <https://www.foom.com/core#refers_to> 
+    { ?s <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#has_domain> ?o1 , ?o2 .
       FILTER ( STR(?o1) < STR(?o2) ) } # refers to / domain
     union
-    { ?s <https://www.foom.com/core#has_statement> 
-            / <https://www.foom.com/core#refers_to> 
+    { ?s <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#has_domain>
             / <https://www.foom.com/core#contains_concept>  ?o1 , ?o2 .
       FILTER ( STR(?o1) < STR(?o2) ) } # refers to / domain / contains concept
