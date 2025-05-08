@@ -5,7 +5,7 @@ PREFIX core: <https://www.foom.com/core#>
 SELECT
   ?o1
   ?o2
-  (COUNT(*) AS ?pair_count)
+  (COUNT(*) AS ?links)
 WHERE {
   ?s a core:definition .
   {
@@ -19,7 +19,7 @@ WHERE {
   FILTER( STR(?o1) < STR(?o2) )
 }
 GROUP BY ?o1 ?o2
-ORDER BY DESC(?pair_count)
+ORDER BY DESC(?links)
 
 # SELECT
 #     ?s ?o1 ?o2
