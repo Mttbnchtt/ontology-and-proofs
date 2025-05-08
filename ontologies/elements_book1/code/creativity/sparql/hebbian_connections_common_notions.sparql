@@ -3,7 +3,7 @@
 SELECT
     ?o1 
     ?o2
-    (COUNT(*) AS ?pair_count)
+    (COUNT(*) AS ?links)
 WHERE {
     ?s a <https://www.foom.com/core#common_notion> .
     { ?s <https://www.foom.com/core#has_statement> ?o1 , ?o2 . }
@@ -37,7 +37,7 @@ WHERE {
     FILTER ( STR(?o1) < STR(?o2) ) 
 }
 GROUP BY ?o1 ?o2
-ORDER BY DESC(?pair_count)
+ORDER BY DESC(?links)
 
 # SELECT
 #     ?s ?o1 ?o2
