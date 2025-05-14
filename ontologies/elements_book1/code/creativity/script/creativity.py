@@ -320,9 +320,9 @@ def calculate_activation(conceptual_item,
     weigthed_historical_activation = history_weight * historical_activation_potential_dict.get(conceptual_item, 0)
     # hebbian part
     weighted_hebbian_activation = 0
-    for item, value in hebbian_activation_potential_dict.items():
-        if conceptual_item in item:
-            weighted_hebbian_activation += hebbian_weight * hebbian_activation_potential_dict[item]
+    for items_pair, value in hebbian_activation_potential_dict.items():
+        if conceptual_item in items_pair:
+            weighted_hebbian_activation += hebbian_weight * hebbian_activation_potential_dict[items_pair] / 2
             # / context_length)
     # total activation potential
     return weigthed_historical_activation + weighted_hebbian_activation
