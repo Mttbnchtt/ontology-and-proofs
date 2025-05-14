@@ -376,22 +376,22 @@ def main(file_name: str,
         IPython.display.display(IPython.display.HTML(hebbian_activation_potential.to_html()))
 
         # activation potential
-    activation_potential = get_activation_potential(
+    activation_potential_df = get_activation_potential(
             historical_activation_potential,
             hebbian_activation_potential
         )
     if display_tables:
-        print(f"Sum total activation potential: {activation_potential['activation_potential'].sum()}")
-        IPython.display.display(IPython.display.HTML(activation_potential.to_html()))
+        print(f"Sum total activation potential: {activation_potential_df['activation_potential'].sum()}")
+        IPython.display.display(IPython.display.HTML(activation_potential_df.to_html()))
 
     return activation_potential
 
 
-activation_potential = main(file_name)
+activation_potential_df = main(file_name)
 
-activation_potential[:5]
+activation_potential_df[:5]
 
-activation_potential.to_csv("output/activation_potential.csv", index = False)
+activation_potential_df.to_csv("output/activation_potential.csv", index = False)
 
 
 
