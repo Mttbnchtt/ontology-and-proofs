@@ -12,4 +12,4 @@ WHERE {
             / <https://www.foom.com/core#contains_concept> ?o . } 
 }
 group by ?o
-order by desc(?links) 
+order by desc(?links)
