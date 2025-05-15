@@ -12,6 +12,9 @@ WHERE {
             / <https://www.foom.com/core#contains_concept> ?o . } # refers to / contains concept
     ######################
     union
+    { ?s <https://www.foom.com/core#refers_to> ?o . } # refers to / range
+    ######################
+    union
     { ?s <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#has_range> ?o . } # refers to / range
     union
