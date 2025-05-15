@@ -16,6 +16,9 @@ WHERE {
     ######################
     union
     { ?s <https://www.foom.com/core#has_statement> 
+            / <https://www.foom.com/core#refers_to> ?o . } # refers to 
+    union
+    { ?s <https://www.foom.com/core#has_statement> 
             / <https://www.foom.com/core#refers_to> 
             / <https://www.foom.com/core#has_range> ?o . } # refers to / range
     union
