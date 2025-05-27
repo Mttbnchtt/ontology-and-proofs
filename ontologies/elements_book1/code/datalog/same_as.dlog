@@ -2,3 +2,4 @@
 [ <https://www.foom.com/core#concept___magnitude>, <http://www.w3.org/2002/07/owl#sameAs>, <https://www.foom.com/core#concept__magnitude>] :- .
 [ <https://www.foom.com/core#concept___part>, <http://www.w3.org/2002/07/owl#sameAs>, <https://www.foom.com/core#concept__part>] :- .
 [ <https://www.foom.com/core#concept___whole>, <http://www.w3.org/2002/07/owl#sameAs>, <https://www.foom.com/core#concept__whole>] :- .
+[ <https://www.foom.com/core#concept__is_less_than>, <http://www.w3.org/2002/07/owl#sameAs>, <https://www.foom.com/core#concept__less_than>]
