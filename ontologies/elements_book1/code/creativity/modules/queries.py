@@ -223,3 +223,107 @@ def hierarhical_common_notions():
         group by ?o
         order by desc(?links) 
     """
+
+def mereological_definitions():
+    return """
+        SELECT
+            ?o
+            (count (*) as ?links)
+        WHERE {
+            ?s a <https://www.foom.com/core#definition> .
+            { ?s <https://www.foom.com/core#defines> 
+                    / <https://www.foom.com/core#definition_refers_to> ?o . } 
+            UNION
+            { ?s <https://www.foom.com/core#defines> 
+                    / <https://www.foom.com/core#contains_concept> ?o . } 
+        }
+        group by ?o
+        order by desc(?links)
+        """
+def mereological_postulates():  
+    """
+        SELECT
+            ?o
+            (count (*) as ?links)
+        WHERE {
+            ?s a <https://www.foom.com/core#postulate> .
+            { ?s <https://www.foom.com/core#refers_to> 
+                    / <https://www.foom.com/core#contains_concept> 
+                    / <https://www.foom.com/core#contains_concept> ?o . } # refers to / contains concept / contains concept
+            UNION
+            { ?s <https://www.foom.com/core#refers_to> 
+                    / <https://www.foom.com/core#contains_concept> 
+                    / <https://www.foom.com/core#definition_refers_to> ?o . } # refers to / contains concept / contains concept
+            ######################
+            union
+            { ?s <https://www.foom.com/core#refers_to> 
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / range / contains concept / super-concept
+            union
+            { ?s <https://www.foom.com/core#refers_to> 
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#definition_refers_to>  ?o . } # refers to / range / contains concept / super-concept
+            #####################
+            union
+            { ?s <https://www.foom.com/core#refers_to> 
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / domain / contains concept / super-concept
+            union
+            { ?s <https://www.foom.com/core#refers_to> 
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#definition_refers_to>  ?o . } # refers to / range / contains concept / super-concept
+        }
+        group by ?o
+        order by desc(?links) 
+    """
+
+def mereological_common_notions():
+    """
+        SELECT
+            ?o
+            (count (*) as ?links)
+        WHERE {
+            ?s a <https://www.foom.com/core#common_notion> .
+            { ?s <https://www.foom.com/core#has_statement> 
+                    / <https://www.foom.com/core#refers_to> 
+                    / <https://www.foom.com/core#contains_concept> 
+                    / <https://www.foom.com/core#contains_concept> ?o . } # refers to / contains concept / contains_concept
+            UNION
+            { ?s <https://www.foom.com/core#has_statement> 
+                    / <https://www.foom.com/core#refers_to> 
+                    / <https://www.foom.com/core#contains_concept> 
+                    / <https://www.foom.com/core#definition_refers_to> ?o . } # refers to / contains concept / definition_refers_to
+            ######################
+            UNION
+            { ?s <https://www.foom.com/core#has_statement> 
+                    / <https://www.foom.com/core#refers_to> 
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / range / contains concept / contains_concept
+            UNION
+            { ?s <https://www.foom.com/core#has_statement> 
+                    / <https://www.foom.com/core#refers_to> 
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#definition_refers_to>  ?o . } # refers to / range / contains concept / definition_refers_to
+            #####################
+            UNION
+            { ?s <https://www.foom.com/core#has_statement> 
+                    / <https://www.foom.com/core#refers_to> 
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / domain / contains concept / contains_concept
+            UNION
+            { ?s <https://www.foom.com/core#has_statement> 
+                    / <https://www.foom.com/core#refers_to> 
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#definition_refers_to>  ?o . } # refers to / domain / contains concept / definition_refers_to
+        }
+        group by ?o
+        order by desc(?links) 
+    """
