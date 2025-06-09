@@ -89,7 +89,7 @@ def direct_common_notions():
         order by desc(?links) 
         """
 
-def hierarhical_definitions():
+def hierarchical_definitions():
     return """
         SELECT
             ?o
@@ -103,7 +103,7 @@ def hierarhical_definitions():
         order by desc(?links) 
         """
 
-def hierarhical_postulates():
+def hierarchical_postulates():
     return """
         SELECT
             ?o
@@ -158,8 +158,8 @@ def hierarhical_postulates():
         order by desc(?links) 
         """
 
-def hierarhical_common_notions():
-    """
+def hierarchical_common_notions():
+    return """
         SELECT
             ?o
             (count (*) as ?links)
@@ -241,7 +241,7 @@ def mereological_definitions():
         order by desc(?links)
         """
 def mereological_postulates():  
-    """
+    return """
         SELECT
             ?o
             (count (*) as ?links)
@@ -282,7 +282,7 @@ def mereological_postulates():
     """
 
 def mereological_common_notions():
-    """
+    return """
         SELECT
             ?o
             (count (*) as ?links)
