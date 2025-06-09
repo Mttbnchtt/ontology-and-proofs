@@ -327,3 +327,27 @@ def mereological_common_notions():
         group by ?o
         order by desc(?links) 
     """
+
+def hebb_definitions():
+    return """
+        PREFIX core: <https://www.foom.com/core#>
+
+        SELECT
+        ?o1
+        ?o2
+        (COUNT(*) AS ?links)
+        WHERE {
+        ?s a core:definition .
+        {
+        ?s core:defines ?o1, ?o2 .
+        }
+        UNION
+        {
+        ?s core:defines           ?o1 .
+        ?o1 core:definition_refers_to ?o2 .
+        }
+        FILTER( STR(?o1) < STR(?o2) )
+        }
+        GROUP BY ?o1 ?o2
+        ORDER BY DESC(?links)
+    """
