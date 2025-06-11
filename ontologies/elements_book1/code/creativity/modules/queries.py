@@ -250,7 +250,7 @@ def hierarchical_common_notions():
         order by desc(?links) 
     """
 
-def hierarchical_sparql_template_propositions_proofs(iris: str):
+def hierarchical_template_propositions_proofs(iris: str):
     return f"""
         SELECT ?o (count (*) as ?links) WHERE {{
         values ?s {{ <{iris}> }}
@@ -400,6 +400,41 @@ def mereological_common_notions():
         order by desc(?links) 
     """
 
+def mereological_template_propositions_proofs(iris: str):
+    return f"""
+        SELECT ?o (count (*) as ?links) WHERE {{
+        values ?s {{ <{iris}> }}
+        {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#contains_concept> ?o . }} # refers to / contains concept / contains concept
+            UNION
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#definition_refers_to> ?o . }} # refers to / contains concept / contains concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / range / contains concept / super-concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#definition_refers_to>  ?o . }} # refers to / range / contains concept / super-concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / domain / contains concept / super-concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#definition_refers_to>  ?o . }} # refers to / range / contains concept / super-concept
+        }} group by ?o order by desc(?links)
+    """
+
+############################################
 def hebb_definitions():
     return """
         PREFIX core: <https://www.foom.com/core#>
@@ -498,3 +533,30 @@ def hebb_common_notions():
         GROUP BY ?o1 ?o2
         ORDER BY DESC(?links)
 """
+
+def hebb_template_propositions_proofs(iris: str):
+    return f"""
+        SELECT ?o1 ?o2 (COUNT(*) AS ?links)
+        WHERE {{
+        values ?s {{ <{iris}> }}
+            {{ ?s <https://www.foom.com/core#refers_to> ?o1 , ?o2 . }} # refers to
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#contains_concept> ?o1 , ?o2 . }} # refers to / contains concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range> ?o1 , ?o2 . }} # refers to / range
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>  ?o1 , ?o2 . }} # refers to / range / contains concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain> ?o1 , ?o2 . }} # refers to / domain
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>  ?o1 , ?o2 . }} # refers to / domain / contains concept
+            FILTER ( STR(?o1) < STR(?o2) )
+        }} GROUP BY ?o1 ?o2 ORDER BY DESC(?links)
+    """
