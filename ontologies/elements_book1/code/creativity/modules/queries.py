@@ -89,7 +89,7 @@ def direct_common_notions():
         order by desc(?links) 
         """
 
-def direct_sparql_template_propositions_proofs(iris: str):
+def direct_template_propositions_proofs(iris: str):
     return f"""SELECT ?o (count (*) as ?links) WHERE {{
         values ?s {{ <{iris}> }}
             {{ ?s <https://www.foom.com/core#refers_to> ?o . }} # refers to
@@ -250,6 +250,52 @@ def hierarchical_common_notions():
         order by desc(?links) 
     """
 
+def hierarchical_sparql_template_propositions_proofs(iris: str):
+    return f"""
+        SELECT ?o (count (*) as ?links) WHERE {{
+        values ?s {{ <{iris}> }}
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#is_sub_concept_of> ?o . }} # refers to / contains concept / super-concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#is_sub_concept_of>  ?o . }} # refers to / range / contains concept / super-concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#is_sub_concept_of>  ?o . }} # refers to / domain / contains concept / super-concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#refers_to> ?o . }} # refers to [2]
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#contains_concept> ?o . }} # refers to [2] / contains concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range> ?o . }} # refers to [2] / range
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to [2] / range / contains concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain> ?o . }} # refers to [2] / domain
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to [2] / domain / contains concept
+        }} group by ?o order by desc(?links)
+    """
+
+#############################################
 def mereological_definitions():
     return """
         SELECT
