@@ -89,6 +89,32 @@ def direct_common_notions():
         order by desc(?links) 
         """
 
+def direct_sparql_template_propositions_proofs(iris: str):
+    return f"""SELECT ?o (count (*) as ?links) WHERE {{
+        values ?s {{ <{iris}> }}
+            {{ ?s <https://www.foom.com/core#refers_to> ?o . }} # refers to
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#contains_concept> ?o . }} # refers to / contains concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to> ?o . }} # refers to
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range> ?o . }} # refers to / range
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / range / contains concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain> ?o . }} # refers to / domain
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / domain / contains concept
+        }} group by ?o order by desc(?links)"""
+
+#############################################
 def hierarchical_definitions():
     return """
         SELECT
