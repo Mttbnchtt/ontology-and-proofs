@@ -91,7 +91,7 @@ def direct_common_notions():
 
 def direct_template_propositions_proofs(iris: str):
     return f"""SELECT ?o (count (*) as ?links) WHERE {{
-        values ?s {{ <{iris}> }}
+        values ?s {{ {iris} }}
             {{ ?s <https://www.foom.com/core#refers_to> ?o . }} # refers to
             union
             {{ ?s <https://www.foom.com/core#refers_to>
