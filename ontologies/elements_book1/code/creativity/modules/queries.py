@@ -253,7 +253,7 @@ def hierarchical_common_notions():
 def hierarchical_template_propositions_proofs(iris: str):
     return f"""
         SELECT ?o (count (*) as ?links) WHERE {{
-        values ?s {{ <{iris}> }}
+        values ?s {{ {iris} }}
             {{ ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#contains_concept>
                     / <https://www.foom.com/core#is_sub_concept_of> ?o . }} # refers to / contains concept / super-concept
@@ -403,7 +403,7 @@ def mereological_common_notions():
 def mereological_template_propositions_proofs(iris: str):
     return f"""
         SELECT ?o (count (*) as ?links) WHERE {{
-        values ?s {{ <{iris}> }}
+        values ?s {{ {iris} }}
         {{ ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#contains_concept>
                     / <https://www.foom.com/core#contains_concept> ?o . }} # refers to / contains concept / contains concept
@@ -538,7 +538,7 @@ def hebb_template_propositions_proofs(iris: str):
     return f"""
         SELECT ?o1 ?o2 (COUNT(*) AS ?links)
         WHERE {{
-        values ?s {{ <{iris}> }}
+        values ?s {{ {iris} }}
             {{ ?s <https://www.foom.com/core#refers_to> ?o1 , ?o2 . }} # refers to
             union
             {{ ?s <https://www.foom.com/core#refers_to>
