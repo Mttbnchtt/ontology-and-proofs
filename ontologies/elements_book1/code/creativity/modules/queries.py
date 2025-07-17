@@ -97,8 +97,6 @@ def direct_template_propositions_proofs(iris: str):
             {{ ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#contains_concept> ?o . }} # refers to / contains concept
             union
-            {{ ?s <https://www.foom.com/core#refers_to> ?o . }} # refers to
-            union
             {{ ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_range> ?o . }} # refers to / range
             union
@@ -113,6 +111,30 @@ def direct_template_propositions_proofs(iris: str):
                     / <https://www.foom.com/core#has_domain>
                     / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / domain / contains concept
         }} group by ?o order by desc(?links)"""
+
+def direct_template_last_item(iris: str):
+    return f"""SELECT DISTINCT ?o WHERE {{
+        values ?s {{ {iris} }}
+            {{ ?s <https://www.foom.com/core#refers_to> ?o . }} # refers to
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#contains_concept> ?o . }} # refers to / contains concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range> ?o . }} # refers to / range
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / range / contains concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain> ?o . }} # refers to / domain
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / domain / contains concept
+        }} """
+
 
 #############################################
 def hierarchical_definitions():
@@ -433,6 +455,42 @@ def mereological_template_propositions_proofs(iris: str):
                     / <https://www.foom.com/core#definition_refers_to>  ?o . }} # refers to / range / contains concept / super-concept
         }} group by ?o order by desc(?links)
     """
+
+def mereological_template_last_item(iris: str):
+    return f"""
+        SELECT DISTINCT ?o  WHERE {{
+        values ?s {{ {iris} }}
+        {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#contains_concept> ?o . }} # refers to / contains concept / contains concept
+            UNION
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#definition_refers_to> ?o . }} # refers to / contains concept 
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / range / contains concept / super-concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#definition_refers_to>  ?o . }} # refers to / range / contains concept / super-concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / domain / contains concept / super-concept
+            union
+            {{ ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#contains_concept>
+                    / <https://www.foom.com/core#definition_refers_to>  ?o . }} # refers to / range / contains concept / super-concept
+        }}
+    """
+
+
 
 ############################################
 def hebb_definitions():
