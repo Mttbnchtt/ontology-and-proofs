@@ -1,0 +1,10 @@
+SELECT 
+    ?concept
+    (GROUP_CONCAT (STR(?predicate) ; SEPARATOR = " ; ") as ?predicates )
+    # ?predicates
+WHERE {
+    ?predicate a owl:DatatypeProperty .
+    ?concept ?predicate true .
+}
+GROUP by ?concept
+ORDER BY ?concept ?predicates
