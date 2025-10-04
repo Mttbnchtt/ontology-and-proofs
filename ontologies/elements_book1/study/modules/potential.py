@@ -1,4 +1,5 @@
 import pandas as pd
+import modules.queries as queries # SPARQL queries 
 import rdflib
 
 
