@@ -12,9 +12,17 @@ def read_graph(file_path: str, format: str = "turtle") -> rdflib.Graph:
 
 def sparql_to_df(kg: rdflib.Graph,
                  sparql_query: str):
+    """Return query results as a DataFrame, normalising the optional `links` column."""
     raw = kg.query(sparql_query)
-    variables = raw.vars
-    records = [{str(variables[i]): str(item) for i, item in enumerate(row)} for row in raw]
+    # variables = raw.vars
+    records = [
+    {
+        str(var): (val.toPython() if val is not None and hasattr(val, "toPython") else val)
+        for var, val in zip(raw.vars, row)
+    }
+    for row in raw
+]
+    # records = [{str(variables[i]): str(item) for i, item in enumerate(row)} for row in raw]
     records_df = pd.DataFrame(records)
     if "links" in records_df.columns:
         records_df["links"] = records_df["links"].astype(int)
@@ -23,6 +31,7 @@ def sparql_to_df(kg: rdflib.Graph,
 def sparql_to_concat_df(kg: rdflib.Graph,
                         sparql_queries: list,
                         hebb: bool = False):
+    """Concatenate query results and aggregate link counts by node or node pairs."""
     if hebb:
         df = pd.concat(
             [sparql_to_df(kg, sparql_query) for sparql_query in sparql_queries],
