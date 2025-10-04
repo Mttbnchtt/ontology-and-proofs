@@ -14,15 +14,14 @@ def sparql_to_df(kg: rdflib.Graph,
                  sparql_query: str):
     """Return query results as a DataFrame, normalising the optional `links` column."""
     raw = kg.query(sparql_query)
-    # variables = raw.vars
+    # Materialise each result row into a dict, converting RDF terms to native Python values when possible.
     records = [
-    {
-        str(var): (val.toPython() if val is not None and hasattr(val, "toPython") else val)
-        for var, val in zip(raw.vars, row)
-    }
-    for row in raw
-]
-    # records = [{str(variables[i]): str(item) for i, item in enumerate(row)} for row in raw]
+        {
+            str(variable): (value.toPython() if value is not None and hasattr(value, "toPython") else value)
+            for variable, value in zip(raw.vars, row)
+        }
+        for row in raw
+    ]
     records_df = pd.DataFrame(records)
     if "links" in records_df.columns:
         records_df["links"] = records_df["links"].astype(int)
