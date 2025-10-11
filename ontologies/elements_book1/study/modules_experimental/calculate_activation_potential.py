@@ -20,10 +20,13 @@ class HistoryFamily:
     base_queries: Tuple[str, ...]
     template_factory: Optional[Callable[[str], str]] = None
 
+WEIGHT_DIRECT = 6 / 9
+WEIGHT_HIERARCHICAL = 1 / 9
+WEIGHT_MEREOLOGICAL = 2 / 9
 
 HISTORY_FAMILIES: Tuple[HistoryFamily, ...] = (
     HistoryFamily(
-        weight=6 / 9,
+        weight=WEIGHT_DIRECT,
         base_queries=(
             base_queries.direct_definitions(),
             base_queries.direct_postulates(),
@@ -32,7 +35,7 @@ HISTORY_FAMILIES: Tuple[HistoryFamily, ...] = (
         template_factory=base_queries.direct_template_propositions_proofs,
     ),
     HistoryFamily(
-        weight=1 / 9,
+        weight=WEIGHT_HIERARCHICAL,
         base_queries=(
             base_queries.hierarchical_definitions(),
             base_queries.hierarchical_postulates(),
@@ -41,7 +44,7 @@ HISTORY_FAMILIES: Tuple[HistoryFamily, ...] = (
         template_factory=base_queries.hierarchical_template_propositions_proofs,
     ),
     HistoryFamily(
-        weight=2 / 9,
+        weight=WEIGHT_MEREOLOGICAL,
         base_queries=(
             base_queries.mereological_definitions(),
             base_queries.mereological_postulates(),

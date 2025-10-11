@@ -40,7 +40,7 @@ def highest_potential(df: pd.DataFrame,
     elif selection_type == "top_fraction":
         keep_count = math.ceil(len(df) * upper_part)
         print("keep ", keep_count)
-    return df.iloc[:keep_count].copy()
+        return df.iloc[:keep_count].copy()
 
 def get_background_concepts(materials: MaterialsPayload, upper_part_history: float, upper_part_cooccurence) -> Set[ConceptId]:
     history_highest_concepts = set(highest_potential(materials["history"], upper_part_history)["o"])
