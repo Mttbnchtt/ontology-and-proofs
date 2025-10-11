@@ -1,3 +1,10 @@
+"""End-to-end pipeline that scores activation potentials and evaluates conceptual surprise.
+
+Limitations:
+- Retrieves mereological proof concepts but the downstream surprise score only inspects direct proof concepts.
+- Relies on upstream query helpers returning non-empty data; missing data can propagate NaNs or raise errors.
+"""
+
 import math
 import pandas as pd
 import modules.queries as queries # SPARQL queries 

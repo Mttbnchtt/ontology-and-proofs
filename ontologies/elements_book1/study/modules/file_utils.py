@@ -1,3 +1,10 @@
+"""Utilities for persisting study analyses to timestamped CSV files.
+
+Limitations:
+- Assumes the output directory already exists and is writable; no path creation is attempted.
+- Expects each analysis dict/tuple to match the hard-coded column order when building the DataFrame.
+"""
+
 import datetime
 import pandas as pd
 
