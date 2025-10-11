@@ -36,7 +36,7 @@ def highest_potential(df: pd.DataFrame,
     if selection_type == "threshold":
         return df[df["activation_potential"] >= upper_part].copy()
     elif selection_type == "top_n":
-        return df.iloc[:upper_part].copy()
+        return df.nlargest(int(upper_part), "activation_potential").copy()
     elif selection_type == "top_fraction":
         keep_count = math.ceil(len(df) * upper_part)
         print("keep ", keep_count)
