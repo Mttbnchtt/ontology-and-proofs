@@ -39,25 +39,26 @@ def history(kg: rdflib.Graph,
         activation_dfs.append(actions_df)
 
     # combine dataframes
-    combined_df = pd.concat(activation_dfs, ignore_index=True)
-    return combined_df.groupby("o")["activation_potential"].sum().reset_index()
+    combined_history_df = pd.concat(activation_dfs, ignore_index=True)
+    return combined_history_df.groupby("o")["activation_potential"].sum().reset_index()
 
 
 def hebb(kg: rdflib.Graph,
          proposition_number: int = 0,
          sparql_queries: list = [queries.hebb_definitions(), queries.hebb_postulates(), queries.hebb_common_notions()]):
+    """Compute normalised co-occurrence strengths for concept pairs across Hebbian SPARQL queries."""
     if proposition_number >= 2:
         # Generate the iris strings
         iris = rdf_utils.create_iris_for_values(proposition_number)
         # Append the new queries to the existing lists
         sparql_queries.append(queries.hebb_template_propositions_proofs(iris))
-    df = rdf_utils.sparql_to_concat_df(kg, sparql_queries, hebb=True)
-    total_use = df["links"].sum()
-    df["activation_potential"] = df["links"] / total_use
-    df = df.drop(columns=["links"])
-    df = df.sort_values(by="activation_potential", ascending=False)
-    df = df.reset_index(drop=True)
-    return df
+    hebb_df = rdf_utils.sparql_to_concat_df(kg, sparql_queries, hebb=True)
+    total_use = hebb_df["links"].sum()
+    combined_hebb_df["activation_potential"] = hebb_df["links"] / total_use
+    combined_hebb_df = combined_hebb_df.drop(columns=["links"])
+    combined_hebb_df = combined_hebb_df.sort_values(by="activation_potential", ascending=False)
+    combined_hebb_df = combined_hebb_df.reset_index(drop=True)
+    return combined_hebb_df
 
 
 def main(kg: rdflib.Graph,
