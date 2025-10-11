@@ -12,12 +12,7 @@ from .direct_and_mereological_last_item import (
     direct_last_item,
     main as last_item_main,
 )
-from .surprise_score import (
-    DEFAULT_COOCCURRENCE_SELECTION,
-    DEFAULT_HISTORY_SELECTION,
-    SelectionCriteria,
-    main as surprise_main,
-)
+from .surprise_score import SelectionCriteria, main as surprise_main
 
 
 def _proposition_iri(proposition_number: int) -> str:
@@ -61,7 +56,7 @@ def main(
 
     background_concepts, diff = surprise_main(
         materials,
-        history_selection=history_selection or DEFAULT_HISTORY_SELECTION,
-        cooccurrence_selection=cooccurrence_selection or DEFAULT_COOCCURRENCE_SELECTION,
+        history_selection=history_selection,
+        cooccurrence_selection=cooccurrence_selection,
     )
     return background_concepts, diff

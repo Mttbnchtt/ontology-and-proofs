@@ -33,10 +33,6 @@ class SelectionCriteria:
     value: float
 
 
-DEFAULT_HISTORY_SELECTION = SelectionCriteria(SelectionMode.TOP_FRACTION, 1 / 10)
-DEFAULT_COOCCURRENCE_SELECTION = SelectionCriteria(SelectionMode.TOP_FRACTION, 1 / 20)
-
-
 def highest_potential(df: pd.DataFrame, criteria: SelectionCriteria) -> pd.DataFrame:
     """Filter ``df`` according to the provided selection criteria."""
 
