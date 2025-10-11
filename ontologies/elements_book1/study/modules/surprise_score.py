@@ -24,7 +24,8 @@ class MaterialsPayload(TypedDict):
     direct_last_proof: Set[ConceptId]
 
 
-UPPER_PART: float = 1 / 4
+UPPER_PART_HISTORY: float = 1 / 4
+UPPER_PART_COOCCURRENCE: float = 1 / 20
 
 
 def highest_potential(df: pd.DataFrame,
@@ -33,14 +34,18 @@ def highest_potential(df: pd.DataFrame,
     print("keep ", keep_count)
     return df.iloc[:keep_count].copy()
 
-def get_background_concepts(materials: MaterialsPayload, upper_part: float) -> Set[ConceptId]:
-    history_highest_concepts = set(highest_potential(materials["history"], upper_part)["o"])
-    cooccurrence_df = highest_potential(materials["cooccurrence"], upper_part)
+def get_background_concepts(materials: MaterialsPayload, upper_part_history: float, upper_part_cooccurence) -> Set[ConceptId]:
+    history_highest_concepts = set(highest_potential(materials["history"], upper_part_history)["o"])
+    cooccurrence_df = highest_potential(materials["cooccurrence"], upper_part_cooccurence)
     cooccurrence_concepts = set(cooccurrence_df["o1"]) | set(cooccurrence_df["o2"])
     proposition_concepts = materials["direct_last_proposition"] | materials["mereological_last_proposition"]
     return history_highest_concepts | cooccurrence_concepts | proposition_concepts
 
-def main(materials: MaterialsPayload, upper_part: float = UPPER_PART) -> Tuple[Set[ConceptId], Set[ConceptId]]:
+def main(
+        materials: MaterialsPayload, 
+        upper_part_history: float = UPPER_PART_HISTORY, 
+        upper_part_cooccurrence: float = UPPER_PART_COOCCURRENCE
+) -> Tuple[Set[ConceptId], Set[ConceptId]]:
     background_concepts = get_background_concepts(materials, upper_part)
     proof_concepts = materials["direct_last_proof"]
     # print("background", len(background_concepts), background_concepts)
