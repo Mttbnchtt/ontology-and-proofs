@@ -8,7 +8,7 @@ from typing import Dict, Iterable, List
 import pandas as pd
 import rdflib
 
-from modules import rdf_utils as base_rdf_utils
+from . import rdf_utils as base_rdf_utils
 
 
 @dataclass

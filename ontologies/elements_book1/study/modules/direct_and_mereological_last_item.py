@@ -6,7 +6,7 @@ from typing import Iterable, Optional, Set, Tuple, Union
 
 import rdflib
 
-from modules import queries as base_queries
+from . import queries as base_queries
 
 from .query_runner import QueryRunner
 

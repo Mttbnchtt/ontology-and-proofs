@@ -8,8 +8,8 @@ from typing import Callable, Iterable, Optional, Tuple
 import pandas as pd
 import rdflib
 
-from modules import queries as base_queries
-from modules import rdf_utils as base_rdf_utils
+from . import queries as base_queries
+from . import rdf_utils as base_rdf_utils
 
 from .query_runner import QueryRunner
 
