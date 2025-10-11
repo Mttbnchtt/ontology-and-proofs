@@ -1,3 +1,10 @@
+"""Helpers to compute concept activation and Hebbian co-occurrence potentials from SPARQL histories.
+
+Limitations:
+- Mutable default lists (`base_sparql_queries`, `sparql_queries`) accumulate appended queries across calls.
+- Normalisation divides by the total `links`; empty query results lead to division-by-zero errors.
+"""
+
 import pandas as pd
 import modules.queries as queries # SPARQL queries 
 import modules.rdf_utils as rdf_utils # RDF utilities
@@ -57,8 +64,7 @@ def hebb(kg: rdflib.Graph,
     combined_hebb_df["activation_potential"] = hebb_df["links"] / total_use
     combined_hebb_df = combined_hebb_df.drop(columns=["links"])
     combined_hebb_df = combined_hebb_df.sort_values(by="activation_potential", ascending=False)
-    combined_hebb_df = combined_hebb_df.reset_index(drop=True)
-    return combined_hebb_df
+    return combined_hebb_df.reset_index(drop=True)
 
 
 def main(kg: rdflib.Graph,
