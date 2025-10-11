@@ -15,6 +15,7 @@ def _wrap(query: str) -> str:
 # ---------------------------------------------------------------------------
 
 def direct_definitions() -> str:
+    """Return a query that counts concepts explicitly linked from definitions via `core#defines`."""
     return _wrap(
         """
         SELECT
@@ -31,6 +32,7 @@ def direct_definitions() -> str:
 
 
 def direct_postulates() -> str:
+    """Return a query counting how often postulates reach a concept through `refers_to` paths, including domain, range, and contained concepts."""
     return _wrap(
         """
         SELECT
@@ -69,6 +71,7 @@ def direct_postulates() -> str:
 
 
 def direct_common_notions() -> str:
+    """Return a query counting concepts referenced by common notions through `has_statement` and expanded `refers_to` links."""
     return _wrap(
         """
         SELECT
@@ -115,6 +118,7 @@ def direct_common_notions() -> str:
 
 
 def direct_template_propositions_proofs(iris: str) -> str:
+    """Return a query counting concepts referenced by the supplied proposition/proof IRIs via direct `refers_to` property paths."""
     return _wrap(
         f"""
         SELECT ?o (count (*) as ?links) WHERE {{
@@ -143,6 +147,7 @@ def direct_template_propositions_proofs(iris: str) -> str:
 
 
 def direct_template_last_item(iris: str) -> str:
+    """Return a query listing distinct concepts that the given proposition/proof IRIs touch through direct `refers_to` paths."""
     return _wrap(
         f"""
         SELECT DISTINCT ?o WHERE {{
@@ -175,6 +180,7 @@ def direct_template_last_item(iris: str) -> str:
 # ---------------------------------------------------------------------------
 
 def hierarchical_definitions() -> str:
+    """Return a query counting super-concepts that definitions reach by following `defines` then `is_sub_concept_of`."""
     return _wrap(
         """
         SELECT
@@ -192,6 +198,7 @@ def hierarchical_definitions() -> str:
 
 
 def hierarchical_postulates() -> str:
+    """Return a query counting higher-level concepts that postulates reach through `refers_to` plus hierarchical `contains_concept/is_sub_concept_of` paths."""
     return _wrap(
         """
         SELECT
@@ -250,6 +257,7 @@ def hierarchical_postulates() -> str:
 
 
 def hierarchical_common_notions() -> str:
+    """Return a query counting super-concepts that common notions reach through `has_statement` and hierarchical property chains."""
     return _wrap(
         """
         SELECT
@@ -319,6 +327,7 @@ def hierarchical_common_notions() -> str:
 
 
 def hierarchical_template_propositions_proofs(iris: str) -> str:
+    """Return a query counting hierarchical concept references for the supplied proposition/proof IRIs using `refers_to` and `is_sub_concept_of` chains."""
     return _wrap(
         f"""
         SELECT ?o (count (*) as ?links) WHERE {{
@@ -371,6 +380,7 @@ def hierarchical_template_propositions_proofs(iris: str) -> str:
 # ---------------------------------------------------------------------------
 
 def mereological_definitions() -> str:
+    """Return a query counting concept parts that definitions reference through `contains_concept` or `definition_refers_to`."""
     return _wrap(
         """
         SELECT
@@ -391,6 +401,7 @@ def mereological_definitions() -> str:
 
 
 def mereological_postulates() -> str:
+    """Return a query counting nested concept parts that postulates reach through `refers_to` with repeated `contains_concept` or `definition_refers_to`."""
     return _wrap(
         """
         SELECT
@@ -435,6 +446,7 @@ def mereological_postulates() -> str:
 
 
 def mereological_common_notions() -> str:
+    """Return a query counting concept parts that common notions reach via `has_statement` followed by mereological expansions."""
     return _wrap(
         """
         SELECT
@@ -485,6 +497,7 @@ def mereological_common_notions() -> str:
 
 
 def mereological_template_propositions_proofs(iris: str) -> str:
+    """Return a query counting part-level concepts connected to the given proposition/proof IRIs through repeated mereological property paths."""
     return _wrap(
         f"""
         SELECT ?o (count (*) as ?links) WHERE {{
@@ -522,6 +535,7 @@ def mereological_template_propositions_proofs(iris: str) -> str:
 
 
 def mereological_template_last_item(iris: str) -> str:
+    """Return a query listing distinct concept parts connected to the supplied proposition/proof IRIs via mereological paths."""
     return _wrap(
         f"""
         SELECT DISTINCT ?o WHERE {{
@@ -563,6 +577,7 @@ def mereological_template_last_item(iris: str) -> str:
 # ---------------------------------------------------------------------------
 
 def hebb_definitions() -> str:
+    """Return a query counting how often pairs of concepts are defined together by the same definition individual."""
     return _wrap(
         """
         SELECT
@@ -582,6 +597,7 @@ def hebb_definitions() -> str:
 
 
 def hebb_postulates() -> str:
+    """Return a query counting concept pairs co-occurring within a postulate's `refers_to` links and contained concepts."""
     return _wrap(
         """
         SELECT
@@ -607,6 +623,7 @@ def hebb_postulates() -> str:
 
 
 def hebb_common_notions() -> str:
+    """Return a query counting concept pairs co-occurring in common notions via `has_statement` and derived `refers_to` edges."""
     return _wrap(
         """
         SELECT
@@ -640,6 +657,7 @@ def hebb_common_notions() -> str:
 
 
 def hebb_template_propositions_proofs(iris: str) -> str:
+    """Return a query counting concept pairs referenced together by the supplied proposition/proof IRIs through direct `refers_to` paths."""
     return _wrap(
         f"""
         SELECT ?o1 ?o2 (count (*) as ?links) WHERE {{

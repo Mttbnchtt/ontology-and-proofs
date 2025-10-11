@@ -3,7 +3,6 @@ import modules.queries as queries # SPARQL queries
 import modules.rdf_utils as rdf_utils # RDF utilities
 import rdflib
 
-
 def history(kg: rdflib.Graph,
             proposition_number: int = 0,
             base_sparql_queries: list = [
@@ -11,6 +10,12 @@ def history(kg: rdflib.Graph,
                 [queries.hierarchical_definitions(), queries.hierarchical_postulates(), queries.hierarchical_common_notions()],
                 [queries.mereological_definitions(), queries.mereological_postulates(), queries.mereological_common_notions()] ],
             weights: list = [6/9, 1/9, 2/9]):
+    """Compute activation potentials by weighting concept frequencies from multiple SPARQL histories.
+
+    Each query family (direct, hierarchical, mereological) contributes a dataframe of link counts.
+    The counts are normalised within their family, scaled by ``weights``, and combined so the
+    returned dataframe lists each concept with its aggregated activation potential.
+    """
     query_lists = base_sparql_queries.copy()
     if proposition_number >= 2:
         # Generate the iris strings
