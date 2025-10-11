@@ -31,7 +31,6 @@ def highest_potential(df: pd.DataFrame,
                       upper_part: float) -> pd.DataFrame:
     keep_count = math.ceil(len(df) * upper_part)
     print("keep ", keep_count)
-    print("----")
     return df.iloc[:keep_count].copy()
 
 def get_background_concepts(materials: MaterialsPayload, upper_part: float) -> Set[ConceptId]:
