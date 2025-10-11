@@ -102,3 +102,7 @@ def sparql_to_concat_df(kg: rdflib.Graph,
             ],
             ignore_index = True).groupby(by=["o"])["links"].sum().reset_index()
     return df
+
+def create_iris_for_values(proposition_number: int):
+    iris_strings = [f"<https://www.foom.com/core#proof_{i}> <https://www.foom.com/core#proposition_{i}>" for i in range(1, proposition_number)]
+    return " ".join(iris_strings)
