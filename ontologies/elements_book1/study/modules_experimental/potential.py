@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Optional, Set, Tuple
+from typing import Set, Tuple
 
 import rdflib
 
@@ -27,13 +27,19 @@ def main(
     kg: rdflib.Graph,
     proposition_number: int,
     *,
-    history_selection: Optional[SelectionCriteria] = None,
-    cooccurrence_selection: Optional[SelectionCriteria] = None,
+    history_weights: Tuple[float, float, float],
+    history_selection: SelectionCriteria,
+    cooccurrence_selection: SelectionCriteria,
 ) -> Tuple[Set[str], Set[str]]:
     """Return background and surprising concepts for the requested proposition."""
 
     runner = QueryRunner(kg)
-    history_df = history_potential(kg, proposition_number, runner=runner)
+    history_df = history_potential(
+        kg,
+        proposition_number,
+        weights=history_weights,
+        runner=runner,
+    )
     cooccurrence_df = hebb_potential(kg, proposition_number, runner=runner)
 
     last_proposition_iri = _proposition_iri(proposition_number)

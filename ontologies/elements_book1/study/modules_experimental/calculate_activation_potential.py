@@ -20,39 +20,38 @@ class HistoryFamily:
     base_queries: Tuple[str, ...]
     template_factory: Optional[Callable[[str], str]] = None
 
-WEIGHT_DIRECT = 6 / 9
-WEIGHT_HIERARCHICAL = 1 / 9
-WEIGHT_MEREOLOGICAL = 2 / 9
 
-HISTORY_FAMILIES: Tuple[HistoryFamily, ...] = (
-    HistoryFamily(
-        weight=WEIGHT_DIRECT,
-        base_queries=(
-            base_queries.direct_definitions(),
-            base_queries.direct_postulates(),
-            base_queries.direct_common_notions(),
+def _build_history_families(weights: Tuple[float, float, float]) -> Tuple[HistoryFamily, ...]:
+    direct_weight, hierarchical_weight, mereological_weight = weights
+    return (
+        HistoryFamily(
+            weight=direct_weight,
+            base_queries=(
+                base_queries.direct_definitions(),
+                base_queries.direct_postulates(),
+                base_queries.direct_common_notions(),
+            ),
+            template_factory=base_queries.direct_template_propositions_proofs,
         ),
-        template_factory=base_queries.direct_template_propositions_proofs,
-    ),
-    HistoryFamily(
-        weight=WEIGHT_HIERARCHICAL,
-        base_queries=(
-            base_queries.hierarchical_definitions(),
-            base_queries.hierarchical_postulates(),
-            base_queries.hierarchical_common_notions(),
+        HistoryFamily(
+            weight=hierarchical_weight,
+            base_queries=(
+                base_queries.hierarchical_definitions(),
+                base_queries.hierarchical_postulates(),
+                base_queries.hierarchical_common_notions(),
+            ),
+            template_factory=base_queries.hierarchical_template_propositions_proofs,
         ),
-        template_factory=base_queries.hierarchical_template_propositions_proofs,
-    ),
-    HistoryFamily(
-        weight=WEIGHT_MEREOLOGICAL,
-        base_queries=(
-            base_queries.mereological_definitions(),
-            base_queries.mereological_postulates(),
-            base_queries.mereological_common_notions(),
+        HistoryFamily(
+            weight=mereological_weight,
+            base_queries=(
+                base_queries.mereological_definitions(),
+                base_queries.mereological_postulates(),
+                base_queries.mereological_common_notions(),
+            ),
+            template_factory=base_queries.mereological_template_propositions_proofs,
         ),
-        template_factory=base_queries.mereological_template_propositions_proofs,
-    ),
-)
+    )
 
 
 HEBB_QUERIES: Tuple[str, ...] = (
@@ -62,12 +61,15 @@ HEBB_QUERIES: Tuple[str, ...] = (
 )
 
 
-def _history_query_plan(proposition_number: int) -> Iterable[Tuple[float, Tuple[str, ...]]]:
+def _history_query_plan(
+    proposition_number: int,
+    families: Tuple[HistoryFamily, ...],
+) -> Iterable[Tuple[float, Tuple[str, ...]]]:
     iris: Optional[str] = None
     if proposition_number >= 2:
         iris = base_rdf_utils.create_iris_for_values(proposition_number)
 
-    for family in HISTORY_FAMILIES:
+    for family in families:
         queries = list(family.base_queries)
         if iris and family.template_factory is not None:
             queries.append(family.template_factory(iris))
@@ -78,14 +80,16 @@ def history(
     kg: rdflib.Graph,
     proposition_number: int = 0,
     *,
+    weights: Tuple[float, float, float],
     runner: Optional[QueryRunner] = None,
 ) -> pd.DataFrame:
     """Return weighted activation potentials, avoiding repeated SPARQL query execution."""
 
     runner = runner or QueryRunner(kg)
     family_frames: list[pd.DataFrame] = []
+    families = _build_history_families(weights)
 
-    for weight, queries in _history_query_plan(proposition_number):
+    for weight, queries in _history_query_plan(proposition_number, families):
         query_frames = []
         for query in queries:
             df = runner.fetch(query)
@@ -164,11 +168,12 @@ def main(
     kg: rdflib.Graph,
     proposition_number: int = 0,
     *,
+    weights: Tuple[float, float, float],
     runner: Optional[QueryRunner] = None,
 ) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """Return history and Hebbian activation potentials using shared query results."""
 
     runner = runner or QueryRunner(kg)
-    history_df = history(kg, proposition_number, runner=runner)
+    history_df = history(kg, proposition_number, weights=weights, runner=runner)
     hebb_df = hebb(kg, proposition_number, runner=runner)
     return history_df, hebb_df

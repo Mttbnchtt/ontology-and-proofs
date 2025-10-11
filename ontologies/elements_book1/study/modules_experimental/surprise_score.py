@@ -79,8 +79,8 @@ def get_background_concepts(
 def main(
     materials: MaterialsPayload,
     *,
-    history_selection: SelectionCriteria = DEFAULT_HISTORY_SELECTION,
-    cooccurrence_selection: SelectionCriteria = DEFAULT_COOCCURRENCE_SELECTION,
+    history_selection: SelectionCriteria,
+    cooccurrence_selection: SelectionCriteria,
 ) -> Tuple[Set[ConceptId], Set[ConceptId]]:
     background_concepts = get_background_concepts(
         materials,
