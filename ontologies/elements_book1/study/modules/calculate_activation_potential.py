@@ -12,13 +12,15 @@ import modules.queries as queries # SPARQL queries
 import modules.rdf_utils as rdf_utils # RDF utilities
 import rdflib
 
+WEIGHTS: Sequence[float] = (6 / 9, 1 / 9, 2 / 9)
+
 def history(kg: rdflib.Graph,
             proposition_number: int = 0,
             base_sparql_queries: List[List[str]] = [
                 [queries.direct_definitions(), queries.direct_postulates(), queries.direct_common_notions()],
                 [queries.hierarchical_definitions(), queries.hierarchical_postulates(), queries.hierarchical_common_notions()],
                 [queries.mereological_definitions(), queries.mereological_postulates(), queries.mereological_common_notions()] ],
-            weights: Sequence[float] = (6 / 9, 1 / 9, 2 / 9)) -> pd.DataFrame:
+            weights: Sequence[float] = WEIGHTS) -> pd.DataFrame:
     """Compute activation potentials by weighting concept frequencies from multiple SPARQL histories.
 
     Each query family (direct, hierarchical, mereological) contributes a dataframe of link counts.
