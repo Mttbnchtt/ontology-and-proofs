@@ -1,7 +1,4 @@
 """Lookup helpers for the last proposition/proof references using direct and mereological templates.
-
-Limitations:
-- The "mereological" helper currently reuses a direct query instead of a dedicated mereological path.
 """
 
 import modules.queries as queries # SPARQL queries 
@@ -14,7 +11,8 @@ def direct_last_item(kg: rdflib.Graph,
 
 def mereological_last_item(kg: rdflib.Graph,
                            last_proposition_iri: rdflib.URIRef):
-    results = kg.query(queries.direct_template_last_item(last_proposition_iri))
+    # results = kg.query(queries.direct_template_last_item(last_proposition_iri))
+    results = kg.query(queries.mereological_template_last_item(last_proposition_iri))
     return {str(row.o) for row in results}
 
 def main(kg: rdflib.Graph,
