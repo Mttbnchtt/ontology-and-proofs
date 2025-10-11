@@ -5,19 +5,19 @@ Limitations:
 - Relies on upstream query helpers returning non-empty data; missing data can propagate NaNs or raise errors.
 """
 
-import math
-import pandas as pd
-import modules.queries as queries # SPARQL queries 
-import modules.rdf_utils as rdf_utils # RDF utilities
+from typing import Set, Tuple
+
 import modules.calculate_activation_potential as calculate_activation_potential # calculate activation potential
 import modules.direct_and_mereological_last_item as direct_and_mereological_last_item # direct and mereological last item
 import modules.surprise_score as surprise_score # surprise score
+from modules.surprise_score import MaterialsPayload
 import rdflib
 
+GIVEN_UPPER_PART: float = 1 / 4
 
 def main(kg: rdflib.Graph,
          proposition_number: int = 1,
-         given_upper_part: float = 1/4):
+         given_upper_part: float = GIVEN_UPPER_PART) -> Tuple[Set[str], Set[str]]:
     #  calculate activation potential
     history_df, cooccurrence_df = calculate_activation_potential.main(kg, proposition_number)
     # find direct and mereological concepts of last proposition
@@ -27,7 +27,7 @@ def main(kg: rdflib.Graph,
     last_proof_iri = f"<https://www.foom.com/core#proof_{proposition_number}>"
     direct_last_proof = direct_and_mereological_last_item.main(kg, last_proof_iri, direct_and_mereological=False)
     # check surprise score
-    materials = {
+    materials: MaterialsPayload = {
         "direct_last_proposition": direct_last_proposition,
         "mereological_last_proposition": mereological_last_proposition,
         "direct_last_proof": direct_last_proof,
