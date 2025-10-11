@@ -26,25 +26,40 @@ class MaterialsPayload(TypedDict):
 
 UPPER_PART_HISTORY: float = 1 / 10
 UPPER_PART_COOCCURRENCE: float = 1 / 20
-SELECTION_TYPE = "top_fraction", "top_n", "threshold"
+SELECTION_TYPES = ("top_fraction", "top_n", "threshold")
 
 
 def highest_potential(df: pd.DataFrame,
                       upper_part: float,
-                      selection_type: str = SELECTION_TYPE) -> pd.DataFrame:
+                      selection_type: str = "top_fraction") -> pd.DataFrame:
     """Return the highest potential concepts from a dataframe, based on a selection strategy."""
+    if df.empty:
+        return df.copy()
+
+    if selection_type not in SELECTION_TYPES:
+        raise ValueError(f"Unsupported selection type: {selection_type}")
+
     if selection_type == "threshold":
         return df[df["activation_potential"] >= upper_part].copy()
-    elif selection_type == "top_n":
-        return df.nlargest(int(upper_part), "activation_potential").copy()
-    elif selection_type == "top_fraction":
-        keep_count = math.ceil(len(df) * upper_part)
+
+    if selection_type == "top_n":
+        top_n = max(0, int(upper_part))
+        if top_n <= 0:
+            return df.iloc[0:0].copy()
+        return df.nlargest(top_n, "activation_potential").copy()
+
+    if selection_type == "top_fraction":
+        keep_count = max(1, math.ceil(len(df) * upper_part))
         print("keep ", keep_count)
         return df.iloc[:keep_count].copy()
 
-def get_background_concepts(materials: MaterialsPayload, upper_part_history: float, upper_part_cooccurence) -> Set[ConceptId]:
+    return df.iloc[0:0].copy()
+
+def get_background_concepts(materials: MaterialsPayload,
+                            upper_part_history: float,
+                            upper_part_cooccurrence: float) -> Set[ConceptId]:
     history_highest_concepts = set(highest_potential(materials["history"], upper_part_history)["o"])
-    cooccurrence_df = highest_potential(materials["cooccurrence"], upper_part_cooccurence)
+    cooccurrence_df = highest_potential(materials["cooccurrence"], upper_part_cooccurrence)
     cooccurrence_concepts = set(cooccurrence_df["o1"]) | set(cooccurrence_df["o2"])
     proposition_concepts = materials["direct_last_proposition"] | materials["mereological_last_proposition"]
     return history_highest_concepts | cooccurrence_concepts | proposition_concepts
@@ -54,7 +69,11 @@ def main(
         upper_part_history: float = UPPER_PART_HISTORY, 
         upper_part_cooccurrence: float = UPPER_PART_COOCCURRENCE
 ) -> Tuple[Set[ConceptId], Set[ConceptId]]:
-    background_concepts = get_background_concepts(materials, upper_part)
+    background_concepts = get_background_concepts(
+        materials,
+        upper_part_history,
+        upper_part_cooccurrence,
+    )
     proof_concepts = materials["direct_last_proof"]
     # print("background", len(background_concepts), background_concepts)
     diff = proof_concepts - background_concepts
