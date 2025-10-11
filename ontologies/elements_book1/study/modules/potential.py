@@ -43,10 +43,10 @@ def hebb(kg: rdflib.Graph,
          sparql_queries: list = [queries.hebb_definitions(), queries.hebb_postulates(), queries.hebb_common_notions()]):
     if proposition_number >= 2:
         # Generate the iris strings
-        iris = create_iris_for_values(proposition_number)
+        iris = rdf_utils.create_iris_for_values(proposition_number)
         # Append the new queries to the existing lists
         sparql_queries.append(queries.hebb_template_propositions_proofs(iris))
-    df = sparql_to_concat_df(kg, sparql_queries, hebb=True)
+    df = rdf_utils.sparql_to_concat_df(kg, sparql_queries, hebb=True)
     total_use = df["links"].sum()
     df["activation_potential"] = df["links"] / total_use
     df = df.drop(columns=["links"])
