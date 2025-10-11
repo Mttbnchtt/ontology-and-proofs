@@ -27,6 +27,5 @@ def main(kg: rdflib.Graph,
         "history": history_df,
         "cooccurrence": cooccurrence_df
     }
-    # check surprisingness
     background_concepts, diff = surprise_score.main(materials, given_upper_part)
     return background_concepts, diff
