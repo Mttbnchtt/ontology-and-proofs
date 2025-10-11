@@ -31,6 +31,7 @@ def highest_potential(df: pd.DataFrame,
                       upper_part: float) -> pd.DataFrame:
     keep_count = math.ceil(len(df) * upper_part)
     print("keep ", keep_count)
+    print("----")
     return df.iloc[:keep_count].copy()
 
 def get_background_concepts(materials: MaterialsPayload, upper_part: float) -> Set[ConceptId]:
@@ -43,7 +44,7 @@ def get_background_concepts(materials: MaterialsPayload, upper_part: float) -> S
 def main(materials: MaterialsPayload, upper_part: float = UPPER_PART) -> Tuple[Set[ConceptId], Set[ConceptId]]:
     background_concepts = get_background_concepts(materials, upper_part)
     proof_concepts = materials["direct_last_proof"]
-    print("background", len(background_concepts), background_concepts)
+    # print("background", len(background_concepts), background_concepts)
     diff = proof_concepts - background_concepts
-    print("diff ", len(diff), diff)
+    # print("diff ", len(diff), diff)
     return background_concepts, diff
