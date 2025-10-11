@@ -51,7 +51,14 @@ def history(kg: rdflib.Graph,
 
     # combine dataframes
     combined_history_df = pd.concat(activation_dfs, ignore_index=True)
-    return combined_history_df.groupby("o")["activation_potential"].sum().reset_index()
+    combined_history_df = (
+        combined_history_df
+        .groupby("o", as_index=False)["activation_potential"]
+        .sum()
+        .sort_values(by="activation_potential", ascending=False)
+        .reset_index(drop=True)
+    )
+    return combined_history_df
 
 
 def hebb(kg: rdflib.Graph,

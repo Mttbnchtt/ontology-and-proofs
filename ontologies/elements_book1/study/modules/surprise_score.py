@@ -24,14 +24,22 @@ class MaterialsPayload(TypedDict):
     direct_last_proof: Set[ConceptId]
 
 
-UPPER_PART_HISTORY: float = 1 / 4
+UPPER_PART_HISTORY: float = 1 / 10
 UPPER_PART_COOCCURRENCE: float = 1 / 20
+SELECTION_TYPE = "top_fraction", "top_n", "threshold"
 
 
 def highest_potential(df: pd.DataFrame,
-                      upper_part: float) -> pd.DataFrame:
-    keep_count = math.ceil(len(df) * upper_part)
-    print("keep ", keep_count)
+                      upper_part: float,
+                      selection_type: str = SELECTION_TYPE) -> pd.DataFrame:
+    """Return the highest potential concepts from a dataframe, based on a selection strategy."""
+    if selection_type == "threshold":
+        return df[df["activation_potential"] >= upper_part].copy()
+    elif selection_type == "top_n":
+        return df.iloc[:upper_part].copy()
+    elif selection_type == "top_fraction":
+        keep_count = math.ceil(len(df) * upper_part)
+        print("keep ", keep_count)
     return df.iloc[:keep_count].copy()
 
 def get_background_concepts(materials: MaterialsPayload, upper_part_history: float, upper_part_cooccurence) -> Set[ConceptId]:
