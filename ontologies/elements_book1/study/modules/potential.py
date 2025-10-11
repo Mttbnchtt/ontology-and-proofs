@@ -18,7 +18,7 @@ def main(kg: rdflib.Graph,
     direct_last_proposition, mereological_last_proposition = direct_and_mereological_last_item.main(kg, last_proposition_iri)
     # find direct concepts of last proof
     last_proof_iri = f"<https://www.foom.com/core#proof_{proposition_number}>"
-    direct_last_proof, mereological_last_proof = direct_and_mereological_last_item.main(kg, last_proof_iri)
+    direct_last_proof = direct_and_mereological_last_item.main(kg, last_proof_iri, direct_and_mereological=False)
     # check surprise score
     materials = {
         "direct_last_proposition": direct_last_proposition,

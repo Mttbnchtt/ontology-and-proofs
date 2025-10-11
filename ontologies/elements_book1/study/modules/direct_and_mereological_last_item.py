@@ -13,7 +13,11 @@ def mereological_last_item(kg: rdflib.Graph,
     return {str(row.o) for row in results}
 
 def main(kg: rdflib.Graph,
-         last_proposition_iri: rdflib.URIRef):
-    return direct_last_item(kg, last_proposition_iri), mereological_last_item(kg, last_proposition_iri)
+         last_proposition_iri: rdflib.URIRef,
+         direct_and_mereological: bool = True):
+    if direct_and_mereological:
+        return direct_last_item(kg, last_proposition_iri), mereological_last_item(kg, last_proposition_iri)
+    else:
+        return direct_last_item(kg, last_proposition_iri)
 
 
