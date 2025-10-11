@@ -1,0 +1,19 @@
+import pandas as pd
+import modules.queries as queries # SPARQL queries 
+import rdflib
+
+def direct_last_item(kg: rdflib.Graph,
+                     last_proposition_iri: rdflib.URIRef):
+    results = kg.query(queries.direct_template_propositions_proofs(last_proposition_iri))
+    return {str(row.o) for row in results}
+
+def mereological_last_item(kg: rdflib.Graph,
+                           last_proposition_iri: rdflib.URIRef):
+    results = kg.query(queries.direct_template_last_item(last_proposition_iri))
+    return {str(row.o) for row in results}
+
+def main(kg: rdflib.Graph,
+         last_proposition_iri: rdflib.URIRef):
+    return direct_last_item(kg, last_proposition_iri), mereological_last_item(kg, last_proposition_iri)
+
+
