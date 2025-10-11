@@ -30,6 +30,7 @@ def main(
     history_weights: Tuple[float, float, float],
     history_selection: SelectionCriteria,
     cooccurrence_selection: SelectionCriteria,
+    verbose: bool = False,
 ) -> Tuple[Set[str], Set[str]]:
     """Return background and surprising concepts for the requested proposition."""
 
