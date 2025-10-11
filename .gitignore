@@ -10,9 +10,13 @@
 ** notes.txt
 ** /notes.txt
 
-# input and output folders
-# **/input/*
+# input/output/notes folders generated locally
+**/input/
+**/input/*
+**/output/
 **/output/*
+**/notes/
+**/notes/*
 
 # pycache folders
 **/__pycache__

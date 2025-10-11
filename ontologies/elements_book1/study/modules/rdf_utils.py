@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Sequence
 
 import pandas as pd
 import rdflib
@@ -37,7 +37,7 @@ def sparql_to_df(kg: rdflib.Graph,
                  *,
                  cache: bool = True,
                  cache_token: Optional[str] = None,
-                 refresh: bool = False):
+                 refresh: bool = False) -> pd.DataFrame:
     """Return query results as a DataFrame, optionally caching them on disk."""
 
     def materialise_query() -> pd.DataFrame:
@@ -68,12 +68,12 @@ def sparql_to_df(kg: rdflib.Graph,
     return cached_dataframe_query(cache_key, materialise_query, refresh=refresh)
 
 def sparql_to_concat_df(kg: rdflib.Graph,
-                        sparql_queries: list,
+                        sparql_queries: Sequence[str],
                         hebb: bool = False,
                         *,
                         cache: bool = True,
                         cache_token: Optional[str] = None,
-                        refresh: bool = False):
+                        refresh: bool = False) -> pd.DataFrame:
     """Concatenate query results and aggregate link counts by node or node pairs."""
     if hebb:
         df = pd.concat(
@@ -103,6 +103,6 @@ def sparql_to_concat_df(kg: rdflib.Graph,
             ignore_index = True).groupby(by=["o"])["links"].sum().reset_index()
     return df
 
-def create_iris_for_values(proposition_number: int):
+def create_iris_for_values(proposition_number: int) -> str:
     iris_strings = [f"<https://www.foom.com/core#proof_{i}> <https://www.foom.com/core#proposition_{i}>" for i in range(1, proposition_number)]
     return " ".join(iris_strings)

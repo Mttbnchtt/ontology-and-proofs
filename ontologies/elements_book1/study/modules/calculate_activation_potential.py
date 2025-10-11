@@ -6,17 +6,19 @@ Limitations:
 """
 
 import pandas as pd
+from typing import List, Sequence, Tuple
+
 import modules.queries as queries # SPARQL queries 
 import modules.rdf_utils as rdf_utils # RDF utilities
 import rdflib
 
 def history(kg: rdflib.Graph,
             proposition_number: int = 0,
-            base_sparql_queries: list = [
+            base_sparql_queries: List[List[str]] = [
                 [queries.direct_definitions(), queries.direct_postulates(), queries.direct_common_notions()],
                 [queries.hierarchical_definitions(), queries.hierarchical_postulates(), queries.hierarchical_common_notions()],
                 [queries.mereological_definitions(), queries.mereological_postulates(), queries.mereological_common_notions()] ],
-            weights: list = [6/9, 1/9, 2/9]):
+            weights: Sequence[float] = (6 / 9, 1 / 9, 2 / 9)) -> pd.DataFrame:
     """Compute activation potentials by weighting concept frequencies from multiple SPARQL histories.
 
     Each query family (direct, hierarchical, mereological) contributes a dataframe of link counts.
@@ -52,7 +54,7 @@ def history(kg: rdflib.Graph,
 
 def hebb(kg: rdflib.Graph,
          proposition_number: int = 0,
-         sparql_queries: list = [queries.hebb_definitions(), queries.hebb_postulates(), queries.hebb_common_notions()]):
+         sparql_queries: List[str] = [queries.hebb_definitions(), queries.hebb_postulates(), queries.hebb_common_notions()]) -> pd.DataFrame:
     """Compute normalised co-occurrence strengths for concept pairs across Hebbian SPARQL queries."""
     if proposition_number >= 2:
         # Generate the iris strings
@@ -61,14 +63,14 @@ def hebb(kg: rdflib.Graph,
         sparql_queries.append(queries.hebb_template_propositions_proofs(iris))
     hebb_df = rdf_utils.sparql_to_concat_df(kg, sparql_queries, hebb=True)
     total_use = hebb_df["links"].sum()
-    combined_hebb_df["activation_potential"] = hebb_df["links"] / total_use
-    combined_hebb_df = combined_hebb_df.drop(columns=["links"])
-    combined_hebb_df = combined_hebb_df.sort_values(by="activation_potential", ascending=False)
-    return combined_hebb_df.reset_index(drop=True)
+    hebb_df["activation_potential"] = hebb_df["links"] / total_use
+    hebb_df = hebb_df.drop(columns=["links"])
+    hebb_df = hebb_df.sort_values(by="activation_potential", ascending=False)
+    return hebb_df.reset_index(drop=True)
 
 
 def main(kg: rdflib.Graph,
-         proposition_number: int = 0):
+         proposition_number: int = 0) -> Tuple[pd.DataFrame, pd.DataFrame]:
     # history potential
     calculated_history_potential_df = history(kg, proposition_number)
     # hebb potential
