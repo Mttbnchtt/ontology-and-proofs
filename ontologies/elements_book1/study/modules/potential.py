@@ -31,10 +31,11 @@ def main(
     history_selection: SelectionCriteria,
     cooccurrence_selection: SelectionCriteria,
     verbose: bool = False,
+    runner: QueryRunner | None = None,
 ) -> Tuple[Set[str], Set[str]]:
     """Return background and surprising concepts for the requested proposition."""
 
-    runner = QueryRunner(kg)
+    runner = runner or QueryRunner(kg)
     history_df = history_potential(
         kg,
         proposition_number,
