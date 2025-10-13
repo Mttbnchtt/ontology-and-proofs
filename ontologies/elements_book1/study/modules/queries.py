@@ -45,8 +45,8 @@ def direct_postulates() -> str:
             { ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#contains_concept> ?o . } # refers to / contains concept
             ######################
-            union
-            { ?s <https://www.foom.com/core#refers_to> ?o . } # refers to / range
+        #     union
+        #     { ?s <https://www.foom.com/core#refers_to> ?o . } # refers to / range
             ######################
             union
             { ?s <https://www.foom.com/core#refers_to>
@@ -54,7 +54,11 @@ def direct_postulates() -> str:
             union
             { ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_range>
-                    / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / range / contains concept
+                    / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / range / contains conceptunion
+                union
+            { ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                     / <https://www.foom.com/core#refers_to> ?o . } # refers to / range / refers to
             #####################
             union
             { ?s <https://www.foom.com/core#refers_to>
@@ -63,46 +67,10 @@ def direct_postulates() -> str:
             { ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_domain>
                     / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / domain / contains concept
-        }
-        group by ?o
-        order by desc(?links)
-        """
-    )
-
-def direct_postulates_with_types() -> str:
-    """Return a query counting how often postulates reach a concept through `refers_to` paths, including domain, range, and contained concepts."""
-    return _wrap(
-        """
-        SELECT
-            ?o
-            (count (*) as ?links)
-        WHERE {
-            ?s a <https://www.foom.com/core#postulate> .
-            { ?s <https://www.foom.com/core#refers_to> ?o . } # refers to
-            union
-            { ?s <https://www.foom.com/core#refers_to>
-                    / <https://www.foom.com/core#contains_concept> ?o . } # refers to / contains concept
-            ######################
-            union
-            { ?s <https://www.foom.com/core#refers_to> ?o . } # refers to / range
-            ######################
-            union
-            { ?s <https://www.foom.com/core#refers_to>
-                    / <https://www.foom.com/core#has_range> ?o . } # refers to / range
-            union
-            { ?s <https://www.foom.com/core#refers_to>
-                    / <https://www.foom.com/core#has_range>
-                    / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / range / contains concept
-            #####################
-            union
-            { ?s <https://www.foom.com/core#refers_to>
-                    / <https://www.foom.com/core#has_domain> ?o . } # refers to / domain
             union
             { ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_domain>
-                    / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / domain / contains concept
-                #####################
-            union
+                    / <https://www.foom.com/core#refers_to>  ?o . } # refers to / domain / refers to
         }
         group by ?o
         order by desc(?links)
@@ -128,9 +96,9 @@ def direct_common_notions() -> str:
                     / <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#contains_concept> ?o . } # refers to / contains concept
             ######################
-            union
-            { ?s <https://www.foom.com/core#has_statement>
-                    / <https://www.foom.com/core#refers_to> ?o . } # refers to
+        #     union
+        #     { ?s <https://www.foom.com/core#has_statement>
+        #             / <https://www.foom.com/core#refers_to> ?o . } # refers to
             union
             { ?s <https://www.foom.com/core#has_statement>
                     / <https://www.foom.com/core#refers_to>
@@ -140,6 +108,11 @@ def direct_common_notions() -> str:
                     / <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_range>
                     / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / range / contains concept
+            union
+            { ?s <https://www.foom.com/core#has_statement>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#refers_to>  ?o . } # refers to / range / refers to
             #####################
             union
             { ?s <https://www.foom.com/core#has_statement>
@@ -150,6 +123,11 @@ def direct_common_notions() -> str:
                     / <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_domain>
                     / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / domain / contains concept
+            union
+            { ?s <https://www.foom.com/core#has_statement>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#refers_to>  ?o . } # refers to / domain / refers to
         }
         group by ?o
         order by desc(?links)
@@ -279,6 +257,11 @@ def hierarchical_postulates() -> str:
                     / <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_range>
                     / <https://www.foom.com/core#contains_concept>  ?o . } # refers to [2] / range / contains concept
+            union
+            { ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#refers_to>  ?o . } # refers to [2] / range / refers to
             #####################
             union
             { ?s <https://www.foom.com/core#refers_to>
@@ -289,6 +272,11 @@ def hierarchical_postulates() -> str:
                     / <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_domain>
                     / <https://www.foom.com/core#contains_concept>  ?o . } # refers to [2] / domain / contains concept
+            union
+            { ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#refers_to>  ?o . } # refers to [2] / domain / refers to
         }
         group by ?o
         order by desc(?links)
@@ -347,6 +335,12 @@ def hierarchical_common_notions() -> str:
                     / <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_range>
                     / <https://www.foom.com/core#contains_concept>  ?o . } # refers to [2] / range / contains concept
+            union
+            { ?s <https://www.foom.com/core#has_statement>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_range>
+                    / <https://www.foom.com/core#refers_to>  ?o . } # refers to [2] / range / refers to
             #####################
             union
             { ?s <https://www.foom.com/core#has_statement>
@@ -359,6 +353,12 @@ def hierarchical_common_notions() -> str:
                     / <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_domain>
                     / <https://www.foom.com/core#contains_concept>  ?o . } # refers to [2] / domain / contains concept
+            union
+            { ?s <https://www.foom.com/core#has_statement>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_domain>
+                    / <https://www.foom.com/core#refers_to>  ?o . } # refers to [2] / domain / refers to
         }
         group by ?o
         order by desc(?links)
