@@ -141,7 +141,7 @@ def direct_template_propositions_proofs(iris: str) -> str:
         f"""
         SELECT ?o (count (*) as ?links) WHERE {{
             values ?s {{ {iris} }}
-                {{ ?s <https://www.foom.com/core#has_given_concept> ?o . }} # contains concept
+                {{ ?s <https://www.foom.com/core#has_given_concept> ?o . }} # has given concept
                 union
                 {{ ?s <https://www.foom.com/core#contains_concept> ?o . }} # contains concept
                 union
@@ -204,6 +204,22 @@ def direct_template_last_item(iris: str) -> str:
         """
     )
 
+def direct_template_last_item_types(iris: str) -> str:
+    """Return a query listing distinct concepts that the given proposition/proof IRIs touch through direct `refers_to` paths."""
+    return _wrap(
+        f"""
+        SELECT DISTINCT ?o WHERE {{
+            values ?s {{ {iris} }}
+                {{ ?s <https://www.foom.com/core#refers_to> 
+                        / <https://www.foom.com/core#has_relation_type>  ?o . }}  # refers to / has relation type 
+                union
+                {{ ?s <https://www.foom.com/core#refers_to> 
+                        / <https://www.foom.com/core#has_relation_type>
+                        / <https://www.foom.com/core#contains_concept>  ?o . }}  # refers to / has relation type / contains concept
+        }}
+        """
+    )
+
 
 # ---------------------------------------------------------------------------
 # Hierarchical queries
@@ -219,7 +235,7 @@ def hierarchical_definitions() -> str:
         WHERE {
             ?s a <https://www.foom.com/core#definition> .
             ?s <https://www.foom.com/core#defines>
-                    / <https://www.foom.com/core#is_sub_concept_of> ?o . # sub concept of
+                    / <https://www.foom.com/core#is_sub_concept_of> ?o .  # sub concept of
         }
         group by ?o
         order by desc(?links)
@@ -384,12 +400,17 @@ def hierarchical_template_propositions_proofs(iris: str) -> str:
         f"""
         SELECT ?o (count (*) as ?links) WHERE {{
             values ?s {{ {iris} }}
+                {{ ?s <https://www.foom.com/core#has_given_concept>
+                        / <https://www.foom.com/core#is_sub_concept_of> ?o . }} # has given concept / super-concept
+                union
                 {{ ?s <https://www.foom.com/core#contains_concept>
-                        / <https://www.foom.com/core#is_sub_concept_of> ?o . }} # refers to / contains concept / super-concept
+                        / <https://www.foom.com/core#is_sub_concept_of> ?o . }} # contains concept / super-concept
                 union
                 {{ ?s <https://www.foom.com/core#refers_to>
                         / <https://www.foom.com/core#contains_concept>
                         / <https://www.foom.com/core#is_sub_concept_of> ?o . }} # refers to / contains concept / super-concept
+                        
+                        #####################
                 union
                 {{ ?s <https://www.foom.com/core#refers_to>
                         / <https://www.foom.com/core#has_range>
@@ -425,6 +446,34 @@ def hierarchical_template_propositions_proofs(iris: str) -> str:
                         / <https://www.foom.com/core#refers_to>
                         / <https://www.foom.com/core#has_domain>
                         / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to [2] / domain / contains concept
+                        
+                        #####################
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_relation_type> ?o . }} # refers to / has relation type
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_relation_type>
+                        / <https://www.foom.com/core#contains_concept> ?o . }} # refers to / has relation type / contains concept
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_relation_type>
+                        / <https://www.foom.com/core#has_range> ?o . }} # refers to / has relation type / range
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_relation_type>
+                        / <https://www.foom.com/core#has_range>
+                        / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / has relation type / range / contains concept
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_relation_type>
+                        / <https://www.foom.com/core#has_domain> ?o . }} # refers to / has relation type / domain
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_relation_type>
+                        / <https://www.foom.com/core#has_domain>
+                        / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / has relation type / domain / contains concept
+
         }} group by ?o order by desc(?links)
         """
     )
