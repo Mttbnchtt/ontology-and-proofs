@@ -22,9 +22,13 @@ def direct_last_item(
     last_proposition_iri: Union[str, rdflib.term.Identifier],
     *,
     runner: Optional[QueryRunner] = None,
+    type_selection: bool = False
 ) -> Set[str]:
     runner = runner or QueryRunner(kg)
-    query = base_queries.direct_template_propositions_proofs(_as_values_token(last_proposition_iri))
+    if type_selection:
+        query = base_queries.direct_template_last_item_types(_as_values_token(last_proposition_iri))
+    else:
+        query = base_queries.direct_template_propositions_proofs(_as_values_token(last_proposition_iri))
     df = runner.fetch(query)
     if "o" not in df.columns:
         return set()

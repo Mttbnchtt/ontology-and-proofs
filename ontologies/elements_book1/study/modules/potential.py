@@ -31,6 +31,7 @@ def main(
     history_selection: SelectionCriteria,
     cooccurrence_selection: SelectionCriteria,
     runner: QueryRunner | None = None,
+    type_selection: bool = False
 ) -> Tuple[Set[str], Set[str]]:
     """Return background and surprising concepts for the requested proposition."""
 
@@ -51,7 +52,7 @@ def main(
     )
 
     last_proof_iri = _proof_iri(proposition_number)
-    direct_last_proof = direct_last_item(kg, last_proof_iri, runner=runner)
+    direct_last_proof = direct_last_item(kg, last_proof_iri, runner=runner, type_selection=type_selection)
 
     materials = {
         "direct_last_proposition": direct_last_proposition,

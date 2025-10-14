@@ -139,7 +139,9 @@ def direct_template_propositions_proofs(iris: str) -> str:
     """Return a query counting concepts referenced by the supplied proposition/proof IRIs via direct `refers_to` property paths."""
     return _wrap(
         f"""
-        SELECT ?o (count (*) as ?links) WHERE {{
+        SELECT ?o 
+        (count (*) as ?links) 
+        WHERE {{
             values ?s {{ {iris} }}
                 {{ ?s <https://www.foom.com/core#has_given_concept> ?o . }} # has given concept
                 union
@@ -176,39 +178,39 @@ def direct_template_propositions_proofs(iris: str) -> str:
     )
 
 
-def direct_template_last_item(iris: str) -> str:
-    """Return a query listing distinct concepts that the given proposition/proof IRIs touch through direct `refers_to` paths."""
-    return _wrap(
-        f"""
-        SELECT DISTINCT ?o WHERE {{
-            values ?s {{ {iris} }}
-                {{ ?s <https://www.foom.com/core#refers_to> ?o . }} # refers to
-                union
-                {{ ?s <https://www.foom.com/core#refers_to>
-                        / <https://www.foom.com/core#contains_concept> ?o . }} # refers to / contains concept
-                union
-                {{ ?s <https://www.foom.com/core#refers_to>
-                        / <https://www.foom.com/core#has_range> ?o . }} # refers to / range
-                union
-                {{ ?s <https://www.foom.com/core#refers_to>
-                        / <https://www.foom.com/core#has_range>
-                        / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / range / contains concept
-                union
-                {{ ?s <https://www.foom.com/core#refers_to>
-                        / <https://www.foom.com/core#has_domain> ?o . }} # refers to / domain
-                union
-                {{ ?s <https://www.foom.com/core#refers_to>
-                        / <https://www.foom.com/core#has_domain>
-                        / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / domain / contains concept
-        }}
-        """
-    )
+# def direct_template_last_item(iris: str) -> str:
+#     """Return a query listing distinct concepts that the given proposition/proof IRIs touch through direct `refers_to` paths."""
+#     return _wrap(
+#         f"""
+#         SELECT DISTINCT ?o WHERE {{
+#             values ?s {{ {iris} }}
+#                 {{ ?s <https://www.foom.com/core#refers_to> ?o . }} # refers to
+#                 union
+#                 {{ ?s <https://www.foom.com/core#refers_to>
+#                         / <https://www.foom.com/core#contains_concept> ?o . }} # refers to / contains concept
+#                 union
+#                 {{ ?s <https://www.foom.com/core#refers_to>
+#                         / <https://www.foom.com/core#has_range> ?o . }} # refers to / range
+#                 union
+#                 {{ ?s <https://www.foom.com/core#refers_to>
+#                         / <https://www.foom.com/core#has_range>
+#                         / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / range / contains concept
+#                 union
+#                 {{ ?s <https://www.foom.com/core#refers_to>
+#                         / <https://www.foom.com/core#has_domain> ?o . }} # refers to / domain
+#                 union
+#                 {{ ?s <https://www.foom.com/core#refers_to>
+#                         / <https://www.foom.com/core#has_domain>
+#                         / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / domain / contains concept
+#         }}
+#         """
+#     )
 
 def direct_template_last_item_types(iris: str) -> str:
     """Return a query listing distinct concepts that the given proposition/proof IRIs touch through direct `refers_to` paths."""
     return _wrap(
         f"""
-        SELECT DISTINCT ?o WHERE {{
+        SELECT DISTINCT ?o (COUNT(?o) as ?links) WHERE {{
             values ?s {{ {iris} }}
                 {{ ?s <https://www.foom.com/core#refers_to> 
                         / <https://www.foom.com/core#has_relation_type>  ?o . }}  # refers to / has relation type 
