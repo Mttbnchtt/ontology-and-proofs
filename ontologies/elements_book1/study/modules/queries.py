@@ -139,8 +139,9 @@ def direct_template_propositions_proofs(iris: str) -> str:
     """Return a query counting concepts referenced by the supplied proposition/proof IRIs via direct `refers_to` property paths."""
     return _wrap(
         f"""
-        SELECT ?o 
-        (count (*) as ?links) 
+        SELECT 
+                ?o 
+                (count (*) as ?links) 
         WHERE {{
             values ?s {{ {iris} }}
                 {{ ?s <https://www.foom.com/core#has_given_concept> ?o . }} # has given concept
@@ -173,7 +174,9 @@ def direct_template_propositions_proofs(iris: str) -> str:
                 {{ ?s <https://www.foom.com/core#refers_to>
                         / <https://www.foom.com/core#has_domain>
                         / <https://www.foom.com/core#refers_to>  ?o . }} # refers to / domain / refers to
-        }} group by ?o order by desc(?links)
+        }} 
+        group by ?o 
+        order by desc(?links)
         """
     )
 
@@ -182,7 +185,10 @@ def direct_template_last_item_types(iris: str) -> str:
     """Return a query listing distinct concepts that the given proposition/proof IRIs touch through direct `refers_to` paths."""
     return _wrap(
         f"""
-        SELECT DISTINCT ?o (COUNT(?o) as ?links) WHERE {{
+        SELECT DISTINCT 
+                ?o 
+                (COUNT(?o) as ?links) 
+        WHERE {{
             values ?s {{ {iris} }}
                 {{ ?s <https://www.foom.com/core#refers_to> 
                         / <https://www.foom.com/core#has_relation_type>  ?o . }}  # refers to / has relation type 
@@ -190,7 +196,9 @@ def direct_template_last_item_types(iris: str) -> str:
                 {{ ?s <https://www.foom.com/core#refers_to> 
                         / <https://www.foom.com/core#has_relation_type>
                         / <https://www.foom.com/core#contains_concept>  ?o . }}  # refers to / has relation type / contains concept
-        }}
+        }}  
+        group by ?o 
+        order by desc(?links)
         """
     )
 
@@ -279,6 +287,14 @@ def hierarchical_postulates() -> str:
                     / <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_domain>
                     / <https://www.foom.com/core#refers_to>  ?o . } # refers to [2] / domain / refers to
+            #####################
+            union
+            { ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_relation_type> ?o . } # refers to / has relation type
+            union
+            { ?s <https://www.foom.com/core#refers_to>
+                    / <https://www.foom.com/core#has_relation_type>
+                    / <https://www.foom.com/core#contains_concept>  ?o . }  # refers to / has relation type / contains concept
         }
         group by ?o
         order by desc(?links)
@@ -361,7 +377,6 @@ def hierarchical_common_notions() -> str:
                     / <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_domain>
                     / <https://www.foom.com/core#refers_to>  ?o . } # refers to [2] / domain / refers to
-        }
         group by ?o
         order by desc(?links)
         """
