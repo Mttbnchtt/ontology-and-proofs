@@ -64,6 +64,7 @@ def get_background_concepts(
     history_selection: SelectionCriteria,
     cooccurrence_selection: SelectionCriteria,
 ) -> Set[ConceptId]:
+    """Return concept ids considered background given activation selections and proposition context."""
     history_df = highest_potential(materials["history"], history_selection)
     history_concepts = set(history_df.get("o", pd.Series(dtype=object)).dropna())
 
