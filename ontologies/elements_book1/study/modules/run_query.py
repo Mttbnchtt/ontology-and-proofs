@@ -10,6 +10,7 @@ import pandas as pd
 import rdflib
 
 TIMESTAMP_FORMAT = "%Y%m%d-%H%M%S"
+FILENAME_PREFIX = "query_results"
 
 PREFIXES = """\
 PREFIX core: <https://www.foom.com/core#>
@@ -28,6 +29,7 @@ def _to_python(term: Optional[rdflib.term.Identifier]) -> Optional[object]:
 
 
 def _normalise_bindings(bindings: Iterable[Mapping[rdflib.term.Variable, object]]) -> list[dict[str, object]]:
+    """Convert rdflib binding mappings into plain dict rows with string keys and Python values."""
     normalised: list[dict[str, object]] = []
     for binding in bindings:
         row: MutableMapping[str, object] = {}
@@ -48,7 +50,7 @@ def run_query(
     results = graph.query(f"{prefixes} {sparql_query}")
     bindings = getattr(results, "bindings", [])
     records = _normalise_bindings(bindings)
-    df = pd.DataFrame.from_records(records)
+    df = pd.DataFrame.from_records(records).fillna("")
     print(f"Query returned {len(df)} results.")
     return df
 
@@ -57,7 +59,7 @@ def df_to_csv(
     df: pd.DataFrame,
     directory: Path | str,
     *,
-    filename_prefix: str = "query_results",
+    filename_prefix: str = FILENAME_PREFIX,
     timestamp_format: str = TIMESTAMP_FORMAT,
 ) -> Path:
     """Persist ``df`` as a timestamped CSV in ``directory`` and return the created path."""
