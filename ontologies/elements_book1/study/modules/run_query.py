@@ -85,6 +85,7 @@ def main(
 
     df = run_query(graph, sparql_query, prefixes=prefixes)
     if write_to_csv:
-        target_dir = output_dir if output_dir is not None else Path.cwd()
+        default_dir = Path(__file__).resolve().parent.parent / "output"
+        target_dir = output_dir if output_dir is not None else default_dir
         df_to_csv(df, target_dir)
     return df
