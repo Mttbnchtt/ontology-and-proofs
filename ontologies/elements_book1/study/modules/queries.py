@@ -54,7 +54,7 @@ def direct_postulates() -> str:
             union
             { ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_range>
-                    / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / range / contains conceptunion
+                    / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / range / contains concept
                 union
             { ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_range>
