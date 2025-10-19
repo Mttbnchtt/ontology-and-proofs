@@ -2,3 +2,5 @@ endpoint start
 dstore create foom
 active foom
 import +p /Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/elements_book1/ontologies/ontology_euclid_book1.ttl
+importaxioms + assertions
+import <rdfox:TBoxReasoning>
