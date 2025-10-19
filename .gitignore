@@ -34,6 +34,9 @@
 # files with .download extension
 **/*.download
 
+# files named start.rdfox
+**/start.rdfox
+
 # exclude virtual environment
 # Exclude everything in venv except the code folder
 **/venv/*
