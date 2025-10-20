@@ -8,13 +8,13 @@ from typing import Optional, Sequence
 import pandas as pd
 import rdflib
 
+from .file_utils import ensure_study_subdir
 from .query_cache import cached_dataframe_query, build_query_cache_key
 
 
-def save_graph_with_timestamp(graph):
-    """Serialize graph to a timestamped Turtle file in the study output folder."""
-    output_dir = Path("/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/elements_book1/study/output")
-    output_dir.mkdir(parents=True, exist_ok=True)
+def save_graph_with_timestamp(graph, output_subdir: str | Path = "output"):
+    """Serialize graph to a timestamped Turtle file under the study directory."""
+    output_dir = ensure_study_subdir(output_subdir)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_path = output_dir / f"ontology_{timestamp}.ttl"
     graph.serialize(destination=output_path, format="turtle")
