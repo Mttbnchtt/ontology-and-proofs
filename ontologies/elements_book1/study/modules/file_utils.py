@@ -9,8 +9,8 @@ import datetime
 import pandas as pd
 
 
-def ensure_study_subdir(subdir: str | Path = "output") -> Path:
-    """Return a subdirectory within the study folder, creating it if necessary."""
+def ensure_subdir(subdir: str | Path = "output") -> Path:
+    """Return a subdirectory within the folder, creating it if necessary."""
     base_dir = Path(__file__).resolve().parent.parent
     target_dir = base_dir / Path(subdir)
     target_dir.mkdir(parents=True, exist_ok=True)
