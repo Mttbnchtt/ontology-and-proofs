@@ -2,13 +2,24 @@
 
 from __future__ import annotations
 
+from datetime import datetime
 from pathlib import Path
 from typing import Optional, Sequence
-
 import pandas as pd
 import rdflib
 
 from .query_cache import cached_dataframe_query, build_query_cache_key
+
+
+def save_graph_with_timestamp(graph):
+    """Serialize graph to a timestamped Turtle file in the study output folder."""
+    output_dir = Path("/Users/matteobianchetti/Documents/Chen.Chen.1/Filosofia/Logica/Mathematics/Math_subjects/Computer_science/Git_repositories/GitHub/ontology-and-proofs/ontologies/elements_book1/study/output")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_path = output_dir / f"ontology_{timestamp}.ttl"
+    graph.serialize(destination=output_path, format="turtle")
+    return output_path
+
 
 def read_graph(
     file_path: str,
