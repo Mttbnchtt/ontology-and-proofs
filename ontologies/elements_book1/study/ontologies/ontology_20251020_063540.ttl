@@ -238,44 +238,11 @@ ns1:aristotle a owl:NamedIndividual,
     rdfs:label "Author: Aristotle" ;
     skos:prefLabel "Aristotle" .
 
-ns1:concept__3_sides_of_equal_length a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: 3_sides_of_equal_length" ;
-    skos:prefLabel "3 sides of equal length" ;
-    ns1:is_used_in_definition_of ns1:concept__isosceles_triangle .
-
-ns1:concept__end a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: End" ;
-    skos:prefLabel "End" ;
-    ns1:is_used_in_definition_of ns1:concept__boundary .
-
-ns1:concept__inclination_of_angles a ns1:concept ;
-    rdfs:label "Concept: inclination of angles" ;
-    skos:prefLabel "inclination of angles" ;
-    ns1:is_concept_in ns1:postulate_5 .
-
-ns1:concept__inclination_of_interior_angles a ns1:concept ;
-    rdfs:label "Concept: inclination of interior angles" ;
-    skos:prefLabel "inclination of interior angles" ;
-    ns1:is_concept_in ns1:postulate_5 .
-
-ns1:concept__inclination_of_two_right_angles a ns1:concept ;
-    rdfs:label "Concept: inclination of two right angles" ;
-    skos:prefLabel "inclination of two right angles" ;
-    ns1:is_concept_in ns1:postulate_5 .
-
 ns1:concept__indefinite_extension a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Indefinite_extension" ;
     skos:prefLabel "Indefinite extension" ;
     ns1:is_used_in_definition_of ns1:concept__parallel_lines .
-
-ns1:concept__interior a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Interior" ;
-    skos:prefLabel "Interior" ;
-    ns1:is_used_in_definition_of ns1:concept__circle .
 
 ns1:concept__intersection_point a ns1:concept ;
     rdfs:label "Concept: intersection point" ;
@@ -310,12 +277,6 @@ ns1:concept__place a owl:NamedIndividual,
     rdfs:label "Concept: Place" ;
     skos:prefLabel "Place" ;
     ns1:is_super_concept_of ns1:concept__place_on .
-
-ns1:concept__plane_figure a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Plane_figure" ;
-    skos:prefLabel "Plane figure" ;
-    ns1:is_used_in_definition_of ns1:concept__circle .
 
 ns1:concept__same_side_of_line a ns1:concept ;
     rdfs:label "Concept: same side of line" ;
@@ -617,14 +578,6 @@ ns1:set__point_point a owl:NamedIndividual,
     ns1:is_domain_of ns1:operation__join_point__point___finite_straight_line ;
     ns1:refers_to ns1:concept__point .
 
-ns1:concept___part a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept:  part" ;
-    owl:sameAs ns1:concept__part ;
-    skos:prefLabel " part" ;
-    ns1:is_concept_in ns1:relation_instance__greater_than_whole__part_,
-        ns1:relation_instance__is_part_of_part__whole_ .
-
 ns1:concept___whole a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept:  whole" ;
@@ -640,13 +593,6 @@ ns1:concept__breadth a owl:NamedIndividual,
     ns1:is_used_in_definition_of ns1:concept__line,
         ns1:concept__surface .
 
-ns1:concept__circumference a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Circumference" ;
-    skos:prefLabel "Circumference" ;
-    ns1:is_used_in_definition_of ns1:concept__diameter,
-        ns1:concept__semicircle .
-
 ns1:concept__congruent a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Congruent",
@@ -656,16 +602,6 @@ ns1:concept__congruent a owl:NamedIndividual,
     ns1:is_concept_in ns1:common_notion_7,
         ns1:relation_instance__congruent_x__y_ .
 
-ns1:concept__cut_operation a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Cut operation" ;
-    skos:prefLabel "Cut operation" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_super_concept_of ns1:concept__cut_into_two_halves ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
 ns1:concept__disjunction a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Disjunction" ;
@@ -674,40 +610,23 @@ ns1:concept__disjunction a owl:NamedIndividual,
     ns1:is_an_abstract_object true ;
     ns1:is_sub_concept_of ns1:concept__abstract_object .
 
-ns1:concept__equal_level a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Equal_level" ;
-    skos:prefLabel "Equal level" ;
-    ns1:is_used_in_definition_of ns1:concept__plane_surface,
-        ns1:concept__straight_line .
+ns1:concept__inclination_of_angles a ns1:concept ;
+    rdfs:label "Concept: inclination of angles" ;
+    skos:prefLabel "inclination of angles" ;
+    ns1:contains_concept ns1:concept__angle ;
+    ns1:is_concept_in ns1:postulate_5 .
 
-ns1:concept__half a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Half" ;
-    skos:prefLabel "Half" ;
-    ns1:is_concept_in ns1:concept__semicircle ;
-    ns1:is_used_in_definition_of ns1:concept__diameter .
+ns1:concept__inclination_of_interior_angles a ns1:concept ;
+    rdfs:label "Concept: inclination of interior angles" ;
+    skos:prefLabel "inclination of interior angles" ;
+    ns1:contains_concept ns1:concept__angle ;
+    ns1:is_concept_in ns1:postulate_5 .
 
-ns1:concept__inclination a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Inclination" ;
-    skos:prefLabel "Inclination" ;
-    ns1:is_concept_in ns1:concept__inclined_at ;
-    ns1:is_used_in_definition_of ns1:concept__plane_angle .
-
-ns1:concept__infinite a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Infinite" ;
-    skos:prefLabel "Infinite" ;
-    ns1:is_opposite_to ns1:concept__finite ;
-    ns1:is_super_concept_of ns1:concept__infinite_according_to .
-
-ns1:concept__interior_point a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Interior_point" ;
-    skos:prefLabel "Interior point" ;
-    ns1:is_used_in_definition_of ns1:concept__center,
-        ns1:concept__circle .
+ns1:concept__inclination_of_two_right_angles a ns1:concept ;
+    rdfs:label "Concept: inclination of two right angles" ;
+    skos:prefLabel "inclination of two right angles" ;
+    ns1:contains_concept ns1:concept__angle ;
+    ns1:is_concept_in ns1:postulate_5 .
 
 ns1:concept__is_less_than a owl:NamedIndividual,
         ns1:concept ;
@@ -716,14 +635,6 @@ ns1:concept__is_less_than a owl:NamedIndividual,
     skos:prefLabel "Is less than" ;
     ns1:is_concept_in ns1:relation_instance__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__,
         ns1:relation_type__is_less_than_magnitude__magnitude_ .
-
-ns1:concept__is_placed_on_same a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Is placed on same" ;
-    skos:prefLabel "Is placed on same" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__is_placed_on_same_triangle__triangle__base_of_triangle_ .
 
 ns1:concept__lenght a owl:NamedIndividual,
         ns1:concept ;
@@ -756,22 +667,6 @@ ns1:concept__other a owl:NamedIndividual,
     ns1:is_a_diagrammatic_object true ;
     ns1:is_concept_in ns1:concept__is_on_the_other_part .
 
-ns1:concept__parallelogrammic_figure a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Parallelogrammic figure" ;
-    skos:prefLabel "Parallelogrammic figure" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_sub_concept_of ns1:concept__rectilinear_figure .
-
-ns1:concept__perpendicular_lines a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Perpendicular lines" ;
-    skos:prefLabel "Perpendicular lines" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__are_perpendicular .
-
 ns1:concept__plane a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Plane" ;
@@ -779,13 +674,12 @@ ns1:concept__plane a owl:NamedIndividual,
     ns1:is_used_in_definition_of ns1:concept__parallel_lines,
         ns1:concept__plane_angle .
 
-ns1:concept__remaining_sides_of a owl:NamedIndividual,
+ns1:concept__plane_figure a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Remaining sides of" ;
-    skos:prefLabel "Remaining sides of" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__remaining_sides_of_triangle_ .
+    rdfs:label "Concept: Plane_figure" ;
+    skos:prefLabel "Plane figure" ;
+    ns1:contains_concept ns1:concept__figure ;
+    ns1:is_used_in_definition_of ns1:concept__circle .
 
 ns1:concept__straight a owl:NamedIndividual,
         ns1:concept ;
@@ -802,14 +696,6 @@ ns1:concept__think_one_as_two a owl:NamedIndividual,
     ns1:has_concept_type ns1:concept_type__operation ;
     ns1:has_domain_of_objects true ;
     ns1:is_concept_in ns1:operation_instance__think_one_as_two_triangle____triangle__triangle_ .
-
-ns1:concept__unequal_length a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Unequal length" ;
-    skos:prefLabel "Unequal length" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_an_abstract_object true ;
-    ns1:is_sub_concept_of ns1:concept__length .
 
 ns1:definition__10 a owl:NamedIndividual,
         ns1:definition ;
@@ -864,6 +750,14 @@ ns1:author a owl:Class ;
     rdfs:label "Author" ;
     skos:prefLabel "Author" .
 
+ns1:concept__3_sides_of_equal_length a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: 3_sides_of_equal_length" ;
+    skos:prefLabel "3 sides of equal length" ;
+    ns1:contains_concept ns1:concept__equals,
+        ns1:concept__three ;
+    ns1:is_used_in_definition_of ns1:concept__isosceles_triangle .
+
 ns1:concept___magnitude a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept:  magnitude" ;
@@ -889,17 +783,6 @@ ns1:concept__and a ns1:concept ;
         ns1:common_notion_2,
         ns1:common_notion_3 .
 
-ns1:concept__apply a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Apply" ;
-    skos:prefLabel "Apply" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_super_concept_of ns1:concept__apply_in,
-        ns1:concept__apply_to ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
 ns1:concept__are_alternate a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Are alternate" ;
@@ -918,17 +801,6 @@ ns1:concept__are_consecutive a owl:NamedIndividual,
     ns1:is_concept_in ns1:relation_instance__are_consecutive_angle__angle_,
         ns1:relation_type__are_consecutive_angle__angle_ .
 
-ns1:concept__carry_over a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Carry over" ;
-    skos:prefLabel "Carry over" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_super_concept_of ns1:concept__carry_over_parallel_to,
-        ns1:concept__carry_over_to ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
 ns1:concept__choose_at_random a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Choose at random" ;
@@ -940,14 +812,22 @@ ns1:concept__choose_at_random a owl:NamedIndividual,
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
 
-ns1:concept__describe a owl:NamedIndividual,
+ns1:concept__circumference a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Describe" ;
-    skos:prefLabel "Describe" ;
+    rdfs:label "Concept: Circumference" ;
+    skos:prefLabel "Circumference" ;
+    ns1:contains_concept ns1:concept__half ;
+    ns1:is_used_in_definition_of ns1:concept__diameter,
+        ns1:concept__semicircle .
+
+ns1:concept__cut_operation a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Cut operation" ;
+    skos:prefLabel "Cut operation" ;
+    ns1:contains_concept ns1:concept__cut ;
     ns1:has_concept_type ns1:concept_type__operation ;
     ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_super_concept_of ns1:concept__describe_on,
-        ns1:concept__describe_parallel ;
+    ns1:is_super_concept_of ns1:concept__cut_into_two_halves ;
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
 
@@ -960,13 +840,13 @@ ns1:concept__deviates a owl:NamedIndividual,
     ns1:is_concept_in ns1:relation_instance__deviates_finite_straight_line__finite_straight_line_,
         ns1:relation_type__deviates_straight_line__straight_line_ .
 
-ns1:concept__equal_length_of_sides a owl:NamedIndividual,
+ns1:concept__equal_level a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Equal_length_of_sides" ;
-    skos:prefLabel "Equal length of sides" ;
-    ns1:is_used_in_definition_of ns1:concept__equilateral_triangle,
-        ns1:concept__isosceles_triangle,
-        ns1:concept__scalene_triangle .
+    rdfs:label "Concept: Equal_level" ;
+    skos:prefLabel "Equal level" ;
+    ns1:contains_concept ns1:concept__equals ;
+    ns1:is_used_in_definition_of ns1:concept__plane_surface,
+        ns1:concept__straight_line .
 
 ns1:concept__fall_on a owl:NamedIndividual,
         ns1:concept ;
@@ -986,6 +866,14 @@ ns1:concept__four a owl:NamedIndividual,
     ns1:is_concept_in ns1:proof_46 ;
     ns1:is_sub_concept_of ns1:concept__abstract_object .
 
+ns1:concept__interior_point a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Interior_point" ;
+    skos:prefLabel "Interior point" ;
+    ns1:contains_concept ns1:concept__interior ;
+    ns1:is_used_in_definition_of ns1:concept__center,
+        ns1:concept__circle .
+
 ns1:concept__is_equilateral a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Is equilateral" ;
@@ -994,15 +882,6 @@ ns1:concept__is_equilateral a owl:NamedIndividual,
     ns1:has_field_of_diagrammatic_objects true ;
     ns1:is_concept_in ns1:relation_instance__is_equilateral_parallelogram_,
         ns1:relation_type__is_equilateral_rectilinear_figure_ .
-
-ns1:concept__is_external_angle_of a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Is external angle of" ;
-    skos:prefLabel "Is external angle of" ;
-    ns1:contains_concept ns1:concept__exterior_angle ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_sub_concept_of ns1:concept__is_external .
 
 ns1:concept__is_half a owl:NamedIndividual,
         ns1:concept ;
@@ -1013,15 +892,14 @@ ns1:concept__is_half a owl:NamedIndividual,
     ns1:is_concept_in ns1:relation_instance__is_half_triangle__parallelogram_,
         ns1:relation_type__is_half_magnitude__magnitude_ .
 
-ns1:concept__is_part_of a owl:NamedIndividual,
+ns1:concept__is_placed_on_same a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Is_part_of",
-        "Concept: is part of" ;
-    skos:prefLabel "Is part of",
-        "is part of" ;
-    ns1:is_concept_in ns1:common_notion_8,
-        ns1:relation_instance__is_part_of_part__whole_,
-        ns1:relation_type__is_part_of_thing__thing_ .
+    rdfs:label "Concept: Is placed on same" ;
+    skos:prefLabel "Is placed on same" ;
+    ns1:contains_concept ns1:concept__equals ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:relation_instance__is_placed_on_same_triangle__triangle__base_of_triangle_ .
 
 ns1:concept__is_rectangular a owl:NamedIndividual,
         ns1:concept ;
@@ -1041,13 +919,23 @@ ns1:concept__possible a owl:NamedIndividual,
     ns1:is_concept_in ns1:proof_7 ;
     ns1:is_sub_concept_of ns1:concept__abstract_object .
 
-ns1:concept__quadrilateral a owl:NamedIndividual,
+ns1:concept__remaining_sides_of a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Quadrilateral" ;
-    skos:prefLabel "Quadrilateral" ;
-    ns1:is_used_in_definition_of ns1:concept__rectangular,
-        ns1:concept__rhomboid,
-        ns1:concept__square .
+    rdfs:label "Concept: Remaining sides of" ;
+    skos:prefLabel "Remaining sides of" ;
+    ns1:contains_concept ns1:concept__remaining ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:relation_instance__remaining_sides_of_triangle_ .
+
+ns1:concept__unequal_length a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Unequal length" ;
+    skos:prefLabel "Unequal length" ;
+    ns1:contains_concept ns1:concept__equals ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_an_abstract_object true ;
+    ns1:is_sub_concept_of ns1:concept__length .
 
 ns1:concept__vertex a owl:NamedIndividual,
         ns1:concept ;
@@ -1418,59 +1306,6 @@ ns1:concept___thing a owl:NamedIndividual,
         ns1:relation_type__equals_x__y_,
         ns1:relation_type__is_part_of_thing__thing_ .
 
-ns1:concept__acute_triangle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Acute_triangle" ;
-    skos:prefLabel "Acute triangle" ;
-    ns1:definition_refers_to ns1:concept__acute_angle,
-        ns1:concept__trilateral ;
-    ns1:has_definition ns1:definition__21 ;
-    ns1:is_defined_in ns1:document__elements_book_1 .
-
-ns1:concept__angle_of_parallelogram a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Angle of parallelogram" ;
-    skos:prefLabel "Angle of parallelogram" ;
-    ns1:contains_concept ns1:concept__parallelogram ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:relation_instance__equals_angle_of_parallelogram__angle_ ;
-    ns1:is_sub_concept_of ns1:concept__angle .
-
-ns1:concept__apply_in a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Apply in" ;
-    skos:prefLabel "Apply in" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__apply_in_rectilinear_angle__parallelogram___parallelogram,
-        ns1:operation_type__apply_in_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
-    ns1:is_sub_concept_of ns1:concept__apply ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
-ns1:concept__apply_to a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Apply to" ;
-    skos:prefLabel "Apply to" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__apply_to_finite_straight_line__parallelogram___parallelogram,
-        ns1:operation_type__apply_to_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
-    ns1:is_sub_concept_of ns1:concept__apply ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
-ns1:concept__are_in_a_straight_line a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Are in a straight line" ;
-    skos:prefLabel "Are in a straight line" ;
-    ns1:contains_concept ns1:concept__straight_line ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__are_in_a_straight_line_finite_straight_line__finite_straight_line_,
-        ns1:relation_type__are_in_a_straight_line_straight_line__straight_line_ .
-
 ns1:concept__are_placed_about a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Are placed about" ;
@@ -1490,112 +1325,14 @@ ns1:concept__boundary a owl:NamedIndividual,
     ns1:is_defined_in ns1:document__elements_book_1 ;
     ns1:is_used_in_definition_of ns1:concept__figure .
 
-ns1:concept__carry_over_parallel_to a owl:NamedIndividual,
+ns1:concept__end a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Carry over parallel to" ;
-    skos:prefLabel "Carry over parallel to" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__carry_over_parallel_to_point__point__finite_straight_line___finite_straight_line,
-        ns1:operation_type__carry_over_parallel_to_point__point__finite_straight_line___finite_straight_line ;
-    ns1:is_sub_concept_of ns1:concept__carry_over ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
-ns1:concept__carry_over_to a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Carry over to" ;
-    skos:prefLabel "Carry over to" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__carry_over_to_finite_straight_line__point___finite_straight_line,
-        ns1:operation_type__carry_over_to_finite_straight_line__point___finite_straight_line ;
-    ns1:is_sub_concept_of ns1:concept__carry_over ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
-ns1:concept__complement a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Complement" ;
-    skos:prefLabel "Complement" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__is_complement_of ;
-    ns1:is_sub_concept_of ns1:concept__part ;
-    ns1:is_super_concept_of ns1:concept__complement_of_parallelogram .
-
-ns1:concept__construct_in a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Construct in" ;
-    skos:prefLabel "Construct in" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__construct_in_parallelogram__rectilinear_angle___parallelogram,
-        ns1:operation_type__construct_in_diagrammatic_object__diagrammatic_object_ ;
-    ns1:is_sub_concept_of ns1:concept__construct .
-
-ns1:concept__construct_inside a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Construct inside" ;
-    skos:prefLabel "Construct inside" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__construct_inside_finite_straight_line__triangle___finite_straight_line,
-        ns1:operation_type__construct_inside_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
-    ns1:is_sub_concept_of ns1:concept__construct ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
-ns1:concept__end_of_surface a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: End_of_surface" ;
-    skos:prefLabel "End of surface" ;
-    ns1:definition_refers_to ns1:concept__line,
-        ns1:concept__surface ;
-    ns1:has_definition ns1:definition__6 ;
-    ns1:is_defined_in ns1:document__elements_book_1 .
-
-ns1:concept__extend a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Extend" ;
-    skos:prefLabel "Extend" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__extend_side_of_triangle___finite_straight_line,
-        ns1:operation_instance__extend_straight_line___straight_line ;
-    ns1:is_super_concept_of ns1:concept__extend_straight ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
-ns1:concept__exterior_angle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Exterior angle" ;
-    skos:prefLabel "Exterior angle" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__is_external_angle_of,
-        ns1:relation_instance__is_external_exterior_angle__triangle_ ;
-    ns1:is_sub_concept_of ns1:concept__angle .
-
-ns1:concept__finite a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Finite" ;
-    skos:prefLabel "Finite" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:concept__finite_straight_line ;
-    ns1:is_opposite_to ns1:concept__infinite ;
-    ns1:is_super_concept_of ns1:concept__finite_according_to .
-
-ns1:concept__finite_according_to a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Finite according to" ;
-    skos:prefLabel "Finite according to" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__finite_according_to_straight_line__point_,
-        ns1:relation_type__finite_according_to_straight_line__point_ ;
-    ns1:is_sub_concept_of ns1:concept__finite .
+    rdfs:label "Concept: End" ;
+    skos:prefLabel "End" ;
+    ns1:is_concept_in ns1:concept__end_of_line,
+        ns1:concept__end_of_side_of_triangle,
+        ns1:concept__end_of_surface ;
+    ns1:is_used_in_definition_of ns1:concept__boundary .
 
 ns1:concept__greatest a owl:NamedIndividual,
         ns1:concept ;
@@ -1607,6 +1344,15 @@ ns1:concept__greatest a owl:NamedIndividual,
         ns1:relation_instance__greatest_side_of_triangle_,
         ns1:relation_type__greatest_magnitude_ .
 
+ns1:concept__half a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Half" ;
+    skos:prefLabel "Half" ;
+    ns1:is_concept_in ns1:concept__circumference,
+        ns1:concept__cut_into_two_halves,
+        ns1:concept__semicircle ;
+    ns1:is_used_in_definition_of ns1:concept__diameter .
+
 ns1:concept__if_then a ns1:concept ;
     rdfs:label "Concept: if-then" ;
     skos:prefLabel "if-then" ;
@@ -1615,25 +1361,42 @@ ns1:concept__if_then a ns1:concept ;
         ns1:common_notion_3,
         ns1:common_notion_7 .
 
-ns1:concept__infinite_according_to a owl:NamedIndividual,
+ns1:concept__inclination a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Infinite according to" ;
-    skos:prefLabel "Infinite according to" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__infinite_according_to_straight_line__point_,
-        ns1:relation_type__infinite_according_to_straight_line__point_ ;
-    ns1:is_sub_concept_of ns1:concept__infinite .
+    rdfs:label "Concept: Inclination" ;
+    skos:prefLabel "Inclination" ;
+    ns1:is_concept_in ns1:concept__equal_inclination,
+        ns1:concept__inclination_of_interior_angle,
+        ns1:concept__inclined_at ;
+    ns1:is_used_in_definition_of ns1:concept__plane_angle .
 
-ns1:concept__is_internal_angle_of a owl:NamedIndividual,
+ns1:concept__infinite a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Is internal angle of" ;
-    skos:prefLabel "Is internal angle of" ;
-    ns1:contains_concept ns1:concept__interior_angle ;
+    rdfs:label "Concept: Infinite" ;
+    skos:prefLabel "Infinite" ;
+    ns1:is_concept_in ns1:concept__infinite_according_to,
+        ns1:concept__infinite_straight_line ;
+    ns1:is_opposite_to ns1:concept__finite ;
+    ns1:is_super_concept_of ns1:concept__infinite_according_to .
+
+ns1:concept__interior a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Interior" ;
+    skos:prefLabel "Interior" ;
+    ns1:is_concept_in ns1:concept__interior_angle,
+        ns1:concept__interior_angle_of_triangle,
+        ns1:concept__interior_point ;
+    ns1:is_used_in_definition_of ns1:concept__circle .
+
+ns1:concept__is_external_angle_of a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Is external angle of" ;
+    skos:prefLabel "Is external angle of" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__exterior_angle ;
     ns1:has_concept_type ns1:concept_type__relation ;
     ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_sub_concept_of ns1:concept__is_angle_of,
-        ns1:concept__is_internal .
+    ns1:is_sub_concept_of ns1:concept__is_external .
 
 ns1:concept__is_located_on a owl:NamedIndividual,
         ns1:concept ;
@@ -1644,16 +1407,6 @@ ns1:concept__is_located_on a owl:NamedIndividual,
     ns1:is_concept_in ns1:proposition_14 ;
     ns1:is_given_concept_of ns1:proposition_14 ;
     ns1:is_sub_concept_of ns1:concept__is_located .
-
-ns1:concept__is_on_the_other_part a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Is on the other part" ;
-    skos:prefLabel "Is on the other part" ;
-    ns1:contains_concept ns1:concept__other,
-        ns1:concept__part ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__is_on_the_other_part_finite_straight_line__point__point_ .
 
 ns1:concept__is_opposite_to a owl:NamedIndividual,
         ns1:concept ;
@@ -1675,52 +1428,36 @@ ns1:concept__is_parallelogram a owl:NamedIndividual,
     ns1:is_concept_in ns1:relation_instance__is_parallelogram_parallelogram_,
         ns1:relation_type__is_parallelogram_parallelogram_ .
 
-ns1:concept__is_right_angled a owl:NamedIndividual,
+ns1:concept__is_part_of a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Is right angled" ;
-    skos:prefLabel "Is right angled" ;
-    ns1:contains_concept ns1:concept__right_angle ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__is_right_angled_triangle_,
-        ns1:relation_type__is_right_angled_rectilinear_figure_ .
+    rdfs:label "Concept: Is_part_of",
+        "Concept: is part of" ;
+    skos:prefLabel "Is part of",
+        "is part of" ;
+    ns1:contains_concept ns1:concept___part ;
+    ns1:is_concept_in ns1:common_notion_8,
+        ns1:relation_instance__is_part_of_part__whole_,
+        ns1:relation_type__is_part_of_thing__thing_ .
 
-ns1:concept__is_triangle a owl:NamedIndividual,
+ns1:concept__parallelogrammic_figure a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Is triangle" ;
-    skos:prefLabel "Is triangle" ;
-    ns1:contains_concept ns1:concept__triangle ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__is_triangle_triangle_,
-        ns1:relation_type__is_triangle_triangle_ .
+    rdfs:label "Concept: Parallelogrammic figure" ;
+    skos:prefLabel "Parallelogrammic figure" ;
+    ns1:contains_concept ns1:concept__figure,
+        ns1:concept__parallelogram ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_sub_concept_of ns1:concept__rectilinear_figure .
 
-ns1:concept__multilateral_rectilinear_figure a owl:NamedIndividual,
+ns1:concept__perpendicular_lines a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Multilateral_rectilinear_figure" ;
-    skos:prefLabel "Multilateral rectilinear figure" ;
-    ns1:definition_refers_to ns1:concept__numbers,
+    rdfs:label "Concept: Perpendicular lines" ;
+    skos:prefLabel "Perpendicular lines" ;
+    ns1:contains_concept ns1:concept__line,
         ns1:concept__straight_line ;
-    ns1:has_definition ns1:definition__19 ;
-    ns1:is_defined_in ns1:document__elements_book_1 .
-
-ns1:concept__obtuse_triangle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Obtuse_triangle" ;
-    skos:prefLabel "Obtuse triangle" ;
-    ns1:definition_refers_to ns1:concept__obtuse_angle,
-        ns1:concept__trilateral ;
-    ns1:has_definition ns1:definition__21 ;
-    ns1:is_defined_in ns1:document__elements_book_1 .
-
-ns1:concept__perpendicular_straight_lines a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Perpendicular_straight_lines" ;
-    skos:prefLabel "Perpendicular straight lines" ;
-    ns1:definition_refers_to ns1:concept__equal_inclination,
-        ns1:concept__right_angle ;
-    ns1:has_definition ns1:definition__10 ;
-    ns1:is_defined_in ns1:document__elements_book_1 .
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:concept__are_perpendicular .
 
 ns1:concept__plane_surface a owl:NamedIndividual,
         ns1:concept ;
@@ -1743,15 +1480,6 @@ ns1:concept__produce_to_infinity a owl:NamedIndividual,
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
 
-ns1:concept__quadrilateral_rectilinear_figure a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Quadrilateral_rectilinear_figure" ;
-    skos:prefLabel "Quadrilateral rectilinear figure" ;
-    ns1:definition_refers_to ns1:concept__numbers,
-        ns1:concept__straight_line ;
-    ns1:has_definition ns1:definition__19 ;
-    ns1:is_defined_in ns1:document__elements_book_1 .
-
 ns1:concept__right_triangle a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Right_triangle" ;
@@ -1759,15 +1487,6 @@ ns1:concept__right_triangle a owl:NamedIndividual,
     ns1:definition_refers_to ns1:concept__right_angle,
         ns1:concept__trilateral ;
     ns1:has_definition ns1:definition__21 ;
-    ns1:is_defined_in ns1:document__elements_book_1 .
-
-ns1:concept__scalene_triangle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Scalene_triangle" ;
-    skos:prefLabel "Scalene triangle" ;
-    ns1:definition_refers_to ns1:concept__equal_length_of_sides,
-        ns1:concept__trilateral ;
-    ns1:has_definition ns1:definition__20 ;
     ns1:is_defined_in ns1:document__elements_book_1 .
 
 ns1:concept__section a owl:NamedIndividual,
@@ -2605,15 +2324,15 @@ ns1:common_notion a owl:Class ;
     rdfs:label "Common notion" ;
     skos:prefLabel "Common notion" .
 
-ns1:concept__acute_angle a owl:NamedIndividual,
+ns1:concept__acute_triangle a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Acute_angle" ;
-    skos:prefLabel "Acute angle" ;
-    ns1:definition_refers_to ns1:concept__less,
-        ns1:concept__right_angle ;
-    ns1:has_definition ns1:definition__12 ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_used_in_definition_of ns1:concept__acute_triangle .
+    rdfs:label "Concept: Acute_triangle" ;
+    skos:prefLabel "Acute triangle" ;
+    ns1:contains_concept ns1:concept__triangle ;
+    ns1:definition_refers_to ns1:concept__acute_angle,
+        ns1:concept__trilateral ;
+    ns1:has_definition ns1:definition__21 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
 ns1:concept__angle_at_base a owl:NamedIndividual,
         ns1:concept ;
@@ -2626,27 +2345,66 @@ ns1:concept__angle_at_base a owl:NamedIndividual,
     ns1:is_concept_in ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_ ;
     ns1:is_sub_concept_of ns1:concept__angle .
 
-ns1:concept__angle_of_semicircle a owl:NamedIndividual,
+ns1:concept__angle_of_parallelogram a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Angle of semicircle" ;
-    skos:prefLabel "Angle of semicircle" ;
-    ns1:contains_concept ns1:concept__semicircle ;
+    rdfs:label "Concept: Angle of parallelogram" ;
+    skos:prefLabel "Angle of parallelogram" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__parallelogram ;
     ns1:has_concept_type ns1:concept_type__object ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:equals_angle_of_semicircle__angle_of_semicircle_,
-        ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_ ;
+    ns1:is_concept_in ns1:relation_instance__equals_angle_of_parallelogram__angle_ ;
     ns1:is_sub_concept_of ns1:concept__angle .
 
-ns1:concept__are_not_on_the_same_part a owl:NamedIndividual,
+ns1:concept__apply a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Are not on the same part" ;
-    skos:prefLabel "Are not on the same part" ;
-    ns1:contains_concept ns1:concept__part ;
+    rdfs:label "Concept: Apply" ;
+    skos:prefLabel "Apply" ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:concept__apply_in,
+        ns1:concept__apply_to ;
+    ns1:is_super_concept_of ns1:concept__apply_in,
+        ns1:concept__apply_to ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__apply_in a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Apply in" ;
+    skos:prefLabel "Apply in" ;
+    ns1:contains_concept ns1:concept__apply ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:operation_instance__apply_in_rectilinear_angle__parallelogram___parallelogram,
+        ns1:operation_type__apply_in_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
+    ns1:is_sub_concept_of ns1:concept__apply ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__apply_to a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Apply to" ;
+    skos:prefLabel "Apply to" ;
+    ns1:contains_concept ns1:concept__apply ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:operation_instance__apply_to_finite_straight_line__parallelogram___parallelogram,
+        ns1:operation_type__apply_to_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
+    ns1:is_sub_concept_of ns1:concept__apply ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__are_in_a_straight_line a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Are in a straight line" ;
+    skos:prefLabel "Are in a straight line" ;
+    ns1:contains_concept ns1:concept__line,
+        ns1:concept__straight_line ;
     ns1:has_concept_type ns1:concept_type__relation ;
     ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__are_not_on_the_same_part_finite_straight_line__finite_straight_line_,
-        ns1:relation_type__are_not_on_the_same_part_figure__figure_ ;
-    ns1:is_sub_concept_of ns1:concept__is_located .
+    ns1:is_concept_in ns1:relation_instance__are_in_a_straight_line_finite_straight_line__finite_straight_line_,
+        ns1:relation_type__are_in_a_straight_line_straight_line__straight_line_ .
 
 ns1:concept__at_base a owl:NamedIndividual,
         ns1:concept ;
@@ -2659,116 +2417,135 @@ ns1:concept__at_base a owl:NamedIndividual,
         ns1:relation_type__at_base_angle__rectilinear_figure_ ;
     ns1:is_sub_concept_of ns1:concept__is_located .
 
-ns1:concept__conduct_parallel_to a owl:NamedIndividual,
+ns1:concept__carry_over a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Conduct parallel to" ;
-    skos:prefLabel "Conduct parallel to" ;
-    ns1:contains_concept ns1:concept__parallel_lines ;
+    rdfs:label "Concept: Carry over" ;
+    skos:prefLabel "Carry over" ;
     ns1:has_concept_type ns1:concept_type__operation ;
     ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line,
-        ns1:operation_type__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line ;
-    ns1:is_sub_concept_of ns1:concept__conduct ;
+    ns1:is_concept_in ns1:concept__carry_over_parallel_to,
+        ns1:concept__carry_over_to ;
+    ns1:is_super_concept_of ns1:concept__carry_over_parallel_to,
+        ns1:concept__carry_over_to ;
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
 
-ns1:concept__conduct_to a owl:NamedIndividual,
+ns1:concept__carry_over_to a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Conduct to" ;
-    skos:prefLabel "Conduct to" ;
+    rdfs:label "Concept: Carry over to" ;
+    skos:prefLabel "Carry over to" ;
+    ns1:contains_concept ns1:concept__carry_over ;
     ns1:has_concept_type ns1:concept_type__operation ;
     ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__conduct_to_finite_straight_line__point___finite_straight_line,
-        ns1:operation_instance__conduct_to_side_of_triangle__point___finite_straight_line,
-        ns1:operation_type__conduct_to_finite_straight_line__point___finite_straight_line ;
-    ns1:is_sub_concept_of ns1:concept__conduct ;
+    ns1:is_concept_in ns1:operation_instance__carry_over_to_finite_straight_line__point___finite_straight_line,
+        ns1:operation_type__carry_over_to_finite_straight_line__point___finite_straight_line ;
+    ns1:is_sub_concept_of ns1:concept__carry_over ;
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
 
-ns1:concept__construct_from a owl:NamedIndividual,
+ns1:concept__complement a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Construct from" ;
-    skos:prefLabel "Construct from" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__construct_from_angle__angle__point__finite_straight_line___angle,
-        ns1:operation_instance__construct_from_triangle__finite_straight_line__finite_straight_line__finite_straight_line___triangle,
-        ns1:operation_type__construct_from_diagrammatic_object__diagrammatic_object__diagrammatic_object__diagrammatic_object_ ;
-    ns1:is_sub_concept_of ns1:concept__construct ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
-ns1:concept__construct_to_given_point a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Construct to given point" ;
-    skos:prefLabel "Construct to given point" ;
-    ns1:contains_concept ns1:concept__point ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__construct_to_given_point_finite_straight_line__point__point___finite_straight_line,
-        ns1:operation_type__construct_to_given_point_straight_line__point__point___straight_line ;
-    ns1:is_sub_concept_of ns1:concept__construct ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
-ns1:concept__cut a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Cut" ;
-    skos:prefLabel "Cut" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__cut_circle__circle_,
-        ns1:relation_instance__cut_straight_line__straight_line_,
-        ns1:relation_type__cut_line__line_ ;
-    ns1:is_super_concept_of ns1:concept__cut_into_two_halves .
-
-ns1:concept__describe_on a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Describe on" ;
-    skos:prefLabel "Describe on" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__describe_on_square__finite_straight_line___square,
-        ns1:operation_instance__describe_on_square__side_of_triangle___square,
-        ns1:operation_type__describe_on_figure__finite_straight_line___figure ;
-    ns1:is_sub_concept_of ns1:concept__describe ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
-ns1:concept__end_of_line a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: End of line",
-        "Concept: End_of_line" ;
-    skos:prefLabel "End of line" ;
-    ns1:definition_refers_to ns1:concept__line,
-        ns1:concept__point ;
-    ns1:has_definition ns1:definition__3 ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_super_concept_of ns1:concept__end_of_side_of_triangle .
-
-ns1:concept__end_of_side_of_triangle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: End of side of triangle" ;
-    skos:prefLabel "End of side of triangle" ;
-    ns1:contains_concept ns1:concept__side_of_triangle ;
+    rdfs:label "Concept: Complement" ;
+    skos:prefLabel "Complement" ;
     ns1:has_concept_type ns1:concept_type__object ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:operation_instance__construct_on_finite_straight_line__end_of_side_of_triangle___finite_straight_line,
-        ns1:relation_instance__is_placed_on_finite_straight_line__end_of_side_of_triangle_ ;
-    ns1:is_sub_concept_of ns1:concept__end_of_line .
+    ns1:is_concept_in ns1:concept__complement_of_parallelogram,
+        ns1:concept__is_complement_of ;
+    ns1:is_sub_concept_of ns1:concept__part ;
+    ns1:is_super_concept_of ns1:concept__complement_of_parallelogram .
 
-ns1:concept__extend_straight a owl:NamedIndividual,
+ns1:concept__construct_in a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Extend straight" ;
-    skos:prefLabel "Extend straight" ;
-    ns1:contains_concept ns1:concept__straight_line ;
+    rdfs:label "Concept: Construct in" ;
+    skos:prefLabel "Construct in" ;
+    ns1:contains_concept ns1:concept__construct ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:operation_instance__construct_in_parallelogram__rectilinear_angle___parallelogram,
+        ns1:operation_type__construct_in_diagrammatic_object__diagrammatic_object_ ;
+    ns1:is_sub_concept_of ns1:concept__construct .
+
+ns1:concept__construct_inside a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Construct inside" ;
+    skos:prefLabel "Construct inside" ;
+    ns1:contains_concept ns1:concept__construct ;
     ns1:has_concept_type ns1:concept_type__operation ;
     ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__extend_straight_straight_line___straight_line,
-        ns1:operation_type__extend_straight_straight_line___straight_line ;
-    ns1:is_sub_concept_of ns1:concept__extend ;
+    ns1:is_concept_in ns1:operation_instance__construct_inside_finite_straight_line__triangle___finite_straight_line,
+        ns1:operation_type__construct_inside_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
+    ns1:is_sub_concept_of ns1:concept__construct ;
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__describe a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Describe" ;
+    skos:prefLabel "Describe" ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:concept__describe_on,
+        ns1:concept__describe_parallel ;
+    ns1:is_super_concept_of ns1:concept__describe_on,
+        ns1:concept__describe_parallel ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__end_of_surface a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: End_of_surface" ;
+    skos:prefLabel "End of surface" ;
+    ns1:contains_concept ns1:concept__end ;
+    ns1:definition_refers_to ns1:concept__line,
+        ns1:concept__surface ;
+    ns1:has_definition ns1:definition__6 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
+
+ns1:concept__extend a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Extend" ;
+    skos:prefLabel "Extend" ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:concept__extend_straight,
+        ns1:operation_instance__extend_side_of_triangle___finite_straight_line,
+        ns1:operation_instance__extend_straight_line___straight_line ;
+    ns1:is_super_concept_of ns1:concept__extend_straight ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__exterior_angle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Exterior angle" ;
+    skos:prefLabel "Exterior angle" ;
+    ns1:contains_concept ns1:concept__angle ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:concept__is_external_angle_of,
+        ns1:relation_instance__is_external_exterior_angle__triangle_ ;
+    ns1:is_sub_concept_of ns1:concept__angle .
+
+ns1:concept__finite a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Finite" ;
+    skos:prefLabel "Finite" ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:concept__finite_according_to,
+        ns1:concept__finite_straight_line ;
+    ns1:is_opposite_to ns1:concept__infinite ;
+    ns1:is_super_concept_of ns1:concept__finite_according_to .
+
+ns1:concept__finite_according_to a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Finite according to" ;
+    skos:prefLabel "Finite according to" ;
+    ns1:contains_concept ns1:concept__finite ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:relation_instance__finite_according_to_straight_line__point_,
+        ns1:relation_type__finite_according_to_straight_line__point_ ;
+    ns1:is_sub_concept_of ns1:concept__finite .
 
 ns1:concept__fit a owl:NamedIndividual,
         ns1:concept ;
@@ -2781,48 +2558,16 @@ ns1:concept__fit a owl:NamedIndividual,
         ns1:operation_instance__fit_triangle__triangle___triangle,
         ns1:operation_type__fit_diagrammatic_object__diagrammatic_object___diagrammatic_object .
 
-ns1:concept__have_same_base a owl:NamedIndividual,
+ns1:concept__infinite_according_to a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Have same base" ;
-    skos:prefLabel "Have same base" ;
-    ns1:contains_concept ns1:concept__are_same,
-        ns1:concept__base ;
+    rdfs:label "Concept: Infinite according to" ;
+    skos:prefLabel "Infinite according to" ;
+    ns1:contains_concept ns1:concept__infinite ;
     ns1:has_concept_type ns1:concept_type__relation ;
     ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__have_same_base_parallelogram__triangle_,
-        ns1:relation_type__have_same_base_rectilinear_figure__rectilinear_figure_ .
-
-ns1:concept__inclination_of_interior_angle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Inclination_of_interior_angle" ;
-    skos:prefLabel "Inclination of interior angle" ;
-    ns1:is_concept_in ns1:operation__sum_inclination_of_interior_angle__inclination_of_interior_angle___inclination_of_interior_angle,
-        ns1:relation_instance__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__ ;
-    ns1:is_sub_concept_of ns1:concept__magnitude .
-
-ns1:concept__inclined_at a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Inclined at" ;
-    skos:prefLabel "Inclined at" ;
-    ns1:contains_concept ns1:concept__inclination ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__inclined_at_finite_straight_line__finite_straight_line__right_angle_,
-        ns1:relation_type__inclined_at_straight_line__straight_line__angle_ ;
-    ns1:is_sub_concept_of ns1:concept__is_located .
-
-ns1:concept__interior_angle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Interior angle",
-        "Concept: interior angle" ;
-    skos:prefLabel "Interior angle",
-        "interior angle" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__is_internal_angle_of,
-        ns1:postulate_5 ;
-    ns1:is_sub_concept_of ns1:concept__angle ;
-    ns1:is_super_concept_of ns1:concept__interior_angle_of_triangle .
+    ns1:is_concept_in ns1:relation_instance__infinite_according_to_straight_line__point_,
+        ns1:relation_type__infinite_according_to_straight_line__point_ ;
+    ns1:is_sub_concept_of ns1:concept__infinite .
 
 ns1:concept__is_at_vertex a owl:NamedIndividual,
         ns1:concept ;
@@ -2879,27 +2624,38 @@ ns1:concept__is_double a owl:NamedIndividual,
         ns1:relation_type__is_double_magnitude__magnitude_,
         ns1:relation_type__is_double_rectilinear_figure__rectilinear_figure_ .
 
-ns1:concept__is_right_angle a owl:NamedIndividual,
+ns1:concept__is_internal_angle_of a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Is right angle" ;
-    skos:prefLabel "Is right angle" ;
-    ns1:contains_concept ns1:concept__right_angle ;
+    rdfs:label "Concept: Is internal angle of" ;
+    skos:prefLabel "Is internal angle of" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__interior_angle ;
     ns1:has_concept_type ns1:concept_type__relation ;
     ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__is_right_angle_angle_,
-        ns1:relation_instance__is_right_angle_right_angle_,
-        ns1:relation_type__is_right_angle_angle_ .
+    ns1:is_sub_concept_of ns1:concept__is_angle_of,
+        ns1:concept__is_internal .
 
-ns1:concept__joining_on_the_same_part a owl:NamedIndividual,
+ns1:concept__is_on_the_other_part a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Joining on the same part" ;
-    skos:prefLabel "Joining on the same part" ;
-    ns1:contains_concept ns1:concept__are_same,
+    rdfs:label "Concept: Is on the other part" ;
+    skos:prefLabel "Is on the other part" ;
+    ns1:contains_concept ns1:concept___part,
+        ns1:concept__other,
         ns1:concept__part ;
     ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_objects true ;
-    ns1:is_concept_in ns1:relation_instance__joining_on_the_same_part_finite_straight_line__finite_straight_line__finite_straight_line__finite_straight_line_,
-        ns1:relation_type__joining_on_the_same_part_finite_straight_line__finite_straight_line__finite_straight_line__finite_straight_line_ .
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:relation_instance__is_on_the_other_part_finite_straight_line__point__point_ .
+
+ns1:concept__is_right_angled a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Is right angled" ;
+    skos:prefLabel "Is right angled" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__right_angle ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:relation_instance__is_right_angled_triangle_,
+        ns1:relation_type__is_right_angled_rectilinear_figure_ .
 
 ns1:concept__length a owl:NamedIndividual,
         ns1:concept ;
@@ -2923,25 +2679,15 @@ ns1:concept__meet_at_point a owl:NamedIndividual,
         ns1:relation_type__meet_at_point_straight_line__straight_line__point_ ;
     ns1:is_sub_concept_of ns1:concept__meet .
 
-ns1:concept__obtuse_angle a owl:NamedIndividual,
+ns1:concept__obtuse_triangle a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Obtuse_angle" ;
-    skos:prefLabel "Obtuse angle" ;
-    ns1:definition_refers_to ns1:concept__greater,
-        ns1:concept__right_angle ;
-    ns1:has_definition ns1:definition__11 ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_used_in_definition_of ns1:concept__obtuse_triangle .
-
-ns1:concept__opposite_angles a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Opposite_angles" ;
-    skos:prefLabel "Opposite angles" ;
-    ns1:is_used_in_definition_of ns1:concept__quadrilateral_igure,
-        ns1:concept__rectangular,
-        ns1:concept__rhomboid,
-        ns1:concept__square,
-        ns1:concept__trapezoid_quadrilateral_figure .
+    rdfs:label "Concept: Obtuse_triangle" ;
+    skos:prefLabel "Obtuse triangle" ;
+    ns1:contains_concept ns1:concept__is_triangle ;
+    ns1:definition_refers_to ns1:concept__obtuse_angle,
+        ns1:concept__trilateral ;
+    ns1:has_definition ns1:definition__21 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
 ns1:concept__opposite_sides a owl:NamedIndividual,
         ns1:concept ;
@@ -2952,19 +2698,6 @@ ns1:concept__opposite_sides a owl:NamedIndividual,
         ns1:concept__rhomboid,
         ns1:concept__square,
         ns1:concept__trapezoid_quadrilateral_figure .
-
-ns1:concept__produce_on_both_parts a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Produce on both parts" ;
-    skos:prefLabel "Produce on both parts" ;
-    ns1:contains_concept ns1:concept__part ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__produce_on_both_parts_finite_straight_line__point___finite_straight_line,
-        ns1:operation_type__produce_on_both_parts_finite_straight_line__point___finite_straight_line ;
-    ns1:is_sub_concept_of ns1:concept__produce ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
 
 ns1:concept__produce_to a owl:NamedIndividual,
         ns1:concept ;
@@ -2978,6 +2711,16 @@ ns1:concept__produce_to a owl:NamedIndividual,
     ns1:is_sub_concept_of ns1:concept__produce ;
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__scalene_triangle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Scalene_triangle" ;
+    skos:prefLabel "Scalene triangle" ;
+    ns1:contains_concept ns1:concept__triangle ;
+    ns1:definition_refers_to ns1:concept__equal_length_of_sides,
+        ns1:concept__trilateral ;
+    ns1:has_definition ns1:definition__20 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
 ns1:concept__side_of_parallelogram a owl:NamedIndividual,
         ns1:concept ;
@@ -3903,6 +3646,17 @@ ns1:common_notion_8 a owl:NamedIndividual,
     ns1:has_statement ns1:statement__greater_than_whole__part____is_part_of_part__whole_ ;
     ns1:is_in ns1:document__elements_book_1 .
 
+ns1:concept__acute_angle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Acute_angle" ;
+    skos:prefLabel "Acute angle" ;
+    ns1:contains_concept ns1:concept__angle ;
+    ns1:definition_refers_to ns1:concept__less,
+        ns1:concept__right_angle ;
+    ns1:has_definition ns1:definition__12 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_used_in_definition_of ns1:concept__acute_triangle .
+
 ns1:concept__angle_of_section a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Angle of section" ;
@@ -3915,43 +3669,73 @@ ns1:concept__angle_of_section a owl:NamedIndividual,
         ns1:relation_instance__equals_angle_of_section__angle_of_section_ ;
     ns1:is_sub_concept_of ns1:concept__angle .
 
-ns1:concept__are_parallel a owl:NamedIndividual,
+ns1:concept__carry_over_parallel_to a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Are parallel" ;
-    skos:prefLabel "Are parallel" ;
-    ns1:contains_concept ns1:concept__parallel_lines ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__are_parallel_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__are_parallel_side__side_,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
-        ns1:relation_type__are_parallel_straight_line__straight_line_ .
-
-ns1:concept__conduct_parallel a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Conduct parallel" ;
-    skos:prefLabel "Conduct parallel" ;
-    ns1:contains_concept ns1:concept__parallel_lines ;
+    rdfs:label "Concept: Carry over parallel to" ;
+    skos:prefLabel "Carry over parallel to" ;
+    ns1:contains_concept ns1:concept__carry_over,
+        ns1:concept__conduct_parallel_to ;
     ns1:has_concept_type ns1:concept_type__operation ;
     ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line,
-        ns1:operation_type__conduct_parallel_straight_line__straight_line__point___straight_line ;
-    ns1:is_equivalent_to ns1:concept__describe_parallel ;
+    ns1:is_concept_in ns1:operation_instance__carry_over_parallel_to_point__point__finite_straight_line___finite_straight_line,
+        ns1:operation_type__carry_over_parallel_to_point__point__finite_straight_line___finite_straight_line ;
+    ns1:is_sub_concept_of ns1:concept__carry_over ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__conduct_to a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Conduct to" ;
+    skos:prefLabel "Conduct to" ;
+    ns1:contains_concept ns1:concept__conduct ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:operation_instance__conduct_to_finite_straight_line__point___finite_straight_line,
+        ns1:operation_instance__conduct_to_side_of_triangle__point___finite_straight_line,
+        ns1:operation_type__conduct_to_finite_straight_line__point___finite_straight_line ;
     ns1:is_sub_concept_of ns1:concept__conduct ;
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
 
-ns1:concept__construct a owl:NamedIndividual,
+ns1:concept__construct_from a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Construct" ;
-    skos:prefLabel "Construct" ;
+    rdfs:label "Concept: Construct from" ;
+    skos:prefLabel "Construct from" ;
+    ns1:contains_concept ns1:concept__construct ;
     ns1:has_concept_type ns1:concept_type__operation ;
     ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_super_concept_of ns1:concept__construct_from,
-        ns1:concept__construct_in,
-        ns1:concept__construct_inside,
-        ns1:concept__construct_on,
-        ns1:concept__construct_to_given_point ;
+    ns1:is_concept_in ns1:operation_instance__construct_from_angle__angle__point__finite_straight_line___angle,
+        ns1:operation_instance__construct_from_triangle__finite_straight_line__finite_straight_line__finite_straight_line___triangle,
+        ns1:operation_type__construct_from_diagrammatic_object__diagrammatic_object__diagrammatic_object__diagrammatic_object_ ;
+    ns1:is_sub_concept_of ns1:concept__construct ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__construct_to_given_point a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Construct to given point" ;
+    skos:prefLabel "Construct to given point" ;
+    ns1:contains_concept ns1:concept__construct,
+        ns1:concept__point ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:operation_instance__construct_to_given_point_finite_straight_line__point__point___finite_straight_line,
+        ns1:operation_type__construct_to_given_point_straight_line__point__point___straight_line ;
+    ns1:is_sub_concept_of ns1:concept__construct ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__describe_on a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Describe on" ;
+    skos:prefLabel "Describe on" ;
+    ns1:contains_concept ns1:concept__describe ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:operation_instance__describe_on_square__finite_straight_line___square,
+        ns1:operation_instance__describe_on_square__side_of_triangle___square,
+        ns1:operation_type__describe_on_figure__finite_straight_line___figure ;
+    ns1:is_sub_concept_of ns1:concept__describe ;
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
 
@@ -3983,6 +3767,31 @@ ns1:concept__draw a owl:NamedIndividual,
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
 
+ns1:concept__equal_length_of_sides a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Equal_length_of_sides" ;
+    skos:prefLabel "Equal length of sides" ;
+    ns1:contains_concept ns1:concept__equals ;
+    ns1:is_concept_in ns1:concept__equilateral_triangle,
+        ns1:concept__isosceles_triangle ;
+    ns1:is_used_in_definition_of ns1:concept__equilateral_triangle,
+        ns1:concept__isosceles_triangle,
+        ns1:concept__scalene_triangle .
+
+ns1:concept__extend_straight a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Extend straight" ;
+    skos:prefLabel "Extend straight" ;
+    ns1:contains_concept ns1:concept__extend,
+        ns1:concept__straight_line ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:operation_instance__extend_straight_straight_line___straight_line,
+        ns1:operation_type__extend_straight_straight_line___straight_line ;
+    ns1:is_sub_concept_of ns1:concept__extend ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
 ns1:concept__falls_on a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Falls on" ;
@@ -3995,19 +3804,53 @@ ns1:concept__falls_on a owl:NamedIndividual,
         ns1:relation_type__falls_on_straight_line__straight_line__straight_line_ ;
     ns1:is_sub_concept_of ns1:concept__is_located .
 
-ns1:concept__join_on_the_same_part a owl:NamedIndividual,
+ns1:concept__have_same_base a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Join on the same part" ;
-    skos:prefLabel "Join on the same part" ;
+    rdfs:label "Concept: Have same base" ;
+    skos:prefLabel "Have same base" ;
     ns1:contains_concept ns1:concept__are_same,
-        ns1:concept__part ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__join_on_the_same_part_point__point__point__point____finite_straight_line__finite_straight_line_,
-        ns1:operation_type__join_on_the_same_part_point__point__point__point____finite_straight_line__finite_straight_line_ ;
-    ns1:is_sub_concept_of ns1:concept__join ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
+        ns1:concept__base,
+        ns1:concept__equals ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:relation_instance__have_same_base_parallelogram__triangle_,
+        ns1:relation_type__have_same_base_rectilinear_figure__rectilinear_figure_ .
+
+ns1:concept__inclined_at a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Inclined at" ;
+    skos:prefLabel "Inclined at" ;
+    ns1:contains_concept ns1:concept__inclination,
+        ns1:concept__line ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:relation_instance__inclined_at_finite_straight_line__finite_straight_line__right_angle_,
+        ns1:relation_type__inclined_at_straight_line__straight_line__angle_ ;
+    ns1:is_sub_concept_of ns1:concept__is_located .
+
+ns1:concept__is_right_angle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Is right angle" ;
+    skos:prefLabel "Is right angle" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__right_angle ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:relation_instance__is_right_angle_angle_,
+        ns1:relation_instance__is_right_angle_right_angle_,
+        ns1:relation_type__is_right_angle_angle_ .
+
+ns1:concept__is_triangle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Is triangle" ;
+    skos:prefLabel "Is triangle" ;
+    ns1:contains_concept ns1:concept__triangle ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:concept__isosceles_triangle,
+        ns1:concept__obtuse_triangle,
+        ns1:relation_instance__is_triangle_triangle_,
+        ns1:relation_type__is_triangle_triangle_ .
 
 ns1:concept__meet a owl:NamedIndividual,
         ns1:concept ;
@@ -4021,17 +3864,38 @@ ns1:concept__meet a owl:NamedIndividual,
     ns1:is_super_concept_of ns1:concept__meet_at_point,
         ns1:concept__meet_on_the_part_of .
 
-ns1:concept__meet_on_the_part_of a owl:NamedIndividual,
+ns1:concept__obtuse_angle a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Meet on the part of" ;
-    skos:prefLabel "Meet on the part of" ;
-    ns1:contains_concept ns1:concept__part ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__meet_on_the_part_of_straight_line__straight_line__angle__angle_,
-        ns1:relation_instance__meet_on_the_part_of_straight_line__straight_line__point__point_,
-        ns1:relation_type__meet_on_the_part_of_straight_line__straight_line__diagrammatic_object__diagrammatic_object_ ;
-    ns1:is_sub_concept_of ns1:concept__meet .
+    rdfs:label "Concept: Obtuse_angle" ;
+    skos:prefLabel "Obtuse angle" ;
+    ns1:contains_concept ns1:concept__angle ;
+    ns1:definition_refers_to ns1:concept__greater,
+        ns1:concept__right_angle ;
+    ns1:has_definition ns1:definition__11 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_used_in_definition_of ns1:concept__obtuse_triangle .
+
+ns1:concept__opposite_angles a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Opposite_angles" ;
+    skos:prefLabel "Opposite angles" ;
+    ns1:contains_concept ns1:concept__angle ;
+    ns1:is_used_in_definition_of ns1:concept__quadrilateral_igure,
+        ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__square,
+        ns1:concept__trapezoid_quadrilateral_figure .
+
+ns1:concept__perpendicular_straight_lines a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Perpendicular_straight_lines" ;
+    skos:prefLabel "Perpendicular straight lines" ;
+    ns1:contains_concept ns1:concept__line,
+        ns1:concept__straight_line ;
+    ns1:definition_refers_to ns1:concept__equal_inclination,
+        ns1:concept__right_angle ;
+    ns1:has_definition ns1:definition__10 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
 ns1:concept__place_on a owl:NamedIndividual,
         ns1:concept ;
@@ -4047,16 +3911,30 @@ ns1:concept__place_on a owl:NamedIndividual,
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
 
-ns1:concept__plane_angle a owl:NamedIndividual,
+ns1:concept__produce_on_both_parts a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Plane_angle" ;
-    skos:prefLabel "Plane angle" ;
-    ns1:definition_refers_to ns1:concept__inclination,
-        ns1:concept__meeting,
-        ns1:concept__plane,
-        ns1:concept__straight_line ;
-    ns1:has_definition ns1:definition__8 ;
-    ns1:is_defined_in ns1:document__elements_book_1 .
+    rdfs:label "Concept: Produce on both parts" ;
+    skos:prefLabel "Produce on both parts" ;
+    ns1:contains_concept ns1:concept___part,
+        ns1:concept__part ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:operation_instance__produce_on_both_parts_finite_straight_line__point___finite_straight_line,
+        ns1:operation_type__produce_on_both_parts_finite_straight_line__point___finite_straight_line ;
+    ns1:is_sub_concept_of ns1:concept__produce ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__quadrilateral a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Quadrilateral" ;
+    skos:prefLabel "Quadrilateral" ;
+    ns1:is_concept_in ns1:concept__quadrilateral_igure,
+        ns1:concept__quadrilateral_rectilinear_figure,
+        ns1:concept__trapezoid_quadrilateral_figure ;
+    ns1:is_used_in_definition_of ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__square .
 
 ns1:concept__set_up_equal_to a owl:NamedIndividual,
         ns1:concept ;
@@ -4805,6 +4683,32 @@ ns1:common_notion_3 a owl:NamedIndividual,
     ns1:has_statement ns1:statement___equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__ ;
     ns1:is_in ns1:document__elements_book_1 .
 
+ns1:concept__angle_of_semicircle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Angle of semicircle" ;
+    skos:prefLabel "Angle of semicircle" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__circle,
+        ns1:concept__semicircle ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:equals_angle_of_semicircle__angle_of_semicircle_,
+        ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_ ;
+    ns1:is_sub_concept_of ns1:concept__angle .
+
+ns1:concept__are_not_on_the_same_part a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Are not on the same part" ;
+    skos:prefLabel "Are not on the same part" ;
+    ns1:contains_concept ns1:concept___part,
+        ns1:concept__equals,
+        ns1:concept__part ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:relation_instance__are_not_on_the_same_part_finite_straight_line__finite_straight_line_,
+        ns1:relation_type__are_not_on_the_same_part_figure__figure_ ;
+    ns1:is_sub_concept_of ns1:concept__is_located .
+
 ns1:concept__are_perpendicular a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Are perpendicular" ;
@@ -4818,33 +4722,18 @@ ns1:concept__are_perpendicular a owl:NamedIndividual,
         ns1:relation_type__are_perpendicular_straight_line__straight_line_ ;
     ns1:is_given_concept_of ns1:proposition_12 .
 
-ns1:concept__construct_on a owl:NamedIndividual,
+ns1:concept__cut a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Construct on" ;
-    skos:prefLabel "Construct on" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__construct_on_angle__finite_straight_line___angle,
-        ns1:operation_instance__construct_on_angle__point___angle,
-        ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
-        ns1:operation_instance__construct_on_finite_straight_line__end_of_side_of_triangle___finite_straight_line,
-        ns1:operation_type__construct_on_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
-    ns1:is_sub_concept_of ns1:concept__construct ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
-ns1:concept__diameter_of_parallelogram a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Diameter of parallelogram" ;
-    skos:prefLabel "Diameter of parallelogram" ;
-    ns1:contains_concept ns1:concept__parallelogram ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:relation_instance__are_placed_about_complement_of_parallelogram__complement_of_parallelogram__diameter_of_parallelogram_,
-        ns1:relation_instance__is_diameter_of_parallelogram_diameter_of_parallelogram__parallelogram_,
-        ns1:relation_instance__is_placed_on_complement_of_parallelogram__diameter_of_parallelogram_,
-        ns1:relation_type__is_diameter_of_parallelogram_diameter_of_parallelogram__parallelogram_ ;
-    ns1:is_sub_concept_of ns1:concept__diameter .
+    rdfs:label "Concept: Cut" ;
+    skos:prefLabel "Cut" ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:concept__cut_into_two_halves,
+        ns1:concept__cut_operation,
+        ns1:relation_instance__cut_circle__circle_,
+        ns1:relation_instance__cut_straight_line__straight_line_,
+        ns1:relation_type__cut_line__line_ ;
+    ns1:is_super_concept_of ns1:concept__cut_into_two_halves .
 
 ns1:concept__encompassing a owl:NamedIndividual,
         ns1:concept ;
@@ -4859,17 +4748,56 @@ ns1:concept__encompassing a owl:NamedIndividual,
         ns1:relation_type__encompassing_straight_line__straight_line__angle_ ;
     ns1:is_given_concept_of ns1:proposition_24 .
 
-ns1:concept__equal_inclination a owl:NamedIndividual,
+ns1:concept__end_of_line a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Equal_inclination" ;
-    skos:prefLabel "Equal inclination" ;
-    ns1:is_used_in_definition_of ns1:concept__perpendicular_straight_lines,
-        ns1:concept__quadrilateral_igure,
-        ns1:concept__rectangular,
-        ns1:concept__rhomboid,
-        ns1:concept__right_angle,
-        ns1:concept__square,
-        ns1:concept__trapezoid_quadrilateral_figure .
+    rdfs:label "Concept: End of line",
+        "Concept: End_of_line" ;
+    skos:prefLabel "End of line" ;
+    ns1:contains_concept ns1:concept__end,
+        ns1:concept__line ;
+    ns1:definition_refers_to ns1:concept__line,
+        ns1:concept__point ;
+    ns1:has_definition ns1:definition__3 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_super_concept_of ns1:concept__end_of_side_of_triangle .
+
+ns1:concept__end_of_side_of_triangle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: End of side of triangle" ;
+    skos:prefLabel "End of side of triangle" ;
+    ns1:contains_concept ns1:concept__end,
+        ns1:concept__side_of_triangle,
+        ns1:concept__triangle ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:operation_instance__construct_on_finite_straight_line__end_of_side_of_triangle___finite_straight_line,
+        ns1:relation_instance__is_placed_on_finite_straight_line__end_of_side_of_triangle_ ;
+    ns1:is_sub_concept_of ns1:concept__end_of_line .
+
+ns1:concept__inclination_of_interior_angle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Inclination_of_interior_angle" ;
+    skos:prefLabel "Inclination of interior angle" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__inclination ;
+    ns1:is_concept_in ns1:operation__sum_inclination_of_interior_angle__inclination_of_interior_angle___inclination_of_interior_angle,
+        ns1:relation_instance__is_less_than_sum_inclination_of_interior_angle__inclination_of_interior_angle___sum_inclination_of_right_angle__inclination_of_right_angle__ ;
+    ns1:is_sub_concept_of ns1:concept__magnitude .
+
+ns1:concept__interior_angle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Interior angle",
+        "Concept: interior angle" ;
+    skos:prefLabel "Interior angle",
+        "interior angle" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__interior ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:concept__is_internal_angle_of,
+        ns1:postulate_5 ;
+    ns1:is_sub_concept_of ns1:concept__angle ;
+    ns1:is_super_concept_of ns1:concept__interior_angle_of_triangle .
 
 ns1:concept__is_angle_of a owl:NamedIndividual,
         ns1:concept ;
@@ -4897,6 +4825,44 @@ ns1:concept__is_internal a owl:NamedIndividual,
     ns1:is_sub_concept_of ns1:concept__is_located ;
     ns1:is_super_concept_of ns1:concept__is_internal_angle_of .
 
+ns1:concept__joining_on_the_same_part a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Joining on the same part" ;
+    skos:prefLabel "Joining on the same part" ;
+    ns1:contains_concept ns1:concept___part,
+        ns1:concept__are_same,
+        ns1:concept__equals,
+        ns1:concept__part ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_objects true ;
+    ns1:is_concept_in ns1:relation_instance__joining_on_the_same_part_finite_straight_line__finite_straight_line__finite_straight_line__finite_straight_line_,
+        ns1:relation_type__joining_on_the_same_part_finite_straight_line__finite_straight_line__finite_straight_line__finite_straight_line_ .
+
+ns1:concept__meet_on_the_part_of a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Meet on the part of" ;
+    skos:prefLabel "Meet on the part of" ;
+    ns1:contains_concept ns1:concept___part,
+        ns1:concept__part ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:relation_instance__meet_on_the_part_of_straight_line__straight_line__angle__angle_,
+        ns1:relation_instance__meet_on_the_part_of_straight_line__straight_line__point__point_,
+        ns1:relation_type__meet_on_the_part_of_straight_line__straight_line__diagrammatic_object__diagrammatic_object_ ;
+    ns1:is_sub_concept_of ns1:concept__meet .
+
+ns1:concept__multilateral_rectilinear_figure a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Multilateral_rectilinear_figure" ;
+    skos:prefLabel "Multilateral rectilinear figure" ;
+    ns1:contains_concept ns1:concept__figure,
+        ns1:concept__line,
+        ns1:concept__straight_line ;
+    ns1:definition_refers_to ns1:concept__numbers,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__19 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
+
 ns1:concept__negation a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Negation" ;
@@ -4923,6 +4889,18 @@ ns1:concept__one a owl:NamedIndividual,
     ns1:is_given_concept_of ns1:proposition_16 ;
     ns1:is_sub_concept_of ns1:concept__abstract_object .
 
+ns1:concept__plane_angle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Plane_angle" ;
+    skos:prefLabel "Plane angle" ;
+    ns1:contains_concept ns1:concept__angle ;
+    ns1:definition_refers_to ns1:concept__inclination,
+        ns1:concept__meeting,
+        ns1:concept__plane,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__8 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
+
 ns1:concept__smaller_than a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Smaller than" ;
@@ -4948,19 +4926,6 @@ ns1:concept__taken_together_in_any_way a owl:NamedIndividual,
         ns1:proposition_22 ;
     ns1:is_given_concept_of ns1:proposition_22 ;
     ns1:is_sub_concept_of ns1:concept__take .
-
-ns1:concept__unequal a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Unequal" ;
-    skos:prefLabel "Unequal" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_objects true ;
-    ns1:is_concept_in ns1:relation_instance__unequal_angle__angle_,
-        ns1:relation_instance__unequal_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__unequal_side_of_triangle__side_of_triangle_,
-        ns1:relation_type__unequal_object__object_ ;
-    ns1:is_equivalent_to ns1:concept__distinct ;
-    ns1:is_opposite_to ns1:concept__equals .
 
 ns1:has_relation_to_concept a owl:ObjectProperty ;
     rdfs:label "has relation to concept" ;
@@ -5576,65 +5541,35 @@ ns1:relation_type__is_external_angle__rectilinear_figure_ a owl:NamedIndividual,
         ns1:relation_instance__is_external_angle__triangle_,
         ns1:relation_instance__is_external_exterior_angle__triangle_ .
 
-ns1:concept__are_in_the_same_parallels a owl:NamedIndividual,
+ns1:concept__construct_on a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Are in the same parallels" ;
-    skos:prefLabel "Are in the same parallels" ;
-    ns1:contains_concept ns1:concept__parallel_lines ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__are_in_the_same_parallels_base_of_parallelogram__base_of_parallelogram__straight_line__straight_line_,
-        ns1:relation_instance__are_in_the_same_parallels_parallelogram__parallelogram__straight_line__straight_line_,
-        ns1:relation_instance__are_in_the_same_parallels_triangle__parallelogram__straight_line__straight_line_,
-        ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
-        ns1:relation_type__are_in_the_same_parallels_figure__figure__straight_line__straight_line_ ;
-    ns1:is_sub_concept_of ns1:concept__is_located .
-
-ns1:concept__describe_parallel a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Describe parallel" ;
-    skos:prefLabel "Describe parallel" ;
-    ns1:contains_concept ns1:concept__parallel_lines ;
+    rdfs:label "Concept: Construct on" ;
+    skos:prefLabel "Construct on" ;
+    ns1:contains_concept ns1:concept__construct ;
     ns1:has_concept_type ns1:concept_type__operation ;
     ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__describe_parallel_straight_line__straight_line__point___straight_line,
-        ns1:operation_type__describe_parallel_straight_line__straight_line__point___straight_line,
-        ns1:relation_instance__describe_parallel_straight_line__straight_line__point___straight_line,
-        ns1:relation_type__describe_parallel_straight_line__straight_line__point___straight_line ;
-    ns1:is_equivalent_to ns1:concept__conduct_parallel ;
-    ns1:is_sub_concept_of ns1:concept__describe ;
+    ns1:is_concept_in ns1:operation_instance__construct_on_angle__finite_straight_line___angle,
+        ns1:operation_instance__construct_on_angle__point___angle,
+        ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
+        ns1:operation_instance__construct_on_finite_straight_line__end_of_side_of_triangle___finite_straight_line,
+        ns1:operation_type__construct_on_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
+    ns1:is_sub_concept_of ns1:concept__construct ;
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
 
-ns1:concept__equal_length a owl:NamedIndividual,
+ns1:concept__diameter_of_parallelogram a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Equal length",
-        "Concept: Equal_length" ;
-    skos:prefLabel "Equal length" ;
+    rdfs:label "Concept: Diameter of parallelogram" ;
+    skos:prefLabel "Diameter of parallelogram" ;
+    ns1:contains_concept ns1:concept__diameter,
+        ns1:concept__parallelogram ;
     ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_an_abstract_object true ;
-    ns1:is_sub_concept_of ns1:concept__length ;
-    ns1:is_used_in_definition_of ns1:concept__circle,
-        ns1:concept__quadrilateral_igure,
-        ns1:concept__rectangular,
-        ns1:concept__rhomboid,
-        ns1:concept__square,
-        ns1:concept__trapezoid_quadrilateral_figure .
-
-ns1:concept__equilateral_triangle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Equilateral triangle",
-        "Concept: Equilateral_triangle" ;
-    skos:prefLabel "Equilateral triangle" ;
-    ns1:definition_refers_to ns1:concept__equal_length_of_sides,
-        ns1:concept__trilateral ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__20 ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
-        ns1:relation_instance__is_placed_on_equilateral_triangle__finite_straight_line_ ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_sub_concept_of ns1:concept__triangle .
+    ns1:is_concept_in ns1:relation_instance__are_placed_about_complement_of_parallelogram__complement_of_parallelogram__diameter_of_parallelogram_,
+        ns1:relation_instance__is_diameter_of_parallelogram_diameter_of_parallelogram__parallelogram_,
+        ns1:relation_instance__is_placed_on_complement_of_parallelogram__diameter_of_parallelogram_,
+        ns1:relation_type__is_diameter_of_parallelogram_diameter_of_parallelogram__parallelogram_ ;
+    ns1:is_sub_concept_of ns1:concept__diameter .
 
 ns1:concept__impossible a owl:NamedIndividual,
         ns1:concept ;
@@ -5649,20 +5584,6 @@ ns1:concept__impossible a owl:NamedIndividual,
         ns1:proof_40,
         ns1:proof_7 ;
     ns1:is_sub_concept_of ns1:concept__abstract_object .
-
-ns1:concept__infinite_straight_line a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Infinite straight line" ;
-    skos:prefLabel "Infinite straight line" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__point__right_angle___infinite_straight_line,
-        ns1:proposition_12,
-        ns1:relation_instance__are_perpendicular_infinite_straight_line__finite_straight_line_,
-        ns1:relation_instance__are_perpendicular_infinite_straight_line__infinite_straight_line_,
-        ns1:relation_instance__is_placed_on_infinite_straight_line__infinite_straight_line_ ;
-    ns1:is_given_concept_of ns1:proposition_12 ;
-    ns1:is_sub_concept_of ns1:concept__straight_line .
 
 ns1:concept__interval a owl:NamedIndividual,
         ns1:concept ;
@@ -5711,6 +5632,22 @@ ns1:concept__join a owl:NamedIndividual,
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
 
+ns1:concept__join_on_the_same_part a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Join on the same part" ;
+    skos:prefLabel "Join on the same part" ;
+    ns1:contains_concept ns1:concept___part,
+        ns1:concept__are_same,
+        ns1:concept__equals,
+        ns1:concept__part ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:operation_instance__join_on_the_same_part_point__point__point__point____finite_straight_line__finite_straight_line_,
+        ns1:operation_type__join_on_the_same_part_point__point__point__point____finite_straight_line__finite_straight_line_ ;
+    ns1:is_sub_concept_of ns1:concept__join ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
 ns1:concept__less_than a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Less than" ;
@@ -5741,19 +5678,19 @@ ns1:concept__subtract a owl:NamedIndividual,
         ns1:operation_type__subtract_magnitude__magnitude___magnitude ;
     ns1:produces_new_diagrammatic_object true .
 
-ns1:concept__three a owl:NamedIndividual,
+ns1:concept__unequal a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Three" ;
-    skos:prefLabel "Three" ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_an_abstract_object true ;
-    ns1:is_concept_in ns1:proof_1,
-        ns1:proof_13,
-        ns1:proof_22,
-        ns1:proof_32,
-        ns1:proposition_22 ;
-    ns1:is_given_concept_of ns1:proposition_22 ;
-    ns1:is_sub_concept_of ns1:concept__abstract_object .
+    rdfs:label "Concept: Unequal" ;
+    skos:prefLabel "Unequal" ;
+    ns1:contains_concept ns1:concept__equals ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_objects true ;
+    ns1:is_concept_in ns1:relation_instance__unequal_angle__angle_,
+        ns1:relation_instance__unequal_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__unequal_side_of_triangle__side_of_triangle_,
+        ns1:relation_type__unequal_object__object_ ;
+    ns1:is_equivalent_to ns1:concept__distinct ;
+    ns1:is_opposite_to ns1:concept__equals .
 
 ns1:operation__draw_center__interval___circle a owl:NamedIndividual,
         ns1:operation_instance ;
@@ -6150,50 +6087,53 @@ ns1:statement a owl:Class ;
     rdfs:label "Statement" ;
     skos:prefLabel "Statement" .
 
-ns1:concept__base_of_parallelogram a owl:NamedIndividual,
+ns1:concept__conduct_parallel a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Base of parallelogram" ;
-    skos:prefLabel "Base of parallelogram" ;
-    ns1:contains_concept ns1:concept__parallelogram ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:relation_instance__are_in_the_same_parallels_base_of_parallelogram__base_of_parallelogram__straight_line__straight_line_,
-        ns1:relation_instance__are_same_base_of_parallelogram__base_of_parallelogram_,
-        ns1:relation_instance__are_same_base_of_parallelogram__base_of_triangle_,
-        ns1:relation_instance__are_same_base_of_triangle__base_of_parallelogram_,
-        ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_,
-        ns1:relation_instance__is_placed_on_base_of_parallelogram__parallelogram_ ;
-    ns1:is_sub_concept_of ns1:concept__base .
+    rdfs:label "Concept: Conduct parallel" ;
+    skos:prefLabel "Conduct parallel" ;
+    ns1:contains_concept ns1:concept__are_parallel,
+        ns1:concept__conduct,
+        ns1:concept__parallel_lines ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:concept__conduct_parallel_to,
+        ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line,
+        ns1:operation_type__conduct_parallel_straight_line__straight_line__point___straight_line ;
+    ns1:is_equivalent_to ns1:concept__describe_parallel ;
+    ns1:is_sub_concept_of ns1:concept__conduct ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
 
-ns1:concept__complement_of_parallelogram a owl:NamedIndividual,
+ns1:concept__conduct_parallel_to a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Complement of parallelogram" ;
-    skos:prefLabel "Complement of parallelogram" ;
-    ns1:contains_concept ns1:concept__parallelogram ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:relation_instance__are_placed_about_complement_of_parallelogram__complement_of_parallelogram__diameter_of_parallelogram_,
-        ns1:relation_instance__equals_complement_of_parallelogram__complement_of_parallelogram_,
-        ns1:relation_instance__is_complement_of_complement_of_parallelogram__parallelogram_,
-        ns1:relation_instance__is_placed_on_complement_of_parallelogram__diameter_of_parallelogram_,
-        ns1:relation_instance__remaining_complement_of_parallelogram_,
-        ns1:relation_type__is_complement_of_complement_of_parallelogram__parallelogram_ ;
-    ns1:is_sub_concept_of ns1:concept__complement .
+    rdfs:label "Concept: Conduct parallel to" ;
+    skos:prefLabel "Conduct parallel to" ;
+    ns1:contains_concept ns1:concept__are_parallel,
+        ns1:concept__conduct,
+        ns1:concept__conduct_parallel,
+        ns1:concept__parallel_lines ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:concept__carry_over_parallel_to,
+        ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line,
+        ns1:operation_type__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line ;
+    ns1:is_sub_concept_of ns1:concept__conduct ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
 
-ns1:concept__greater a owl:NamedIndividual,
+ns1:concept__equal_inclination a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Greater" ;
-    skos:prefLabel "Greater" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_objects true ;
-    ns1:is_concept_in ns1:proposition_22,
-        ns1:relation_instance__greater_angle_,
-        ns1:relation_instance__greater_side_of_triangle_,
-        ns1:relation_type__greater_magnitude_ ;
-    ns1:is_given_concept_of ns1:proposition_22 ;
-    ns1:is_opposite_to ns1:concept__smaller ;
-    ns1:is_super_concept_of ns1:concept__greater_than ;
-    ns1:is_used_in_definition_of ns1:concept__obtuse_angle .
+    rdfs:label "Concept: Equal_inclination" ;
+    skos:prefLabel "Equal inclination" ;
+    ns1:contains_concept ns1:concept__equals,
+        ns1:concept__inclination ;
+    ns1:is_used_in_definition_of ns1:concept__perpendicular_straight_lines,
+        ns1:concept__quadrilateral_igure,
+        ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__right_angle,
+        ns1:concept__square,
+        ns1:concept__trapezoid_quadrilateral_figure .
 
 ns1:concept__numbers a owl:NamedIndividual,
         ns1:concept ;
@@ -6209,33 +6149,34 @@ ns1:concept__numbers a owl:NamedIndividual,
         ns1:concept__trapezoid_quadrilateral_figure,
         ns1:concept__trilateral .
 
-ns1:concept__quadrilateral_igure a owl:NamedIndividual,
+ns1:concept__quadrilateral_rectilinear_figure a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Quadrilateral_igure" ;
-    skos:prefLabel "Quadrilateral igure" ;
-    ns1:definition_refers_to ns1:concept__angle,
-        ns1:concept__equal_inclination,
-        ns1:concept__equal_length,
-        ns1:concept__numbers,
-        ns1:concept__opposite_angles,
-        ns1:concept__opposite_sides,
-        ns1:concept__side ;
-    ns1:has_definition ns1:definition__22 ;
+    rdfs:label "Concept: Quadrilateral_rectilinear_figure" ;
+    skos:prefLabel "Quadrilateral rectilinear figure" ;
+    ns1:contains_concept ns1:concept__figure,
+        ns1:concept__line,
+        ns1:concept__quadrilateral,
+        ns1:concept__quadrilateral_igure,
+        ns1:concept__straight_line ;
+    ns1:definition_refers_to ns1:concept__numbers,
+        ns1:concept__straight_line ;
+    ns1:has_definition ns1:definition__19 ;
     ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:concept__trapezoid_quadrilateral_figure a owl:NamedIndividual,
+ns1:concept__three a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Trapezoid_quadrilateral_figure" ;
-    skos:prefLabel "Trapezoid quadrilateral figure" ;
-    ns1:definition_refers_to ns1:concept__angle,
-        ns1:concept__equal_inclination,
-        ns1:concept__equal_length,
-        ns1:concept__numbers,
-        ns1:concept__opposite_angles,
-        ns1:concept__opposite_sides,
-        ns1:concept__side ;
-    ns1:has_definition ns1:definition__22 ;
-    ns1:is_defined_in ns1:document__elements_book_1 .
+    rdfs:label "Concept: Three" ;
+    skos:prefLabel "Three" ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_an_abstract_object true ;
+    ns1:is_concept_in ns1:concept__3_sides_of_equal_length,
+        ns1:proof_1,
+        ns1:proof_13,
+        ns1:proof_22,
+        ns1:proof_32,
+        ns1:proposition_22 ;
+    ns1:is_given_concept_of ns1:proposition_22 ;
+    ns1:is_sub_concept_of ns1:concept__abstract_object .
 
 ns1:operation_instance__choose_at_random_point__finite_straight_line___point a owl:NamedIndividual,
         ns1:operation_instance ;
@@ -6510,6 +6451,22 @@ ns1:relation_type__subtended_by_angle__straight_line__straight_line_ a owl:Named
         ns1:relation_instance__subtended_by_right_angle__side_of_square__side_of_square_,
         ns1:relation_instance__subtended_by_right_angle__side_of_triangle__side_of_triangle_ .
 
+ns1:concept___part a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept:  part" ;
+    owl:sameAs ns1:concept__part ;
+    skos:prefLabel " part" ;
+    ns1:is_concept_in ns1:concept__are_not_on_the_same_part,
+        ns1:concept__is_on_the_other_part,
+        ns1:concept__is_on_the_same_part,
+        ns1:concept__is_part_of,
+        ns1:concept__join_on_the_same_part,
+        ns1:concept__joining_on_the_same_part,
+        ns1:concept__meet_on_the_part_of,
+        ns1:concept__produce_on_both_parts,
+        ns1:relation_instance__greater_than_whole__part_,
+        ns1:relation_instance__is_part_of_part__whole_ .
+
 ns1:concept__abstract_object a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Abstract object" ;
@@ -6525,21 +6482,103 @@ ns1:concept__abstract_object a owl:NamedIndividual,
         ns1:concept__three,
         ns1:concept__two .
 
-ns1:concept__is_on_the_same_part a owl:NamedIndividual,
+ns1:concept__are_in_the_same_parallels a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Is on the same part" ;
-    skos:prefLabel "Is on the same part" ;
-    ns1:contains_concept ns1:concept__are_same,
-        ns1:concept__part ;
+    rdfs:label "Concept: Are in the same parallels" ;
+    skos:prefLabel "Are in the same parallels" ;
+    ns1:contains_concept ns1:concept__are_parallel,
+        ns1:concept__equals,
+        ns1:concept__parallel_lines ;
     ns1:has_concept_type ns1:concept_type__relation ;
     ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:relation_instance__is_on_the_same_part_angle__angle__straight_line_,
-        ns1:relation_instance__is_on_the_same_part_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__is_on_the_same_part_finite_straight_line__finite_straight_line__part_,
-        ns1:relation_instance__is_on_the_same_part_triangle__triangle_,
-        ns1:relation_type__is_on_the_same_part_diagrammatic_object__diagrammatic_object_,
-        ns1:relation_type__is_on_the_same_part_diagrammatic_object__diagrammatic_object__figure_,
-        ns1:relation_type__is_on_the_same_part_diagrammatic_object__diagrammatic_object__part_ .
+    ns1:is_concept_in ns1:relation_instance__are_in_the_same_parallels_base_of_parallelogram__base_of_parallelogram__straight_line__straight_line_,
+        ns1:relation_instance__are_in_the_same_parallels_parallelogram__parallelogram__straight_line__straight_line_,
+        ns1:relation_instance__are_in_the_same_parallels_triangle__parallelogram__straight_line__straight_line_,
+        ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
+        ns1:relation_type__are_in_the_same_parallels_figure__figure__straight_line__straight_line_ ;
+    ns1:is_sub_concept_of ns1:concept__is_located .
+
+ns1:concept__are_parallel a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Are parallel" ;
+    skos:prefLabel "Are parallel" ;
+    ns1:contains_concept ns1:concept__parallel_lines ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:concept__are_in_the_same_parallels,
+        ns1:concept__conduct_parallel,
+        ns1:concept__conduct_parallel_to,
+        ns1:concept__describe_parallel,
+        ns1:relation_instance__are_parallel_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__are_parallel_side__side_,
+        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+        ns1:relation_type__are_parallel_straight_line__straight_line_ .
+
+ns1:concept__base_of_parallelogram a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Base of parallelogram" ;
+    skos:prefLabel "Base of parallelogram" ;
+    ns1:contains_concept ns1:concept__base,
+        ns1:concept__parallelogram ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:relation_instance__are_in_the_same_parallels_base_of_parallelogram__base_of_parallelogram__straight_line__straight_line_,
+        ns1:relation_instance__are_same_base_of_parallelogram__base_of_parallelogram_,
+        ns1:relation_instance__are_same_base_of_parallelogram__base_of_triangle_,
+        ns1:relation_instance__are_same_base_of_triangle__base_of_parallelogram_,
+        ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_,
+        ns1:relation_instance__is_placed_on_base_of_parallelogram__parallelogram_ ;
+    ns1:is_sub_concept_of ns1:concept__base .
+
+ns1:concept__complement_of_parallelogram a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Complement of parallelogram" ;
+    skos:prefLabel "Complement of parallelogram" ;
+    ns1:contains_concept ns1:concept__complement,
+        ns1:concept__parallelogram ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:relation_instance__are_placed_about_complement_of_parallelogram__complement_of_parallelogram__diameter_of_parallelogram_,
+        ns1:relation_instance__equals_complement_of_parallelogram__complement_of_parallelogram_,
+        ns1:relation_instance__is_complement_of_complement_of_parallelogram__parallelogram_,
+        ns1:relation_instance__is_placed_on_complement_of_parallelogram__diameter_of_parallelogram_,
+        ns1:relation_instance__remaining_complement_of_parallelogram_,
+        ns1:relation_type__is_complement_of_complement_of_parallelogram__parallelogram_ ;
+    ns1:is_sub_concept_of ns1:concept__complement .
+
+ns1:concept__describe_parallel a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Describe parallel" ;
+    skos:prefLabel "Describe parallel" ;
+    ns1:contains_concept ns1:concept__are_parallel,
+        ns1:concept__describe,
+        ns1:concept__parallel_lines ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:operation_instance__describe_parallel_straight_line__straight_line__point___straight_line,
+        ns1:operation_type__describe_parallel_straight_line__straight_line__point___straight_line,
+        ns1:relation_instance__describe_parallel_straight_line__straight_line__point___straight_line,
+        ns1:relation_type__describe_parallel_straight_line__straight_line__point___straight_line ;
+    ns1:is_equivalent_to ns1:concept__conduct_parallel ;
+    ns1:is_sub_concept_of ns1:concept__describe ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__greater a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Greater" ;
+    skos:prefLabel "Greater" ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_objects true ;
+    ns1:is_concept_in ns1:concept__greater_than,
+        ns1:proposition_22,
+        ns1:relation_instance__greater_angle_,
+        ns1:relation_instance__greater_side_of_triangle_,
+        ns1:relation_type__greater_magnitude_ ;
+    ns1:is_given_concept_of ns1:proposition_22 ;
+    ns1:is_opposite_to ns1:concept__smaller ;
+    ns1:is_super_concept_of ns1:concept__greater_than ;
+    ns1:is_used_in_definition_of ns1:concept__obtuse_angle .
 
 ns1:concept__object a owl:NamedIndividual,
         ns1:concept ;
@@ -6743,58 +6782,39 @@ ns1:set a owl:Class ;
     rdfs:label "Set" ;
     skos:prefLabel "Set" .
 
-ns1:concept__base a owl:NamedIndividual,
+ns1:concept__equal_length a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Base" ;
-    skos:prefLabel "Base" ;
+    rdfs:label "Concept: Equal length",
+        "Concept: Equal_length" ;
+    skos:prefLabel "Equal length" ;
+    ns1:contains_concept ns1:concept__equals ;
     ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__angle_at_base,
-        ns1:concept__at_base,
-        ns1:concept__have_same_base,
-        ns1:concept__under_base,
-        ns1:relation_instance__are_same_base__base_,
-        ns1:relation_instance__is_placed_on_parallelogram__base_,
-        ns1:relation_instance__is_placed_on_triangle__base_ ;
-    ns1:is_sub_concept_of ns1:concept__finite_straight_line ;
-    ns1:is_super_concept_of ns1:concept__base_of_parallelogram,
-        ns1:concept__base_of_triangle .
-
-ns1:concept__conduct a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Conduct" ;
-    skos:prefLabel "Conduct" ;
-    ns1:has_concept_type ns1:concept_type__operation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:operation_instance__conduct_finite_straight_line__finite_straight_line__point__right_angle___finite_straight_line,
-        ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__point__right_angle___infinite_straight_line,
-        ns1:operation_instance__conduct_straight_line__straight_line__point___straight_line,
-        ns1:operation_type__conduct_straight_line__straight_line__point___straight_line,
-        ns1:operation_type__conduct_straight_line__straight_line__point__angle___straight_line,
-        ns1:proposition_11 ;
-    ns1:is_given_concept_of ns1:proposition_11 ;
-    ns1:is_super_concept_of ns1:concept__conduct_parallel,
-        ns1:concept__conduct_parallel_to,
-        ns1:concept__conduct_to ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
-
-ns1:concept__line a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Line" ;
-    skos:prefLabel "Line" ;
-    ns1:definition_refers_to ns1:concept__breadth,
-        ns1:concept__lenght ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__2 ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:relation_type__cut_line__line_ ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_sub_concept_of ns1:concept__diagrammatic_object ;
-    ns1:is_super_concept_of ns1:concept__straight_line ;
+    ns1:is_an_abstract_object true ;
+    ns1:is_concept_in ns1:concept__equilateral_triangle,
+        ns1:concept__isosceles_triangle ;
+    ns1:is_sub_concept_of ns1:concept__length ;
     ns1:is_used_in_definition_of ns1:concept__circle,
-        ns1:concept__end_of_line,
-        ns1:concept__end_of_surface .
+        ns1:concept__quadrilateral_igure,
+        ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__square,
+        ns1:concept__trapezoid_quadrilateral_figure .
+
+ns1:concept__quadrilateral_igure a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Quadrilateral_igure" ;
+    skos:prefLabel "Quadrilateral igure" ;
+    ns1:contains_concept ns1:concept__quadrilateral ;
+    ns1:definition_refers_to ns1:concept__angle,
+        ns1:concept__equal_inclination,
+        ns1:concept__equal_length,
+        ns1:concept__numbers,
+        ns1:concept__opposite_angles,
+        ns1:concept__opposite_sides,
+        ns1:concept__side ;
+    ns1:has_definition ns1:definition__22 ;
+    ns1:is_concept_in ns1:concept__quadrilateral_rectilinear_figure ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
 ns1:concept__rectangular a owl:NamedIndividual,
         ns1:concept ;
@@ -6812,23 +6832,6 @@ ns1:concept__rectangular a owl:NamedIndividual,
     ns1:has_definition ns1:definition__22 ;
     ns1:is_defined_in ns1:document__elements_book_1 .
 
-ns1:concept__remaining a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Remaining" ;
-    skos:prefLabel "Remaining" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:proposition_22,
-        ns1:relation_instance__remaining_angle_,
-        ns1:relation_instance__remaining_complement_of_parallelogram_,
-        ns1:relation_instance__remaining_finite_straight_line_,
-        ns1:relation_instance__remaining_interior_angle_of_triangle_,
-        ns1:relation_instance__remaining_interior_angle_of_triangle__interior_angle_of_triangle_,
-        ns1:relation_instance__remaining_side_of_triangle_,
-        ns1:relation_instance__remaining_trapezium_,
-        ns1:relation_type__remaining_diagrammatic_object_ ;
-    ns1:is_given_concept_of ns1:proposition_22 .
-
 ns1:concept__rhomboid a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Rhomboid" ;
@@ -6841,6 +6844,22 @@ ns1:concept__rhomboid a owl:NamedIndividual,
         ns1:concept__opposite_angles,
         ns1:concept__opposite_sides,
         ns1:concept__quadrilateral,
+        ns1:concept__side ;
+    ns1:has_definition ns1:definition__22 ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
+
+ns1:concept__trapezoid_quadrilateral_figure a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Trapezoid_quadrilateral_figure" ;
+    skos:prefLabel "Trapezoid quadrilateral figure" ;
+    ns1:contains_concept ns1:concept__figure,
+        ns1:concept__quadrilateral ;
+    ns1:definition_refers_to ns1:concept__angle,
+        ns1:concept__equal_inclination,
+        ns1:concept__equal_length,
+        ns1:concept__numbers,
+        ns1:concept__opposite_angles,
+        ns1:concept__opposite_sides,
         ns1:concept__side ;
     ns1:has_definition ns1:definition__22 ;
     ns1:is_defined_in ns1:document__elements_book_1 .
@@ -6975,42 +6994,60 @@ ns1:relation_instance__remaining_side_of_triangle_ a owl:NamedIndividual,
         ns1:proposition_26,
         ns1:proposition_48 .
 
-ns1:concept__interior_angle_of_triangle a owl:NamedIndividual,
+ns1:concept__equilateral_triangle a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Interior angle of triangle" ;
-    skos:prefLabel "Interior angle of triangle" ;
-    ns1:contains_concept ns1:concept__triangle ;
+    rdfs:label "Concept: Equilateral triangle",
+        "Concept: Equilateral_triangle" ;
+    skos:prefLabel "Equilateral triangle" ;
+    ns1:contains_concept ns1:concept__equal_length,
+        ns1:concept__equal_length_of_sides,
+        ns1:concept__equals,
+        ns1:concept__triangle ;
+    ns1:definition_refers_to ns1:concept__equal_length_of_sides,
+        ns1:concept__trilateral ;
     ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__20 ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:proposition_8,
-        ns1:relation_instance__are_same_interior_angle_of_triangle__interior_angle_of_triangle_,
-        ns1:relation_instance__at_base_interior_angle_of_triangle__isosceles_triangle_,
-        ns1:relation_instance__corresponding_interior_angle_of_triangle__interior_angle_of_triangle_,
-        ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
-        ns1:relation_instance__equals_interior_angle_of_triangle__interior_angle_of_triangle_,
-        ns1:relation_instance__remaining_interior_angle_of_triangle_,
-        ns1:relation_instance__remaining_interior_angle_of_triangle__interior_angle_of_triangle_ ;
-    ns1:is_given_concept_of ns1:proposition_8 ;
-    ns1:is_sub_concept_of ns1:concept__interior_angle .
+    ns1:is_concept_in ns1:operation_instance__construct_on_equilateral_triangle__finite_straight_line___equilateral_triangle,
+        ns1:relation_instance__is_placed_on_equilateral_triangle__finite_straight_line_ ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_sub_concept_of ns1:concept__triangle .
 
-ns1:concept__parallel_lines a owl:NamedIndividual,
+ns1:concept__infinite_straight_line a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Parallel lines",
-        "Concept: Parallel_lines" ;
-    skos:prefLabel "Parallel lines" ;
-    ns1:definition_refers_to ns1:concept__indefinite_extension,
-        ns1:concept__meeting,
-        ns1:concept__plane,
+    rdfs:label "Concept: Infinite straight line" ;
+    skos:prefLabel "Infinite straight line" ;
+    ns1:contains_concept ns1:concept__finite_straight_line,
+        ns1:concept__infinite,
+        ns1:concept__line,
         ns1:concept__straight_line ;
     ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__23 ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__are_in_the_same_parallels,
-        ns1:concept__are_parallel,
-        ns1:concept__conduct_parallel,
-        ns1:concept__conduct_parallel_to,
-        ns1:concept__describe_parallel ;
-    ns1:is_defined_in ns1:document__elements_book_1 .
+    ns1:is_concept_in ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__point__right_angle___infinite_straight_line,
+        ns1:proposition_12,
+        ns1:relation_instance__are_perpendicular_infinite_straight_line__finite_straight_line_,
+        ns1:relation_instance__are_perpendicular_infinite_straight_line__infinite_straight_line_,
+        ns1:relation_instance__is_placed_on_infinite_straight_line__infinite_straight_line_ ;
+    ns1:is_given_concept_of ns1:proposition_12 ;
+    ns1:is_sub_concept_of ns1:concept__straight_line .
+
+ns1:concept__is_on_the_same_part a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Is on the same part" ;
+    skos:prefLabel "Is on the same part" ;
+    ns1:contains_concept ns1:concept___part,
+        ns1:concept__are_same,
+        ns1:concept__equals,
+        ns1:concept__part ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:relation_instance__is_on_the_same_part_angle__angle__straight_line_,
+        ns1:relation_instance__is_on_the_same_part_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__is_on_the_same_part_finite_straight_line__finite_straight_line__part_,
+        ns1:relation_instance__is_on_the_same_part_triangle__triangle_,
+        ns1:relation_type__is_on_the_same_part_diagrammatic_object__diagrammatic_object_,
+        ns1:relation_type__is_on_the_same_part_diagrammatic_object__diagrammatic_object__figure_,
+        ns1:relation_type__is_on_the_same_part_diagrammatic_object__diagrammatic_object__part_ .
 
 ns1:concept__produce a owl:NamedIndividual,
         ns1:concept ;
@@ -7033,6 +7070,24 @@ ns1:concept__produce a owl:NamedIndividual,
         ns1:concept__produce_to_infinity ;
     ns1:modifies_diagram true ;
     ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__remaining a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Remaining" ;
+    skos:prefLabel "Remaining" ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:concept__remaining_sides_of,
+        ns1:proposition_22,
+        ns1:relation_instance__remaining_angle_,
+        ns1:relation_instance__remaining_complement_of_parallelogram_,
+        ns1:relation_instance__remaining_finite_straight_line_,
+        ns1:relation_instance__remaining_interior_angle_of_triangle_,
+        ns1:relation_instance__remaining_interior_angle_of_triangle__interior_angle_of_triangle_,
+        ns1:relation_instance__remaining_side_of_triangle_,
+        ns1:relation_instance__remaining_trapezium_,
+        ns1:relation_type__remaining_diagrammatic_object_ ;
+    ns1:is_given_concept_of ns1:proposition_22 .
 
 ns1:concept__semicircle a owl:NamedIndividual,
         ns1:concept ;
@@ -7259,27 +7314,45 @@ ns1:relation_type__are_same_object__object_ a owl:NamedIndividual,
         ns1:relation_instance__are_same_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__are_same_straight_line__straight_line_ .
 
-ns1:concept__greater_than a owl:NamedIndividual,
+ns1:concept__base a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Greater than",
-        "Concept: Greater_than",
-        "Concept: greater than" ;
-    skos:prefLabel "Greater than",
-        "greater than" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_diagrammatic_objects true ;
-    ns1:is_concept_in ns1:common_notion_8,
-        ns1:proposition_24,
-        ns1:relation_instance__greater_than_angle__angle_,
-        ns1:relation_instance__greater_than_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__greater_than_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__greater_than_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__greater_than_triangle__triangle_,
-        ns1:relation_instance__greater_than_whole__part_,
-        ns1:relation_type__greater_than_magnitude__magnitude_ ;
-    ns1:is_given_concept_of ns1:proposition_24 ;
-    ns1:is_opposite_to ns1:concept__less_than ;
-    ns1:is_sub_concept_of ns1:concept__greater .
+    rdfs:label "Concept: Base" ;
+    skos:prefLabel "Base" ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:concept__angle_at_base,
+        ns1:concept__at_base,
+        ns1:concept__base_of_parallelogram,
+        ns1:concept__base_of_triangle,
+        ns1:concept__have_same_base,
+        ns1:concept__under_base,
+        ns1:relation_instance__are_same_base__base_,
+        ns1:relation_instance__is_placed_on_parallelogram__base_,
+        ns1:relation_instance__is_placed_on_triangle__base_ ;
+    ns1:is_sub_concept_of ns1:concept__finite_straight_line ;
+    ns1:is_super_concept_of ns1:concept__base_of_parallelogram,
+        ns1:concept__base_of_triangle .
+
+ns1:concept__construct a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Construct" ;
+    skos:prefLabel "Construct" ;
+    ns1:contains_concept ns1:concept__construct ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:concept__construct,
+        ns1:concept__construct_from,
+        ns1:concept__construct_in,
+        ns1:concept__construct_inside,
+        ns1:concept__construct_on,
+        ns1:concept__construct_to_given_point ;
+    ns1:is_super_concept_of ns1:concept__construct_from,
+        ns1:concept__construct_in,
+        ns1:concept__construct_inside,
+        ns1:concept__construct_on,
+        ns1:concept__construct_to_given_point ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
 
 ns1:proof_20 a owl:NamedIndividual,
         ns1:proof ;
@@ -7429,25 +7502,70 @@ ns1:relation_instance__is_placed_on_triangle__base_of_triangle_ a owl:NamedIndiv
         ns1:proposition_39,
         ns1:proposition_40 .
 
-ns1:concept__diameter a owl:NamedIndividual,
+ns1:concept__conduct a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Diameter" ;
-    skos:prefLabel "Diameter" ;
-    ns1:definition_refers_to ns1:concept__center,
-        ns1:concept__circumference,
-        ns1:concept__half,
-        ns1:concept__straight_line ;
+    rdfs:label "Concept: Conduct" ;
+    skos:prefLabel "Conduct" ;
+    ns1:has_concept_type ns1:concept_type__operation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:concept__conduct_parallel,
+        ns1:concept__conduct_parallel_to,
+        ns1:concept__conduct_to,
+        ns1:operation_instance__conduct_finite_straight_line__finite_straight_line__point__right_angle___finite_straight_line,
+        ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__point__right_angle___infinite_straight_line,
+        ns1:operation_instance__conduct_straight_line__straight_line__point___straight_line,
+        ns1:operation_type__conduct_straight_line__straight_line__point___straight_line,
+        ns1:operation_type__conduct_straight_line__straight_line__point__angle___straight_line,
+        ns1:proposition_11 ;
+    ns1:is_given_concept_of ns1:proposition_11 ;
+    ns1:is_super_concept_of ns1:concept__conduct_parallel,
+        ns1:concept__conduct_parallel_to,
+        ns1:concept__conduct_to ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
+
+ns1:concept__greater_than a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Greater than",
+        "Concept: Greater_than",
+        "Concept: greater than" ;
+    skos:prefLabel "Greater than",
+        "greater than" ;
+    ns1:contains_concept ns1:concept__greater ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:common_notion_8,
+        ns1:proposition_24,
+        ns1:relation_instance__greater_than_angle__angle_,
+        ns1:relation_instance__greater_than_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__greater_than_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__greater_than_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__greater_than_triangle__triangle_,
+        ns1:relation_instance__greater_than_whole__part_,
+        ns1:relation_type__greater_than_magnitude__magnitude_ ;
+    ns1:is_given_concept_of ns1:proposition_24 ;
+    ns1:is_opposite_to ns1:concept__less_than ;
+    ns1:is_sub_concept_of ns1:concept__greater .
+
+ns1:concept__interior_angle_of_triangle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Interior angle of triangle" ;
+    skos:prefLabel "Interior angle of triangle" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__interior,
+        ns1:concept__triangle ;
     ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__17 ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__is_diameter_of_parallelogram,
-        ns1:relation_instance__cut_into_two_halves_diameter__angle_,
-        ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_,
-        ns1:relation_type__cut_into_two_halves_diameter__diagrammatic_object_ ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_sub_concept_of ns1:concept__finite_straight_line ;
-    ns1:is_super_concept_of ns1:concept__diameter_of_parallelogram ;
-    ns1:is_used_in_definition_of ns1:concept__semicircle .
+    ns1:is_concept_in ns1:proposition_8,
+        ns1:relation_instance__are_same_interior_angle_of_triangle__interior_angle_of_triangle_,
+        ns1:relation_instance__at_base_interior_angle_of_triangle__isosceles_triangle_,
+        ns1:relation_instance__corresponding_interior_angle_of_triangle__interior_angle_of_triangle_,
+        ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_,
+        ns1:relation_instance__equals_interior_angle_of_triangle__interior_angle_of_triangle_,
+        ns1:relation_instance__remaining_interior_angle_of_triangle_,
+        ns1:relation_instance__remaining_interior_angle_of_triangle__interior_angle_of_triangle_ ;
+    ns1:is_given_concept_of ns1:proposition_8 ;
+    ns1:is_sub_concept_of ns1:concept__interior_angle .
 
 ns1:concept__side a owl:NamedIndividual,
         ns1:concept ;
@@ -7703,27 +7821,48 @@ ns1:concept__corresponding a owl:NamedIndividual,
         ns1:proposition_7,
         ns1:proposition_8 .
 
-ns1:concept__isosceles_triangle a owl:NamedIndividual,
+ns1:concept__diameter a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Isosceles triangle",
-        "Concept: Isosceles_triangle" ;
-    skos:prefLabel "Isosceles triangle" ;
-    ns1:definition_refers_to ns1:concept__3_sides_of_equal_length,
-        ns1:concept__equal_length_of_sides,
-        ns1:concept__trilateral ;
+    rdfs:label "Concept: Diameter" ;
+    skos:prefLabel "Diameter" ;
+    ns1:definition_refers_to ns1:concept__center,
+        ns1:concept__circumference,
+        ns1:concept__half,
+        ns1:concept__straight_line ;
     ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__20 ;
+    ns1:has_definition ns1:definition__17 ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:proof_5,
-        ns1:proposition_5,
-        ns1:proposition_5a,
-        ns1:relation_instance__at_base_interior_angle_of_triangle__isosceles_triangle_,
-        ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_,
-        ns1:relation_instance__under_base_angle__isosceles_triangle_ ;
+    ns1:is_concept_in ns1:concept__diameter_of_parallelogram,
+        ns1:concept__is_diameter_of_parallelogram,
+        ns1:relation_instance__cut_into_two_halves_diameter__angle_,
+        ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_,
+        ns1:relation_type__cut_into_two_halves_diameter__diagrammatic_object_ ;
     ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_given_concept_of ns1:proposition_5,
-        ns1:proposition_5a ;
-    ns1:is_sub_concept_of ns1:concept__triangle .
+    ns1:is_sub_concept_of ns1:concept__finite_straight_line ;
+    ns1:is_super_concept_of ns1:concept__diameter_of_parallelogram ;
+    ns1:is_used_in_definition_of ns1:concept__semicircle .
+
+ns1:concept__parallel_lines a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Parallel lines",
+        "Concept: Parallel_lines" ;
+    skos:prefLabel "Parallel lines" ;
+    ns1:contains_concept ns1:concept__line,
+        ns1:concept__straight_line ;
+    ns1:definition_refers_to ns1:concept__indefinite_extension,
+        ns1:concept__meeting,
+        ns1:concept__plane,
+        ns1:concept__straight_line ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__23 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:concept__are_in_the_same_parallels,
+        ns1:concept__are_parallel,
+        ns1:concept__conduct_parallel,
+        ns1:concept__conduct_parallel_to,
+        ns1:concept__describe_parallel,
+        ns1:concept__parallelogram ;
+    ns1:is_defined_in ns1:document__elements_book_1 .
 
 ns1:proof_22 a owl:NamedIndividual,
         ns1:proof ;
@@ -7888,28 +8027,6 @@ ns1:relation_instance__greater_than_angle__angle_ a owl:NamedIndividual,
         ns1:proposition_24,
         ns1:proposition_25 .
 
-ns1:concept__base_of_triangle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Base of triangle" ;
-    skos:prefLabel "Base of triangle" ;
-    ns1:contains_concept ns1:concept__triangle ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:operation_instance__cut_into_two_halves_base_of_triangle____finite_straight_line__finite_straight_line_,
-        ns1:proposition_8,
-        ns1:relation_instance__are_same_base_of_parallelogram__base_of_triangle_,
-        ns1:relation_instance__are_same_base_of_triangle__base_of_parallelogram_,
-        ns1:relation_instance__are_same_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__corresponding_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__greater_than_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__is_placed_on_same_triangle__triangle__base_of_triangle_,
-        ns1:relation_instance__is_placed_on_triangle__base_of_triangle_,
-        ns1:relation_instance__less_than_base_of_triangle__base_of_triangle_ ;
-    ns1:is_given_concept_of ns1:proposition_8 ;
-    ns1:is_sub_concept_of ns1:concept__base,
-        ns1:concept__side_of_triangle .
-
 ns1:concept__center a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Center",
@@ -8019,31 +8136,28 @@ ns1:relation_instance__are_same_straight_line__straight_line_ a owl:NamedIndivid
         ns1:proposition_38,
         ns1:proposition_39 .
 
-ns1:concept__cut_into_two_halves a owl:NamedIndividual,
+ns1:concept__base_of_triangle a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Cut into two halves" ;
-    skos:prefLabel "Cut into two halves" ;
-    ns1:has_concept_type ns1:concept_type__operation,
-        ns1:concept_type__relation ;
-    ns1:has_domain_of_diagrammatic_objects true ;
-    ns1:has_field_of_diagrammatic_objects true ;
+    rdfs:label "Concept: Base of triangle" ;
+    skos:prefLabel "Base of triangle" ;
+    ns1:contains_concept ns1:concept__base,
+        ns1:concept__triangle ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:is_a_diagrammatic_object true ;
     ns1:is_concept_in ns1:operation_instance__cut_into_two_halves_base_of_triangle____finite_straight_line__finite_straight_line_,
-        ns1:operation_instance__cut_into_two_halves_finite_straight_line____finite_straight_line__finite_straight_line_,
-        ns1:operation_instance__cut_into_two_halves_rectilinear_angle____angle__angle_,
-        ns1:operation_instance__cut_into_two_halves_right_angle____angle__angle_,
-        ns1:operation_type__cut_into_two_halves_cut_into_two_halves_straight_line____diagrammatic_object__diagrammatic_object_____diagrammatic_object__diagrammatic_object_,
-        ns1:operation_type__cut_into_two_halves_diagrammatic_object____diagrammatic_object__diagrammatic_object_,
-        ns1:proposition_10,
-        ns1:proposition_9,
-        ns1:relation_instance__cut_into_two_halves_diameter__angle_,
-        ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_,
-        ns1:relation_type__cut_into_two_halves_diameter__diagrammatic_object_ ;
-    ns1:is_given_concept_of ns1:proposition_10,
-        ns1:proposition_9 ;
-    ns1:is_sub_concept_of ns1:concept__cut,
-        ns1:concept__cut_operation ;
-    ns1:modifies_diagram true ;
-    ns1:produces_new_diagrammatic_object true .
+        ns1:proposition_8,
+        ns1:relation_instance__are_same_base_of_parallelogram__base_of_triangle_,
+        ns1:relation_instance__are_same_base_of_triangle__base_of_parallelogram_,
+        ns1:relation_instance__are_same_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__corresponding_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__greater_than_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__is_placed_on_same_triangle__triangle__base_of_triangle_,
+        ns1:relation_instance__is_placed_on_triangle__base_of_triangle_,
+        ns1:relation_instance__less_than_base_of_triangle__base_of_triangle_ ;
+    ns1:is_given_concept_of ns1:proposition_8 ;
+    ns1:is_sub_concept_of ns1:concept__base,
+        ns1:concept__side_of_triangle .
 
 ns1:concept__is_located a owl:NamedIndividual,
         ns1:concept ;
@@ -8067,30 +8181,6 @@ ns1:concept__is_located a owl:NamedIndividual,
         ns1:concept__meet,
         ns1:concept__subtended_by,
         ns1:concept__under_base .
-
-ns1:concept__rectilinear_angle a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Rectilinear angle",
-        "Concept: Rectilinear_angle" ;
-    skos:prefLabel "Rectilinear angle" ;
-    ns1:definition_refers_to ns1:concept__angle,
-        ns1:concept__straight_line ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__9 ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:operation_instance__apply_in_rectilinear_angle__parallelogram___parallelogram,
-        ns1:operation_instance__construct_in_parallelogram__rectilinear_angle___parallelogram,
-        ns1:operation_instance__cut_into_two_halves_rectilinear_angle____angle__angle_,
-        ns1:proposition_42,
-        ns1:proposition_44,
-        ns1:proposition_45,
-        ns1:proposition_9 ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_given_concept_of ns1:proposition_42,
-        ns1:proposition_44,
-        ns1:proposition_45,
-        ns1:proposition_9 ;
-    ns1:is_sub_concept_of ns1:concept__angle .
 
 ns1:operation_type__sum_magnitude__magnitude___magnitude a owl:NamedIndividual,
         ns1:operation_type ;
@@ -8206,6 +8296,31 @@ ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_ a owl:N
         ns1:proposition_4,
         ns1:proposition_8 .
 
+ns1:concept__isosceles_triangle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Isosceles triangle",
+        "Concept: Isosceles_triangle" ;
+    skos:prefLabel "Isosceles triangle" ;
+    ns1:contains_concept ns1:concept__equal_length,
+        ns1:concept__equal_length_of_sides,
+        ns1:concept__is_triangle ;
+    ns1:definition_refers_to ns1:concept__3_sides_of_equal_length,
+        ns1:concept__equal_length_of_sides,
+        ns1:concept__trilateral ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__20 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:proof_5,
+        ns1:proposition_5,
+        ns1:proposition_5a,
+        ns1:relation_instance__at_base_interior_angle_of_triangle__isosceles_triangle_,
+        ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_,
+        ns1:relation_instance__under_base_angle__isosceles_triangle_ ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_given_concept_of ns1:proposition_5,
+        ns1:proposition_5a ;
+    ns1:is_sub_concept_of ns1:concept__triangle .
+
 ns1:proof_12 a owl:NamedIndividual,
         ns1:proof ;
     rdfs:label "Proof 12" ;
@@ -8251,6 +8366,34 @@ ns1:proof_48 a owl:NamedIndividual,
         ns1:relation_instance__is_right_angle_right_angle_,
         ns1:relation_instance__remaining_side_of_triangle_,
         ns1:relation_instance__subtended_by_right_angle__side_of_triangle__side_of_triangle_ .
+
+ns1:concept__cut_into_two_halves a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Cut into two halves" ;
+    skos:prefLabel "Cut into two halves" ;
+    ns1:contains_concept ns1:concept__cut,
+        ns1:concept__half ;
+    ns1:has_concept_type ns1:concept_type__operation,
+        ns1:concept_type__relation ;
+    ns1:has_domain_of_diagrammatic_objects true ;
+    ns1:has_field_of_diagrammatic_objects true ;
+    ns1:is_concept_in ns1:operation_instance__cut_into_two_halves_base_of_triangle____finite_straight_line__finite_straight_line_,
+        ns1:operation_instance__cut_into_two_halves_finite_straight_line____finite_straight_line__finite_straight_line_,
+        ns1:operation_instance__cut_into_two_halves_rectilinear_angle____angle__angle_,
+        ns1:operation_instance__cut_into_two_halves_right_angle____angle__angle_,
+        ns1:operation_type__cut_into_two_halves_cut_into_two_halves_straight_line____diagrammatic_object__diagrammatic_object_____diagrammatic_object__diagrammatic_object_,
+        ns1:operation_type__cut_into_two_halves_diagrammatic_object____diagrammatic_object__diagrammatic_object_,
+        ns1:proposition_10,
+        ns1:proposition_9,
+        ns1:relation_instance__cut_into_two_halves_diameter__angle_,
+        ns1:relation_instance__cut_into_two_halves_diameter__parallelogram_,
+        ns1:relation_type__cut_into_two_halves_diameter__diagrammatic_object_ ;
+    ns1:is_given_concept_of ns1:proposition_10,
+        ns1:proposition_9 ;
+    ns1:is_sub_concept_of ns1:concept__cut,
+        ns1:concept__cut_operation ;
+    ns1:modifies_diagram true ;
+    ns1:produces_new_diagrammatic_object true .
 
 ns1:concept__magnitude a owl:NamedIndividual,
         ns1:concept ;
@@ -8397,31 +8540,32 @@ ns1:relation_type__is_placed_on_diagrammatic_object__diagrammatic_object_ a owl:
         ns1:relation_instance__is_placed_on_triangle__base_of_triangle_,
         ns1:relation_instance__is_placed_on_triangle__straight_line_ .
 
-ns1:concept__are_same a owl:NamedIndividual,
+ns1:concept__rectilinear_angle a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Are same" ;
-    skos:prefLabel "Are same" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_objects true ;
-    ns1:is_concept_in ns1:concept__have_same_base,
-        ns1:concept__is_on_the_same_part,
-        ns1:concept__join_on_the_same_part,
-        ns1:concept__joining_on_the_same_part,
-        ns1:proposition_14,
-        ns1:proposition_23,
-        ns1:relation_instance__are_same_base__base_,
-        ns1:relation_instance__are_same_base_of_parallelogram__base_of_parallelogram_,
-        ns1:relation_instance__are_same_base_of_parallelogram__base_of_triangle_,
-        ns1:relation_instance__are_same_base_of_triangle__base_of_parallelogram_,
-        ns1:relation_instance__are_same_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__are_same_interior_angle_of_triangle__interior_angle_of_triangle_,
-        ns1:relation_instance__are_same_part__part_,
-        ns1:relation_instance__are_same_point__point_,
-        ns1:relation_instance__are_same_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__are_same_straight_line__straight_line_,
-        ns1:relation_type__are_same_object__object_ ;
-    ns1:is_given_concept_of ns1:proposition_14,
-        ns1:proposition_23 .
+    rdfs:label "Concept: Rectilinear angle",
+        "Concept: Rectilinear_angle" ;
+    skos:prefLabel "Rectilinear angle" ;
+    ns1:contains_concept ns1:concept__angle,
+        ns1:concept__line,
+        ns1:concept__straight_line ;
+    ns1:definition_refers_to ns1:concept__angle,
+        ns1:concept__straight_line ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__9 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:operation_instance__apply_in_rectilinear_angle__parallelogram___parallelogram,
+        ns1:operation_instance__construct_in_parallelogram__rectilinear_angle___parallelogram,
+        ns1:operation_instance__cut_into_two_halves_rectilinear_angle____angle__angle_,
+        ns1:proposition_42,
+        ns1:proposition_44,
+        ns1:proposition_45,
+        ns1:proposition_9 ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_given_concept_of ns1:proposition_42,
+        ns1:proposition_44,
+        ns1:proposition_45,
+        ns1:proposition_9 ;
+    ns1:is_sub_concept_of ns1:concept__angle .
 
 ns1:proof_34 a owl:NamedIndividual,
         ns1:proof ;
@@ -8473,60 +8617,32 @@ ns1:proof_4 a owl:NamedIndividual,
         ns1:relation_instance__remaining_interior_angle_of_triangle__interior_angle_of_triangle_,
         ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ .
 
-ns1:concept__circle a owl:NamedIndividual,
+ns1:concept__are_same a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Circle",
-        "Concept: circle" ;
-    skos:prefLabel "Circle",
-        "circle" ;
-    ns1:definition_refers_to ns1:concept__equal_length,
-        ns1:concept__interior,
-        ns1:concept__interior_point,
-        ns1:concept__line,
-        ns1:concept__plane_figure,
-        ns1:concept__point ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__15 ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__semicircle,
-        ns1:operation__draw_center__interval___circle,
-        ns1:operation_instance__draw_center__interval___circle,
-        ns1:operation_type__draw_center__interval___circle,
-        ns1:operation_type__draw_point__interval___circle,
-        ns1:postulate_3,
-        ns1:relation_instance__cut_circle__circle_,
-        ns1:relation_instance__is_center_of_point__circle_,
-        ns1:relation_type__is_center_of_point__circle_ ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_sub_concept_of ns1:concept__figure ;
-    ns1:is_used_in_definition_of ns1:concept__center .
-
-ns1:concept__figure a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Figure" ;
-    skos:prefLabel "Figure" ;
-    ns1:definition_refers_to ns1:concept__boundary ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__14 ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:operation_type__describe_on_figure__finite_straight_line___figure,
-        ns1:relation_type__are_in_the_same_parallels_figure__figure__straight_line__straight_line_,
-        ns1:relation_type__are_not_on_the_same_part_figure__figure_,
-        ns1:relation_type__are_placed_about_figure__figure__figure_,
-        ns1:relation_type__is_angle_of_figure_,
-        ns1:relation_type__is_on_the_same_part_diagrammatic_object__diagrammatic_object__figure_,
-        ns1:relation_type__is_rectangular_figure_ ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_sub_concept_of ns1:concept__diagrammatic_object ;
-    ns1:is_super_concept_of ns1:concept__circle,
-        ns1:concept__point,
-        ns1:concept__rectilinear_figure,
-        ns1:concept__section,
-        ns1:concept__semicircle ;
-    ns1:is_used_in_definition_of ns1:concept__rectangular,
-        ns1:concept__rhomboid,
-        ns1:concept__semicircle,
-        ns1:concept__square .
+    rdfs:label "Concept: Are same" ;
+    skos:prefLabel "Are same" ;
+    ns1:contains_concept ns1:concept__equals ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_objects true ;
+    ns1:is_concept_in ns1:concept__have_same_base,
+        ns1:concept__is_on_the_same_part,
+        ns1:concept__join_on_the_same_part,
+        ns1:concept__joining_on_the_same_part,
+        ns1:proposition_14,
+        ns1:proposition_23,
+        ns1:relation_instance__are_same_base__base_,
+        ns1:relation_instance__are_same_base_of_parallelogram__base_of_parallelogram_,
+        ns1:relation_instance__are_same_base_of_parallelogram__base_of_triangle_,
+        ns1:relation_instance__are_same_base_of_triangle__base_of_parallelogram_,
+        ns1:relation_instance__are_same_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__are_same_interior_angle_of_triangle__interior_angle_of_triangle_,
+        ns1:relation_instance__are_same_part__part_,
+        ns1:relation_instance__are_same_point__point_,
+        ns1:relation_instance__are_same_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__are_same_straight_line__straight_line_,
+        ns1:relation_type__are_same_object__object_ ;
+    ns1:is_given_concept_of ns1:proposition_14,
+        ns1:proposition_23 .
 
 ns1:concept__part a owl:NamedIndividual,
         ns1:concept ;
@@ -8608,6 +8724,35 @@ ns1:proposition_24 a owl:NamedIndividual,
         ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
         ns1:relation_instance__greater_than_angle__angle_,
         ns1:relation_instance__greater_than_base_of_triangle__base_of_triangle_ .
+
+ns1:concept__circle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Circle",
+        "Concept: circle" ;
+    skos:prefLabel "Circle",
+        "circle" ;
+    ns1:definition_refers_to ns1:concept__equal_length,
+        ns1:concept__interior,
+        ns1:concept__interior_point,
+        ns1:concept__line,
+        ns1:concept__plane_figure,
+        ns1:concept__point ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__15 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:concept__angle_of_semicircle,
+        ns1:concept__semicircle,
+        ns1:operation__draw_center__interval___circle,
+        ns1:operation_instance__draw_center__interval___circle,
+        ns1:operation_type__draw_center__interval___circle,
+        ns1:operation_type__draw_point__interval___circle,
+        ns1:postulate_3,
+        ns1:relation_instance__cut_circle__circle_,
+        ns1:relation_instance__is_center_of_point__circle_,
+        ns1:relation_type__is_center_of_point__circle_ ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_sub_concept_of ns1:concept__figure ;
+    ns1:is_used_in_definition_of ns1:concept__center .
 
 ns1:concept__square a owl:NamedIndividual,
         ns1:concept ;
@@ -8751,6 +8896,36 @@ ns1:relation_instance__is_triangle_triangle_ a owl:NamedIndividual,
         ns1:proof_8,
         ns1:proof_9,
         ns1:proof_pappus .
+
+ns1:concept__line a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Line" ;
+    skos:prefLabel "Line" ;
+    ns1:definition_refers_to ns1:concept__breadth,
+        ns1:concept__lenght ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__2 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:concept__are_in_a_straight_line,
+        ns1:concept__end_of_line,
+        ns1:concept__finite_straight_line,
+        ns1:concept__inclined_at,
+        ns1:concept__infinite_straight_line,
+        ns1:concept__multilateral_rectilinear_figure,
+        ns1:concept__parallel_lines,
+        ns1:concept__perpendicular_lines,
+        ns1:concept__perpendicular_straight_lines,
+        ns1:concept__quadrilateral_rectilinear_figure,
+        ns1:concept__rectilinear_angle,
+        ns1:concept__rectilinear_figure,
+        ns1:concept__straight_line,
+        ns1:relation_type__cut_line__line_ ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_sub_concept_of ns1:concept__diagrammatic_object ;
+    ns1:is_super_concept_of ns1:concept__straight_line ;
+    ns1:is_used_in_definition_of ns1:concept__circle,
+        ns1:concept__end_of_line,
+        ns1:concept__end_of_surface .
 
 ns1:proof_45 a owl:NamedIndividual,
         ns1:proof ;
@@ -8959,38 +9134,6 @@ ns1:relation_instance__subtended_by_angle__side_of_triangle__side_of_triangle_ a
         ns1:proposition_6,
         ns1:proposition_8 .
 
-ns1:concept__rectilinear_figure a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Rectilinear figure",
-        "Concept: Rectilinear_figure" ;
-    skos:prefLabel "Rectilinear figure" ;
-    ns1:definition_refers_to ns1:concept__numbers,
-        ns1:concept__straight_line ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__19 ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:operation_instance__sum_square__square___rectilinear_figure,
-        ns1:operation_instance__sum_triangle__triangle___rectilinear_figure,
-        ns1:proposition_45,
-        ns1:relation_instance__equals_parallelogram__rectilinear_figure_,
-        ns1:relation_instance__equals_square__rectilinear_figure_,
-        ns1:relation_type__at_base_angle__rectilinear_figure_,
-        ns1:relation_type__have_same_base_rectilinear_figure__rectilinear_figure_,
-        ns1:relation_type__is_double_rectilinear_figure__rectilinear_figure_,
-        ns1:relation_type__is_equilateral_rectilinear_figure_,
-        ns1:relation_type__is_external_angle__rectilinear_figure_,
-        ns1:relation_type__is_internal_angle__rectilinear_figure_,
-        ns1:relation_type__is_right_angled_rectilinear_figure_,
-        ns1:relation_type__under_base_angle__rectilinear_figure_ ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_given_concept_of ns1:proposition_45 ;
-    ns1:is_sub_concept_of ns1:concept__figure ;
-    ns1:is_super_concept_of ns1:concept__parallelogram,
-        ns1:concept__parallelogrammic_figure,
-        ns1:concept__trapezium,
-        ns1:concept__triangle ;
-    ns1:is_used_in_definition_of ns1:concept__trilateral .
-
 ns1:relation_instance__are_parallel_straight_line__straight_line_ a owl:NamedIndividual,
         ns1:relation_instance ;
     rdfs:label "Relation instance: Are_parallel(straight_line, straight_line)" ;
@@ -9149,42 +9292,73 @@ ns1:concept__diagrammatic_object a owl:NamedIndividual,
         ns1:concept__figure,
         ns1:concept__line .
 
-ns1:concept__right_angle a owl:NamedIndividual,
+ns1:concept__figure a owl:NamedIndividual,
         ns1:concept ;
-    rdfs:label "Concept: Right angle",
-        "Concept: Right_angle",
-        "Concept: right angle" ;
-    skos:prefLabel "Right angle",
-        "right angle" ;
-    ns1:definition_refers_to ns1:concept__equal_inclination,
+    rdfs:label "Concept: Figure" ;
+    skos:prefLabel "Figure" ;
+    ns1:definition_refers_to ns1:concept__boundary ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__14 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:concept__multilateral_rectilinear_figure,
+        ns1:concept__parallelogrammic_figure,
+        ns1:concept__plane_figure,
+        ns1:concept__quadrilateral_rectilinear_figure,
+        ns1:concept__rectilinear_figure,
+        ns1:concept__trapezoid_quadrilateral_figure,
+        ns1:operation_type__describe_on_figure__finite_straight_line___figure,
+        ns1:relation_type__are_in_the_same_parallels_figure__figure__straight_line__straight_line_,
+        ns1:relation_type__are_not_on_the_same_part_figure__figure_,
+        ns1:relation_type__are_placed_about_figure__figure__figure_,
+        ns1:relation_type__is_angle_of_figure_,
+        ns1:relation_type__is_on_the_same_part_diagrammatic_object__diagrammatic_object__figure_,
+        ns1:relation_type__is_rectangular_figure_ ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_sub_concept_of ns1:concept__diagrammatic_object ;
+    ns1:is_super_concept_of ns1:concept__circle,
+        ns1:concept__point,
+        ns1:concept__rectilinear_figure,
+        ns1:concept__section,
+        ns1:concept__semicircle ;
+    ns1:is_used_in_definition_of ns1:concept__rectangular,
+        ns1:concept__rhomboid,
+        ns1:concept__semicircle,
+        ns1:concept__square .
+
+ns1:concept__rectilinear_figure a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Rectilinear figure",
+        "Concept: Rectilinear_figure" ;
+    skos:prefLabel "Rectilinear figure" ;
+    ns1:contains_concept ns1:concept__figure,
+        ns1:concept__line,
+        ns1:concept__straight_line ;
+    ns1:definition_refers_to ns1:concept__numbers,
         ns1:concept__straight_line ;
     ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__10 ;
+    ns1:has_definition ns1:definition__19 ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__is_right_angle,
-        ns1:concept__is_right_angled,
-        ns1:operation_instance__conduct_finite_straight_line__finite_straight_line__point__right_angle___finite_straight_line,
-        ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__point__right_angle___infinite_straight_line,
-        ns1:operation_instance__cut_into_two_halves_right_angle____angle__angle_,
-        ns1:operation_instance__sum_right_angle__right_angle___angle,
-        ns1:postulate_4,
-        ns1:postulate_5,
-        ns1:proposition_11,
-        ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__right_angle_,
-        ns1:relation_instance__equals_angle__right_angle_,
-        ns1:relation_instance__equals_right_angle__right_angle_,
-        ns1:relation_instance__inclined_at_finite_straight_line__finite_straight_line__right_angle_,
-        ns1:relation_instance__is_right_angle_right_angle_,
-        ns1:relation_instance__subtended_by_right_angle__side_of_square__side_of_square_,
-        ns1:relation_instance__subtended_by_right_angle__side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__subtended_by_side_of_triangle__right_angle_ ;
+    ns1:is_concept_in ns1:operation_instance__sum_square__square___rectilinear_figure,
+        ns1:operation_instance__sum_triangle__triangle___rectilinear_figure,
+        ns1:proposition_45,
+        ns1:relation_instance__equals_parallelogram__rectilinear_figure_,
+        ns1:relation_instance__equals_square__rectilinear_figure_,
+        ns1:relation_type__at_base_angle__rectilinear_figure_,
+        ns1:relation_type__have_same_base_rectilinear_figure__rectilinear_figure_,
+        ns1:relation_type__is_double_rectilinear_figure__rectilinear_figure_,
+        ns1:relation_type__is_equilateral_rectilinear_figure_,
+        ns1:relation_type__is_external_angle__rectilinear_figure_,
+        ns1:relation_type__is_internal_angle__rectilinear_figure_,
+        ns1:relation_type__is_right_angled_rectilinear_figure_,
+        ns1:relation_type__under_base_angle__rectilinear_figure_ ;
     ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_given_concept_of ns1:proposition_11 ;
-    ns1:is_sub_concept_of ns1:concept__angle ;
-    ns1:is_used_in_definition_of ns1:concept__acute_angle,
-        ns1:concept__obtuse_angle,
-        ns1:concept__perpendicular_straight_lines,
-        ns1:concept__right_triangle .
+    ns1:is_given_concept_of ns1:proposition_45 ;
+    ns1:is_sub_concept_of ns1:concept__figure ;
+    ns1:is_super_concept_of ns1:concept__parallelogram,
+        ns1:concept__parallelogrammic_figure,
+        ns1:concept__trapezium,
+        ns1:concept__triangle ;
+    ns1:is_used_in_definition_of ns1:concept__trilateral .
 
 ns1:operation_instance__join_point__point___finite_straight_line a owl:NamedIndividual,
         ns1:operation_instance ;
@@ -9251,6 +9425,44 @@ ns1:proof_44 a owl:NamedIndividual,
         ns1:relation_instance__meet_at_point_straight_line__straight_line__point_,
         ns1:relation_instance__meet_on_the_part_of_straight_line__straight_line__angle__angle_,
         ns1:relation_instance__subtended_by_angle__side_of_parallelogram__side_of_parallelogram_ .
+
+ns1:concept__right_angle a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Right angle",
+        "Concept: Right_angle",
+        "Concept: right angle" ;
+    skos:prefLabel "Right angle",
+        "right angle" ;
+    ns1:contains_concept ns1:concept__angle ;
+    ns1:definition_refers_to ns1:concept__equal_inclination,
+        ns1:concept__straight_line ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__10 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:concept__is_right_angle,
+        ns1:concept__is_right_angled,
+        ns1:operation_instance__conduct_finite_straight_line__finite_straight_line__point__right_angle___finite_straight_line,
+        ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__point__right_angle___infinite_straight_line,
+        ns1:operation_instance__cut_into_two_halves_right_angle____angle__angle_,
+        ns1:operation_instance__sum_right_angle__right_angle___angle,
+        ns1:postulate_4,
+        ns1:postulate_5,
+        ns1:proposition_11,
+        ns1:relation_instance__encompassing_side_of_triangle__side_of_triangle__right_angle_,
+        ns1:relation_instance__equals_angle__right_angle_,
+        ns1:relation_instance__equals_right_angle__right_angle_,
+        ns1:relation_instance__inclined_at_finite_straight_line__finite_straight_line__right_angle_,
+        ns1:relation_instance__is_right_angle_right_angle_,
+        ns1:relation_instance__subtended_by_right_angle__side_of_square__side_of_square_,
+        ns1:relation_instance__subtended_by_right_angle__side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__subtended_by_side_of_triangle__right_angle_ ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_given_concept_of ns1:proposition_11 ;
+    ns1:is_sub_concept_of ns1:concept__angle ;
+    ns1:is_used_in_definition_of ns1:concept__acute_angle,
+        ns1:concept__obtuse_angle,
+        ns1:concept__perpendicular_straight_lines,
+        ns1:concept__right_triangle .
 
 ns1:proof_47 a owl:NamedIndividual,
         ns1:proof ;
@@ -9413,6 +9625,7 @@ ns1:concept__parallelogram a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Parallelogram" ;
     skos:prefLabel "Parallelogram" ;
+    ns1:contains_concept ns1:concept__parallel_lines ;
     ns1:has_concept_type ns1:concept_type__object ;
     ns1:is_a_diagrammatic_object true ;
     ns1:is_concept_in ns1:concept__angle_of_parallelogram,
@@ -9421,6 +9634,7 @@ ns1:concept__parallelogram a owl:NamedIndividual,
         ns1:concept__diameter_of_parallelogram,
         ns1:concept__is_diameter_of_parallelogram,
         ns1:concept__is_parallelogram,
+        ns1:concept__parallelogrammic_figure,
         ns1:concept__side_of_parallelogram,
         ns1:operation_instance__apply_in_rectilinear_angle__parallelogram___parallelogram,
         ns1:operation_instance__apply_to_finite_straight_line__parallelogram___parallelogram,
@@ -9561,75 +9775,19 @@ ns1:proof a owl:Class ;
     rdfs:label "Proof" ;
     skos:prefLabel "Proof" .
 
-ns1:concept__equals a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Equals",
-        "Concept: equals" ;
-    skos:prefLabel "Equals",
-        "equals" ;
-    ns1:has_concept_type ns1:concept_type__relation ;
-    ns1:has_field_of_objects true ;
-    ns1:is_concept_in ns1:_equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__,
-        ns1:common_notion_1,
-        ns1:common_notion_2,
-        ns1:common_notion_3,
-        ns1:common_notion_7,
-        ns1:concept__set_up_equal_to,
-        ns1:equals_angle_of_section__angle_of_section_,
-        ns1:equals_angle_of_semicircle__angle_of_semicircle_,
-        ns1:postulate_4,
-        ns1:proposition_13,
-        ns1:proposition_22,
-        ns1:proposition_23,
-        ns1:proposition_6,
-        ns1:proposition_7,
-        ns1:proposition_8,
-        ns1:relation_instance__equals_angle__angle_,
-        ns1:relation_instance__equals_angle__right_angle_,
-        ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_,
-        ns1:relation_instance__equals_angle_of_parallelogram__angle_,
-        ns1:relation_instance__equals_angle_of_section__angle_of_section_,
-        ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_,
-        ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_,
-        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
-        ns1:relation_instance__equals_complement_of_parallelogram__complement_of_parallelogram_,
-        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
-        ns1:relation_instance__equals_finite_straight_line__side_of_triangle_,
-        ns1:relation_instance__equals_interior_angle_of_triangle__interior_angle_of_triangle_,
-        ns1:relation_instance__equals_parallelogram__parallelogram_,
-        ns1:relation_instance__equals_parallelogram__rectilinear_figure_,
-        ns1:relation_instance__equals_parallelogram__triangle_,
-        ns1:relation_instance__equals_right_angle__right_angle_,
-        ns1:relation_instance__equals_side__side_,
-        ns1:relation_instance__equals_side_of_parallelogram__side_of_parallelogram_,
-        ns1:relation_instance__equals_side_of_square__side_of_square_,
-        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
-        ns1:relation_instance__equals_square__rectilinear_figure_,
-        ns1:relation_instance__equals_square__square_,
-        ns1:relation_instance__equals_square__sum_square__square__,
-        ns1:relation_instance__equals_triangle__parallelogram_,
-        ns1:relation_instance__equals_triangle__triangle_,
-        ns1:relation_instance__equals_x__y_,
-        ns1:relation_type__equals_magnitude__magnitude_,
-        ns1:relation_type__equals_object__object_,
-        ns1:relation_type__equals_x__y_ ;
-    ns1:is_given_concept_of ns1:proposition_13,
-        ns1:proposition_22,
-        ns1:proposition_23,
-        ns1:proposition_6,
-        ns1:proposition_7,
-        ns1:proposition_8 ;
-    ns1:is_opposite_to ns1:concept__unequal .
-
 ns1:concept__triangle a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Triangle" ;
     skos:prefLabel "Triangle" ;
     ns1:has_concept_type ns1:concept_type__object ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__base_of_triangle,
+    ns1:is_concept_in ns1:concept__acute_triangle,
+        ns1:concept__base_of_triangle,
+        ns1:concept__end_of_side_of_triangle,
+        ns1:concept__equilateral_triangle,
         ns1:concept__interior_angle_of_triangle,
         ns1:concept__is_triangle,
+        ns1:concept__scalene_triangle,
         ns1:concept__side_of_triangle,
         ns1:operation_instance__construct_from_triangle__finite_straight_line__finite_straight_line__finite_straight_line___triangle,
         ns1:operation_instance__construct_inside_finite_straight_line__triangle___finite_straight_line,
@@ -9827,6 +9985,84 @@ ns1:concept_type__relation a owl:NamedIndividual,
         ns1:concept__under_base,
         ns1:concept__unequal .
 
+ns1:concept__equals a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Equals",
+        "Concept: equals" ;
+    skos:prefLabel "Equals",
+        "equals" ;
+    ns1:contains_concept ns1:concept__equals ;
+    ns1:has_concept_type ns1:concept_type__relation ;
+    ns1:has_field_of_objects true ;
+    ns1:is_concept_in ns1:_equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__,
+        ns1:common_notion_1,
+        ns1:common_notion_2,
+        ns1:common_notion_3,
+        ns1:common_notion_7,
+        ns1:concept__3_sides_of_equal_length,
+        ns1:concept__are_in_the_same_parallels,
+        ns1:concept__are_not_on_the_same_part,
+        ns1:concept__are_same,
+        ns1:concept__equal_inclination,
+        ns1:concept__equal_length,
+        ns1:concept__equal_length_of_sides,
+        ns1:concept__equal_level,
+        ns1:concept__equals,
+        ns1:concept__equilateral_triangle,
+        ns1:concept__have_same_base,
+        ns1:concept__is_on_the_same_part,
+        ns1:concept__is_placed_on_same,
+        ns1:concept__join_on_the_same_part,
+        ns1:concept__joining_on_the_same_part,
+        ns1:concept__set_up_equal_to,
+        ns1:concept__unequal,
+        ns1:concept__unequal_length,
+        ns1:equals_angle_of_section__angle_of_section_,
+        ns1:equals_angle_of_semicircle__angle_of_semicircle_,
+        ns1:postulate_4,
+        ns1:proposition_13,
+        ns1:proposition_22,
+        ns1:proposition_23,
+        ns1:proposition_6,
+        ns1:proposition_7,
+        ns1:proposition_8,
+        ns1:relation_instance__equals_angle__angle_,
+        ns1:relation_instance__equals_angle__right_angle_,
+        ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_,
+        ns1:relation_instance__equals_angle_of_parallelogram__angle_,
+        ns1:relation_instance__equals_angle_of_section__angle_of_section_,
+        ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_,
+        ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_,
+        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_,
+        ns1:relation_instance__equals_complement_of_parallelogram__complement_of_parallelogram_,
+        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_,
+        ns1:relation_instance__equals_finite_straight_line__side_of_triangle_,
+        ns1:relation_instance__equals_interior_angle_of_triangle__interior_angle_of_triangle_,
+        ns1:relation_instance__equals_parallelogram__parallelogram_,
+        ns1:relation_instance__equals_parallelogram__rectilinear_figure_,
+        ns1:relation_instance__equals_parallelogram__triangle_,
+        ns1:relation_instance__equals_right_angle__right_angle_,
+        ns1:relation_instance__equals_side__side_,
+        ns1:relation_instance__equals_side_of_parallelogram__side_of_parallelogram_,
+        ns1:relation_instance__equals_side_of_square__side_of_square_,
+        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_,
+        ns1:relation_instance__equals_square__rectilinear_figure_,
+        ns1:relation_instance__equals_square__square_,
+        ns1:relation_instance__equals_square__sum_square__square__,
+        ns1:relation_instance__equals_triangle__parallelogram_,
+        ns1:relation_instance__equals_triangle__triangle_,
+        ns1:relation_instance__equals_x__y_,
+        ns1:relation_type__equals_magnitude__magnitude_,
+        ns1:relation_type__equals_object__object_,
+        ns1:relation_type__equals_x__y_ ;
+    ns1:is_given_concept_of ns1:proposition_13,
+        ns1:proposition_22,
+        ns1:proposition_23,
+        ns1:proposition_6,
+        ns1:proposition_7,
+        ns1:proposition_8 ;
+    ns1:is_opposite_to ns1:concept__unequal .
+
 ns1:operation_instance a owl:Class ;
     rdfs:label "Operation instance" ;
     skos:prefLabel "Operation instance" .
@@ -9919,15 +10155,141 @@ ns1:concept__point a owl:NamedIndividual,
         ns1:concept__end_of_line,
         ns1:concept__straight_line .
 
+ns1:concept__straight_line a owl:NamedIndividual,
+        ns1:concept ;
+    rdfs:label "Concept: Straight line",
+        "Concept: Straight_line" ;
+    skos:prefLabel "Straight line" ;
+    ns1:contains_concept ns1:concept__line,
+        ns1:concept__straight ;
+    ns1:definition_refers_to ns1:concept__equal_level,
+        ns1:concept__lying_on,
+        ns1:concept__point ;
+    ns1:has_concept_type ns1:concept_type__object ;
+    ns1:has_definition ns1:definition__4 ;
+    ns1:is_a_diagrammatic_object true ;
+    ns1:is_concept_in ns1:concept__are_in_a_straight_line,
+        ns1:concept__extend_straight,
+        ns1:concept__finite_straight_line,
+        ns1:concept__infinite_straight_line,
+        ns1:concept__multilateral_rectilinear_figure,
+        ns1:concept__parallel_lines,
+        ns1:concept__perpendicular_lines,
+        ns1:concept__perpendicular_straight_lines,
+        ns1:concept__quadrilateral_rectilinear_figure,
+        ns1:concept__rectilinear_angle,
+        ns1:concept__rectilinear_figure,
+        ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line,
+        ns1:operation_instance__conduct_straight_line__straight_line__point___straight_line,
+        ns1:operation_instance__describe_parallel_straight_line__straight_line__point___straight_line,
+        ns1:operation_instance__extend_straight_line___straight_line,
+        ns1:operation_instance__extend_straight_straight_line___straight_line,
+        ns1:operation_instance__fall_on_straight_line__straight_line_,
+        ns1:operation_instance__produce_to_infinity_finite_straight_line___straight_line,
+        ns1:operation_instance__set_up_equal_to_finite_straight_line__straight_line___finite_straight_line,
+        ns1:operation_instance__take_straight_line_,
+        ns1:operation_type__conduct_parallel_straight_line__straight_line__point___straight_line,
+        ns1:operation_type__conduct_straight_line__straight_line__point___straight_line,
+        ns1:operation_type__conduct_straight_line__straight_line__point__angle___straight_line,
+        ns1:operation_type__construct_to_given_point_straight_line__point__point___straight_line,
+        ns1:operation_type__cut_into_two_halves_cut_into_two_halves_straight_line____diagrammatic_object__diagrammatic_object_____diagrammatic_object__diagrammatic_object_,
+        ns1:operation_type__describe_parallel_straight_line__straight_line__point___straight_line,
+        ns1:operation_type__extend_straight_straight_line___straight_line,
+        ns1:operation_type__fall_on_straight_line__straight_line_,
+        ns1:operation_type__produce_finite_straight_line___straight_line,
+        ns1:operation_type__produce_to_infinity_finite_straight_line___straight_line,
+        ns1:operation_type__set_up_equal_to_finite_straight_line__straight_line___finite_straight_line,
+        ns1:proposition_14,
+        ns1:proposition_31,
+        ns1:relation_instance__are_in_the_same_parallels_base_of_parallelogram__base_of_parallelogram__straight_line__straight_line_,
+        ns1:relation_instance__are_in_the_same_parallels_parallelogram__parallelogram__straight_line__straight_line_,
+        ns1:relation_instance__are_in_the_same_parallels_triangle__parallelogram__straight_line__straight_line_,
+        ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
+        ns1:relation_instance__are_parallel_straight_line__straight_line_,
+        ns1:relation_instance__are_same_straight_line__straight_line_,
+        ns1:relation_instance__cut_straight_line__straight_line_,
+        ns1:relation_instance__describe_parallel_straight_line__straight_line__point___straight_line,
+        ns1:relation_instance__falls_on_straight_line__straight_line_,
+        ns1:relation_instance__finite_according_to_straight_line__point_,
+        ns1:relation_instance__infinite_according_to_straight_line__point_,
+        ns1:relation_instance__is_external_angle__straight_line_,
+        ns1:relation_instance__is_external_angle__straight_line__straight_line_,
+        ns1:relation_instance__is_internal_angle__straight_line_,
+        ns1:relation_instance__is_internal_angle__straight_line__straight_line_,
+        ns1:relation_instance__is_on_the_same_part_angle__angle__straight_line_,
+        ns1:relation_instance__is_placed_on_finite_straight_line__finite_straight_line__straight_line_,
+        ns1:relation_instance__is_placed_on_parallelogram__straight_line_,
+        ns1:relation_instance__is_placed_on_straight_line__parallelogram_,
+        ns1:relation_instance__is_placed_on_straight_line__point_,
+        ns1:relation_instance__is_placed_on_straight_line__straight_line_,
+        ns1:relation_instance__is_placed_on_triangle__straight_line_,
+        ns1:relation_instance__meet_at_point_straight_line__straight_line__point_,
+        ns1:relation_instance__meet_on_the_part_of_straight_line__straight_line__angle__angle_,
+        ns1:relation_instance__meet_on_the_part_of_straight_line__straight_line__point__point_,
+        ns1:relation_instance__meet_straight_line__straight_line_,
+        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_,
+        ns1:relation_type__are_in_a_straight_line_straight_line__straight_line_,
+        ns1:relation_type__are_in_the_same_parallels_figure__figure__straight_line__straight_line_,
+        ns1:relation_type__are_parallel_straight_line__straight_line_,
+        ns1:relation_type__are_perpendicular_straight_line__straight_line_,
+        ns1:relation_type__describe_parallel_straight_line__straight_line__point___straight_line,
+        ns1:relation_type__deviates_straight_line__straight_line_,
+        ns1:relation_type__encompassing_straight_line__straight_line__angle_,
+        ns1:relation_type__falls_on_straight_line__straight_line_,
+        ns1:relation_type__falls_on_straight_line__straight_line__straight_line_,
+        ns1:relation_type__finite_according_to_straight_line__point_,
+        ns1:relation_type__inclined_at_straight_line__straight_line__angle_,
+        ns1:relation_type__infinite_according_to_straight_line__point_,
+        ns1:relation_type__meet_at_point_straight_line__straight_line__point_,
+        ns1:relation_type__meet_on_the_part_of_straight_line__straight_line__diagrammatic_object__diagrammatic_object_,
+        ns1:relation_type__meet_straight_line__straight_line_,
+        ns1:relation_type__subtended_by_angle__straight_line__straight_line_,
+        ns1:relation_type__subtended_by_straight_line__angle_ ;
+    ns1:is_defined_in ns1:document__elements_book_1 ;
+    ns1:is_given_concept_of ns1:proposition_14,
+        ns1:proposition_31 ;
+    ns1:is_sub_concept_of ns1:concept__line ;
+    ns1:is_super_concept_of ns1:concept__finite_straight_line,
+        ns1:concept__infinite_straight_line ;
+    ns1:is_used_in_definition_of ns1:concept__diameter,
+        ns1:concept__multilateral_rectilinear_figure,
+        ns1:concept__parallel_lines,
+        ns1:concept__plane_angle,
+        ns1:concept__plane_surface,
+        ns1:concept__quadrilateral_rectilinear_figure,
+        ns1:concept__rectilinear_angle,
+        ns1:concept__rectilinear_figure,
+        ns1:concept__right_angle,
+        ns1:concept__trilateral .
+
 ns1:concept__angle a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Angle" ;
     skos:prefLabel "Angle" ;
     ns1:has_concept_type ns1:concept_type__object ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__angle_at_base,
+    ns1:is_concept_in ns1:concept__acute_angle,
+        ns1:concept__angle_at_base,
+        ns1:concept__angle_of_parallelogram,
         ns1:concept__angle_of_section,
+        ns1:concept__angle_of_semicircle,
+        ns1:concept__exterior_angle,
+        ns1:concept__inclination_of_angles,
+        ns1:concept__inclination_of_interior_angle,
+        ns1:concept__inclination_of_interior_angles,
+        ns1:concept__inclination_of_two_right_angles,
+        ns1:concept__interior_angle,
+        ns1:concept__interior_angle_of_triangle,
         ns1:concept__is_angle_of,
+        ns1:concept__is_external_angle_of,
+        ns1:concept__is_internal_angle_of,
+        ns1:concept__is_right_angle,
+        ns1:concept__is_right_angled,
+        ns1:concept__obtuse_angle,
+        ns1:concept__opposite_angles,
+        ns1:concept__plane_angle,
+        ns1:concept__rectilinear_angle,
+        ns1:concept__right_angle,
         ns1:operation_instance__construct_from_angle__angle__point__finite_straight_line___angle,
         ns1:operation_instance__construct_on_angle__finite_straight_line___angle,
         ns1:operation_instance__construct_on_angle__point___angle,
@@ -10012,103 +10374,6 @@ ns1:concept__angle a owl:NamedIndividual,
         ns1:concept__square,
         ns1:concept__trapezoid_quadrilateral_figure .
 
-ns1:concept__straight_line a owl:NamedIndividual,
-        ns1:concept ;
-    rdfs:label "Concept: Straight line",
-        "Concept: Straight_line" ;
-    skos:prefLabel "Straight line" ;
-    ns1:contains_concept ns1:concept__straight ;
-    ns1:definition_refers_to ns1:concept__equal_level,
-        ns1:concept__lying_on,
-        ns1:concept__point ;
-    ns1:has_concept_type ns1:concept_type__object ;
-    ns1:has_definition ns1:definition__4 ;
-    ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:concept__are_in_a_straight_line,
-        ns1:concept__extend_straight,
-        ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line,
-        ns1:operation_instance__conduct_straight_line__straight_line__point___straight_line,
-        ns1:operation_instance__describe_parallel_straight_line__straight_line__point___straight_line,
-        ns1:operation_instance__extend_straight_line___straight_line,
-        ns1:operation_instance__extend_straight_straight_line___straight_line,
-        ns1:operation_instance__fall_on_straight_line__straight_line_,
-        ns1:operation_instance__produce_to_infinity_finite_straight_line___straight_line,
-        ns1:operation_instance__set_up_equal_to_finite_straight_line__straight_line___finite_straight_line,
-        ns1:operation_instance__take_straight_line_,
-        ns1:operation_type__conduct_parallel_straight_line__straight_line__point___straight_line,
-        ns1:operation_type__conduct_straight_line__straight_line__point___straight_line,
-        ns1:operation_type__conduct_straight_line__straight_line__point__angle___straight_line,
-        ns1:operation_type__construct_to_given_point_straight_line__point__point___straight_line,
-        ns1:operation_type__cut_into_two_halves_cut_into_two_halves_straight_line____diagrammatic_object__diagrammatic_object_____diagrammatic_object__diagrammatic_object_,
-        ns1:operation_type__describe_parallel_straight_line__straight_line__point___straight_line,
-        ns1:operation_type__extend_straight_straight_line___straight_line,
-        ns1:operation_type__fall_on_straight_line__straight_line_,
-        ns1:operation_type__produce_finite_straight_line___straight_line,
-        ns1:operation_type__produce_to_infinity_finite_straight_line___straight_line,
-        ns1:operation_type__set_up_equal_to_finite_straight_line__straight_line___finite_straight_line,
-        ns1:proposition_14,
-        ns1:proposition_31,
-        ns1:relation_instance__are_in_the_same_parallels_base_of_parallelogram__base_of_parallelogram__straight_line__straight_line_,
-        ns1:relation_instance__are_in_the_same_parallels_parallelogram__parallelogram__straight_line__straight_line_,
-        ns1:relation_instance__are_in_the_same_parallels_triangle__parallelogram__straight_line__straight_line_,
-        ns1:relation_instance__are_in_the_same_parallels_triangle__triangle__straight_line__straight_line_,
-        ns1:relation_instance__are_parallel_straight_line__straight_line_,
-        ns1:relation_instance__are_same_straight_line__straight_line_,
-        ns1:relation_instance__cut_straight_line__straight_line_,
-        ns1:relation_instance__describe_parallel_straight_line__straight_line__point___straight_line,
-        ns1:relation_instance__falls_on_straight_line__straight_line_,
-        ns1:relation_instance__finite_according_to_straight_line__point_,
-        ns1:relation_instance__infinite_according_to_straight_line__point_,
-        ns1:relation_instance__is_external_angle__straight_line_,
-        ns1:relation_instance__is_external_angle__straight_line__straight_line_,
-        ns1:relation_instance__is_internal_angle__straight_line_,
-        ns1:relation_instance__is_internal_angle__straight_line__straight_line_,
-        ns1:relation_instance__is_on_the_same_part_angle__angle__straight_line_,
-        ns1:relation_instance__is_placed_on_finite_straight_line__finite_straight_line__straight_line_,
-        ns1:relation_instance__is_placed_on_parallelogram__straight_line_,
-        ns1:relation_instance__is_placed_on_straight_line__parallelogram_,
-        ns1:relation_instance__is_placed_on_straight_line__point_,
-        ns1:relation_instance__is_placed_on_straight_line__straight_line_,
-        ns1:relation_instance__is_placed_on_triangle__straight_line_,
-        ns1:relation_instance__meet_at_point_straight_line__straight_line__point_,
-        ns1:relation_instance__meet_on_the_part_of_straight_line__straight_line__angle__angle_,
-        ns1:relation_instance__meet_on_the_part_of_straight_line__straight_line__point__point_,
-        ns1:relation_instance__meet_straight_line__straight_line_,
-        ns1:relation_instance__subtended_by_angle__straight_line__straight_line_,
-        ns1:relation_type__are_in_a_straight_line_straight_line__straight_line_,
-        ns1:relation_type__are_in_the_same_parallels_figure__figure__straight_line__straight_line_,
-        ns1:relation_type__are_parallel_straight_line__straight_line_,
-        ns1:relation_type__are_perpendicular_straight_line__straight_line_,
-        ns1:relation_type__describe_parallel_straight_line__straight_line__point___straight_line,
-        ns1:relation_type__deviates_straight_line__straight_line_,
-        ns1:relation_type__encompassing_straight_line__straight_line__angle_,
-        ns1:relation_type__falls_on_straight_line__straight_line_,
-        ns1:relation_type__falls_on_straight_line__straight_line__straight_line_,
-        ns1:relation_type__finite_according_to_straight_line__point_,
-        ns1:relation_type__inclined_at_straight_line__straight_line__angle_,
-        ns1:relation_type__infinite_according_to_straight_line__point_,
-        ns1:relation_type__meet_at_point_straight_line__straight_line__point_,
-        ns1:relation_type__meet_on_the_part_of_straight_line__straight_line__diagrammatic_object__diagrammatic_object_,
-        ns1:relation_type__meet_straight_line__straight_line_,
-        ns1:relation_type__subtended_by_angle__straight_line__straight_line_,
-        ns1:relation_type__subtended_by_straight_line__angle_ ;
-    ns1:is_defined_in ns1:document__elements_book_1 ;
-    ns1:is_given_concept_of ns1:proposition_14,
-        ns1:proposition_31 ;
-    ns1:is_sub_concept_of ns1:concept__line ;
-    ns1:is_super_concept_of ns1:concept__finite_straight_line,
-        ns1:concept__infinite_straight_line ;
-    ns1:is_used_in_definition_of ns1:concept__diameter,
-        ns1:concept__multilateral_rectilinear_figure,
-        ns1:concept__parallel_lines,
-        ns1:concept__plane_angle,
-        ns1:concept__plane_surface,
-        ns1:concept__quadrilateral_rectilinear_figure,
-        ns1:concept__rectilinear_angle,
-        ns1:concept__rectilinear_figure,
-        ns1:concept__right_angle,
-        ns1:concept__trilateral .
-
 ns1:concept__finite_straight_line a owl:NamedIndividual,
         ns1:concept ;
     rdfs:label "Concept: Finite straight line",
@@ -10116,10 +10381,13 @@ ns1:concept__finite_straight_line a owl:NamedIndividual,
         "Concept: finite straight line" ;
     skos:prefLabel "Finite straight line",
         "finite straight line" ;
-    ns1:contains_concept ns1:concept__finite ;
+    ns1:contains_concept ns1:concept__finite,
+        ns1:concept__line,
+        ns1:concept__straight_line ;
     ns1:has_concept_type ns1:concept_type__object ;
     ns1:is_a_diagrammatic_object true ;
-    ns1:is_concept_in ns1:operation__join_point__point___finite_straight_line,
+    ns1:is_concept_in ns1:concept__infinite_straight_line,
+        ns1:operation__join_point__point___finite_straight_line,
         ns1:operation__produce_finite_straight_line___straight_line,
         ns1:operation_instance__apply_to_finite_straight_line__parallelogram___parallelogram,
         ns1:operation_instance__carry_over_parallel_to_point__point__finite_straight_line___finite_straight_line,

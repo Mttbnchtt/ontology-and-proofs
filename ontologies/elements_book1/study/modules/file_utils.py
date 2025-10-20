@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Sequence
+from typing import Optional, Sequence
 
 import datetime
 import pandas as pd
@@ -15,6 +15,36 @@ def ensure_subdir(subdir: str | Path = "output") -> Path:
     target_dir = base_dir / Path(subdir)
     target_dir.mkdir(parents=True, exist_ok=True)
     return target_dir
+
+
+def latest_ontology_file(
+    folder: str | Path = "ontologies",
+    filename_fragment: str = "ontology_",
+) -> Optional[Path]:
+    """Return the most recent ontology export within the study folder, if any."""
+    base_dir = Path(__file__).resolve().parent.parent
+    target_dir = base_dir / Path(folder)
+    if not target_dir.exists():
+        return None
+
+    latest_path: Optional[Path] = None
+    latest_timestamp: Optional[datetime.datetime] = None
+    pattern = f"{filename_fragment}*"
+    for candidate in target_dir.glob(pattern):
+        if not candidate.is_file():
+            continue
+        stem = candidate.stem
+        if not stem.startswith(filename_fragment):
+            continue
+        timestamp = stem[len(filename_fragment) :]
+        try:
+            candidate_ts = datetime.datetime.strptime(timestamp, "%Y%m%d_%H%M%S")
+        except ValueError:
+            continue
+        if latest_timestamp is None or candidate_ts > latest_timestamp:
+            latest_timestamp = candidate_ts
+            latest_path = candidate
+    return latest_path
 
 
 def write_csv(
