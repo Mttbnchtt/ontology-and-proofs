@@ -25,7 +25,7 @@ def latest_ontology_file(
     base_dir = Path(__file__).resolve().parent.parent
     target_dir = base_dir / Path(folder)
     if not target_dir.exists():
-        return None
+        raise FileNotFoundError("No ontology exports found in the study ontologies folder.")
 
     latest_path: Optional[Path] = None
     latest_timestamp: Optional[datetime.datetime] = None
@@ -44,6 +44,8 @@ def latest_ontology_file(
         if latest_timestamp is None or candidate_ts > latest_timestamp:
             latest_timestamp = candidate_ts
             latest_path = candidate
+    if latest_path is None:
+        raise FileNotFoundError("No ontology exports found in the study ontologies folder.")
     return latest_path
 
 
