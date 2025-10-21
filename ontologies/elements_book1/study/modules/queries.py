@@ -377,6 +377,7 @@ def hierarchical_common_notions() -> str:
                     / <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_domain>
                     / <https://www.foom.com/core#refers_to>  ?o . } # refers to [2] / domain / refers to
+        }
         group by ?o
         order by desc(?links)
         """
