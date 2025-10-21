@@ -17,15 +17,15 @@ def ensure_subdir(subdir: str | Path = "output") -> Path:
     return target_dir
 
 
-def latest_ontology_file(
+def lates_file(
     folder: str | Path = "ontologies",
     filename_fragment: str = "ontology_",
 ) -> Optional[Path]:
-    """Return the most recent ontology export within the study folder, if any."""
+    """Return the most recent file within the study folder, if any."""
     base_dir = Path(__file__).resolve().parent.parent
     target_dir = base_dir / Path(folder)
     if not target_dir.exists():
-        raise FileNotFoundError("No ontology exports found in the study ontologies folder.")
+        raise FileNotFoundError("No file found in the study ontologies folder.")
 
     latest_path: Optional[Path] = None
     latest_timestamp: Optional[datetime.datetime] = None
@@ -45,7 +45,7 @@ def latest_ontology_file(
             latest_timestamp = candidate_ts
             latest_path = candidate
     if latest_path is None:
-        raise FileNotFoundError("No ontology exports found in the study ontologies folder.")
+        raise FileNotFoundError("No file found in the study ontologies folder.")
     return latest_path
 
 
