@@ -20,8 +20,9 @@ def ensure_subdir(subdir: str | Path = "output") -> Path:
 def latest_file(
     folder: str | Path = "ontologies",
     filename_fragment: str = "ontology_",
+    extension: str = "ttl",
 ) -> Optional[Path]:
-    """Return the most recent file within the study folder, if any."""
+    """Return the most recent file with the requested extension within the study folder, if any."""
     base_dir = Path(__file__).resolve().parent.parent
     target_dir = base_dir / Path(folder)
     if not target_dir.exists():
@@ -32,6 +33,9 @@ def latest_file(
     pattern = f"{filename_fragment}*"
     for candidate in target_dir.glob(pattern):
         if not candidate.is_file():
+            continue
+        expected_suffix = f".{extension.lstrip('.')}"
+        if candidate.suffix != expected_suffix:
             continue
         stem = candidate.stem
         if not stem.startswith(filename_fragment):
