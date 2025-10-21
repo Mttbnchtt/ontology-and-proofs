@@ -17,7 +17,7 @@ def ensure_subdir(subdir: str | Path = "output") -> Path:
     return target_dir
 
 
-def lates_file(
+def latest_file(
     folder: str | Path = "ontologies",
     filename_fragment: str = "ontology_",
 ) -> Optional[Path]:
@@ -46,6 +46,7 @@ def lates_file(
             latest_path = candidate
     if latest_path is None:
         raise FileNotFoundError("No file found in the study ontologies folder.")
+    print(f"Latest file found: {latest_path}")
     return latest_path
 
 
