@@ -12,8 +12,8 @@ from .file_utils import ensure_subdir
 from .query_cache import cached_dataframe_query, build_query_cache_key
 
 
-def load_graph(input_ttl: pathlib.Path) -> rdflib.Graph:
-    graph = rdf_utils.read_graph(str(input_ttl))
+def load_graph(input_ttl: Path) -> rdflib.Graph:
+    graph = read_graph(str(input_ttl))
     return graph
 
 def save_graph_with_timestamp(graph, output_subdir: str | Path = "output"):
