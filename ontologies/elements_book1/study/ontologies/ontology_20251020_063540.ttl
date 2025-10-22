@@ -34,7 +34,6 @@ ns1:contains rdf:type owl:ObjectProperty ;
 
 ###  https://www.foom.com/core#contains_concept
 ns1:contains_concept rdf:type owl:ObjectProperty ;
-                     owl:equivalentProperty ns1:has_conceptual_component ;
                      rdfs:subPropertyOf ns1:has_relation_to_concept ;
                      owl:inverseOf ns1:is_concept_in ;
                      rdfs:label "contains concept" ;
@@ -71,13 +70,6 @@ ns1:has_author rdf:type owl:ObjectProperty ;
 ns1:has_concept_type rdf:type owl:ObjectProperty ;
                      rdfs:label "has concept type" ;
                      skos:prefLabel "has concept type" .
-
-
-###  https://www.foom.com/core#has_conceptual_component
-ns1:has_conceptual_component rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf ns1:has_relation_to_concept ;
-                             rdfs:label "has conceptual component" ;
-                             skos:prefLabel "has conceptual component" .
 
 
 ###  https://www.foom.com/core#has_definition
@@ -173,7 +165,6 @@ ns1:has_subject rdf:type owl:ObjectProperty ;
 
 ###  https://www.foom.com/core#is_concept_in
 ns1:is_concept_in rdf:type owl:ObjectProperty ;
-                  owl:equivalentProperty ns1:is_conceptual_component_of ;
                   rdfs:label "is concept in" ;
                   skos:prefLabel "is concept in" .
 
@@ -182,12 +173,6 @@ ns1:is_concept_in rdf:type owl:ObjectProperty ;
 ns1:is_concept_type_of rdf:type owl:ObjectProperty ;
                        rdfs:label "is concept type of" ;
                        skos:prefLabel "is concept type of" .
-
-
-###  https://www.foom.com/core#is_conceptual_component_of
-ns1:is_conceptual_component_of rdf:type owl:ObjectProperty ;
-                               rdfs:label "is conceptual component of" ;
-                               skos:prefLabel "is conceptual component of" .
 
 
 ###  https://www.foom.com/core#is_defined_in
