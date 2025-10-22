@@ -666,6 +666,27 @@ def mereological_template_last_item(iris: str) -> str:
     )
 
 
+def mereological_is_concept_in(iris: str) -> str:
+    return _wrap(
+        f"""
+        PREFIX core: <https://www.foom.com/core#>
+
+        SELECT
+        ?o
+        (COUNT(*) AS ?links)
+        WHERE {{
+        VALUES ?s {{ {iris} }}
+        ?s
+                a core:concept ;
+                core:is_concept_in ?o .
+        }}
+        GROUP BY ?o
+        ORDER BY DESC(?links)
+        """
+    ) 
+
+
+
 # ---------------------------------------------------------------------------
 # Hebbian-style queries
 # ---------------------------------------------------------------------------
