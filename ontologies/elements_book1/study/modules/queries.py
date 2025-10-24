@@ -679,6 +679,8 @@ def mereological_is_concept_in(iris: str) -> str:
         ?s
                 a core:concept ;
                 core:is_concept_in ?o .
+        ?o 
+                a core:concept .
         }}
         GROUP BY ?o
         ORDER BY DESC(?links)
