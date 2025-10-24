@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Callable, Iterable, Optional, Tuple
+from typing import Callable, Iterable, Optional, Sequence, Set, Tuple
 
 import pandas as pd
 import rdflib
@@ -12,6 +12,9 @@ from . import queries as base_queries
 from . import rdf_utils as base_rdf_utils
 
 from .query_runner import QueryRunner
+
+
+WeightVector = Sequence[float]
 
 
 @dataclass(frozen=True)
@@ -54,6 +57,45 @@ def _build_history_families(weights: Tuple[float, float, float]) -> Tuple[Histor
     )
 
 
+def _normalise_weights(weights: WeightVector) -> Tuple[float, float, float, float]:
+    """Return a 4-tuple of weights, splitting the legacy mereological weight when needed."""
+
+    raw = tuple(weights)
+    if len(raw) == 4:
+        return raw  # already expanded
+    if len(raw) == 3:
+        direct, hierarchical, mereological = raw
+        # Split the historical mereological share evenly between the two mereological families.
+        split = mereological / 2 if mereological else 0.0
+        return direct, hierarchical, split, split
+    raise ValueError(
+        f"Expected 3 or 4 weights, received {len(raw)} entries: {weights!r}"
+    )
+
+
+def _format_value_token(value: object) -> Optional[str]:
+    if isinstance(value, rdflib.term.Identifier):
+        text = str(value)
+    else:
+        text = str(value)
+    if not text:
+        return None
+    if text.startswith("<") and text.endswith(">"):
+        return text
+    return f"<{text}>"
+
+
+def _concept_values_clause(concepts: Iterable[object]) -> Optional[str]:
+    tokens = {
+        token
+        for concept in concepts
+        if (token := _format_value_token(concept)) is not None
+    }
+    if not tokens:
+        return None
+    return " ".join(sorted(tokens))
+
+
 HEBB_QUERIES: Tuple[str, ...] = (
     base_queries.hebb_definitions(),
     base_queries.hebb_postulates(),
@@ -80,14 +122,18 @@ def history(
     kg: rdflib.Graph,
     proposition_number: int = 0,
     *,
-    weights: Tuple[float, float, float],
+    weights: WeightVector,
     runner: Optional[QueryRunner] = None,
 ) -> pd.DataFrame:
     """Return weighted activation potentials, avoiding repeated SPARQL query execution."""
 
     runner = runner or QueryRunner(kg)
     family_frames: list[pd.DataFrame] = []
-    families = _build_history_families(weights)
+    normalised = _normalise_weights(weights)
+    base_weights = normalised[:3]
+    concept_membership_weight = normalised[3]
+    families = _build_history_families(base_weights)
+    seen_concepts: Set[str] = set()
 
     for weight, queries in _history_query_plan(proposition_number, families):
         query_frames = []
@@ -109,7 +155,28 @@ def history(
         if total_links == 0:
             continue
         family_df["activation_potential"] = (family_df["links"] * weight) / total_links
+        seen_concepts.update(family_df["o"].astype(str))
         family_frames.append(family_df[["o", "activation_potential"]])
+
+    if concept_membership_weight > 0:
+        values_clause = _concept_values_clause(seen_concepts)
+        if values_clause:
+            concept_query = base_queries.mereological_is_concept_in(values_clause)
+            concept_df = runner.fetch(concept_query)
+            if not concept_df.empty:
+                concept_frame = (
+                    concept_df[["o", "links"]]
+                    .groupby("o", as_index=False)["links"]
+                    .sum()
+                )
+                total_links = concept_frame["links"].sum()
+                if total_links != 0:
+                    concept_frame["activation_potential"] = (
+                        concept_frame["links"] * concept_membership_weight
+                    ) / total_links
+                    family_frames.append(
+                        concept_frame[["o", "activation_potential"]]
+                    )
 
     if not family_frames:
         return pd.DataFrame(columns=["o", "activation_potential"])
@@ -168,7 +235,7 @@ def main(
     kg: rdflib.Graph,
     proposition_number: int = 0,
     *,
-    weights: Tuple[float, float, float],
+    weights: WeightVector,
     runner: Optional[QueryRunner] = None,
 ) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """Return history and Hebbian activation potentials using shared query results."""

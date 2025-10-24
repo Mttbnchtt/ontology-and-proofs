@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Set, Tuple
+from typing import Sequence, Set, Tuple
 
 import rdflib
 
@@ -27,7 +27,7 @@ def main(
     kg: rdflib.Graph,
     proposition_number: int,
     *,
-    history_weights: Tuple[float, float, float],
+    history_weights: Sequence[float],
     history_selection: SelectionCriteria,
     cooccurrence_selection: SelectionCriteria,
     runner: QueryRunner | None = None,
