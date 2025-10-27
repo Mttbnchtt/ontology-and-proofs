@@ -68,8 +68,15 @@ def write_csv(
     return output_path
 
 
-def output_df(analyses: Sequence[Sequence[str]], filename: str = "output/analyses") -> pd.DataFrame:
-    analyses_df = pd.DataFrame(analyses, columns=["proof_number", "background_concepts", "diff"])
+def output_df(
+    analyses: Sequence[Sequence[str]],
+    filename: str = "output/analyses",
+    *,
+    columns: Sequence[str] | None = None,
+) -> pd.DataFrame:
+    if columns is None:
+        columns = ["proof_number", "background_concepts", "diff"]
+    analyses_df = pd.DataFrame(analyses, columns=columns)
     t = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"{filename}_{t}.csv"
     analyses_df.to_csv(filename, index=False)
