@@ -788,3 +788,20 @@ def hebb_template_propositions_proofs(iris: str) -> str:
         }} group by ?o1 ?o2 order by desc(?links)
         """
     )
+
+
+##########
+def find_proposition_types() -> str:
+    return _wrap(
+        """
+        SELECT ?proposition_pref_label ?proposition_type_pref_label
+        WHERE {
+                ?proposition
+                        a <https://www.foom.com/core#proposition> ;
+                        <http://www.w3.org/2004/02/skos/core#prefLabel> ?proposition_pref_label ;
+                        <https://www.foom.com/core#has_proposition_type> ?proposition_type .
+                ?proposition_type
+                        <http://www.w3.org/2004/02/skos/core#prefLabel> ?proposition_type_pref_label .
+        }
+        """
+    )
