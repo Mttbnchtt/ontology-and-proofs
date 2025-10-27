@@ -22,6 +22,7 @@ def save_graph_with_timestamp(graph, output_subdir: str | Path = "output"):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_path = output_dir / f"ontology_{timestamp}.ttl"
     graph.serialize(destination=output_path, format="turtle")
+    print(f"Graph with {len(graph)} statements saved to {output_path}.")
     return output_path
 
 
