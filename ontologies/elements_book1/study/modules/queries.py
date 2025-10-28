@@ -196,7 +196,6 @@ def direct_template_last_item_types(iris: str) -> str:
                 {{ ?s <https://www.foom.com/core#refers_to> 
                         / <https://www.foom.com/core#has_relation_type>
                         / <https://www.foom.com/core#contains_concept>  ?o . }}  # refers to / has relation type / contains concept
-                }}  
                 union
                 {{ ?s <https://www.foom.com/core#refers_to> 
                         / <https://www.foom.com/core#has_operation_type>  ?o . }}  # refers to / has operation type 
@@ -204,7 +203,7 @@ def direct_template_last_item_types(iris: str) -> str:
                 {{ ?s <https://www.foom.com/core#refers_to> 
                         / <https://www.foom.com/core#has_operation_type>
                         / <https://www.foom.com/core#contains_concept>  ?o . }}  # refers to / has operation type / contains concept
-                }}  
+        }}  
         group by ?o 
         order by desc(?links)
         """
