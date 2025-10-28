@@ -302,7 +302,6 @@ def hierarchical_postulates() -> str:
             { ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_relation_type>
                     / <https://www.foom.com/core#contains_concept>  ?o . }  # refers to / has relation type / contains concept
-        }
             union
             { ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#has_operation_type> ?o . } # refers to / has operation type
@@ -477,9 +476,7 @@ def hierarchical_template_propositions_proofs(iris: str) -> str:
                 {{ ?s <https://www.foom.com/core#refers_to>
                         / <https://www.foom.com/core#has_relation_type>
                         / <https://www.foom.com/core#has_domain>
-                        / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / has relation type / domain / contains concept
-
-        }} 
+                        / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / has relation type / domain / contains concept 
                 union
                 {{ ?s <https://www.foom.com/core#refers_to>
                         / <https://www.foom.com/core#has_operation_type> ?o . }} # refers to / has operation type
