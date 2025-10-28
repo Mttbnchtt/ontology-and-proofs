@@ -74,6 +74,16 @@ def _is_numeric_label(label: str) -> bool:
         "eight",
         "nine",
         "ten",
+        "concept__one",
+        "concept__two",
+        "concept__three",
+        "concept__four",
+        "concept__five",
+        "concept__six",
+        "concept__seven",
+        "concept__eight",
+        "concept__nine",
+        "concept__ten",
     }
     return stripped in number_words
 
