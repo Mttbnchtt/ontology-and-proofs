@@ -1,0 +1,872 @@
+% !TeX root = main.tex
+\documentclass[11pt,twoside,letterpaper]{scrartcl}
+
+%%%%%%%%
+% FONTS
+%%%%%%%%
+% Use system fonts via fontspec 
+% (for Unicode and Greek support)
+\usepackage{fontspec}
+\setmainfont{FreeSerif} % or another with polytonic Greek
+\newfontfamily\greekfont{FreeSerif}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NUMBERING FOR PARAGRAPHS AND SUBPARAGRAPHS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Enable numbering for \paragraph and \subparagraph
+\setcounter{secnumdepth}{5}
+
+% Include paragraphs and subparagraphs in the TOC
+\setcounter{tocdepth}{5}    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MATHEMATICAL SYMBOLS AND FORMATTING
+% OF MATHEMATICAL ENVIRONMENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath} % for math symbols
+% \usepackage{amssymb} % for additional math symbols like nmid (i.e.\ ``does not divide'')
+\usepackage{amsfonts} % for math fonts like mathbb
+% \usepackage{amsart} % to use \keywords{}
+\usepackage[inline]{enumitem} % for enumeration environment and customization
+% \usepackage[upright]{fourier} % new font and math symbols, including \widearc
+% \usepackage{fourier-otf}
+
+%%%%%%%%%%%%%%%%
+% TABLES    
+%%%%%%%%%%%%%%%%
+\usepackage{tabularx}
+\usepackage{graphicx} % include figures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PRINTING CODE IN LEAN 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings} % highlight Lean snippets with syntax-aware formatting
+\usepackage{tcolorbox} % wrap Lean proofs in framed, breakable environments
+\tcbuselibrary{listings,skins,breakable} % enable tcolorbox features used by the custom leanproof listing
+\usepackage{tikz} % draw overlay nodes (e.g. counters) inside Lean proof boxes
+
+\lstdefinelanguage{Lean}{
+  morekeywords={example,by,have,calc,import,open,variable,variables,theorem,lemma},
+  sensitive=true,
+  morecomment=[l]--,
+  morecomment=[s]{/-}{-/},
+  morestring=[b]"
+}
+
+% plain 1,2,3… numbering
+\newtcblisting[auto counter]{leanproof}{
+  listing only,
+  listing engine=listings,
+  listing options={
+    language=Lean,
+    basicstyle=\ttfamily\small,
+    columns=fullflexible,
+    keepspaces=true,
+    showstringspaces=false,
+    breaklines=true
+  },
+  enhanced,
+  sharp corners,
+  boxrule=0.4pt,
+  colback=white,
+  colframe=black,
+  breakable,
+  % tag INSIDE, right-aligned, vertically centered
+  overlay unbroken={
+    \node[anchor=east] at ([xshift=-0.5em]interior.east) {(\thetcbcounter)};
+  },
+  overlay first={
+    \node[anchor=east] at ([xshift=-0.5em]interior.east) {(\thetcbcounter)};
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% URLs and DOIs FORMATTING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{url}
+\urlstyle{same} % write URLs and DOIs in the same font as the words surrounding them 
+
+%%%%%%%%
+% TIKZ
+%%%%%%%%
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric} % nodes/arrows needed for leanproof overlays and future diagrams
+
+%%%%%%%%%%%%%%%%%%%%
+% CROSS-REFERENCING
+%%%%%%%%%%%%%%%%%%%%
+\usepackage[colorlinks=true, citecolor=black, breaklinks]{hyperref} % enable live cross-references with black citations and blue internal links
+\hypersetup{linkcolor=blue} % force structural links to blue for readability
+\hypersetup{colorlinks=true, urlcolor=blue} % keep URLs styled consistently with other links
+\usepackage{bookmark} % keep PDF bookmarks synchronized with hyperref metadata
+
+%%%%%%%%%%
+% MARGINS
+%%%%%%%%%%
+\usepackage{geometry} % customize the page frame beyond the class defaults
+ \newgeometry{left=1.2in,right=1.2in,top=1.5in,bottom=1.5in} % set tighter margins suited to the article layout
+
+%%%%%%%%%%%%
+% EPIGRAPH
+%%%%%%%%%%%%
+ \usepackage{epigraph} % typeset the opening quotation with dedicated styling
+% \epigraphsize{\small}% Default
+\setlength\epigraphwidth{8cm} % size of epigraph
+\setlength\epigraphrule{0pt}
+\usepackage{etoolbox} % patch \epigraph to switch the quoted text to italics
+\makeatletter
+\patchcmd{\epigraph}{\@epitext{#1}}{\itshape\@epitext{#1}}{}{} % change font to italics
+\makeatother
+
+
+%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY
+%%%%%%%%%%%%%%%
+\usepackage[
+backend=biber,
+style=authoryear,
+% style=verbose,
+sorting=nyt
+]{biblatex}
+\setlength\bibitemsep{.2\baselineskip}
+
+\addbibresource{mybibliography.bib}
+
+%%%%%%%%%%%%%%%%%%%%%
+% CLASSICS QUOTATION
+%%%%%%%%%%%%%%%%%%%%%
+\usepackage{classics} % provide macros for canonical references to classical authors
+% Customize the pagination labels that appear in classical citations
+\newpagination \books    {book}{books}{ and }
+\newpagination \parts    {part}{parts}{ and }
+\newpagination \sections {section}{sections}{ and }
+\newpagination \lines    {line}{lines}{ and }
+
+% Author-specific shortcuts used throughout the text
+\newclassic[ to ]{Homer}  {\books{\classicsRoman{#1}}|, \lines{#1}}
+\newclassic{Aristotle}    {#1|\textit{#1}|#1}
+\newclassic{Euclid}       {Euclid\ |#1|#1}
+\newclassic{HomerExample} {\books{\classicsRoman{#1}}|, \lines{#1}}
+\newclassic{HumeExample}  {\books{#1}|, \parts{#1}|, \sections{#1}}
+\newclassic{Proclus}      {\textit{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Logical corner brackets ⌜A⌝ for quoting or Gödel numbering
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Logical corner brackets ⌜A⌝ that preserve text mode outside math
+\newcommand{\corner}[1]{%
+  \ifmmode
+    \left\ulcorner #1 \right\urcorner
+  \else
+    $\left\ulcorner \text{#1} \right\urcorner$%
+  \fi
+}
+
+
+%%%%%%%%%%%
+% CLEVEREF
+%%%%%%%%%%%
+\usepackage{cleveref} % automatically formats references (must load last to hook into existing counters)
+
+% Define cleveref names for paragraph and subparagraph
+\crefname{paragraph}{paragraph}{paragraphs}
+\crefname{subparagraph}{subparagraph}{subparagraphs}
+
+% Change cleveref settings for equations
+\crefname{equation}{equation}{equations}
+\Crefname{equation}{Equation}{Equations}
+
+%%%%%%%%%%%
+% ABSTRACT
+%%%%%%%%%%%
+\providecommand{\keywords}[1]{\textbf{Keywords.} #1}
+
+%%%%%%%%%%%
+% THEOREMS
+%%%%%%%%%%%
+
+
+\title{Creative proofs}
+\subtitle{Surprise as ontological change}
+\author{Matteo Bianchetti, Giorgio Venturi}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+% =====================
+% STATUS / NEXT STEPS
+% =====================
+\section*{Work status}
+\addcontentsline{toc}{section}{Work status}
+
+This draft contains the core definitions for \emph{narrative surprisingness} and the \emph{theory of activation potential} (historical vs.\ co-occurrence components; typical vs.\ likely variants). The main missing pieces are (i) the concrete \emph{textual-analysis protocol} for Euclid, (ii) parameter choices / sensitivity strategy, and (iii) the results and case-studies.
+
+\paragraph*{Immediate tasks}
+\begin{enumerate}
+  \item \textbf{Finish the Euclid pipeline specification.} Complete \cref{S.euclid.SS.practice.textual.analysis.and.value.picking}:
+  \begin{enumerate}[label=(\alph*)]
+    \item define what counts as a \emph{resource} (extraction rules, normalization, disambiguation); DONE
+    \item define \emph{use} (direct / hierarchical / mereological) operationally; NEXT
+    \item define \emph{together} for co-occurrence (sentence/line/proof window);
+    \item define the \emph{context} $C$ (full prefix vs.\ sliding window; any forgetting/decay if used);
+    \item specify how you build the RDF/OWL graph (classes, instances, properties).
+  \end{enumerate}
+
+  \item \textbf{Decide (or justify) parameter values.} Pick and motivate $\alpha,\beta,\gamma$ (history weights) and $\delta,\epsilon$ (history vs.\ co-occurrence balance), or state a sensitivity plan.
+
+  \item \textbf{Complete the Euclid algorithm overview.} Finish the extraction/typing methodology; state dedup rules (synonyms/variants; Greek/English mapping); state what counts as hierarchy vs.\ mereology.
+
+  \item \textbf{Produce first Euclid results.} In \cref{S.euclid.SS.results} report at least: (a) low-activation resources per proof, (b) proof-level aggregates, (c) 2--3 hand-checked validations linking numbers to interpretive claims.
+
+  \item \textbf{Write Pappus case-study.} Reuse the pipeline; document any new resource types (e.g.\ diagrams, mechanics).
+
+  \item \textbf{Indeterminacy refinement.} If kept, add one concrete Euclid example and show how indeterminacy changes interpretation of low activation.
+\end{enumerate}
+
+%%%%%%%%%%%
+% ABSTRACT
+%%%%%%%%%%%
+\begin{abstract}
+    \setlength{\leftskip}{-0.5cm}
+    \setlength{\rightskip}{-0.5cm}
+    \noindent \textbf{Abstract}. 
+    Ontological study of creativity in proofs.
+    
+    \smallskip
+    \noindent \keywords{Proof, creativity, surprise, Euclid, Pappus, Newton.}
+\end{abstract}
+
+
+%%%%%%%%%%%%
+% EPIGRAPH
+%%%%%%%%%%%%
+\epigraph{The moving power of mathematical \textit{invention} is not reasoning, but imagination.}{--- \textup{\parencite{De-Morgan1866Sir-W.-R.-Hamil}\footnotemark}}\footnotetext{
+    The quotation is from De Morgan's article in memory of William Rowan Hamilton \parencite{De-Morgan1866Sir-W.-R.-Hamil}. The full passage is as follows: 
+    \begin{quote}
+        ``Hamilton himself often said, `I \textit{live} by mathematics, but I \textit{am} a poet.' Such an aphorism may surprise our readers, but they should remember that the moving power of mathematical \textit{invention} is not reasoning, but imagination. We no longer apply the homely term \textit{maker} in literal translation of \textit{poet}: but discoverers of all kinds, whatever may be their lines, are \textit{makers}; or, as we now say, have the creative genius'' (original emphases). 
+    \end{quote}
+    De Morgan emphasizes that the growth of mathematics is due mostly to the creativity that mathematicians display as opposed to routine or rule-directed work that he calls ``reasoning''. A detailed discussion of what De Morgan meant by terms such as ``reasoning'' and ``imagination'' is beyond the scope of this paper.
+}
+
+%%%%%%%%%%%%%%%%
+% INTRODUCTION
+%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{S.introduction}
+Like other subjects, mathematics includes artifacts that are creative. Among its artifacts, we concentrate on proofs and we ask ``what makes them creative?'' Our answer is that a proof is creative \textit{if} and \textit{because} it is \textit{surprising} along some dimensions, among which we isolate the following:
+% \setlist{itemsep=1mm, parsep=0mm, topsep=5mm}
+\begin{enumerate}
+    \item \textit{local}: the proof contains a surprising step;
+    \item \textit{global}: the arrangement of the steps is surprising;
+    \item \textit{propositional}: the proof is surprising with respect to other proofs of the same proposition (e.g.\ other proofs of Pythagoras' theorem);
+    \item \textit{topical}: the proof is surprising with respect to other proofs that belong to the same topic or subject (e.g.\ geometry);
+    \item \textit{narrative}: the proof is surprising with respect to an expository block (e.g.\ a book, chapter, or article)
+\end{enumerate}
+We define \textit{surprisingness} in terms of retrieval and update of the space of resources within and on which the prover acts. When a mathematician produces a proof, they have at disposal, among other things but prominently, concepts (e.g.\ the concept of a triangle) and connections among concepts (e.g.\ a definition of triangle in terms of segments and a definition of segments in terms of straight lines and points). The prover can access some of these concepts and connections and can update (add or remove) such elements during their investigation. The subject to which an investigation belongs, the statement that one seeks to prove, and the various fragments of a proof that is taking shape all contribute to determine which elements and connections are in the resource space. 
+
+We isolate two standard mechanisms that a prover uses to either retrieve or update the resource space: 
+\begin{enumerate*}[label = (\roman*)]
+    \item heuristics and 
+    \item co-occurrences (thinking a concept A after thinking of B because, in the past, A and B occurred in the same context).
+\end{enumerate*}
+When a retrieval or update is not dictated (a notion that we will make precise) by either heuristics or co-occurrences, we say that the retrieval or update is surprising. The analysis of a resource space differs along the five dimensions mentioned above, giving rise to five points of view from which to judge whether, given a resource space, a proof is surprising.
+
+Other authors have connected 
+\begin{enumerate*}[label = (\roman*)]
+    \item creativity and surprise\footnote{
+        E.g. \parencite{paul2023-creativity-sep} \S 2.2.1.
+    } and
+    \item creativity and resource space.\footnote{
+        E.g. \parencite{boden2022}.
+    }
+\end{enumerate*}
+Some authors, like Herbert Simon, have connected all three (or almost: to be precise, they speak of ``unconventionality'' rather than surprise).\footnote{
+    \parencite{Newell1962The-processes-o} pp. 104-107.
+}
+The novelty of our contribution consists in 
+\begin{enumerate*}[label = (\roman*)]
+    \item investigating this connection (creativity - surprisingness - resource space) with respect to proofs,\footnote{
+        The tools that we develop to study proofs are specifically suited to study them. As it will become clear, our tools are applicable to other artifacts of similarly formal or, at least, regimented disciplines such as physics (concerning artifacts like theories and experimental results) and computer science (concerning artifacts like scripts). It is conceivable to extend our approach to the study of, let's say, poetry and other fields that, in terms of explicit regimentation of language and concepts, are far from mathematics. However, doing so would require a significantly greater effort to disambiguate terms (e.g.\ love between persons vs love of a person toward dogs) and connect in appropriate ways (categorization of concepts, links among them, and way to manipulate them).
+    }
+    \item the analysis of surprisingness along five specific dimensions, and
+    \item the use of knowledge graph to study surprisingness computationally (which implies rigor in the sense that assumptions and limitations are explicitly stated).
+\end{enumerate*}
+To explain our technique and illustrate its fruitfulness, we apply it to the analysis of proofs supplied by Aristotle, Euclid, Pappus, and Newton.
+
+
+%%%%%%%%%%%%%%
+% BACKGROUND
+%%%%%%%%%%%%%%
+\section{Background}
+\label{S.background}
+The introduction referred to a number of notions that we have yet to clarify. In this section, we discuss the following: resource space, knowledge graph, and elements of mathematical discourse (like proof and theorem).\footnote{
+    With this section, we only want to enable our readers to understand the rest of the paper. This section is not a systematic review of the literature on these topics. We provide some references when useful to situate our inquiry.
+}
+
+\subsection{Resource space and knowledge graph}
+\label{S.background.SS.conceptual.space.and.knowledge.graph}
+In the research on creativity and the adjacent field of problem-solving, one finds the expressions ``conceptual space'', ``problem space'', and ``search space''.\footnote{
+    For example, in her book on creativity Margaret Boden uses the expression ``conceptual spaces'', which she characterizes as ``structured styles of thought'', ``any disciplined way of thinking that is familiar to (and valued by) a certain social group'', and ``ways of writing prose or poetry; styles of sculpture, painting or music; theories in chemistry or biology; fashions in couture or choreography, nouvelle cuisine [etc.]'' (\cite{boden2022} p. 4.) Herbert Simon uses the expression ``problem spaces'' to refer to ``the spaces of theories and experiments \dots, but also sources of problems, of phenomena, of representations, of instruments, and others'' (\cite{simonsolver} p. 2). Douglas Lenat says ``search space'' and describes it as a collection of key-value pairs (frames) like, for example 
+        \begin{equation*}
+            \big\{\ \text{(name: ``prime numbers''), (definition: }\forall z\ (z|x\ \to ( z=1\ \lor z=x ) )\text{, }\dots\ \big\}
+        \end{equation*}
+    Such frames represent concepts and connections to other concepts or facts (\cite{lenat1976} p. 8). 
+    % For example, the (fragment of a) frame above represents the concept of prime numbers with a label for it, a definition, and possibly other fields (alternative definitions, generalizations, etc.).
+    For all these authors, one can modify these ``spaces'' (e.g.\ by adding or removing concepts). 
+}
+We use ``resource space'' in a similar, although not identical, manner.\footnote{
+    In particular, we do not say ``conceptual space'' because not all the resources involved in mathematical problem-solving are concepts. E.g., our resource space will include diagrams.
+} By ``resource space'' of an agent we understand the totality of intellectual resources that that agent has at disposal to attack or think about a problem. A variety of authors have shown how heterogeneous such resources are. There are the resources that are typically most associated with mathematical practice like definitions, proofs, theorems, and techniques but also heuristics, analogies, choice of notation, pictures, and much more.\footnote{
+     The heterogeneity of such ``non-logical'' (for lack of a better term) resources manifests itself also in the fact that there is no satisfactory classification of all or most of these resources yet. Here we only observe that, in our opinion, the thread that unites them is that they all contribute, on a psychological level, to make an agent's mathematical knowledge an organized whole that enables the development of familiarity, insights, and, in general, the mastery typically associated with the ability to provide significant contributions to the progress of mathematics. Such an organized whole is to be contrasted with the mere recording of facts and techniques in the same sense in which Poincar\'e contrasts understanding a proof as ``une sorte de tout organis{\'e}'' with the mere verification of its steps by logical means (\cite{Poincare1905La-valeur-de-la-scienceaa} p. 27). We refrain from providing a long list of authors with similar views or variations on the theme but we do point out the article \parencite{rissland} as an excellent example. 
+    % cognitive structuring
+    % Similarly emphasizing the importance of cognitive structuring, authors as diverse as George Polya and William P. Thurston (mathematicians), Edwina Rissland (epistemologist), and David Tall (psychologist), among many others
+    % mathematicians (like William P. Thurston), epistemologists (like Edwina Rissland), and psychologists (like David Tall) have
+    % From a similar point of view the importance and the role of such ``non-logical'' resources
+    % We do not attempt to provide such a classification here but we provide a selective lists of references that discuss several of them and their importance. George P{\'o}lya famously discussed the role of several heuristics in solving mathematical problems (add an auxiliary element, draw a figure, etc.). Edwina Rissland
+    % polya --> heuristics
+    % rissland (michener): results, examples, concepts; principles, mega-principles, model-examples, pictures, bibliogrephy; reference examples, counter-examples, hapax, basic results, key results, pointers, demonstrations, main ideas of demonstrations, etc.
+    % thurston: facilities of understanding
+}
+
+Technically, we represent a resource space as an RDF graph. We explain ``graph'' first and ``RDF'' second. We define a directed graph, but not in the traditional way.\footnote{
+    We take to be the usual definitions of a graph and a directed graph to be as follows. A graph is a pair $G=(V,\ E)$ of sets where $E\subseteq V^2$. A graph is directed if and only if it also has two maps $\text{\textit{initial}}:E\to V$ and $\text{\textit{terminal}}:E\to V$ that assign to every edge an initial and a terminal vertex, respectively. See \parencite{Diestel2017Graph-theoryaa} p. 2 and pp. 27-28.
+} We take the basic elements of a graph to be a set of points and a set of arrows.\footnote{
+    Arrows are directed edges. We avoid definitional minutiae but we note that an arrow from $A$ to $B$ is not the same as (and does not guarantee the existence of) an arrow from $B$ to $A$.
+} Notice that we allow an element to be both a point and an arrow (this is not according the usual definition of a graph). Next, we define a \textit{statement} to be a triple of the form $(A,\ \to,\ B)$, where $A$ and $B$ are points and $\to$ is an arrow. Think, for example, of ``$\angle{ABC}$ is-greater-than $\angle{DEF}$'' where $\angle{ABC}$ and $\angle{DEF}$ are points and \textit{is-greater-than} is the arrow. The components of a statement are, from left to right, its \textit{subject}, \textit{predicate}, and \textit{object}. Since points can be edges and vice versa, the predicate of a statement may be the subject or object of another statement. For example, \textit{is-greater-than} is the predicate of the statement given above and the subject in the next one: ``is-greater-than has-domain Angle'' (whose intended meaning is that the subject of any statement where is-greater-than appear as a predicate belongs to the class Angle).
+
+Finally, we define a \textit{graph} to be a set of statements. The name ``graph'' (and indeed ``directed graph'') is justified because an obvious visual representation of such a set is the diagram in \cref{figure.graph_example}.\footnote{
+    For clarity, this diagram illustrates the tiny graph that contains exactly the two triples mentioned above:
+    \begin{enumerate}
+        \item ``$\angle{ABC}$ is-greater-than $\angle{DEF}$''
+        \item ``is-greater-than has-domain Angle''.
+    \end{enumerate}
+}
+
+\begin{figure}
+  \centering
+  \resizebox{0.5\linewidth}{!}{\input{images/graph_example.tex}}
+  \caption{Graph representation of set of statements.}
+  \label{figure.graph_example}
+\end{figure}
+
+Such a definition suits our project because we want to interpret points and arrows as resources available to a mathematician seeking a proof and every resource can be connected to every other resource. Some connections may not be reversible (like ``is-greater-than'') and, hence, we use arrows instead of mere edges. Moreover, a resource can connect other resources and itself be connected to something as well. For this, we need resources to be possibly both points and edges. 
+
+Concerning RDF, we only say the following. RDF is a standard for data exchange.\footnote{
+    For an introduction, see \url{https://www.w3.org/RDF/}.
+} 
+Here, it is only important to notice that, having built our graphs according to this standard, we were able to enrich and analyze them using machine-executable scripts, inferences, and queries.\footnote{
+    For completeness, the computer-science resources that we used to write our graphs and work with them are the following: 
+    \begin{enumerate}
+        \item RDF, RDFS, and OWL 2 for data representation (i.e.\ writing statements);
+        \item SPARQL for queries;
+        \item Datalog for inference rules;
+        \item Python 3 (with the open source RDFlib library) for scripts;
+        \item Prot{\`e}g{\`e} (open source) and RDFox (with a free research license) as databases.
+    \end{enumerate}
+    Information about these resources is easily available on the web. We put our code in the following GitHub repository: \url{https://github.com/Mttbnchtt/ontology-and-proofs}.
+}
+
+\subsection{Proofs and other blocks of text}
+\label{S.background.SS.proof.and.other.blocks.of.text}
+The resource space of an agent can include the most disparate resources: a theorem as well as  the memory of a flower. To keep things manageable, we restrict our attention to the following component of mathematical discourse: definitions, axioms, postulates,\footnote{
+    Some authors do not distinguish axioms from postulates.
+}, theorems,\footnote{
+    In this category, we include what authors explicitly label as ``theorems'' but also lemmata, corollaries, and what are called ``propositions'' in some mathematical texts.
+}, construction requests (e.g.\ ``To draw a perpendicular to the given line and from the given point on it'')\footnote{
+    \Euclid{. }{I.}{11} (as in \cite{eucl}).
+}, exercises, proofs, and commentaries.\footnote{
+    Like Newton's scholium after lemma 11 of the \textit{Principia} lib. I sect. I (pp. 86-88 in \cite{Newton1972Isaac-Newtons-Philosophiae-naturalis-principia-mathematicaaa}).
+}
+We do not attempt to say what these items \textit{really} are or are taken to be by a specific author or community. We identify them in a merely pragmatic way. For example, we simply take a proof to be the block of text between conventional and standard markers signaling the beginning and end of each of them (like ``QED'') and similarly in the other cases. In all cases that we discuss here,\footnote{
+    We recognize that our characterization of components of mathematical discourse does not work in every case (e.g.\ proof markers may be missing in a private letter that nevertheless contains a proof).
+} there is no ambiguity to which block of text conveys which specific item (axiom, theorem, etc.).\footnote{
+    For further discussions of our pragmatic approach see \parencite{BianchettiVenturi2022Formal-ontology} \S\S 4.1-2 (pp. 5-8).
+}
+
+\subsection{Mathematics as a literary genre}
+\label{S.background.SS.mathematics.as.a.literary.genre}
+Acerbi says that Greek mathematics is a literary genre ``that materializes in typifying lexical, syntactical-stylistics, and expository format choices''.\footnote{
+    ``\dots\ che si concretizza in scelte lessicali, sintattico-stilistiche e di formato espositivo tipizzanti \dots'' (\cite{Acerbi2010Il-silenzio-delle-sireneaa} 
+    \S1.1 p. 16).
+}
+Regardless of the accuracy of such a claim, we find it productive to embrace an adapted version of this claim, extend it to all the mathematical texts that we will consider, and explore the epistemological value of this point of view.\footnote{
+    In fact, we have already adopted such a point of view in the previous subsection where we took proofs and other elements of mathematical discourse to be blocks of text.
+} 
+We take the literary choices that authors make to be means to activate specific cognitive reactions in their readers resulting in the acquisition of specifically mathematical knowledge (with the surety attached to it) and understanding.\footnote{
+    Aesthetics or, more generally, rhetorical motivations may be present as well (e.g.\ Euclid's choice to begin and end his book 1 with triangles) and it may sometimes (or even often) be difficult to decide whether such choices have no significant cognitive role. In a related investigation, Mancosu asks: ``Are the stylistic elements present in mathematical discourse devoid of cognitive value and so only part of the coloring of mathematical discourse or can they be seen as more intimately related to its cognitive content?'' (\cite{sep-mathematical-style} \S6). As we said, we maintain that stylistics elements have cognitive value: they elicit specific concepts and conceptual connections. However, we leave the issue of exactly what other values they have and how to distinguish them aside.
+}
+We do that because we are interested in how humans reason about and achieve progress in mathematics and the literary text is a primary support for that activity. For example, if one reads Euclid's book 1 from the start, by the time they arrive at proposition 5, they have worked with specific concepts (like triangle and circle) and conceptual connections (like the connection between geometric constructions and production of lines) that are active (to different degrees) in their mind while they follow the statement and proof of proposition 4 (or, like Pappus, seek an alternative proof). Such conceptual endowment is what we call the resource space of the mathematician. We take the concepts and conceptual connections mentioned (or otherwise established) in the texts that we analyze to determine the resource space of the mathematician that is engaging with those texts. Furthermore, we make the simplifying hypothesis that, to study the surprisingness of the proofs that we consider here, the resource space contains nothing of relevance that the texts with which we work supply. Concerning what it means for a block of text or a literary corpus to \textit{supply} the elements of the resource space, 
+\begin{enumerate*}[label = (\roman*)]
+    \item we will explain our choices in detail in specific cases and,
+    \item for more general considerations, (which, anyhow, fail to provide unambiguous, universal rules) we refer to our discussion in \parencite{BianchettiVenturi2022Formal-ontology} pp. 5-8.
+\end{enumerate*}
+
+\subsection{Lean and other formal-logical projects}
+\label{S.background.SS.lean.and.other.formal-logical.projects}
+\paragraph*{Dissimilar projects}
+There is a fundamental difference between our project and projects like proof assistants, SAT/SMT solvers, formalization of mathematics in Lean, or even reconstructions of proofs in a logical calculus (like Gentzen's natural calculus). Our goal is to study how mathematicians consciously work to discover new proofs, connect concepts, and so on. The goal of other proofs is either to ensure correctness (mostly through validation of proofs) or to analyze proofs into small (possibly atomic) steps and principles (e.g.\ to show that a result does not depend on Excluded Middle). For example, consider the fact, for every integer $x$, $2x \neq 3$. An obvious, human-level proof is to notice that $2x$ is even and $3$ is not even. Now consider the following two proofs of the same statement in Lean.\footnote{
+    We assume that Mathlib is available during the proofs. Roughly, Mathlib is a library of definitions, theorems, and tactics.
+}
+
+\begin{leanproof}
+example {x : ℤ} : ¬ (2 * x = 3) := by grind
+\end{leanproof}
+
+\begin{leanproof}
+example {x : ℤ} : ¬ (2 * x = 3) := by
+  by_contra g
+  have h1 : Even (2 * x) := by
+    rw [Int.even_mul]
+    left
+    norm_num
+  have h2 : ¬ Even (3) := by
+    norm_num
+  rw [g] at h1
+  contradiction
+\end{leanproof}
+
+In the first proof, ``grind'' assumes $\exists x\ 2x=3$ and derives a large number of facts (using techniques like congruence closure and theories like linear arithmetic) until it finds a contradiction. The tactic ``grind'' provides an answer but does not reveal the ground on which it reached that answer. For this reason, proof 1 is unlike what a human would produce to show that $2x\neq 3$.\footnote{
+    For more information concerning the ``grind'' tactic, see \url{https://lean-lang.org/doc/reference/latest/The--grind--tactic/}.
+}
+On the other hand, the second proof contains smaller steps than what a human-produced proof in natural language would contain. It assumes $\exists x\ 2x=3$. Then it proves that $2x$ is even by using the theorem Int.even\_mul\footnote{
+    Int.even\_mul is the statement: $Even (m*n) \leftrightarrow \left( Even (m) \lor Even (n) \right)$.
+} 
+to get $Even(2) \lor Even(x)$.\footnote{
+    The syntactic presentation of the proof does not make it clear that one infers the statement $Even(2) \lor Even(x)$ at this point. We explain that one carries out proofs in Lean on a split screen: to the left, there is the syntactic presentation (or development) of the proof and, to the right, there is the so-called InfoView, i.e.\ an always-updating system that checks the validity of the inferential steps and keeps track of the different ``goals'' (claims to prove) at different steps. In this case, the InfoView shows that the claim to prove immediately after ``rw [Int.even\_mul]'' is $Even(2) \lor Even(x)$.
+} 
+    Then, the proof selects $Even(2)$ and uses `norm\_num' to show that 2 is even. Then, the proof shows that 3 is not even (using `norm\_num' again). It uses the initial assumption ($\exists x\ 2x=3$) to rewrite inside $Even(2*x)$ to obtain $Even(3)$. Now we have both $Even(3)$ and $\lnot Even(3)$. Lean applies the `contradiction' tactic and proves that $2x\neq 3$. Neither proof provides a realistic picture of how humans prove theorems. Therefore, reconstructions of mathematics along those lines are fundamentally different from our approach.\footnote{
+    We know that, in some cases, one can produce Lean proofs that are very close to what a human would write in natural language. Nevertheless, this is only coincidental to the goal of achieving surety.
+}
+
+\paragraph*{A similar project}
+Timothy Gowers has recently announced a project to build a database of ``structured motivated proofs''.\footnote{
+    \parencite{Gowers2025Creating-a-database-of-motivated-proofsaa}
+}
+Gowers observes that mathematical papers hide the thought processes that led to the discovery of those results. To remedy this, he wants to record proofs in a way that makes the train of thought that led to them perspicuous. Both his project and ours focus on how mathematicians think when they try to prove a statement. However, Gowers has not described in detail what structured motivated proofs looks like yet. Therefore, at this time, it is unclear how similar his representational tools and results are to ours. Moreover, unlike us, he frames his project as a step to improve AI tools for mathematics (in particular, he seems to have in mind LLMs).\footnote{
+    We summarize Gowers' reasoning as follows: 
+    % \begin{enumerate}[label = (P\arabic*)]
+    \begin{enumerate}[label = (P\arabic*), align=left, labelwidth=1.5em, labelsep=0.5em, leftmargin=3em]
+        \item Mathematical papers hide the thought process that led to the proofs presented in those papers. 
+        \item LLMs' mathematical training is mostly based on mathematical papers. 
+        \item[(C)] Therefore, LLMs are not in a good position to learn the art of discovering proofs.
+    \end{enumerate}
+    For Gowers' full explanation, see \S \textit{Why might yet another database of theorems and proofs be useful?} in \parencite{Gowers2025Creating-a-database-of-motivated-proofsaa}. 
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NARRATIVE SURPRISINGNESS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Narrative surprisingness}
+\label{S.narrative.surprisingness}
+We start exploring \textit{narrative surprisingness}. As a first approximation, we imagine a (competent, attentive) agent reading a book or article or attending a lecture from the beginning to the end without skipping or missing any intermediate bit of content. We refer to such a written or oral presentation as \textit{text} and its parts as \textit{locations}. The set of locations is a finite discrete linear order, which we always tacitly assume to be indexed by a suitable initial segment of $\mathbb{N}$. We ask:
+\begin{enumerate}[label = (\textbf{NS-}$k$), ref = (NS-\textit{k}), leftmargin = *]
+    \item \label{narrative.surprisingness.question} Given the resources used by the text up to and including location $\ell$, is the proof at location $\ell+k$ surprising?\footnote{
+        We take $\ell$ and $k$ to be natural numbers and we always assume that all the minutiae have been handled properly: 
+        \begin{enumerate*}[label = (\roman*)]
+            \item $k$ is greater than 0,
+            \item $\ell + k$ is an index of a location of the text under consideration and
+            \item that location contains exactly one proof.
+        \end{enumerate*}
+    }
+\end{enumerate}
+In this article, we will consider only the case $k=1$.\footnote{%
+    ~Setting $k=1$ means that we judge surprisingness of the location that is immediately after $\ell$. Although we do not investigate them here, there are cases where one would naturally want to consider $k>1$. For example, a text that list different proofs of the same theorem and one may want to judge whether each proof, independently from the others, is surprising given the exposition up to but not including the beginning of the list of proofs.
+} For this case, we reformulate~\ref{narrative.surprisingness.question} as in the following more discursive way:
+\begin{enumerate}[label = (\textbf{NS-1}), ref = (NS-1), leftmargin = *]
+    \item \label{narrative.surprisingness.question.k1} Given the exposition so far, is the proof that immediately follows surprising?
+\end{enumerate}
+
+We need to disambiguate the question in several ways. To start, we distinguish two interpretations of~\ref{narrative.surprisingness.question}
+\begin{enumerate}[label = (\textbf{Typical-NS-1}), ref = (Typical-NS-1), leftmargin = *]
+    \item \label{narrative.surprisingness.question.typical} Given the exposition so far, how \textit{typical} are the resources in the proof that immediately follows? 
+    
+    (if some resource in the proof is not typical, then the proof is surprising)
+\end{enumerate}
+and
+\begin{enumerate}[label = (\textbf{Likely-NS-1}), ref = (Likely-NS-1), leftmargin = *]
+    \item \label{narrative.surprisingness.question.likely} Given the exposition so far, how \textit{likely} is that the resources in the proof that immediately follows would be used? 
+    
+    (if some resource in the proof is unlikely to be used, then the proof is surprising)
+\end{enumerate}
+
+In \cref{S.euclid.SS.theory.activation.potential}, we will introduce the theory of \textit{activation potential}, which we use to answer both \ref{narrative.surprisingness.question.typical} and \ref{narrative.surprisingness.question.likely}. In \cref{S.euclid.SS.practice.textual.analysis.and.value.picking}, we will apply that theory to analyze Euclid's book 1 of the \textit{Elements} and answer both \ref{narrative.surprisingness.question.typical} and \ref{narrative.surprisingness.question.likely} for the proofs in that book.
+
+
+\section{Theory: activation potential}
+\label{S.euclid.SS.theory.activation.potential} 
+The theory of activation potential formalizes the observation that,
+\begin{enumerate*}[label = (\roman*)]
+    \item for an agent, at a given time, a resource can be more or less easy to access\footnote{
+        The metaphor of ``access'' gives the impression that the resource already exists in the agent's mind, in the resource space, or somewhere. However, this impression is misleading (but we did not find a better word). We use ``access'' in a broad sense to include creation of a resource \textit{ex novo} (if possible) or, anyhow, introduction of a resource that was not previously in the agent's mind or resource space.
+    } and
+    \item the order in which the text (book, article) uses its resources influences such level of access difficulty.
+\end{enumerate*} 
+For each resource, we quantify its activation potential by assigning a real number in $[0,\ 1]$ to that resource.\footnote{
+    For simplicity, from now on, we identify the activation potential of a concept and the number that measures it. 
+} We measure the activation potential of a resource using a probability function and we take probability to indicate disposition\footnote{
+    We take a disposition to be a type of propensity. See \S 3.5 in \cite{Newell1962The-processes-o} for a presentation of so-called propensity interpretations of probability, the family of interpretations to which ours belong.
+    % TO-DO: this may not be the best reference for propensity interpretations of probability. However, it is a reference that is relevant to our context (creativity and problem-solving). For a more general reference, see \parencite{Gillies2000Philosophical-interpretations-of-probabilityaa} Ch. 6. Consider adding a clarification, or citing Gillies, or citing both.
+}: the greater the activation potential of a resource, the greater the agent's disposition to think of it.
+
+We distinguish two types of activation potential, $\Phi_{\text{T}}$ and $\Phi_{\text{L}}$,  to study \ref{narrative.surprisingness.question.typical} and \ref{narrative.surprisingness.question.likely}, respectively. We provide the formula for each in \cref{S.euclid.SS.theory.activation.potential.SSS.activation.potential.the.complete.formula} after having explained how we measure the use of resources in \cref{S.euclid.SS.theory.activation.potential.SSS.use.of.resources} and the components of activation potential in \cref{S.euclid.SS.theory.activation.potential.SSS.types.of.activation.potential}.
+
+
+\subsection{Use of resources}
+\label{S.euclid.SS.theory.activation.potential.SSS.use.of.resources} 
+To provide a formula for the activation potential of a resource at a given location in the text under consideration, we rely on counting how often the text ``used'' that resource and other ones before that location.\footnote{%
+  We do not define ``use'' at a theoretical level (i.e.\ in this subsection) but we will define this notion in \cref{S.euclid.SS.practice.textual.analysis.and.value.picking} at a practical level. The reason for this choice is that we ground our practical definition on specific analyses of the text (ways to break the text down into components, identification of linguistic expressions, and more) and we do not claim that there are no other legitimate operations on the text that allows one to speak of ``use'' of a resource by a text. 
+} We distinguish the following types of ``use'' of a resource $r$:\footnote{%
+    When we use natural language expressions to speak of the use of a resource, we will put the expression between corner brackets, like, for example, \corner{diagonal of a square}. We adopt this solution because ``diagonal of a square'' refers to the specific sequence of words (string) and using no delimiter at all may make it difficult to decide whether we are referring to, for example, the resource \corner{diagonal} rather than \corner{diagonal of a square}.
+}
+\begin{enumerate}
+    \item direct: the text mentions $r$;\footnote{%
+        In \cref{S.euclid.SS.practice.textual.analysis.and.value.picking}, we will specify ``mention'' as appearance of a specific word or sequence of words which refers to $r$.
+    }
+    \item indirect:
+    \begin{enumerate}
+        \item hierarchical: the text directly mentions a resource $r'$ that is of type $r$;\footnote{%
+            An example, as will be clear in \cref{S.euclid.SS.practice.textual.analysis.and.value.picking}, is the indirect mention of \corner{quadrilateral} when the text directly mentions \corner{square} directly. We do not say here how further up one ought or could go. For example, if the text mentions $R''$ and $R''$ is of type $r'$ and $r'$ is of type $r$, we do not say whether this implies that the text uses $r$ indirectly. We will clarify our choice in \cref{S.euclid.SS.practice.textual.analysis.and.value.picking}.
+        }\textsuperscript{,}\footnote{%
+            To say that $x$ is of type $y$ simply means that $y$ is a set and $x \in y$. In RDF (plus OWL 2, which we also use), this expressed by stating the following triples:
+            \begin{enumerate}[leftmargin=1.3cm]
+                \item \texttt{y rdf:type owl:Class};
+                \item \texttt{x rdf:type y}.
+            \end{enumerate}
+        }
+        \item mereological: the text directly mentions a resource $r'$ and $r$ is a conceptual part of $r'$.\footnote{
+            For example, \corner{side} and \corner{triangle} are conceptual parts of \corner{side of a triangle}.
+        }
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Components of activation potential}
+\label{S.euclid.SS.theory.activation.potential.SSS.types.of.activation.potential}
+We isolate two circumstances that influence how easy it is for an agent to think of a resource $r$ at a given time:
+\begin{enumerate*}[label = (\roman*)]
+    \item if, in the relevant history, the agent has often thought of $r$, it is not surprising if they think of $r$ now and
+    \item if the agent is thinking of $r'$ and, in the relevant history, he has often thought of $r'$ together with $r$, it is not surprising for them to be also thinking of $r$.\footnote{
+        In \cref{S.euclid.SS.practice.textual.analysis.and.value.picking}, we will define ``relevant history''.
+    }
+\end{enumerate*}
+
+With the types of use of a resource that we introduced in \cref{S.euclid.SS.theory.activation.potential.SSS.use.of.resources}, we introduce the following components of the activation potential of a resource $r$:
+\begin{enumerate}
+    \item \textit{historical component} of $r$: a count of how often the agent or text used (in the direct, hierarchical, and mereological senses) $r$ in the relevant history;
+    \item \textit{co-occurrence component} of $r$: for every resource $r'$ that is different from $r$ and appears in the relevant history, a count of how often the agent or text used $r$ together with $r'$.\footnote{
+        In \cref{S.euclid.SS.practice.textual.analysis.and.value.picking} we will define ``together''.
+    } 
+\end{enumerate}
+
+We will use $\Phi$ to refer to the activation potential,\footnote{
+    We choose $\Phi$ because in physics it is often used to denote a potential.
+}, $\Phi_{\text{h}}$ for its historical component, and $\Phi_{\text{c}}$ for the co-occurrence component. 
+
+\subsection{Historical component of the activation potential}
+\label{S.euclid.SS.theory.activation.potential.SSS.historical.component.of.the.activation.potential}
+For the historical component, we count how often an agent or text uses a resource in the relevant history. We call the relevant history \textit{context} $C$. We combine $C$ with the three notions of use of resource introduced above and we define three objects:
+\begin{enumerate}
+    \item $D_C$: the multi-set of exactly all resources directly used in $C$;
+    \item $H_C$: the multi-set of exactly all resources hierarchically used in $C$;
+    \item $M_C$: the multi-set of exactly all resources mereologically used in $C$;
+\end{enumerate}
+
+Given a resource $r$, $D_C(r)$ is the number of appearances of $r$ in $D_C$ and similarly with $H_C(r)$ and $M_C(r)$. We define the direct history of $r$ in $C$ as the ratio of $D_C(r)$ over the cardinality of $D_C$, in symbols:
+\[
+\Phi_{\text{dir}}(r, C) =
+\begin{cases}
+  \dfrac{D_C(r)}{|D_C|} & \text{ if } |D_C| \neq 0, \\[8pt]
+  0 & \text{ otherwise.}
+\end{cases}
+\]
+
+Similarly, we define the hierarchical history of $r$ in $C$ as
+\[
+\Phi_{\text{hier}}(r, C) =
+\begin{cases}
+  \dfrac{H_C(r)}{|H_C|} & \text{ if } |H_C| \neq 0, \\[8pt]
+  0 & \text{ otherwise.}
+\end{cases}
+\]
+
+and the mereological history of $r$ in $C$ as
+
+\[
+\Phi_{\text{mer}}(r, C) =
+\begin{cases}
+  \dfrac{M_C(r)}{|M_C|} & \text{ if } |M_C| \neq 0, \\[8pt]
+  0 & \text{ otherwise.}
+\end{cases}
+\]
+Each of these histories is a probability measure. The reason for using probability measures is that the agent's cognitive capacity is limited. Therefore, ceteris paribus, adding more resources to $C$ makes it more difficult for the agent to think of a given resource. 
+
+We define the entire historical component of the activation potential of $r$ as the convex sum of these probability measures:
+\[
+    \Phi_{\text{h}} (r,\ C) = \alpha \cdot \Phi_{\text{dir}}(r,\ C) + \beta \cdot \Phi_{\text{hier}}(r,\ C) + \gamma \cdot \Phi_{\text{mer}}(r,\ C),
+\]
+where $\alpha$, $\beta$, and $\gamma$ are real numbers such that $\alpha + \beta + \gamma = 1$. These numbers determine the importance of each component of $\Phi_{\text{h}}$. For example, one may take the direct use of $r$ as having a bigger impact in determining the activation potential of $r$ than its indirect uses (because, one may reason, direct use is more noticeable than indirect use).\footnote{
+    Of course, one can also assign equal importance to all the three histories by setting $\alpha=\beta=\gamma= \frac{1}{3}$.
+}
+
+\subsection{Co-occurrence component of the activation potential}
+\label{S.euclid.SS.theory.activation.potential.SSS.co-occurrence.component.of.the.activation.potential}
+The psychologist Donald O. Hebb observed what is now commonly stated as ``neurons that fire together wire together''.\footnote{%
+    Hebb never used this exact expression, although it represents his thought faithfully. What he wrote is the following: ``[I]n the intact nervous system, an axon that passes close to the dendrites or body of a second cell would be capable of \textit{helping} to fire it, when the second cell is also exposed to other stimulation [\textit{sic}] at the same point (\dots) When the coincidence does occur, and the active fiber, which is merely close to the soma of another cell, adds to a local excitation in it, I assume that the joint action tends to produce a thickening of the fiber - forming a synaptic knob - or adds to a thickening already present'' (\cite{Hebb1949The-organization-of-behavior.-A-neuropsychological-theoryaa}, p. 65).
+} 
+In our context, this suggests the following rule: the more two resources $r$ and $r'$ are used together, the more thinking of $r'$ disposes the agent to think of $r$. We formalize this rule in two ways. 
+
+\subsubsection{Typical co-occurrence}
+\label{S.theory.activation.potential.SS.co-occurrence.component.of.the.activation.potential.SSS.typical.co-occurrence}
+To define co-occurrence, we introduce the notion of resources being ``used together'' in a context $C$. There are different legitimate options to define ``used together'' in $C$. Concerning ``used'', it can be one of three notions of use of a resource introduced in \cref{S.euclid.SS.theory.activation.potential.SSS.use.of.resources} or a combination of them (like `` used directly or indirectly'') Formally, ``$r$ used in $C$'' (or, more briefly, ``$r \text{ in } C$''), means $r \in X$, where $X \in \{D_C,\ H_C, M_C, D_C \uplus H_C, D_C \uplus M_C, H_C \uplus M_C, D_C \uplus H_C \uplus M_C\}$.
+
+Concerning ``together'', it can be defined in different ways as well. For instance, one may define ``together'' as ``used in the same sentence'' or ``used in the same paragraph'' or ``used in the same proof'' and so on. As an example, if one defines ``used together'' as ``used directly in the same sentence'', then the concepts \corner{triangle} and \corner{angle} are used together in the sentence ``the sum of the internal angles of a triangle is equal to two right angles''. The definition of activation potential does not require one to commit to a specific definition of either ``$r \text{ in } C$'' or ``used together''.\footnote{
+    In \cref{S.euclid}, we will choose a specific definition of ``$r \text{ in } C$'' and ``used together'' for our analysis of Euclid's Book 1.
+}
+
+Moving toward a formal definition of typical co-occurrence, we define $\text{\textit{hebb}}_C$ as the multi-set of exactly all the unordered pairs of resources \textit{used together} in $C$. Given two resources $r$ and $r'$, $\text{\textit{hebb}}_C(r,\ r')$ is the multiplicity of the unordered pair $\{r,\ r'\}$ in $\text{\textit{hebb}}_C$ (where $r\neq r'$). Then, we define  the \textit{degree} of $r$ as
+\[
+    \deg_{C}(r) = \sum_{\substack{r' \text{ in } C, \\ r' \neq r}} \text{\textit{hebb}}_C(r,\ r').
+\]
+The value of $\deg_C(r)$ indicates how many times $r$ has appeared in any pair in $\textit{hebb}_C$. Then, the \textit{typical co-occurrence potential} of $r$ given $C$ is:
+\[
+  \Phi_{\text{T\_c}}(r,\ C) =
+    \begin{cases}
+        \displaystyle 
+        \frac{\deg_C(r)}{\sum_{u} \deg_C(u)}
+        & \text{if } \sum_{u} \deg_C(u) \neq 0, \\[12pt]
+        0
+        & \text{otherwise.}
+    \end{cases}  
+\]
+$\Phi_{\text{T\_c}}(r,\ C)$ measures how often $r$ has appeared together with other resources in $C$. Intuitively, the typical co-occurrence component of the activation potential tells us how strongly the context $C$ has established $r$ as a usual companion of other resources. 
+
+\subsubsection{Likely co-occurrence}
+\label{S.theory.activation.potential.SS.co-occurrence.component.of.the.activation.potential.SSS.likely.co-occurrence}
+Typical co-occurrence measures how often a resource is used together with other resources in the exposition as a whole (the context $C$). Therefore, it is a global notion of associative strength. However, for the purposes of \ref{narrative.surprisingness.question.likely}, we require a \textit{local} notion of associative strength that answers the following question: given what is cognitively salient at location $\ell$, how likely is it that the resource $r$ will be used next?
+
+To address this, we introduce the set $S_\ell$ of resources that are salient at location $\ell$. For example, if at location $\ell$ the text is presenting a proof of a statement $\sigma$, then it would be natural for $S_\ell$ to include the resources used in the statement of $\sigma$, possibly among others. To simplify the notation, we will write $S$ without the subscript $\ell$ when there is no risk of confusion.
+
+With $S$ fixed, we want to measure the conditional tendency of a resource $r$ to appear given that the agent is thinking of the resources in $S$. To do this, we count how often $r$ has been used together with members of $S$ in the relevant context $C$,\footnote{
+    ~There is no requirement that every resource in $S$ appear in some pairs in $\text{\textit{hebb}}_C$. However, this is likely to happen in practice as it is exceptional for a sentence not to contain at least two resources. Parmenides's ``ἔστι γὰρ εἶναι'' (``for it is to be'', fragment 6) may be one such exception.
+} 
+which we call the $S$-\textit{degree} of $r$:
+\[
+    \deg_{C}^{S}(r) = \sum_{\substack{r' \text{ in } S, \\ r' \neq r}} \text{\textit{hebb}}_C(r,\ r').
+\]
+
+We now define the \emph{likely co-occurrence potential} of $r$:
+\[
+  \Phi_{\text{L\_c}}(r,\ C,\ S) =
+    \begin{cases}
+        \displaystyle 
+        \frac{\deg_{C}^{S}(r)}{\sum_{u} \deg_{C}^{S}(u)}
+        & \text{if } \sum_{u} \deg_{C}^{S}(u) \neq 0, \\[12pt]
+        0
+        & \text{otherwise.}
+    \end{cases}  
+\]
+
+
+\subsection{Activation potential: the complete formula}
+\label{S.euclid.SS.theory.activation.potential.SSS.activation.potential.the.complete.formula}
+With the historical and co-occurrence components of the activation potential defined, we can provide the complete formula for both types of activation potential, $\Phi_{T}$ and $\Phi_{L}$. As we said above, we use $\Phi_{T}$ to answer \ref{narrative.surprisingness.question.typical} and $\Phi_{L}$ to answer \ref{narrative.surprisingness.question.likely}.
+We define the \textit{typical activation potential} of a resource $r$ given a context $C$ as
+\[
+    \Phi_{\text{T}}(r,\ C) = \delta \cdot \Phi_{\text{h}}(r,\ C) + (1 - \delta) \cdot \Phi_{\text{T\_c}}(r,\ C),
+\]
+where $\delta$ is a real number in $[0,\ 1]$ that determines the importance of the historical and typical co-occurrence components in determining $\Phi_{\text{T}}$.
+
+Similarly, we define the \textit{likely activation potential} of a resource $r$ given a context $C$ and a set of salient resources $S$ as
+\[
+    \Phi_{\text{L}}(r,\ C,\ S) = \epsilon \cdot \Phi_{\text{h}}(r,\ C) + (1 - \epsilon) \cdot \Phi_{\text{L\_c}}(r,\ C,\ S),
+\]
+where $\epsilon$ is a real number in $[0,\ 1]$ that determines the importance of the historical and likely co-occurrence components in determining $\Phi_{\text{L}}$.
+
+\section{Euclid}
+\label{S.euclid}
+We use Euclid's Book 1 of the \textit{Elements} for our exploration.\footnote{
+    \label{footnote.euclid.text}
+    We take Book 1 to be the Greek text as it appears in Heiberg's 1883 edition: (\cite{eucl}). We do this because Heiberg's edition is still the standard one and attempting a fully informed philological reconstruction of Book 1 would take us too far from the present issue. We limit ourselves to notice the following. First, Heiberg's 1883 text expunges some items that other editions presented as Euclid's, like common notions 4, 5, and 6. Second, Heiberg's text contains the list of definitions traditionally attached to Book 1, even if there are plausible reasons to think that they are interpolations (see \cite{russo1998}). Third, we ignore Heiberg's later suggestions that parts of the text accepted in his 1883 edition, like part of the proof of I.4, are spurious (see \cite{Heiberg1903Paralipomena-zu-Euklidaa} and, specifically page 56 about I.4). 
+}\textsuperscript{,}\footnote{
+    We ignore the diagrams that appear in Heiberg's edition, although they are clearly useful to the reader of Euclid's book. We do this simply for simplicity while acknowledging that the issue of diagrammatic reasoning, its representation in a formal system, and its interplay with our analysis of creativity are relevant, deep questions.
+} 
+As a first approximation, we imagine a (competent, attentive) agent reading Book 1 from the beginning to the end without skipping any intermediate bit of content. Such a reader will first encounter the definitions and, then, in order, postulates, common notions, and the series of the so-called propositions and proofs.\footnote{
+    It is traditional to call the components of Euclid's text after the common notions ``propositions'' and ``proof''. However, more precisely, the so-called propositions are sometimes theorems (for which the name ``proposition'' fits) and sometimes construction requirements (i.e.\ orders, which are not propositions or statements expressing a proposition). An example of the second type is I.1: ``On a given finite straight line [i.e.\ segment], to construct a triangle''. From now on, we will simply speak of propositions in the wider sense, i.e.\ including also construction requirements.
+
+    Concerning the appropriateness of the word ``proof'', the situation is more complex. Let us call any block of text immediately following a construction requirement \textit{of type 1} and any block immediately following a theorem \textit{of type 2}. The name ``proof'' is certainly appropriate for blocks of type 2. However, to judge whether that name is also appropriate for blocks of type 1 requires a more careful consideration. 
+    
+    The so-called proofs of Book 1 have two goals: \textit{convincing} (warranting acceptance of a statement) and \textit{building} (step-wise construction of a diagrammatic object or combination of such objects). Neither of these goals distinguishes blocks of type 1 from blocks of type 2. Blocks of both types contain parts whose goal is to convince, This is clear for blocks of type 2 but blocks of type 1 also have such parts because they need to show that the constructed object satisfies the required properties. Concerning building, all blocks of type 1 have parts whose goal is building an object. However, also some blocks of type 2 may also share the same goal, because constructions may be part of the argument that shows that a statement holds (I.5 is one example, among many). Moreover, both building and convincing are essential as Euclid employs them in the sense that removing either building parts or convincing parts from a block that contains either of them will make the remaining passages of that block unable to complete either the construction or the demonstration.
+
+    However, blocks of type 1 always end with the words ``what was necessary to build'' (``ὅπερ ἔδει ποιῆσαι'') and blocks of type always end with the words ``what was necessary to prove'' (``ὅπερ ἔδει δείξαι'') (the now classic QED). This means that, while both building and convincing are essential in the sense above, for Euclid,
+    \begin{enumerate*}[label = (\roman*)]
+        \item in blocks of type 1, building is more \textit{central} than convincing and,
+        \item in blocks of type 2, convincing is more \textit{central} than building.
+    \end{enumerate*}
+    
+    We do not attempt to develop a theory of \textit{centrality} but we note that, in the modern sense, only blocks of type 2 are proofs. However, sticking with tradition, in this section we use ``proof'' to refer both to blocks of type 1 and type 2.
+    
+    As a final observation on this topic, we notice that what we said above does not imply that building and constructing are (or can be) the only goals of blocks of either type. Similarly, what we said does not imply that, if other goals are present (for example, epistemological ones like explaining or non-epistemological ones like elegance), then these other goals are less central than either building or convincing.
+}
+Such an order of presentation determines a specific order in which resources are added to or stimulated within the resource space. Such an order of addition or stimulation influences what one finds surprising. For example, a proof that uses a concept that has not already been introduced is \textit{prima facie} more surprising than a proof that uses only concepts that have already been introduced before the proof. Moreover, one can consider even more cognitive factors (such as forgetting) to devise more complex situations. Here, we use the two measures of activation potential introduced in \cref{S.euclid.SS.theory.activation.potential}, $\Phi_{T}$ and $\Phi_{L}$, to analyze the surprisingness of the proofs in Euclid's Book 1 and we leave more complex situations for another investigation. Toward the end of this section, we also introduce a refinement of the activation potential that includes the notion of indeterminacy.
+
+
+\subsection{Strategy overview}
+\label{S.euclid.SS.typical.activation.potential.in.euclids.book.1.SSS.algorithm.overview}
+We have two main steps:
+\begin{enumerate*}[label = (\roman*)]
+    \item ontology construction and
+    \item computation of the activation potential. 
+\end{enumerate*}
+In this subsection, we describe how we construct an ontology for Euclid's Book 1. We start with Euclid's Greek text\footnote{
+    ~For the details of what this means, see \cref{footnote.euclid.text}.
+} 
+and we apply the following extraction and refinement strategy:
+\begin{enumerate}
+    \item Extraction: isolate syntactical expressions (like nouns, verbs, and compounds of adjective and nouns).
+    \item Extraction: reduce these expressions to their base form (e.g., masculine nominative singular for nouns).
+    \item Extraction: as a first approximation, take each base form to represent a resource in our ontology (different base forms becomes different resources).
+    \item Refinement: determine when two so-far different resources are actually the same resource and merge them.\footnote{
+        ~E.g. "conduct a parallel line" and "describe a parallel line".
+    }
+        \item Refinement: determine when the same word is used to refer to different resources and split them.\footnote{
+            ~For Book 1, the only example is distinguishing {\greekfont ἐφαρμόζω} (active voice) and {\greekfont ἐφαρμόζεσθαι} (passive voice). When we reduce them to their base form, they both become {\greekfont ἐφαρμόζω}. However, the active voice is used in Common Notion 7 with the meaning of ``exact superposing'' and the passive voice is used in the proof of I.4 with the meaning of ``superposing'' without implying exact superposition.
+        }
+    \item Refinement: type each resource (e.g., object, property, relation, etc.) and add other ontological information (like hierarchy, conceptual components, opposite resources, etc.).
+\end{enumerate}
+
+As an example, let us consider the first proposition of Book 1: 
+\begin{enumerate}
+    \item[I.1] \label{I.1} {\greekfont Ἐπὶ τῆς δοθείσης εὐθείας πεπερασμένης τρίγωνον ἰσόπλευρον συστῆσαι}\footnote{
+        ~``On the given finite straight line, construct an equilateral triangle''.
+    } 
+\end{enumerate}
+First, we extract the following resources (using English words):
+\bigskip
+
+\begin{tabularx}{\linewidth}{l|l|l|l|X}
+\textbf{concepts} & \textbf{hierarchy} & \textbf{conceptual components} & \textbf{type} & \textbf{quality} \\[2pt]
+\hline
+                     &                  &                           &           &                                                                                           \\[-4pt]
+finite straight line & straight line    &  finite; straight; line   & object    & diagrammatic                                                                              \\[2pt]
+equilateral triangle & triangle         &  equilateral; triangle    & object    & diagrammatic                                                                              \\[2pt]
+construct on         & construct        &                           & operation & produces new diagrammatic object; modifies diagram; has domain of diagrammatic objects    \\
+\end{tabularx}
+
+\medskip
+
+We add the elements listed under ``concepts'' to the ontology. Then we add the elements under ``conceptual components'' as additional resources, with their respective hierarchies, types, and qualities. We proceed to do the same for each textual portion of Book 1 (definitions, postulates, common notions, propositions, and proofs). \Cref{figure:finite-straight-line-concepts} shows the characterization of \corner{finite straight line} after adding concepts from these other parts of Book 1.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{images/finite_straight_line_concepts.png}
+    \caption{Finite straight line: its quality and links to and from other concepts.}
+    \label{figure:finite-straight-line-concepts}
+\end{figure}
+
+After adding these conceptual elements, we add specific instances of relations and operations together with their types. For example, focusing again on \ref{I.1}, we extract the operation instance 
+\begin{center}
+    \corner{ construct\_on(equilateral\_triangle, finite\_straight\_line ) $\to$ equilateral\_triangle},
+\end{center}
+which we type as 
+\begin{center}
+    \corner{construct\_on( diagrammatic\_object, diagrammatic\_object ) $\to$ diagrammatic\_object}.
+\end{center}
+
+\Cref{figure:operation-links} shows, in part, the characteriation of this operation instance in the ontology.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{images/operation_links.png}
+    \caption{Links for \corner{construct\_on(equilateral\_triangle, finite\_straight\_line ) $\to$ equilateral\_triangle}.}
+    \label{figure:operation-links}
+\end{figure}
+
+
+Part of what makes a graph-theoretic representation of a domain powerful is that we can navigate from one elements to many other following links, which, in this case, uncover more conceptual relations. For example, starting from the same operation instance as above, we can navigate to the concept \corner{construct on} and, from the there, uncover the qualities of \corner{construct on} and its links to other resources, as \cref{figure:operation-concepts} shows.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{images/operation_concepts.png}
+    \caption{From \corner{construct\_on(equilateral\_triangle, finite\_straight\_line ) $\to$ equilateral\_triangle} to concepts.}
+    \label{figure:operation-concepts}
+\end{figure}
+
+Finally, we represent textual portions of Book 1 as specific resources in the ontology, with their own types and links to other resources. For example, we represent the proof of I.1 as a resource of type \corner{proof} and we link it to all the resources that appear in it (like \corner{equilateral triangle}, \corner{construct on}, and many others).
+
+Each structure node-link-node in the ontology is what we call a triple. The complete representation of Book 1 contains 9,782 triples.
+
+
+\subsection{Typical activation potential in Euclid's Book 1}
+\label{S.euclid.SS.typical.activation.potential.in.euclids.book.1}
+In this section, we first summarize how we computed the typical activation potential of the resources used in the proofs of Euclid's Book 1. Then, we present the results of our analyses.
+
+
+
+\subsection{Likely activation potential in Euclid's Book 1}
+\label{S.euclid.SS.likely.activation.potential.in.euclids.book.1}
+
+
+
+\subsection{Note on a possible refinement: indeterminacy}
+\label{S.euclid.SS.note.on.a.possible.refinement.indeterminacy}
+% TO-DO: indeterminacy as balancing activation potential. A resource at location $\ell$ may be have low activation potential but the circumstances may be such that the its use is determined to a high degree because there are no other options that are prima facie plausible. Find an example.
+
+
+\subsection{Practice: textual analysis and value picking}
+\label{S.euclid.SS.practice.textual.analysis.and.value.picking}
+
+
+
+\subsection{Results}
+\label{S.euclid.SS.results}
+
+
+
+\subsection{Refinement: indeterminacy}
+\label{S.euclid.SS.indeterminacy}
+
+
+
+
+% We imagine a (competent, attentive) reader that reads the book from the beginning to the end without skipping intermediate bits of content.
+
+% methodology: linguistic extraction, typing, dedup, NEIGHBORING (symmetric?), connections, component (non-reflexive), opposite (not possible to be two opposite things at once, e.g. part and whole in the euclidean sense)
+% bourbaki p. 201: concepts hidden from the proof
+% different meaning of cut in proposition 1 and in propositions like "cut figure into two"
+% Elements is well suited for our investigation: no forecasting, no prose outside mathematical blocks
+% https://plato.stanford.edu/entries/settheory-early/
+
+\section{Pappus}
+% local
+% statement
+% subject
+
+% \section{Newton}
+% local
+% subject
+
+
+\section{Conclusion}
+% global?
+% Memento: https://arxiv.org/pdf/2508.16153 (heuristics not as static list but dynamic-based reasoning)
+
+
+\appendix
+\section{Appendix: Typical narrative surprisingness of proof in Euclid's Book 1}
+\label{S.appendix.typical.narrative.surprisingness.of.proof.in.euclids.book.1}
+% We describe in detail how we computed the typical narrative surprisingness of the proofs in Euclid's Book 1. 
+
+
+
+% First, we define five numerical parameters:
+% \begin{enumerate}
+%     \item DEFAULT_HISTORY_SELECTION: a real number in $[0,\ 1]$ that determines how much of the history preceding a proof is taken into account to compute the historical component of the activation potential of resources used in that proof;
+%     \item DEFAULT_COOCCURRENCE_SELECTION
+%     \item DEFAULT_HISTORY_WEIGHTS
+% \end{enumerate}
+
+
+\printbibliography
+
+\end{document}
