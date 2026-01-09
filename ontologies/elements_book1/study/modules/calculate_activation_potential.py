@@ -233,7 +233,6 @@ def hebb(
         combined_hebb_df["activation_potential"] = 0.0
     else:
         combined_hebb_df["activation_potential"] = combined_hebb_df["links"] / total_links
-    combined_hebb_df = combined_hebb_df.drop(columns=["links"])
     combined_hebb_df = combined_hebb_df.sort_values(by="activation_potential", ascending=False).reset_index(drop=True)
     return combined_hebb_df
 
