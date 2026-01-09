@@ -830,6 +830,44 @@ def hebb_template_propositions_proofs(iris: str) -> str:
     )
 
 
+def hebb_template_propositions_proofs_types(iris: str) -> str:
+    """Return a query counting type-based concept pairs for the supplied proposition/proof IRIs."""
+    return _wrap(
+        f"""
+        SELECT ?o1 ?o2 (count (*) as ?links) WHERE {{
+            values ?s {{ {iris} }}
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_relation_type> ?o1 . }}
+                UNION
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_relation_type>
+                        / <https://www.foom.com/core#contains_concept> ?o1 . }}
+                UNION
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_operation_type> ?o1 . }}
+                UNION
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_operation_type>
+                        / <https://www.foom.com/core#contains_concept> ?o1 . }}
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_relation_type> ?o2 . }}
+                UNION
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_relation_type>
+                        / <https://www.foom.com/core#contains_concept> ?o2 . }}
+                UNION
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_operation_type> ?o2 . }}
+                UNION
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_operation_type>
+                        / <https://www.foom.com/core#contains_concept> ?o2 . }}
+                FILTER(?o1 != ?o2)
+        }} group by ?o1 ?o2 order by desc(?links)
+        """
+    )
+
+
 ##########
 def find_proposition_types() -> str:
     return _wrap(

@@ -197,14 +197,21 @@ def hebb(
     proposition_number: int = 0,
     *,
     runner: Optional[QueryRunner] = None,
+    type_selection: bool = False,
 ) -> pd.DataFrame:
-    """Return Hebbian activation potentials with per-query caching."""
+    """Return Hebbian activation potentials with per-query caching.
+
+    When type_selection is True, proposition/proof co-occurrence uses relation/operation types.
+    """
 
     runner = runner or QueryRunner(kg)
     queries = list(HEBB_QUERIES)
     if proposition_number >= 2:
         iris = base_rdf_utils.create_iris_for_values(proposition_number)
-        queries.append(base_queries.hebb_template_propositions_proofs(iris))
+        if type_selection:
+            queries.append(base_queries.hebb_template_propositions_proofs_types(iris))
+        else:
+            queries.append(base_queries.hebb_template_propositions_proofs(iris))
 
     frames = []
     for query in queries:
