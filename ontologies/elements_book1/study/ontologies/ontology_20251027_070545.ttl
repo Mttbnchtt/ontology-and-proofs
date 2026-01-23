@@ -3773,8 +3773,7 @@ ns1:concept__rectilinear_angle rdf:type owl:NamedIndividual ,
                                                             ns1:concept__trapezoid_quadrilateral_figure ;
                                ns1:is_a_diagrammatic_object "true"^^xsd:boolean ;
                                rdfs:label "Concept: Angle" ,
-                                          "Concept: Rectilinear angle" ,
-                                          "Concept: Rectilinear_angle" ;
+                                          "Concept: Rectilinear angle" ;
                                skos:prefLabel "Angle" ,
                                               "Rectilinear angle" .
 
@@ -6850,7 +6849,8 @@ ns1:postulate_3 rdf:type owl:NamedIndividual ,
                 ns1:contains_concept ns1:concept__center ,
                                      ns1:concept__circle ,
                                      ns1:concept__draw ,
-                                     ns1:concept__interval ;
+                                     ns1:concept__interval ,
+                                     ns1:concept__is_center_of ;
                 ns1:is_in ns1:document__elements_book_1 ;
                 ns1:refers_to ns1:operation__draw_center__interval___circle ;
                 rdfs:label "Postulate 3" ;
