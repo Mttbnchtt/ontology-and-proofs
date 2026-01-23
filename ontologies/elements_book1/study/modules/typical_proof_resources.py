@@ -18,6 +18,7 @@ def resources_in_proof(
     """Return direct-usage resources in proof N; type_selection toggles proof queries.
 
     excluded_iris may contain raw IRIs with or without angle brackets; values are normalized internally.
+    Filtering is skipped if expected columns are missing from query results.
     """
     proof_iri = iri_for_proof(proof_n)
     if type_selection:

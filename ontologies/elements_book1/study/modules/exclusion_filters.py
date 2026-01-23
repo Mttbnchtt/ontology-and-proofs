@@ -30,7 +30,8 @@ def filter_excluded_rows(
     """Drop rows where any specified column matches an excluded IRI.
 
     Assumes SPARQL bindings for the specified columns are IRIs; literals are stringified
-    and only excluded if they exactly match an excluded IRI.
+    and only excluded if they exactly match an excluded IRI. Filtering is skipped when
+    required columns are missing.
     """
     if df.empty or not excluded:
         return df

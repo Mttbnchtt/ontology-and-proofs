@@ -88,6 +88,7 @@ def build_context_for_proof(
     """Return (context_resources, family_dfs, hebb_df).
 
     excluded_iris may contain raw IRIs with or without angle brackets; values are normalized internally.
+    Filtering is skipped if expected columns are missing from query results.
     """
     values = _values_clause(_iris_for_context(proof_n))
 
