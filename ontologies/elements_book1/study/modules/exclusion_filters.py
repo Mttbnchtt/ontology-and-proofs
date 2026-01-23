@@ -27,7 +27,11 @@ def filter_excluded_rows(
     *,
     columns: Sequence[str],
 ) -> pd.DataFrame:
-    """Drop rows where any specified column matches an excluded IRI."""
+    """Drop rows where any specified column matches an excluded IRI.
+
+    Assumes SPARQL bindings for the specified columns are IRIs; literals are stringified
+    and only excluded if they exactly match an excluded IRI.
+    """
     if df.empty or not excluded:
         return df
     excluded_normalized = normalize_excluded_iris(excluded)
