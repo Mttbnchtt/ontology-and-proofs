@@ -8,6 +8,7 @@ import pandas as pd
 
 from . import queries
 from .query_runner import QueryRunner
+from .exclusion_filters import filter_excluded_rows
 from .typical_helpers import iri_for_proof, iri_for_proposition
 
 def _iris_for_context(proof_n: int) -> list[str]:
@@ -23,10 +24,16 @@ def _values_clause(values: Iterable[str]) -> str | None:
     return " ".join(tokens)
 
 
-def _fetch_sum_links(runner: QueryRunner, queries_to_run: Iterable[str]) -> pd.DataFrame:
+def _fetch_sum_links(
+    runner: QueryRunner,
+    queries_to_run: Iterable[str],
+    *,
+    excluded_iris: set[str] | None,
+) -> pd.DataFrame:
     frames = []
     for query in queries_to_run:
         df = runner.fetch(query)
+        df = filter_excluded_rows(df, excluded_iris, columns=("o",))
         if df.empty or "o" not in df.columns:
             continue
         if "links" in df.columns:
@@ -44,10 +51,16 @@ def _fetch_sum_links(runner: QueryRunner, queries_to_run: Iterable[str]) -> pd.D
     )
 
 
-def _fetch_hebb_links(runner: QueryRunner, queries_to_run: Iterable[str]) -> pd.DataFrame:
+def _fetch_hebb_links(
+    runner: QueryRunner,
+    queries_to_run: Iterable[str],
+    *,
+    excluded_iris: set[str] | None,
+) -> pd.DataFrame:
     frames = []
     for query in queries_to_run:
         df = runner.fetch(query)
+        df = filter_excluded_rows(df, excluded_iris, columns=("o1", "o2"))
         if df.empty or "o1" not in df.columns or "o2" not in df.columns:
             continue
         if "links" in df.columns:
@@ -70,8 +83,12 @@ def build_context_for_proof(
     *,
     runner: QueryRunner,
     type_selection: bool,
+    excluded_iris: set[str] | None = None,
 ) -> tuple[set[str], dict[str, pd.DataFrame], pd.DataFrame]:
-    """Return (context_resources, family_dfs, hebb_df); type_selection only affects hebb queries."""
+    """Return (context_resources, family_dfs, hebb_df).
+
+    excluded_iris may contain raw IRIs with or without angle brackets; values are normalized internally.
+    """
     values = _values_clause(_iris_for_context(proof_n))
 
     direct_queries = [
@@ -81,7 +98,7 @@ def build_context_for_proof(
     ]
     if values:
         direct_queries.append(queries.direct_template_propositions_proofs(values))
-    direct_df = _fetch_sum_links(runner, direct_queries)
+    direct_df = _fetch_sum_links(runner, direct_queries, excluded_iris=excluded_iris)
 
     hierarchical_queries = [
         queries.hierarchical_definitions(),
@@ -90,7 +107,9 @@ def build_context_for_proof(
     ]
     if values:
         hierarchical_queries.append(queries.hierarchical_template_propositions_proofs(values))
-    hierarchical_df = _fetch_sum_links(runner, hierarchical_queries)
+    hierarchical_df = _fetch_sum_links(
+        runner, hierarchical_queries, excluded_iris=excluded_iris
+    )
 
     mereological_queries = [
         queries.mereological_definitions(),
@@ -99,7 +118,9 @@ def build_context_for_proof(
     ]
     if values:
         mereological_queries.append(queries.mereological_template_propositions_proofs(values))
-    mereological_df = _fetch_sum_links(runner, mereological_queries)
+    mereological_df = _fetch_sum_links(
+        runner, mereological_queries, excluded_iris=excluded_iris
+    )
 
     hebb_queries = [
         queries.hebb_definitions(),
@@ -111,7 +132,7 @@ def build_context_for_proof(
             hebb_queries.append(queries.hebb_template_propositions_proofs_types(values))
         else:
             hebb_queries.append(queries.hebb_template_propositions_proofs(values))
-    hebb_df = _fetch_hebb_links(runner, hebb_queries)
+    hebb_df = _fetch_hebb_links(runner, hebb_queries, excluded_iris=excluded_iris)
 
     context_resources: set[str] = set()
     for df in (direct_df, hierarchical_df, mereological_df):
