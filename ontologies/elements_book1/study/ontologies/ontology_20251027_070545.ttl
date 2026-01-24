@@ -623,7 +623,6 @@ ns1:concept__abstract_object rdf:type owl:NamedIndividual ,
                              ns1:is_super_concept_of ns1:concept__absurd ,
                                                      ns1:concept__disjunction ,
                                                      ns1:concept__four ,
-                                                     ns1:concept__impossible ,
                                                      ns1:concept__magnitude ,
                                                      ns1:concept__negation ,
                                                      ns1:concept__one ,
@@ -638,11 +637,19 @@ ns1:concept__abstract_object rdf:type owl:NamedIndividual ,
 ns1:concept__absurd rdf:type owl:NamedIndividual ,
                              ns1:concept ;
                     ns1:has_concept_type ns1:concept_type__object ;
-                    ns1:is_concept_in ns1:proof_6 ;
+                    ns1:is_concept_in ns1:proof_14 ,
+                                      ns1:proof_26 ,
+                                      ns1:proof_27 ,
+                                      ns1:proof_39 ,
+                                      ns1:proof_40 ,
+                                      ns1:proof_6 ,
+                                      ns1:proof_7 ;
                     ns1:is_sub_concept_of ns1:concept__abstract_object ;
                     ns1:is_an_abstract_object "true"^^xsd:boolean ;
-                    rdfs:label "Concept: Absurd" ;
-                    skos:prefLabel "Absurd" .
+                    rdfs:label "Concept: Absurd" ,
+                               "Concept: Impossible" ;
+                    skos:prefLabel "Absurd" ,
+                                   "Impossible" .
 
 
 ###  https://www.foom.com/core#concept__acute_angle
@@ -676,8 +683,8 @@ ns1:concept__and rdf:type owl:NamedIndividual ,
                  ns1:is_concept_in ns1:common_notion_1 ,
                                    ns1:common_notion_2 ,
                                    ns1:common_notion_3 ;
-                 rdfs:label "Concept: and" ;
-                 skos:prefLabel "and" .
+                 rdfs:label "Concept: And" ;
+                 skos:prefLabel "And" .
 
 
 ###  https://www.foom.com/core#concept__angle_at_base
@@ -1073,7 +1080,6 @@ ns1:concept__center rdf:type owl:NamedIndividual ,
                     ns1:has_concept_type ns1:concept_type__object ;
                     ns1:has_definition ns1:definition__16 ;
                     ns1:is_concept_in ns1:concept__is_center_of ,
-                                      ns1:operation__draw_center__interval___circle ,
                                       ns1:operation_instance__draw_center__interval___circle ,
                                       ns1:operation_type__draw_center__interval___circle ,
                                       ns1:operation_type__draw_point__interval___circle ,
@@ -1115,7 +1121,6 @@ ns1:concept__circle rdf:type owl:NamedIndividual ,
                     ns1:has_definition ns1:definition__15 ;
                     ns1:is_concept_in ns1:concept__angle_of_semicircle ,
                                       ns1:concept__semicircle ,
-                                      ns1:operation__draw_center__interval___circle ,
                                       ns1:operation_instance__draw_center__interval___circle ,
                                       ns1:operation_type__draw_center__interval___circle ,
                                       ns1:operation_type__draw_point__interval___circle ,
@@ -1609,8 +1614,7 @@ ns1:concept__distinct rdf:type owl:NamedIndividual ,
 ns1:concept__draw rdf:type owl:NamedIndividual ,
                            ns1:concept ;
                   ns1:has_concept_type ns1:concept_type__operation ;
-                  ns1:is_concept_in ns1:operation__draw_center__interval___circle ,
-                                    ns1:operation_instance__draw_center__interval___circle ,
+                  ns1:is_concept_in ns1:operation_instance__draw_center__interval___circle ,
                                     ns1:operation_type__draw_center__interval___circle ,
                                     ns1:operation_type__draw_point__interval___circle ,
                                     ns1:postulate_3 ;
@@ -1989,7 +1993,6 @@ ns1:concept__finite_straight_line rdf:type owl:NamedIndividual ,
                                                        ns1:concept__straight_line ;
                                   ns1:has_concept_type ns1:concept_type__object ;
                                   ns1:is_concept_in ns1:concept__infinite_straight_line ,
-                                                    ns1:operation__join_point__point___finite_straight_line ,
                                                     ns1:operation__produce_finite_straight_line___straight_line ,
                                                     ns1:operation_instance__apply_to_finite_straight_line__parallelogram___parallelogram ,
                                                     ns1:operation_instance__carry_over_parallel_to_point__point__finite_straight_line___finite_straight_line ,
@@ -2014,7 +2017,6 @@ ns1:concept__finite_straight_line rdf:type owl:NamedIndividual ,
                                                     ns1:operation_instance__join_finite_straight_line__finite_straight_line___finite_straight_line ,
                                                     ns1:operation_instance__join_on_the_same_part_point__point__point__point____finite_straight_line__finite_straight_line_ ,
                                                     ns1:operation_instance__join_point__point___finite_straight_line ,
-                                                    ns1:operation_instance__place_on_finite_straight_line__finite_straight_line___finite_straight_line ,
                                                     ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_line___finite_straight_line ,
                                                     ns1:operation_instance__produce_finite_straight_line___finite_straight_line ,
                                                     ns1:operation_instance__produce_on_both_parts_finite_straight_line__point___finite_straight_line ,
@@ -2112,10 +2114,17 @@ ns1:concept__fit rdf:type owl:NamedIndividual ,
                  ns1:is_concept_in ns1:operation_instance__fit_finite_straight_line__finite_straight_line___finite_straight_line ,
                                    ns1:operation_instance__fit_point__point___point ,
                                    ns1:operation_instance__fit_triangle__triangle___triangle ,
-                                   ns1:operation_type__fit_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
+                                   ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_line___finite_straight_line ,
+                                   ns1:operation_type__fit_diagrammatic_object__diagrammatic_object___diagrammatic_object ,
+                                   ns1:operation_type__place_on_diagrammatic_object__diagrammatic_object__diagrammatic_object___diagrammatic_object ;
+                 ns1:is_sub_concept_of ns1:concept__place ;
                  ns1:has_domain_of_diagrammatic_objects "true"^^xsd:boolean ;
-                 rdfs:label "Concept: Fit" ;
-                 skos:prefLabel "Fit" .
+                 ns1:modifies_diagram "true"^^xsd:boolean ;
+                 ns1:produces_new_diagrammatic_object "true"^^xsd:boolean ;
+                 rdfs:label "Concept: Fit" ,
+                            "Concept: Place on" ;
+                 skos:prefLabel "Fit" ,
+                                "Place on" .
 
 
 ###  https://www.foom.com/core#concept__four
@@ -2218,22 +2227,6 @@ ns1:concept__if_then rdf:type owl:NamedIndividual ,
                                        ns1:common_notion_7 ;
                      rdfs:label "Concept: if-then" ;
                      skos:prefLabel "if-then" .
-
-
-###  https://www.foom.com/core#concept__impossible
-ns1:concept__impossible rdf:type owl:NamedIndividual ,
-                                 ns1:concept ;
-                        ns1:has_concept_type ns1:concept_type__object ;
-                        ns1:is_concept_in ns1:proof_14 ,
-                                          ns1:proof_26 ,
-                                          ns1:proof_27 ,
-                                          ns1:proof_39 ,
-                                          ns1:proof_40 ,
-                                          ns1:proof_7 ;
-                        ns1:is_sub_concept_of ns1:concept__abstract_object ;
-                        ns1:is_an_abstract_object "true"^^xsd:boolean ;
-                        rdfs:label "Concept: Impossible" ;
-                        skos:prefLabel "Impossible" .
 
 
 ###  https://www.foom.com/core#concept__inclination
@@ -2432,8 +2425,7 @@ ns1:concept__intersection_point_of_straight_lines rdf:type owl:NamedIndividual ,
 ns1:concept__interval rdf:type owl:NamedIndividual ,
                                ns1:concept ;
                       ns1:has_concept_type ns1:concept_type__object ;
-                      ns1:is_concept_in ns1:operation__draw_center__interval___circle ,
-                                        ns1:operation_instance__draw_center__interval___circle ,
+                      ns1:is_concept_in ns1:operation_instance__draw_center__interval___circle ,
                                         ns1:operation_type__draw_center__interval___circle ,
                                         ns1:operation_type__draw_point__interval___circle ,
                                         ns1:postulate_3 ;
@@ -2853,8 +2845,7 @@ ns1:concept__isosceles_triangle rdf:type owl:NamedIndividual ,
 ns1:concept__join rdf:type owl:NamedIndividual ,
                            ns1:concept ;
                   ns1:has_concept_type ns1:concept_type__operation ;
-                  ns1:is_concept_in ns1:operation__join_point__point___finite_straight_line ,
-                                    ns1:operation_instance__join_finite_straight_line__finite_straight_line___finite_straight_line ,
+                  ns1:is_concept_in ns1:operation_instance__join_finite_straight_line__finite_straight_line___finite_straight_line ,
                                     ns1:operation_instance__join_point__point___finite_straight_line ,
                                     ns1:operation_type__join_diagrammatic_object__diagrammatic_object___diagrammatic_object ,
                                     ns1:operation_type__join_point__point___finite_straight_line ,
@@ -3346,25 +3337,9 @@ ns1:concept__perpendicular_straight_lines rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#concept__place
 ns1:concept__place rdf:type owl:NamedIndividual ,
                             ns1:concept ;
-                   ns1:is_super_concept_of ns1:concept__place_on ;
+                   ns1:is_super_concept_of ns1:concept__fit ;
                    rdfs:label "Concept: Place" ;
                    skos:prefLabel "Place" .
-
-
-###  https://www.foom.com/core#concept__place_on
-ns1:concept__place_on rdf:type owl:NamedIndividual ,
-                               ns1:concept ;
-                      ns1:has_concept_type ns1:concept_type__operation ;
-                      ns1:is_concept_in ns1:operation_instance__place_on_finite_straight_line__finite_straight_line___finite_straight_line ,
-                                        ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_line___finite_straight_line ,
-                                        ns1:operation_instance__place_on_point__point___point ,
-                                        ns1:operation_type__place_on_diagrammatic_object__diagrammatic_object__diagrammatic_object___diagrammatic_object ;
-                      ns1:is_sub_concept_of ns1:concept__place ;
-                      ns1:has_domain_of_diagrammatic_objects "true"^^xsd:boolean ;
-                      ns1:modifies_diagram "true"^^xsd:boolean ;
-                      ns1:produces_new_diagrammatic_object "true"^^xsd:boolean ;
-                      rdfs:label "Concept: Place on" ;
-                      skos:prefLabel "Place on" .
 
 
 ###  https://www.foom.com/core#concept__plane
@@ -3418,7 +3393,6 @@ ns1:concept__point rdf:type owl:NamedIndividual ,
                    ns1:has_definition ns1:definition__1 ;
                    ns1:is_concept_in ns1:concept__construct_to_given_point ,
                                      ns1:concept__meet_at_point ,
-                                     ns1:operation__join_point__point___finite_straight_line ,
                                      ns1:operation_instance__carry_over_parallel_to_point__point__finite_straight_line___finite_straight_line ,
                                      ns1:operation_instance__carry_over_to_finite_straight_line__point___finite_straight_line ,
                                      ns1:operation_instance__choose_at_random_point__finite_straight_line___point ,
@@ -3437,7 +3411,6 @@ ns1:concept__point rdf:type owl:NamedIndividual ,
                                      ns1:operation_instance__join_on_the_same_part_point__point__point__point____finite_straight_line__finite_straight_line_ ,
                                      ns1:operation_instance__join_point__point___finite_straight_line ,
                                      ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_line___finite_straight_line ,
-                                     ns1:operation_instance__place_on_point__point___point ,
                                      ns1:operation_instance__produce_on_both_parts_finite_straight_line__point___finite_straight_line ,
                                      ns1:operation_instance__produce_to_finite_straight_line__point___finite_straight_line ,
                                      ns1:operation_instance__produce_to_side_of_triangle__point___finite_straight_line ,
@@ -4658,7 +4631,6 @@ ns1:concept_type__object rdf:type owl:NamedIndividual ,
                                                 ns1:concept__figure ,
                                                 ns1:concept__finite_straight_line ,
                                                 ns1:concept__four ,
-                                                ns1:concept__impossible ,
                                                 ns1:concept__infinite_straight_line ,
                                                 ns1:concept__interior_angle ,
                                                 ns1:concept__interior_angle_of_triangle ,
@@ -4732,7 +4704,6 @@ ns1:concept_type__operation rdf:type owl:NamedIndividual ,
                                                    ns1:concept__join ,
                                                    ns1:concept__join_on_the_same_part ,
                                                    ns1:concept__length_of ,
-                                                   ns1:concept__place_on ,
                                                    ns1:concept__produce ,
                                                    ns1:concept__produce_on_both_parts ,
                                                    ns1:concept__produce_to ,
@@ -5312,35 +5283,6 @@ ns1:moral__subtraction_of_lengths rdf:type owl:NamedIndividual ,
                                   skos:prefLabel "Subtraction of lengths" .
 
 
-###  https://www.foom.com/core#operation__draw_center__interval___circle
-ns1:operation__draw_center__interval___circle rdf:type owl:NamedIndividual ,
-                                                       ns1:operation_instance ;
-                                              ns1:contains_concept ns1:concept__center ,
-                                                                   ns1:concept__circle ,
-                                                                   ns1:concept__draw ,
-                                                                   ns1:concept__interval ;
-                                              ns1:has_domain ns1:set__center__interval ;
-                                              ns1:has_range ns1:set__circle ;
-                                              ns1:is_used_in ns1:postulate_3 ;
-                                              ns1:refers_to ns1:operation_type__draw_point__interval___circle ;
-                                              rdfs:label "Operation instance: draw(center, interval)->circle" ;
-                                              skos:prefLabel "draw(center, interval)->circle" .
-
-
-###  https://www.foom.com/core#operation__join_point__point___finite_straight_line
-ns1:operation__join_point__point___finite_straight_line rdf:type owl:NamedIndividual ,
-                                                                 ns1:operation_instance ;
-                                                        ns1:contains_concept ns1:concept__finite_straight_line ,
-                                                                             ns1:concept__join ,
-                                                                             ns1:concept__point ;
-                                                        ns1:has_domain ns1:set__point_point ;
-                                                        ns1:has_range ns1:set__finite_straight_line ;
-                                                        ns1:is_used_in ns1:postulate_1 ;
-                                                        ns1:refers_to ns1:operation_type__join_point__point___finite_straight_line ;
-                                                        rdfs:label "Operation instance: join(point, point)->finite_straight_line" ;
-                                                        skos:prefLabel "join(point, point)->finite_straight_line" .
-
-
 ###  https://www.foom.com/core#operation__produce_finite_straight_line___straight_line
 ns1:operation__produce_finite_straight_line___straight_line rdf:type owl:NamedIndividual ,
                                                                      ns1:operation_instance ;
@@ -5778,14 +5720,19 @@ ns1:operation_instance__draw_center__interval___circle rdf:type owl:NamedIndivid
                                                                             ns1:concept__circle ,
                                                                             ns1:concept__draw ,
                                                                             ns1:concept__interval ;
+                                                       ns1:has_domain ns1:set__center__interval ;
                                                        ns1:has_operation_type ns1:operation_type__draw_center__interval___circle ;
-                                                       ns1:is_used_in ns1:proof_1 ,
+                                                       ns1:has_range ns1:set__circle ;
+                                                       ns1:is_used_in ns1:postulate_3 ,
+                                                                      ns1:proof_1 ,
                                                                       ns1:proof_12 ,
                                                                       ns1:proof_2 ,
                                                                       ns1:proof_22 ,
                                                                       ns1:proof_3 ;
+                                                       ns1:refers_to ns1:operation_type__draw_point__interval___circle ;
                                                        rdfs:label "Operation instance: Draw(center, interval)->circle" ;
-                                                       skos:prefLabel "Draw(center, interval)->circle" .
+                                                       skos:prefLabel "Draw(center, interval)->circle" ,
+                                                                      "draw(center, interval)->circle" .
 
 
 ###  https://www.foom.com/core#operation_instance__extend_side_of_triangle___finite_straight_line
@@ -5841,11 +5788,14 @@ ns1:operation_instance__fit_finite_straight_line__finite_straight_line___finite_
                                                                                                        ns1:operation_instance ;
                                                                                               ns1:contains_concept ns1:concept__finite_straight_line ,
                                                                                                                    ns1:concept__fit ;
-                                                                                              ns1:has_operation_type ns1:operation_type__fit_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
+                                                                                              ns1:has_operation_type ns1:operation_type__fit_diagrammatic_object__diagrammatic_object___diagrammatic_object ,
+                                                                                                                     ns1:operation_type__place_on_diagrammatic_object__diagrammatic_object__diagrammatic_object___diagrammatic_object ;
                                                                                               ns1:is_used_in ns1:proof_4 ,
                                                                                                              ns1:proof_8 ;
-                                                                                              rdfs:label "Operation instance: Fit(finite_straight_line, finite_straight_line)->finite_straight_line" ;
-                                                                                              skos:prefLabel "Fit(finite_straight_line, finite_straight_line)->finite_straight_line" .
+                                                                                              rdfs:label "Operation instance: Fit(finite_straight_line, finite_straight_line)->finite_straight_line" ,
+                                                                                                         "Operation instance: Place_on(finite_straight_line, finite_straight_line)->finite_straight_line" ;
+                                                                                              skos:prefLabel "Fit(finite_straight_line, finite_straight_line)->finite_straight_line" ,
+                                                                                                             "Place_on(finite_straight_line, finite_straight_line)->finite_straight_line" .
 
 
 ###  https://www.foom.com/core#operation_instance__fit_point__point___point
@@ -5853,10 +5803,14 @@ ns1:operation_instance__fit_point__point___point rdf:type owl:NamedIndividual ,
                                                           ns1:operation_instance ;
                                                  ns1:contains_concept ns1:concept__fit ,
                                                                       ns1:concept__point ;
-                                                 ns1:has_operation_type ns1:operation_type__fit_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
-                                                 ns1:is_used_in ns1:proof_4 ;
-                                                 rdfs:label "Operation instance: Fit(point, point)->point" ;
-                                                 skos:prefLabel "Fit(point, point)->point" .
+                                                 ns1:has_operation_type ns1:operation_type__fit_diagrammatic_object__diagrammatic_object___diagrammatic_object ,
+                                                                        ns1:operation_type__place_on_diagrammatic_object__diagrammatic_object__diagrammatic_object___diagrammatic_object ;
+                                                 ns1:is_used_in ns1:proof_4 ,
+                                                                ns1:proof_8 ;
+                                                 rdfs:label "Operation instance: Fit(point, point)->point" ,
+                                                            "Operation instance: Place_on(point, point)->point" ;
+                                                 skos:prefLabel "Fit(point, point)->point" ,
+                                                                "Place_on(point, point)->point" .
 
 
 ###  https://www.foom.com/core#operation_instance__fit_triangle__triangle___triangle
@@ -5900,8 +5854,11 @@ ns1:operation_instance__join_point__point___finite_straight_line rdf:type owl:Na
                                                                  ns1:contains_concept ns1:concept__finite_straight_line ,
                                                                                       ns1:concept__join ,
                                                                                       ns1:concept__point ;
+                                                                 ns1:has_domain ns1:set__point_point ;
                                                                  ns1:has_operation_type ns1:operation_type__join_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
-                                                                 ns1:is_used_in ns1:proof_1 ,
+                                                                 ns1:has_range ns1:set__finite_straight_line ;
+                                                                 ns1:is_used_in ns1:postulate_1 ,
+                                                                                ns1:proof_1 ,
                                                                                 ns1:proof_11 ,
                                                                                 ns1:proof_12 ,
                                                                                 ns1:proof_16 ,
@@ -5925,19 +5882,11 @@ ns1:operation_instance__join_point__point___finite_straight_line rdf:type owl:Na
                                                                                 ns1:proof_6 ,
                                                                                 ns1:proof_9 ,
                                                                                 ns1:proof_aristotle ;
-                                                                 rdfs:label "Operation instance: Join(point, point)->finite_straight_line" ;
-                                                                 skos:prefLabel "Join(point, point)->finite_straight_line" .
-
-
-###  https://www.foom.com/core#operation_instance__place_on_finite_straight_line__finite_straight_line___finite_straight_line
-ns1:operation_instance__place_on_finite_straight_line__finite_straight_line___finite_straight_line rdf:type owl:NamedIndividual ,
-                                                                                                            ns1:operation_instance ;
-                                                                                                   ns1:contains_concept ns1:concept__finite_straight_line ,
-                                                                                                                        ns1:concept__place_on ;
-                                                                                                   ns1:has_operation_type ns1:operation_type__place_on_diagrammatic_object__diagrammatic_object__diagrammatic_object___diagrammatic_object ;
-                                                                                                   ns1:is_used_in ns1:proof_4 ;
-                                                                                                   rdfs:label "Operation instance: Place_on(finite_straight_line, finite_straight_line)->finite_straight_line" ;
-                                                                                                   skos:prefLabel "Place_on(finite_straight_line, finite_straight_line)->finite_straight_line" .
+                                                                 ns1:refers_to ns1:operation_type__join_point__point___finite_straight_line ;
+                                                                 rdfs:label "Operation instance: Join(point, point)->finite_straight_line" ,
+                                                                            "Operation instance: join(point, point)->finite_straight_line" ;
+                                                                 skos:prefLabel "Join(point, point)->finite_straight_line" ,
+                                                                                "join(point, point)->finite_straight_line" .
 
 
 ###  https://www.foom.com/core#operation_instance__place_on_finite_straight_line__point__finite_straight_line___finite_staight_line
@@ -5952,23 +5901,11 @@ ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_li
 ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_line___finite_straight_line rdf:type owl:NamedIndividual ,
                                                                                                                    ns1:operation_instance ;
                                                                                                           ns1:contains_concept ns1:concept__finite_straight_line ,
-                                                                                                                               ns1:concept__place_on ,
+                                                                                                                               ns1:concept__fit ,
                                                                                                                                ns1:concept__point ;
                                                                                                           ns1:has_operation_type ns1:operation_type__place_on_diagrammatic_object__diagrammatic_object__diagrammatic_object___diagrammatic_object ;
                                                                                                           rdfs:label "Operation instance: Place_on(finite_straight_line, point, finite_straight_line)->finite_straight_line" ;
                                                                                                           skos:prefLabel "Place_on(finite_straight_line, point, finite_straight_line)->finite_straight_line" .
-
-
-###  https://www.foom.com/core#operation_instance__place_on_point__point___point
-ns1:operation_instance__place_on_point__point___point rdf:type owl:NamedIndividual ,
-                                                               ns1:operation_instance ;
-                                                      ns1:contains_concept ns1:concept__place_on ,
-                                                                           ns1:concept__point ;
-                                                      ns1:has_operation_type ns1:operation_type__place_on_diagrammatic_object__diagrammatic_object__diagrammatic_object___diagrammatic_object ;
-                                                      ns1:is_used_in ns1:proof_4 ,
-                                                                     ns1:proof_8 ;
-                                                      rdfs:label "Operation instance: Place_on(point, point)->point" ;
-                                                      skos:prefLabel "Place_on(point, point)->point" .
 
 
 ###  https://www.foom.com/core#operation_instance__produce_finite_straight_line___finite_straight_line
@@ -6594,7 +6531,7 @@ ns1:operation_type__draw_point__interval___circle rdf:type owl:NamedIndividual ,
                                                                        ns1:concept__interval ;
                                                   ns1:has_domain ns1:set__center_interval ;
                                                   ns1:has_range ns1:set__circle ;
-                                                  ns1:is_used_in ns1:operation__draw_center__interval___circle ;
+                                                  ns1:is_used_in ns1:operation_instance__draw_center__interval___circle ;
                                                   rdfs:label "Operation type: draw(point, interval) -> circle" ;
                                                   skos:prefLabel "draw(point, interval) -> circle" .
 
@@ -6663,7 +6600,7 @@ ns1:operation_type__join_point__point___finite_straight_line rdf:type owl:NamedI
                                                                                   ns1:concept__point ;
                                                              ns1:has_domain ns1:set__point__point ;
                                                              ns1:has_range ns1:set__finite_straight_line ;
-                                                             ns1:is_used_in ns1:operation__join_point__point___finite_straight_line ;
+                                                             ns1:is_used_in ns1:operation_instance__join_point__point___finite_straight_line ;
                                                              rdfs:label "Operation type: join(point, point) -> finite_straight_line" ;
                                                              skos:prefLabel "join(point, point) -> finite_straight_line" .
 
@@ -6672,10 +6609,10 @@ ns1:operation_type__join_point__point___finite_straight_line rdf:type owl:NamedI
 ns1:operation_type__place_on_diagrammatic_object__diagrammatic_object__diagrammatic_object___diagrammatic_object rdf:type owl:NamedIndividual ,
                                                                                                                           ns1:operation_type ;
                                                                                                                  ns1:contains_concept ns1:concept__diagrammatic_object ,
-                                                                                                                                      ns1:concept__place_on ;
-                                                                                                                 ns1:is_operation_type_of ns1:operation_instance__place_on_finite_straight_line__finite_straight_line___finite_straight_line ,
-                                                                                                                                          ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_line___finite_straight_line ,
-                                                                                                                                          ns1:operation_instance__place_on_point__point___point ;
+                                                                                                                                      ns1:concept__fit ;
+                                                                                                                 ns1:is_operation_type_of ns1:operation_instance__fit_finite_straight_line__finite_straight_line___finite_straight_line ,
+                                                                                                                                          ns1:operation_instance__fit_point__point___point ,
+                                                                                                                                          ns1:operation_instance__place_on_finite_straight_line__point__finite_straight_line___finite_straight_line ;
                                                                                                                  rdfs:label "Operation type: Place_on(diagrammatic_object, diagrammatic_object, diagrammatic_object)->diagrammatic_object" ;
                                                                                                                  skos:prefLabel "Place_on(diagrammatic_object, diagrammatic_object, diagrammatic_object)->diagrammatic_object" .
 
@@ -6827,7 +6764,8 @@ ns1:postulate_1 rdf:type owl:NamedIndividual ,
                                      ns1:concept__join ,
                                      ns1:concept__point ;
                 ns1:is_in ns1:document__elements_book_1 ;
-                ns1:refers_to ns1:operation__join_point__point___finite_straight_line ;
+                ns1:refers_to ns1:operation_instance__draw_center__interval___circle ,
+                              ns1:operation_instance__join_point__point___finite_straight_line ;
                 rdfs:label "Postulate 1" ;
                 skos:prefLabel "Postulate 1" .
 
@@ -6852,7 +6790,8 @@ ns1:postulate_3 rdf:type owl:NamedIndividual ,
                                      ns1:concept__interval ,
                                      ns1:concept__is_center_of ;
                 ns1:is_in ns1:document__elements_book_1 ;
-                ns1:refers_to ns1:operation__draw_center__interval___circle ;
+                ns1:refers_to ns1:operation_instance__draw_center__interval___circle ,
+                              ns1:relation_instance__is_center_of_point__circle_ ;
                 rdfs:label "Postulate 3" ;
                 skos:prefLabel "Postulate 3" .
 
@@ -6987,7 +6926,7 @@ ns1:proof_13 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#proof_14
 ns1:proof_14 rdf:type owl:NamedIndividual ,
                       ns1:proof ;
-             ns1:contains_concept ns1:concept__impossible ,
+             ns1:contains_concept ns1:concept__absurd ,
                                   ns1:concept__negation ;
              ns1:is_in ns1:document__elements_book_1 ;
              ns1:refers_to ns1:operation_instance__subtract_angle__angle___angle ,
@@ -7234,7 +7173,7 @@ ns1:proof_25 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#proof_26
 ns1:proof_26 rdf:type owl:NamedIndividual ,
                       ns1:proof ;
-             ns1:contains_concept ns1:concept__impossible ,
+             ns1:contains_concept ns1:concept__absurd ,
                                   ns1:concept__one ,
                                   ns1:concept__two ;
              ns1:is_in ns1:document__elements_book_1 ;
@@ -7265,7 +7204,7 @@ ns1:proof_26 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#proof_27
 ns1:proof_27 rdf:type owl:NamedIndividual ,
                       ns1:proof ;
-             ns1:contains_concept ns1:concept__impossible ,
+             ns1:contains_concept ns1:concept__absurd ,
                                   ns1:concept__two ;
              ns1:is_in ns1:document__elements_book_1 ;
              ns1:refers_to ns1:operation_instance__extend_straight_line___straight_line ,
@@ -7532,7 +7471,7 @@ ns1:proof_38 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#proof_39
 ns1:proof_39 rdf:type owl:NamedIndividual ,
                       ns1:proof ;
-             ns1:contains_concept ns1:concept__impossible ;
+             ns1:contains_concept ns1:concept__absurd ;
              ns1:is_in ns1:document__elements_book_1 ;
              ns1:refers_to ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line ,
                            ns1:operation_instance__join_point__point___finite_straight_line ,
@@ -7563,8 +7502,6 @@ ns1:proof_4 rdf:type owl:NamedIndividual ,
             ns1:refers_to ns1:operation_instance__fit_finite_straight_line__finite_straight_line___finite_straight_line ,
                           ns1:operation_instance__fit_point__point___point ,
                           ns1:operation_instance__fit_triangle__triangle___triangle ,
-                          ns1:operation_instance__place_on_finite_straight_line__finite_straight_line___finite_straight_line ,
-                          ns1:operation_instance__place_on_point__point___point ,
                           ns1:relation_instance__corresponding_finite_straight_line__finite_straight_line_ ,
                           ns1:relation_instance__corresponding_interior_angle_of_triangle__interior_angle_of_triangle_ ,
                           ns1:relation_instance__encompassing_finite_straight_line__finite_straight_line__interior_angle_of_triangle_ ,
@@ -7582,7 +7519,7 @@ ns1:proof_4 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#proof_40
 ns1:proof_40 rdf:type owl:NamedIndividual ,
                       ns1:proof ;
-             ns1:contains_concept ns1:concept__impossible ;
+             ns1:contains_concept ns1:concept__absurd ;
              ns1:is_in ns1:document__elements_book_1 ;
              ns1:refers_to ns1:operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line ,
                            ns1:operation_instance__join_point__point___finite_straight_line ,
@@ -7864,7 +7801,7 @@ ns1:proof_6 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#proof_7
 ns1:proof_7 rdf:type owl:NamedIndividual ,
                      ns1:proof ;
-            ns1:contains_concept ns1:concept__impossible ,
+            ns1:contains_concept ns1:concept__absurd ,
                                  ns1:concept__possible ,
                                  ns1:concept__two ;
             ns1:is_in ns1:document__elements_book_1 ;
@@ -7890,8 +7827,8 @@ ns1:proof_8 rdf:type owl:NamedIndividual ,
             ns1:is_in ns1:document__elements_book_1 ;
             ns1:refers_to ns1:operation_instance__construct_to_given_point_finite_straight_line__point__point___finite_straight_line ,
                           ns1:operation_instance__fit_finite_straight_line__finite_straight_line___finite_straight_line ,
+                          ns1:operation_instance__fit_point__point___point ,
                           ns1:operation_instance__fit_triangle__triangle___triangle ,
-                          ns1:operation_instance__place_on_point__point___point ,
                           ns1:relation_instance__corresponding_base_of_triangle__base_of_triangle_ ,
                           ns1:relation_instance__corresponding_side_of_triangle__side_of_triangle_ ,
                           ns1:relation_instance__deviates_finite_straight_line__finite_straight_line_ ,
@@ -12118,7 +12055,7 @@ ns1:relation_type__unequal_object__object_ rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#set__center__interval
 ns1:set__center__interval rdf:type owl:NamedIndividual ,
                                    ns1:set ;
-                          ns1:is_domain_of ns1:operation__draw_center__interval___circle ;
+                          ns1:is_domain_of ns1:operation_instance__draw_center__interval___circle ;
                           ns1:refers_to ns1:concept__center ,
                                         ns1:concept__interval ;
                           rdfs:label "Set: Center, interval" ;
@@ -12136,7 +12073,7 @@ ns1:set__center_interval rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#set__circle
 ns1:set__circle rdf:type owl:NamedIndividual ,
                          ns1:set ;
-                ns1:is_range_of ns1:operation__draw_center__interval___circle ,
+                ns1:is_range_of ns1:operation_instance__draw_center__interval___circle ,
                                 ns1:operation_type__draw_point__interval___circle ;
                 ns1:refers_to ns1:concept__circle ;
                 rdfs:label "Set: Circle" ;
@@ -12148,8 +12085,8 @@ ns1:set__finite_straight_line rdf:type owl:NamedIndividual ,
                                        ns1:set ;
                               ns1:is_domain_of ns1:operation__produce_finite_straight_line___straight_line ,
                                                ns1:operation_type__produce_finite_straight_line___finite_straight_line ;
-                              ns1:is_range_of ns1:operation__join_point__point___finite_straight_line ,
-                                              ns1:operation__produce_finite_straight_line___straight_line ,
+                              ns1:is_range_of ns1:operation__produce_finite_straight_line___straight_line ,
+                                              ns1:operation_instance__join_point__point___finite_straight_line ,
                                               ns1:operation_type__join_point__point___finite_straight_line ,
                                               ns1:operation_type__produce_finite_straight_line___finite_straight_line ;
                               ns1:refers_to ns1:concept__finite_straight_line ;
@@ -12210,7 +12147,7 @@ ns1:set__point__point rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#set__point_point
 ns1:set__point_point rdf:type owl:NamedIndividual ,
                               ns1:set ;
-                     ns1:is_domain_of ns1:operation__join_point__point___finite_straight_line ;
+                     ns1:is_domain_of ns1:operation_instance__join_point__point___finite_straight_line ;
                      ns1:refers_to ns1:concept__point ;
                      rdfs:label "Set: Point,point" ;
                      skos:prefLabel "Point,point" .
