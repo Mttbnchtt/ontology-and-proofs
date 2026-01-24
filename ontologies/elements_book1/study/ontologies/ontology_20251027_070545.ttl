@@ -1902,26 +1902,21 @@ ns1:concept__exterior_angle rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#concept__fall_on
 ns1:concept__fall_on rdf:type owl:NamedIndividual ,
                               ns1:concept ;
-                     ns1:has_concept_type ns1:concept_type__operation ;
+                     ns1:has_concept_type ns1:concept_type__operation ,
+                                          ns1:concept_type__relation ;
                      ns1:is_concept_in ns1:operation_instance__fall_on_straight_line__straight_line_ ,
-                                       ns1:operation_type__fall_on_straight_line__straight_line_ ;
+                                       ns1:operation_type__fall_on_straight_line__straight_line_ ,
+                                       ns1:relation_instance__falls_on_finite_straight_line__finite_straight_line__finite_straight_line_ ,
+                                       ns1:relation_instance__falls_on_straight_line__straight_line_ ,
+                                       ns1:relation_type__falls_on_straight_line__straight_line_ ,
+                                       ns1:relation_type__falls_on_straight_line__straight_line__straight_line_ ;
+                     ns1:is_sub_concept_of ns1:concept__is_located ;
                      ns1:has_domain_of_diagrammatic_objects "true"^^xsd:boolean ;
-                     rdfs:label "Concept: Fall on" ;
-                     skos:prefLabel "Fall on" .
-
-
-###  https://www.foom.com/core#concept__falls_on
-ns1:concept__falls_on rdf:type owl:NamedIndividual ,
-                               ns1:concept ;
-                      ns1:has_concept_type ns1:concept_type__relation ;
-                      ns1:is_concept_in ns1:relation_instance__falls_on_finite_straight_line__finite_straight_line__finite_straight_line_ ,
-                                        ns1:relation_instance__falls_on_straight_line__straight_line_ ,
-                                        ns1:relation_type__falls_on_straight_line__straight_line_ ,
-                                        ns1:relation_type__falls_on_straight_line__straight_line__straight_line_ ;
-                      ns1:is_sub_concept_of ns1:concept__is_located ;
-                      ns1:has_field_of_diagrammatic_objects "true"^^xsd:boolean ;
-                      rdfs:label "Concept: Falls on" ;
-                      skos:prefLabel "Falls on" .
+                     ns1:has_field_of_diagrammatic_objects "true"^^xsd:boolean ;
+                     rdfs:label "Concept: Fall on" ,
+                                "Concept: Falls on" ;
+                     skos:prefLabel "Fall on" ,
+                                    "Falls on" .
 
 
 ###  https://www.foom.com/core#concept__figure
@@ -2620,7 +2615,7 @@ ns1:concept__is_located rdf:type owl:NamedIndividual ,
                                                 ns1:concept__are_not_on_the_same_part ,
                                                 ns1:concept__are_placed_about ,
                                                 ns1:concept__at_base ,
-                                                ns1:concept__falls_on ,
+                                                ns1:concept__fall_on ,
                                                 ns1:concept__inclined_at ,
                                                 ns1:concept__is_angle_of ,
                                                 ns1:concept__is_at_vertex ,
@@ -4739,7 +4734,7 @@ ns1:concept_type__relation rdf:type owl:NamedIndividual ,
                                                   ns1:concept__distinct ,
                                                   ns1:concept__encompassing ,
                                                   ns1:concept__equals ,
-                                                  ns1:concept__falls_on ,
+                                                  ns1:concept__fall_on ,
                                                   ns1:concept__finite ,
                                                   ns1:concept__finite_according_to ,
                                                   ns1:concept__greater ,
@@ -4907,6 +4902,7 @@ ns1:definition__2 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#definition__20
 ns1:definition__20 rdf:type owl:NamedIndividual ,
                             ns1:definition ;
+                   ns1:contains_concept ns1:concept__is_equilateral ;
                    ns1:defines ns1:concept__equilateral_triangle ,
                                ns1:concept__isosceles_triangle ,
                                ns1:concept__scalene_triangle ;
@@ -4929,10 +4925,13 @@ ns1:definition__21 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#definition__22
 ns1:definition__22 rdf:type owl:NamedIndividual ,
                             ns1:definition ;
+                   ns1:contains_concept ns1:concept__is_equilateral ,
+                                        ns1:concept__is_rectangular ;
                    ns1:defines ns1:concept__quadrilateral_igure ,
                                ns1:concept__rectangular ,
                                ns1:concept__rhomboid ,
                                ns1:concept__square ,
+                               ns1:concept__trapezium ,
                                ns1:concept__trapezoid_quadrilateral_figure ;
                    ns1:is_in ns1:document__elements_book_1 ;
                    rdfs:label "Definition: 22" ;
@@ -6815,7 +6814,9 @@ ns1:postulate_4 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#postulate_5
 ns1:postulate_5 rdf:type owl:NamedIndividual ,
                          ns1:postulate ;
-                ns1:contains_concept ns1:concept__finite_straight_line ,
+                ns1:contains_concept ns1:concept__are_in_the_same_parallels ,
+                                     ns1:concept__fall_on ,
+                                     ns1:concept__finite_straight_line ,
                                      ns1:concept__inclination_of_angles ,
                                      ns1:concept__inclination_of_interior_angles ,
                                      ns1:concept__inclination_of_two_right_angles ,
@@ -9877,7 +9878,7 @@ ns1:relation_instance__equals_x__y_ rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#relation_instance__falls_on_finite_straight_line__finite_straight_line__finite_straight_line_
 ns1:relation_instance__falls_on_finite_straight_line__finite_straight_line__finite_straight_line_ rdf:type owl:NamedIndividual ,
                                                                                                            ns1:relation_instance ;
-                                                                                                  ns1:contains_concept ns1:concept__falls_on ,
+                                                                                                  ns1:contains_concept ns1:concept__fall_on ,
                                                                                                                        ns1:concept__finite_straight_line ;
                                                                                                   ns1:has_relation_type ns1:relation_type__falls_on_straight_line__straight_line__straight_line_ ;
                                                                                                   ns1:is_used_in ns1:proof_44 ,
@@ -9889,7 +9890,7 @@ ns1:relation_instance__falls_on_finite_straight_line__finite_straight_line__fini
 ###  https://www.foom.com/core#relation_instance__falls_on_straight_line__straight_line_
 ns1:relation_instance__falls_on_straight_line__straight_line_ rdf:type owl:NamedIndividual ,
                                                                        ns1:relation_instance ;
-                                                              ns1:contains_concept ns1:concept__falls_on ,
+                                                              ns1:contains_concept ns1:concept__fall_on ,
                                                                                    ns1:concept__straight_line ;
                                                               ns1:has_relation_type ns1:relation_type__falls_on_straight_line__straight_line_ ;
                                                               ns1:is_used_in ns1:proof_27 ,
@@ -11548,7 +11549,7 @@ ns1:relation_type__equals_x__y_ rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#relation_type__falls_on_straight_line__straight_line_
 ns1:relation_type__falls_on_straight_line__straight_line_ rdf:type owl:NamedIndividual ,
                                                                    ns1:relation_type ;
-                                                          ns1:contains_concept ns1:concept__falls_on ,
+                                                          ns1:contains_concept ns1:concept__fall_on ,
                                                                                ns1:concept__straight_line ;
                                                           ns1:is_relation_type_of ns1:relation_instance__falls_on_straight_line__straight_line_ ;
                                                           rdfs:label "Relation type: Falls_on(straight_line, straight_line)" ;
@@ -11558,7 +11559,7 @@ ns1:relation_type__falls_on_straight_line__straight_line_ rdf:type owl:NamedIndi
 ###  https://www.foom.com/core#relation_type__falls_on_straight_line__straight_line__straight_line_
 ns1:relation_type__falls_on_straight_line__straight_line__straight_line_ rdf:type owl:NamedIndividual ,
                                                                                   ns1:relation_type ;
-                                                                         ns1:contains_concept ns1:concept__falls_on ,
+                                                                         ns1:contains_concept ns1:concept__fall_on ,
                                                                                               ns1:concept__straight_line ;
                                                                          ns1:is_relation_type_of ns1:relation_instance__falls_on_finite_straight_line__finite_straight_line__finite_straight_line_ ;
                                                                          rdfs:label "Relation type: Falls_on(straight_line, straight_line, straight_line)" ;

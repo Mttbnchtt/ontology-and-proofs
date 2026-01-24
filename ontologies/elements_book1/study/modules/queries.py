@@ -22,8 +22,10 @@ def direct_definitions() -> str:
             ?o
             (count (*) as ?links)
         WHERE {
-            ?s  a <https://www.foom.com/core#definition> ;
-                <https://www.foom.com/core#defines> ?o .
+            ?s  a <https://www.foom.com/core#definition> .
+            { ?s    <https://www.foom.com/core#defines> ?o . }
+            UNION
+            { ?s  }
         }
         group by ?o
         order by desc(?links)
