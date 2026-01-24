@@ -25,7 +25,7 @@ def direct_definitions() -> str:
             ?s  a <https://www.foom.com/core#definition> .
             { ?s    <https://www.foom.com/core#defines> ?o . }
             UNION
-            { ?s  }
+            { ?s  <https://www.foom.com/core#contains_concept> ?o . }
         }
         group by ?o
         order by desc(?links)
@@ -43,6 +43,8 @@ def direct_postulates() -> str:
         WHERE {
             ?s a <https://www.foom.com/core#postulate> .
             { ?s <https://www.foom.com/core#refers_to> ?o . } # refers to
+            UNION
+            { ?s <https://www.foom.com/core#contains_concept> ?o . } # contains concept
             union
             { ?s <https://www.foom.com/core#refers_to>
                     / <https://www.foom.com/core#contains_concept> ?o . } # refers to / contains concept
