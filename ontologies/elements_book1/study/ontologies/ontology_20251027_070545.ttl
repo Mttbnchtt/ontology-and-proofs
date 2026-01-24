@@ -4803,7 +4803,8 @@ ns1:definition__1 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#definition__10
 ns1:definition__10 rdf:type owl:NamedIndividual ,
                             ns1:definition ;
-                   ns1:defines ns1:concept__perpendicular_straight_lines ,
+                   ns1:defines ns1:concept__is_right_angle ,
+                               ns1:concept__perpendicular_straight_lines ,
                                ns1:concept__right_angle ;
                    ns1:is_in ns1:document__elements_book_1 ;
                    rdfs:label "Definition: 10" ;
@@ -6802,7 +6803,8 @@ ns1:postulate_4 rdf:type owl:NamedIndividual ,
                 ns1:contains_concept ns1:concept__equals ,
                                      ns1:concept__right_angle ;
                 ns1:is_in ns1:document__elements_book_1 ;
-                ns1:refers_to ns1:relation_instance__equals_right_angle__right_angle_ ;
+                ns1:refers_to ns1:concept__is_right_angle ,
+                              ns1:relation_instance__equals_right_angle__right_angle_ ;
                 rdfs:label "Postulate 4" ;
                 skos:prefLabel "Postulate 4" .
 
