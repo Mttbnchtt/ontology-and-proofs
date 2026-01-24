@@ -6761,7 +6761,9 @@ ns1:pappus rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#postulate_1
 ns1:postulate_1 rdf:type owl:NamedIndividual ,
                          ns1:postulate ;
-                ns1:contains_concept ns1:concept__finite_straight_line ,
+                ns1:contains_concept ns1:concept__conduct ,
+                                     ns1:concept__conduct_to ,
+                                     ns1:concept__finite_straight_line ,
                                      ns1:concept__join ,
                                      ns1:concept__point ;
                 ns1:is_in ns1:document__elements_book_1 ;
@@ -6775,7 +6777,8 @@ ns1:postulate_1 rdf:type owl:NamedIndividual ,
 ns1:postulate_2 rdf:type owl:NamedIndividual ,
                          ns1:postulate ;
                 ns1:contains_concept ns1:concept__finite_straight_line ,
-                                     ns1:concept__produce ;
+                                     ns1:concept__produce ,
+                                     ns1:concept__produce_to ;
                 ns1:is_in ns1:document__elements_book_1 ;
                 ns1:refers_to ns1:operation__produce_finite_straight_line___straight_line ;
                 rdfs:label "Postulate 2" ;
