@@ -91,47 +91,44 @@ def direct_common_notions() -> str:
             (count (*) as ?links)
         WHERE {
             ?s a <https://www.foom.com/core#common_notion> .
-            { ?s <https://www.foom.com/core#has_statement> ?o .}
+            { ?s <https://www.foom.com/core#has_statement>+ ?o .}
             union
-            { ?s <https://www.foom.com/core#has_statement>
-                    / <https://www.foom.com/core#refers_to> ?o . } # refers to
+            { ?s <https://www.foom.com/core#has_statement>+
+                    / <https://www.foom.com/core#refers_to>+ ?o . } # refers to
             union
-            { ?s <https://www.foom.com/core#has_statement>
-                    / <https://www.foom.com/core#refers_to>
-                    / <https://www.foom.com/core#contains_concept> ?o . } # refers to / contains concept
+            { ?s <https://www.foom.com/core#has_statement>+
+                    / <https://www.foom.com/core#refers_to>+
+                    / <https://www.foom.com/core#contains_concept>+ ?o . } # refers to / contains concept
             ######################
-        #     union
-        #     { ?s <https://www.foom.com/core#has_statement>
-        #             / <https://www.foom.com/core#refers_to> ?o . } # refers to
             union
-            { ?s <https://www.foom.com/core#has_statement>
-                    / <https://www.foom.com/core#refers_to>
-                    / <https://www.foom.com/core#has_range> ?o . } # refers to / range
+            { ?s <https://www.foom.com/core#has_statement>+
+                    / <https://www.foom.com/core#refers_to>+
+                    / <https://www.foom.com/core#has_range>+ ?o . } # refers to / range
             union
-            { ?s <https://www.foom.com/core#has_statement>
-                    / <https://www.foom.com/core#refers_to>
-                    / <https://www.foom.com/core#has_range>
-                    / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / range / contains concept
+            { ?s <https://www.foom.com/core#has_statement>+
+                    / <https://www.foom.com/core#refers_to>+
+                    / <https://www.foom.com/core#has_range>+
+                    / <https://www.foom.com/core#contains_concept>+  ?o . } # refers to / range / contains concept
             union
-            { ?s <https://www.foom.com/core#has_statement>
-                    / <https://www.foom.com/core#refers_to>
-                    / <https://www.foom.com/core#has_range>
-                    / <https://www.foom.com/core#refers_to>  ?o . } # refers to / range / refers to
+            { ?s <https://www.foom.com/core#has_statement>+
+                    / <https://www.foom.com/core#refers_to>+
+                    / <https://www.foom.com/core#has_range>+
+                    / <https://www.foom.com/core#refers_to>+  ?o . } # refers to / range / refers to
             #####################
             union
-            { ?s <https://www.foom.com/core#has_statement>
-                    / <https://www.foom.com/core#refers_to>
-                    / <https://www.foom.com/core#has_domain> ?o . } # refers to / domain
+            { ?s <https://www.foom.com/core#has_statement>+
+                    / <https://www.foom.com/core#refers_to>+
+                    / <https://www.foom.com/core#has_domain>+ ?o . } # refers to / domain
             union
-            { ?s <https://www.foom.com/core#has_statement>
-                    / <https://www.foom.com/core#refers_to>
-                    / <https://www.foom.com/core#has_domain>
-                    / <https://www.foom.com/core#contains_concept>  ?o . } # refers to / domain / contains concept
+            { ?s <https://www.foom.com/core#has_statement>+
+                    / <https://www.foom.com/core#refers_to>+
+                    / <https://www.foom.com/core#has_domain>+
+                    / <https://www.foom.com/core#contains_concept>+  ?o . } # refers to / domain / contains concept
             union
-            { ?s <https://www.foom.com/core#has_statement>
-                    / <https://www.foom.com/core#refers_to>
-                    / <https://www.foom.com/core#has_domain>
-                    / <https://www.foom.com/core#refers_to>  ?o . } # refers to / domain / refers to
+            { ?s <https://www.foom.com/core#has_statement>+
+                    / <https://www.foom.com/core#refers_to>+
+                    / <https://www.foom.com/core#has_domain>+
+                    / <https://www.foom.com/core#refers_to>+  ?o . } # refers to / domain / refers to
         }
         group by ?o
         order by desc(?links)

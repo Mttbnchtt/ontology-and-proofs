@@ -1818,7 +1818,6 @@ ns1:concept__equals rdf:type owl:NamedIndividual ,
                                       ns1:relation_instance__equals_triangle__triangle_ ,
                                       ns1:relation_instance__equals_x__y_ ,
                                       ns1:relation_type__equals_magnitude__magnitude_ ,
-                                      ns1:relation_type__equals_object__object_ ,
                                       ns1:relation_type__equals_x__y_ ;
                     ns1:is_given_concept_of ns1:proposition_13 ,
                                             ns1:proposition_22 ,
@@ -3096,7 +3095,7 @@ ns1:concept__object rdf:type owl:NamedIndividual ,
                                       ns1:operation_type__taken_together_in_any_way_object__object___object ,
                                       ns1:relation_type__are_same_object__object_ ,
                                       ns1:relation_type__distinct_object__object_ ,
-                                      ns1:relation_type__equals_object__object_ ,
+                                      ns1:relation_type__equals_x__y_ ,
                                       ns1:relation_type__unequal_object__object_ ;
                     ns1:is_super_concept_of ns1:concept__diagrammatic_object ,
                                             ns1:concept__part ,
@@ -4902,7 +4901,8 @@ ns1:definition__2 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#definition__20
 ns1:definition__20 rdf:type owl:NamedIndividual ,
                             ns1:definition ;
-                   ns1:contains_concept ns1:concept__is_equilateral ;
+                   ns1:contains_concept ns1:concept__is_equilateral ,
+                                        ns1:concept__side_of_triangle ;
                    ns1:defines ns1:concept__equilateral_triangle ,
                                ns1:concept__isosceles_triangle ,
                                ns1:concept__scalene_triangle ;
@@ -4926,7 +4926,8 @@ ns1:definition__21 rdf:type owl:NamedIndividual ,
 ns1:definition__22 rdf:type owl:NamedIndividual ,
                             ns1:definition ;
                    ns1:contains_concept ns1:concept__is_equilateral ,
-                                        ns1:concept__is_rectangular ;
+                                        ns1:concept__is_rectangular ,
+                                        ns1:concept__side_of_square ;
                    ns1:defines ns1:concept__quadrilateral_igure ,
                                ns1:concept__rectangular ,
                                ns1:concept__rhomboid ,
@@ -9429,7 +9430,7 @@ ns1:relation_instance__equals_angle__angle_ rdf:type owl:NamedIndividual ,
                                                      ns1:relation_instance ;
                                             ns1:contains_concept ns1:concept__equals ,
                                                                  ns1:concept__rectilinear_angle ;
-                                            ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                            ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                             ns1:is_used_in ns1:proof_11 ,
                                                            ns1:proof_12 ,
                                                            ns1:proof_13 ,
@@ -9484,7 +9485,7 @@ ns1:relation_instance__equals_angle__right_angle_ rdf:type owl:NamedIndividual ,
                                                   ns1:contains_concept ns1:concept__equals ,
                                                                        ns1:concept__rectilinear_angle ,
                                                                        ns1:concept__right_angle ;
-                                                  ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                  ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                   ns1:is_used_in ns1:proof_28 ,
                                                                  ns1:proposition_28 ;
                                                   rdfs:label "Relation instance: Equals(angle, right_angle)" ;
@@ -9498,7 +9499,7 @@ ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_ 
                                                                                 ns1:contains_concept ns1:concept__angle_at_base ,
                                                                                                      ns1:concept__equals ,
                                                                                                      ns1:concept__isosceles_triangle ;
-                                                                                ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                                                ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                                                 ns1:is_used_in ns1:proof_aristotle ;
                                                                                 rdfs:label "Relation instance: Equals(angle_at_base, angle_at_base, isosceles_triangle)" ;
                                                                                 skos:prefLabel "Equals(angle_at_base, angle_at_base, isosceles_triangle)" .
@@ -9510,7 +9511,7 @@ ns1:relation_instance__equals_angle_of_parallelogram__angle_ rdf:type owl:NamedI
                                                              ns1:contains_concept ns1:concept__angle_of_parallelogram ,
                                                                                   ns1:concept__equals ,
                                                                                   ns1:concept__rectilinear_angle ;
-                                                             ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                             ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                              ns1:is_used_in ns1:proof_42 ,
                                                                             ns1:proof_44 ,
                                                                             ns1:proposition_44 ;
@@ -9524,7 +9525,7 @@ ns1:relation_instance__equals_angle_of_section__angle_of_section_ rdf:type owl:N
                                                                            ns1:relation_instance ;
                                                                   ns1:contains_concept ns1:concept__angle_of_section ,
                                                                                        ns1:concept__equals ;
-                                                                  ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                                  ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                                   ns1:is_used_in ns1:proof_aristotle ;
                                                                   rdfs:label "Relation instance: Equals(angle_of_section, angle_of_section)" ;
                                                                   skos:prefLabel "Equals(angle_of_section, angle_of_section)" .
@@ -9535,7 +9536,7 @@ ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_ rdf:type
                                                                                  ns1:relation_instance ;
                                                                         ns1:contains_concept ns1:concept__angle_of_semicircle ,
                                                                                              ns1:concept__equals ;
-                                                                        ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                                        ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                                         ns1:is_used_in ns1:proof_aristotle ;
                                                                         rdfs:label "Relation instance: Equals(angle_of_semicircle, angle_of_semicircle)" ;
                                                                         skos:prefLabel "Equals(angle_of_semicircle, angle_of_semicircle)" .
@@ -9546,7 +9547,7 @@ ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_ rdf:
                                                                                      ns1:relation_instance ;
                                                                             ns1:contains_concept ns1:concept__base_of_parallelogram ,
                                                                                                  ns1:concept__equals ;
-                                                                            ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                                            ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                                             ns1:is_used_in ns1:proof_36 ,
                                                                                            ns1:proof_38 ;
                                                                             rdfs:label "Relation instance: Equals(base_of_parallelogram, base_of_parallelogram)" ;
@@ -9558,7 +9559,7 @@ ns1:relation_instance__equals_base_of_triangle__base_of_triangle_ rdf:type owl:N
                                                                            ns1:relation_instance ;
                                                                   ns1:contains_concept ns1:concept__base_of_triangle ,
                                                                                        ns1:concept__equals ;
-                                                                  ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                                  ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                                   ns1:is_used_in ns1:proof_10 ,
                                                                                  ns1:proof_12 ,
                                                                                  ns1:proof_16 ,
@@ -9590,7 +9591,7 @@ ns1:relation_instance__equals_complement_of_parallelogram__complement_of_paralle
                                                                                                  ns1:relation_instance ;
                                                                                         ns1:contains_concept ns1:concept__complement_of_parallelogram ,
                                                                                                              ns1:concept__equals ;
-                                                                                        ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                                                        ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                                                         ns1:is_used_in ns1:proof_43 ,
                                                                                                        ns1:proof_44 ,
                                                                                                        ns1:proposition_43 ;
@@ -9604,7 +9605,7 @@ ns1:relation_instance__equals_finite_straight_line__finite_straight_line_ rdf:ty
                                                                                    ns1:relation_instance ;
                                                                           ns1:contains_concept ns1:concept__equals ,
                                                                                                ns1:concept__finite_straight_line ;
-                                                                          ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                                          ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                                           ns1:is_used_in ns1:proof_1 ,
                                                                                          ns1:proof_11 ,
                                                                                          ns1:proof_12 ,
@@ -9637,7 +9638,7 @@ ns1:relation_instance__equals_finite_straight_line__side_of_triangle_ rdf:type o
                                                                       ns1:contains_concept ns1:concept__equals ,
                                                                                            ns1:concept__finite_straight_line ,
                                                                                            ns1:concept__side_of_triangle ;
-                                                                      ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                                      ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                                       ns1:is_used_in ns1:proof_48 ;
                                                                       rdfs:label "Relation instance: Equals(finite_straight_line, side_of_triangle)" ;
                                                                       skos:prefLabel "Equals(finite_straight_line, side_of_triangle)" .
@@ -9648,7 +9649,7 @@ ns1:relation_instance__equals_interior_angle_of_triangle__interior_angle_of_tria
                                                                                                ns1:relation_instance ;
                                                                                       ns1:contains_concept ns1:concept__equals ,
                                                                                                            ns1:concept__interior_angle_of_triangle ;
-                                                                                      ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                                                      ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                                                       ns1:is_used_in ns1:proof_4 ;
                                                                                       rdfs:label "Relation instance: Equals(interior_angle_of_triangle, interior_angle_of_triangle)" ;
                                                                                       skos:prefLabel "Equals(interior_angle_of_triangle, interior_angle_of_triangle)" .
@@ -9659,7 +9660,7 @@ ns1:relation_instance__equals_parallelogram__parallelogram_ rdf:type owl:NamedIn
                                                                      ns1:relation_instance ;
                                                             ns1:contains_concept ns1:concept__equals ,
                                                                                  ns1:concept__parallelogram ;
-                                                            ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                            ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                             ns1:is_used_in ns1:proof_35 ,
                                                                            ns1:proof_36 ,
                                                                            ns1:proof_37 ,
@@ -9676,7 +9677,7 @@ ns1:relation_instance__equals_parallelogram__rectilinear_figure_ rdf:type owl:Na
                                                                  ns1:contains_concept ns1:concept__equals ,
                                                                                       ns1:concept__parallelogram ,
                                                                                       ns1:concept__rectilinear_figure ;
-                                                                 ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                                 ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                                  ns1:is_used_in ns1:proof_45 ,
                                                                                 ns1:proposition_45 ;
                                                                  rdfs:label "Relation instance: Equals(parallelogram, rectilinear_figure)" ;
@@ -9690,7 +9691,7 @@ ns1:relation_instance__equals_parallelogram__triangle_ rdf:type owl:NamedIndivid
                                                        ns1:contains_concept ns1:concept__equals ,
                                                                             ns1:concept__parallelogram ,
                                                                             ns1:concept__triangle ;
-                                                       ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                       ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                        ns1:is_used_in ns1:proof_44 ,
                                                                       ns1:proof_45 ,
                                                                       ns1:proposition_44 ;
@@ -9714,7 +9715,7 @@ ns1:relation_instance__equals_side__side_ rdf:type owl:NamedIndividual ,
                                                    ns1:relation_instance ;
                                           ns1:contains_concept ns1:concept__equals ,
                                                                ns1:concept__side ;
-                                          ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                          ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                           ns1:is_used_in ns1:proof_34 ,
                                                          ns1:proposition_34 ;
                                           rdfs:label "Relation instance: Equals(side, side)" ;
@@ -9726,7 +9727,7 @@ ns1:relation_instance__equals_side_of_parallelogram__side_of_parallelogram_ rdf:
                                                                                      ns1:relation_instance ;
                                                                             ns1:contains_concept ns1:concept__equals ,
                                                                                                  ns1:concept__side_of_parallelogram ;
-                                                                            ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                                            ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                                             ns1:is_used_in ns1:proof_36 ,
                                                                                            ns1:proof_46 ;
                                                                             rdfs:label "Relation instance: Equals(side_of_parallelogram, side_of_parallelogram)" ;
@@ -9738,7 +9739,7 @@ ns1:relation_instance__equals_side_of_square__side_of_square_ rdf:type owl:Named
                                                                        ns1:relation_instance ;
                                                               ns1:contains_concept ns1:concept__equals ,
                                                                                    ns1:concept__side_of_square ;
-                                                              ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                              ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                               ns1:is_used_in ns1:proof_48 ;
                                                               rdfs:label "Relation instance: Equals(side_of_square, side_of_square)" ;
                                                               skos:prefLabel "Equals(side_of_square, side_of_square)" .
@@ -9749,7 +9750,7 @@ ns1:relation_instance__equals_side_of_triangle__side_of_triangle_ rdf:type owl:N
                                                                            ns1:relation_instance ;
                                                                   ns1:contains_concept ns1:concept__equals ,
                                                                                        ns1:concept__side_of_triangle ;
-                                                                  ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                                  ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                                   ns1:is_used_in ns1:proof_10 ,
                                                                                  ns1:proof_18 ,
                                                                                  ns1:proof_19 ,
@@ -9782,7 +9783,7 @@ ns1:relation_instance__equals_square__rectilinear_figure_ rdf:type owl:NamedIndi
                                                           ns1:contains_concept ns1:concept__equals ,
                                                                                ns1:concept__rectilinear_figure ,
                                                                                ns1:concept__square ;
-                                                          ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                          ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                           ns1:is_used_in ns1:proof_47 ,
                                                                          ns1:proposition_47 ;
                                                           rdfs:label "Relation instance: Equals(square, rectilinear_figure)" ;
@@ -9795,7 +9796,7 @@ ns1:relation_instance__equals_square__square_ rdf:type owl:NamedIndividual ,
                                                        ns1:relation_instance ;
                                               ns1:contains_concept ns1:concept__equals ,
                                                                    ns1:concept__square ;
-                                              ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                              ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                               ns1:is_used_in ns1:proof_48 ;
                                               rdfs:label "Relation instance: Equals(square, square)" ;
                                               skos:prefLabel "Equals(square, square)" .
@@ -9807,7 +9808,7 @@ ns1:relation_instance__equals_square__sum_square__square__ rdf:type owl:NamedInd
                                                            ns1:contains_concept ns1:concept__equals ,
                                                                                 ns1:concept__square ,
                                                                                 ns1:concept__sum ;
-                                                           ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                           ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                            ns1:is_used_in ns1:proof_47 ,
                                                                           ns1:proof_48 ,
                                                                           ns1:proposition_47 ,
@@ -9822,7 +9823,7 @@ ns1:relation_instance__equals_triangle__parallelogram_ rdf:type owl:NamedIndivid
                                                        ns1:contains_concept ns1:concept__equals ,
                                                                             ns1:concept__parallelogram ,
                                                                             ns1:concept__triangle ;
-                                                       ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                       ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                        ns1:is_used_in ns1:proof_42 ,
                                                                       ns1:proof_44 ,
                                                                       ns1:proposition_42 ;
@@ -9835,7 +9836,7 @@ ns1:relation_instance__equals_triangle__triangle_ rdf:type owl:NamedIndividual ,
                                                            ns1:relation_instance ;
                                                   ns1:contains_concept ns1:concept__equals ,
                                                                        ns1:concept__triangle ;
-                                                  ns1:has_relation_type ns1:relation_type__equals_object__object_ ;
+                                                  ns1:has_relation_type ns1:relation_type__equals_x__y_ ;
                                                   ns1:is_used_in ns1:proof_26 ,
                                                                  ns1:proof_33 ,
                                                                  ns1:proof_34 ,
@@ -11503,47 +11504,41 @@ ns1:relation_type__equals_magnitude__magnitude_ rdf:type owl:NamedIndividual ,
                                                 skos:prefLabel "equals(magnitude, magnitude)" .
 
 
-###  https://www.foom.com/core#relation_type__equals_object__object_
-ns1:relation_type__equals_object__object_ rdf:type owl:NamedIndividual ,
-                                                   ns1:relation_type ;
-                                          ns1:contains_concept ns1:concept__equals ,
-                                                               ns1:concept__object ;
-                                          ns1:is_relation_type_of ns1:relation_instance__equals_angle__angle_ ,
-                                                                  ns1:relation_instance__equals_angle__right_angle_ ,
-                                                                  ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_ ,
-                                                                  ns1:relation_instance__equals_angle_of_parallelogram__angle_ ,
-                                                                  ns1:relation_instance__equals_angle_of_section__angle_of_section_ ,
-                                                                  ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_ ,
-                                                                  ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_ ,
-                                                                  ns1:relation_instance__equals_base_of_triangle__base_of_triangle_ ,
-                                                                  ns1:relation_instance__equals_complement_of_parallelogram__complement_of_parallelogram_ ,
-                                                                  ns1:relation_instance__equals_finite_straight_line__finite_straight_line_ ,
-                                                                  ns1:relation_instance__equals_finite_straight_line__side_of_triangle_ ,
-                                                                  ns1:relation_instance__equals_interior_angle_of_triangle__interior_angle_of_triangle_ ,
-                                                                  ns1:relation_instance__equals_parallelogram__parallelogram_ ,
-                                                                  ns1:relation_instance__equals_parallelogram__rectilinear_figure_ ,
-                                                                  ns1:relation_instance__equals_parallelogram__triangle_ ,
-                                                                  ns1:relation_instance__equals_side__side_ ,
-                                                                  ns1:relation_instance__equals_side_of_parallelogram__side_of_parallelogram_ ,
-                                                                  ns1:relation_instance__equals_side_of_square__side_of_square_ ,
-                                                                  ns1:relation_instance__equals_side_of_triangle__side_of_triangle_ ,
-                                                                  ns1:relation_instance__equals_square__rectilinear_figure_ ,
-                                                                  ns1:relation_instance__equals_square__square_ ,
-                                                                  ns1:relation_instance__equals_square__sum_square__square__ ,
-                                                                  ns1:relation_instance__equals_triangle__parallelogram_ ,
-                                                                  ns1:relation_instance__equals_triangle__triangle_ ;
-                                          rdfs:label "Relation type: Equals(object, object)" ;
-                                          skos:prefLabel "Equals(object, object)" .
-
-
 ###  https://www.foom.com/core#relation_type__equals_x__y_
 ns1:relation_type__equals_x__y_ rdf:type owl:NamedIndividual ,
                                          ns1:relation_type ;
                                 ns1:contains_concept ns1:concept___thing ,
-                                                     ns1:concept__equals ;
+                                                     ns1:concept__equals ,
+                                                     ns1:concept__object ;
+                                ns1:is_relation_type_of ns1:relation_instance__equals_angle__angle_ ,
+                                                        ns1:relation_instance__equals_angle__right_angle_ ,
+                                                        ns1:relation_instance__equals_angle_at_base__angle_at_base__isosceles_triangle_ ,
+                                                        ns1:relation_instance__equals_angle_of_parallelogram__angle_ ,
+                                                        ns1:relation_instance__equals_angle_of_section__angle_of_section_ ,
+                                                        ns1:relation_instance__equals_angle_of_semicircle__angle_of_semicircle_ ,
+                                                        ns1:relation_instance__equals_base_of_parallelogram__base_of_parallelogram_ ,
+                                                        ns1:relation_instance__equals_base_of_triangle__base_of_triangle_ ,
+                                                        ns1:relation_instance__equals_complement_of_parallelogram__complement_of_parallelogram_ ,
+                                                        ns1:relation_instance__equals_finite_straight_line__finite_straight_line_ ,
+                                                        ns1:relation_instance__equals_finite_straight_line__side_of_triangle_ ,
+                                                        ns1:relation_instance__equals_interior_angle_of_triangle__interior_angle_of_triangle_ ,
+                                                        ns1:relation_instance__equals_parallelogram__parallelogram_ ,
+                                                        ns1:relation_instance__equals_parallelogram__rectilinear_figure_ ,
+                                                        ns1:relation_instance__equals_parallelogram__triangle_ ,
+                                                        ns1:relation_instance__equals_side__side_ ,
+                                                        ns1:relation_instance__equals_side_of_parallelogram__side_of_parallelogram_ ,
+                                                        ns1:relation_instance__equals_side_of_square__side_of_square_ ,
+                                                        ns1:relation_instance__equals_side_of_triangle__side_of_triangle_ ,
+                                                        ns1:relation_instance__equals_square__rectilinear_figure_ ,
+                                                        ns1:relation_instance__equals_square__square_ ,
+                                                        ns1:relation_instance__equals_square__sum_square__square__ ,
+                                                        ns1:relation_instance__equals_triangle__parallelogram_ ,
+                                                        ns1:relation_instance__equals_triangle__triangle_ ;
                                 ns1:is_used_in ns1:relation_instance__equals_x__y_ ;
-                                rdfs:label "Relation type: Equals(x, y)" ;
-                                skos:prefLabel "Equals(x, y)" .
+                                rdfs:label "Relation type: Equals(object, object)" ,
+                                           "Relation type: Equals(x, y)" ;
+                                skos:prefLabel "Equals(object, object)" ,
+                                               "Equals(x, y)" .
 
 
 ###  https://www.foom.com/core#relation_type__falls_on_straight_line__straight_line_
