@@ -21,27 +21,44 @@ def normalize_excluded_iris(excluded: Iterable[object] | None) -> set[str]:
     return {value for value in normalized if value}
 
 
+def normalize_excluded_substrings(excluded: Iterable[object] | None) -> tuple[str, ...]:
+    if not excluded:
+        return tuple()
+    normalized = tuple(str(value).strip() for value in excluded)
+    return tuple(value for value in normalized if value)
+
+
 def filter_excluded_rows(
     df: pd.DataFrame,
     excluded: set[str] | None,
     *,
     columns: Sequence[str],
+    excluded_substrings: Sequence[str] | None = None,
 ) -> pd.DataFrame:
     """Drop rows where any specified column matches an excluded IRI.
 
     Assumes SPARQL bindings for the specified columns are IRIs; literals are stringified
     and only excluded if they exactly match an excluded IRI. Filtering is skipped when
-    required columns are missing.
+    required columns are missing. Substring filtering drops rows whose IRIs contain any
+    excluded substring.
     """
-    if df.empty or not excluded:
+    if df.empty or (not excluded and not excluded_substrings):
         return df
     excluded_normalized = normalize_excluded_iris(excluded)
-    if not excluded_normalized:
+    excluded_substrings_normalized = normalize_excluded_substrings(excluded_substrings)
+    if not excluded_normalized and not excluded_substrings_normalized:
         return df
     if any(column not in df.columns for column in columns):
         return df
     mask = pd.Series(True, index=df.index)
     for column in columns:
         normalized = df[column].map(_normalize_iri)
-        mask &= ~normalized.isin(excluded_normalized)
+        if excluded_normalized:
+            mask &= ~normalized.isin(excluded_normalized)
+        if excluded_substrings_normalized:
+            mask &= ~normalized.apply(
+                lambda value: any(
+                    substring in value for substring in excluded_substrings_normalized
+                )
+            )
     return df.loc[mask].copy()

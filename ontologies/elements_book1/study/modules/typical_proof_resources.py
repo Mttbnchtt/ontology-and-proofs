@@ -14,10 +14,12 @@ def resources_in_proof(
     runner: QueryRunner,
     type_selection: bool,
     excluded_iris: set[str] | None = None,
+    excluded_substrings: list[str] | None = None,
 ) -> set[str]:
     """Return direct-usage resources in proof N; type_selection toggles proof queries.
 
     excluded_iris may contain raw IRIs with or without angle brackets; values are normalized internally.
+    excluded_substrings removes IRIs containing any listed substring.
     Filtering is skipped if expected columns are missing from query results.
     """
     proof_iri = iri_for_proof(proof_n)
@@ -26,7 +28,12 @@ def resources_in_proof(
     else:
         query = queries.direct_template_propositions_proofs(proof_iri)
     df = runner.fetch(query)
-    df = filter_excluded_rows(df, excluded_iris, columns=("o",))
+    df = filter_excluded_rows(
+        df,
+        excluded_iris,
+        columns=("o",),
+        excluded_substrings=excluded_substrings,
+    )
     if "o" not in df.columns:
         return set()
     return {str(value) for value in df["o"].dropna().astype(str)}
