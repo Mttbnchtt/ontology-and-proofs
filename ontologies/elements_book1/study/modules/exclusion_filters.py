@@ -24,8 +24,12 @@ def normalize_excluded_iris(excluded: Iterable[object] | None) -> set[str]:
 def normalize_excluded_substrings(excluded: Iterable[object] | None) -> tuple[str, ...]:
     if not excluded:
         return tuple()
-    normalized = tuple(str(value).strip() for value in excluded)
+    normalized = tuple(_normalize_iri(value) for value in excluded)
     return tuple(value for value in normalized if value)
+
+
+def _looks_like_iri(value: str) -> bool:
+    return value.startswith(("http://", "https://", "urn:"))
 
 
 def filter_excluded_rows(
@@ -60,5 +64,7 @@ def filter_excluded_rows(
                 lambda value: any(
                     substring in value for substring in excluded_substrings_normalized
                 )
+                if _looks_like_iri(value)
+                else False
             )
     return df.loc[mask].copy()
