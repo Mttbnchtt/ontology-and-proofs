@@ -1488,8 +1488,8 @@ ns1:concept__describe_parallel rdf:type owl:NamedIndividual ,
                                                     ns1:concept__describe ,
                                                     ns1:concept__parallel_lines ;
                                ns1:has_concept_type ns1:concept_type__operation ;
-                               ns1:is_concept_in ns1:operation_instance__describe_parallel_straight_line__straight_line__point___straight_line ,
-                                                 ns1:operation_type__describe_parallel_straight_line__straight_line__point___straight_line ,
+                               ns1:is_concept_in ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line ,
+                                                 ns1:operation_type__conduct_parallel_straight_line__straight_line__point___straight_line ,
                                                  ns1:relation_instance__describe_parallel_straight_line__straight_line__point___straight_line ,
                                                  ns1:relation_type__describe_parallel_straight_line__straight_line__point___straight_line ;
                                ns1:is_equivalent_to ns1:concept__conduct_parallel ;
@@ -3400,7 +3400,6 @@ ns1:concept__point rdf:type owl:NamedIndividual ,
                                      ns1:operation_instance__construct_from_angle__angle__point__finite_straight_line___angle ,
                                      ns1:operation_instance__construct_on_angle__point___angle ,
                                      ns1:operation_instance__construct_to_given_point_finite_straight_line__point__point___finite_straight_line ,
-                                     ns1:operation_instance__describe_parallel_straight_line__straight_line__point___straight_line ,
                                      ns1:operation_instance__fit_point__point___point ,
                                      ns1:operation_instance__join_on_the_same_part_point__point__point__point____finite_straight_line__finite_straight_line_ ,
                                      ns1:operation_instance__join_point__point___finite_straight_line ,
@@ -3417,7 +3416,6 @@ ns1:concept__point rdf:type owl:NamedIndividual ,
                                      ns1:operation_type__conduct_straight_line__straight_line__point__angle___straight_line ,
                                      ns1:operation_type__conduct_to_finite_straight_line__point___finite_straight_line ,
                                      ns1:operation_type__construct_to_given_point_straight_line__point__point___straight_line ,
-                                     ns1:operation_type__describe_parallel_straight_line__straight_line__point___straight_line ,
                                      ns1:operation_type__join_on_the_same_part_point__point__point__point____finite_straight_line__finite_straight_line_ ,
                                      ns1:operation_type__join_point__point___finite_straight_line ,
                                      ns1:operation_type__produce_on_both_parts_finite_straight_line__point___finite_straight_line ,
@@ -4139,7 +4137,6 @@ ns1:concept__straight_line rdf:type owl:NamedIndividual ,
                                              ns1:concept__rectilinear_figure ,
                                              ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line ,
                                              ns1:operation_instance__conduct_straight_line__straight_line__point___straight_line ,
-                                             ns1:operation_instance__describe_parallel_straight_line__straight_line__point___straight_line ,
                                              ns1:operation_instance__extend_straight_line___straight_line ,
                                              ns1:operation_instance__extend_straight_straight_line___straight_line ,
                                              ns1:operation_instance__fall_on_straight_line__straight_line_ ,
@@ -4151,7 +4148,6 @@ ns1:concept__straight_line rdf:type owl:NamedIndividual ,
                                              ns1:operation_type__conduct_straight_line__straight_line__point__angle___straight_line ,
                                              ns1:operation_type__construct_to_given_point_straight_line__point__point___straight_line ,
                                              ns1:operation_type__cut_into_two_halves_cut_into_two_halves_straight_line____diagrammatic_object__diagrammatic_object_____diagrammatic_object__diagrammatic_object_ ,
-                                             ns1:operation_type__describe_parallel_straight_line__straight_line__point___straight_line ,
                                              ns1:operation_type__extend_straight_straight_line___straight_line ,
                                              ns1:operation_type__fall_on_straight_line__straight_line_ ,
                                              ns1:operation_type__produce_finite_straight_line___straight_line ,
@@ -5416,16 +5412,20 @@ ns1:operation_instance__conduct_infinite_straight_line__infinite_straight_line__
 ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line rdf:type owl:NamedIndividual ,
                                                                                                       ns1:operation_instance ;
                                                                                              ns1:contains_concept ns1:concept__conduct_parallel ,
+                                                                                                                  ns1:concept__describe_parallel ,
                                                                                                                   ns1:concept__point ,
                                                                                                                   ns1:concept__straight_line ;
                                                                                              ns1:has_operation_type ns1:operation_type__conduct_parallel_straight_line__straight_line__point___straight_line ;
                                                                                              ns1:is_used_in ns1:proof_31 ,
                                                                                                             ns1:proof_32 ,
                                                                                                             ns1:proof_42 ,
+                                                                                                            ns1:proof_47 ,
                                                                                                             ns1:proposition_31 ;
-                                                                                             rdfs:label "Operation instance: Conduct_parallel(straight_line, straight_line, point)->straight_line" ;
+                                                                                             rdfs:label "Operation instance: Conduct_parallel(straight_line, straight_line, point)->straight_line" ,
+                                                                                                        "Operation instance: Describe_parallel(straight_line, straight_line, point)->straight_line" ;
                                                                                              skos:prefLabel "Conduct parallel(straight line, straight line, point)->straight line" ,
-                                                                                                            "Conduct_parallel(straight_line, straight_line, point)->straight_line" .
+                                                                                                            "Conduct_parallel(straight_line, straight_line, point)->straight_line" ,
+                                                                                                            "Describe_parallel(straight_line, straight_line, point)->straight_line" .
 
 
 ###  https://www.foom.com/core#operation_instance__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line
@@ -5700,18 +5700,6 @@ ns1:operation_instance__describe_on_square__side_of_triangle___square rdf:type o
                                                                       ns1:is_used_in ns1:proof_47 ;
                                                                       rdfs:label "Operation instance: Describe_on(square, side_of_triangle)->square" ;
                                                                       skos:prefLabel "Describe_on(square, side_of_triangle)->square" .
-
-
-###  https://www.foom.com/core#operation_instance__describe_parallel_straight_line__straight_line__point___straight_line
-ns1:operation_instance__describe_parallel_straight_line__straight_line__point___straight_line rdf:type owl:NamedIndividual ,
-                                                                                                       ns1:operation_instance ;
-                                                                                              ns1:contains_concept ns1:concept__describe_parallel ,
-                                                                                                                   ns1:concept__point ,
-                                                                                                                   ns1:concept__straight_line ;
-                                                                                              ns1:has_operation_type ns1:operation_type__describe_parallel_straight_line__straight_line__point___straight_line ;
-                                                                                              ns1:is_used_in ns1:proof_47 ;
-                                                                                              rdfs:label "Operation instance: Describe_parallel(straight_line, straight_line, point)->straight_line" ;
-                                                                                              skos:prefLabel "Describe_parallel(straight_line, straight_line, point)->straight_line" .
 
 
 ###  https://www.foom.com/core#operation_instance__draw_center__interval___circle
@@ -6356,11 +6344,14 @@ ns1:operation_type__choose_at_random_point__finite_straight_line___point rdf:typ
 ns1:operation_type__conduct_parallel_straight_line__straight_line__point___straight_line rdf:type owl:NamedIndividual ,
                                                                                                   ns1:operation_type ;
                                                                                          ns1:contains_concept ns1:concept__conduct_parallel ,
+                                                                                                              ns1:concept__describe_parallel ,
                                                                                                               ns1:concept__point ,
                                                                                                               ns1:concept__straight_line ;
                                                                                          ns1:is_operation_type_of ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line ;
-                                                                                         rdfs:label "Operation type: Conduct_parallel(straight_line, straight_line, point)->straight_line" ;
-                                                                                         skos:prefLabel "Conduct_parallel(straight_line, straight_line, point)->straight_line" .
+                                                                                         rdfs:label "Operation type: Conduct_parallel(straight_line, straight_line, point)->straight_line" ,
+                                                                                                    "Operation type: Describe_parallel(straight_line, straight_line, point)->straight_line" ;
+                                                                                         skos:prefLabel "Conduct_parallel(straight_line, straight_line, point)->straight_line" ,
+                                                                                                        "Describe_parallel(straight_line, straight_line, point)->straight_line" .
 
 
 ###  https://www.foom.com/core#operation_type__conduct_parallel_to_point__point__finite_straight_line___finite_straight_line
@@ -6498,17 +6489,6 @@ ns1:operation_type__describe_on_figure__finite_straight_line___figure rdf:type o
                                                                                                ns1:operation_instance__describe_on_square__side_of_triangle___square ;
                                                                       rdfs:label "Operation type: Describe_on(figure, finite_straight_line)->figure" ;
                                                                       skos:prefLabel "Describe_on(figure, finite_straight_line)->figure" .
-
-
-###  https://www.foom.com/core#operation_type__describe_parallel_straight_line__straight_line__point___straight_line
-ns1:operation_type__describe_parallel_straight_line__straight_line__point___straight_line rdf:type owl:NamedIndividual ,
-                                                                                                   ns1:operation_type ;
-                                                                                          ns1:contains_concept ns1:concept__describe_parallel ,
-                                                                                                               ns1:concept__point ,
-                                                                                                               ns1:concept__straight_line ;
-                                                                                          ns1:is_operation_type_of ns1:operation_instance__describe_parallel_straight_line__straight_line__point___straight_line ;
-                                                                                          rdfs:label "Operation type: Describe_parallel(straight_line, straight_line, point)->straight_line" ;
-                                                                                          skos:prefLabel "Describe_parallel(straight_line, straight_line, point)->straight_line" .
 
 
 ###  https://www.foom.com/core#operation_type__draw_center__interval___circle
@@ -6824,6 +6804,7 @@ ns1:postulate_5 rdf:type owl:NamedIndividual ,
                                      ns1:concept__interior_angle ,
                                      ns1:concept__intersection_point ,
                                      ns1:concept__intersection_point_of_straight_lines ,
+                                     ns1:concept__produce_to_infinity ,
                                      ns1:concept__right_angle ,
                                      ns1:concept__same_side_of_line ,
                                      ns1:concept__side_of_line ,
@@ -7362,7 +7343,8 @@ ns1:proof_33 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#proof_34
 ns1:proof_34 rdf:type owl:NamedIndividual ,
                       ns1:proof ;
-             ns1:contains_concept ns1:concept__one ,
+             ns1:contains_concept ns1:concept__is_parallelogram ,
+                                  ns1:concept__one ,
                                   ns1:concept__two ;
              ns1:is_in ns1:document__elements_book_1 ;
              ns1:refers_to ns1:operation_instance__sum_angle__angle___angle ,
@@ -7389,6 +7371,7 @@ ns1:proof_34 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#proof_35
 ns1:proof_35 rdf:type owl:NamedIndividual ,
                       ns1:proof ;
+             ns1:contains_concept ns1:concept__is_parallelogram ;
              ns1:is_in ns1:document__elements_book_1 ;
              ns1:refers_to ns1:operation_instance__subtract_triangle__triangle___trapezium ,
                            ns1:operation_instance__sum_finite_straight_line__finite_straight_line___finite_straight_line ,
@@ -7695,8 +7678,8 @@ ns1:proof_47 rdf:type owl:NamedIndividual ,
                       ns1:proof ;
              ns1:contains_concept ns1:concept__two ;
              ns1:is_in ns1:document__elements_book_1 ;
-             ns1:refers_to ns1:operation_instance__describe_on_square__side_of_triangle___square ,
-                           ns1:operation_instance__describe_parallel_straight_line__straight_line__point___straight_line ,
+             ns1:refers_to ns1:operation_instance__conduct_parallel_straight_line__straight_line__point___straight_line ,
+                           ns1:operation_instance__describe_on_square__side_of_triangle___square ,
                            ns1:operation_instance__join_point__point___finite_straight_line ,
                            ns1:operation_instance__sum_angle__angle___angle ,
                            ns1:operation_instance__sum_parallelogram__parallelogram___square ,
@@ -8375,6 +8358,7 @@ ns1:proposition_33 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#proposition_34
 ns1:proposition_34 rdf:type owl:NamedIndividual ,
                             ns1:proposition ;
+                   ns1:contains_concept ns1:concept__is_parallelogram ;
                    ns1:has_proposition_type ns1:proposition_type__theorem ;
                    ns1:is_in ns1:document__elements_book_1 ;
                    ns1:refers_to ns1:relation_instance__cut_into_two_halves_diameter__angle_ ,
@@ -8390,6 +8374,7 @@ ns1:proposition_34 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#proposition_35
 ns1:proposition_35 rdf:type owl:NamedIndividual ,
                             ns1:proposition ;
+                   ns1:contains_concept ns1:concept__is_parallelogram ;
                    ns1:has_proposition_type ns1:proposition_type__theorem ;
                    ns1:is_in ns1:document__elements_book_1 ;
                    ns1:refers_to ns1:relation_instance__are_parallel_finite_straight_line__finite_straight_line_ ,
