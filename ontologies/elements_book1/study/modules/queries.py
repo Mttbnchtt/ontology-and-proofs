@@ -881,3 +881,350 @@ def find_proposition_types() -> str:
         }
         """
     )
+
+
+#######################
+# QUERIES FOR THE SET OF  SALIENT RESOURCES
+
+
+def find_direct_resources_in_last_proposition(last_proposition_iri) -> str:
+    return _wrap(
+        f"""
+        # direct last proposition
+        SELECT DISTINCT
+        ?o 
+        WHERE {{
+        VALUES ?s {{ {last_proposition_iri} }}   
+
+        {{ ?s <https://www.foom.com/core#has_given_concept> ?o . }}
+        UNION
+        {{ ?s <https://www.foom.com/core#contains_concept> ?o . }}
+        UNION
+        {{ ?s <https://www.foom.com/core#refers_to> ?o . }}
+        UNION
+        {{ 
+        ?s <https://www.foom.com/core#refers_to>
+                / <https://www.foom.com/core#contains_concept> ?o .
+        }}
+        UNION
+        {{ 
+        ?s <https://www.foom.com/core#refers_to>
+                / <https://www.foom.com/core#has_range> ?o .
+        }}
+        UNION
+        {{ 
+        ?s <https://www.foom.com/core#refers_to>
+                / <https://www.foom.com/core#has_range>
+                / <https://www.foom.com/core#contains_concept> ?o .
+        }}
+        UNION
+        {{ 
+        ?s <https://www.foom.com/core#refers_to>
+                / <https://www.foom.com/core#has_range>
+                / <https://www.foom.com/core#refers_to> ?o .
+        }}
+        UNION
+        {{ 
+        ?s <https://www.foom.com/core#refers_to>
+                / <https://www.foom.com/core#has_domain> ?o .
+        }}
+        UNION
+        {{ 
+        ?s <https://www.foom.com/core#refers_to>
+                / <https://www.foom.com/core#has_domain>
+                / <https://www.foom.com/core#contains_concept> ?o .
+        }}
+        UNION
+        {{ 
+        ?s <https://www.foom.com/core#refers_to>
+                / <https://www.foom.com/core#has_domain>
+                / <https://www.foom.com/core#refers_to> ?o .
+        }}
+        }}
+"""
+    )
+
+
+def find_hierarchical_resources_last_proposition(last_proposition_iri: str) -> str:
+    return _wrap(
+        f"""
+        # hierarchical last proposition
+        SELECT DISTINCT
+            ?o
+        WHERE {{
+            VALUES ?s {{ {last_proposition_iri} }}
+
+            {{
+              ?s <https://www.foom.com/core#has_given_concept>+
+                 / <https://www.foom.com/core#is_sub_concept_of>+ ?o .
+            }}  # has given concept / super-concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#contains_concept>+
+                 / <https://www.foom.com/core#is_sub_concept_of>+ ?o .
+            }}  # contains concept / super-concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#contains_concept>+
+                 / <https://www.foom.com/core#is_sub_concept_of>+ ?o .
+            }}  # refers to / contains concept / super-concept
+
+            #####################
+
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_range>+
+                 / <https://www.foom.com/core#contains_concept>+
+                 / <https://www.foom.com/core#is_sub_concept_of>+ ?o .
+            }}  # refers to / range / contains concept / super-concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_domain>+
+                 / <https://www.foom.com/core#contains_concept>+
+                 / <https://www.foom.com/core#is_sub_concept_of>+ ?o .
+            }}  # refers to / domain / contains concept / super-concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#refers_to>+ ?o .
+            }}  # refers to [2]
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#contains_concept>+ ?o .
+            }}  # refers to [2] / contains concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_range>+ ?o .
+            }}  # refers to [2] / range
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_range>+
+                 / <https://www.foom.com/core#contains_concept>+ ?o .
+            }}  # refers to [2] / range / contains concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_domain>+ ?o .
+            }}  # refers to [2] / domain
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_domain>+
+                 / <https://www.foom.com/core#contains_concept>+ ?o .
+            }}  # refers to [2] / domain / contains concept
+
+            #####################
+
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_relation_type>+ ?o .
+            }}  # refers to / has relation type
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_relation_type>+
+                 / <https://www.foom.com/core#contains_concept>+ ?o .
+            }}  # refers to / has relation type / contains concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_relation_type>+
+                 / <https://www.foom.com/core#has_range>+ ?o .
+            }}  # refers to / has relation type / range
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_relation_type>+
+                 / <https://www.foom.com/core#has_range>+
+                 / <https://www.foom.com/core#contains_concept>+ ?o .
+            }}  # refers to / has relation type / range / contains concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_relation_type>+
+                 / <https://www.foom.com/core#has_domain>+ ?o .
+            }}  # refers to / has relation type / domain
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_relation_type>+
+                 / <https://www.foom.com/core#has_domain>+
+                 / <https://www.foom.com/core#contains_concept>+ ?o .
+            }}  # refers to / has relation type / domain / contains concept
+
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_operation_type>+ ?o .
+            }}  # refers to / has operation type
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_operation_type>+
+                 / <https://www.foom.com/core#contains_concept>+ ?o .
+            }}  # refers to / has operation type / contains concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_operation_type>+
+                 / <https://www.foom.com/core#has_range>+ ?o .
+            }}  # refers to / has operation type / range
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_operation_type>+
+                 / <https://www.foom.com/core#has_range>+
+                 / <https://www.foom.com/core#contains_concept>+ ?o .
+            }}  # refers to / has operation type / range / contains concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_operation_type>+
+                 / <https://www.foom.com/core#has_domain>+ ?o .
+            }}  # refers to / has operation type / domain
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_operation_type>+
+                 / <https://www.foom.com/core#has_domain>+
+                 / <https://www.foom.com/core#contains_concept>+ ?o .
+            }}  # refers to / has operation type / domain / contains concept
+        }}
+        """
+    )
+
+
+def find_mereological_resources_last_proposition(last_proposition_iri: str) -> str:
+    return _wrap(
+        f"""
+        # mereological last proposition
+        SELECT DISTINCT
+            ?o
+        WHERE {{
+            VALUES ?s {{ {last_proposition_iri} }}
+
+            {{
+              ?s <https://www.foom.com/core#refers_to>
+                 / <https://www.foom.com/core#contains_concept>+
+                 / <https://www.foom.com/core#contains_concept>+ ?o .
+            }}  # refers to / contains concept / contains concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#contains_concept>+
+                 / <https://www.foom.com/core#definition_refers_to>+ ?o .
+            }}  # refers to / contains concept / definition refers to
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_range>+
+                 / <https://www.foom.com/core#contains_concept>+
+                 / <https://www.foom.com/core#contains_concept>+ ?o .
+            }}  # refers to / range / contains concept / contains concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_range>+
+                 / <https://www.foom.com/core#contains_concept>+
+                 / <https://www.foom.com/core#definition_refers_to>+ ?o .
+            }}  # refers to / range / contains concept / definition refers to
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_domain>+
+                 / <https://www.foom.com/core#contains_concept>+
+                 / <https://www.foom.com/core#contains_concept>+ ?o .
+            }}  # refers to / domain / contains concept / contains concept
+            UNION
+            {{
+              ?s <https://www.foom.com/core#refers_to>+
+                 / <https://www.foom.com/core#has_domain>+
+                 / <https://www.foom.com/core#contains_concept>+
+                 / <https://www.foom.com/core#definition_refers_to>+ ?o .
+            }}  # refers to / domain / contains concept / definition refers to
+        }}
+        """
+    )
+
+
+def find_salient_resources_in_definitions_postulates_common_notions(
+    resource_iris: str,
+) -> str:
+    return _wrap(
+        f"""
+        SELECT DISTINCT
+            ?o
+        WHERE {{
+            VALUES ?resource {{ {resource_iris} }}
+            VALUES ?class {{ <https://www.foom.com/core#postulate> <https://www.foom.com/core#common_notion> }}
+            {{
+                ?s
+                a <https://www.foom.com/core#definition> ;
+                <https://www.foom.com/core#defines> ?resource .
+            }}
+            UNION
+            {{
+                ?s
+                a ?class ;
+                <https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#contains_concept>+ ?resource .
+            }}
+            UNION
+            {{
+                ?s
+                a ?class ;
+                <https://www.foom.com/core#refers_to>+ ?resource .
+            }}
+            UNION
+            {{
+                ?s
+                a ?class ;
+                <https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#has_domain> ?resource .
+            }}
+            UNION
+            {{
+                ?s
+                a ?class ;
+                <https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#has_range> ?resource .
+            }}
+            UNION
+            {{
+                ?s
+                a ?class ;
+                <https://www.foom.com/core#has_statement>*/<https://www.foom.com/core#refers_to> ?resource .
+            }}
+            UNION
+            {{
+                ?s
+                a ?class ;
+                <https://www.foom.com/core#has_statement>*/<https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#contains_concept> ?resource .
+            }}
+            UNION
+            {{
+                ?s
+                a ?class ;
+                <https://www.foom.com/core#has_statement>*/<https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#has_domain> ?resource .
+            }}
+            UNION
+            {{
+                ?s
+                a ?class ;
+                <https://www.foom.com/core#has_statement>*/<https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#has_range> ?resource .
+            }}
+                
+        BIND(?s AS ?o)
+        }}
+        ORDER BY ?o
+        """
+    )
