@@ -1159,7 +1159,7 @@ def find_mereological_resources_last_proposition(last_proposition_iri: str) -> s
     )
 
 
-def find_salient_resources_in_definitions_postulates_common_notions(
+def find_salient_resources_in_definitions_postulates_common_notions_propositions_proofs(
     resource_iris: str,
 ) -> str:
     return _wrap(
@@ -1645,6 +1645,55 @@ def mereological_common_notions_selected_values(iri_of_salient_resources: str) -
                     / <https://www.foom.com/core#definition_refers_to>+  ?o . }} # refers to / domain / contains concept / contains_concept
         }}
         group by ?o
+        order by desc(?links)
+        """
+    )
+
+
+
+def direct_template_propositions_proofs_selected_values(iri_of_salient_resources: str) -> str:
+    """Return a query counting concepts referenced by the supplied proposition/proof IRIs via direct `refers_to` property paths."""
+    return _wrap(
+        f"""
+        SELECT 
+                ?o 
+                (count (*) as ?links) 
+        WHERE {{
+            values ?s {{ {iri_of_salient_resources} }}
+            values ?class {{ <https://www.foom.com/core#proposition>  <https://www.foom.com/core#proof> }}
+            ?s a ?class .
+                {{ ?s <https://www.foom.com/core#has_given_concept> ?o . }} # has given concept
+                union
+                {{ ?s <https://www.foom.com/core#contains_concept> ?o . }} # contains concept
+                union
+                {{ ?s <https://www.foom.com/core#refers_to> ?o . }} # refers to
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#contains_concept> ?o . }} # refers to / contains concept
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_range> ?o . }} # refers to / range
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_range>
+                        / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / range / contains concept
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_range>
+                        / <https://www.foom.com/core#refers_to>  ?o . }} # refers to / range / refers to
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_domain> ?o . }} # refers to / domain
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_domain>
+                        / <https://www.foom.com/core#contains_concept>  ?o . }} # refers to / domain / contains concept
+                union
+                {{ ?s <https://www.foom.com/core#refers_to>
+                        / <https://www.foom.com/core#has_domain>
+                        / <https://www.foom.com/core#refers_to>  ?o . }} # refers to / domain / refers to
+        }} 
+        group by ?o 
         order by desc(?links)
         """
     )
