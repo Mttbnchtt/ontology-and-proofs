@@ -1231,19 +1231,19 @@ def find_salient_resources_in_definitions_postulates_common_notions(
 
 
 def direct_definitions_selected_values(iri_of_salient_resources: str) -> str:
-        return _wrap(
-                f"""
-                     SELECT
+    return _wrap(
+        f"""
+        SELECT
             ?o
             (count (*) as ?links)
-        WHERE {
-            VALUES ?s { iri_of_salient_resources }
-            ?s  a <https://www.foom.com/core#definition> .
-            { ?s    <https://www.foom.com/core#defines> ?o . }
+        WHERE {{
+            VALUES ?s {{ {iri_of_salient_resources} }}
+            ?s a <https://www.foom.com/core#definition> .
+            {{ ?s <https://www.foom.com/core#defines> ?o . }}
             UNION
-            { ?s  <https://www.foom.com/core#contains_concept> ?o . }
-        }
+            {{ ?s <https://www.foom.com/core#contains_concept> ?o . }}
+        }}
         group by ?o
         order by desc(?links)
         """
-        )
+    )
