@@ -1682,3 +1682,73 @@ def direct_template_propositions_proofs_selected_values(iri_of_salient_resources
         order by desc(?links)
         """
     )
+
+
+"""
+INSERT 
+# CONSTRUCT
+{
+    ?proof foom:is_proof_of ?proposition .
+}
+WHERE {
+    # extract two propositions and their pref labels.
+    ?proposition
+        a foom:proposition ;
+        skos:prefLabel ?proposition_label .
+    ?proof 
+        a foom:proof ;
+        skos:prefLabel ?proof_label .
+    
+    # The proposition pref labels have the form: "Proposition N", where N is a natural number.
+    # Extract N from the pref label as an integer.
+    BIND(
+      xsd:integer(
+        REPLACE(STR(?proposition_label), "^Proposition\\s+", "")
+      ) AS ?proposition_index
+    )
+    BIND(
+      xsd:integer(
+        REPLACE(STR(?proof_label), "^Proof\\s+", "")
+      ) AS ?proof_index
+    )
+
+    # compare ?a_index and ?b_index
+    # and keep only propositions where ?b_index = ?a_index + 1
+    FILTER(?proposition_index = ?proof_index)
+}
+"""
+
+
+"""
+INSERT
+# CONSTRUCT
+{
+    ?proposition_b foom:immediately_follows_textually ?proposition_a .
+}
+WHERE {
+    # extract two propositions and their pref labels.
+    ?proposition_a 
+        a foom:proposition ;
+        skos:prefLabel ?proposition__a_label .
+    ?proposition_b 
+        a foom:proposition ;
+        skos:prefLabel ?proposition_b_label .
+    
+    # The proposition pref labels have the form: "Proposition N", where N is a natural number.
+    # Extract N from the pref label as an integer.
+    BIND(
+      xsd:integer(
+        REPLACE(STR(?proposition__a_label), "^Proposition\\s+", "")
+      ) AS ?a_index
+    )
+    BIND(
+      xsd:integer(
+        REPLACE(STR(?proposition_b_label), "^Proposition\\s+", "")
+      ) AS ?b_index
+    )
+
+    # compare ?a_index and ?b_index
+    # and keep only propositions where ?b_index = ?a_index + 1
+    FILTER(?b_index = ?a_index + 1)
+}
+"""
