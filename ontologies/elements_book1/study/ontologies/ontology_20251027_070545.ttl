@@ -14,6 +14,14 @@
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#prefLabel
 skos:prefLabel rdf:type owl:AnnotationProperty .
 
@@ -25,6 +33,19 @@ ns1:uses_reductio rdf:type owl:AnnotationProperty .
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://www.foom.com/core/geometry#immediately_follows_textually
+<http://www.foom.com/core/geometry#immediately_follows_textually> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf <http://www.foom.com/core/geometry#is_proof_of> ;
+                                                                  <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                  <http://purl.org/dc/elements/1.1/date> "2026-02-08T11:45:08Z"^^xsd:dateTime .
+
+
+###  http://www.foom.com/core/geometry#is_proof_of
+<http://www.foom.com/core/geometry#is_proof_of> rdf:type owl:ObjectProperty ;
+                                                <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                <http://purl.org/dc/elements/1.1/date> "2026-02-08T11:44:36Z"^^xsd:dateTime .
+
 
 ###  https://www.foom.com/core#contains
 ns1:contains rdf:type owl:ObjectProperty ;
@@ -8087,6 +8108,7 @@ ns1:proposition_19 rdf:type owl:NamedIndividual ,
 ###  https://www.foom.com/core#proposition_2
 ns1:proposition_2 rdf:type owl:NamedIndividual ,
                            ns1:proposition ;
+                  <http://www.foom.com/core/geometry#immediately_follows_textually> ns1:proposition_1 ;
                   ns1:contains_concept ns1:concept__finite_straight_line ,
                                        ns1:concept__point ;
                   ns1:has_gist ns1:gist__movement_of_finite_straight_line_via_construction_of_circles ;
