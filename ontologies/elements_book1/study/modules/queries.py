@@ -1,4 +1,4 @@
-"""SPARQL query helpers grouped by conceptual family."""
+ """SPARQL query helpers grouped by conceptual family."""
 
 from __future__ import annotations
 
