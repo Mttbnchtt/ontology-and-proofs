@@ -1160,7 +1160,8 @@ def find_mereological_resources_last_proposition(last_proposition_iri: str) -> s
 
 
 
-# this query is intentionally broad
+# this query is intentionally broad concerning the paths that it explores
+# TODO: use 
 def find_salient_definitions_postulates_common_notions_propositions_proofs(
     resource_iris: str,
 ) -> str:
