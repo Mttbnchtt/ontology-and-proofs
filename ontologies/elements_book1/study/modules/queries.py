@@ -1161,9 +1161,12 @@ def find_mereological_resources_last_proposition(last_proposition_iri: str) -> s
 
 
 # this query is intentionally broad concerning the paths that it explores
-# TODO: use 
+# TODO: 
+# 1. use <https://www.foom.com/core#immediately_follows_textually> to select only propositions that are <= the given proposition number
+# 2. use <https://www.foom.com/core#is_proof_of> to select only proofs that are < (stricly less than) the given proposition number 
 def find_salient_definitions_postulates_common_notions_propositions_proofs(
     resource_iris: str,
+    proposition_number: int = 1
 ) -> str:
     return _wrap(
         f"""
