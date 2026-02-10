@@ -1162,8 +1162,7 @@ def find_mereological_resources_last_proposition(last_proposition_iri: str) -> s
 
 # this query is intentionally broad concerning the paths that it explores
 def find_salient_definitions_postulates_common_notions(
-    resource_iris: str,
-    proposition_number: int = 1
+    resource_iris: str
 ) -> str:
     return _wrap(
         f"""
