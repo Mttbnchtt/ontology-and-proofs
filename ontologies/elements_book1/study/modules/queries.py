@@ -1216,63 +1216,191 @@ def find_salient_definitions_postulates_common_notions(
     )
 
 # this query is intentionally broad concerning the paths that it explores
-# TODO: 
-# 1. use <https://www.foom.com/core#immediately_follows_textually> to select only propositions that are <= the given proposition number
-# 2. use <https://www.foom.com/core#is_proof_of> to select only proofs that are < (stricly less than) the given proposition number 
-
 def find_salient_propositions_proofs(
     resource_iris: str,
-    proposition_number: int = 1
+    proposition: str = "<https://www.foom.com/core#proposition_1>",
 ) -> str:
-    return _wrap(
-        f"""
-        SELECT DISTINCT
-            ?o
-        WHERE {{
-            VALUES ?resource {{ {resource_iris} }}
-            VALUES ?class {{ <https://www.foom.com/core#proposition> <https://www.foom.com/core#proof> }}
+    """
+    Returns a SPARQL query (as a Python f-string) that implements the same logic as
+    the query currently in the RDFox console:
 
-            {{ ?s a ?class . }}
-            UNION
-                 {{ ?s  
-                <https://www.foom.com/core#refers_to>* / <https://www.foom.com/core#has_range>* / <https://www.foom.com/core#contains_concept>+  ?resource . }} # refers to / range / contains concept
+    - Consider ?s of type foom:proposition or foom:proof.
+    - Keep propositions strictly *before* the given `proposition` using
+      foom:immediately_follows_textually+ (note: in your TTL, the direction is later -> earlier,
+      so we test: <target_proposition> immediately_follows_textually+ ?s).
+    - Keep proofs only if they are foom:is_proof_of some proposition ?p that is strictly
+      before the given `proposition`.
+    - Additionally require that ?s is connected to the given resource(s) via one of the
+      UNIONed path-patterns.
+    - Return ?o = ?s, ordered.
+    """
+    return _wrap(f"""
+SELECT DISTINCT ?o
+WHERE {{
+  VALUES ?resource {{ {resource_iris} }}
 
-            UNION {{ ?s a ?class ;
-                <https://www.foom.com/core#refers_to>+ ?resource . }}
-            UNION {{ ?s a ?class ;
-                <https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#has_domain> ?resource . }}
-            UNION {{  ?s a ?class ;
-                <https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#has_range> ?resource . }}
-            UNION {{  ?s a ?class ;
-                <https://www.foom.com/core#has_statement>*/<https://www.foom.com/core#refers_to> ?resource . }}
-            UNION {{  ?s a ?class ;
-                <https://www.foom.com/core#has_statement>*/<https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#contains_concept> ?resource . }}
-            UNION {{  ?s a ?class ;
-                <https://www.foom.com/core#has_statement>*/<https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#has_domain> ?resource . }}
-            UNION {{ ?s a ?class ;
-                <https://www.foom.com/core#has_statement>*/<https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#has_range> ?resource . }}
+  VALUES ?class {{
+    <https://www.foom.com/core#proposition>
+    <https://www.foom.com/core#proof>
+  }}
 
-                UNION  {{ ?s a ?class ; <https://www.foom.com/core#has_given_concept> ?resource . }} # has given concept
+  ?s a ?class .
 
-                union {{ ?s a ?class ; <https://www.foom.com/core#refers_to>*
-                        / <https://www.foom.com/core#has_range>+
-                        / <https://www.foom.com/core#refers_to>+  ?resource . }} # refers to / range / refers to
-
-                union {{ ?s a ?class ; <https://www.foom.com/core#refers_to>*
-                        / <https://www.foom.com/core#has_domain>+ ?resource . }} # refers to / domain
-
-                union {{ ?s a ?class ; <https://www.foom.com/core#refers_to>*
-                        / <https://www.foom.com/core#has_domain>
-                        / <https://www.foom.com/core#contains_concept>+  ?resource . }} # refers to / domain / contains concept
-
-                union {{ ?s a ?class ; <https://www.foom.com/core#refers_to>*
-                        / <https://www.foom.com/core#has_domain>
-                        / <https://www.foom.com/core#refers_to>+  ?resource . }} # refers to / domain / refers to
-        BIND(?s AS ?o)
-        }}
-        ORDER BY ?o
-        """
+  # Keep:
+  #  - propositions strictly before the target proposition
+  #  - proofs only if they prove a proposition strictly before the target proposition
+  FILTER (
+    (
+      ?class = <https://www.foom.com/core#proposition>
+      &&
+      EXISTS {{
+        {proposition}
+          <https://www.foom.com/core#immediately_follows_textually>+ ?s .
+      }}
     )
+    ||
+    (
+      ?class = <https://www.foom.com/core#proof>
+      &&
+      EXISTS {{
+        ?s <https://www.foom.com/core#is_proof_of> ?p .
+        {proposition}
+          <https://www.foom.com/core#immediately_follows_textually>+ ?p .
+      }}
+    )
+  )
+
+  {{
+    {{
+      ?s <https://www.foom.com/core#refers_to>* /
+         <https://www.foom.com/core#has_range>* /
+         <https://www.foom.com/core#contains_concept>+ ?resource .
+    }}
+
+    UNION {{ ?s <https://www.foom.com/core#refers_to>+ ?resource . }}
+
+    UNION {{
+      ?s <https://www.foom.com/core#refers_to>* /
+         <https://www.foom.com/core#has_domain> ?resource .
+    }}
+
+    UNION {{
+      ?s <https://www.foom.com/core#refers_to>* /
+         <https://www.foom.com/core#has_range> ?resource .
+    }}
+
+    UNION {{
+      ?s <https://www.foom.com/core#has_statement>* /
+         <https://www.foom.com/core#refers_to> ?resource .
+    }}
+
+    UNION {{
+      ?s <https://www.foom.com/core#has_statement>* /
+         <https://www.foom.com/core#refers_to>* /
+         <https://www.foom.com/core#contains_concept> ?resource .
+    }}
+
+    UNION {{
+      ?s <https://www.foom.com/core#has_statement>* /
+         <https://www.foom.com/core#refers_to>* /
+         <https://www.foom.com/core#has_domain> ?resource .
+    }}
+
+    UNION {{
+      ?s <https://www.foom.com/core#has_statement>* /
+         <https://www.foom.com/core#refers_to>* /
+         <https://www.foom.com/core#has_range> ?resource .
+    }}
+
+    UNION {{ ?s <https://www.foom.com/core#has_given_concept> ?resource . }}
+
+    UNION {{
+      ?s <https://www.foom.com/core#refers_to>* /
+         <https://www.foom.com/core#has_range>+ /
+         <https://www.foom.com/core#refers_to>+ ?resource .
+    }}
+
+    UNION {{
+      ?s <https://www.foom.com/core#refers_to>* /
+         <https://www.foom.com/core#has_domain>+ ?resource .
+    }}
+
+    UNION {{
+      ?s <https://www.foom.com/core#refers_to>* /
+         <https://www.foom.com/core#has_domain> /
+         <https://www.foom.com/core#contains_concept>+ ?resource .
+    }}
+
+    UNION {{
+      ?s <https://www.foom.com/core#refers_to>* /
+         <https://www.foom.com/core#has_domain> /
+         <https://www.foom.com/core#refers_to>+ ?resource .
+    }}
+  }}
+
+  BIND(?s AS ?o)
+}}
+ORDER BY ?o
+""")
+
+
+# # TODO: 
+# # 1. use <https://www.foom.com/core#immediately_follows_textually> to select only propositions that are <= the given proposition number
+# # 2. use <https://www.foom.com/core#is_proof_of> to select only proofs that are < (stricly less than) the given proposition number 
+
+# def find_salient_propositions_proofs(
+#     resource_iris: str,
+#     proposition_number: int = 1
+# ) -> str:
+#     return _wrap(
+#         f"""
+#         SELECT DISTINCT
+#             ?o
+#         WHERE {{
+#             VALUES ?resource {{ {resource_iris} }}
+#             VALUES ?class {{ <https://www.foom.com/core#proposition> <https://www.foom.com/core#proof> }}
+
+#             {{ ?s a ?class . }}
+#             UNION
+#                  {{ ?s  
+#                 <https://www.foom.com/core#refers_to>* / <https://www.foom.com/core#has_range>* / <https://www.foom.com/core#contains_concept>+  ?resource . }} # refers to / range / contains concept
+
+#             UNION {{ ?s a ?class ;
+#                 <https://www.foom.com/core#refers_to>+ ?resource . }}
+#             UNION {{ ?s a ?class ;
+#                 <https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#has_domain> ?resource . }}
+#             UNION {{  ?s a ?class ;
+#                 <https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#has_range> ?resource . }}
+#             UNION {{  ?s a ?class ;
+#                 <https://www.foom.com/core#has_statement>*/<https://www.foom.com/core#refers_to> ?resource . }}
+#             UNION {{  ?s a ?class ;
+#                 <https://www.foom.com/core#has_statement>*/<https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#contains_concept> ?resource . }}
+#             UNION {{  ?s a ?class ;
+#                 <https://www.foom.com/core#has_statement>*/<https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#has_domain> ?resource . }}
+#             UNION {{ ?s a ?class ;
+#                 <https://www.foom.com/core#has_statement>*/<https://www.foom.com/core#refers_to>*/<https://www.foom.com/core#has_range> ?resource . }}
+
+#                 UNION  {{ ?s a ?class ; <https://www.foom.com/core#has_given_concept> ?resource . }} # has given concept
+
+#                 union {{ ?s a ?class ; <https://www.foom.com/core#refers_to>*
+#                         / <https://www.foom.com/core#has_range>+
+#                         / <https://www.foom.com/core#refers_to>+  ?resource . }} # refers to / range / refers to
+
+#                 union {{ ?s a ?class ; <https://www.foom.com/core#refers_to>*
+#                         / <https://www.foom.com/core#has_domain>+ ?resource . }} # refers to / domain
+
+#                 union {{ ?s a ?class ; <https://www.foom.com/core#refers_to>*
+#                         / <https://www.foom.com/core#has_domain>
+#                         / <https://www.foom.com/core#contains_concept>+  ?resource . }} # refers to / domain / contains concept
+
+#                 union {{ ?s a ?class ; <https://www.foom.com/core#refers_to>*
+#                         / <https://www.foom.com/core#has_domain>
+#                         / <https://www.foom.com/core#refers_to>+  ?resource . }} # refers to / domain / refers to
+#         BIND(?s AS ?o)
+#         }}
+#         ORDER BY ?o
+#         """
+#     )
 
 def direct_definitions_selected_values(iri_of_salient_resources: str) -> str:
     return _wrap(
