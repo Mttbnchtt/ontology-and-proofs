@@ -1,4 +1,4 @@
- """SPARQL query helpers grouped by conceptual family."""
+"""SPARQL query helpers grouped by conceptual family."""
 
 from __future__ import annotations
 
@@ -1232,7 +1232,7 @@ def find_salient_propositions_proofs(
             VALUES ?resource {{ {resource_iris} }}
             VALUES ?class {{ <https://www.foom.com/core#proposition> <https://www.foom.com/core#proof> }}
 
-            ?s a ?class .
+            {{ ?s a ?class . }}
             UNION
                  {{ ?s  
                 <https://www.foom.com/core#refers_to>* / <https://www.foom.com/core#has_range>* / <https://www.foom.com/core#contains_concept>+  ?resource . }} # refers to / range / contains concept
