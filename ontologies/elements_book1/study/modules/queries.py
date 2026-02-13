@@ -1218,7 +1218,7 @@ def find_salient_definitions_postulates_common_notions(
 # this query is intentionally broad concerning the paths that it explores
 def find_salient_propositions_proofs(
     resource_iris: str,
-    proposition: str = "<https://www.foom.com/core#proposition_1>",
+    proposition: str = "<https://www.foom.com/core#proposition_1>", # this is the proposition that is currently last in the text, so we want to find propositions/proofs that are strictly before it
 ) -> str:
     """
     Returns a SPARQL query (as a Python f-string) that implements the same logic as
