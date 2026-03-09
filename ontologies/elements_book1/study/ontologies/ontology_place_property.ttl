@@ -537,6 +537,31 @@ foom:statement rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
+###  http://www.foom.com/core/geometry#operation_instance_place_on_finite_straight_line,_finite_straight_line_-finite_straight_line
+<http://www.foom.com/core/geometry#operation_instance_place_on_finite_straight_line,_finite_straight_line_-finite_straight_line> rdf:type owl:NamedIndividual ,
+                                                                                                                                          foom:operation_instance ;
+                                                                                                                                 foom:contains_concept foom:concept__finite_straight_line ,
+                                                                                                                                                       foom:concept__place ;
+                                                                                                                                 foom:is_used_in foom:proof_4 ,
+                                                                                                                                                 foom:proof_8 ;
+                                                                                                                                 <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                                                                 <http://purl.org/dc/elements/1.1/date> "2026-03-09T13:39:58Z"^^xsd:dateTime ;
+                                                                                                                                 rdfs:label "Operation instance: Place_on(finite_straight_line, finite_straight_line)->finite_straight_line" ;
+                                                                                                                                 skos:prefLabel "Place_on(finite_straight_line, finite_straight_line)->finite_straight_line" .
+
+
+###  http://www.foom.com/core/geometry#operation_type_place_on_diagrammatic_object,_diagrammatic_object_-_diagrammatic_object
+<http://www.foom.com/core/geometry#operation_type_place_on_diagrammatic_object,_diagrammatic_object_-_diagrammatic_object> rdf:type owl:NamedIndividual ,
+                                                                                                                                    foom:operation_type ;
+                                                                                                                           foom:contains_concept foom:concept__diagrammatic_object ,
+                                                                                                                                                 foom:concept__place ;
+                                                                                                                           foom:is_operation_type_of <http://www.foom.com/core/geometry#operation_instance_place_on_finite_straight_line,_finite_straight_line_-finite_straight_line> ;
+                                                                                                                           <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-3253-4387> ;
+                                                                                                                           <http://purl.org/dc/elements/1.1/date> "2026-03-09T13:43:57Z"^^xsd:dateTime ;
+                                                                                                                           rdfs:label "Operation type: Place_on(diagrammatic_object, diagrammatic_object)->diagrammatic_object" ;
+                                                                                                                           skos:prefLabel "Place_on(diagrammatic_object, diagrammatic_object)->diagrammatic_object" .
+
+
 ###  https://www.foom.com/core#_equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__
 foom:_equals_x__y____equals_v__w____equals_subtract_x__v___subtract_y__w__ rdf:type owl:NamedIndividual ,
                                                                                     foom:statement ;
@@ -5802,7 +5827,8 @@ foom:operation_instance__fit_finite_straight_line__finite_straight_line___finite
                                                                                                         foom:operation_instance ;
                                                                                                foom:contains_concept foom:concept__finite_straight_line ,
                                                                                                                      foom:concept__fit ;
-                                                                                               foom:has_operation_type foom:operation_type__fit_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
+                                                                                               foom:has_operation_type foom:operation_type__fit_diagrammatic_object__diagrammatic_object___diagrammatic_object ,
+                                                                                                                       foom:operation_type__place_on_diagrammatic_object__diagrammatic_object__diagrammatic_object___diagrammatic_object ;
                                                                                                foom:is_used_in foom:proof_4 ,
                                                                                                                foom:proof_8 ;
                                                                                                rdfs:label "Operation instance: Fit(finite_straight_line, finite_straight_line)->finite_straight_line" ,
@@ -5816,7 +5842,8 @@ foom:operation_instance__fit_point__point___point rdf:type owl:NamedIndividual ,
                                                            foom:operation_instance ;
                                                   foom:contains_concept foom:concept__fit ,
                                                                         foom:concept__point ;
-                                                  foom:has_operation_type foom:operation_type__fit_diagrammatic_object__diagrammatic_object___diagrammatic_object ;
+                                                  foom:has_operation_type foom:operation_type__fit_diagrammatic_object__diagrammatic_object___diagrammatic_object ,
+                                                                          foom:operation_type__place_on_diagrammatic_object__diagrammatic_object__diagrammatic_object___diagrammatic_object ;
                                                   foom:is_used_in foom:proof_4 ,
                                                                   foom:proof_8 ;
                                                   rdfs:label "Operation instance: Fit(point, point)->point" ,
@@ -7546,7 +7573,8 @@ foom:proof_4 rdf:type owl:NamedIndividual ,
                                    foom:concept__two ;
              foom:is_in foom:document__elements_book_1 ;
              foom:is_proof_of foom:proposition_4 ;
-             foom:refers_to foom:operation_instance__fit_finite_straight_line__finite_straight_line___finite_straight_line ,
+             foom:refers_to <http://www.foom.com/core/geometry#operation_instance_place_on_finite_straight_line,_finite_straight_line_-finite_straight_line> ,
+                            foom:operation_instance__fit_finite_straight_line__finite_straight_line___finite_straight_line ,
                             foom:operation_instance__fit_point__point___point ,
                             foom:operation_instance__fit_triangle__triangle___triangle ,
                             foom:relation_instance__corresponding_finite_straight_line__finite_straight_line_ ,
@@ -7885,7 +7913,8 @@ foom:proof_8 rdf:type owl:NamedIndividual ,
              foom:contains_concept foom:concept__two ;
              foom:is_in foom:document__elements_book_1 ;
              foom:is_proof_of foom:proposition_8 ;
-             foom:refers_to foom:operation_instance__construct_to_given_point_finite_straight_line__point__point___finite_straight_line ,
+             foom:refers_to <http://www.foom.com/core/geometry#operation_instance_place_on_finite_straight_line,_finite_straight_line_-finite_straight_line> ,
+                            foom:operation_instance__construct_to_given_point_finite_straight_line__point__point___finite_straight_line ,
                             foom:operation_instance__fit_finite_straight_line__finite_straight_line___finite_straight_line ,
                             foom:operation_instance__fit_point__point___point ,
                             foom:operation_instance__fit_triangle__triangle___triangle ,
