@@ -6640,7 +6640,7 @@ foom:operation_type__join_point__point___finite_straight_line rdf:type owl:Named
 foom:operation_type__place_on_diagrammatic_object__diagrammatic_object__diagrammatic_object___diagrammatic_object rdf:type owl:NamedIndividual ,
                                                                                                                            foom:operation_type ;
                                                                                                                   foom:contains_concept foom:concept__diagrammatic_object ,
-                                                                                                                                        foom:concept__fit ;
+                                                                                                                                        foom:concept__place ;
                                                                                                                   foom:is_operation_type_of foom:operation_instance__fit_finite_straight_line__finite_straight_line___finite_straight_line ,
                                                                                                                                             foom:operation_instance__fit_point__point___point ,
                                                                                                                                             foom:operation_instance__place_on_finite_straight_line__point__finite_straight_line___finite_straight_line ;
